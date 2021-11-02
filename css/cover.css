@@ -29,8 +29,8 @@ a:hover {
     color: rgb(255, 178, 115);
 }
 
-.cover-container {
-  max-width: 42em;
+.main-container {
+  max-width: 64em;
 }
 
 
