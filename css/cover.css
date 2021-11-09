@@ -29,11 +29,11 @@ body {
 }
 
 a {
-    color: rgb(255, 115, 0);
+    color: rgb(255, 166, 93);
     text-decoration: none;
 }
 a:hover {
-    color: rgb(255, 194, 115);
+    color: rgb(255, 211, 154);
     text-decoration: underline;
 }
 
@@ -47,11 +47,12 @@ a:hover {
  */
 
 .nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
+  padding: .5rem;
   color: rgba(255, 255, 255, .5);
   background-color: transparent;
-  border-bottom: .25rem solid transparent;
+  border-bottom: 0.3rem solid transparent;
+  text-decoration: none;
+  width: min-content;
 }
 
 .nav-masthead .nav-link:hover,
@@ -59,11 +60,24 @@ a:hover {
   border-bottom-color: rgba(255, 255, 255, .25);
 }
 
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
 
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+.navbar-mybrand {
+  font-family: 'Jost', sans-serif;
+  font-size: 2em;
+  color: rgb(255, 115, 0);
+  text-decoration: none;
+
+}
+
+.navbar-mybrand:hover {
+  font-family: 'Jost', sans-serif;
+  font-size: 2em;
+  color: rgb(255, 194, 115);
+  text-decoration: none;
+
 }

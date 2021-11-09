@@ -47,18 +47,24 @@
 <body class="d-flex h-100 text-left text-white bg-dark">
 
     <div class="main-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
-            <div>
-                
-      <h3 class="float-md-start mb-0">Alberto Jaspe-Villanueva</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        <a class="nav-link" href="publications.html">Publications</a>
-        <a class="nav-link" href="#">Contact</a>
-      </nav>
-      
-            </div>
-        </header>
+		<header class="mb-auto">
+			<nav class="navbar navbar-expand-md navbar-dark">
+				<div class="container-fluid">
+				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <a class="navbar-mybrand" href="index.html">Alberto Jaspe-Villanueva</a>
+				  
+				  <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+					<div class="navbar-nav nav-masthead">
+						<a class="nav-link active" href="index.html">Home</a>
+						<a class="nav-link" href="publications.html">Publications</a>
+						<a class="nav-link" href="#">Contact</a>
+					</div>
+				</div>
+			  </nav>			
+		</header>
+
 
         <main class="px-3">
 
@@ -68,7 +74,7 @@
                         <img src="img/ajaspe.jpg" class="rounded-circle img-thumbnail" alt="Alberto Jaspe">
                     </div>
                     <div class="col-md-9">
-                        <p><span class="display-4">Alberto Jaspe-Villanueva</span><br>
+                        <p><span class="display-4 navbar-mybrand">Alberto Jaspe-Villanueva</span><br>
                             <span class="lead"><b class="text-bold">Computer Graphics and Visualization</b></span>
                         </p>
                         <p class="lead">
