@@ -39,6 +39,16 @@ print(fields)
 for pub in pubsDB:
     pub_list_entry = html_publications_list_template
 
+    pub_data = ""
+    if("journal" in pub):
+        pub_data += pub["journal"]
+        #if("journal-data") in pub: pub_data += " " + pub["journal-data"]
+        if("conference") in pub: pub_data += " (presented in " + pub["conference"] + ")"
+    elif("conference" in pub):
+        pub_data += pub["conference"]
+
+    pub_list_entry = pub_list_entry.replace("$$$pub_data$$$", pub_data)
+
     for key in fields:
         to_replace = ""
         if key in pub :
