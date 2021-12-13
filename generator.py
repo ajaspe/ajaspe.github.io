@@ -34,8 +34,6 @@ pubs_list = ""
 fields = re.findall(r"\$\$\$[^\$\$\$]*\$\$\$", html_publications_list_template)
 fields = [element.replace('$$$', '') for element in fields]
 
-print(fields)
-
 for pub in pubsDB:
     pub_list_entry = html_publications_list_template
 
@@ -46,6 +44,8 @@ for pub in pubsDB:
         if("conference") in pub: pub_data += " (presented in " + pub["conference"] + ")"
     elif("conference" in pub):
         pub_data += pub["conference"]
+    elif("book" in pub):
+        pub_data += "Book: " + pub["book"]
 
     pub_list_entry = pub_list_entry.replace("$$$pub_data$$$", pub_data)
 
