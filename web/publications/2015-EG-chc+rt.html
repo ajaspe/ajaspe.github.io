@@ -68,14 +68,14 @@
 			  </nav>			
 		</header>
 
-        <main class="px-3">
+        <main class="py-3">
 
             <div class="container pub_row">
                 <div class="row text-center">  
-                    <p><span class="display-6 "></span></p>
+                    <p><span class="display-6 ">CHC+RT: Coherent Hierarchical Culling for Ray Tracing</span></p>
                 </div>
                 <div class="row text-center">
-                    <p><span class="lead"></span></p>
+                    <p><span class="lead">Oliver Mattausch, Jiri Bittner, Alberto Jaspe-Villanueva, Enrico Gobbetti, Michael Wimmer, and Renato Pajarola</span></p>
                 </div>
                 <div class="row text-center">
                     <p><span class="fst-italic">ACM Journal on Computing and Cultural Heritage, 14(2). May 2021.</span>
@@ -123,12 +123,12 @@
                 <div class="row abstract">
                         <h4>Abstract</h4>
                         <p>
-                            
+                            We propose a new technique for in-core and out-of-core GPU ray tracing using a generalization of hierarchical occlusion culling in the style of the CHC++ method. Our method exploits the rasterization pipeline and hardware occlusion queries in order to create coherent batches of work for localized shader-based ray-tracing kernels. By combining hierarchies in both ray space and object space, the method is able to share intermediate traversal results among multiple rays. We exploit temporal coherence among similar ray sets between frames and also within the given frame. A suitable management of the current visibility state makes it possible to benefit from occlusion culling for less coherent ray types like diffuse reflections. Since large scenes are still a challenge for modern GPU ray tracers, our method is most useful for scenes with medium to high complexity, especially since our method inherently supports ray tracing highly complex scenes that do not fit in GPU memory. For in-core scenes our method is comparable to CUDA ray tracing and performs up to 5.94 times better than pure shader-based ray tracing.
                         </p>
                 </div>
                 <div class="row">
                         <div class="ratio ratio-16x9">
-                            <iframe width="100%" src="https://www.youtube.com/embed/" title="YouTube video" allowfullscreen></iframe>
+                            <iframe width="100%" src="https://www.youtube.com/embed/4Ma920yhVHE" title="YouTube video" allowfullscreen></iframe>
                         </div>
                 </div>
             </div>
