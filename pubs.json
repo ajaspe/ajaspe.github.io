@@ -13,7 +13,7 @@
         "projects": ["RTI", "Cultral Heritage"],
         "doi": "10.1007/s00371-021-02172-9",
         "lab_website": "https://vccvisualization.org/research/light-calibration/",
-        "youtube_video": "SybNmo98DD4",
+        "youtube":"https://www.youtube.com/watch?v=SybNmo98DD4",
         "bibtex_id": ""
     },
     {
@@ -28,7 +28,7 @@
         "projects": ["RTI", "Cultral Heritage"],
         "doi": "10.1145/3430846",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2021:WEA%27",
-        "youtube_video": "iixPu3pNEbg",
+        "youtube":"https://www.youtube.com/watch?v=iixPu3pNEbg",
         "bibtex_id": "Jaspe:2019:WME"
     },
     {
@@ -56,7 +56,7 @@
         "projects": ["RTI", "Cultral Heritage"],
         "doi": "10.2312/gch.20191346",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2019:WME%27",
-        "youtube_video": "iixPu3pNEbg",
+        "youtube":"https://www.youtube.com/watch?v=iixPu3pNEbg",
         "bibtex_id": ""
     },
     {
@@ -124,7 +124,7 @@
         "projects": ["Massive models"],
         "publisher_link": "https://jcgt.org/published/0006/02/01/",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2017:SSV%27",
-        "youtube_video": "foYPjPKFKWw",
+        "youtube":"https://www.youtube.com/watch?v=foYPjPKFKWw",
         "bibtex_id": ""
     },
     {
@@ -138,7 +138,7 @@
         "projects": [],
         "doi": "10.2312/vmv.20161347",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Agus:2016:PPE%27",
-        "youtube_video": "S6EUIWyks6E",
+        "youtube":"https://www.youtube.com/watch?v=S6EUIWyks6E",
         "bibtex_id": ""
     },
     {
@@ -153,7 +153,7 @@
         "projects": ["Massive models", "Point clouds"],
         "doi": "10.4018/978-1-5225-0182-4.ch013",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mures:2016:PCM%27",
-        "youtube_video": "3Zo8v1uk2yA",
+        "youtube":"https://www.youtube.com/watch?v=3Zo8v1uk2yA",
         "bibtex_id": ""
     },
     {
@@ -179,7 +179,7 @@
         "abstract": "Voxelized representations of complex 3D scenes are widely used nowadays to accelerate visibility queries in many GPU rendering techniques. Since GPU memory is limited, it is important that these data structures can be kept within a strict memory budget. Recently, directed acyclic graphs (DAGs) have been successfully introduced to compress sparse voxel octrees (SVOs), but they are limited to sharing identical regions of space. In this paper, we show that a more efficient lossless compression of geometry can be achieved, while keeping the same visibility-query performance, by merging subtrees that are identical through a similarity transform, and by exploiting the skewed distribution of references to shared nodes to store child pointers using a variabile bit-rate encoding. We also describe how, by selecting plane reflections along the main grid directions as symmetry transforms, we can construct highly compressed GPU-friendly structures using a fully out-of-core method. Our results demonstrate that state-of-the-art compression and real-time tracing performance can be achieved on high-resolution voxelized representations of real-world scenes of very different characteristics, including large CAD models, 3D scans, and typical gaming models, leading, for instance, to real-time GPU in-core visualization with shading and shadows of the full Boeing 777 at sub-millimetric precision.",
         "projects": ["Massive models"],
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2016:SSS%27",
-        "youtube_video": "GmQswlkynP0",
+        "youtube":"https://www.youtube.com/watch?v=GmQswlkynP0",
         "bibtex_id": ""
     },
     {
@@ -192,7 +192,7 @@
         "projects": ["Massive models", "Point clouds", "Cultral Heritage"],
         "doi": "10.4018/978-1-5225-0029-2",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mures:2016:VRP%27",
-        "youtube_video": "3Zo8v1uk2yA",
+        "youtube":"https://www.youtube.com/watch?v=3Zo8v1uk2yA",
         "bibtex_id": ""
     },
     {
@@ -221,7 +221,7 @@
         "projects": ["Massive models"],
         "doi": "10.1111/cgf.12582",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mattausch:2015:CCH%27",
-        "youtube_video": "4Ma920yhVHE",
+        "youtube":"https://www.youtube.com/watch?v=4Ma920yhVHE",
         "bibtex_id": ""
     },
     {
@@ -235,13 +235,13 @@
         "projects": ["Point clouds"],
         "doi": "10.2312/vmv.20141282",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Agus:2014:SSO%27",
-        "youtube_video": "FZJSfOIfwAI",
+        "youtube":"https://www.youtube.com/watch?v=FZJSfOIfwAI",
         "bibtex_id": ""
     },
     {
         "code": "2014-STAG-line_rasterization",
         "title": "Practical line rasterization for multi-resolution textures",
-        "authors": "Javier Taibo, Alberto Jaspe Villanueva, Antonio Seoane, Marco Agus, and Luis Hernandez",
+        "authors": "Javier Taibo, Alberto Jaspe-Villanueva, Antonio Seoane, Marco Agus, and Luis Hernandez",
         "year": "2014",
         "type" : "Conference full-paper",
         "conference": "Smart Tools and Applications for Graphics (STAG'14)",
@@ -254,7 +254,7 @@
     {
         "code": "2014-JOCCH-isocam",
         "title": "IsoCam: Interactive Visual Exploration of Massive Cultural Heritage Models on Large Projection Setups",
-        "authors": "Fabio Marton, Marcos Balsa Rodriguez, Fabio Bettio, Marco Agus, Alberto Jaspe Villanueva, and Enrico Gobbetti",
+        "authors": "Fabio Marton, Marcos Balsa Rodriguez, Fabio Bettio, Marco Agus, Alberto Jaspe-Villanueva, and Enrico Gobbetti",
         "year": "2014",
         "type" : "Journal full-paper",
         "journal": "ACM Journal on Computing and Cultural Heritage (JOCCH)",
@@ -262,13 +262,13 @@
         "projects": ["Massive models"],
         "doi": "10.1145/2611519",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Marton:2014:IIV%27",
-        "youtube_video": "X4pj8mDWDeU",
+        "youtube":"https://www.youtube.com/watch?v=X4pj8mDWDeU",
         "bibtex_id": ""
     },
     {
         "code": "2014-EG-poster_indoor_reconstruction",
         "title": "Reconstructing Complex Indoor Environments with Arbitrary Wall Orientations",
-        "authors": "Claudio Mura, Alberto Jaspe Villanueva, Oliver Mattausch, Enrico Gobbetti, and Renato Pajarola",
+        "authors": "Claudio Mura, Alberto Jaspe-Villanueva, Oliver Mattausch, Enrico Gobbetti, and Renato Pajarola",
         "year": "2014",
         "type" : "Poster",
         "conference": "EuroGraphics (EG'14)",
@@ -281,7 +281,7 @@
     {
         "code": "2014-EG-exploremaps",
         "title": "ExploreMaps: Efficient Construction and Ubiquitous Exploration of Panoramic View Graphs of Complex 3D Environments",
-        "authors": "Marco Di Benedetto, Fabio Ganovelli, Marcos Balsa Rodriguez, Alberto Jaspe Villanueva, Roberto Scopigno, and Enrico Gobbetti",
+        "authors": "Marco Di Benedetto, Fabio Ganovelli, Marcos Balsa Rodriguez, Alberto Jaspe-Villanueva, Roberto Scopigno, and Enrico Gobbetti",
         "year": "2014",
         "type" : "Journal full-paper",
         "conference": "Eurographics (EG'14)",
@@ -291,13 +291,13 @@
         "projects": ["Massive models"],
         "doi": "10.1111/cgf.12334",
         "lab_website": "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27DiBenedetto:2014:EEC%27",
-        "youtube_video": "i6X8nykw4Vs",
+        "youtube":"https://www.youtube.com/watch?v=i6X8nykw4Vs",
         "bibtex_id": ""
     },
     {
         "code": "2014-CAG-indoor_architectural_reconstruction",
         "title": "Automatic Room Detection and Reconstruction in Cluttered Indoor Environments with Complex Room Layouts",
-        "authors": "Claudio Mura, Oliver Mattausch, Alberto Jaspe Villanueva, Enrico Gobbetti, and Renato Pajarola",
+        "authors": "Claudio Mura, Oliver Mattausch, Alberto Jaspe-Villanueva, Enrico Gobbetti, and Renato Pajarola",
         "year": "2014",
         "type" : "Journal full-paper",
         "journal": "Computers & Graphics",
@@ -311,7 +311,7 @@
     {
         "code": "2013-EVIS-lightfield_display_calibration",
         "title": "Automatic Geometric Calibration of Projector-based Light-field Displays",
-        "authors": "Marco Agus, Enrico Gobbetti, Alberto Jaspe Villanueva, Giovanni Pintore, and Ruggero Pintus",
+        "authors": "Marco Agus, Enrico Gobbetti, Alberto Jaspe-Villanueva, Giovanni Pintore, and Ruggero Pintus",
         "year": "2013",
         "type" : "Conference full-paper",
         "conference": "EuroVis (EV'13)",
@@ -324,7 +324,7 @@
     {
         "code": "2013-CAD-robust_indoor_reconstruction",
         "title": "Robust Reconstruction of Interior Building Structures with Multiple Rooms under Clutter and Occlusions",
-        "authors": "Claudio Mura, Oliver Mattausch, Alberto Jaspe Villanueva, Enrico Gobbetti, and Renato Pajarola",
+        "authors": "Claudio Mura, Oliver Mattausch, Alberto Jaspe-Villanueva, Enrico Gobbetti, and Renato Pajarola",
         "year": "2013",
         "type" : "Conference full-paper",
         "conference": "IEEE International Conference on Computer-Aided Design and Computer Graphics (CAD'13)",
@@ -347,7 +347,7 @@
         "projects": ["Architectectural Visualization"],
         "doi": "10.4995/var.2012.4448",
         "lab_website": "https://videalab.udc.es/CatedralSantiago",
-        "youtube_video": "zO2vYpmJHiE",
+        "youtube":"https://www.youtube.com/watch?v=zO2vYpmJHiE",
         "bibtex_id": ""
     },
     {
@@ -376,7 +376,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },
     {
@@ -390,7 +390,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },
     {
@@ -405,7 +405,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },
     {
@@ -420,7 +420,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },
     {
@@ -435,7 +435,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },
     {
@@ -450,7 +450,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },        
     {
@@ -465,7 +465,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },        
     {
@@ -480,7 +480,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },        
     {
@@ -495,7 +495,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },        
     {
@@ -510,7 +510,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },        
     {
@@ -525,7 +525,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     },        
     {
@@ -540,7 +540,7 @@
         "projects": [""],
         "doi": "",
         "lab_website": "",
-        "youtube_video": "",
+        "youtube":"https://www.youtube.com/watch?v=",
         "bibtex_id": ""
     }
 ]

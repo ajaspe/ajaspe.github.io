@@ -1,5 +1,6 @@
 import json
 import re
+import os.path
 
 output_folder = "web\\"
 
@@ -15,10 +16,16 @@ with open("index-body.html", "r") as read_file:
     html_index_body = read_file.read()
 
 index_file = open(output_folder + "index.html", "w")
-index_file.write(html_header.replace('<a class="nav-link" href="/">', '<a class="nav-link active" href="/">') + html_index_body + html_footer)
+home_header = html_header.replace('$$$title$$$', 'Alberto Jaspe')
+home_header = home_header.replace('<a class="nav-link" href="/">', '<a class="nav-link active" href="/">')
+
+index_file.write(home_header + html_index_body + html_footer)
 index_file.close()
 
 ############### Publications ###################
+
+publications_header = html_header.replace('$$$title$$$', 'Alberto Jaspe :: Publications')
+publications_header = publications_header.replace('<a class="nav-link" href="/publications.html">', '<a class="nav-link active" href="/publications.html">')
 
 with open("publications-body.html", "r") as read_file:
     html_publications_body = read_file.read()
@@ -61,7 +68,7 @@ html_index_body_filled = html_publications_body.replace("$$$PUBLICATION_LIST$$$"
 
 
 publications_file = open(output_folder + "publications.html", "w")
-publications_file.write(html_header.replace('<a class="nav-link" href="/publications.html">', '<a class="nav-link active" href="/publications.html">') + html_index_body_filled + html_footer)
+publications_file.write(publications_header + html_index_body_filled + html_footer)
 publications_file.close()
 
 ### Every single publication website

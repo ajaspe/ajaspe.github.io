@@ -35,7 +35,7 @@ a {
 }
 a:hover {
     color: rgb(255, 211, 154);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .main-container {
@@ -103,18 +103,23 @@ a:hover {
   transition-duration: 0.1s;
 	}
 
-  .thumb {
-    border: 5px solid #eee;
-    -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-    -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-    -webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-   }
-    
-   .thumb:hover {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-   }
+.thumb {
+  border: 5px solid #eee;
+  -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  /* -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease; */
+  }
+  
+  /* .thumb:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  } */
+
+ .pub_title {
+    color: rgb(255, 166, 93);
+    font-size: 1em;
+  }   
