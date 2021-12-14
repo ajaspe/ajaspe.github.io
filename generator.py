@@ -2,7 +2,7 @@ import json
 import re
 import os.path
 
-output_folder = "web\\"
+output_folder = "docs\\"
 
 with open("header.html", "r") as read_file:
     html_header = read_file.read()
