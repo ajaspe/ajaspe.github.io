@@ -176,29 +176,4 @@ document.getElementById("algo3").onclick = async function () {
     }
 }
 
-document.getElementById("algo4").onclick = async function () {
-
-    // sort frogs by position in the array
-    frogs.sort((a, b) => (a.pos < b.pos) ? 1 : ((b.pos < a.pos) ? -1 : 0))
-
-    // acumulate them in the end
-    for (let i = 0; i < numFrogs; i++) {
-        while (whatNextStep(i) < numSpots ) {
-            stepFrog(i);
-            let waitMs = document.getElementById("speed").max - document.getElementById("speed").value;
-            if(waitMs > 0) await sleep(waitMs);
-        }
-    }
-
-    // sort frogs by  position in the array
-    frogs.sort((a, b) => (a.pos > b.pos) ? 1 : ((b.pos > a.pos) ? -1 : 0))
-
-    // then jump all of them to the end starting by the last one
-    for (let i = 0; i < numFrogs; i++) {
-        stepFrog(i);
-        let waitMs = document.getElementById("speed").max - document.getElementById("speed").value;
-        if(waitMs > 0) await sleep(waitMs);
-    }
-}
-
 
