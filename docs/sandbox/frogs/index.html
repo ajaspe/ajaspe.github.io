@@ -1,0 +1,27 @@
+<HTML>
+    <HEAD>
+
+    </HEAD>
+    <BODY style="background-color:CCCCCC;">
+        <h2>Frogs</h2>
+        <div>
+            <input type="button" id="createDS" value="Create Dataset">
+            NumSpots <input type="text" id="numSpots" value="100">
+            NumFrogs <input type="text" id="numFrogs" value="60">
+            <br>
+            Speed <input type="range" min="0" max="200" value="100" class="slider" id="speed">
+            <br>
+            <input type="button" id="reset" value="Reset">
+            <br>
+            NumAlgSteps <input type="text" id="numAlgSteps" value="0">
+            <br>
+            <input type="button" id="algo1" value="Algorithm 1 (naive)">
+            <input type="button" id="algo2" value="Algorithm 2 (sort+naive)">
+            <input type="button" id="algo3" value="Algorithm 3 (accum end)">
+            <input type="button" id="algo4" value="Algorithm 4 (accum end inv)">
+        </div>
+        <div id="frogs"></div>
+        <script src="frogs.js" type="module"></script>
+       
+    </BODY>
+</HTML>
