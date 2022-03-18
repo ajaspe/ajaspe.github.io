@@ -4,11 +4,14 @@ menu_title: Publications
 layout: default
 ---
 <div class="container py-4 m-0">
-{% for pub in site.pubs reversed %}
+{% for pub in site.publications reversed %}
 <div class="row my-3">
     <div class="col-md-auto">
 		{% assign imgpath = "/publications/" | append: pub.code | append: "-thumb.jpg" %}
-        <img src="{{ imgpath | relative_url}}" class="img-fluid thumb" alt="{{pub.code}} thumbnail" width="100%">
+		{% assign puburl = "/publications/" | append: pub.code %}
+        <a href="{{ puburl | relative_url}}">
+            <img src="{{ imgpath | relative_url}}" class="img-fluid thumb" alt="{{pub.code}} thumbnail" width="100%">
+        </a>
     </div>
    <div class="col">
         <p class="lead">

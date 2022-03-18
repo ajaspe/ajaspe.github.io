@@ -1,3 +1,4 @@
 name: Alberto Jaspe's website
 collections:
- - pubs
+  publications:
+    output: true
