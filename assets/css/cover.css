@@ -1,0 +1,129 @@
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+.btn-secondary {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #EEE;
+  text-decoration: none;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #000;
+  background-color: #999;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  /* box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); */
+}
+
+a {
+    color: rgb(255, 166, 93);
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(255, 211, 154);
+    text-decoration: none;
+}
+
+.main-container {
+  max-width: 66em;
+}
+
+.abstract {
+  text-align: justify;
+} 
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  padding: .5rem;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: 0.3rem solid transparent;
+  text-decoration: none;
+  width: min-content;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.navbar-mybrand {
+  font-family: 'Jost', sans-serif;
+  font-size: 2em;
+  color: rgb(255, 115, 0);
+  text-decoration: none;
+
+}
+
+.navbar-mybrand:hover {
+  font-family: 'Jost', sans-serif;
+  font-size: 2em;
+  color: rgb(255, 194, 115);
+  text-decoration: none;
+  transition-duration: 0.1s;	
+}
+
+	
+.circle-twitter{
+	border-radius: 50%;
+	margin: 0.25em;
+	font-size: 2em;
+  background: #4099FF;
+	color: #FFFFFF;
+  padding: 0.15em 0.17em;
+	}
+
+  	
+.circle-twitter:hover {
+  background: #FFFFFF;
+	color: #4099FF;
+  transition-duration: 0.1s;
+	}
+
+.thumb {
+  border: 5px solid #eee;
+  -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  /* -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease; */
+  }
+  
+  /* .thumb:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  } */
+
+ .pub_title {
+    color: rgb(255, 166, 93);
+    font-size: 1em;
+  } 
+
+  .brand-color {
+	color: rgb(255, 115, 0);
+  }
