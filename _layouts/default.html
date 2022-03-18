@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alberto Jaspe's personal website">
+    <meta name="author" content="Alberto Jaspe">
+    <meta name="keywords" content="alberto jaspe, jaspe-villanueva, research, visualization, computer graphics, rendering, GPU, OpenGL, WebGL"/>
+    <meta name="robots" content="follow"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alberto Jaspe's personal website" />
+    <meta name="twitter:site" content="@albertojaspe" />
+    <meta name="twitter:creator" content="@albertojaspe" />
+    <meta name="twitter:description" content="Personal site of Alberto Jaspe-Villanueva, about Computer Graphics, Visualization and other stuff.">
+    <meta name="twitter:domain" content="https://albertojaspe.net">
+    <meta name="twitter:image" content="https://albertojaspe.net/img/ajaspe.jpg">
+    <meta property="og:url" content="https://albertojaspe.net" />
+    <meta property="og:title" content="Alberto Jaspe's personal website" />
+    <!-- meta property="og:description" content="In the early days, Twitter grew so quickly that it was almost impossible to add new features because engineers spent their time trying to keep the rocket ship from stalling." / -->
+    <meta property="og:image" content="https://albertojaspe.net/img/ajaspe.jpg" />
+
+    <title>{{ page.title }}</title>
+
+    <script src="https://kit.fontawesome.com/ad0678276a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="icon" href="/assets/img/favicon.ico">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#7952b3">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4H2HMGXYB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-D4H2HMGXYB');
+    </script>
+
+
+    <!-- Custom styles for this template -->
+    <link href={{ "/assets/css/cover.css" | relative_url }} rel="stylesheet">
+</head>
+
+
+<body class="d-flex h-100 text-left text-white bg-dark">
+
+    <div class="main-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<header class="mb-auto">
+			<nav class="navbar navbar-expand-md navbar-dark">
+				<div class="container-fluid">
+				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <a class="navbar-mybrand" href="/index.html">{% unless page.menu_title == "Home" %}Alberto Jaspe{% endunless %}</a>
+				  
+				  <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+					<div class="navbar-nav nav-masthead">
+						{% for item in site.pages %}
+						<a class="nav-link {% if item.url == page.url %}active{% endif %}" href="{{ item.url }}">{{ item.menu_title }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			  </nav>			
+		</header>
+
+        <main class="py-3">
+
+            <div class="container">
+				{{ content }}
+            </div>
+		
+        </main>
+
+        <footer class="mt-auto text-white-50 text-center">
+            <p class="lead text-warning"><em>[Website forever in progress since the begining of times]&trade;</em></p>
+</footer>
+    </div>
+
+
+
+</body>
+
+</html>

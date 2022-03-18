@@ -1,0 +1,492 @@
+$$$2005-CAD-creativity_space
+2005-ICC-gid_integration.pdf
+2006-SIGRADI-museo_vacio.pdf
+2007-IJAC-walking_digital_spaces.pdf
+2007-SIGPHI-museo_vacio_patrimonio.pdf
+2007-WSCG-hardware_independet-clipmapping.pdf
+2008-ISICTCH-virtual_reality_museum.pdf
+2008-LaSalle-interfaces_naturales_museos.pdf
+2008-SIGRADI-cuencas_visuales.pdf
+2009-book_EAI-acceleration_ia_gpus.pdf
+2011-EGA-space_perception.pdf
+2012-VAR-inspeccion_catedral.pdf
+2013-CAD-robust_indoor_reconstruction.pdf
+2013-EVIS-ligthfield_display_calibration.pdf
+2014-CAG-indoor_architectural_reconstruction.pdf
+2014-EG-exploremaps.pdf
+2014-EG-poster_indoor_reconstruction.pdf
+2014-JOCCH-isocam.pdf
+2014-STAG-line_rasterization.pdf
+2014-VMV-soar.pdf
+2015-EG-chc+rt.pdf
+2015-JOCCH-montescan.pdf
+2016-book_EBDMOI-pcm.pdf
+2016-book_VCEGDT-pbr_architecture_heritage.pdf
+2016-I3D-ssvdags.pdf
+2016-STAG-crs4_vic.pdf
+2016-VMV-peep.pdf
+2017-JCGT-ssvdags.pdf
+2018-EG-dags_tutorial.pdf
+2018-GCH-rti_evaluation.pdf
+2018-MSE-artworks_spotlight.pdf
+2019-GCH-crack_detection.pdf
+2019-GCH-marlie.pdf
+2019-GGF-cluttered_floor_plans.pdf
+2021-JOCCH-marlie.pdf
+2021-TVC-light_calibration.pdf
+
+@inproceedings{Jaspe:2019:WME,
+    author = {Alberto {Jaspe Villanueva} and Ruggero Pintus and Andrea Giachetti and Enrico Gobbetti},
+    title = {Web-based Multi-layered Exploration of Annotated Image-based Shape and Material Models},
+    booktitle = {The 16th Eurographics Workshop on Graphics and Cultural Heritage},
+    month = {November},
+    year = {2019},
+    abstract = {We introduce a novel versatile approach for letting users explore detailed image-based shape and material models integrated with structured, spatially-associated descriptive information. We represent the objects of interest as a series of registered layers of image-based shape and material information. These layers are represented at multiple scales, and can come out of a variety of pipelines and include both RTI representations and spatially-varying normal and BRDF fields, eventually as a result of fusing multi-spectral data. An overlay image pyramid associates visual annotations to the various scales. The overlay pyramid of each layer can be easily authored at data preparation time using widely available image editing tools. At run-time, an annotated multi-layered dataset is made available to clients by a standard web server. Users can explore these datasets on a variety of devices, from mobile phones to large scale displays in museum installations, using JavaScript/WebGL2 clients capable to perform layer selection, interactive relighting and enhanced visualization, annotation display, and focus-and-context multiple-layer exploration using a lens metaphor. The capabilities of our approach are demonstrated on a variety of cultural heritage use cases involving different kinds of annotated surface and material models. },
+    note = {To appear},
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Jaspe:2019:WME'},
+}
+
+@inproceedings{Dulecha:2019:CDS,
+    author = {Tinsae Dulecha and Andrea Giachetti and Ruggero Pintus and Irina Ciortan and Alberto {Jaspe Villanueva} and Enrico Gobbetti},
+    title = {Crack Detection in Single- and Multi-Light Images of Painted Surfaces using Convolutional Neural Networks},
+    booktitle = {The 16th Eurographics Workshop on Graphics and Cultural Heritage},
+    month = {November},
+    year = {2019},
+    abstract = {Cracks represent an imminent danger for painted surfaces that needs to be alerted before degenerating into more severe aging effects, such as color loss. Automatic detection of cracks from painted surfaces' images would be therefore extremely useful for art conservators; however, classical image processing solutions are not effective to detect them, distinguish them from other lines or surface characteristics. A possible solution to improve the quality of crack detection exploits Multi-Light Image Collections (MLIC), that are often acquired in the Cultural Heritage domain thanks to the diffusion of the Reflectance Transformation Imaging (RTI) technique, allowing a low cost and rich digitization of artworks' surfaces. In this paper, we propose a pipeline for the detection of crack on egg-tempera paintings from multi-light image acquisitions and that can be used as well on single images. The method is based on single or multi-light edge detection and on a custom Convolutional Neural Network able to classify image patches around edge points as crack or non-crack, trained on RTI data. The pipeline is able to classify regions with cracks with good accuracy when applied on MLIC. Used on single images, it can give still reasonable results. The analysis of the performances for different lighting directions also reveals optimal lighting directions. },
+    note = {To appear},
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Dulecha:2019:CDS'},
+}
+
+@Article{Pintore:2019:AMC,
+    author = {Giovanni Pintore and Fabio Ganovelli and Alberto {Jaspe Villanueva} and Enrico gobbetti},
+    title = {Automatic modeling of cluttered multi-room floor plans from panoramic images},
+    journal = {Computers Graphics Forum},
+    volume = {38},
+    number = {7},
+    year = {2019},
+    abstract = { We present a novel and light-weight approach to capture and reconstruct structured 3D models of multi-room floor plans. Starting from a small set of registered panoramic images, we automatically generate a 3D layout of the rooms and of all the main objects inside. Such a 3D layout is directly suitable for use in a number of real-world applications, such as guidance, location, routing, or content creation for security and energy management. Our novel pipeline introduces several contributions to indoor reconstruction from purely visual data. In particular, we automatically partition panoramic images in a connectivity graph, according to the visual layout of the rooms, and exploit this graph to support object recovery and rooms boundaries extraction. Moreover, we introduce a plane-sweeping approach to jointly reason about the content of multiple images and solve the problem of object inference in a top-down 2D domain. Finally, we combine these methods in a fully automated pipeline for creating a structured 3D model of a multi-room floor plan and of the location and extent of clutter objects. These contribution make our pipeline able to handle cluttered scenes with complex geometry that are challenging to existing techniques. The effectiveness and performance of our approach is evaluated on both real-world and synthetic models. },
+    note = {To appear},
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Pintore:2019:AMC'},
+}
+
+@PhdThesis{Jaspe:2018:SE3,
+    author = {Alberto {Jaspe Villanueva}},
+    title = {Scalable Exploration of 3D Massive Models},
+    school = {PhD Programme in Information and Communications Technology, University of A Coru{\~n}a, Spain},
+    year = {2018},
+    abstract = { This thesis introduces scalable techniques that advance the state-of-the-art in massive model creation and exploration. Concerning model creation, we present methods for improving reality-based scene acquisition and processing, introducing an efficient implementation of scalable out-of-core point clouds and a data-fusion approach for creating detailed colored models from cluttered scene acquisitions. The core of this thesis concerns enabling technology for the exploration of general large datasets. Two novel solutions are introduced. The first is an adaptive out-of-core technique exploiting the GPU rasterization pipeline and hardware occlusion queries in order to create coherent batches of work for localized shader-based ray tracing kernels, opening the door to out-of-core ray tracing with shadowing and global illumination. The second is an aggressive compression method that exploits redundancy in large models to compress data so that it fits, in fully renderable format, in GPU memory. The method is targeted to voxelized representations of 3D scenes, which are widely used to accelerate visibility queries on the GPU. Compression is achieved by merging subtrees that are identical through a similarity transform and by exploiting the skewed distribution of references to shared nodes to store child pointers using a variable bit-rate encoding The capability and performance of all methods are evaluated on many very massive real-world scenes from several domains, including cultural heritage, engineering, and gaming. },
+	institution={University of A Coru{\~n}a (UDC)},
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Jaspe:2018:SE3'},
+}
+
+@Article{Ciortan:2018:ASC,
+    author = {Irina Ciortan and Tinsae Dulecha and Andrea Giachetti and Ruggero Pintus and Alberto {Jaspe Villanueva} and Enrico Gobbetti},
+    title = {Artworks in the Spotlight: Characterization with a Multispectral Dome},
+    journal = {IOP Conference Series: Materials Science and Engineering},
+    volume = {364},
+    number = {1},
+    pages = {012025},
+    year = {2018},
+    abstract = { We describe the design and realization of a novel multispectral light dome system and the associated software control and calibration tools used to process the acquired data, in a specialized pipeline geared towards the analysis of shape and appearance properties of cultural heritage items. The current prototype dome, built using easily available electronic and lighting components, can illuminate a target of size 20cm x 20cm from 52 directions uniformly distributed in a hemisphere. From each illumination direction, 3 LED lights cover the visible range of the electromagnetic spectrum, as well as long ultraviolet and near infrared. A dedicated control system implemented on Arduino boards connected to a controlling PC fully manages all lighting and a camera to support automated acquisition. The controlling software also allows real-time adjustment of the LED settings, and provides a live-view of the to-be-captured scene. We approach per-pixel light calibration by placing dedicated targets in the focal plane: four black reflective spheres for back-tracing the position of the LED lamps and a planar full-frame white paper to correct for the non-uniformity of radiance. Once the light calibration is safeguarded, the multispectral acquisition of an artwork can be completed in a matter of minutes, resulting in a spot-wise appearance profile, that stores at pixel level the per-frequency intensity value together with the light direction vector. By performing calibrated acquisition of multispectral Reflectance Transformation Imaging (RTI), with our analysis system it is possible to recover surface normals, to characterize matte and specular behavior of materials, and to explore different surface layers thanks to UV-VIS-IR LED light separation. To demonstrate the system features, we present the outcomes of the on-site capture of metallic artworks at the National Archaeological Museum of Cagliari, Sardinia. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Ciortan:2018:ASC'},
+}
+
+@InProceedings{Pintus:2018:OSE,
+    author = {Ruggero Pintus and Tinsae Dulecha and Alberto {Jaspe Villanueva} and Andrea Giachetti and Irina Ciortan and Enrico Gobbetti},
+    title = {Objective and Subjective Evaluation of Virtual Relighting from Reflectance Transformation Imaging Data},
+    booktitle = {The 15th Eurographics Workshop on Graphics and Cultural Heritage},
+    pages = {87--96},
+    month = {October},
+    year = {2018},
+    abstract = { Reflectance Transformation Imaging (RTI) is widely used to produce relightable models from multi-light image collections. These models are used for a variety of tasks in the Cultural Heritage field. In this work, we carry out an objective and subjective evaluation of RTI data visualization. We start from the acquisition of a series of objects with different geometry and appearance characteristics using a common dome-based configuration. We then transform the acquired data into relightable representations using different approaches: PTM, HSH, and RBF. We then perform an objective error estimation by comparing ground truth images with relighted ones in a leave-one-out framework using PSNR and SSIM error metrics. Moreover, we carry out a subjective investigation through perceptual experiments involving end users with a variety of backgrounds. Objective and subjective tests are shown to behave consistently, and significant differences are found between the various methods. While the proposed analysis has been performed on three common and state-of-the-art RTI visualization methods, our approach is general enough to be extended and applied in the future to new developed multi-light processing pipelines and rendering solutions, to assess their numerical precision and accuracy, and their perceptual visual quality. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Pintus:2018:OSE'},
+}
+
+@InProceedings{Assarsson:2018:VDM,
+    author = {Ulf Assarsson and Markus Billeter and Dan Dolonius and Elmar Eisemann and Alberto {Jaspe Villanueva} and Leonardo Scandolo and Erik Sintorn},
+    editor = {Tobias Ritschel and Alexandru Telea},
+    title = {Voxel DAGs and Multiresolution Hierarchies: From Large-Scale Scenes to Pre-computed Shadows},
+    booktitle = {Proc. EUROGRAPHICS Tutorials},
+    month = {April},
+    year = {2018},
+    abstract = { In this tutorial, we discuss voxel DAGs and multiresolution hierarchies, which are representations that can encode large volumes of data very efficiently. Despite a significant compression ratio, an advantage of these structures is that their content can be efficiently accessed in real-time. This property enables various applications. We begin the tutorial by introducing the concepts of sparsity and of coherency in voxel structures, and explain how a directed acyclic graph (DAG) can be used to represent voxel geometry in a form that exploits both aspects, while remaining usable in its compressed from for e.g. ray casting. In this context, we also discuss extensions that cover the time domain or consider an advanced encoding strategies exploiting symmetries and entropy. We then move on to voxel attributes, such as colors, and explain how to integrate such information with the voxel DAGs. We will provide implementation details and present methods for efficiently constructing the DAGs and also cover how to efficiently access the data structures with e.g. GPU-based ray tracers. The course will be rounded of with a segment on applications. We highlight a few examples and show their results. Pre-computed shadows are a special application, which will be covered in detail. In this context, we also explain how some of previous ideas contribute to multi-resolution hierarchies, which gives an outlook on the potential generality of the presented solutions. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Assarsson:2018:VDM'},
+}
+
+@Article{Jaspe:2017:SSV,
+    author = {Alberto {Jaspe Villanueva} and Fabio Marton and Enrico Gobbetti},
+    title = {{Symmetry-aware Sparse Voxel DAGs} ({SSVDAGs}) for compression-domain tracing of high-resolution geometric scenes},
+    journal = {Journal of Computer Graphics Techniques},
+    volume = {6},
+    number = {2},
+    pages = {1--30},
+    year = {2017},
+    issn = {2331-7418},
+    abstract = { Voxelized representations of complex 3D scenes are widely used nowadays to accelerate visibility queries in many GPU rendering techniques. Since GPU memory is limited, it is important that these data structures can be kept within a strict memory budget. Recently, directed acyclic graphs (DAGs) have been successfully introduced to compress sparse voxel octrees (SVOs), but they are limited to sharing identical regions of space. In this paper, we show that a more efficient lossless compression of geometry can be achieved, while keeping the same visibility-query performance, by merging subtrees that are identical through a similarity transform, and by exploiting the skewed distribution of references to shared nodes to store child pointers using a variabile bit-rate encoding. We also describe how, by selecting plane reflections along the main grid directions as symmetry transforms, we can construct highly compressed GPU-friendly structures using a fully out-of-core method. Our results demonstrate that state-of-the-art compression and real-time tracing performance can be achieved on high-resolution voxelized representations of real-world scenes of very different characteristics, including large CAD models, 3D scans, and typical gaming models, leading, for instance, to real-time GPU in-core visualization with shading and shadows of the full Boeing 777 at sub-millimetric precision. This article is based on an earlier work: \textit{SSVDAGs: Symmetry-aware Sparse Voxel DAGs, in Proceedings of the 20th ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games (c) ACM, 2016. https://doi.org/10.1145/2856400.2856420.} We include here a more thorough exposition, a description of alternative construction and tracing methods, as well as additional results. In order to facilitate understanding, evaluation and extensions, the full source code of the method is provided as accompanying material. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Jaspe:2017:SSV'},
+}
+
+@InCollection{Mures:2016:PCM,
+    author = {Omar A. Mures and Alberto {Jaspe Villanueva} and Emilio J. Padr{\'o}n and Juan R. Rabu{\~n}al},
+    editor = {Manoj Kumar Singh and Dileep Kumar G.},
+    title = {Point Cloud Manager: Applications of a Middleware for Managing Huge Point Clouds},
+    booktitle = {Effective Big Data Management and Opportunities for Implementation},
+    chapter = {13},
+    publisher = {IGI Global},
+    month = {June},
+    year = {2016},
+    isbn = {9781522501824},
+    abstract = { Recent advances in acquisition technologies, such as LIDAR and photogrammetry, have brought back to popularity 3D point clouds in a lot of fields of application of Computer Graphics: Civil Engineering, Architecture, Topography, etc. These acquisition systems are producing an unprecedented amount of geometric data with additional attached information, resulting in huge datasets whose processing and storage requirements exceed usual approaches, presenting new challenges that can be addressed from a Big Data perspective by applying High Performance Computing and Computer Graphics techniques. This chapter presents a series of applications built on top of Point Cloud Manager (PCM), a middleware that provides an abstraction for point clouds with arbitrary attached data and makes it easy to perform out-of-core operations on them on commodity CPUs and GPUs. Hence, different kinds of real world applications are tackled, showing both real-time and offline examples, and render-oriented and computation-related operations as well. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Mures:2016:PCM'},
+}
+
+
+
+@InCollection{Mures:2016:VRP,
+    author = {Omar A. Mures and Alberto {Jaspe Villanueva} and Emilio J. Padr{\'o}n and Juan R. Rabu{\~n}al},
+    editor = {Giuseppe Amoruso},
+    title = {Virtual Reality and Point-based Rendering in Architecture and Heritage},
+    booktitle = {Handbook of Research on Visual Computing and Emerging Geometrical Design Tools},
+    chapter = {4},
+    publisher = {IGI Global},
+    month = {April},
+    year = {2016},
+    isbn = {9781522500292},
+    abstract = { Virtual Reality has been a hot research topic since the appearance of computer graphics, but lately there have been huge advances in the form of high quality and affordable commodity hardware, for example with headsets such as the Oculus Rift. The Rift is an upcoming head-mounted virtual reality display, which will soon be available for the mainstream, along with other similar new VR hardware: Sulon Cortex, CastAR, Altergaze, etc. These new devices also offer new possibilities in the field of Augmented Reality, up to now limited to tablets and smartphones as far as commodity hardware is concerned. In fact, Virtual Reality and Augmented Reality technologies have now achieved the point where it can effectively be applied in in conjunction with the aforementioned workflow will yield great advantages for architects, engineers and heritage professionals alike. This article shows new possibilities of application for Virtual Reality and Augmented Reality with massive point clouds in real world architectural and heritage workflows. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Mures:2016:VRP'},
+}
+
+
+@InProceedings{Gobbetti:2016:CVC,
+    author = {Enrico Gobbetti and Marco Agus and Fabio Bettio and Alberto {Jaspe Villanueva} and Fabio Marton and Ruggero Pintus and Giovanni Pintore and Antonio Zorcolo},
+    title = {CRS4 Visual Computing},
+    booktitle = {STAG 2016 Lab Presentations},
+    month = {October},
+    year = {2016},
+    abstract = { This lab presentation briefly describes the Visual Computing group of the CRS4 research center. Established in 1996, the group primarily focuses on the study, development, and application of technology for acquisition, storage, processing, distribution, and interactive exploration of complex objects and environments. Research is widely published in major journals and conferences, and many of the developed technologies are used (or have been used) in as diverse real-world applications as internet geoviewing, scientific data analysis, surgical training, and cultural heritage study and valorization. },
+    note = {On USB stick only},
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Gobbetti:2016:CVC'},
+}
+
+
+@InProceedings{Agus:2016:PPE,
+    author = {Marco Agus and Alberto {Jaspe Villanueva} and Giovanni Pintore and Enrico Gobbetti},
+    title = {{PEEP}: Perceptually Enhanced Exploration of Pictures},
+    booktitle = {Proc. 21st International Workshop on Vision, Modeling and Visualization (VMV)},
+    pages = {93--100},
+    month = {October},
+    year = {2016},
+    abstract = { We present a novel simple technique for rapidly creating and presenting interactive immersive 3D exploration experiences of 2D pictures and images of natural and artificial landscapes. Various application domains, ranging from virtual exploration of works of art to street navigation systems, can benefit from the approach. The method, dubbed PEEP, is motivated by the perceptual characteristics of the human visual system in interpreting perspective cues and detecting relative angles between lines. It applies to the common perspective images with zero or one vanishing points, and does not require the extraction of a precise geometric description of the scene. Taking as input a single image without other information, an automatic analysis technique fits a simple but perceptually consistent parametric 3D representation of the viewed space, which is used to drive an indirect constrained exploration method capable to provide the illusion of 3D exploration with realistic monocular (perspective and motion parallax) and binocular (stereo) depth cues. The effectiveness of the method is demonstrated on a variety of casual pictures and exploration configurations, including mobile devices. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Agus:2016:PPE'},
+}
+
+
+@InProceedings{Jaspe:2016:SSS,
+    author = {Alberto {Jaspe Villanueva} and Fabio Marton and Enrico Gobbetti},
+    title = {{SSVDAGs}: Symmetry-aware {Sparse Voxel DAGs}},
+    booktitle = {Proc. ACM i3D},
+    pages = {7--14},
+    month = {February},
+    year = {2016},
+    abstract = { Voxelized representations of complex 3D scenes are widely used nowadays to accelerate visibility queries in many GPU rendering techniques. Since GPU memory is limited, it is important that these data structures can be kept within a strict memory budget. Recently, directed acyclic graphs (DAGs) have been successfully introduced to compress sparse voxel octrees (SVOs), but they are limited to sharing identical regions of space. In this paper, we show that a more efficient lossless compression of geometry can be achieved, while keeping the same visibility-query performance, by merging subtrees that are identical through a similarity transform, and by exploiting the skewed distribution of references to shared nodes to store child pointers using a variabile bit-rate encoding. We also describe how, by selecting plane reflections along the main grid directions as symmetry transforms, we can construct highly compressed GPU-friendly structures using a fully out-of-core method. Our results demonstrate that state-of-the-art compression and real-time tracing performance can be achieved on high-resolution voxelized representations of real-world scenes of very different characteristics, including large CAD models, 3D scans, and typical gaming models, leading, for instance, to real-time GPU in-core visualization with shading and shadows of the full Boeing 777 at sub-millimetric precision. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Jaspe:2016:SSS'},
+}
+
+@TechReport{Gobbetti:2016:OSR,
+    author = {Enrico Gobbetti and Marcos {Balsa Rodriguez} and Jose {Diaz Iriberri} and Alberto {Jaspe Villanueva}},
+    title = {Output-sensitive Rendering on Lighf Field Displays},
+    institution = {EU Project DIVA (FP7 290227)},
+    type = {Deliverable},
+    number = {D3.1},
+    year = {2015},
+    abstract = { This deliverable reports on the research results achieved in the field of Output Sensitive Rendering Techniques, covered in the projectâ€™s Work Package 3. We list the contributions from the main involved partners, we summarize the project publications, classifying them in terms of the main data kind handled, list the awards received, and summarize the events that have used the developed technology. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Gobbetti:2016:OSR'},
+}
+
+
+@Article{Mattausch:2015:CCH,
+    author = {Oliver Mattausch and Jiri Bittner and Alberto {Jaspe Villanueva} and Enrico Gobbetti and Michael Wimmer and Renato Pajarola},
+    title = {{CHC+RT}: Coherent Hierarchical Culling for Ray Tracing},
+    journal = {Computer Graphics Forum},
+    volume = {34},
+    number = {2},
+    pages = {537--548},
+    year = {2015},
+    abstract = { We propose a new technique for in-core and out-of-core GPU ray tracing using a generalization of hierarchical occlusion culling in the style of the CHC++ method. Our method exploits the rasterization pipeline and hardware occlusion queries in order to create coherent batches of work for localized shader-based ray-tracing kernels. By combining hierarchies in both ray space and object space, the method is able to share intermediate traversal results among multiple rays. We exploit temporal coherence among similar ray sets between frames and also within the given frame. A suitable management of the current visibility state makes it possible to benefit from occlusion culling for less coherent ray types like diffuse reflections. Since large scenes are still a challenge for modern GPU ray tracers, our method is most useful for scenes with medium to high complexity, especially since our method inherently supports ray tracing highly complex scenes that do not fit in GPU memory. For in-core scenes our method is comparable to CUDA ray tracing and performs up to 5.94 times better than pure shader-based ray tracing. },
+    note = {Proc. Eurographics 2015},
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Mattausch:2015:CCH'},
+}
+
+@Article{Bettio:2015:MES,
+    author = {Fabio Bettio and Alberto {Jaspe Villanueva} and Emilio Merella and Fabio Marton and Enrico Gobbetti and Ruggero Pintus},
+    title = {{Mont'e Scan}: Effective Shape and Color Digitization of Cluttered 3D Artworks},
+    journal = {ACM Journal on Computing and Cultural Heritage},
+    volume = {8},
+    number = {1},
+    pages = {4:1--4:23},
+    year = {2015},
+    abstract = { We propose an approach for improving the digitization of shape and color of 3D artworks in a cluttered environment using 3D laser scanning and flash photography. In order to separate clutter from acquired material, semi-automated methods are employed to generate masks used to segment the range maps and the color photographs. This approach allows the removal of unwanted 3D and color data prior to the integration of acquired data in a 3D model. Sharp shadows generated by flash acquisition are easily handled by this masking process, and color deviations introduced by the flash light are corrected at the color blending step by taking into account the geometry of the object. The approach has been evaluated on a large scale acquisition campaign of the Mont'e Prama complex. This site contains an extraordinary collection of stone fragments from the Nuragic era, which depict small models of prehistoric nuraghe (cone-shaped stone towers), as well as larger-than-life archers, warriors, and boxers. The acquisition campaign has covered 37 statues mounted on metallic supports. Color and shape were acquired at a resolution of 0.25mm, which resulted in over 6200 range maps (about 1.3G valid samples) and 3817 photographs. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Bettio:2014:MES'},
+}
+
+@Article{Mura:2014:ARD,
+    author = {Claudio Mura and Oliver Mattausch and Alberto {Jaspe Villanueva} and Enrico Gobbetti and Renato Pajarola},
+    title = {Automatic Room Detection and Reconstruction in Cluttered Indoor Environments with Complex Room Layouts},
+    journal = {Computers \& Graphics},
+    volume = {44},
+    pages = {20--32},
+    publisher = {Elsevier Science Publishers B. V.},
+    address = {Amsterdam, The Netherlands},
+    month = {November},
+    year = {2014},
+    abstract = { We present a robust approach for reconstructing the main architectural structure of complex indoor environments given a set of cluttered 3D input range scans. Our method uses an efficient occlusion-aware process to extract planar patches as candidate walls, separating them from clutter and coping with missing data, and automatically extracts the individual rooms that compose the environment by applying a diffusion process on the space partitioning induced by the candidate walls. This diffusion process, which has a natural interpretation in terms of heat propagation, makes our method robust to artifacts and other imperfections that occur in typical scanned data of interiors. For each room, our algorithm reconstructs an accurate polyhedral model by applying methods from robust statistics. We demonstrate the validity of our approach by evaluating it on both synthetic models and real-world 3D scans of indoor environments. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Mura:2014:ARD'},
+}
+@Article{Marton:2014:IIV,
+    author = {Fabio Marton and Marcos {Balsa Rodriguez} and Fabio Bettio and Marco Agus and Alberto {Jaspe Villanueva} and Enrico Gobbetti},
+    title = {{IsoCam}: Interactive Visual Exploration of Massive Cultural Heritage Models on Large Projection Setups},
+    journal = {ACM Journal on Computing and Cultural Heritage},
+    volume = {7},
+    number = {2},
+    pages = {Article 12},
+    month = {June},
+    year = {2014},
+    abstract = { We introduce a novel user interface and system for exploring extremely detailed 3D models in a museum setting. 3D models and associated information are presented on a large projection surface controlled by a touch-enabled surface placed at a suitable distance in front of it. Our indirect user interface, dubbed IsoCam, combines an object-aware interactive camera controller with an interactive point-of-interest selector and is implemented within a scalable implementation based on multiresolution structures shared between the rendering and user interaction subsystems. The collision-free camera controller automatically supports the smooth transition from orbiting to proximal navigation, by exploiting a distance-field representation of the 3D object. The point-of-interest selector exploits a specialized view similarity computation to propose a few nearby easily reachable interesting 3D views from a large database, move the camera to the user-selected point of interest, and provide extra information through overlaid annotations of the target view. The capabilities of our approach have been demonstrated in a public event attended by thousands of people, which were offered the possibility to explore sub-millimetric reconstructions of 38 stone statues of the Mont'e Prama Nuragic complex, depicting larger-than-life human figures, and small models of prehistoric Nuraghe (cone-shaped stone towers). A follow-up of this work, using 2.5m-high projection screens, is now included in permanent exhibitions at two Archeological Museums. Results of a thorough user evaluation, involving quantitative and subjective measurements, are discussed. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Marton:2014:IIV'},
+}
+
+@Article{DiBenedetto:2014:EEC,
+    author = {Marco {Di Benedetto} and Fabio Ganovelli and Marcos {Balsa Rodriguez} and Alberto {Jaspe Villanueva} and Roberto Scopigno and Enrico Gobbetti},
+    title = {{ExploreMaps}: Efficient Construction and Ubiquitous Exploration of Panoramic View Graphs of Complex {3D} Environments},
+    journal = {Computer Graphics Forum},
+    volume = {33},
+    number = {2},
+    pages = {459--468},
+    year = {2014},
+    abstract = { We introduce a novel efficient technique for automatically transforming a generic renderable 3D scene into a simple graph representation named ExploreMaps, where nodes are nicely placed point of views, called probes, and arcs are smooth paths between neighboring probes. Each probe is associated with a panoramic image enriched with preferred viewing orientations, and each path with a panoramic video. Our GPU-accelerated unattended construction pipeline distributes probes so as to guarantee coverage of the scene while accounting for perceptual criteria before finding smooth, good looking paths between neighboring probes. Images and videos are precomputed at construction time with off-line photorealistic rendering engines, providing a convincing 3D visualization beyond the limits of current real-time graphics techniques. At run-time, the graph is exploited both for creating automatic scene indexes and movie previews of complex scenes and for supporting interactive exploration through a low-DOF assisted navigation interface and the visual indexing of the scene provided by the selected viewpoints. Due to negligible CPU overhead and very limited use of GPU functionality, real-time performance is achieved on emerging web-based environments based on WebGL even on low-powered mobile devices. },
+    note = {Proc. Eurographics 2014},
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='DiBenedetto:2014:EEC'},
+}
+
+@InProceedings{Agus:2014:SSO,
+    author = {Marco Agus and Enrico Gobbetti and Alberto {Jaspe Villanueva} and Claudio Mura and Renato Pajarola},
+    title = {SOAR: Stochastic Optimization for Affine global point set Registration},
+    booktitle = {Proc. 19th International Workshop on Vision, Modeling and Visualization (VMV)},
+    pages = {103-110},
+    month = {October},
+    year = {2014},
+    abstract = { We introduce a stochastic algorithm for pairwise affine registration of partially overlapping 3D point clouds with unknown point correspondences. The algorithm recovers the globally optimal scale, rotation, and translation alignment parameters and is applicable in a variety of difficult settings, including very sparse, noisy, and outlier-ridden datasets that do not permit the computation of local descriptors. The technique is based on a stochastic approach for the global optimization of an alignment error function robust to noise and resistant to outliers. At each optimization step, it alternates between stochastically visiting a generalized BSP-tree representation of the current solution landscape to select a promising transformation, finding point-to-point correspondences using a GPU-accelerated technique, and incorporating new error values in the BSP tree. In contrast to previous work, instead of simply constructing the tree by guided random sampling, we exploit the problem structure through a low-cost local minimization process based on analytically solving absolute orientation problems using the current correspondences. We demonstrate the quality and performance of our method on a variety of large point sets with different scales, resolutions, and noise characteristics. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Agus:2014:SSO'},
+}
+
+
+@inproceedings{Taibo:2014:PLR,
+    author = {Javier Taibo and Alberto {Jaspe Villanueva} and Antonio Seoane and Marco Agus and Luis Hernandez},
+    title = {Practical line rasterization for multi-resolution textures},
+    booktitle = {Proc. Smart Tools and Apps for Graphics (STAG)},
+    pages = {9--18},
+    month = {September},
+    year = {2014},
+    abstract = {Draping 2D vectorial information over a 3D terrain elevation model is usually performed by real-time rendering to texture. In the case of linear feature representation, there are several specific problems using the texturing approach, specially when using multi-resolution textures. These problems are related to visual quality, aliasing artifacts and rendering performance. In this paper, we address the problems of 2D line rasterization on a multi-resolution texturing engine from a pragmatical point of view; some alternative solutions are presented, compared and evaluated. For each solution we have analyzed the visual quality, the impact on the rendering performance and the memory consumption. The study performed in this work is based on an OpenGL implementation of a clipmap-based multi-resolution texturing system, and is oriented towards the use of inexpensive consumer graphics hardware.},
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Taibo:2014:PLR'},
+}
+
+@InProceedings{Mura:2014:RCI,
+    author = {Claudio Mura and Alberto {Jaspe Villanueva} and Oliver Mattausch and Enrico Gobbetti and Renato Pajarola},
+    title = {Reconstructing Complex Indoor Environments with Arbitrary Wall Orientations},
+    booktitle = {Proc. Eurographics Posters},
+    pages = {19--20},
+    publisher = {Eurographics Association},
+    month = {April},
+    year = {2014},
+    abstract = { Reconstructing the architectural shape of indoor environments is a problem that is gaining increasing attention in the field of computer graphics. While some solutions have been proposed in recent years, cluttered environments with multiple rooms and non-vertical walls still represent a challenging input for state-of-the-art methods. We propose an occlusions-aware pipeline that extends current solutions to work with complex environments with arbitrary wall orientations. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Mura:2014:RCI'},
+}
+
+@InProceedings{Mura:2013:RRI,
+    author = {Claudio Mura and Oliver Mattausch and Alberto {Jaspe Villanueva} and Enrico Gobbetti and Renato Pajarola},
+    title = {Robust Reconstruction of Interior Building Structures with Multiple Rooms under Clutter and Occlusions},
+    booktitle = {Proc. 13th International Conference on Computer-Aided Design and Computer Graphics},
+    pages = {52--59},
+    publisher = {IEEE},
+    month = {November},
+    year = {2013},
+    abstract = { We present a robust approach for reconstructing the architectural structure of complex indoor environments given a set of cluttered input scans. Our method first uses an efficient occlusion-aware process to extract planar patches as potential wall segments, separating them from clutter and coping with missing data. Using a diffusion process to further increase its robustness, our algorithm is able to reconstruct a clean architectural model from those potential wall segments. To our knowledge, this is the first indoor reconstruction method which goes beyond a binary classification and auto- matically recognizes different rooms as separate components. We demonstrate the validity of our approach by testing it on both synthetic models and real-world 3d scans of indoor environments. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Mura:2013:RRI'},
+}
+
+
+@InProceedings{Agus:2013:CDS,
+    author = {Marco Agus and Enrico Gobbetti and Alberto {Jaspe Villanueva} and Giovanni Pintore and Ruggero Pintus},
+    title = {Automatic Geometric Calibration of Projector-based Light-field Displays},
+    booktitle = {Proc. Eurovis Short Papers},
+    organization = {Eurographics Association},
+    pages = {1--5},
+    month = {June},
+    year = {2013},
+    abstract = { Continuous multiview (light-field) projection-based displays employ an array of projectors, mirrors, and a selectively transmissive screen to produce a light field. By appropriately modeling the display geometry, the light beams can emulate the emission from physical objects at fixed spatial locations, providing multiple freely moving viewers the illusion of interacting with floating objects. This paper presents a novel calibration method for this class of displays using a single uncalibrated camera and four fiducial markers. Calibration starts from a simple parametric description of the display layout. First, individual projectors are calibrated through parametric optimization of an idealized pinhole model. Then, the overall display and projector parameterization is globally optimized. Finally, independently for each projector, remaining errors are corrected through a rational 2D warping function. The final parameters are available to rendering engines to quickly compute forward and backward projections. The technique is demonstrated in the calibration of a large-scale horizontal-parallax-only 35MPixels light field display. },
+    url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Agus:2013:CDS'},
+}
+
+@Article{Barneche:2012:AIE,
+  title={Aplicaci{\'o}n para la inspecci{\'o}n espacial, volumtrica y seccional interactiva de la Catedral de Santiago de Compostela},
+  author={Viana Barneche and Luis {Hern{\'a}ndez Ib{\'a}{\~n}ez} and Alberto {Jaspe Villanueva} and Gustavo {Fari{\~n}a Fern{\'a}ndez}},
+	journal = {Virtual Archaeology Review},
+	volume = {3},
+	number = {6},
+	year = {2012},
+	keywords = {Cathedral of Santiago; Radiosity; Real-time; Multitactile interaction},
+	abstract = {This paper describes the design, production and implementation of an application for the formal analysis of the Cathedral of Santiago de Compostela. The geometrical complexity of the model of this building for the level of detail required, derived from the profusion of stylistic elements present, that constitutes one of its signs of identity leaded to use the progressive refinement radiosity method to generate a model which could be handled in real-time, adding the visual quality of globalillumination, to be implemented in an application that allows the user to interactively inspect and cross-section the model.},
+	issn = {1989-9947},
+	pages = {78--82},
+	doi = {10.4995/var.2012.4448},
+	url = {https://polipapers.upv.es/index.php/var/article/view/4448},
+	language={Spanish}, 
+}
+
+@Article{Hernandez:2011:SPA,
+  title={Space perception in Architectural Visualization through Immersive Virtual Reality},
+  author={Luis Hern{\'a}ndez and Javier Taibo and Antonio Soane and Alberto {Jaspe Villanueva}},
+  journal={Revista de Expresi{\'o}n Gr{\'a}fica Arquitect{\'o}nica (EGA)},
+  number={18},
+  pages={252--261},
+  year={2011},
+  issn={1133-6137},
+  abstract={Immersive virtual reality constitutes a powerful tool for the vivid exploration of virtual spaces.The feeling of presence producedin the user by the action of seeing the digital space just pointing the view in any direction is greatly enhanced when adding the capability of walking physically during the experience. This paper describes aspects related with the experimentation of this hybrid space, real and virtual at the same time, that was implemented by the authors in an immersive virtual reality museum installation called 'The Empty Museum'.},
+  doi={10.4995/ega.2011.1110},
+  url={https://polipapers.upv.es/index.php/EGA/article/view/1110/1179},
+}
+
+@InCollection{Seoane:2009:AIA,
+  title={Acceleration of IA algorithms using GPUs},
+  author={Antonio Seoane and Alberto {Jaspe Villanueva}},
+  booktitle={Encyclopedia of Artificial Intelligence},
+  editor={Juan R. {Rabu{\~n}al Dopico} and Julian Dorado and Alejandro Pazos},
+  pages={873--878},
+  year={2009},
+  publisher={IGI Global},
+  abstract={Graphics Processing Units (GPUs) have been evolving very fast, turning into high performance programmable processors. Though GPUs have been designed to compute graphics algorithms, their power and flexibility makes them a very attractive platform for generalpurpose computing. In the last years they have been used to accelerate calculations in physics, computer vision, artificial intelligence, database operations, etc. (Owens, 2007). In this paper an approach to general purpose computing with GPUs is made, followed by a description of artificial intelligence algorithms based on Artificial Neural Networks (ANN) and Evolutionary Computation (EC) accelerated using GPU.},
+  doi={10.4018/978-1-59904-849-9.ch129},
+  url={https://www.igi-global.com/chapter/algorithm-acceleration-using-gpus/10346},
+}
+
+
+@InProceedings{Hernandez:2008:IIV,
+  title={Interactive installations and virtual reality in the museum. The Galicia Dixital experience},
+  author={Luis Hern{\'a}ndez and Javier Taibo and Antonio Seoane and Roc{\'i}o {Mihura L{\'o}pez} and Alberto {Jaspe Villanueva}},
+  booktitle={Proc. International Symposium on Information and Communication Technologies in Cultural Heritage},
+  abstract={Recently, historical museums and other exhibitions are becoming more aware of the effectiveness of virtual reality spaces used along with other technologies to meet the challenge to offer new and complex experiences to the general public. Immersion and interaction together define the axis of such experiences, provided with new kinds of contents and singular applications designed for each specific case. This paper describes the use of a set of computer graphic techniques which range from computer animation to simulation and virtual reality applied to display cultural contents in a permanent exhibition called Galicia Dixital located in Santiago de Compostela (Spain). This exhibition is devoted to show Galician culture, history, traditions and art through the medium of new technologies. This way, visitors have the opportunity to acquire knowledge of cultural and technological topics at the same time.},
+  pages={107--118},
+  year={2008},
+  organization={Earthlab},
+  url={https://books.google.it/books?id=e_UWDeEca0IC&lpg=PA113&hl=es&pg=PA107},
+}
+
+@InCollection{Seoane;2008:MLT,
+  title={Mapping Large Textures for Outdoor Terrain Rendering},
+  author={Antonio Seoane and Javier Taibo and Luis Hern{\'a}ndez and Alberto {Jaspe Villanueva}},
+  booktitle={Game Programming Gems},
+  editor={Scott Jacobs},
+  volume={7},
+  pages={435--446},
+  year={2008},
+  isbn={9781584505273},
+  publisher={Charles River Media}
+}
+
+@Article{Ibanez:2008:INC,
+  title={Interfaces naturales para contenidos digitales interactivos en museos. La experiencia de Galicia Dixital},
+  author={Luis Hernandez and Javier Taibo and Antonio Seoane and Alberto {Jaspe Villanueva} and Roc{\'i}o {Mihura L{\'o}pez}},
+  journal={Revista del Centro de Investigaci{\'o}n, Universidad La Salle},
+  abstract={This paper describes the authors’ experience in the design and implementation of three interactive installations for museums based in the natural interfaces concept; that is, those that make use of the ways of communication used by humans in their natural relation with their environment by means of common abilities such as talking, gesturing, walking or touching. These installations are part of the Galicia Dixital permanent exhibition in Santiago de Compostela, which is devoted to illustrate on the culture of this Spanish region while introducing the visitor in the applications of new technologies.},
+  volume={8},
+  number={29},
+  pages={37--42},
+  year={2008},
+  publisher={Universidad La Salle},
+  language={Spanish},
+  url={http://revistasinvestigacion.lasalle.mx/index.php/recein/article/view/210}
+}
+
+@InProceedings{Hernandez:2008:ATI,
+  title={Aplicaci{\'o}n de t{\'e}cnicas de iluminaci{\'o}n para obtenci{\'o}n de cuencas visuales en estudios de impacto ambiental},
+  author={Luis Hern{\'a}ndez and Antonio Seoane and Alberto {Jaspe Villanueva} and Javier Taibo},
+  booktitle={Proc. XI Congreso Internacional Sociedad Iberoamericana de Gr{\'a}fica Digital (SIGraDi 2008)},
+  abstract={El an{\'a}lisis de las cuencas visuales cobra cada vez m{\'a}s inter{\'e}s en los estudios de impacto ambiental en proyectos de nueva obra para determinar la integraci{\'o}n de la acci{\'o}n en el paisaje. Los SIG, herramientas habituales utilizadas para este fin, permitir extraer las cuencas visuales considerando exclusivamente el modelo digital del terreno, sin tener en cuenta volumetr{\'i}as complejas como edificaciones o vegetaci{\'o}n, que pueden estar presentes en el {\'a}rea. En este art{\'i}culo se propone una metodolog{\'i}a para generar estas cuencas visuales utilizando m{\'e}todos cl{\'a}sicos de iluminaci{\'o}n del {\'a}mbito de los gr{\'a}ficos por ordenador, mediante el uso de mapas de sobras, considerando cualquier geometr{\'i}a tridimensional sobre el terreno, y permitiendo su implementaci{\'o}n en aplicaciones de visualizaci{\'o}n en tiempo real. Se presenta tambi{\'e}n en este art{\'i}culo una aplicaci{\'o}n de la metodolog{\'i}a en un caso real.},
+  year={2008},
+  language={spanish},
+  url={https://cumincad.architexturez.net/node/16313},
+}
+
+@InProceedings{Seoane:2007:HIC,
+  title={Hardware-independent clipmapping},
+  author={Antonio Seoane and Javier Taibo and Luiz Hern{\'a}ndez and Ruben L{\'o}pez and Alberto {Jaspe Villanueva}},
+  booktitle={Proc. International Conference in Central Europe on Computer Graphics (WSCG)},
+  abstract={We present a technique for efficient management of large textures and its real-time application to geometric models. Theproposed technique is inspired by theclipmap idea, that caches in video memory a subset of the texture mipmap pyramid.Based on this concept, we define some structures and a different management allowing its implementation on a personalcomputer without specific graphics hardware. Finally, we present the results of the application in a terrain visualization system,using several simultaneous textures with a detail up to 0.25 meters per texel, covering a 60,000 km2area.},
+  year={2007},
+  organization={Vaclav Skala-UNION Agency}
+}
+
+@article{Hernandez:2007:PWD,
+  title={Physically Walking in Digital Spaces-A Virtual Reality Installation for Exploration of Historical Heritage},
+  author={Luis Hern{\'a}ndez and Javier Taibo and David Blanco and Jos{\'e} Iglesias and Antonio Seoane and Alberto {Jaspe Villanueva} and Roc{\'i}o {L{\'o}pez Mihura}},
+  journal={International Journal of Architectural Computing},
+  volume={5},
+  number={3},
+  pages={487--506},
+  abstract={Immersive Virtual Reality Systems have been extensively used during recent years for the exploration of architectonic spaces. This paper describes how the use of transitable immersive virtual reality systems, that is, those that allow the user to physically walk while exploring the virtual world, can greatly empower the experience of perception of space in architecture. The text describes a particular example of one installation of this kind that was developed by the authors and how it was implemented for the interactive experience of the virtual reconstruction of a housing unit on a pre-roman settlement. This installation is open to the public as part of a permanent exhibition and constitutes the final output of the research at this time.},
+  year={2007},
+  publisher={Multi Science Publishing},
+  doi={https://doi.org/10.1260/147807707782581783},
+  url={https://journals.sagepub.com/doi/abs/10.1260/147807707782581783},
+}
+
+@InProceedings{Hernandez:2007:MVC,
+  title={El Museo Vac{\'i}o y el Camino de Santiago. Una instalaci{\'o}n de Realidad Virtual para la exploraci{\'o}n del Patrimonio Cultural},
+  author={Luis Hern{\'a}ndez and David Blanco and Javier Taibo and Antonio Seoane and Alberto {Jaspe Villanueva} and Roc{\'i}o {Mihura L{\'o}pez}},
+  booktitle={Proc. Simposium de Inform{\'a}tica Gr{\'a}fica y Patrimonio Hist{\'o}rico (SIGPHI 2007)},
+  abstract={Last years, Virtual Reality has became a way to Cultural Heritage representation This paper describes the use of a VR installation to explore the St Jacob’s Way, focusing in the history and legends of the more emblematic places of the route. It allows the user to do a virtual pilgrimage visiting this places as its own pace, being transported through  pace and time to several historical scenarios, combining the use of realistic panoramas and cartoon-like 3D spaces.},
+  isbn={978-84-690-8550-9},
+  pages={95--100},
+  year={2007},
+  language={spanish},
+  url={https://dialnet.unirioja.es/servlet/articulo?codigo=5244503},
+}
+
+@InProceedings{Hernandez:2006:MVU,
+  title={El Museo Vac{\'i}o. Uso de una instalaci{\'o}n transitable de Realidad Virtual para la experimentaci{\'o}n espacial de una unidad habitacional en un asentamiento prerromano},
+  author={Luis Hern{\'a}ndez and David Blanco and Jos{\'e} Iglesias and Javier Taibo and Antonio Seoane and Alberto {Jaspe Villanueva} and Roc{\'i}o {L{\'o}pez Mihura}},
+  booktitle={Proc. IX Congreso Internacional Sociedad Iberoamericana de Gr{\'a}fica Digital (SIGraDi 2006)},
+  year={2006},
+  abstract={This paper describes the use of a existing Virtual Reality installation developed by the authors named the Empty Museum that allows the users to walk physically into a virtual space. It is used in this case to explore a bronze age housing unit actually being excavated in the settlement of San Cibran de Las (Spain). The project involved a recreation of the architecture, domestic objects and characters related to the ancient Castro culture following an archaeological and historical point of view. The visitor explores the place by walking inside the kitchen of the house, examining several points of interest while triggering explanatory speeches related to what is displayed. The user can also watch the living in the settlement looking through the openings of the virtual building and interact with the virtual inhabitants of the house as he or she physically walks around them.},
+  language={spanish},
+  url={http://papers.cumincad.org/data/works/att/sigradi2006_c067d.content.pdf}
+}
+
+
+@InProceedings{Varela:2005:GTI,
+  title={Gesti{\'o}n de tr{\'a}fico mediante la integraci{\'o}n de un GIS con un sistema de navegaci{\'o}n realista en 3D sobre el territorio},
+  author={Alberto Varela and Luis Hern{\'a}ndez and Javier Taibo and Antonio Seoane and Ruben L{\'o}pez and Alberto {Jaspe Villanueva}},
+  booktitle={Proc. V Congreso Iberoamericano de Sistemas Inteligentes de Transporte},
+  year={2005},
+  abstract={Tras la experiencia de los {\'u}ltimos a{\~n}os en el desarrollo del Sistema Avanzado de Navegaci{\'o}n en Terrenos Interactivos (SANTI), es decir, un sistema interactivo de visualizaci{\'o}n tridimensional de terreno en tiempo real basado en datos altim{\'e}tricos e im{\'a}genes de sat{\'e}lite y a{\'e}reas, se abre una nueva l{\'i}nea de investigaci{\'o}n que integra esta visualizaci{\'o}n con sistemas de informaci{\'o}n geogr{\'a}fica (SIG o Geographic Information System GIS en ingl{\'e}s). Esta nueva l{\'i}nea de desarrollo ofrece grandes posibilidades para la planificaci{\'o}n y la gesti{\'o}n de infraestructuras en grandes {\'a}reas territoriales.},
+  language={spanish},
+}
+
+
+@InProceedings{Hernandez:2005:CSI,
+  title={The Creativity Space: An Immersive VR Framework for 3D Creation},
+  author={Luis Hern{\'a}ndez and Javier Taibo and Alberto Jaspe and Roc{\'i}o Mihura and David Blanco and Rub{\'e}n L{\'o}pez and Antonio Seoane},
+  booktitle={Proc. Digital Engineering Workshop, 5th Japan-Korea CAD/CAM Workshop},
+  pages={18--21},
+  abstract={There is no doubt about the great revolution induced hy the Computer-Aided Design systems in the workflow of fields like industrial design or architecture. These systems arc of grcat aid to the creative process. allowing to set aside many inconveniences Of traditional-design and providing many advantages. from high precision to illumination simulations and consistency planning Very certainly, this revolution has incited a new way Of thinking. a new working methodology where users have access to a great amount Of powerful. new tools. which need adapting Nowadays. these environments are usually hased on monitors and hidimensional WIMP interfaces with orthogonal and perspective views But advances made on 31) devices and Virtual Reality and Augmented Reality technologies have opened new lines of investigation on immersive. 3D environments which are morc intuitive and similar to reality. The present document brietly explains a work in progress to introduce the concepts of presence and walkability in CAD systems, in order to add versatility to the creative process by avoiding user constraint to an unnatural environment.},
+  year={2005},
+}
+
+@InProceedings{Hernandez:2005:RTV,
+  title={Real-time visualization of geospatial features through integration of GID with a realistic 3D terrain dynamic visualization system},
+  author={Luis Hern{\'a}ndez and Alberto Varela and Javier Taibo and Antonio Seoane and Rub{\'e}n L{\'o}pez and Alberto Jaspe},
+  booktitle={Proc. ICC2005 XXII International Cartographic Conference},
+  abstract={During the last years, several computational tools arose allowing the users to fly interactively over realistic simulations of the terrain using DTM, aerial pictures and satellite data. One of them, the Advanced Interactive Terrain Navigation System (SANTI) was developed by the authors. This system stood out because of its submetric resolution, real-time refresh rate over 60 fps and performance non-dependent of the size of the database to be displayed. After this experience, the authors opened a new line of research that integrates this dynamic visualization system with GIS. This article presents an open architecture that easily integrates any GIS with SANTI, taking advantage of the potentiality of both technologies. This way, it is possible to visualize geospatial features while flying over the realistic model of the land for a better understanding and analysis of the data. It is also possible to query the GIS database from the visualization interface, interactively selecting features within the 3D view of the terrain. We describe an application using this software architecture for regional planning and resource management.},
+  year={2005}
+}
