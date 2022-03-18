@@ -17,13 +17,25 @@ layout: default
         <p class="lead">
             <small>[ {{ pub.year }}, {{ pub.type }} ] <span class="badge bg-danger">{{ pub.awards }}</span></small><br/>
             <span class="pub_title">{{ pub.title }}</span>. 
-            <small>{{ pub.authors }}</small><br/>
-            <small class="text-bold">{{ pub.data }}</small><br/>
+            {{ pub.authors }}<br/>
+            {% if pub.journal %}
+                {% assign pubdata = pub.journal %}
+                {% if pub.conference %}
+                   {% assign pubdata = pubdata | append: " [presented in " | append: pub.conference | append: "]" %}
+                {% endif %}
+            {% elsif pub.conference %}
+                {% assign pubdata = pub.conference %}
+            {% elsif pub.book %}
+                {% assign pubdata = pub.book %}
+            {% endif %}
+            <p class="font-weight-bold">{{ pubdata }}</p>
+<!--
 			{% assign pdfpath = "/publications/" | append: pub.code | append: ".pdf" %}
             <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning btn-sm mx-1"><i class="fas fa-file-pdf"></i> PDF</a>
 			{% if pub.doi %}
             <a href="https://doi.org/{{ pub.doi }}" class="btn btn-outline-warning btn-sm mx-1"><i class="fas fa-newspaper"></i> DOI</a>         
 			{% endif %}
+-->        
         </p>
     </div>
 </div>
