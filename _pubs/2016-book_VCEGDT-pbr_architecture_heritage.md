@@ -5,6 +5,8 @@ title: "Virtual Reality and Point-based Rendering in Architecture and Heritage"
 authors: Omar A. Mures, Alberto Jaspe-Villanueva, Emilio J. Padrón, and Juan R. Rabuñal
 year: 2016
 type: Book chapter
+book: Handbook of Research on Visual Computing and Emerging Geometrical Design Tools
+book-data: Chapter 4, IGI Global, April 2016
 abstract: "Virtual Reality has been a hot research topic since the appearance of computer graphics, but lately there have been huge advances in the form of high quality and affordable commodity hardware, for example with headsets such as the Oculus Rift. The Rift is an upcoming head-mounted virtual reality display, which will soon be available for the mainstream, along with other similar new VR hardware: Sulon Cortex, CastAR, Altergaze, etc. These new devices also offer new possibilities in the field of Augmented Reality, up to now limited to tablets and smartphones as far as commodity hardware is concerned. In fact, Virtual Reality and Augmented Reality technologies have now achieved the point where it can effectively be applied in in conjunction with the aforementioned workflow will yield great advantages for architects, engineers and heritage professionals alike. This article shows new possibilities of application for Virtual Reality and Augmented Reality with massive point clouds in real world architectural and heritage workflows."
 projects: 
  - Massive models
