@@ -17,6 +17,7 @@ with open("index-body.html", "r") as read_file:
 
 index_file = open(output_folder + "index.html", "w")
 home_header = html_header.replace('$$$title$$$', 'Alberto Jaspe')
+home_header = home_header.replace('$$$webtitle$$$', '')
 home_header = home_header.replace('<a class="nav-link" href="/">', '<a class="nav-link active" href="/">')
 
 index_file.write(home_header + html_index_body + html_footer)
@@ -24,7 +25,8 @@ index_file.close()
 
 ############### Publications ###################
 
-publications_header = html_header.replace('$$$title$$$', 'Alberto Jaspe :: Publications')
+publications_header = html_header.replace('$$$webtitle$$$', 'Alberto Jaspe')
+publications_header = publications_header.replace('$$$title$$$', 'Alberto Jaspe :: Publications')
 publications_header = publications_header.replace('<a class="nav-link" href="/publications.html">', '<a class="nav-link active" href="/publications.html">')
 
 with open("publications-body.html", "r") as read_file:
