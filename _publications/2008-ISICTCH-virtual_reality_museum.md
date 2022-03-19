@@ -1,5 +1,5 @@
 ---
-
+layout: publication
 code: 2008-ISICTCH-virtual_reality_museum
 title: "Interactive installations and virtual reality in the museum. The Galicia Dixital experience"
 authors: Luis Hernández, Javier Taibo, Antonio Seoane, Rocío Mihura-Lopez, and Alberto Jaspe-Villanueva
