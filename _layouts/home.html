@@ -2,13 +2,16 @@
 layout: default
 ---
 <div class="row">
-	<div class="col">
-		<img src={{ "/assets/img/ajaspe.jpg" | relative_url }} class="rounded-circle img-thumbnail" alt="Alberto Jaspe">
+	<p><span class="navbar-mybrand">Alberto Jaspe-Villanueva</span><br>
+		<span class="lead"><b class="text-bold">Computer Graphics and Visualization</b></span>
+	</p>
+</div>
+<div class="row">
+	<div class="col-md-2 text-center">
+		<img src={{ "/assets/img/ajaspe.jpg" | relative_url }} class="d-md-none img-fluid w-50 rounded-circle centered" alt="Alberto Jaspe">
+		<img src={{ "/assets/img/ajaspe.jpg" | relative_url }} class="d-none d-md-block w-100 img-fluid rounded-circle" alt="Alberto Jaspe">
 	</div>
-	<div class="col-md-9">
-		<p><span class="display-1 navbar-mybrand">Alberto Jaspe-Villanueva</span><br>
-			<span class="lead"><b class="text-bold">Computer Graphics and Visualization</b></span>
-		</p>
+	<div class="col-md-10">
 		<p class="lead">
 			Hola! I'm a computer science researcher and engineer, currently working on the
 			<a href="https://vccvisualization.org">High-Performance Visualization Group</a> at the
@@ -51,7 +54,7 @@ layout: default
 </div>
 
 <div class="row px-5">
-	<table class="table table-dark table-sm table-borderless table-hover table-stripped">
+	<table class="table table-dark table-sm table-borderless table-striped">
 		<thead><tr class="bg-warning text-white border-bottom"><td class="display-6 brand-color">News</td></tr></thead>
 		<tbody class="table-borderless">
 				{% for news in site.data.news %}
