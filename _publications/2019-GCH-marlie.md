@@ -13,7 +13,7 @@ projects:
  - Cultral Heritage
 doi: 10.2312/gch.20191346
 lab_website: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2019:WME%27
-youtube: https://www.youtube.com/watch?v=iixPu3pNEbg
+youtube: iixPu3pNEbg
 bibtex: "@inproceedings{Jaspe:2019:WME,\n
     author = {Alberto Jaspe-Villanueva and Ruggero Pintus and Andrea Giachetti and Enrico Gobbetti},\n
     title = {Web-based Multi-layered Exploration of Annotated Image-based Shape and Material Models},\n
