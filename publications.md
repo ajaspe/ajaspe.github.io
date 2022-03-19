@@ -15,6 +15,7 @@ layout: default
             <small>[ {{ pub.year }}, {{ pub.type }} ] <span class="badge bg-danger">{{ pub.awards }}</span></small><br/>
             <span class="pub_title">{{ pub.title }}</span>. 
             <small>{{ pub.authors }}</small><br/>
+			{% assign pubdatapost = "" %}
             {% if pub.journal %}
                 {% assign pubdata = pub.journal %}
                 {% if pub.conference %}
