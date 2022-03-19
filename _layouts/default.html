@@ -3,7 +3,7 @@
 
 {% if page.description %} {% assign description = page.description %} {% elsif page.abstract %} {% assign description = page.abstract %} {% else %} {% assign description = "Alberto Jaspe website" %} {% endif %}
 {% if page.code %} {% assign thumb_url="https://albertojaspe.net/publications/" | append: page.code | append: "-thumb.jpg" %} {% else %} {% assign thumb_url="https://albertojaspe.net/assets/img/ajaspe.jpg" %} {% endif %}
-{% assign this_title="A.Jaspe" | append: " :: " | append: page.title %}
+{% if page.code %} {% assign this_title=page.code %} {% else %} {% assign this_title="A.Jaspe" | append: " :: " | append: page.title %} {% endif %}
 
 <head>
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="{{ description }}" \>
     <meta name="twitter:domain" content="https://albertojaspe.net">
     <meta name="twitter:image" content="{{ thumb_url }}">
-    <meta property="og:url" content=" {{ page.url }} " />
+    <meta property="og:url" content=" https://albertojaspe.net{{ page.url }} " />
     <meta property="og:title" content="{{ this_title }}" />
     <meta property="og:description" content="{{description}}" />
     <meta property="og:image" content="{{thumb_url}}" />
