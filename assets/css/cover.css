@@ -81,7 +81,7 @@ a:hover {
 .navbar-mybrand:hover {
   font-family: 'Jost', sans-serif;
   font-size: 2em;
-  color: rgb(255, 194, 115);
+  color: rgb(255, 211, 154);
   text-decoration: none;
   transition-duration: 0.1s;	
 }
@@ -127,3 +127,10 @@ a:hover {
   .brand-color {
 	color: rgb(255, 115, 0);
   }
+
+  .brand-title {
+	font-family: 'Jost', sans-serif;
+	font-size: 3em;
+	color: rgb(255, 115, 0);
+	text-decoration: none;
+}
