@@ -3,7 +3,7 @@
 
 {% if page.description %} {% assign description = page.description %} {% elsif page.abstract %} {% assign description = page.abstract %} {% else %} {% assign description = "Alberto Jaspe website" %} {% endif %}
 {% if page.code %} {% assign thumb_url="https://albertojaspe.net/publications/" | append: page.code | append: "-thumb.jpg" %} {% else %} {% assign thumb_url="https://albertojaspe.net/assets/img/ajaspe.jpg" %} {% endif %}
-{% if page.code %} {% assign this_title=page.abstract %} {% else %} {% assign this_title="A.Jaspe" | append: " :: " | append: page.title %} {% endif %}
+{% if page.code %} {% assign this_title=page.title %} {% else %} {% assign this_title="A.Jaspe" | append: " :: " | append: page.title %} {% endif %}
 
 <head>
     <meta charset="utf-8">
