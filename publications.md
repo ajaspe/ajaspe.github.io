@@ -1,42 +1,46 @@
 ---
-title: "A.Jaspe :: Publications"
+title: Publications
+description: "List of Alberto Jaspe's publications"
 menu_title: Publications
 layout: default
 ---
-<div class="container py-4 m-0">
+<div class="container my-5 publicationrow">
 {% for pub in site.publications reversed %}
-<div class="row my-3">
-    <div class="col-md-auto">
+{% assign puburl = "/publications/" | append: pub.code | append: ".html" %}
+<div class="row my-2 rounded">
+    <div class="col-md-auto my-2">
 		{% assign imgpath = "/publications/" | append: pub.code | append: "-thumb.jpg" %}
-		{% assign puburl = "/publications/" | append: pub.code %}
         <a href="{{ puburl | relative_url}}">
             <img src="{{ imgpath | relative_url}}" class="img-fluid thumb" alt="{{pub.code}} thumbnail" width="100%">
         </a>
     </div>
-   <div class="col">
+   <div class="col my-2">
+        <p>[ {{ pub.year }}, {{ pub.type }} ] <span class="badge bg-danger">{{ pub.awards }}</span></p>
         <p class="lead">
-            <small>[ {{ pub.year }}, {{ pub.type }} ] <span class="badge bg-danger">{{ pub.awards }}</span></small><br/>
-            <span class="pub_title">{{ pub.title }}</span>. 
-            {{ pub.authors }}<br/>
+            <span class="pub_title"><a href="{{ puburl | relative_url}}">{{ pub.title }}</a></span>. 
+            <small>{{ pub.authors }}</small><br/>
+			{% assign pubdatapost = "" %}
             {% if pub.journal %}
                 {% assign pubdata = pub.journal %}
                 {% if pub.conference %}
-                   {% assign pubdata = pubdata | append: " [presented in " | append: pub.conference | append: "]" %}
+                   {% assign pubdatapost = "[presented in " | append: pub.conference | append: "]" %}
                 {% endif %}
             {% elsif pub.conference %}
                 {% assign pubdata = pub.conference %}
             {% elsif pub.book %}
                 {% assign pubdata = pub.book %}
             {% endif %}
-            <p class="font-weight-bold">{{ pubdata }}</p>
+        </p>
+        <p class="lead">{{ pubdata }} <small class="text-white-50 fst-italic">{{ pubdatapost }}</small></p>
 <!--
-			{% assign pdfpath = "/publications/" | append: pub.code | append: ".pdf" %}
+        <p>
+            {% assign pdfpath = "/publications/" | append: pub.code | append: ".pdf" %}
             <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning btn-sm mx-1"><i class="fas fa-file-pdf"></i> PDF</a>
 			{% if pub.doi %}
             <a href="https://doi.org/{{ pub.doi }}" class="btn btn-outline-warning btn-sm mx-1"><i class="fas fa-newspaper"></i> DOI</a>         
 			{% endif %}
--->        
         </p>
+-->        
     </div>
 </div>
 {% endfor %}

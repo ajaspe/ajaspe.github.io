@@ -1,49 +1,66 @@
 ---
 layout: default
 ---
-
-            <div class="container pub_row">
-                <div class="row text-center">  
-                    <p><span class="display-6 ">{{ page.title }}</span></p>
-                </div>
-                <div class="row text-center">
-                    <p><span class="lead">{{ page.authors }}</span></p>
-                </div>
-                <div class="row text-center">
-                    <p><span class="fst-italic">ACM Journal on Computing and Cultural Heritage, 14(2). May 2021.</span>
-                    <span class="badge bg-danger">$$$awards$$$</span></p>
-                </div>
-                <div class="row text-center my-3">
-					{% assign imgpath = "/publications/" | append: page.code | append: "-teaser.jpg" %}
-                    <img class="w-100" src="{{ imgpath | relative_url}}">
-                </div>
-                <div class="row m-3">
-                    <p>
-						{% assign pdfpath = "/publications/" | append: page.code | append: ".pdf" %}
-                        <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning">
-                            <i class="fas fa-file-pdf"></i> Paper PDF</a>
-                        <a  class="btn btn-outline-warning" data-bs-toggle="collapse" href="#bibtex" role="button" aria-expanded="false" aria-controls="bibtex">
-                            <i class="fas fa-building"></i> Bibtex</a>
-                        <a href="https://doi.org/$$$doi$$$" class="btn btn-outline-warning">
-                            <i class="fas fa-building"></i> DOI</a>
-                    </p>
-                    <div class="collapse" id="bibtex">
-                        <div class="card card-body bg-dark">
-                            <code><pre>{{ page.bibtex }}</pre></code>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row abstract">
-                        <h4>Abstract</h4>
-                        <p>
-                            {{page.abstract}}
-                        </p>
-                </div>
-                <div class="row">
-                        <div class="ratio ratio-16x9">
-                            {% assign youtubeurl = "https://www.youtube.com/embed/" | append: page.youtube %}
-                            <iframe width="100%" src="{{ youtubeurl }}" title="YouTube video" allowfullscreen></iframe>
-                        </div>
-                </div>
+<div class="container pub_row">
+    <div class="row text-center">  
+        <p><span class="display-6 ">{{ page.title }}</span></p>
+    </div>
+    <div class="row text-center">
+        {% assign authors2 = page.authors | replace: "Alberto Jaspe-Villanueva", "<span class='brand_color'>Alberto Jaspe-Villanueva</span>" %} 
+        <p><span class="lead">{{ authors2 }}</span></p>
+    </div>
+    <div class="row text-center">
+            {% assign pubdatapost = "" %}
+            {% if page.journal %}
+                {% assign pubdata = page.journal | append: "<br/>" | append: page.pub-data %}
+                {% if page.conference %}
+                    {% assign pubdatapost = "[presented in " | append: page.conference | append: "]" %}
+                {% endif %}
+            {% elsif page.conference %}
+                {% assign pubdata = page.conference %}
+            {% elsif page.book %}
+                {% assign pubdata = page.book | append: "<br/>" | append: page.pub-data %}
+            {% endif %}
+            <p class="lead fst-italic">{{ pubdata }} <small class="text-white-50 fst-italic">{{ pubdatapost }}</small>
+        {% if page.awards %}
+        <span class="badge bg-danger">{{ page.awards }}</span>
+        {% endif %}</p>
+    </div>
+    <div class="row text-center my-3">
+        {% assign imgpath = "/publications/" | append: page.code | append: "-teaser.jpg" %}
+        <img class="w-100" src="{{ imgpath | relative_url}}">
+    </div>
+    <div class="row m-3">
+        <p>
+            {% assign pdfpath = "/publications/" | append: page.code | append: ".pdf" %}
+            <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning">
+                <i class="fas fa-file-pdf"></i> Paper PDF</a>
+            <a  class="btn btn-outline-warning" data-bs-toggle="collapse" href="#bibtex" role="button" aria-expanded="false" aria-controls="bibtex">
+                <i class="fas fa-building"></i> Bibtex</a>
+            {% if page.doi %}
+            <a href="https://doi.org/{{ page.doi }}" class="btn btn-outline-warning">
+                <i class="fas fa-building"></i> DOI</a>
+            {% endif %}
+        </p>
+        <div class="collapse" id="bibtex">
+            <div class="card card-body bg-dark">
+                <code><pre>{{ page.bibtex }}</pre></code>
             </div>
+        </div>
+
+    </div>
+    <div class="row abstract">
+            <h4>Abstract</h4>
+            <p>
+                {{page.abstract}}
+            </p>
+    </div>
+    {% if page.youtube %}
+    <div class="row">
+            <div class="ratio ratio-16x9">
+                {% assign youtubeurl = "https://www.youtube.com/embed/" | append: page.youtube %}
+                <iframe src="{{ youtubeurl }}" title="YouTube video" allowfullscreen></iframe>
+            </div>
+    </div>
+    {% endif %}
+</div>

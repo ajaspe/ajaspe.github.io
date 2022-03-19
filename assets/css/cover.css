@@ -124,13 +124,20 @@ a:hover {
     font-size: 1em;
   } 
 
-  .brand-color {
+  .brand_color {
 	color: rgb(255, 115, 0);
   }
 
-  .brand-title {
+  .brand_title {
 	font-family: 'Jost', sans-serif;
-	font-size: 3em;
+	font-size: 2em;
 	color: rgb(255, 115, 0);
 	text-decoration: none;
+}
+
+.publicationrow div:hover{
+  background-color: #000;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
 }
