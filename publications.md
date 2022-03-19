@@ -26,7 +26,7 @@ layout: default
                 {% assign pubdata = pub.book %}
             {% endif %}
         </p>
-        <p class="lead">{{ pubdata }} <small class="text-white-50">{{ pubdatapost }}</small></p>
+        <p class="lead">{{ pubdata }} <small class="text-white-50 fst-italic">{{ pubdatapost }}</small></p>
         <p>
             {% assign pdfpath = "/publications/" | append: pub.code | append: ".pdf" %}
             <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning btn-sm mx-1"><i class="fas fa-file-pdf"></i> PDF</a>
