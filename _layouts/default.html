@@ -52,7 +52,7 @@
 </head>
 
 
-<body class="d-flex h-100 text-left text-white bg-dark">
+<body class="d-flex h-50 text-left text-white bg-dark">
 
     <div class="main-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 		<header class="mb-auto">
@@ -66,14 +66,14 @@
 				  <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
 					<div class="navbar-nav nav-masthead">
 						{% for item in site.pages %}
-						<a class="nav-link {% if item.url == page.url %}active{% endif %}" href="{{ item.url }}">{{ item.menu_title }}</a>
+						{% if item.menu_title %} <a class="nav-link {% if item.url == page.url %}active{% endif %}" href="{{ item.url }}">{{ item.menu_title }}</a>{% endif %}
 						{% endfor %}
 					</div>
 				</div>
 			  </nav>			
 		</header>
 
-        <main class="py-3">
+        <main class="py-5">
 
             <div class="container">
 				{{ content }}
