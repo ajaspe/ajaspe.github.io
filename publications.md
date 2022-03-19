@@ -7,11 +7,11 @@ layout: default
 <div class="container my-5 publicationrow">
 {% for pub in site.publications reversed %}
 {% assign puburl = "/publications/" | append: pub.code | append: ".html" %}
-<div class="row my-2 rounded">
+<div class="row my-2 rounded" id="contarinerrow">
     <div class="col-md-auto my-2">
 		{% assign imgpath = "/publications/" | append: pub.code | append: "-thumb.jpg" %}
         <a href="{{ puburl | relative_url}}">
-            <img src="{{ imgpath | relative_url}}" class="img-fluid thumb" alt="{{pub.code}} thumbnail" width="100%">
+            <img id="paperthumb" src="{{ imgpath | relative_url}}" class="img-fluid img-thumbnail" alt="{{pub.title}} thumbnail" width="100%">
         </a>
     </div>
    <div class="col my-2">

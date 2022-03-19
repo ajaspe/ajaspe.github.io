@@ -136,8 +136,15 @@ a:hover {
 }
 
 .publicationrow div:hover{
-  background-color: #000;
-  -webkit-transition: background-color 500ms linear;
-  -ms-transition: background-color 500ms linear;
-  transition: background-color 500ms linear;
+  background-color: #161616;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}
+
+#contarinerrow:hover #paperthumb {
+  filter: brightness(140%);
+  -webkit-transition: filter 300ms linear;
+  -ms-transition: filter 300ms linear;
+  transition: filter 300ms linear;
 }
