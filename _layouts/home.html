@@ -53,13 +53,13 @@ layout: default
 		</p>
 </div>
 
-<div class="row px-5">
+<div class="row px-3">
 	<table class="table table-dark table-sm table-borderless table-striped">
 		<thead><tr class="bg-warning text-white border-bottom"><td class="display-6 brand-color">News</td></tr></thead>
 		<tbody class="table-borderless">
 				{% for news in site.data.news %}
 				<tr>
-					<td class="text-warning col-1"><em>{{ news.date }}</em></td>
+					<td class="text-warning col-1"><p class="text-end"><em>{{ news.date }}</em></p></td>
 					<td>{{ news.text | markdownify }}</td>
 				</tr>
 				{% endfor %}
