@@ -18,15 +18,15 @@ layout: default
             {% if pub.journal %}
                 {% assign pubdata = pub.journal %}
                 {% if pub.conference %}
-                   {% assign pubdata = pubdata | append: " [presented in " | append: pub.conference | append: "]" %}
+                   {% assign pubdatapost = "[presented in " | append: pub.conference | append: "]" %}
                 {% endif %}
             {% elsif pub.conference %}
                 {% assign pubdata = pub.conference %}
             {% elsif pub.book %}
                 {% assign pubdata = pub.book %}
             {% endif %}
-            <p class="font-weight-bold">{{ pubdata }}</p>
         </p>
+        <p class="lead">{{ pubdata }} <small class="text-white-50">{{ pubdatapost }}</small></p>
         <p>
             {% assign pdfpath = "/publications/" | append: pub.code | append: ".pdf" %}
             <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning btn-sm mx-1"><i class="fas fa-file-pdf"></i> PDF</a>
