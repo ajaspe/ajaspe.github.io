@@ -4,7 +4,7 @@ description: "List of Alberto Jaspe's publications"
 menu_title: Publications
 layout: default
 ---
-<div class="container my-5 py-5 publicationrow">
+<div class="container my-0 publicationrow">
 {% for pub in site.publications reversed %}
 {% assign puburl = "/publications/" | append: pub.code | append: ".html" %}
 <div class="row my-2 rounded" id="contarinerrow">
