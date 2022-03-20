@@ -87,22 +87,13 @@ a:hover {
   transition-duration: 0.1s;	
 }
 
-	
-.circle-twitter{
-	border-radius: 50%;
-	margin: 0.25em;
-	font-size: 2em;
-  background: #4099FF;
-	color: #FFFFFF;
-  padding: 0.15em 0.17em;
-	}
 
-  	
-.circle-twitter:hover {
-  background: #FFFFFF;
-	color: #4099FF;
-  transition-duration: 0.1s;
-	}
+.icon-social:hover {
+    filter: invert(1);
+    -webkit-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    transition: all 0.5s linear;  
+}
 
 .thumb {
   border: 5px solid #eee;
@@ -153,3 +144,4 @@ a:hover {
 #paperthumb:hover {
   box-shadow: 2px 2px 10px rgba(200, 200, 200, 0.5);
 }
+

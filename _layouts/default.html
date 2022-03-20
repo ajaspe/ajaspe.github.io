@@ -56,14 +56,20 @@
 
     <div class="main-container d-flex w-100 h-100 px-1 mx-auto flex-column">
 		<header class="mb-auto">
-			<nav class="navbar navbar-expand-md navbar-dark">
-				<div class="container-fluid">
-				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				  </button>
-				  <a class="navbar-mybrand" href="/index.html">{% unless page.menu_title == "Home" %}Alberto Jaspe{% endunless %}</a>
-				  
-				  <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-mybrand" href="/index.html">{% unless page.menu_title == "Home" %}Alberto Jaspe{% endunless %}</a>
+                <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+                <div class="float-end mx-auto">
+                    <a href="https://scholar.google.es/citations?user=qv99TYgAAAAJ"><img class="icon-social" src="/assets/img/gscholar.svg" width="38px"/></a>
+                    <a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com'><img class="icon-social" src="/assets/img/email.svg" width="36px"/></a>
+                    <a href="https://www.linkedin.com/in/albertojaspe"><img class="icon-social" src="/assets/img/linkedin.svg" width="40px"/></a>
+                    <a href="https://orcid.org/0000-0003-3899-308X"><img class="icon-social" src="/assets/img/orcid.svg" width="32px"/></a>
+                    <a href="https://twitter.com/albertojaspe"><img class="icon-social" src="/assets/img/twitter.svg" width="40px"/></a>
+                </div>
 					<div class="navbar-nav nav-masthead">
 						{% for item in site.pages %}
 						{% if item.menu_title %} <a class="nav-link {% if item.url == page.url %}active{% endif %}" href="{{ item.url }}">{{ item.menu_title }}</a>{% endif %}
@@ -71,7 +77,7 @@
 					</div>
 				</div>
 			  </nav>			
-		</header>
+    </header>
 
         <main class="">
 
