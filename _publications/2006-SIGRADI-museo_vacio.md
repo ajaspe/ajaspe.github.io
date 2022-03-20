@@ -5,7 +5,7 @@ title: "El Museo Vacío. Uso de una instalación transitable de Realidad Virtual
 authors: Luis Hernández, David Blanco, José Iglesias, Javier Taibo, Antonio Seoane, Alberto Jaspe-Villanueva, and Rocío Mihura-Lopez
 year: 2006
 type: Conference Paper
-conference: Congreso Internacional Sociedad Iberoamericana de Gráfica Digital, SIGraDi 2006
+conference: Conferencia Sociedad Iberoamericana de Gráfica Digital, SIGraDi 2006
 abstract: "This paper describes the use of a existing Virtual Reality installation developed by the authors named the Empty Museum that allows the users to walk physically into a virtual space. It is used in this case to explore a bronze age housing unit actually being excavated in the settlement of San Cibran de Las (Spain). The project involved a recreation of the architecture, domestic objects and characters related to the ancient Castro culture following an archaeological and historical point of view. The visitor explores the place by walking inside the kitchen of the house, examining several points of interest while triggering explanatory speeches related to what is displayed. The user can also watch the living in the settlement looking through the openings of the virtual building and interact with the virtual inhabitants of the house as he or she physically walks around them."
 projects: 
  - Virtual Reality

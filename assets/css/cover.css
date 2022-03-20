@@ -78,7 +78,6 @@ a:hover {
   text-decoration: none;
 
 }
-
 .navbar-mybrand:hover {
   font-family: 'Jost', sans-serif;
   font-size: 2em;
@@ -90,10 +89,10 @@ a:hover {
 
 
 .icon-social:hover {
-    filter: invert(1);
-    -webkit-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    transition: all 0.5s linear;  
+  transform: scale(1.2);
+  -webkit-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;  
 }
 
 .thumb {
@@ -105,12 +104,6 @@ a:hover {
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease; */
   }
-  
-  /* .thumb:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  } */
 
  .pub_title {
     color: rgb(255, 166, 93);
