@@ -23,7 +23,7 @@ layout: default
             {% if pub.journal %}
                 {% assign pubdata = pub.journal %}
                 {% if pub.conference %}
-                   {% assign pubdatapost = "[presented in " | append: pub.conference | append: "]" %}
+                   {% assign pubdatapost = "(presented in " | append: pub.conference | append: ")" %}
                 {% endif %}
             {% elsif pub.conference %}
                 {% assign pubdata = pub.conference %}

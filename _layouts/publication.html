@@ -12,9 +12,9 @@ layout: default
     <div class="row text-center">
             {% assign pubdatapost = "" %}
             {% if page.journal %}
-                {% assign pubdata = page.journal | append: "<br/>" | append: page.pub-data %}
+                {% assign pubdata = page.journal | append: " <span class='text-white-50 fst-italic'>" | append: page.pub-data | append: "</span>" %}
                 {% if page.conference %}
-                    {% assign pubdatapost = "[presented in " | append: page.conference | append: "]" %}
+                    {% assign pubdatapost = "<br/>Presented in " | append: page.conference %}
                 {% endif %}
             {% elsif page.conference %}
                 {% assign pubdata = page.conference %}
