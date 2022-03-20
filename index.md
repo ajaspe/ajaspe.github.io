@@ -2,5 +2,71 @@
 title: Home
 description: "Alberto Jaspe personal website"
 menu_title: Home
-layout: home
+layout: default
 ---
+
+<div class="row">
+	<p><span class="brand_title">Alberto Jaspe-Villanueva</span><br>
+		<span class="lead"><b class="text-bold">Computer Graphics and Visualization</b></span>
+	</p>
+</div>
+<div class="row">
+	<div class="col-md-2 text-center">
+        <img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="d-md-none img-fluid w-50 rounded-circle centered" alt="Alberto Jaspe">
+        <img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="d-none d-md-block w-100 img-fluid rounded-circle" alt="Alberto Jaspe">
+	</div>
+	<div class="col-md-10">
+		<p class="lead">
+			Hola! I'm a computer science researcher and engineer, currently working on the
+			<a href="https://vccvisualization.org">High-Performance Visualization Group</a> at the
+			<a href="https://vcc.kaust.edu.sa">Visual Computer Center</a> at
+			<a href="https://kaust.edu.sa">KAUST</a> (Saudi Arabia).
+			Previously I worked in the <a href="https://vic.crs4.it">Visual Computing Group</a> at <a
+				href="https://www.crs4.it">CRS4</a> (Italy), where I developed my <a
+				href="https://diglib.eg.org/handle/10.2312/2632715">PhD</a>, discussed at the <a
+				href="https://udc.es/en">University of A Coruña</a> (Spain).
+		</p>
+	</div>
+</div>
+<div class="row">
+	<p class="lead">
+		My main interest lies in the <b>real-time exploration of massive models and complex data, from
+			acquisition, (mainly) rendering, to interaction</b>.
+		This means that I daily deal with multiresolution structures, algorithms, GPUs, raytracing, C++,
+		OpenGL, GLSL, sometimes WebGL and JavaScript, etc. And often it's fun :)
+	</p>
+</div>
+<div>
+	<p class="text-center">
+		<a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com' class="btn btn-secondary m-0">
+			<i class="fas fa-envelope"></i> aj&#97;sp&#101;&#64;g&#109;ail&#46;&#99;om</a>
+		<!-- <a href='/assets/cv-ajaspe-dec21.pdf' class="btn btn-secondary m-0">
+			<i class="fa fa-file"></i> CV</a> -->
+		<a href="https://scholar.google.es/citations?user=qv99TYgAAAAJ" class="btn btn-secondary m-0">
+			<i class="fas fa-graduation-cap"></i> Google Scholar</a>
+		<a href="https://www.linkedin.com/in/albertojaspe" class="btn btn-secondary m-0">
+			<i class="fab fa-linkedin"></i> LinkedIn</a>
+		<a href="https://twitter.com/albertojaspe" class="btn btn-secondary m-0">
+			<i class="fab fa-twitter"></i> Twitter</a>
+		<a href="https://github.com/ajaspe" class="btn btn-secondary m-0">
+			<i class="fab fa-github color:red"></i> GitHub</a>
+		<a href="https://orcid.org/0000-0003-3899-308X" class="btn btn-secondary m-0">
+			<i class="fab fa-orcid"></i> Orcid </a>
+		<a href="https://vccvisualization.org/people/jaspe" class="btn btn-secondary m-0">
+			<i class="fas fa-building"></i> VCC profile</a>
+		</p>
+</div>
+
+<div class="row px-3">
+	<table class="table table-dark table-sm table-borderless table-striped">
+		<thead><tr class="bg-warning text-white border-bottom"><td class="display-6 brand-color">News</td></tr></thead>
+		<tbody class="table-borderless">
+				{% for news in site.data.news %}
+				<tr>
+					<td class="text-warning col-1"><p class="text-end"><em>{{ news.date }}</em></p></td>
+					<td>{{ news.text | markdownify }}</td>
+				</tr>
+				{% endfor %}
+		</tbody>
+	</table>
+</div>					
