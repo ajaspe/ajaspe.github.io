@@ -1,10 +1,14 @@
 <!doctype html>
 <html lang="en" class="h-100">
 
-{% if page.description %} {% assign description = page.description %} {% elsif page.abstract %} {% assign description =
-page.abstract %} {% else %} {% assign description = "Alberto Jaspe website" %} {% endif %}
-{% if page.code %} {% assign thumb_url="https://albertojaspe.net/publications/" | append: page.code | append:
-"-thumb.jpg" %} {% else %} {% assign thumb_url="https://albertojaspe.net/assets/img/ajaspe.jpg" %} {% endif %}
+{% if page.description %} {% assign description = page.description %} 
+{% elsif page.abstract %} {% assign description = page.abstract %}
+{% else %} {% assign description = "Alberto Jaspe website" %}
+{% endif %}
+
+{% assign thumb_img=page.thumb_img %}
+{% if page.code %} {% assign thumb_img="https://albertojaspe.net/publications/" | append: page.code | append:"-thumb.jpg" %} {% endif %}
+
 {% if page.code %} {% assign this_title=page.title %} {% else %} {% assign this_title="A.Jaspe" | append: " :: " |
 append: page.title %} {% endif %}
 
@@ -21,12 +25,12 @@ append: page.title %} {% endif %}
     <meta name="twitter:creator" content="@albertojaspe" />
     <meta name="twitter:description" content="{{ description }}" \>
     <meta name="twitter:domain" content="https://albertojaspe.net">
-    <meta name="twitter:image" content="{{ thumb_url }}">
+    <meta name="twitter:image" content="https://albertojaspe.net/{{ thumb_img }}">
     <meta property="og:url" content="https://albertojaspe.net{{ page.url }} " />
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ this_title }}" />
     <meta property="og:description" content="{{description}}" />
-    <meta property="og:image" content="{{thumb_url}}" />
+    <meta property="og:image" content="https://albertojaspe.net/{{ thumb_img }}" />
 
     <title>{{ this_title }}</title>
 

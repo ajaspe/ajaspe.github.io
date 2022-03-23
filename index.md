@@ -3,6 +3,7 @@ title: Home
 description: "Alberto Jaspe personal website"
 menu_title: Home
 layout: default
+thumb_img: "assets/img/ajaspe.jpg"
 ---
 
 <div class="row">

@@ -2,6 +2,7 @@
 title: GLSL Playground
 description: "Playground experiment for playing with GLSL shaders using WebGL2"
 layout: default
+thumb_img: "assets/img/thumb_glsl.jpg"
 ---
 <script src="libs/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="glsl-playground.js" type="module"></script>
