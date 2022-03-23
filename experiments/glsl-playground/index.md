@@ -13,7 +13,7 @@ thumb_img: "assets/img/thumb_glsl.jpg"
 ## GLSL Playground
 
 This is a simlpe WebGL2 playground of GLSL fragment shaders, *heavely inspired* in [Shadetoy](https://shadertoy.com").  
-Edit the source (thanks [ace editor](https://ace.c9.io/)). Use `Ctrl+R`  to recompile. The following uniforms are defined by default for your enjoyment:
+Edit the source (thanks [ace editor](https://ace.c9.io/)). Use `Ctrl+R` to recompile on-the-fly. The following uniforms are defined by default:
 * `float iGlobalTime` : a timer in seconds
 * `vec2 iResolution` : canvas resolution in pixels
 * `vec2 iMouse` : coordinates of the mouse  
