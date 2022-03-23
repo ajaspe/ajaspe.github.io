@@ -7,7 +7,7 @@
 {% endif %}
 
 {% assign thumb_img=page.thumb_img %}
-{% if page.code %} {% assign thumb_img="https://albertojaspe.net/publications/" | append: page.code | append:"-thumb.jpg" %} {% endif %}
+{% if page.code %} {% assign thumb_img="publications/" | append: page.code | append:"-thumb.jpg" %} {% endif %}
 
 {% if page.code %} {% assign this_title=page.title %} {% else %} {% assign this_title="A.Jaspe" | append: " :: " |
 append: page.title %} {% endif %}
