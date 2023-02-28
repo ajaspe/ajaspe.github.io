@@ -18,7 +18,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 	</div>
 	<div class="col-md-10">
 		<p class="lead">
-			Hola! I'm a computer science researcher and engineer, currently working on the
+			Hola! I'm a <b>computer science researcher and engineer</b>, currently working on the
 			<a href="https://vccvisualization.org">High-Performance Visualization Group</a> at the
 			<a href="https://vcc.kaust.edu.sa">Visual Computer Center</a> at
 			<a href="https://kaust.edu.sa">KAUST</a> (Saudi Arabia).
@@ -32,8 +32,8 @@ thumb_img: "assets/img/ajaspe.jpg"
 <div class="row">
 	<p class="lead">
 		My main interest lies in the <b>real-time exploration of massive models and complex data, from
-			acquisition, (mainly) rendering, to interaction</b>.
-		This means that I daily deal with multiresolution structures, algorithms, GPUs, raytracing, C++,
+			acquisition to rendering and interaction</b>.
+		For this I deal with multiresolution structures, algorithms, GPUs, raytracing, C++,
 		OpenGL, GLSL, sometimes WebGL and JavaScript, etc. And often it's fun :)
 	</p>
 </div>
