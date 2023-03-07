@@ -2,6 +2,7 @@
 title: Publications
 description: "List of Alberto Jaspe's publications"
 menu_title: Publications
+order: 1
 layout: default
 ---
 <div class="container my-0 publicationrow">

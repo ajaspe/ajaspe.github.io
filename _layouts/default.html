@@ -65,7 +65,7 @@ append: page.title %} {% endif %}
 <body class="d-flex h-100 text-left text-white bg-dark">
     <div class="main-container d-flex w-100 h-100 mx-auto flex-column">
 
-        <header class="">
+        <header class="header">
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
@@ -84,7 +84,8 @@ append: page.title %} {% endif %}
                                 <a href="https://www.linkedin.com/in/albertojaspe"><img class="icon-social" src="/assets/img/linkedin.svg" width="40px" /></a>
                             </div>
                             <div class="navbar-nav nav-masthead">
-                                {% for item in site.pages %}
+							{% assign pages = site.pages | sort:"order" %}
+                            {% for item in pages %}
                             {% if item.menu_title %} <a class="nav-link {% if item.url == page.url %}active{% endif %}"
                                 href="{{ item.url }}">{{ item.menu_title }}</a>{% endif %}
                             {% endfor %}
@@ -100,7 +101,7 @@ append: page.title %} {% endif %}
         </main>
 
         <footer class="mt-auto text-white-50 text-center">
-            <p class="lead text-warning"><em>[ &copy; Alberto Jaspe ~ Site forever under construction ]&trade;</em></p>
+            <p class="lead text-warning">&copy; Alberto Jaspe «» <em><small>(Site forever under construction</em>&trade;)</small></p>
         </footer>
     </div>
 
