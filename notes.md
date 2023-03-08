@@ -1,7 +1,7 @@
 ---
 title: Notes Index
 description: "Index of random notes"
-#menu_title: Notes
+menu_title: Notes
 order: 2
 layout: default
 thumb_img: "assets/img/ajaspe.jpg"
