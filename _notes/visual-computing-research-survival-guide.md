@@ -22,6 +22,40 @@ That is your advisor responsability :) Appart of that, there are some places for
 
 ---
 
+
+## Writting  papers
+References:
+* [CG TuWien: How to write a scientific paper](https://www.cg.tuwien.ac.at/resources/HowToWriteAScientificPaper)
+* [M. McGuire: How to create a graphics research paper](http://casual-effects.blogspot.com/2015/08/how-to-create-graphics-research-paper.html)
+* [J. Kajiya: How to get your SIGGRAPH paper rejected](https://www.siggraph.org/sites/default/files/kajiya.pdf)
+* [SIGG Asia 2011 Course: How to write a SIGGRAPH paper](https://www.slideshare.net/jdily/how-to-write-a-siggraph-paper)
+* [E. Gröller: Practical tips and tricks for paper writting](https://www.cg.tuwien.ac.at/research/publications/2010/groeller-2010-PTT/groeller-2010-PTT-.pdf)
+* [S. Nowozin: Ten Tips for Writing CS Papers](http://www.nowozin.net/sebastian/blog/ten-tips-for-writing-cs-papers-part-1.html)
+* [F. Durand: Write good papers](http://people.csail.mit.edu/fredo/FredoGoodWriting.pdf)
+* [A. Hertzmann: Writing research papers](http://www.dgp.toronto.edu/~hertzman/courses/gradSkills/2010/writing.pdf)
+* [S. Peyton Jones: How to write a great research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/)
+* [B. Freeman: How to write a good CVPR submission](http://billf.mit.edu/sites/default/files/documents/cvprPapers.pdf)
+
+---
+
+## Reviewing papers
+References:
+* [IEEE Vis Reviewer instructions](https://ieeevis.org/year/2022/info/call-participation/review-instructions)
+* [ACM SIGGraph Reviewer instruction](https://sa2020.siggraph.org/en/submissions/technical-papers/reviewer-instructions)
+* [J. Stasko: Tips for being a good Visualization reviewer](https://jts3blog.wordpress.com/2016/12/23/tips-for-being-a-good-visualization-paper-reviewer/)
+* []
+
+---
+
+## Presenting a paper in a conference
+References:
+* [M. McGuire: Presentation advice](http://dept.cs.williams.edu/~morgan/presentation-advice.pdf)
+* [K. Fatahalian: Tips for giving clear talks](https://graphics.stanford.edu/~kayvonf/misc/cleartalktips.pdf)
+* [D. Fleet and A. Hertzmann: How to give a good talk](http://www.dgp.toronto.edu/~hertzman/courses/gradSkills/2010/GivingGoodTalks.pdf)
+* []
+
+---
+
 ## Measuring research impact
 We like to measure the impact of our research, not only because us humans are competitive, but also for understanding better the value of our work and planning future efforts.
 
@@ -51,30 +85,3 @@ References:
 
 
 ---
-## Writting  papers
-References:
-* [CG TuWien: How to write a scientific paper](https://www.cg.tuwien.ac.at/resources/HowToWriteAScientificPaper)
-* [M. McGuire: How to create a graphics research paper](http://casual-effects.blogspot.com/2015/08/how-to-create-graphics-research-paper.html)
-* [J. Kajiya: How to get your SIGGRAPH paper rejected](https://www.siggraph.org/sites/default/files/kajiya.pdf)
-* [SIGG Asia 2011 Course: How to write a SIGGRAPH paper](https://www.slideshare.net/jdily/how-to-write-a-siggraph-paper)
-* [E. Gröller: Practical tips and tricks for paper writting](https://www.cg.tuwien.ac.at/research/publications/2010/groeller-2010-PTT/groeller-2010-PTT-.pdf)
-* [S. Nowozin: Ten Tips for Writing CS Papers](http://www.nowozin.net/sebastian/blog/ten-tips-for-writing-cs-papers-part-1.html)
-* [F. Durand: Write good papers](http://people.csail.mit.edu/fredo/FredoGoodWriting.pdf)
-* [A. Hertzmann: Writing research papers](http://www.dgp.toronto.edu/~hertzman/courses/gradSkills/2010/writing.pdf)
-
----
-
-## Reviewing papers
-References:
-* [M. McGuire: Presentation advice](http://dept.cs.williams.edu/~morgan/presentation-advice.pdf)
-* [K. Fatahalian: Tips for giving clear talks](https://graphics.stanford.edu/~kayvonf/misc/cleartalktips.pdf)
-
----
-
-## Presenting a paper in a conference
-References:
-* [M. McGuire: Presentation advice](http://dept.cs.williams.edu/~morgan/presentation-advice.pdf)
-* [K. Fatahalian: Tips for giving clear talks](https://graphics.stanford.edu/~kayvonf/misc/cleartalktips.pdf)
-* [D. Fleet and A. Hertzmann: How to give a good talk](http://www.dgp.toronto.edu/~hertzman/courses/gradSkills/2010/GivingGoodTalks.pdf)
-* []
-
