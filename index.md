@@ -61,7 +61,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 
 <div class="row px-3">
 	<table class="table table-dark table-sm table-borderless table-striped">
-		<thead><tr class="bg-warning text-white border-bottom"><td class="display-6 brand-color">News</td></tr></thead>
+		<thead><tr class="border-bottom"><td class="display-6">News</td></tr></thead>
 		<tbody class="table-borderless">
 				{% for news in site.data.news %}
 				<tr>

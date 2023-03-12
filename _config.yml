@@ -4,3 +4,8 @@ collections:
     output: true
   notes:
     output: true
+  experiments:
+    output: true
+
+plugins:
+  - jekyll-redirect-from
