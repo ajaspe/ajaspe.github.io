@@ -1,5 +1,5 @@
 ---
-title: Notes Index
+title: Notes
 description: "Index of random notes"
 menu_title: Notes
 order: 2
