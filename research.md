@@ -6,14 +6,14 @@ order: 1
 layout: default
 ---
 
-## Activities
+## Research Activities
 
 * __Guest Editor__ :
 	- [Frontiers on Virtual Reality](https://www.frontiersin.org/journals/virtual-reality), research topic: [Acquiring, exploring and spreading Cultural Heritage with immersive technologies](https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies).
 * __Conference Chairing__ :
 	- [Web3D 2023](https://web3d.siggraph.org) Program chair.
 	- [Smart Tools and Applications (STAG)](https://www.stag-conference.org): __2019__ Posters chair; __2021__ Best paper chair; __2022__ Thesis award chair.
-	- __EuroVis 2014__ Fast-forward session chair.
+	- [EuroVis 2015](https://dblp.org/db/conf/vissym/eurovis2015.html) Fast-forward session chair.
 * __International Program Committees__ :
 	- [International Conference on Computer Graphics Theory and Applications (GRAPP)](https://grapp.scitevents.org/)
 	- [Smart Tools and Applications (STAG)](https://www.stag-conference.org)
@@ -23,7 +23,10 @@ layout: default
 * __Invited Reviewer__ : 
 	- Journals: [CGF](https://onlinelibrary.wiley.com/journal/14678659), [IEEE TVCG](https://www.computer.org/csdl/journal/tg), [ACM JOCCH](https://dl.acm.org/journal/jocch), [C&G](https://www.sciencedirect.com/journal/computers-and-graphics), [JGT](https://www.tandfonline.com/toc/ujgt21/current), [MDPI Heritage](https://www.mdpi.com/journal/heritage), [MDPI Sensors](https://www.mdpi.com/journal/sensors), [MPDI Electronics](https://www.mdpi.com/journal/electronics), etc.
 	- Conferences: [IEEE Vis](https://ieeevis.org), [ACM CHI](https://dl.acm.org/conference/chi), etc.
-* __Academic roles__: PhD and Master thesis advisor, and invited PhD committee member at [UDC](https://udc.es). Assistant in [Scientific Visualization course](https://vccvisualization.org/CS247_Scientific_Visualization) in [KAUST](https://cemse.kaust.edu.sa). Lecturer in __Virtual and Augmented Reality__ (2017) in [European Institute of Design](https://www.ied.edu/).
+* __Academic roles__:
+	- Assistant in the [Scientific Visualization course](https://vccvisualization.org/CS247_Scientific_Visualization) at [KAUST](https://cemse.kaust.edu.sa).
+	- PhD and Master thesis advisor, and regular PhD committee member at [UDC](https://udc.es).
+	- Lecturer in the __Virtual and Augmented Reality__ course (2017) at [European Institute of Design](https://www.ied.edu/).
 
 ## Publications
 
@@ -38,7 +41,7 @@ layout: default
         </a>
     </div>
    <div class="col my-2">
-        <p>[ {{ pub.year }}, {{ pub.type }} ] <span class="badge bg-danger">{{ pub.awards }}</span></p>
+        <p><b>[ {{ pub.year }}, {{ pub.type }} ]</b> <span class="badge bg-danger">{{ pub.awards }}</span></p>
         <p class="lead">
             <span class="pub_title"><a href="{{ puburl | relative_url}}">{{ pub.title }}</a></span>. 
             <small>{{ pub.authors }}</small><br/>
