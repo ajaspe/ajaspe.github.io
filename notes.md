@@ -13,7 +13,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 		<tbody class="table-borderless">
 			  {% for note in site.notes %}
 				<tr>
-					<td class="text-warning col-1"><p class="text-end"><em>{{ note.last_modification_date }}</em></p></td>
+					<td class="text-warning col-1"><p class="text-end">[<em>{{ note.last_modification_date }}</em>]</p></td>
 					<td><a href="{{ note.url }}">{{ note.title }}</a></td>
 				</tr>
 				{% endfor %}
@@ -27,7 +27,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 		<tbody class="table-borderless">
 			  {% for experiment in site.experiments %}
 				<tr>
-					<td class="text-warning col-1"><p class="text-end"><em>{{ experiment.last_modification_date }}</em></p></td>
+					<td class="text-warning col-1"><p class="text-end">[<em>{{ experiment.last_modification_date }}</em>]</p></td>
 					<td><a href="{{ experiment.url }}">{{ experiment.title }}</a></td>
 				</tr>
 				{% endfor %}
