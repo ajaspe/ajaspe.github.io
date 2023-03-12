@@ -15,14 +15,14 @@ let shader_vertex_source = "attribute vec2 pos; void main(void) { gl_Position = 
 let shader_fragment_source = "\
 // \"Light Circles\" by Deefunct [https://www.shadertoy.com/view/MlyGzW]\n\n\
 precision mediump float;\n\
-uniform float iGlobalTime;\n\
+uniform float iTime;\n\
 uniform vec2 iResolution;\n\
 uniform vec2 iMouse;\n\
 \n\
 void main(void) {\n\
 \tvec2 uv = 1.5*(2.0*gl_FragCoord.xy - iResolution.xy) / iResolution.y;\n\
 \tvec2 mouse = 1.5*(2.0*iMouse.xy - iResolution.xy) / iResolution.y;\n\
-\tvec2 offset = vec2(cos(iGlobalTime/2.0)*mouse.x,sin(iGlobalTime/2.0)*mouse.y);\n\
+\tvec2 offset = vec2(cos(iTime/2.0)*mouse.x,sin(iTime/2.0)*mouse.y);\n\
 \n\
 \tvec3 light_color = vec3(0.9, 0.65, 0.5);\n\
 \tfloat light = 0.1 / distance(normalize(uv), uv);\n\
@@ -83,11 +83,12 @@ editor.commands.addCommand({
 });
 editor.setValue(shader_fragment_source);
 editor.blockScrolling = Infinity;
+editor.clearSelection();
 
 function getMousePos(glCanvas, evt) {
     let rect = glCanvas.getBoundingClientRect();
     mousePosX = evt.clientX - rect.left;
-    mousePosY = evt.clientY - rect.top;
+    mousePosY = rect.bottom - evt.clientY;
 }
 
 glCanvas.addEventListener('mousemove', function (evt) {
@@ -131,7 +132,7 @@ updateShader();
 
 let animate = function () {
     if (good) {
-        GL.uniform1f(GL.getUniformLocation(SHADER_PROGRAM, "iGlobalTime"), (performance.now() - time_mark) / 1000.0);
+        GL.uniform1f(GL.getUniformLocation(SHADER_PROGRAM, "iTime"), (performance.now() - time_mark) / 1000.0);
         GL.uniform2f(GL.getUniformLocation(SHADER_PROGRAM, "iMouse"), mousePosX, mousePosY);
 
         GL.viewport(0.0, 0.0, glCanvas.getBoundingClientRect().width, glCanvas.getBoundingClientRect().height);

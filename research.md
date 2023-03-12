@@ -40,7 +40,7 @@ layout: default
             <img id="paperthumb" src="{{ imgpath | relative_url}}" class="img-fluid img-thumbnail" alt="{{pub.title}} thumbnail" width="100%">
         </a>
     </div>
-   <div class="col my-2">
+   <div class="col-md my-2">
         <p><b>[ {{ pub.year }}, {{ pub.type }} ]</b> <span class="badge bg-danger">{{ pub.awards }}</span></p>
         <p class="lead">
             <span class="pub_title"><a href="{{ puburl | relative_url}}">{{ pub.title }}</a></span>. 
@@ -57,7 +57,7 @@ layout: default
                 {% assign pubdata = pub.book %}
             {% endif %}
         </p>
-        <p class="lead">{{ pubdata }} <small class="text-white-50 fst-italic">{{ pubdatapost }}</small></p>
+        <p><em>{{ pubdata }} <span class="text-white-50">{{ pubdatapost }}</span></em></p>
 <!--
         <p>
             {% assign pdfpath = "/publications/" | append: pub.code | append: ".pdf" %}
