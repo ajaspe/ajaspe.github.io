@@ -9,11 +9,11 @@ thumb_img: "assets/img/ajaspe.jpg"
 
 ## Contents
 <div class="row px-3">
-	<table class="table table-dark table-sm table-borderless table-striped">
-		<tbody class="table-borderless">
+	<table class="table table-dark table-hover table-striped">
+		<tbody>
 			  {% for note in site.notes %}
 				<tr>
-					<td class="text-warning col-1"><p class="text-end">[<em>{{ note.last_modification_date }}</em>]</p></td>
+					<td class="text-warning col-1"><span class="text-end">[<em>{{ note.last_modification_date }}</em>]</span></td>
 					<td><a href="{{ note.url }}">{{ note.title }}</a></td>
 				</tr>
 				{% endfor %}
@@ -23,11 +23,11 @@ thumb_img: "assets/img/ajaspe.jpg"
 
 ## Web experiments
 <div class="row px-3">
-	<table class="table table-dark table-sm table-borderless table-striped">
-		<tbody class="table-borderless">
+	<table class="table table-dark table-hover table-striped">
+		<tbody>
 			  {% for experiment in site.experiments %}
 				<tr>
-					<td class="text-warning col-1"><p class="text-end">[<em>{{ experiment.last_modification_date }}</em>]</p></td>
+					<td class="text-warning col-1"><span class="text-end">[<em>{{ experiment.last_modification_date }}</em>]</span></td>
 					<td><a href="{{ experiment.url }}">{{ experiment.title }}</a></td>
 				</tr>
 				{% endfor %}

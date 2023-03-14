@@ -60,13 +60,13 @@ thumb_img: "assets/img/ajaspe.jpg"
 </div>
 
 <div class="row px-3">
-	<table class="table table-dark table-sm table-borderless table-striped">
+	<table class="table table-dark table-borderless table-striped">
 		<thead><tr class="border-bottom"><td class="display-6">News</td></tr></thead>
 		<tbody class="table-borderless">
 				{% for news in site.data.news %}
 				<tr>
-					<td class="text-warning col-1"><p class="text-end"><em>{{ news.date }}</em></p></td>
-					<td>{{ news.text | markdownify }}</td>
+					<td class="text-warning col-1 text-end">[<em>{{ news.date }}</em>]</td>
+					<td><div style="margin-bottom: -1em">{{ news.text | markdownify }}</div></td>
 				</tr>
 				{% endfor %}
 		</tbody>
