@@ -6,6 +6,3 @@ collections:
     output: true
   experiments:
     output: true
-
-plugins:
-  - jekyll-redirect-from

@@ -12,7 +12,7 @@ last_modification_date: 08/03/2023
 
 This small guide aims to be a quick-start introduction to common terms, procedures for a computer science researcher. Some aspect will be generic, and other will be more oriented to the field of Visual Computing, specifically to Computer Graphics and Visualization.
 
-## How to find a research topic
+## Finding a research topic
 That is your advisor responsability :) Appart of that, there are some places for inspiration:
 * [SIGGraph Course: Open problems in real-time rendering](https://openproblems.realtimerendering.com/): SIGGraph course of 2015, 16, 17 by different researchers.
 * [T. Funkhouser: Five principles for choosing research problems in computer graphics](https://www.youtube.com/watch?v=v2Qaf8t8I6c): SIGGraph 2015 talk as Computer Graphics Achievement Award.
@@ -20,6 +20,17 @@ That is your advisor responsability :) Appart of that, there are some places for
 	- IEEE Vis challenges
 	- [Data Visualization Society](https://www.datavisualizationsociety.org/challenges)
 	- [Harvard Visualization Corner](/https://vcg.seas.harvard.edu/publications/nih-nsf-visualization-research-challenges-report/paper)
+
+## About venues
+Talking about main conferences and journals, their orientation, deadlines calendar.
+References:
+
+
+## Surfing the literature
+
+References:
+ * [Ke-Sen Huang website](https://kesen.realtimerendering.com)
+ 
 
 
 ## Writting  papers
