@@ -59,9 +59,10 @@ thumb_img: "assets/img/ajaspe.jpg"
 		</p>
 </div>
 
+## News
+
 <div class="row px-3">
 	<table class="table table-dark table-borderless table-striped">
-		<thead><tr class="border-bottom"><td class="display-6">News</td></tr></thead>
 		<tbody class="table-borderless">
 				{% for news in site.data.news %}
 				<tr>

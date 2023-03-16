@@ -37,7 +37,7 @@ layout: default
     <div class="col-md-auto my-2">
 		{% assign imgpath = "/publications/" | append: pub.code | append: "-thumb.jpg" %}
         <a href="{{ puburl | relative_url}}">
-            <img id="paperthumb" src="{{ imgpath | relative_url}}" class="img-fluid img-thumbnail" alt="{{pub.title}} thumbnail" width="100%">
+            <img src="{{ imgpath | relative_url}}" id="paperthumb" class="img-fluid img-thumbnail imglight" alt="{{pub.title}} thumbnail" width="100%">
         </a>
     </div>
    <div class="col-md my-2">
