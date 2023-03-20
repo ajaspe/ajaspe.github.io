@@ -13,7 +13,7 @@ last_modification_date: 08/03/2023
 This small guide aims to be a quick-start introduction to common terms, procedures for a computer science researcher. Some aspect will be generic, and other will be more oriented to the field of Visual Computing, specifically to Computer Graphics and Visualization.
 
 ## Finding a research topic
-That is your advisor responsability :) Appart of that, there are some places for inspiration:
+That is your advisor's responsability :) Appart of that, there are some places for inspiration:
 * [SIGGraph Course: Open problems in real-time rendering](https://openproblems.realtimerendering.com/): SIGGraph course of 2015, 16, 17 by different researchers.
 * [T. Funkhouser: Five principles for choosing research problems in computer graphics](https://www.youtube.com/watch?v=v2Qaf8t8I6c): SIGGraph 2015 talk as Computer Graphics Achievement Award.
 * **Visualization challenges**:
@@ -27,14 +27,10 @@ References:
 
 
 ## Surfing the literature
-
-References:
  * [Ke-Sen Huang website](https://kesen.realtimerendering.com)
+ * [Two minutes papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg)
  
-
-
 ## Writting  papers
-References:
 * [CG TuWien: How to write a scientific paper](https://www.cg.tuwien.ac.at/resources/HowToWriteAScientificPaper)
 * [M. McGuire: How to create a graphics research paper](http://casual-effects.blogspot.com/2015/08/how-to-create-graphics-research-paper.html)
 * [J. Kajiya: How to get your SIGGRAPH paper rejected](https://www.siggraph.org/sites/default/files/kajiya.pdf)
@@ -45,18 +41,20 @@ References:
 * [A. Hertzmann: Writing research papers](http://www.dgp.toronto.edu/~hertzman/courses/gradSkills/2010/writing.pdf)
 * [S. Peyton Jones: How to write a great research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/)
 * [B. Freeman: How to write a good CVPR submission](http://billf.mit.edu/sites/default/files/documents/cvprPapers.pdf)
+* [Writing your first ACM SIGGRAPH / TOG paper](https://research.siggraph.org/blog/guides/writing-your-first-acm-siggraph-tog-paper)
 
 ## Reviewing papers
-References:
 * [IEEE Vis Reviewer instructions](https://ieeevis.org/year/2022/info/call-participation/review-instructions)
 * [ACM SIGGraph Reviewer instruction](https://sa2020.siggraph.org/en/submissions/technical-papers/reviewer-instructions)
 * [J. Stasko: Tips for being a good Visualization reviewer](https://jts3blog.wordpress.com/2016/12/23/tips-for-being-a-good-visualization-paper-reviewer/)
 
 ## Presenting a paper in a conference
-References:
 * [M. McGuire: Presentation advice](http://dept.cs.williams.edu/~morgan/presentation-advice.pdf)
 * [K. Fatahalian: Tips for giving clear talks](https://graphics.stanford.edu/~kayvonf/misc/cleartalktips.pdf)
 * [D. Fleet and A. Hertzmann: How to give a good talk](http://www.dgp.toronto.edu/~hertzman/courses/gradSkills/2010/GivingGoodTalks.pdf)
+
+## Taking care of yourself
+* [Managing your Mental Health during your PhD](https://link.springer.com/book/10.1007/978-3-031-14194-2)
 
 ## Measuring research impact
 We like to measure the impact of our research, not only because us humans are competitive, but also for understanding better the value of our work and planning future efforts.

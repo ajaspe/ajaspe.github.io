@@ -57,3 +57,4 @@ last_modification_date: 16/03/2023
 * [Pete Shirley](http://psgraphics.blogspot.com)
 * [Anteru, by Matthäus G. Chajdas](https://anteru.net/)
 * [Humus](http://www.humus.name)
+* [Juan Diego Montoya](https://juandiegomontoya.github.io)
