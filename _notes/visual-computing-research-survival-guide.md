@@ -31,6 +31,7 @@ References:
  * [Two minutes papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg)
  
 ## Writting  papers
+* [Writing your first ACM SIGGRAPH / TOG paper](https://research.siggraph.org/blog/guides/writing-your-first-acm-siggraph-tog-paper)
 * [CG TuWien: How to write a scientific paper](https://www.cg.tuwien.ac.at/resources/HowToWriteAScientificPaper)
 * [M. McGuire: How to create a graphics research paper](http://casual-effects.blogspot.com/2015/08/how-to-create-graphics-research-paper.html)
 * [J. Kajiya: How to get your SIGGRAPH paper rejected](https://www.siggraph.org/sites/default/files/kajiya.pdf)
@@ -41,7 +42,6 @@ References:
 * [A. Hertzmann: Writing research papers](http://www.dgp.toronto.edu/~hertzman/courses/gradSkills/2010/writing.pdf)
 * [S. Peyton Jones: How to write a great research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/)
 * [B. Freeman: How to write a good CVPR submission](http://billf.mit.edu/sites/default/files/documents/cvprPapers.pdf)
-* [Writing your first ACM SIGGRAPH / TOG paper](https://research.siggraph.org/blog/guides/writing-your-first-acm-siggraph-tog-paper)
 
 ## Reviewing papers
 * [IEEE Vis Reviewer instructions](https://ieeevis.org/year/2022/info/call-participation/review-instructions)
