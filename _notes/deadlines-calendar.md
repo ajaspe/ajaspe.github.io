@@ -10,7 +10,7 @@ last_modification_date: 23/03/2023
 
 <span class="badge bg-danger">Last modification: {{ page.last_modification_date }} </span>
 
-This is just a visual guide to see at a glance all deadlines and to plan your submissions.
+This is just a visual guide to see at a glance all deadlines and to plan your submissions, divided by half months.
 
 <span class="badge bg-info">Disclaimer!</span> This is not intended to be an exhaustive list of Visual Computing deadlines, just a set of the main ones and the ones I am interested in. The dates are just indicative, relative to last year’s edition: confirm them with their website! Please let me know if you find mistakes.
 
