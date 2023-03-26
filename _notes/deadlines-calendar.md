@@ -23,7 +23,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;"><b>SIGG</b></td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ Febraury ]</td></tr>
@@ -31,7 +30,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;">CGI</td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ March ]</td></tr>
@@ -39,7 +37,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;"><b>VIS</b>, ISMAR</td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ April ]</td></tr>
@@ -57,7 +54,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;"><b>SIGGAsia</b></td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ June ]</td></tr>
@@ -65,7 +61,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;">Web3D, LDAV</td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ July ]</td></tr>
@@ -73,7 +68,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;"></td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ August ]</td></tr>
@@ -91,7 +85,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;">EG, STAG</td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ October ]</td></tr>
@@ -99,7 +92,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;">PVis</td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ November ]</td></tr>
@@ -107,7 +99,6 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 		<tr><td style="height: 40px;"><b>EVis</b></td></tr>
 	</table>
 	</div>
-
 	<div class="col-md-3 border">
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ December ]</td></tr>

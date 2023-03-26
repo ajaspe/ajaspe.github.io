@@ -6,3 +6,7 @@ collections:
     output: true
   experiments:
     output: true
+
+url: "https://albertojaspe.net"
+plugins:
+  - jekyll-sitemap
