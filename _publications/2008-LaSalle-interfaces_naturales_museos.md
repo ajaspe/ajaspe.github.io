@@ -7,10 +7,12 @@ year: 2008
 type: Journal Paper
 journal: "Revista del Centro de Investigación, Universidad La Salle"
 abstract: "This paper describes the authors’ experience in the design and implementation of three interactive installations for museums based in the natural interfaces concept; that is, those that make use of the ways of communication used by humans in their natural relation with their environment by means of common abilities such as talking, gesturing, walking or touching. These installations are part of the Galicia Dixital permanent exhibition in Santiago de Compostela, which is devoted to illustrate on the culture of this Spanish region while introducing the visitor in the applications of new technologies."
+no_teaser: true
 projects: 
  - 
-url: http://revistasinvestigacion.lasalle.mx/index.php/recein/article/view/210
-youtube: https://www.youtube.com/watch?v=
+links:
+ - {name: Journal, url: http://revistasinvestigacion.lasalle.mx/index.php/recein/article/view/210}
+youtube: M_pOR8qWd4s
 bibtex: "@Article{Ibanez:2008:INC,\n
   title={Interfaces naturales para contenidos digitales interactivos en museos. La experiencia de Galicia Dixital},\n
   author={Lu{\\i}s Hernandez and Javier Taibo and Antonio Seoane and Alberto Jaspe-Villanueva and Roc{\\'i}o {Mihura L{\\'o}pez}},\n

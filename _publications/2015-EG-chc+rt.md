@@ -12,7 +12,8 @@ abstract: "We propose a new technique for in-core and out-of-core GPU ray tracin
 projects: 
  - Massive models
 doi: 10.1111/cgf.12582
-lab_website: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mattausch:2015:CCH%27
+links:
+ - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mattausch:2015:CCH%27}
 youtube: 4Ma920yhVHE
 bibtex: "@Article{Mattausch:2015:CCH,\n
     author = {Oliver Mattausch and Jiri Bittner and Alberto Jaspe-Villanueva and Enrico Gobbetti and Michael Wimmer and Renato Pajarola},\n

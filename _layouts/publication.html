@@ -47,10 +47,10 @@ layout: default
             <a href="https://doi.org/{{ page.doi }}" class="btn btn-outline-warning">
                 <i class="bi bi-bookmark-check"></i> DOI</a>
             {% endif %}
-			{% if page.lab_website %}
-            <a href="{{ page.lab_website }}" class="btn btn-outline-warning">
-                <i class="bi bi-link-45deg"></i> Website</a>
-            {% endif %}
+			{% for link in page.links %}
+            <a href="{{link.url}}" class="btn btn-outline-warning">
+                <i class="bi bi-link-45deg"></i>{{link.name}}</a>
+            {% endfor %}
         </p>
         <div class="collapse" id="bibtex">
             <div class="card card-body bg-dark">

@@ -12,7 +12,6 @@ projects:
  - Virtual Reality
  - Architectectural Visualization
 doi: 10.4995/ega.2011.1110
-url: https://polipapers.upv.es/index.php/EGA/article/view/1110/1179
 bibtex: "@Article{Hernandez:2011:SPA,\n
   title={Space perception in Architectural Visualization through Immersive Virtual Reality},\n
   author={Luis Hern{\\'a}ndez and Javier Taibo and Antonio Soane and Alberto Jaspe-Villanueva},\n

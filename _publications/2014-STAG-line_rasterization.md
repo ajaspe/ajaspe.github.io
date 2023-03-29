@@ -10,7 +10,8 @@ abstract: "Draping 2D vectorial information over a 3D terrain elevation model is
 projects: 
  - Terrain rendering
 doi: 10.2312/stag.20141234
-lab_website: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Taibo:2014:PLR%27
+links:
+ - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Taibo:2014:PLR%27}
 bibtex: "@inproceedings{Taibo:2014:PLR,\n
     author = {Javier Taibo and Alberto Jaspe-Villanueva and Antonio Seoane and Marco Agus and Luis Hernandez},\n
     title = {Practical line rasterization for multi-resolution textures},\n

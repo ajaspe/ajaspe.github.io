@@ -11,7 +11,8 @@ projects:
  - Point clouds
  - Indoor modelling
 doi: 10.2312/egp.20141069
-lab_website: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mura:2014:RCI%27
+links:
+ - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mura:2014:RCI%27}
 bibtex: "@InProceedings{Mura:2014:RCI,\n
     author = {Claudio Mura and Alberto Jaspe-Villanueva and Oliver Mattausch and Enrico Gobbetti and Renato Pajarola},\n
     title = {Reconstructing Complex Indoor Environments with Arbitrary Wall Orientations},\n

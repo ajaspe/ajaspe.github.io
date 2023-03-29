@@ -58,3 +58,4 @@ last_modification_date: 16/03/2023
 * [Anteru, by Matthäus G. Chajdas](https://anteru.net/)
 * [Humus](http://www.humus.name)
 * [Juan Diego Montoya](https://juandiegomontoya.github.io)
+* [Max Liani](https://maxliani.wordpress.com/)

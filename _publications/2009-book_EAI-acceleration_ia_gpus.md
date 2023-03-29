@@ -11,6 +11,7 @@ abstract: "Graphics Processing Units (GPUs) have been evolving very fast, turnin
 projects: 
 doi: 10.4018/978-1-59904-849-9.ch129
 lab_website: 
+no_teaser: true
 url: https://www.igi-global.com/chapter/algorithm-acceleration-using-gpus/10346
 bibtex: "@InCollection{Seoane:2009:AIA,\n
   title={Acceleration of IA algorithms using GPUs},\n

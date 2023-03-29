@@ -15,6 +15,7 @@ no_teaser: true
 no_pdf: true
 projects: 
  - Cultural Heritage
-lab_website: https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies
+links:
+ - { name: Journal, url: https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies }
 
 ---

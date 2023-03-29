@@ -12,7 +12,8 @@ abstract: "We introduce a novel efficient technique for automatically transformi
 projects: 
  - Massive models
 doi: 10.1111/cgf.12334
-lab_website: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27DiBenedetto:2014:EEC%27
+links:
+ - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27DiBenedetto:2014:EEC%27}
 youtube: i6X8nykw4Vs
 bibtex: "@Article{DiBenedetto:2014:EEC,\n
     author = {Marco {Di Benedetto} and Fabio Ganovelli and Marcos {Balsa Rodriguez} and Alberto Jaspe-Villanueva and Roberto Scopigno and Enrico Gobbetti},\n

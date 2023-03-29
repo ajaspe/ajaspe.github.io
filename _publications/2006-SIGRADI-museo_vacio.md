@@ -7,6 +7,7 @@ year: 2006
 type: Conference Paper
 conference: Conferencia Sociedad Iberoamericana de Gráfica Digital, SIGraDi 2006
 abstract: "This paper describes the use of a existing Virtual Reality installation developed by the authors named the Empty Museum that allows the users to walk physically into a virtual space. It is used in this case to explore a bronze age housing unit actually being excavated in the settlement of San Cibran de Las (Spain). The project involved a recreation of the architecture, domestic objects and characters related to the ancient Castro culture following an archaeological and historical point of view. The visitor explores the place by walking inside the kitchen of the house, examining several points of interest while triggering explanatory speeches related to what is displayed. The user can also watch the living in the settlement looking through the openings of the virtual building and interact with the virtual inhabitants of the house as he or she physically walks around them."
+no_teaser: true
 projects: 
  - Virtual Reality
 bibtex: "@InProceedings{Hernandez:2006:MVU,\n
