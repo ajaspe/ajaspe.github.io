@@ -12,7 +12,7 @@ projects:
  - Indoor modelling
 doi: 10.1111/cgf.13842
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintore:2019:AMC%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintore:2019:AMC%27"}
 bibtex: "@Article{Pintore:2019:AMC,\n
     author = {Giovanni Pintore and Fabio Ganovelli and Alberto Jaspe-Villanueva and Enrico Gobbetti},\n
     title = {Automatic modeling of cluttered multi-room floor plans from panoramic images},\n
