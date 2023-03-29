@@ -15,8 +15,8 @@ projects:
  - Cultral Heritage
 doi: 10.1007/s00371-021-02172-9
 links:
- - {name: CRS4 Website, url: https://www.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintus:2021:PEM%27}
- - {name: VCCVis Website, url: https://vccvisualization.org/research/light-calibration/}
+ - {name: CRS4 Website, url: https://www.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintus:2021:PEM%27 }
+ - {name: VCCVis Website, url: https://vccvisualization.org/research/light-calibration/ }
 youtube: SybNmo98DD4
 bibtex: "@Article{Pintus:2021:PEM,\n
     author = {Ruggero Pintus and Alberto {Jaspe Villanueva} and Antonio Zorcolo and Markus Hadwiger and Enrico Gobbetti},\n

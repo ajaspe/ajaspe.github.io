@@ -13,9 +13,9 @@ This Research Topic aims to bridge CH domain and VR/AR technologies, gathering q
 The goal of this Research Topic is to provide a venue for presenting to the community solutions that address those different challenges, ranging from specific research problems to reviews of the state of the art, as well as case studies."
 no_teaser: true
 no_pdf: true
-projects: 
- - Cultural Heritage
 links:
  - { name: Journal, url: https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies }
+projects: 
+ - Cultural Heritage
 
 ---
