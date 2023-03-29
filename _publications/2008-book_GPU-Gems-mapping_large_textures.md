@@ -13,7 +13,7 @@ no_teaser: true
 projects: 
  - Terrain Rendering
 links:
- - {name: Amazon, url: https://www.amazon.com/Game-Programming-Gems-GAME-PROGRAMMING/dp/1584505273}
+ - {name: Amazon, url: "https://www.amazon.com/Game-Programming-Gems-GAME-PROGRAMMING/dp/1584505273"}
 bibtex: "@InCollection{Seoane;2008:MLT,\n
   title={Mapping Large Textures for Outdoor Terrain Rendering},\n
   author={Antonio Seoane and Javier Taibo and Luis Hern{\\'a}ndez and Alberto Jaspe-Villanueva},\n

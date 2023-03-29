@@ -11,8 +11,8 @@ abstract: "Voxelized representations of complex 3D scenes are widely used nowada
 projects: 
  - Massive models
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2017:SSV%27}
- - {name: JCGT Website, url: https://jcgt.org/published/0006/02/01/}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2017:SSV%27"}
+ - {name: JCGT Website, url: "https://jcgt.org/published/0006/02/01/"}
 youtube: foYPjPKFKWw
 bibtex: "@Article{Jaspe:2017:SSV,\n
     author = {Alberto Jaspe-Villanueva and Fabio Marton and Enrico Gobbetti},\n

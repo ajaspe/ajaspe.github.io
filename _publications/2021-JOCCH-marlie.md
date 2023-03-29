@@ -13,8 +13,8 @@ projects:
  - Cultral Heritage
 doi: 10.1145/3430846
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2021:WEA%27}
- - {name: MARLIE (code and demo), url: https://vicserver.crs4.it/marlie}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2021:WEA%27"}
+ - {name: MARLIE (code and demo), url: "https://vicserver.crs4.it/marlie"}
 youtube: iixPu3pNEbg
 bibtex: "@Article{Jaspe:2021:WEA,\n
     author = {Alberto {Jaspe Villanueva} and Moonisa Ahsan and Ruggero Pintus and Andrea Giachetti and Enrico Gobbetti},\n

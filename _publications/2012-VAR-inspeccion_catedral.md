@@ -12,7 +12,7 @@ projects:
  - Architectectural Visualization
 doi: 10.4995/var.2012.4448
 links:
- - {name: VideaLAB Website, url: https://videalab.udc.es/CatedralSantiago }
+ - {name: VideaLAB Website, url: "https://videalab.udc.es/CatedralSantiago" }
 youtube: zO2vYpmJHiE
 bibtex: "@Article{Barneche:2012:AIE,\n
   title={Aplicaci{\\'o}n para la inspecci{\\'o}n espacial, volumtrica y seccional interactiva de la Catedral de Santiago de Compostela},\n

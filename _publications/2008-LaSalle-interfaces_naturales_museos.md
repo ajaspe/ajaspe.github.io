@@ -11,7 +11,7 @@ no_teaser: true
 projects: 
  - 
 links:
- - {name: Journal, url: http://revistasinvestigacion.lasalle.mx/index.php/recein/article/view/210}
+ - {name: Journal, url: "http://revistasinvestigacion.lasalle.mx/index.php/recein/article/view/210"}
 youtube: M_pOR8qWd4s
 bibtex: "@Article{Ibanez:2008:INC,\n
   title={Interfaces naturales para contenidos digitales interactivos en museos. La experiencia de Galicia Dixital},\n

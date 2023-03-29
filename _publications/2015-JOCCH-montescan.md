@@ -13,7 +13,7 @@ projects:
  - Cultral Heritage
 doi: 10.1145/2644823
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Bettio:2014:MES%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Bettio:2014:MES%27"}
 bibtex: "@Article{Bettio:2015:MES,\n
     author = {Fabio Bettio and Alberto Jaspe-Villanueva and Emilio Merella and Fabio Marton and Enrico Gobbetti and Ruggero Pintus},\n
     title = {{Mont'e Scan}: Effective Shape and Color Digitization of Cluttered 3D Artworks},\n

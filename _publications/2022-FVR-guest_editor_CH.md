@@ -14,7 +14,7 @@ The goal of this Research Topic is to provide a venue for presenting to the comm
 no_teaser: true
 no_pdf: true
 links:
- - { name: Journal, url: https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies }
+ - { name: Journal, url: "https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies" }
 projects: 
  - Cultural Heritage
 

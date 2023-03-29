@@ -10,8 +10,8 @@ abstract: "Continuous multiview (light-field) projection-based displays employ a
 projects: 
 doi: 10.2312/PE.EuroVisShort.EuroVisShort2013.001-005
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Agus:2013:CDS%27}
-video: https://vimeo.com/86740770
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Agus:2013:CDS%27"}
+ - {name: Video, url: "https://vimeo.com/86740770" }
 bibtex: "@InProceedings{Agus:2013:CDS,\n
     author = {Marco Agus and Enrico Gobbetti and Alberto Jaspe-Villanueva and Giovanni Pintore and Ruggero Pintus},\n
     title = {Automatic Geometric Calibration of Projector-based Light-field Displays},\n

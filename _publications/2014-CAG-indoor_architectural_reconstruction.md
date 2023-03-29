@@ -13,7 +13,7 @@ projects:
  - Indoor modelling
 doi: 10.1016/j.cag.2014.07.005
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mura:2014:ARD%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mura:2014:ARD%27"}
 bibtex: "@Article{Mura:2014:ARD,\n
     author = {Claudio Mura and Oliver Mattausch and Alberto Jaspe-Villanueva and Enrico Gobbetti and Renato Pajarola},\n
     title = {Automatic Room Detection and Reconstruction in Cluttered Indoor Environments with Complex Room Layouts},\n

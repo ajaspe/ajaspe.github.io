@@ -14,8 +14,8 @@ projects:
 no_teaser: true
 doi: 10.4018/978-1-5225-0182-4.ch013
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mures:2016:PCM%27}
- - {name: Book, url: https://www.igi-global.com/book/effective-big-data-management-opportunities/142200}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mures:2016:PCM%27"}
+ - {name: Book, url: "https://www.igi-global.com/book/effective-big-data-management-opportunities/142200"}
 links:
  - {name: CRS4 Website, url: }
 youtube: 3Zo8v1uk2yA

@@ -13,7 +13,7 @@ projects:
  - Massive data
 doi: 10.1109/TVCG.2022.3209439
 links:
- - { name: VCCVis Website, url: https://vccvisualization.org/research/highdimfiltering }
+ - { name: VCCVis Website, url: "https://vccvisualization.org/research/highdimfiltering" }
 #youtube: SybNmo98DD4
 bibtex: "@Article{Ageeli:2022:PRQ},\n
   title = {Multivariate Probabilistic Range Queries for Scalable Interactive 3D Visualization},\n

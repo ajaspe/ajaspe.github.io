@@ -10,9 +10,6 @@ abstract: "Last years, Virtual Reality has became a way to Cultural Heritage rep
 no_teaser: true
 projects: 
  - Virtual Reality
-links:
- - {name: Web, url: https://dialnet.unirioja.es/servlet/articulo?codigo=5244503}
-url:  
 bibtex: "@InProceedings{Hernandez:2007:MVC,\n
   title={El Museo Vac{\\'i}o y el Camino de Santiago. Una instalaci{\\'o}n de Realidad Virtual para la exploraci{\\'o}n del Patrimonio Cultural},\n
   author={Luis Hern{\\'a}ndez and David Blanco and Javier Taibo and Antonio Seoane and Alberto Jaspe-Villanueva and Roc{\\'i}o {Mihura L{\\'o}pez}},\n

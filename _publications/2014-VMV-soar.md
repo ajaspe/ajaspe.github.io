@@ -12,7 +12,7 @@ projects:
  - Point clouds
 doi: 10.2312/vmv.20141282
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Agus:2014:SSO%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Agus:2014:SSO%27"}
 youtube: FZJSfOIfwAI
 bibtex: "@InProceedings{Agus:2014:SSO,
     author = {Marco Agus and Enrico Gobbetti and Alberto Jaspe-Villanueva and Claudio Mura and Renato Pajarola},

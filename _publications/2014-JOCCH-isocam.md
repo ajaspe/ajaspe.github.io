@@ -11,7 +11,7 @@ projects:
  - Massive models
 doi: 10.1145/2611519
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Marton:2014:IIV%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Marton:2014:IIV%27"}
 youtube: X4pj8mDWDeU
 bibtex: "@Article{Marton:2014:IIV,\n
     author = {Fabio Marton and Marcos {Balsa Rodriguez} and Fabio Bettio and Marco Agus and Alberto Jaspe-Villanueva and Enrico Gobbetti},\n

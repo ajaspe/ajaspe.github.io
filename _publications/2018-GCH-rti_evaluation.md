@@ -12,7 +12,7 @@ projects:
  - Cultral Heritage
 doi: 0.2312/gch.20181344
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintus:2018:OSE%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintus:2018:OSE%27"}
 bibtex: "@InProceedings{Pintus:2018:OSE,\n
     author = {Ruggero Pintus and Tinsae Dulecha and Alberto Jaspe-Villanueva and Andrea Giachetti and Irina Ciortan and Enrico Gobbetti},\n
     title = {Objective and Subjective Evaluation of Virtual Relighting from Reflectance Transformation Imaging Data},\n

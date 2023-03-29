@@ -12,7 +12,7 @@ projects:
  - Indoor reconstruction
 doi: 10.1109/CADGraphics.2013.14
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mura:2013:RRI%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mura:2013:RRI%27"}
 bibtex: "@InProceedings{Mura:2013:RRI,
     author = {Claudio Mura and Oliver Mattausch and Alberto Jaspe-Villanueva and Enrico Gobbetti and Renato Pajarola},
     title = {Robust Reconstruction of Interior Building Structures with Multiple Rooms under Clutter and Occlusions},

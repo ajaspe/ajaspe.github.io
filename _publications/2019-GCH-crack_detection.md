@@ -12,7 +12,7 @@ projects:
  - Cultral Heritage
 doi: 10.2312/gch.20191347
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Dulecha:2019:CDS%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Dulecha:2019:CDS%27"}
 bibtex: "@inproceedings{Dulecha:2019:CDS,\n
     author = {Tinsae Dulecha and Andrea Giachetti and Ruggero Pintus and Irina Ciortan and Alberto {Jaspe Villanueva} and Enrico Gobbetti},\n
     title = {Crack Detection in Single- and Multi-Light Images of Painted Surfaces using Convolutional Neural Networks},\n

@@ -11,7 +11,7 @@ projects:
  - Massive models
 doi: 10.2312/egt.20181028
 links:
- - {name: Tutorial Website, url: https://www.crs4.it/vic/eg2018-tutorial-voxels}
+ - {name: Tutorial Website, url: "https://www.crs4.it/vic/eg2018-tutorial-voxels"}
 bibtex: "@InProceedings{Assarsson:2018:VDM,\n
     author = {Ulf Assarsson and Markus Billeter and Dan Dolonius and Elmar Eisemann and Alberto Jaspe-Villanueva and Leonardo Scandolo and Erik Sintorn},\n
     editor = {Tobias Ritschel and Alexandru Telea},\n

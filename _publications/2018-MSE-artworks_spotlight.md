@@ -13,7 +13,7 @@ projects:
  - Cultral Heritage
 doi: 10.1088/1757-899X/364/1/012025
 links:
- - {name: CRS4 Website, url: http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Ciortan:2018:ASC%27}
+ - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Ciortan:2018:ASC%27"}
 bibtex: "@Article{Ciortan:2018:ASC,]\n
     author = {Irina Ciortan and Tinsae Dulecha and Andrea Giachetti and Ruggero Pintus and Alberto Jaspe-Villanueva and Enrico Gobbetti},\n
     title = {Artworks in the Spotlight: Characterization with a Multispectral Dome},\n
