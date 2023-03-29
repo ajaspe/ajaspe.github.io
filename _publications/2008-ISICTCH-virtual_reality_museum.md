@@ -11,7 +11,7 @@ projects:
  - Virtual Reality
 doi: 10.4995/var.2010.4765
 links:
- - { name: Proceedings, url:"https://books.google.it/books?id=e_UWDeEca0IC&lpg=PA113&hl=es&pg=PA107" }
+ - { name: Proceedings, url: "https://books.google.it/books?id=e_UWDeEca0IC&lpg=PA113&hl=es&pg=PA107" }
 bibtex: "@InProceedings{Hernandez:2008:IIV,\n
   title={Interactive installations and virtual reality in the museum. The Galicia Dixital experience},\n
   author={Luis Hern{\\'a}ndez and Javier Taibo and Antonio Seoane and Roc{\\'i}o {Mihura L{\\'o}pez} and Alberto Jaspe-Villanueva},\n
