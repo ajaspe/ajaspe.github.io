@@ -103,7 +103,7 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ December ]</td></tr>
 		<tr><td style="height: 40px;"></td></tr>
-		<tr><td style="height: 40px;">i3D</td></tr>
+		<tr><td style="height: 40px;">i3D, GRAPP</td></tr>
 	</table>
 	</div>
 </div>
@@ -117,6 +117,7 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 * __EGPGV__: Eurographics Symposium on Parallel Graphics and Visualization
 * __EVis__: EuroVis (EG Conference on Visualization)
 * __GCH__: Eurographics Workshop on Graphics and Cultural Heritage
+* __GRAPP__: International Conference on Computer Graphics Theory and Applications
 * __i3D__: Interactive 3D Graphics and Games
 * __ICCV__: International Conference on Computer Vision
 * __ISMAR__: International Symposium on Mixed and Augmented Reality

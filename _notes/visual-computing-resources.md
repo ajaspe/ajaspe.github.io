@@ -59,3 +59,9 @@ last_modification_date: 16/03/2023
 * [Humus](http://www.humus.name)
 * [Juan Diego Montoya](https://juandiegomontoya.github.io)
 * [Max Liani](https://maxliani.wordpress.com/)
+
+## Specific articles, tutorials about CG-related topics:
+* Introduction to [Spherical Harmonics](https://puye.blog/posts/SH-Introduction-EN/) and to [Spherical Gaussians](https://puye.blog/posts/SG-Intro-EN/)
+* [Color: from Hexcodes to Eyeballs](https://jamie-wong.com/post/color/) by Jamie Wong
+* [Modern Assembly Language for X86-64](http://www.egr.unlv.edu/~ed/assembly64.pdf) by Ed Jorgensen
+
