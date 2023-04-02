@@ -1,3 +1,7 @@
+- date: "April.2023"
+  text: "Our paper \"__Doppler Volume Rendering: A Dynamic, Piecewise Linear Spectral Representation for Visualizing Astrophysics Simulations__\" has
+  been accepted to [EuroVIS 2023](https://eurovis.org) conference!"
+
 - date: "Febraury.2023"
   text: "Very happy to serve as **program co-chair** this year for ACM Siggraph [Web3D 2023](https://web3d.siggraph.org). It will be hosted by
   [Vicomtech](https://www.vicomtech.org) in the wonderful city of [San Sebastián (Spain)](https://en.wikipedia.org/wiki/San_Sebasti%C3%A1n).
@@ -12,7 +16,7 @@
 
 - date: "August.2022"
   text: "Our paper on *Probabilistic filtering of large, multidimensional data*](/publications/2022-VIS-probabilistic_range_queries.html)
-  has been acepted in [IEEE VIS 2022 conference](http://ieeevis.org/year/2022/welcome). See you in Oklahoma City (USA)!"
+  has been acepted to [IEEE VIS 2022](http://ieeevis.org/year/2022/welcome) conference. See you in Oklahoma City (USA)!"
 
 - date: "August.2022"
   text: "I've been invited to be member of the Program Committee of the *Eurographics Workshop on Graphics and Cultural Heritage*, which this edition [GCH'22](https://gch2022.ewi.tudelft.nl) will be hold in TU Delft, Nederlands."
@@ -21,7 +25,7 @@
   text: "I'll be attending both [EuroVis](https://www.eurovis.org) (Rome) and [SIGGRAPH](https://www.siggraph.org) (Vancourver). Hope to see you around!"
 
 - date: "March.2022"
-  text: "Uploaded and simple clone of [Shadertoy](https://shadertoy.com) I did time ago, to quickly experiment with shaders: [The GLSL Playground](https://albertojaspe.net/experiments/glsl-playground)."
+  text: "Uploaded and simple clone of [Shadertoy](https://shadertoy.com) I did time ago, to quickly experiment with shaders: [The GLSL Playground](https://albertojaspe.net/experiments/glsl-playground.html)."
 
 - date: "March.2022"
   text: "I've been promoted to *Research Scientist* in the [Visual Computing Center](https://cemse.kaust.edu.sa/vcc/people/research-scientists) within
