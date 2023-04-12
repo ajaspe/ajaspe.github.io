@@ -14,6 +14,7 @@ projects:
 doi: 10.1111/cgf.12334
 links:
  - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27DiBenedetto:2014:EEC%27"}
+ - {name: Live demo, url: "https://vcg.isti.cnr.it/exploremaps/index.html"}
  
 youtube: i6X8nykw4Vs
 bibtex: "@Article{DiBenedetto:2014:EEC,\n
