@@ -3,7 +3,7 @@ title: Calendar of Visual Computing conference deadlines
 description: Calendar of Visual Computing conferences deadlines
 layout: default
 thumb_img: "assets/img/favicon.ico"
-last_modification_date: 23/03/2023
+last_modification_date: 01/06/2023
 ---
 
 # {{page.title}}
@@ -41,7 +41,7 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ April ]</td></tr>
 		<tr><td style="height: 40px;">EGSR, SGP</td></tr>
-		<tr><td style="height: 40px;"></td></tr>
+		<tr><td style="height: 40px;">HPG</td></tr>
 	</table>
 	</div>
 </div>
@@ -118,6 +118,7 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 * __EVis__: EuroVis (EG Conference on Visualization)
 * __GCH__: Eurographics Workshop on Graphics and Cultural Heritage
 * __GRAPP__: International Conference on Computer Graphics Theory and Applications
+* __HPG__: High-Performance Graphics
 * __i3D__: Interactive 3D Graphics and Games
 * __ICCV__: International Conference on Computer Vision
 * __ISMAR__: International Symposium on Mixed and Augmented Reality
