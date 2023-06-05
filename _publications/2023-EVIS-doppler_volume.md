@@ -14,7 +14,7 @@ projects:
 doi: 
 #links:
 # - { name: VCCVis Website, url: "https://vccvisualization.org/research/highdimfiltering" }
-youtube: 0rwQWBPErc
+youtube: _0rwQWBPErc
 bibtex: "Soon!"
 
 ---
