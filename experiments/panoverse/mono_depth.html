@@ -20,8 +20,12 @@
 		import * as THREE from './build/three.module.js';
 		import { VRButton } from './jsm/webxr/VRButton.js';
 
-		const mono_image = 'data/mono_depth/0/scene.png';
-		const depth_image = 'data/mono_depth/0/depth.png';
+		const urlParams = new URLSearchParams(window.location.search);
+		let sceneNum = urlParams.get('scene');
+		if (!sceneNum) sceneNum = 0;
+		console.log(sceneNum);
+		const mono_image = "data/mono_depth/" + sceneNum + "/scene.png";
+		const depth_image = "data/mono_depth/" + sceneNum + "/depth.png";
 
 
         let camera, scene, renderer, sphere, clock;

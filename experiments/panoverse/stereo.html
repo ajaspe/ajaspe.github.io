@@ -16,8 +16,14 @@
 			import * as THREE from './build/three.module.js';
 			import { VRButton } from './jsm/webxr/VRButton.js';
 
-			const left_image = "data/stereo/0/r.png";
-			const right_image = "data/stereo/0/l.png";
+			const urlParams = new URLSearchParams(window.location.search);
+			let sceneNum = urlParams.get('scene');
+			if(!sceneNum) sceneNum=0;
+			console.log(sceneNum);
+
+
+			const left_image = "data/stereo/"+sceneNum+"/r.png";
+			const right_image = "data/stereo/"+sceneNum+"/l.png";
 
 
 			let camera, scene, renderer, clock;
