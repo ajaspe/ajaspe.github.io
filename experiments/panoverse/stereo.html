@@ -16,6 +16,9 @@
 			import * as THREE from './build/three.module.js';
 			import { VRButton } from './jsm/webxr/VRButton.js';
 
+			const left_image = "data/stereo/1/l.png";
+			const right_image = "data/stereo/1/r.png";
+
 
 			let camera, scene, renderer, clock;
 			let sphereL, sphereR;
@@ -60,7 +63,7 @@
 				const managerL = new THREE.LoadingManager();
 				const loaderL = new THREE.TextureLoader(managerL);
 
-				loaderL.load('./data/stereo/0/l.png', function (texture) {
+				loaderL.load(left_image, function (texture) {
 
 					texture.colorSpace = THREE.SRGBColorSpace;
 					texture.minFilter = THREE.NearestFilter;
@@ -96,7 +99,7 @@
 				const managerR = new THREE.LoadingManager();
 				const loaderR = new THREE.TextureLoader(managerR);
 
-				loaderR.load('./data/stereo/0/r.png', function (texture) {
+				loaderR.load(right_image, function (texture) {
 
 					texture.colorSpace = THREE.SRGBColorSpace;
 					texture.minFilter = THREE.NearestFilter;
@@ -218,19 +221,18 @@
 				//console.log(time);
 				if (renderer.xr.isPresenting === false) {
 
-					sphereL.rotation.y += 0.001;
-					sphereL.position.x = Math.sin(time) * 0.2;
-					sphereL.position.z = Math.cos(time) * 0.2;
-					sphereR.rotation.y += 0.001;
-					sphereR.position.x = Math.sin(time) * 0.2;
-					sphereR.position.z = Math.cos(time) * 0.2;
-
+					sphereL.rotation.y += 0.01;
+	        		sphereL.position.x = Math.sin( 2*time ) * 0.3;
+    		    	sphereL.position.z = Math.cos( 3*time ) * 0.3;
+					sphereR.rotation.y += 0.01;
+	        		sphereR.position.x = Math.sin( 2*time ) * 0.3;
+    		    	sphereR.position.z = Math.cos( 3*time ) * 0.3;
 				}
 
-				if(time%0.5 <0.01) {
+				//if(time%0.5 <0.01) {
 					renderer.render( scene, camera );
-					console.log("frame");
-				}
+				//	console.log("frame");
+				//}
 
 			}
 

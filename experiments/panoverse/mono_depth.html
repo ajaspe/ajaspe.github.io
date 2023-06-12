@@ -20,6 +20,10 @@
 		import * as THREE from './build/three.module.js';
 		import { VRButton } from './jsm/webxr/VRButton.js';
 
+		const mono_image = 'data/mono_depth/0/scene.png';
+		const depth_image = 'data/mono_depth/0/depth.png';
+
+
         let camera, scene, renderer, sphere, clock;
 
         init();
@@ -56,7 +60,7 @@
         const manager = new THREE.LoadingManager();
         const loader = new THREE.TextureLoader( manager );
 
-        loader.load( 'data/mono_depth/0/scene.png', function ( texture ) {
+        loader.load( mono_image, function ( texture ) {
 
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.minFilter = THREE.NearestFilter;
@@ -65,7 +69,7 @@
 
         } );
 
-        loader.load( 'data/mono_depth/0/depth.png', function ( depth ) {
+        loader.load( depth_image, function ( depth ) {
 
         depth.minFilter = THREE.NearestFilter;
         depth.generateMipmaps = false;
@@ -118,9 +122,9 @@
 
         const time = clock.getElapsedTime();
 
-        sphere.rotation.y += 0.001;
-        sphere.position.x = Math.sin( time ) * 0.2;
-        sphere.position.z = Math.cos( time ) * 0.2;
+        sphere.rotation.y += 0.01;
+        sphere.position.x = Math.sin( 2*time ) * 0.3;
+        sphere.position.z = Math.cos( 3*time ) * 0.3;
 
         }
 
