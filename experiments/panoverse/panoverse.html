@@ -39,6 +39,7 @@
 
 			init();
 			animate();
+			let firstFrameXR = true;
 
 			function initSphere(image, layerNum, rotation) {
 
@@ -119,6 +120,26 @@
 
 			}
 
+			function updatePanoVis(angle) {
+				sNL.visible = false;
+				sSL.visible = false;
+				sWL.visible = false;
+				sEL.visible = false;
+
+				sNR.visible = false;
+				sSR.visible = false;
+				sWR.visible = false;
+				sER.visible = false;
+
+				
+				if(angle < 45) { sWL.visible = true; sWR.visible = true; } 
+				else if(angle < 45+ 90) { sNL.visible = true; sNR.visible = true; }
+				else if(angle < 45+180) { sEL.visible = true; sER.visible = true; }
+				else if(angle < 45+270) { sSL.visible = true; sSR.visible = true; }
+				else if(angle > 45+270) { sWL.visible = true; sWR.visible = true; }
+
+			}
+
 			function onWindowResize() {
 
 				camera.aspect = window.innerWidth / window.innerHeight;
@@ -146,26 +167,33 @@
 					visAngle += 0.1;
 					visAngle %= 360.0;
 
-					sNL.visible = false;
-					sSL.visible = false;
-					sWL.visible = false;
-					sEL.visible = false;
-
-					sNR.visible = false;
-					sSR.visible = false;
-					sWR.visible = false;
-					sER.visible = false;
-
-					
-					if(visAngle < 45) { sWL.visible = true; sWR.visible = true; } 
-					else if(visAngle < 45+ 90) { sNL.visible = true; sNR.visible = true; }
-					else if(visAngle < 45+180) { sEL.visible = true; sER.visible = true; }
-					else if(visAngle < 45+270) { sSL.visible = true; sSR.visible = true; }
-					else if(visAngle > 45+270) { sWL.visible = true; sWR.visible = true; }
+					updatePanoVis(visAngle);
 					
 					camera.rotation.y = THREE.MathUtils.degToRad(visAngle);
 
-					console.log(visAngle);
+        			let direction =  new THREE.Vector3();
+					camera.getWorldDirection(direction);
+
+					console.log(direction, visAngle);
+				} else {
+
+					if(firstFrameXR) { 
+						renderer.xr.setUserCamera(camera);
+						firstFrameXR = false;
+					}
+
+					let dir =  new THREE.Vector3();
+					camera.getWorldDirection(dir);
+					visAngle = THREE.MathUtils.radToDeg(Math.atan2(-dir.x, dir.z)+Math.PI);
+
+					console.log(dir.x, dir.z, visAngle);
+
+					updatePanoVis(visAngle);
+
+					
+					camera.rotation.y = THREE.MathUtils.degToRad(visAngle);
+
+					//console.log(cameraVector, visAngle);
 
 				}
 
