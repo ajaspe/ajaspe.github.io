@@ -15,6 +15,18 @@ doi:
 #links:
 # - { name: VCCVis Website, url: "https://vccvisualization.org/research/highdimfiltering" }
 youtube: _0rwQWBPErc
-bibtex: "Soon!"
+bibtex: "@article{Alghamdi:2023:DVR},\n
+  author = {Alghamdi, Reem and Müller, Thomas and Jaspe-Villanueva, Alberto and Hadwiger, Markus and Sadlo, Filip},\n
+  title = {Doppler Volume Rendering: A Dynamic, Piecewise Linear Spectral Representation for Visualizing Astrophysics Simulations},\n
+  journal = {Computer Graphics Forum},\n
+  volume = {42},\n
+  number = {3},\n
+  pages = {39-49},\n
+  keywords = {CCS Concepts, • Human-centered computing → Scientific visualization, • Computing methodologies → Simulation evaluation},\n
+  doi = {https://doi.org/10.1111/cgf.14810},\n
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.14810},\n
+  eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.14810},\n
+  year = {2023}\n
+}"
 
 ---
