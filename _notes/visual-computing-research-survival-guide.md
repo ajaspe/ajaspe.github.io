@@ -30,7 +30,7 @@ References:
  * [Ke-Sen Huang website](https://kesen.realtimerendering.com)
  * [Two minutes papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg)
  
-## Writting  papers
+## Writing  papers
 * [Writing your first ACM SIGGRAPH / TOG paper](https://research.siggraph.org/blog/guides/writing-your-first-acm-siggraph-tog-paper)
 * [CG TuWien: How to write a scientific paper](https://www.cg.tuwien.ac.at/resources/HowToWriteAScientificPaper)
 * [M. McGuire: How to create a graphics research paper](http://casual-effects.blogspot.com/2015/08/how-to-create-graphics-research-paper.html)
@@ -77,7 +77,7 @@ Measuring the impact of your research is not an easy task, and many factors shou
 
 ### Tips for tracking your impact
 * [ORCID](https://orcid.org): Blah
-* [Google Schoolar](http://scholar.google.com): blah
+* [Google Scholar](http://scholar.google.com): blah
 
 
 References:  

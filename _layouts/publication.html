@@ -14,7 +14,7 @@ layout: default
             {% if page.journal %}
                 {% assign pubdata = page.journal | append: " <span class='text-white-50 fst-italic'>" | append: page.pub-data | append: "</span>" %}
                 {% if page.conference %}
-                    {% assign pubdatapost = "<br/>Presented in " | append: page.conference %}
+                    {% assign pubdatapost = "<br/>Presented at " | append: page.conference %}
                 {% endif %}
             {% elsif page.conference %}
                 {% assign pubdata = page.conference %}
