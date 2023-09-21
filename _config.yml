@@ -4,7 +4,7 @@ collections:
     output: true
   notes:
     output: true
-  experiments:
+  demos:
     output: true
 
 url: "https://albertojaspe.net"

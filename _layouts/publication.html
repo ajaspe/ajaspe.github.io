@@ -29,7 +29,7 @@ layout: default
 	{% unless page.no_teaser %}
     <div class="row text-center my-3">
         {% assign imgpath = "/publications/" | append: page.code | append: "-teaser.jpg" %}
-        <img class="w-100" src="{{ imgpath | relative_url}}">
+        <img class="w-100 rounded" src="{{ imgpath | relative_url}}">
     </div>
 	{% endunless %}
     <div class="row m-3">
@@ -75,4 +75,5 @@ layout: default
             </div>
     </div>
     {% endif %}
+	{{page.content}}
 </div>

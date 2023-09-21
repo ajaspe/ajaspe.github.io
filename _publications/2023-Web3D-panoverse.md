@@ -13,6 +13,7 @@ doi: 10.1145/3611314.3615914
 links:
  - {name: VCCVis Website, url: "https://vccvisualization.org/research/panoverse/"}
  - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintore:2023:PAG%27"}
+youtube: ZUHBNyZecdw
 bibtex: "@inproceedings{Pintore:2023:PAG,\n
     author = {Giovanni Pintore and Alberto {Jaspe Villanueva} and Markus Hadwiget and Enrico Gobbetti and Jens Schneider and Marco Agus},\n
     title = {PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications},\n
@@ -23,5 +24,4 @@ bibtex: "@inproceedings{Pintore:2023:PAG,\n
     note = {To appear},\n
     url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Pintore:2023:PAG'},\n
 }" 
-
 ---
