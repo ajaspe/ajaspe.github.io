@@ -11,37 +11,74 @@ published: false
 Here you can find blah
 Link al paper
 
- <div class="row">
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <a href="/w3images/lights.jpg">
-        <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum...</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <a href="/w3images/nature.jpg">
-        <img src="/w3images/nature.jpg" alt="Nature" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum...</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <a href="/w3images/fjords.jpg">
-        <img src="/w3images/fjords.jpg" alt="Fjords" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum...</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
+<div class="container">
 
--- 
+  <div class="row">
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<a href="panoverse/stereo.html">
+			<img src="panoverse/1/mono-thumb.jpg">
+		</a>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<a href="panoverse/stereo.html">
+			<img src="panoverse/2/mono-thumb.jpg">
+		</a>
+		</div>
+	</div>
+  </div>
+
+  <div class="row">
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<a href="panoverse/stereo.html">
+			<img src="panoverse/3/mono-thumb.jpg">
+		</a>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<a href="panoverse/stereo.html">
+			<img src="panoverse/4/mono-thumb.jpg">
+		</a>
+		</div>
+	</div>
+  </div>
+
+  <div class="row">
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<a href="panoverse/stereo.html">
+			<img src="panoverse/5/mono-thumb.jpg">
+		</a>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<a href="panoverse/stereo.html">
+			<img src="panoverse/6/mono-thumb.jpg">
+		</a>
+		</div>
+	</div>
+  </div>
+
+  <div class="row">
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<a href="panoverse/stereo.html">
+			<img src="panoverse/7/mono-thumb.jpg">
+		</a>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<a href="panoverse/stereo.html">
+			<img src="panoverse/8/mono-thumb.jpg">
+		</a>
+		</div>
+	</div>
+  </div>
+
+</div>
