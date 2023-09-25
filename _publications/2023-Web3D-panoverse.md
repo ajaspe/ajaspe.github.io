@@ -2,7 +2,7 @@
 layout: publication
 code: 2023-Web3D-panoverse
 title: "PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications"
-authors: Giovanni Pintore, Alberto Jaspe-Villanueva, Markus Hadwiget, Enrico Gobbetti, Jens Schneider, and Marco Agus
+authors: Giovanni Pintore, Alberto Jaspe-Villanueva, Markus Hadwiger, Enrico Gobbetti, Jens Schneider, and Marco Agus
 year: 2023
 type: Conference Paper
 conference: Web3D 2023 - 28th International ACM Conference on 3D Web Technology
@@ -15,7 +15,7 @@ links:
  - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintore:2023:PAG%27"}
 youtube: ZUHBNyZecdw
 bibtex: "@inproceedings{Pintore:2023:PAG,\n
-    author = {Giovanni Pintore and Alberto {Jaspe Villanueva} and Markus Hadwiget and Enrico Gobbetti and Jens Schneider and Marco Agus},\n
+    author = {Giovanni Pintore and Alberto {Jaspe Villanueva} and Markus Hadwiger and Enrico Gobbetti and Jens Schneider and Marco Agus},\n
     title = {PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications},\n
     booktitle = {Proc. Web3D 2023 - 28th International ACM Conference on 3D Web Technology},\n
     month = {October},\n
