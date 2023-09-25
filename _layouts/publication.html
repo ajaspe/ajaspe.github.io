@@ -69,10 +69,10 @@ layout: default
     {% endif %}
     {% if page.youtube %}
     <div class="row">
-            <div class="ratio ratio-16x9">
-                {% assign youtubeurl = "https://www.youtube.com/embed/" | append: page.youtube %}
-                <iframe src="{{ youtubeurl }}" title="YouTube video" allowfullscreen></iframe>
-            </div>
+		<div class="container text-center ratio ratio-16x9">
+			{% assign youtubeurl = "https://www.youtube.com/embed/" | append: page.youtube %}
+			<iframe src="{{ youtubeurl }}" title="YouTube video" allowfullscreen></iframe>
+		</div>
     </div>
     {% endif %}
 	{{page.content}}

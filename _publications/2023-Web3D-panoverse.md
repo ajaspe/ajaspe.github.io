@@ -25,3 +25,98 @@ bibtex: "@inproceedings{Pintore:2023:PAG,\n
     url = {http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id='Pintore:2023:PAG'},\n
 }" 
 ---
+
+
+## Realtime results
+
+Here you can find the results of the paper: \"[PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications](https://albertojaspe.net/publications/2023-Web3D-panoverse.html)\" presented at [ACM Web3D 2023](https://web3d.siggraph.org). We show how to create and explore an stereoscopic environment from a single image (monoscopic) 360 indoor panorama.
+
+You need a [WebXR](https://immersiveweb.dev)-enabled browser and any VR device.
+
+<div class="container">
+
+  <div class="row py-3 g-3">
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<img class="rounded img-fluid" src="/demos/panoverse/1/mono-thumb.jpg">
+		<div class="text-center my-1">
+			<a href="/demos/panoverse/1/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/stereo.html?scene=1"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
+		</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<img class="rounded img-fluid" src="/demos/panoverse/2/mono-thumb.jpg">
+		<div class="text-center my-1">
+			<a href="/demos/panoverse/2/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/stereo.html?scene=2"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
+		</div>
+		</div>
+	</div>
+  </div>
+
+  <div class="row py-3 g-3">
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<img class="rounded img-fluid" src="/demos/panoverse/3/mono-thumb.jpg">
+		<div class="text-center my-1">
+			<a href="/demos/panoverse/3/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/stereo.html?scene=3"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
+		</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<img class="rounded img-fluid" src="/demos/panoverse/4/mono-thumb.jpg">
+		<div class="text-center my-1">
+			<a href="/demos/panoverse/4/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/stereo.html?scene=4"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
+		</div>
+		</div>
+	</div>
+  </div>
+
+  <div class="row py-3 g-3">
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<img class="rounded img-fluid" src="/demos/panoverse/5/mono-thumb.jpg">
+		<div class="text-center my-1">
+			<a href="/demos/panoverse/5/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/stereo.html?scene=5"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
+		</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<img class="rounded img-fluid" src="/demos/panoverse/6/mono-thumb.jpg">
+		<div class="text-center my-1">
+			<a href="/demos/panoverse/6/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/stereo.html?scene=6"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
+		</div>
+		</div>
+	</div>
+  </div>
+
+  <div class="row py-3 g-3">
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<img class="rounded img-fluid" src="/demos/panoverse/7/mono-thumb.jpg">
+		<div class="text-center my-1">
+			<a href="/demos/panoverse/7/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/stereo.html?scene=7"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
+		</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+		<img class="rounded img-fluid" src="/demos/panoverse/8/mono-thumb.jpg">
+		<div class="text-center my-1">
+			<a href="/demos/panoverse/8/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/stereo.html?scene=8"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
+		</div>
+		</div>
+	</div>
+  </div>
+
+</div>
