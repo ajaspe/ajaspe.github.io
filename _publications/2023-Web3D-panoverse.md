@@ -27,6 +27,11 @@ bibtex: "@inproceedings{Pintore:2023:PAG,\n
 }" 
 ---
 
+## Honorable Mention Diploma
+
+<p align="center">
+<img class="rounded img-fluid" width="50%" src="/publications/2023-Web3D-panoverse-award.jpg">
+</p>
 
 ## Realtime results
 
