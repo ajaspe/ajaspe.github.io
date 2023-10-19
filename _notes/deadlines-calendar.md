@@ -96,7 +96,7 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 	<table class="table table-dark">
 		<tr><td class="text-warning text-center">[ November ]</td></tr>
 		<tr><td style="height: 40px;"><b>CVPR</b></td></tr>
-		<tr><td style="height: 40px;"><b>EVis</b></td></tr>
+		<tr><td style="height: 40px;"><b>EuroVis</b></td></tr>
 	</table>
 	</div>
 	<div class="col-md-3 border">
@@ -115,7 +115,7 @@ This is just a visual guide to see at a glance all deadlines and to plan your su
 * __EG__: EuroGraphics
 * __EGSR__: EuroGraphics Symposium on Rendering
 * __EGPGV__: Eurographics Symposium on Parallel Graphics and Visualization
-* __EVis__: EuroVis (EG Conference on Visualization)
+* __EuroVis__: EuroVis (EG Conference on Visualization)
 * __GCH__: Eurographics Workshop on Graphics and Cultural Heritage
 * __GRAPP__: International Conference on Computer Graphics Theory and Applications
 * __HPG__: High-Performance Graphics
