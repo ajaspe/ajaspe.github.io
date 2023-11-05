@@ -23,7 +23,7 @@ layout: default
 	- [Congreso Español de Informática Gráfica (CEIG)](https://www.eurographics.es/ceig23)
 * __Invited Reviewer__ : 
 	- Journals: [CGF](https://onlinelibrary.wiley.com/journal/14678659), [IEEE TVCG](https://www.computer.org/csdl/journal/tg), [ACM JOCCH](https://dl.acm.org/journal/jocch), [C&G](https://www.sciencedirect.com/journal/computers-and-graphics), [JGT](https://www.tandfonline.com/toc/ujgt21/current), [MDPI Heritage](https://www.mdpi.com/journal/heritage), [MDPI Sensors](https://www.mdpi.com/journal/sensors), [MPDI Electronics](https://www.mdpi.com/journal/electronics), [Graphical Models](https://www.sciencedirect.com/journal/graphical-models), etc.
-	- Conferences: [IEEE Vis](https://ieeevis.org), [ACM CHI](https://dl.acm.org/conference/chi), etc.
+	- Conferences: [EuroVis](http://www.eurovis.org/), [EuroGraphics](http://www.euro.graphics/), [IEEE Vis](https://ieeevis.org), [ACM CHI](https://dl.acm.org/conference/chi), etc.
 * __Academic roles__:
 	- Assistant in the [Scientific Visualization course](https://vccvisualization.org/CS247_Scientific_Visualization) at [KAUST](https://cemse.kaust.edu.sa).
 	- PhD and Master thesis advisor, and regular PhD committee member at [UDC](https://udc.es).
