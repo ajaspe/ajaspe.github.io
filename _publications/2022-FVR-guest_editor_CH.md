@@ -4,7 +4,7 @@ code: 2022-FVR-guest_editor_CH
 title: "Acquiring, exploring and spreading Cultural Heritage with immersive technologies"
 authors: "Prashant Goswami,  Ruggero Pintus, and Alberto Jaspe-Villanueva"
 year: 2022
-type: Guest Editor
+type: Journal Guest Editor
 journal: "Frontiers in Virtual Reality"
 pub-data: "2022"
 abstract: "Digital technologies have been used for decades to ensure preservation, conservation, research, and wide access to Cultural Heritage (CH) content. Computer Graphics techniques have provided effective digitization of the shape and appearance of artworks and archaeological sites, becoming the main basis to virtually convey this information to the general public. CH can be explored in immersive environments so the users can better experiment and understand it; virtual tours of museums, libraries, and archaeological sites, powered by virtual and augmented reality technologies, open up possibilities of an enhanced access and inspection of places, environments and contents normally not accessible to people. This role has been even more evident during the extreme conditions of the recent COVID-19 pandemic, when these technologies represent the most practical and helpful means to reach CH assets.
