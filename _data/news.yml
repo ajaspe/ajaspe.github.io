@@ -1,3 +1,7 @@
+- date: "Febrarury.2024"
+  text: "I've been invited to be a member of the Program Committee of the *Computer Graphics International*,
+  which this edition ([CGI'24](https://www.cgs-network.org/cgi24)) will be held in Geneva, Switzerland."
+
 - date: "October.2023"
   text: "We presented our last paper \"[PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications](https://albertojaspe.net/publications/2023-Web3D-panoverse.html)\"
   at [ACM Siggraph Web3D 2023](https://web3d.siggraph.org) (San Sebastián, Spain), which got the Honorable Mention award of the conference. Congratulations to all the co-authors! :)"
@@ -13,18 +17,18 @@
   Let's make an awesome conference!"
 
 - date: "December.2022"
-  text: "I've been invited to be member of the Program Committee of the *Conferencia Española de Informática Gráfica (Spanish Conference of Computer Graphics)*,
-  which this edition ([CEIG'23](https://www.eurographics.es/ceig23)) will be hold in Palma de Mallorca, Spain."
+  text: "I've been invited to be a member of the Program Committee of the *Conferencia Española de Informática Gráfica (Spanish Conference of Computer Graphics)*,
+  which this edition ([CEIG'23](https://www.eurographics.es/ceig23)) will be held in Palma de Mallorca, Spain."
 
 - date: "September.2022"
-  text: "I've been invited to be member of the Program Committee of the *International Conference on Visualization and Computer Human Interaction*, which this edition [VisCHI'22](https://www.hbku.edu.qa/en/vischi) will be hold in Doha, Qatar."
+  text: "I've been invited to be a member of the Program Committee of the *International Conference on Visualization and Computer-Human Interaction*, which this edition [VisCHI'22](https://www.hbku.edu.qa/en/vischi) will be held in Doha, Qatar."
 
 - date: "August.2022"
   text: "Our paper on [Probabilistic filtering of large, multidimensional data](/publications/2022-VIS-probabilistic_range_queries.html)
-  has been acepted to [IEEE VIS 2022](http://ieeevis.org/year/2022/welcome) conference. See you in Oklahoma City (USA)!"
+  has been accepted to [IEEE VIS 2022](http://ieeevis.org/year/2022/welcome) conference. See you in Oklahoma City (USA)!"
 
 - date: "August.2022"
-  text: "I've been invited to be member of the Program Committee of the *Eurographics Workshop on Graphics and Cultural Heritage*, which this edition [GCH'22](https://gch2022.ewi.tudelft.nl) will be hold in TU Delft, Nederlands."
+  text: "I've been invited to be a member of the Program Committee of the *Eurographics Workshop on Graphics and Cultural Heritage*, which this edition [GCH'22](https://gch2022.ewi.tudelft.nl) will be held in TU Delft, Nederlands."
 
 - date: "June.2022"
   text: "I'll be attending both [EuroVis](https://www.eurovis.org) (Rome) and [SIGGRAPH](https://www.siggraph.org) (Vancourver). Hope to see you around!"
@@ -35,7 +39,7 @@
 - date: "March.2022"
   text: "I've been promoted to *Research Scientist* in the [Visual Computing Center](https://cemse.kaust.edu.sa/vcc/people/research-scientists) within
   the [High-Performance Visualization Group](https://vccvisualization.org/) at [KAUST](https://kaust.edu.sa), such exciting adventure!
-  All my greetings to Prof. Markus Hadwirger and all my collegues."
+  All my greetings to Prof. Markus Hadwirger and all my colleagues."
 
 - date: "March.2022"
   text: "Our last work on MLICs, product of a collaboration between [CRS4](https://www.crs4.it/vic) and [KAUST](https://vccvisualization.org), has been [selected to be the cover of the international journal \"The Visual Computer\" for 2022 issues](https://www.linkedin.com/posts/albertojaspe_crs4-springer-thevisualcomputer-activity-6903622315842576384-LzzI?utm_source=linkedin_share&utm_medium=member_desktop_web)."
@@ -46,4 +50,4 @@
 - date: "Dic.2021"
   text: "I am co-editing a research topic for the journal [Frontiers in Virtual Reality](https://www.frontiersin.org/journals/virtual-reality), called: 
   \"[Acquiring, exploring and spreading Cultural Heritage with immersive technologies](https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies)\",
-  with the aim to bridge CH domain and VR/AR technologies. *The call for papers is open for the special journal issue!*"
+  with the aim to bridge CH domain and VR/AR technologies. *The call for papers for the special journal issue is open!*"
