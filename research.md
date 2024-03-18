@@ -10,12 +10,13 @@ layout: default
 
 * __Guest Editor__ :
 	- [Frontiers on Virtual Reality](https://www.frontiersin.org/journals/virtual-reality), research topic: [Acquiring, exploring and spreading Cultural Heritage with immersive technologies](https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies).
+	- [Computer & Graphics](https://www.sciencedirect.com/journal/computers-and-graphics), special issue: [Web3D 2023](https://www.sciencedirect.com/journal/computers-and-graphics).
 * __Conference Chairing__ :
-	- [Web3D 2023](https://web3d.siggraph.org) Program chair.
-	- [Smart Tools and Applications (STAG)](https://www.stag-conference.org): __2019__ Posters chair; __2021__ Best paper chair; __2022__ Thesis award chair.
-	- [EuroVis 2015](https://dblp.org/db/conf/vissym/eurovis2015.html) Fast-forward session chair.
+	- [Web3D 2023](https://web3d.siggraph.org) as program chair
+	- [STAG](https://www.stag-conference.org) as Posters chair (2019), Best paper chair (2022), Thesis award chair (2022, 2023)
+	- [EuroVis 2015](https://dblp.org/db/conf/vissym/eurovis2015.html) as Fast-forward session chair
 * __International Program Committees__ :
-	- [International Conference on Computer Graphics Theory and Applications (GRAPP)](https://grapp.scitevents.org/)
+	- [GRAPP](https://grapp.scitevents.org/)
 	- [Smart Tools and Applications (STAG)](https://www.stag-conference.org)
 	- [Eurographics Workshop on Graphics and Cultural Heritage (GCH)](https://gch2022.ewi.tudelft.nl)
 	- [International Conference on Visualization and Computer Human Interaction (VisCHI)](https://www.hbku.edu.qa/en/vischi)
@@ -25,7 +26,7 @@ layout: default
 * __Invited Reviewer__ : 
 	- Journals: [CGF](https://onlinelibrary.wiley.com/journal/14678659), [IEEE TVCG](https://www.computer.org/csdl/journal/tg), [ACM JOCCH](https://dl.acm.org/journal/jocch), [C&G](https://www.sciencedirect.com/journal/computers-and-graphics), [JGT](https://www.tandfonline.com/toc/ujgt21/current), [MDPI Heritage](https://www.mdpi.com/journal/heritage), [MDPI Sensors](https://www.mdpi.com/journal/sensors), [MPDI Electronics](https://www.mdpi.com/journal/electronics), [Graphical Models](https://www.sciencedirect.com/journal/graphical-models), etc.
 	- Conferences: [IEEE Vis](https://ieeevis.org),[EuroVis](http://www.eurovis.org/), [EuroGraphics](http://www.euro.graphics/),  [ACM CHI](https://dl.acm.org/conference/chi), [Pacific Graphics](https://pg2023.org/), etc.
-* __Academic roles__:
+* __Teaching roles__:
 	- Assistant in the [Scientific Visualization course](https://vccvisualization.org/CS247_Scientific_Visualization) at [KAUST](https://cemse.kaust.edu.sa).
 	- PhD and Master thesis advisor, and regular PhD committee member at [UDC](https://udc.es).
 	- Lecturer in the __Virtual and Augmented Reality__ course (2017) at [European Institute of Design](https://www.ied.edu/).
