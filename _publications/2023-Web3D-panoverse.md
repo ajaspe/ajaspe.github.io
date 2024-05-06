@@ -27,6 +27,9 @@ bibtex: "@inproceedings{Pintore:2023:PAG,\n
 }" 
 ---
 
+## Note
+Please check the extended version of this paper for Computer & Graphics journal: \"[Deep synthesis and exploration of omnidirectional stereoscopic environments from a single surround-view panoramic image](https://albertojaspe.net/publications/2024-CAG-synth_stereo_pano.html)\". It contains several improvements with respect to this one.
+
 ## Honorable Mention Diploma
 
 <p align="center">
