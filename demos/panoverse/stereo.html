@@ -41,6 +41,7 @@
 			let sphereL, sphereR, sphereMono;
 			let textureL, textureR, textureMono;
 			let stereo = true;
+			let canvasText, ctxText, textureText;
 
 			init();
 			animate();
@@ -63,12 +64,12 @@
 				/////////// MONO ////////////
 
 				// Create the panoramic sphere geometery
-				const panoSphereGeoMono = new THREE.SphereGeometry(6, 256, 256);
+				const panoSphereGeoMono = new THREE.SphereGeometry(20, 256, 256);
 
 				// Create the panoramic sphere material
 				const panoSphereMatMono = new THREE.MeshStandardMaterial({
 					side: THREE.BackSide,
-					displacementScale: - 4.0
+					displacementScale: - 40.0
 				});
 
 				// Create the panoramic sphere mesh
@@ -97,12 +98,12 @@
 				////////// LEFT ////////////
 
 				// Create the panoramic sphere geometery
-				const panoSphereGeoL = new THREE.SphereGeometry(6, 256, 256);
+				const panoSphereGeoL = new THREE.SphereGeometry(20, 256, 256);
 
 				// Create the panoramic sphere material
 				const panoSphereMatL = new THREE.MeshStandardMaterial({
 					side: THREE.BackSide,
-					displacementScale: - 4.0
+					displacementScale: - 40.0
 				});
 
 				// Create the panoramic sphere mesh
@@ -134,12 +135,12 @@
 				////////// RIGHT ////////////
 
 				// Create the panoramic sphere geometery
-				const panoSphereGeoR = new THREE.SphereGeometry(6, 256, 256);
+				const panoSphereGeoR = new THREE.SphereGeometry(20, 256, 256);
 
 				// Create the panoramic sphere material
 				const panoSphereMatR = new THREE.MeshStandardMaterial({
 					side: THREE.BackSide,
-					displacementScale: - 4.0
+					displacementScale: - 40.0
 				});
 
 				// Create the panoramic sphere mesh
@@ -170,6 +171,18 @@
 					sphereL.visible = !sphereL.visible;
 					sphereR.visible = !sphereR.visible;
 					sphereMono.visible = !sphereMono.visible;
+
+					ctxText.fillStyle = 'black'; // Background color
+					ctxText.fillRect(0, 0, canvasText.width, canvasText.height); // Clear previous text
+					ctxText.fillStyle = 'white'; // Text color
+					ctxText.font = '36px Arial';
+					ctxText.fillText('Press any controller button or', 10, 40);
+					ctxText.fillText('click the mouse to switch mode', 10, 80);
+					if(sphereMono.visible) 
+						ctxText.fillText('Current: monoscopic input', 10, 140);
+					else
+						ctxText.fillText('Current: stereoscopic output', 10, 140);
+					textureText.needsUpdate = true;
 				}
 
 
@@ -207,7 +220,32 @@
 				document.onkeypress=function(e){
 					switchStereo();
 				}
+
+				{
+					// Create a canvas and draw text on it
+					canvasText = document.createElement('canvas');
+					ctxText = canvasText.getContext('2d');
+					canvasText.width = 540;
+					canvasText.height = 160;
+					ctxText.fillStyle = '#FFF';
+					ctxText.font = '36px Arial';
+					ctxText.fillText('Press any controller button or', 10, 40);
+					ctxText.fillText('click the mouse to switch mode', 10, 80);
+
+					// Create texture from canvas
+					textureText = new THREE.CanvasTexture(canvasText);
+
+					// Create a plane geometry that uses the texture
+					const material = new THREE.MeshBasicMaterial({ map: textureText, side: THREE.DoubleSide });
+					const geometry = new THREE.PlaneGeometry(5, 1.6);
+					const plane = new THREE.Mesh(geometry, material);
+					plane.position.set(0, 2, -19);
+					scene.add(plane);
+				}
+
+
 			}
+
 
 			function onWindowResize() {
 
