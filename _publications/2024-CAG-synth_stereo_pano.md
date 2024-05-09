@@ -29,7 +29,7 @@ bibtex: "@Article{Pintore:2024:DSE,\n
 
 ## Realtime results
 
-Here you can find some of the examples resulting from the paper: \"[Deep synthesis and exploration of omnidirectional stereoscopic environments from a single surround-view panoramic image](https://albertojaspe.net/publications/2024-CAG-synth_stereo_pano.html)\", which improves the quality of [our previous one](https://albertojaspe.net/publications/2023-Web3D-panoverse.html) by far. We show how to create and explore an stereoscopic environment from a single image (monoscopic) 360 indoor panorama.
+Here you can find some of the examples resulting from the paper: \"[Deep synthesis and exploration of omnidirectional stereoscopic environments from a single surround-view panoramic image](https://albertojaspe.net/publications/2024-CAG-synth_stereo_pano.html)\", which significatively improves the quality of [our previous one](https://albertojaspe.net/publications/2023-Web3D-panoverse.html). We show how to create and explore an stereoscopic environment from a single image (monoscopic) 360 indoor panorama.
 
 You need a [WebXR](https://immersiveweb.dev)-enabled browser and any VR device.
 
@@ -40,7 +40,7 @@ You need a [WebXR](https://immersiveweb.dev)-enabled browser and any VR device.
 		<div class="thumbnail">
 		<img class="rounded img-fluid" src="/demos/panoverse/cag/1/mono-thumb.jpg">
 		<div class="text-center my-1">
-			<a href="/demos/panoverse/cag/1/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/cag/1/mono.png"><button type="button" class="btn btn-primary btn-sm">Input Monoscopic</button></a>
 			<a href="/demos/panoverse/stereo.html?scene=cag/1"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
 		</div>
 		</div>
@@ -49,7 +49,7 @@ You need a [WebXR](https://immersiveweb.dev)-enabled browser and any VR device.
 		<div class="thumbnail">
 		<img class="rounded img-fluid" src="/demos/panoverse/cag/2/mono-thumb.jpg">
 		<div class="text-center my-1">
-			<a href="/demos/panoverse/cag/2/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/cag/2/mono.png"><button type="button" class="btn btn-primary btn-sm">Input Monoscopic</button></a>
 			<a href="/demos/panoverse/stereo.html?scene=cag/2"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
 		</div>
 		</div>
@@ -61,7 +61,7 @@ You need a [WebXR](https://immersiveweb.dev)-enabled browser and any VR device.
 		<div class="thumbnail">
 		<img class="rounded img-fluid" src="/demos/panoverse/cag/3/mono-thumb.jpg">
 		<div class="text-center my-1">
-			<a href="/demos/panoverse/cag/3/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/cag/3/mono.png"><button type="button" class="btn btn-primary btn-sm">Input Monoscopic</button></a>
 			<a href="/demos/panoverse/stereo.html?scene=cag/3"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
 		</div>
 		</div>
@@ -70,7 +70,7 @@ You need a [WebXR](https://immersiveweb.dev)-enabled browser and any VR device.
 		<div class="thumbnail">
 		<img class="rounded img-fluid" src="/demos/panoverse/cag/4/mono-thumb.jpg">
 		<div class="text-center my-1">
-			<a href="/demos/panoverse/cag/4/mono.png"><button type="button" class="btn btn-primary btn-sm">Original Monoscopic</button></a>
+			<a href="/demos/panoverse/cag/4/mono.png"><button type="button" class="btn btn-primary btn-sm">Input Monoscopic</button></a>
 			<a href="/demos/panoverse/stereo.html?scene=cag/4"><button type="button" class="btn btn-success btn-sm">Generated Stereo (WebXR)</button></a>
 		</div>
 		</div>
