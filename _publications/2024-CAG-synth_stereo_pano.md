@@ -15,7 +15,7 @@ links:
  - { name: CRS4 Site, url: "https://www.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Pintore:2024:DSE%27" }
 youtube: Qzuef6cjY1Q
 bibtex: "@Article{Pintore:2024:DSE,\n
-    author = {Giovanni Pintore and Alberto Jaspe-Villanueva and Markus Hadwiger and Jens Schneider and Marco Agus and Fabio Marton and Fabio Bettio and Enrico Gobbetti},\n
+    author = {Pintore, Giovanni and Jaspe-Villanueva, Alberto and Hadwiger, Markus and Schneider, Jens and Agus, Marco and Marton, Fabio and Bettio, Fabio and Gobbetti, Enrico},\n
     title = {Deep synthesis and exploration of omnidirectional stereoscopic environments from a single surround-view panoramic image},\n
     journal = {Computers & Graphics},\n
     volume = {119},\n
