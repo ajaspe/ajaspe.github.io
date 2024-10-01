@@ -10,6 +10,7 @@ conference: Web3D 2023 - 28th International ACM Conference on 3D Web Technology
 abstract: "We present a novel framework, dubbed PanoVerse, for the automatic creation and presentation of immersive stereoscopic environments from a single indoor panoramic image. Once per 360° shot, a novel data-driven architecture generates a fixed set of panoramic stereo pairs distributed around the current central view-point. Once per frame, directly on the HMD, we rapidly fuse the precomputed views to seamlessly cover the exploration workspace. To realize this system, we introduce several novel techniques that combine and extend state-of-the art data-driven techniques. In particular, we present a gated architecture for panoramic monocular depth estimation and, starting from the re-projection of visible pixels based on predicted depth, we exploit the same gated architecture for inpainting the occluded and disoccluded areas, introducing a mixed GAN with self-supervised loss to evaluate the stereoscopic consistency of the generated images. At interactive rates, we interpolate precomputed panoramas to produce photorealistic stereoscopic views in a lightweight WebXR viewer. The system works on a variety of available VR headsets and can serve as a base component for Metaverse applications. We demonstrate our technology on several indoor scenes from publicly available data."
 projects: 
  - Indoor modelling
+ - Virtual reality
 doi: 10.1145/3611314.3615914
 links:
  - {name: VCCVis Website, url: "https://vccvisualization.org/research/panoverse/"}
