@@ -1,5 +1,4 @@
 ---
-published: false
 layout: publication
 code: 2024-iMETA-virtual_staging_metaverse
 title: "Virtual Staging Technologies for the Metaverse"
