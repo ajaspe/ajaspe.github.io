@@ -4,7 +4,7 @@ description: "Alberto Jaspe personal website"
 menu_title: Home
 order: 0
 layout: default
-thumb_img: "assets/img/ajaspe.jpg"
+thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 </div>
 <div class="row">
 	<div class="col-md-2 text-center">
-        <img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="d-md-none img-fluid w-50 rounded-circle centered" alt="Alberto Jaspe">
+        <img src="{{ "/assets/img/ajaspe-rect.jpg" | relative_url }}" class="d-md-none img-fluid w-100 centered" alt="Alberto Jaspe">
         <img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="d-none d-md-block w-100 img-fluid rounded-circle" alt="Alberto Jaspe">
 	</div>
 	<div class="col-md-10">
