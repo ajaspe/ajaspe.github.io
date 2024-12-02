@@ -45,11 +45,13 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 		<!-- <a href='/assets/cv-ajaspe-dec21.pdf' class="btn btn-secondary m-0">
 			<i class="fa fa-file"></i> CV</a> -->
 		<a href="https://scholar.google.es/citations?user=qv99TYgAAAAJ" class="btn btn-secondary m-0">
-			<i class="fas fa-graduation-cap"></i> Google Scholar</a>
+			<i class="fas fa-graduation-cap"></i> Ggle. Scholar</a>
 		<a href="https://www.linkedin.com/in/albertojaspe" class="btn btn-secondary m-0">
 			<i class="fab fa-linkedin"></i> LinkedIn</a>
 		<a href="https://twitter.com/albertojaspe" class="btn btn-secondary m-0">
 			<i class="fab fa-twitter"></i> Twitter</a>
+		<a href="https://bsky.app/profile/ajaspe.bsky.social" class="btn btn-secondary m-0">
+			<i class="fab fa-bluesky"></i> BlueSky</a>
 		<a href="https://github.com/ajaspe" class="btn btn-secondary m-0">
 			<i class="fab fa-github color:red"></i> GitHub</a>
 		<a href="https://orcid.org/0000-0003-3899-308X" class="btn btn-secondary m-0">
