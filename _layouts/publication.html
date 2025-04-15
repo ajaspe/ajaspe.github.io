@@ -39,6 +39,11 @@ layout: default
             <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning">
                 <i class="fas fa-file-pdf"></i> Paper PDF</a>
 			{% endunless %}
+			{% if page.appendix %}
+            {% assign pdfappendixpath = "/publications/" | append: page.code | append: "-appendix.pdf" %}
+            <a href="{{ pdfappendixpath | relative_url}}" class="btn btn-outline-warning">
+                <i class="fas fa-file-pdf"></i> Appendix PDF</a>
+            {% endif %}
 			{% if page.bibtex %}
 			<a  class="btn btn-outline-warning" data-bs-toggle="collapse" href="#bibtex" role="button" aria-expanded="false" aria-controls="bibtex">
                 <i class="bi bi-body-text"></i> Bibtex</a>
