@@ -15,6 +15,7 @@ projects:
 doi: 10.1111/cgf.70117
 links:
  - { name: Code, url: "https://github.com/vccvisualization/lactea" }
+ - { name: Demo, url: "https://vccvisualization.org/lactea" }
 youtube: GWIkHAlwnrc
 bibtex: "@article{Alghamdi:2025:Lactea},\n
   title = {Lactea: Web-Based Spectrum-Preserving Multi-Resolution Visualization of the GAIA Star Catalog},\n
