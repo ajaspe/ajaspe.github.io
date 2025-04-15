@@ -1,3 +1,12 @@
+- date: "April.2025"
+  text: "Our work called [Lactea, for real-time, web-based, spectrum-preserving visualization of GAIA star cathalog](/publications/2025-EVIS-lactea.html) has been accepted as a full paper on [EuroVis 2025](https://www.eurovis2025.lu). Looking forward to presenting it at Luxembourg!"
+
+- date: "April.2025"
+  text: "Serving for the first time as a member of the International Program Committee (IPC) of [IEEEE VIS 2025](https://ieeevis.org/year/2025/welcome)."
+
+- date: "Febraury.2025"
+  text: "Thrilled to have participated in the Innovation Week of RDIA (Research, Development and Innovation Authority of Saudi Arabia), [presenting our collaboration with CERN](https://www.youtube.com/watch?v=lSsP3cqT6jE&list=LL&index=6)."
+
 - date: "September.2024"
   text: "Serving as a member of the International Program Committee (IPC) of [PacificVIS 2025](https://pacificvis2025.github.io)."
 
@@ -8,12 +17,12 @@
   text: "This year I will serve as member of the International Program Committee (IPC) of the following conferences: [CGI'24](https://www.cgs-network.org/cgi24) (Geneva, Switzerland), [GCH'24](https://gch2024.eu) (Darmstadt, Germany), [GRAPP'24](https://grapp.scitevents.org/?y=2024) (Rome, Italy), [ACM Web3D'24](https://web3d.siggraph.org/) (Guimarães, Portugal) and [CEIG'24](https://www.eurographics.es/CEIG24/) (A Coruña, Spain)."
 
 - date: "October.2023"
-  text: "We presented our last paper \"[PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications](https://albertojaspe.net/publications/2023-Web3D-panoverse.html)\"
+  text: "We presented our last paper \"[PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications](/publications/2023-Web3D-panoverse.html)\"
   at [ACM Siggraph Web3D 2023](https://web3d.siggraph.org) (San Sebastián, Spain), which got the Honorable Mention award of the conference. Congratulations to all the co-authors! :)"
 
 - date: "April.2023"
   text: "Our paper \"[Doppler Volume Rendering: A Dynamic, Piecewise Linear Spectral Representation
-  for Visualizing Astrophysics Simulations](https://albertojaspe.net/publications/2023-EVIS-doppler_volume.html)\" has
+  for Visualizing Astrophysics Simulations](/publications/2023-EVIS-doppler_volume.html)\" has
   been accepted to [EuroVIS 2023](https://eurovis.org) conference! See you at Leipzig (Germany)."
 
 - date: "Febraury.2023"
