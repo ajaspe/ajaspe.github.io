@@ -8,6 +8,8 @@ layout: default
 
 ## Research Activities
 
+* __Steering Committee__:
+    - [Eurographics Working Group on Graphics and Cultural Heritage](https://www.eg.org/wp/working-group-on-graphics-and-cultural-heritage/) (since 2025).
 * __Guest Editor__ :
 	- [Frontiers on Virtual Reality](https://www.frontiersin.org/journals/virtual-reality). Research topic: [Acquiring, exploring and spreading Cultural Heritage with immersive technologies](https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies).
 	- [Computer & Graphics](https://www.sciencedirect.com/journal/computers-and-graphics). Vol. 119, [Special section on Web3D 2023](https://www.sciencedirect.com/journal/computers-and-graphics/vol/119/suppl/C).

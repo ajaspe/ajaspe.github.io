@@ -10,14 +10,17 @@ abstract: "We discuss virtual staging technologies, focusing on two primary pipe
 projects: 
  - Indoor modelling
  - Virtual reality
-#doi: 10.1145/3611314.3615914
+doi: 10.1109/iMETA62882.2024.10807986
 links:
- - {name: CRS4 Website, url: "https://publications.crs4.it/pubdocs/2024/TYSJSAPGSA24/"}
+ - {name: HBKU Website, url: "https://elmi.hbku.edu.qa/en/publications/virtual-staging-technologies-for-the-metaverse"}
+ - {name: CRS4 Website, url: "https://publications.crs4.it/pubdocs/2024/TYSJSAPGSA24"}
+
 bibtex: "@inproceedings{TYSJSAPGSA24,\n
-    author       = {Tukur, M. and Yehia, B. and Sara, J. and Jaspe Villanueva, A. and Shah,\n
+    author       = {Tukur, M. and Yehia, B. and Sara, J. and Jaspe-Villanueva, A. and Shah,\n
 	                U. and Alzubaidi, M. and Pintore, G. and Gobbetti, E. and Schneider, J. and Agus, M.},\n
     title        = {Virtual Staging Technologies for the Metaverse},\n
-    booktitle    = {Proc. IEEE iMeta},\n
+    booktitle    = {2024 2nd International Conference on Intelligent Metaverse Technologies and Applications, iMETA 2024},\n
+	doi          = {10.1109/iMETA62882.2024.10807986},\n
     year         = {2024},\n
     publisher    = {IEEE},\n
     note         = {To appear},\n
