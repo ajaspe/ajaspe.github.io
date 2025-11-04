@@ -13,8 +13,9 @@ projects:
  - Cultral Heritage
 doi: 10.2312/gch.20191346
 links:
+ - {name: MARLIE DEMO, url: /demos/marlie}
+ - {name: MARLIE code, url: https://github.com/ajaspe/marlie}
  - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Jaspe:2019:WME%27"}
- - {name: MARLIE (code and demo), url: https://vicserver.crs4.it/marlie}
 youtube: iixPu3pNEbg
 bibtex: "@inproceedings{Jaspe:2019:WME,\n
     author = {Alberto Jaspe-Villanueva and Ruggero Pintus and Andrea Giachetti and Enrico Gobbetti},\n
