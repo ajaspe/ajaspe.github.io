@@ -1,0 +1,158 @@
+{
+    "defaultParams": {
+		"renderMode":0,
+		"enhancementK": 0.0,
+		"enhancementLOD": 1.0,
+		"gamma": 2.0,
+		"brightness": 3.14
+    },
+    "baseOptions": [
+	{
+	    "name": "Visible",
+        "info" : "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from white light LED.</p>",
+	    "layer": 0,
+		"params": {
+			"brightness": 2.22
+		}
+	},
+	{
+	    "name": "UV(385nm) + Flourescence",
+	    "info": "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from ultra violet (385nm frequency) LED.</p>",
+	    "layer": 1,
+		"params": {
+			"brightness": 1.98
+		}
+	},
+	{
+	    "name": "UV(405nm) + Flourescence",
+	    "info": "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from ultra violet (405nm frequency) LED.</p>",
+	    "layer": 2,
+		"params": {
+			"brightness": 1.785
+		}
+	},
+	{
+	    "name": "IR(740nm)",
+	    "info": "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from infrared (740nm frequency) LED.</p>",
+		"layer": 3
+	},
+	{
+	    "name": "IR(850nm)",
+	    "info": "<p>Acquisition with a free form RTI, using 70 image samples and illumination from infrared (850nm frequency) LED.</p>",
+	    "layer": 4
+	},
+	{
+	    "name": "False color IR(740nm)+VIS",
+	    "info": "<p>Computed false color with the infrared (740nm) + visible bands.",
+	    "layer": 5
+	},
+	{
+	    "name": "False color VIS+UV(385nm)",
+	    "info": "<p>Computed false color with the visible + ultraviolet (385nm) bands.",
+	    "layer": 6,
+		"params": {
+			"brightness": 1.98
+		}
+	},
+	{
+	    "name": "False color IR(740nm)+VIS+UV(385nm)",
+	    "info": "<p>Computed false color with the infrared (740nm) + visible + ultraviolet (385nm) bands.",
+	    "layer": 7
+	},
+	{
+	    "name": "UV(385nm) Ind.Floures.Illus.",
+	    "info": "<p>Illustrative layer with the computed induced fluorescence from ultraviolet bands.</p>",
+	    "layer": 8
+	}
+    ],
+    "lensOptions": [
+	{
+	    "name": "Achromatic with enhanced geometry",
+	    "info" : "<p>Layer without chromatic information, that visualizes the relighted surface by only using the shape information (i.e., the normal map layer), and the virtual light manually choosen by the user. An enhancing operator has been applied to provide a non-photorealistic/illustrative rendering that increases the perception of geometric behaviour across the object surface. This visualization allows for a pure geometric inspection of micro/meso/macro surface details.</p>",
+	    "layer": 0,
+	    "params": {
+			"renderMode": 1,
+			"enhancementK": 2.27,
+			"enhancementLOD": 2.66,
+			"brightness": 2.22
+		}
+	},
+	{
+	    "name": "Normal map",
+	    "info" : "<p>Layer with the color coded normal map field, which is useful to inspect the pure geometric surface behaviour. An enhancing operator has been applied to increase the perception of micro/meso/macro changes of normal signal across the surface.</p>",
+	    "layer": 0,
+	    "params": {
+			"renderMode": 3,
+			"enhancementK": 2.0,
+			"enhancementLOD": 2.86,
+			"brightness": 3.14
+		}
+	},
+	{
+		"name": "Visible specular lighting",
+		"info": "<p>This option visualizes only the specular component of the Ward model used to represent the spatially-varying object material.</p>",
+		"layer": 0,
+		"params": {
+			"renderMode": 5,
+			"brightness": 2.22
+		}
+	},
+	{
+	    "name": "Visible",
+        "info" : "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from white light LED.</p>",
+	    "layer": 0,
+		"params": {
+			"brightness": 2.22
+		}
+	},
+	{
+	    "name": "UV(385nm) + Flourescence",
+	    "info": "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from ultra violet (385nm frequency) LED.</p>",
+	    "layer": 1,
+		"params": {
+			"brightness": 1.98
+		}
+	},
+	{
+	    "name": "UV(405nm) + Flourescence",
+	    "info": "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from ultra violet (405nm frequency) LED.</p>",
+	    "layer": 2,
+		"params": {
+			"brightness": 1.785
+		}
+	},
+	{
+	    "name": "IR(740nm)",
+	    "info": "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from infrared (740nm frequency) LED.</p>",
+		"layer": 3
+	},
+	{
+	    "name": "IR(850nm)",
+	    "info": "<p>Acquisition with a free form RTI, using around 60 image samples and illumination from infrared (850nm frequency) LED.</p>",
+	    "layer": 4
+	},
+	{
+	    "name": "False color IR(740nm)+VIS",
+	    "info": "<p>Computed false color with the infrared (740nm) + visible bands.",
+	    "layer": 5
+	},
+	{
+	    "name": "False color VIS+UV(385nm)",
+	    "info": "<p>Computed false color with the visible + ultraviolet (385nm) bands.",
+	    "layer": 6,
+		"params": {
+			"brightness": 1.98
+		}
+	},
+	{
+	    "name": "False color IR(740nm)+VIS+UV(385nm)",
+	    "info": "<p>Computed false color with the infrared (740nm) + visible + ultraviolet (385nm) bands.",
+	    "layer": 7
+	},
+	{
+	    "name": "UV(385nm) Ind.Floures.Illus.",
+	    "info": "<p>Illustrative layer with the computed induced fluorescence from ultraviolet bands.</p>",
+	    "layer": 8
+	}    
+	]
+}

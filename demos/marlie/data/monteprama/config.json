@@ -1,0 +1,33 @@
+{
+    "name": "Monteprama Archer n.5 (Prexiau)",
+    "info": "<p>One of the statues from the <a href=\"http://publications.crs4.it/pubdocs/2015/BJMMGP15/\">Mont'e Prama collection</a>, which includes 25 life-size human figures, depicting archers, boxers and warriors, and 13 building models representing typical Nuragic towers. This statue is one of the best preserved items representing an archer (Archer n.5 - Prexiau). It has been acquired using a combination of laser scanning and flash photography to recover shape and albedo of complete 3D models. The fixed view used in the annotated model visualization has been chosen to display a set of important features from the CH point of view, and has been resampled at the resolution of approximately 0.25mm/pixel. In this view, it is possible to see the quiver (with the resin box and the small sword), and the left arm, which holds the bow. Activate the <em>\"Annotations\"</em> mode to see more visual and textual information.</p><p><center><img src=\"data/monteprama/img/archer_5.jpg\" alt=\"\" width=\"240\" height=\"361\" /></center></p><p>Courtesy of CRBC Sassari.</p>",
+    "dimensions": [ 4020, 4020],
+    "rti_shader": {
+        "type": "SVBRDF",
+        "alphaLimits": [0.01, 0.5],
+        "inputColorSpace": "linear"
+    },
+    "layers": [
+        {
+            "name": "Visible",
+            "maps": {
+                "normals": "normalMap.jpg",
+                "kd": "kd.jpg",
+                "ks": "ks.jpg",
+                "gloss": "glossMap.jpg"
+            },
+            "annotations": {
+                "file_prefix": "annot/annot_",
+                "file_postfix": ".png",
+                "n": 5,
+                "infos": [
+                    ["Sculpting techniques vs arm regions", "<h4>Sculpting techniques</h4><p>Several different tools and sculpting techniques have been used to render the archer's fist, which is protected by a decorated glove, and the left arm, which is almost entirely covered by an armguard.</p><p><img src=\"data/monteprama/img/tools.jpg\" /></p><p>Peter Rockwell, Le tecniche antiche In: <i>Le sculture di Mont’e Prama–Conservazione e restauro</i> 2014, Gangemi editore, pp. 353-360</p>"],
+                    ["Sculpting techniques vs arm regions", "<h4>Sculpting techniques</h4><p>Several different tools and sculpting techniques have been used to render the archer's fist, which is protected by a decorated glove, and the left arm, which is almost entirely covered by an armguard.</p><p><img src=\"data/monteprama/img/tools.jpg\" /></p><p>Peter Rockwell, Le tecniche antiche In: <i>Le sculture di Mont’e Prama–Conservazione e restauro</i> 2014, Gangemi editore, pp. 353-360</p>"],
+                    ["Distinctive archer's elements", "<h4>Distinctive archer's elements</h4><p>Five element of the statue are highlighted, i.e., the quiver, the armguard, the remaining part of the bow, the archer's glove, and a reinforcement part that connects the bow and the left arm.</p>"],
+                    ["Bow reconstruction hypothesis", "<h4>Bow reconstruction hypothesis</h4><p>The archer's bow has not been entirely preserved (only the lowest part is visible in the statue). The annotation aims at depicting a hypothesis of reconstruction of the missing bow. It should have lied on the archer shoulder, and the presence of a tight bowstring remains in some details in the back of the statue.</p>"],
+                    ["Bow reconstruction hypothesis", "<h4>Bow reconstruction hypothesis</h4><p>The archer's bow has not been entirely preserved (only the lowest part is visible in the statue). The annotation aims at depicting a hypothesis of reconstruction of the missing bow. It should have lied on the archer shoulder, and the presence of a tight bowstring remains in some details in the back of the statue.</p>"]
+                ]
+            }
+        }
+    ]
+}

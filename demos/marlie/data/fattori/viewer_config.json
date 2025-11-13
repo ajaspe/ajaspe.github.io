@@ -1,0 +1,97 @@
+{
+    "defaultParams": {
+		"renderMode":0,
+		"enhancementK": 0.0,
+		"enhancementLOD": 1.0,
+		"brightness": 2.09,
+		"gamma": 2.0
+    },
+    "baseOptions": [
+	{
+	    "name": "Visible",
+	    "info": "Visibile layer caputerd with white light.",
+	    "layer": 0
+	},
+	{
+		"name": "Visible albedo",
+		"info": "<p>This option visualizes only the diffuse (Lambertian) component of the Ward model used to represent the spatially-varying object material.</p>",
+		"layer": 0,
+		"params": {
+			"renderMode": 4
+		}
+	},
+	{
+		"name": "Visible specular lighting (x2)",
+		"info": "<p>This option visualizes only the diffuse (Lambertian) component of the Ward model used to represent the spatially-varying object material.</p>",
+		"layer": 0,
+		"params": {
+			"renderMode": 5,
+			"brightness": 4
+		}
+	},
+	{
+		"name": "Achromatic with enhanced geometry",
+		"info" : "<p>Layer without chromatic information, that visualizes the relighted surface by only using the shape information (i.e., the normal map layer), and the virtual light manually choosen by the user. An enhancing operator has been applied to provide a non-photorealistic/illustrative rendering that increases the perception of geometric behaviour across the object surface. This visualization allows for a pure geometric inspection of micro/meso/macro surface details.</p>",
+		"layer": 0,
+		"params": {
+			"renderMode": 1,
+			"enhancementK": 2.27,
+			"enhancementLOD": 2.66
+		}
+	},
+	{
+		"name": "Enhanced normal map",
+		"info" : "<p>Layer with the color coded normal map field, which is useful to inspect the pure geometric surface behaviour. An enhancing operator has been applied to increase the perception of micro/meso/macro changes of normal signal across the surface.</p>",
+		"layer": 0,
+		"params": {
+			"renderMode": 3,
+			"enhancementK": 2.0,
+			"enhancementLOD": 2.86
+		}
+	}
+    ],
+    "lensOptions": [
+		{
+			"name": "Visible",
+			"info": "Visibile layer caputerd with white light.",
+			"layer": 0
+		},
+		{
+			"name": "Visible albedo",
+			"info": "<p>This option visualizes only the diffuse (Lambertian) component of the Ward model used to represent the spatially-varying object material.</p>",
+			"layer": 0,
+			"params": {
+				"renderMode": 4
+			}
+		},
+		{
+			"name": "Visible specular lighting (x2)",
+			"info": "<p>This option visualizes only the diffuse (Lambertian) component of the Ward model used to represent the spatially-varying object material.</p>",
+			"layer": 0,
+			"params": {
+				"renderMode": 5,
+				"brightness": 4
+			}
+		},
+		{
+			"name": "Achromatic with enhanced geometry",
+			"info" : "<p>Layer without chromatic information, that visualizes the relighted surface by only using the shape information (i.e., the normal map layer), and the virtual light manually choosen by the user. An enhancing operator has been applied to provide a non-photorealistic/illustrative rendering that increases the perception of geometric behaviour across the object surface. This visualization allows for a pure geometric inspection of micro/meso/macro surface details.</p>",
+			"layer": 0,
+			"params": {
+				"renderMode": 1,
+				"enhancementK": 2.27,
+				"enhancementLOD": 2.66
+			}
+		},
+		{
+			"name": "Enhanced normal map",
+			"info" : "<p>Layer with the color coded normal map field, which is useful to inspect the pure geometric surface behaviour. An enhancing operator has been applied to increase the perception of micro/meso/macro changes of normal signal across the surface.</p>",
+			"layer": 0,
+			"params": {
+				"renderMode": 3,
+				"enhancementK": 2.0,
+				"enhancementLOD": 2.86
+			}
+		}
+	]
+}

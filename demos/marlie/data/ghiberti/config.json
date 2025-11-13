@@ -1,0 +1,25 @@
+{
+    "name":"Ghiberti (BRDF)",
+    "info": "Replica of one of the bronze panels of the Paradise door of the Baptistery of Florence. Courtesy of Opificio delle Pietre Dure, Firenze. Data acquired with the Multi-spectral RTI light dome setup.",
+    "dimensions": [4795, 1523],
+    "rti_shader": {
+        "type": "SVBRDF",
+        "alphaLimits": [0.01, 0.5],
+        "inputColorSpace": "linear"
+    },
+    "reducedVersion": {
+        "dimensions": [4096, 1301],
+        "dir": "4096/"
+    },
+    "layers": [
+        {
+            "name": "Visible",
+            "maps": {
+        		"normals": "normalMap.jpg",
+                "kd": "kdMap.jpg",
+                "ks": "ksMap_x0_32_median.jpg",
+	        	"gloss": "glossMap.jpg"
+            }
+        }
+    ]
+}

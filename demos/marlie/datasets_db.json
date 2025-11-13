@@ -1,3 +1,7 @@
 { 	
-	"MARLIE Test Dataset": "data\\test_dataset"
+	"Demetrios": "data\\demetrios",
+	"Ghiberti": "data\\ghiberti",
+	"Fattori": "data\\fattori",
+	"Monteprama": "data\\monteprama",
+	"MARLIE Test": "data\\test_dataset"
 }

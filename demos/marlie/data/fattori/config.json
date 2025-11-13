@@ -1,0 +1,21 @@
+{
+    "name":"Fattori",
+    "info" : "<h1>Fattori's Painting</h1> <p>The painting  is signed by Giovanni Fattori (Livorno 1825 - Firenze 1908), even though no authenticity test on authorship has been officially validated. It is a wooden substrate of small dimensions (10x15 cm) painted with oil colors and with a varnish layer applied. It belongs to the Macchiaioli art movement (the Italian precursor of the French Impressionism.</p><p> Courtesy of University of Verona. Data acquired with the Multi-spectral RTI light dome setup.</p>",
+    "dimensions": [2144,1504],
+	"rti_shader": {
+        "type": "SVBRDF",
+        "alphaLimits": [0.01, 0.5],
+        "inputColorSpace": "linear"
+    },
+    "layers": [
+        {
+            "name": "Visible",
+            "maps": {
+    		    "normals": "normalMap.jpg",
+                "kd": "kdMap_x1_50.jpg",
+                "ks": "ksMap_median_x0_48.jpg",
+    		    "gloss": "glossMap.jpg"
+            }
+        }
+    ]
+}

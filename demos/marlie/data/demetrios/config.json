@@ -1,0 +1,97 @@
+{
+    "name":"St. Demetrios Icon",
+	"info" : "<p>The icon of St. Demetrios is an example of Greek religious art of the 17 th -18 th century. The icon is an important element of the liturgical life of orthodox church, where is placed. For this reason, it needs be kept in its context and the faithful should be deprived of the fruition of this element of worship for long time. The icon is interesting from the material analysis point of view; it is an egg tempera painting on a wood support, and it contains regions where gold leaf has been employed for artistic reasons.</p> <p>The painting data has been acquired by a custom free-form Multi-spectral RTI setup, i.e., a camera and a hand-held light source. We have chosen a standard high-resolution Nikon D810 DLSR camera without the hot mirror (the IR filter), and a Nikkor Lens 50mm f/1.8D, which ensures a proper transmittance characteristics across the spectrum from near-UV to near-IR. We capture seven monochromatic signals, by exploiting  a set of five different LEDs light sources, and the three Bayer filters in the camera color filter arrays (CFAs); the light sources are two ultra-violet (UV), a white (VIS) and two infra-red (IR) emitters. The UV LEDs are centered at 385nm and 405nm with a full width at half maximum (FWHM) of about 20nm; the IR emitters are centered at 740nm and 850nm with approximately 40nm FWHM; on the other hand the VIS LED is a white light (5500K) that covers the entire visible spectrum. The entire captured scene contains both the painting and a series of calibration objects, i.e., a white planar target and four dark glossy spheres. For each wavelength, we have acquired a total number of about 60 images, with a light direction domain that covers the hemisphere above the painting. The calibration has been performed to compute a per-pixel light direction and intensity (<a href=\"https://www.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Giachetti:2018:NFH%27\">A Novel Framework for Highlight Reflectance Transformation Imaging</a>) , and to produce a dataset suitable for physically based computation.</p><p>Courtesy of Ormylia Foundation. Capture funded by <a href=\"https://scan4reco.eu/\">Scan4reco project</a> (European Union’s Horizon 2020 Framework Programme for Research and Innovation under grant agreement no 665091.) </p>",
+    "dimensions": [2969, 5469],
+	"rti_shader": {
+        "type": "SVBRDF",
+        "alphaLimits": [0.01, 0.5],
+        "inputColorSpace": "linear"
+    },
+    "reducedVersion": {
+        "dimensions": [2224, 4096],
+        "dir": "4096/"
+    },
+    "layers": [
+        {
+            "name": "Visible",
+            "maps": {
+    		    "normals": "normalMap_rotated.jpg",
+                "kd": "vis/kdMap_x1_41.jpg",
+                "ks": "vis/ksMap_x0_45.jpg",
+    		    "gloss": "vis/glossMap.jpg"
+            }
+        },
+        {
+            "name": "UV(385nm) + Flourescence",
+            "maps": {
+    		"normals": "normalMap_rotated.jpg",
+                "kd": "uv_plus/kdMap_x1_59.jpg",
+                "ks": "uv_plus/ksMap_x0_51.jpg",
+                "gloss": "uv_plus/glossMap.jpg"
+            }
+        },
+        {
+            "name": "UV(405nm) + Flourescence",
+            "maps": {
+    		"normals": "normalMap_rotated.jpg",
+                "kd": "uv/kdMap_x1_76.jpg",
+                "ks": "uv/ksMap_x0_56.jpg",
+                "gloss": "uv/glossMap.jpg"
+            }
+        },
+        {
+            "name": "IR(740nm)",
+            "maps": {
+    		"normals": "normalMap_rotated.jpg",
+                "kd": "ir/kdMap.jpg",
+                "ks": "ir/ksMap_x0_32.jpg",
+                "gloss": "ir/glossMap.jpg"
+            }
+        },
+        {
+            "name": "IR(850nm)",
+            "maps": {
+    		"normals": "normalMap_rotated.jpg",
+                "kd": "ir_plus/kdMap.jpg",
+                "ks": "ir_plus/ksMap_x0_32.jpg",
+                "gloss": "ir_plus/glossMap.jpg"
+            }
+        },
+        {
+            "name": "FC IR(740nm)+VIS",
+            "maps": {
+    		"normals": "normalMap_rotated.jpg",
+                "kd": "false_color/fc_ir_vis.jpg",
+                "ks": "ir/ksMap_x0_32.jpg",
+                "gloss": "ir/glossMap.jpg"
+            }
+		},
+        {
+            "name": "FC VIS+UV(385nm)",
+            "maps": {
+    		"normals": "normalMap_rotated.jpg",
+                "kd": "false_color/fc_vis_uv.jpg",
+                "ks": "uv_plus/ksMap_x0_51.jpg",
+                "gloss": "uv_plus/glossMap.jpg"
+            }
+		},
+        {
+            "name": "FC IR(740nm)+VIS+UV(385nm)",
+            "maps": {
+    		"normals": "normalMap_rotated.jpg",
+                "kd": "false_color/fc_ir_vis_uv.jpg",
+                "ks": "ir/ksMap_x0_32.jpg",
+                "gloss": "ir/glossMap.jpg"
+            }
+		},
+        {
+            "name": "UV(385nm) Ind.Floures.Illus.",
+            "maps": {
+    		"normals": "normalMap_rotated.jpg",
+                "kd": "false_color/fc_fluorescence.jpg",
+                "ks": "uv_plus/ksMap_x0_51.jpg",
+                "gloss": "uv_plus/glossMap.jpg"
+            }
+	}		
+    ]
+}
