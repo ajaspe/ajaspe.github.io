@@ -12,7 +12,7 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {% assign news_by_year = site.data.news | sort: "date" | reverse | group_by_exp: "n", "n.date | date: '%Y'" %}
 {% for y in news_by_year %}
 
-## {{ y.name }}
+<h2 class="pub-year">{{ y.name }}</h2>
 
 {% include news-list.html items=y.items %}
 

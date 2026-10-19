@@ -56,7 +56,7 @@ layout: default
             <a href="{{link.url}}" class="btn btn-outline-warning">
                 <i class="bi bi-link-45deg"></i>{{link.name}}</a>
             {% endfor %}
-            <span class="gc-counter text-white-50 small ms-2" data-gc-path="{{ page.url }}" data-gc-label="page views"></span>
+            {% assign pv = site.data.visitors.pages[page.url] %}<span class="gc-counter text-white-50 small ms-2{% if pv %} gc-ready{% endif %}" data-gc-path="{{ page.url }}" data-gc-label="page views">{% if pv %}{{ pv }} page views{% endif %}</span>
         </p>
         <div class="collapse" id="bibtex">
             <div class="card card-body bg-dark">

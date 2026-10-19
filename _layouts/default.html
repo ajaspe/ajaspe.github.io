@@ -127,7 +127,7 @@
         "@type": "Organization",
         "name": "King Abdullah University of Science and Technology (KAUST)",
         "url": "https://kaust.edu.sa",
-        "department": {"@type": "Organization", "name": "Visual Computing Center", "url": "https://vcc.kaust.edu.sa"}
+        "department": {"@type": "Organization", "name": "Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division", "url": "https://cemse.kaust.edu.sa"}
       },
       "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of A Coruña", "url": "https://udc.es"},
       "knowsAbout": ["Computer Graphics", "Scientific Visualization", "Real-time Rendering", "Massive Model Rendering", "Cultural Heritage Digitization", "Virtual Reality", "Web-based 3D Graphics"],
@@ -138,7 +138,8 @@
         "https://github.com/ajaspe",
         "https://bsky.app/profile/ajaspe.bsky.social",
         "https://twitter.com/albertojaspe",
-        "https://vccvisualization.org/people/jaspe"
+        "https://vccvisualization.org/people/jaspe",
+        "https://cemse.kaust.edu.sa/profiles/alberto-jaspe-villanueva"
       ]
     }
     </script>
@@ -209,7 +210,7 @@
 
         <footer class="mt-auto text-white-50 text-center">
             <p class="lead text-warning mb-1">&copy; AJV</p>
-            <p class="small mb-2"><span class="gc-counter" data-gc-path="TOTAL" data-gc-label="visits"></span><a href="https://albertojaspe.goatcounter.com" class="gc-stats-link">Site statistics</a></p>
+            <p class="small mb-2">{% assign vis = site.data.visitors %}<span class="gc-counter{% if vis and vis.total > 0 %} gc-ready{% endif %}" data-gc-path="TOTAL" data-gc-label="visits">{% if vis and vis.total > 0 %}{{ vis.total }} visits{% endif %}</span><a href="https://albertojaspe.goatcounter.com" class="gc-stats-link{% if vis and vis.total > 0 %} gc-ready{% endif %}">Site statistics</a></p>
         </footer>
     </div>
 
