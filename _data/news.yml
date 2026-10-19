@@ -1,76 +1,115 @@
-- date: "September.2025"
+# News entries. The site sorts them by date (newest first), whatever their order here.
+#   date: full ISO date, YYYY-MM-DD (use day 01 when only the month matters; use
+#         different days to control the order of items in the same month)
+#   type: paper | award | service | talk | travel | site | misc   (chooses the icon)
+#   text: one or two sentences, markdown allowed
+
+# ---------------------------------------------------------------------------
+# DRAFT entries written from the site's own data. Please check dates and wording.
+# ---------------------------------------------------------------------------
+- date: 2026-10-16
+  type: award
+  text: "Our paper [HGCalVis](/publications/2026-Web3D-HGCalVis.html) received the Scientific Excellence award at [Web3D 2026](https://web3d.siggraph.org/2026/) in Doha, Qatar. Congratulations to Waad and all the co-authors!"
+
+- date: 2026-10-15
+  type: award
+  text: "[X3D Copilot](/x3d-copilot/), our browser-based X3D editor with an AI co-author, won two awards at the Web3D 2026 competitions: *Web3D/Metaverse Tool of the Year* and first prize in the *AI & Web3D Innovation Competition*."
+
+- date: 2026-10-13
+  type: paper
+  text: "Two papers at [Web3D 2026](https://web3d.siggraph.org/2026/): [HGCalVis](/publications/2026-Web3D-HGCalVis.html), a web-based visualization of CERN's HGCal particle showers, and [PanoGS](/publications/2026-Web3D-PanoGS.html), high-resolution Gaussian splatting from sparse panoramic images."
+
+- date: 2026-03-01
+  type: service
+  text: "Serving as tutorials chair of [Web3D 2026](https://web3d.siggraph.org/2026/) and program chair of [STAG 2026](https://www.stag-conference.org)."
+# ---------------------------------------------------------------------------
+# End of draft entries
+# ---------------------------------------------------------------------------
+
+- date: 2025-09-02
+  type: service
   text: "I am delighted to have been selected to join the Steering Committee of the [Eurographics Working Group on Graphics and Cultural Heritage](https://www.eg.org/wp/working-group-on-graphics-and-cultural-heritage/) alongside such distinguished members."
 
-- date: "September.2025"
-  text: "The paper in collaboration with [CRS4](https://www.crs4.it) with title [\"A Practical Inverse Rendering Strategy for Enhanced Albedo Estimation for Cultural Heritage Model Reconstruction\"](/publications/2025-DH-albedo_inverse_rendering.html) has been accepted at the [Digital Heritage 2025](https://digitalheritage2025.unisi.it/) conference. I will attend in Siena (Italy) and chair the session \"Digital Heritage Research: History, Archeology, and Virtual Reconstruction\"."
+- date: 2025-09-01
+  type: paper
+  text: "The paper in collaboration with [CRS4](https://www.crs4.it) with title [\"A Practical Inverse Rendering Strategy for Enhanced Albedo Estimation for Cultural Heritage Model Reconstruction\"](/publications/2025-DH-albedo_inverse_rendering.html) has been accepted at the [Digital Heritage 2025](https://digitalheritage2025.unisi.it/) conference. I will attend in Siena (Italy) and chair the session \"Digital Heritage Research: History, Archeology, and Virtual Reconstruction\"."
 
-- date: "June.2025"
+- date: 2025-06-01
+  type: service
   text: "Serving this year again on several International Program Committees: [PacificVIS 2026](https://pacificvis2026.github.io), [Digital Heritage 2025](https://digitalheritage2025.unisi.it), [STAG 2025](https://www.stag-conference.org/2025/), and [CEIG 2025](https://www.eurographics.es/CEIG25/index_EN.html)."
 
-- date: "April.2025"
+- date: 2025-04-02
+  type: paper
   text: "Our work [Lactea, for real-time, web-based, spectrum-preserving visualization of the GAIA star catalog](/publications/2025-EVIS-lactea.html) has been accepted as a full paper at [EuroVis 2025](https://www.eurovis2025.lu). Looking forward to presenting it in Luxembourg!"
 
-- date: "April.2025"
+- date: 2025-04-01
+  type: service
   text: "Serving for the first time as a member of the International Program Committee (IPC) of [IEEE VIS 2025](https://ieeevis.org/year/2025/welcome)."
 
-- date: "February.2025"
+- date: 2025-02-01
+  type: talk
   text: "Thrilled to have participated in the Innovation Week of RDIA (Research, Development and Innovation Authority of Saudi Arabia), [presenting our collaboration with CERN](https://www.youtube.com/watch?v=lSsP3cqT6jE&list=LL&index=6)."
 
-- date: "September.2024"
+- date: 2024-09-01
+  type: service
   text: "Serving as a member of the International Program Committee (IPC) of [PacificVIS 2025](https://pacificvis2025.github.io)."
 
-- date: "July.2024"
-  text: "I have been visiting [CERN's CMS](https://home.cern/science/experiments/cms), as part of our collaboration on visualizing simulations of their new High Granularity Calorimeter (HGCal), which will be installed in the CMS detector for the next major upgrade."
+- date: 2024-07-01
+  type: travel
+  text: "I have been visiting [CERN's CMS](https://home.cern/science/experiments/cms) as part of our collaboration on visualizing simulations of their new High Granularity Calorimeter (HGCal), which will be installed in the CMS detector for the next major upgrade."
 
-- date: "April.2024"
+- date: 2024-04-01
+  type: service
   text: "This year I will serve as a member of the International Program Committee (IPC) of the following conferences: [CGI'24](https://www.cgs-network.org/cgi24) (Geneva, Switzerland), [GCH'24](https://gch2024.eu) (Darmstadt, Germany), [GRAPP'24](https://grapp.scitevents.org/?y=2024) (Rome, Italy), [ACM Web3D'24](https://web3d.siggraph.org/) (Guimarães, Portugal) and [CEIG'24](https://www.eurographics.es/CEIG24/) (A Coruña, Spain)."
 
-- date: "October.2023"
-  text: "We presented our latest paper \"[PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications](/publications/2023-Web3D-panoverse.html)\"
-  at [ACM SIGGRAPH Web3D 2023](https://web3d.siggraph.org) (San Sebastián, Spain), which received the Honorable Mention award of the conference. Congratulations to all the co-authors! :)"
+- date: 2023-10-01
+  type: award
+  text: "We presented our latest paper \"[PanoVerse: automatic generation of stereoscopic environments from single indoor panoramic images for Metaverse applications](/publications/2023-Web3D-panoverse.html)\" at [ACM SIGGRAPH Web3D 2023](https://web3d.siggraph.org) (San Sebastián, Spain), which received the Honorable Mention award of the conference. Congratulations to all the co-authors! :)"
 
-- date: "April.2023"
-  text: "Our paper \"[Doppler Volume Rendering: A Dynamic, Piecewise Linear Spectral Representation
-  for Visualizing Astrophysics Simulations](/publications/2023-EVIS-doppler_volume.html)\" has
-  been accepted at the [EuroVis 2023](https://eurovis.org) conference! See you in Leipzig (Germany)."
+- date: 2023-04-01
+  type: paper
+  text: "Our paper \"[Doppler Volume Rendering: A Dynamic, Piecewise Linear Spectral Representation for Visualizing Astrophysics Simulations](/publications/2023-EVIS-doppler_volume.html)\" has been accepted at the [EuroVis 2023](https://eurovis.org) conference! See you in Leipzig (Germany)."
 
-- date: "February.2023"
-  text: "Very happy to serve as **program co-chair** this year for ACM SIGGRAPH [Web3D 2023](https://web3d.siggraph.org). It will be hosted by
-  [Vicomtech](https://www.vicomtech.org) in the wonderful city of [San Sebastián (Spain)](https://en.wikipedia.org/wiki/San_Sebasti%C3%A1n).
-  Let's make an awesome conference!"
+- date: 2023-02-01
+  type: service
+  text: "Very happy to serve as **program co-chair** this year for ACM SIGGRAPH [Web3D 2023](https://web3d.siggraph.org). It will be hosted by [Vicomtech](https://www.vicomtech.org) in the wonderful city of [San Sebastián (Spain)](https://en.wikipedia.org/wiki/San_Sebasti%C3%A1n). Let's make an awesome conference!"
 
-- date: "December.2022"
-  text: "I've been invited to be a member of the Program Committee of the *Conferencia Española de Informática Gráfica (Spanish Conference of Computer Graphics)*,
-  whose 2023 edition ([CEIG'23](https://www.eurographics.es/ceig23)) will be held in Palma de Mallorca, Spain."
+- date: 2022-12-01
+  type: service
+  text: "I've been invited to be a member of the Program Committee of the *Conferencia Española de Informática Gráfica (Spanish Conference of Computer Graphics)*, whose 2023 edition ([CEIG'23](https://www.eurographics.es/ceig23)) will be held in Palma de Mallorca, Spain."
 
-- date: "September.2022"
+- date: 2022-09-01
+  type: service
   text: "I've been invited to be a member of the Program Committee of the *International Conference on Visualization and Computer-Human Interaction*, whose 2022 edition ([VisCHI'22](https://www.hbku.edu.qa/en/vischi)) will be held in Doha, Qatar."
 
-- date: "August.2022"
-  text: "Our paper on [Probabilistic filtering of large, multidimensional data](/publications/2022-VIS-probabilistic_range_queries.html)
-  has been accepted at the [IEEE VIS 2022](http://ieeevis.org/year/2022/welcome) conference. See you in Oklahoma City (USA)!"
+- date: 2022-08-02
+  type: paper
+  text: "Our paper on [Probabilistic filtering of large, multidimensional data](/publications/2022-VIS-probabilistic_range_queries.html) has been accepted at the [IEEE VIS 2022](http://ieeevis.org/year/2022/welcome) conference. See you in Oklahoma City (USA)!"
 
-- date: "August.2022"
+- date: 2022-08-01
+  type: service
   text: "I've been invited to be a member of the Program Committee of the *Eurographics Workshop on Graphics and Cultural Heritage*, whose 2022 edition ([GCH'22](https://gch2022.ewi.tudelft.nl)) will be held at TU Delft, the Netherlands."
 
-- date: "June.2022"
+- date: 2022-06-01
+  type: travel
   text: "I'll be attending both [EuroVis](https://www.eurovis.org) (Rome) and [SIGGRAPH](https://www.siggraph.org) (Vancouver). Hope to see you around!"
 
-- date: "March.2022"
+- date: 2022-03-03
+  type: site
   text: "Uploaded a simple clone of [Shadertoy](https://shadertoy.com) I made some time ago to quickly experiment with shaders: [The GLSL Playground](https://albertojaspe.net/demos/glsl-playground.html)."
 
-- date: "March.2022"
-  text: "I've been promoted to *Research Scientist* in the [Visual Computing Center](https://cemse.kaust.edu.sa/vcc/people/research-scientists) within
-  the [High-Performance Visualization Group](https://vccvisualization.org/) at [KAUST](https://kaust.edu.sa), such an exciting adventure!
-  My gratitude to Prof. Markus Hadwiger and all my colleagues."
+- date: 2022-03-02
+  type: misc
+  text: "I've been promoted to *Research Scientist* in the [Visual Computing Center](https://cemse.kaust.edu.sa/vcc/people/research-scientists) within the [High-Performance Visualization Group](https://vccvisualization.org/) at [KAUST](https://kaust.edu.sa), such an exciting adventure! My gratitude to Prof. Markus Hadwiger and all my colleagues."
 
-- date: "March.2022"
+- date: 2022-03-01
+  type: award
   text: "Our latest work on MLICs, the product of a collaboration between [CRS4](https://www.crs4.it/vic) and [KAUST](https://vccvisualization.org), has been [selected as the cover of the international journal \"The Visual Computer\" for its 2022 issues](https://www.linkedin.com/posts/albertojaspe_crs4-springer-thevisualcomputer-activity-6903622315842576384-LzzI?utm_source=linkedin_share&utm_medium=member_desktop_web)."
 
-- date: "January.2022"
+- date: 2022-01-01
+  type: site
   text: "Finally, this new website has been released! I'll keep adding more and more content. I designed it from scratch using [Jekyll](https://jekyllrb.com/) and [Bootstrap](https://getbootstrap.com/), and it is hosted on [GitHub Pages](https://pages.github.com/); thanks to all these projects!"
 
-- date: "December.2021"
-  text: "I am co-editing a research topic for the journal [Frontiers in Virtual Reality](https://www.frontiersin.org/journals/virtual-reality), called: 
-  \"[Acquiring, exploring and spreading Cultural Heritage with immersive technologies](https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies)\",
-  with the aim of bridging the CH domain and VR/AR technologies. *The call for papers for the special journal issue is open!*"
+- date: 2021-12-01
+  type: service
+  text: "I am co-editing a research topic for the journal [Frontiers in Virtual Reality](https://www.frontiersin.org/journals/virtual-reality), called: \"[Acquiring, exploring and spreading Cultural Heritage with immersive technologies](https://www.frontiersin.org/research-topics/25084/acquiring-exploring-and-spreading-cultural-heritage-with-immersive-technologies)\", with the aim of bridging the CH domain and VR/AR technologies. *The call for papers for the special journal issue is open!*"

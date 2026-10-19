@@ -1,0 +1,26 @@
+{%- comment -%}
+  News timeline. Parameters:
+    items : array of news entries from _data/news.yml (date, type, text)
+    limit : optional maximum number of entries to show
+  Entries are sorted by date, newest first, whatever their order in the file.
+{%- endcomment -%}
+{%- assign news_items = include.items | sort: "date" | reverse -%}
+{%- assign news_limit = include.limit | default: 1000 -%}
+<ul class="news-list list-unstyled mb-0">
+{%- for n in news_items limit: news_limit %}
+  {%- case n.type -%}
+    {%- when "paper" -%}{%- assign news_icon = "fa-file-alt" -%}
+    {%- when "award" -%}{%- assign news_icon = "fa-trophy" -%}
+    {%- when "service" -%}{%- assign news_icon = "fa-users" -%}
+    {%- when "talk" -%}{%- assign news_icon = "fa-microphone" -%}
+    {%- when "travel" -%}{%- assign news_icon = "fa-plane" -%}
+    {%- when "site" -%}{%- assign news_icon = "fa-code" -%}
+    {%- else -%}{%- assign news_icon = "fa-bullhorn" -%}
+  {%- endcase %}
+  <li class="news-item">
+    <span class="news-date">{{ n.date | date: "%b %Y" }}</span>
+    <span class="news-icon" title="{{ n.type | default: 'news' }}"><i class="fas {{ news_icon }}"></i></span>
+    <div class="news-text">{{ n.text | markdownify }}</div>
+  </li>
+{%- endfor %}
+</ul>

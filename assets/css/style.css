@@ -118,21 +118,51 @@ a:hover {
 }
 
 .pub-thumb-box {
+  display: block;
   width: 190px;
-  text-align: center;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border: 1px solid #555;
+  border-radius: 0.3rem;
+  background-color: #000;
 }
 
 .pub-thumb {
-  max-width: 190px;
-  max-height: 128px;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
 }
 
 .pub-row:hover .pub-thumb {
-  filter: brightness(140%);
-  transition: filter 300ms linear;
+  transform: scale(1.06);
 }
+
+.pub-row:hover .pub-thumb-box {
+  border-color: rgb(255, 166, 93);
+}
+
+.pub-year {
+  margin-top: 28px;
+}
+
+.pub-type {
+  display: inline-block;
+  font-size: 0.78em;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.05em 0.55em;
+  margin-right: 0.3em;
+  border: 1px solid #777;
+  border-radius: 999px;
+  color: #ccc;
+  vertical-align: 0.1em;
+}
+
+.pub-type-journal { border-color: rgb(255, 166, 93); color: rgb(255, 166, 93); }
+.pub-type-conference { border-color: #6cb4ff; color: #6cb4ff; }
+.pub-type-book { border-color: #8fd18f; color: #8fd18f; }
 
 .pub-title {
   font-size: 1.15em;
@@ -149,10 +179,10 @@ a:hover {
 }
 
 @media (max-width: 575.98px) {
-  /* phones: thumbnail above the text, using the full row width */
+  /* phones: thumbnail above the text */
   .pub-row > .col-auto { width: 100%; }
-  .pub-thumb-box { width: 100%; text-align: left; }
-  .pub-thumb { max-width: 220px; max-height: 150px; }
+  .pub-thumb-box { width: 220px; }
+  .pub-row > .col { margin-top: 0.5rem; }
   .abstract { text-align: left; }
   .pub-award-img { width: 100%; }
 }
@@ -237,7 +267,7 @@ h1.brand_title {
   border: none;
   border-radius: 0;
   box-shadow: none;
-  padding-top: 0;
+  padding: 0;
   margin: 0;
   text-align: left;
   font-size: 2em;
@@ -269,4 +299,172 @@ h1.pub-page-title {
   box-shadow: none;
   padding-top: 0;
   margin-bottom: 1rem;
+}
+
+/*
+ * Home page: hero
+ */
+
+.hero-photo {
+  width: 100%;
+  max-width: 170px;
+}
+
+.hero-tagline {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.3em;
+  color: #ddd;
+  margin-bottom: 0.6rem;
+}
+
+.hero-bio {
+  margin-bottom: 1rem;
+}
+
+.hero-actions {
+  margin-bottom: 0.75rem;
+}
+
+.hero-actions .btn {
+  margin: 0 0.25rem 0.4rem 0;
+}
+
+.hero-social {
+  margin-bottom: 0;
+}
+
+.hero-social .icon-social {
+  width: 28px;
+  margin-right: 8px;
+  opacity: 0.85;
+}
+
+.hero-social-text {
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+/*
+ * Home page: highlight cards
+ */
+
+.hl-card {
+  background-color: #111;
+  border: 1px solid #444;
+  color: #fff;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.hl-card:hover {
+  border-color: rgb(255, 166, 93);
+  background-color: #161616;
+  color: #fff;
+}
+
+.hl-img {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hl-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.hl-card:hover .hl-img img {
+  transform: scale(1.04);
+}
+
+.hl-title {
+  color: rgb(255, 166, 93);
+  font-size: 1.05em;
+  line-height: 1.3;
+}
+
+.hl-meta {
+  color: #aaa;
+  margin-top: 0.3rem;
+}
+
+/*
+ * News timeline (home page and /news/)
+ */
+
+.news-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.news-item:last-child {
+  border-bottom: 0;
+}
+
+.news-date {
+  flex: 0 0 72px;
+  color: #ffc107;
+  font-style: italic;
+  font-size: 0.85em;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.news-icon {
+  flex: 0 0 1.3em;
+  color: rgb(255, 166, 93);
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.news-text {
+  flex: 1 1 auto;
+}
+
+.news-text p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 575.98px) {
+  .news-date { flex-basis: 62px; }
+  .hero-photo { max-width: 140px; margin-bottom: 0.5rem; }
+}
+
+/*
+ * Navbar profile icons: always visible, also on phones (outside the collapsible menu)
+ */
+
+.nav-social {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+.nav-social .icon-social {
+  width: 28px;
+  margin: 0 3px;
+}
+
+@media (min-width: 768px) {
+  .nav-social {
+    width: auto;
+    flex-grow: 1;
+    margin-top: 0;
+  }
+  .nav-social .icon-social {
+    width: 34px;
+    margin: 0 1px;
+  }
+  #myNavbar {
+    flex-grow: 0;
+  }
+}
+
+.hl-title {
+  font-size: 1em;
 }

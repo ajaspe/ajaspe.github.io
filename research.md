@@ -16,9 +16,6 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 <p class="lead">
 My research focuses on the <b>real-time exploration of massive models and complex data</b>, from acquisition and processing to rendering and interaction. I work on multiresolution data structures, GPU and ray-tracing algorithms, and web-based visualization, applied to scientific data such as particle physics simulations and astronomical catalogs, and to cultural heritage, where I deal with image-based acquisition and relighting of artworks, indoor modeling from panoramic images, and immersive virtual reality.
 </p>
-<p class="lead">
-I am a Research Scientist in the <a href="https://vccvisualization.org">High-Performance Visualization Group</a> at the <a href="https://vcc.kaust.edu.sa">Visual Computing Center</a> of <a href="https://kaust.edu.sa">KAUST</a>. Before that I was an Expert Research Scientist in the <a href="https://vic.crs4.it">Visual Computing Group</a> at <a href="https://www.crs4.it">CRS4</a>, where I developed my PhD on scalable exploration of massive 3D models, and a researcher at <a href="https://videalab.udc.es">VideaLAB</a> (University of A Coruña), building virtual reality and terrain visualization systems. The full list of papers is in the <a href="/publications/">Publications</a> page.
-</p>
 
 ## Research Activities
 

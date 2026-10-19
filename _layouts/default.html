@@ -180,8 +180,7 @@
                     </button>
                     <a class="navbar-mybrand" href="/">{% unless page.menu_title == "Home" %}Alberto Jaspe{%
                         endunless %}</a>
-                        <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
-                            <div class="float-end mx-auto">
+                        <div class="nav-social">
                                 <a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com'><img class="icon-social" src="/assets/img/email.svg" width="33px" alt="Email" /></a>
                                 <a href="https://twitter.com/albertojaspe"><img class="icon-social" src="/assets/img/twitter.svg" width="36px" alt="Twitter" /></a>
                                 <a href="https://bsky.app/profile/ajaspe.bsky.social"><img class="icon-social" src="/assets/img/bluesky.svg" width="36px" alt="Bluesky" /></a>
@@ -190,6 +189,7 @@
                                 <a href="https://orcid.org/0000-0003-3899-308X"><img class="icon-social" src="/assets/img/orcid.svg" width="33px" alt="ORCID" /></a>
                                 <a href="https://www.linkedin.com/in/albertojaspe"><img class="icon-social" src="/assets/img/linkedin.svg" width="40px" alt="LinkedIn" /></a>
                             </div>
+                        <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                             <div class="navbar-nav nav-masthead">
 							{% assign pages = site.pages | sort:"order" %}
                             {% for item in pages %}

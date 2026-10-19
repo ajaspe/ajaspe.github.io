@@ -7,70 +7,54 @@ layout: default
 thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 ---
 
-<div class="row">
-	<h1 class="brand_title">Alberto Jaspe-Villanueva</h1>
-	<p class="lead"><b class="text-bold">Computer Graphics and Visualization</b></p>
-</div>
-<div class="row">
-	<div class="col-md-2 text-center">
-        <img src="{{ "/assets/img/ajaspe-rect.jpg" | relative_url }}" class="d-md-none img-fluid w-100 centered" alt="Alberto Jaspe">
-        <img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="d-none d-md-block w-100 img-fluid rounded-circle" alt="Alberto Jaspe">
+<div class="row align-items-center hero g-4">
+	<div class="col-md-3 col-lg-2 text-center">
+		<img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="hero-photo rounded-circle" alt="Alberto Jaspe-Villanueva">
 	</div>
-	<div class="col-md-10">
-		<p class="lead">
-			Hola! I'm a <b>computer science researcher and engineer</b>, currently working in the
-			<a href="https://vccvisualization.org">High-Performance Visualization Group</a> at the
-			<a href="https://vcc.kaust.edu.sa">Visual Computing Center</a> at
-			<a href="https://kaust.edu.sa">KAUST</a> (Saudi Arabia).
-			Previously I worked in the <a href="https://vic.crs4.it">Visual Computing Group</a> at <a
-				href="https://www.crs4.it">CRS4</a> (Italy), where I developed my <a
-				href="https://diglib.eg.org/handle/10.2312/2632715">PhD</a>, defended at the <a
-				href="https://udc.es/en">University of A Coruña</a> (Spain).
+	<div class="col-md-9 col-lg-10">
+		<h1 class="brand_title">Alberto Jaspe-Villanueva</h1>
+		<p class="hero-tagline">Research Scientist in Computer Graphics and Visualization</p>
+		<p class="hero-bio">
+			Hola! I'm a <b>computer science researcher and engineer</b> at the
+			<a href="https://vccvisualization.org">High-Performance Visualization Group</a> of the
+			<a href="https://vcc.kaust.edu.sa">Visual Computing Center</a>, <a href="https://kaust.edu.sa">KAUST</a> (Saudi Arabia).
+			Before that I was a research scientist at <a href="https://www.crs4.it">CRS4</a> (Italy), where I developed my
+			<a href="https://diglib.eg.org/handle/10.2312/2632715">PhD</a>, defended at the
+			<a href="https://udc.es/en">University of A Coruña</a> (Spain).
+		</p>
+		<p class="hero-actions">
+			<a href="/publications/" class="btn btn-outline-warning"><i class="fas fa-book me-1"></i> Publications</a>
+			<a href="/research.html" class="btn btn-outline-warning"><i class="fas fa-flask me-1"></i> Research</a>
+			<a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com' class="btn btn-outline-light"><i class="fas fa-envelope me-1"></i> Email</a>
+			<a href="https://vccvisualization.org/people/jaspe" class="btn btn-outline-light"><i class="fas fa-building me-1"></i> VCC profile</a>
 		</p>
 	</div>
 </div>
-<div class="row">
-	<p class="lead">
-		My main interest lies in the <b>real-time exploration of massive models and complex data, from
-			acquisition to rendering and interaction</b>.
-		For this I deal with multiresolution structures, algorithms, GPUs, ray tracing, C++,
-		OpenGL, GLSL, and sometimes WebGL and JavaScript. And often it's fun :)
-	</p>
+
+## Highlights
+
+{% assign featured = site.publications | where: "featured", true | reverse %}
+{% if featured.size > 0 %}{% assign hl_items = featured %}{% else %}{% assign hl_items = site.publications | reverse %}{% endif %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 highlights">
+{% for pub in hl_items limit: 4 %}
+{% assign puburl = "/publications/" | append: pub.code | append: ".html" %}
+{% assign hl_img = "/publications/" | append: pub.code | append: "-thumb.jpg" %}
+{% if pub.journal %}{% assign hl_venue = pub.journal %}{% elsif pub.conference %}{% assign hl_venue = pub.conference | split: " - " | first %}{% if hl_venue contains "," %}{% assign hl_venue = hl_venue | split: "," | last | strip %}{% endif %}{% elsif pub.book %}{% assign hl_venue = pub.book %}{% else %}{% assign hl_venue = "" %}{% endif %}
+<div class="col">
+	<a href="{{ puburl | relative_url }}" class="hl-card card h-100">
+		<div class="hl-img"><img src="{{ hl_img | relative_url }}" alt="{{ pub.title | escape }} thumbnail" loading="lazy"></div>
+		<div class="card-body">
+			<div class="hl-title">{{ pub.title }}</div>
+			<div class="hl-meta small"><span class="text-warning">{{ pub.year }}</span> &middot; {{ hl_venue | truncate: 40 }}</div>
+			{% if pub.awards %}<span class="badge bg-danger mt-2">{{ pub.awards }}</span>{% endif %}
+		</div>
+	</a>
 </div>
-<div>
-	<p class="text-center">
-		<a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com' class="btn btn-secondary m-0">
-			<i class="fas fa-envelope"></i> aj&#97;sp&#101;&#64;g&#109;ail&#46;&#99;om</a>
-		<!-- <a href='/assets/cv-ajaspe-dec21.pdf' class="btn btn-secondary m-0">
-			<i class="fa fa-file"></i> CV</a> -->
-		<a href="https://scholar.google.es/citations?user=qv99TYgAAAAJ" class="btn btn-secondary m-0">
-			<i class="fas fa-graduation-cap"></i> Google Scholar</a>
-		<a href="https://www.linkedin.com/in/albertojaspe" class="btn btn-secondary m-0">
-			<i class="fab fa-linkedin"></i> LinkedIn</a>
-		<a href="https://twitter.com/albertojaspe" class="btn btn-secondary m-0">
-			<i class="fab fa-twitter"></i> Twitter</a>
-		<a href="https://bsky.app/profile/ajaspe.bsky.social" class="btn btn-secondary m-0">
-			<i class="fab fa-bluesky"></i> BlueSky</a>
-		<a href="https://github.com/ajaspe" class="btn btn-secondary m-0">
-			<i class="fab fa-github"></i> GitHub</a>
-		<a href="https://orcid.org/0000-0003-3899-308X" class="btn btn-secondary m-0">
-			<i class="fab fa-orcid"></i> ORCID</a>
-		<a href="https://vccvisualization.org/people/jaspe" class="btn btn-secondary m-0">
-			<i class="fas fa-building"></i> VCC profile</a>
-		</p>
+{% endfor %}
 </div>
 
-## News
+## Latest news
 
-<div class="row px-3">
-	<table class="table table-dark table-borderless table-striped">
-		<tbody class="table-borderless">
-				{% for news in site.data.news %}
-				<tr>
-					<td class="text-warning col-1 text-end">[<em>{{ news.date }}</em>]</td>
-					<td><div style="margin-bottom: -1em">{{ news.text | markdownify }}</div></td>
-				</tr>
-				{% endfor %}
-		</tbody>
-	</table>
-</div>
+{% include news-list.html items=site.data.news limit=5 %}
+
+<p class="text-end mt-2"><a href="/news/" class="btn btn-outline-warning btn-sm">All news <i class="fas fa-angle-right"></i></a></p>

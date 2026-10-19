@@ -12,7 +12,12 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {: .page-title}
 
 <div class="container my-0 pub-list">
+{% assign prev_year = "" %}
 {% for pub in site.publications reversed %}
+{% if pub.year != prev_year %}
+{% assign prev_year = pub.year %}
+<h2 class="pub-year" id="y{{ pub.year }}">{{ pub.year }}</h2>
+{% endif %}
 {% assign puburl = "/publications/" | append: pub.code | append: ".html" %}
 {% assign imgpath = "/publications/" | append: pub.code | append: "-thumb.jpg" %}
 {% assign pubdata = "" %}
@@ -25,16 +30,19 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {% elsif pub.book %}
     {% assign pubdata = pub.book %}
 {% endif %}
-<div class="row pub-row g-3 py-2 rounded align-items-center">
+{% assign type_l = pub.type | downcase %}
+{% if type_l contains "journal" %}{% assign type_class = "pub-type-journal" %}
+{% elsif type_l contains "conference" or type_l contains "tutorial" %}{% assign type_class = "pub-type-conference" %}
+{% elsif type_l contains "book" %}{% assign type_class = "pub-type-book" %}
+{% else %}{% assign type_class = "pub-type-other" %}{% endif %}
+<div class="row pub-row gx-3 gy-0 py-2 rounded align-items-center">
     <div class="col-auto">
-        <div class="pub-thumb-box">
-            <a href="{{ puburl | relative_url }}"><img src="{{ imgpath | relative_url }}" class="pub-thumb img-thumbnail imglight" loading="lazy" alt="{{ pub.title }} thumbnail"></a>
-        </div>
+        <a href="{{ puburl | relative_url }}" class="pub-thumb-box"><img src="{{ imgpath | relative_url }}" class="pub-thumb" loading="lazy" alt="{{ pub.title | escape }} thumbnail"></a>
     </div>
     <div class="col">
         <div class="pub-title"><a href="{{ puburl | relative_url }}">{{ pub.title }}</a>{% if pub.awards %} <span class="badge bg-danger">{{ pub.awards }}</span>{% endif %}</div>
         <div class="pub-authors">{{ pub.authors }}</div>
-        <div class="pub-venue small"><span class="text-warning">{{ pub.year }}</span> &middot; {{ pub.type }} &middot; <em>{{ pubdata }}</em> <span class="text-white-50">{{ pubdatapost }}</span></div>
+        <div class="pub-venue small"><span class="pub-type {{ type_class }}">{{ pub.type }}</span> <em>{{ pubdata }}</em> <span class="text-white-50">{{ pubdatapost }}</span></div>
     </div>
 </div>
 {% endfor %}
