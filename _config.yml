@@ -10,3 +10,6 @@ collections:
 url: "https://albertojaspe.net"
 plugins:
   - jekyll-sitemap
+
+exclude:
+  - tmp

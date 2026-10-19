@@ -37,3 +37,13 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {% include news-list.html items=site.data.news limit=5 %}
 
 <p class="text-end mt-2"><a href="/news/" class="btn btn-outline-warning btn-sm">All news <i class="fas fa-angle-right"></i></a></p>
+
+<div class="visitor-stats gc-block" id="visitors">
+<h2>Visitors</h2>
+<div class="row g-3 text-center">
+	<div class="col-4"><div class="stat-tile"><div class="stat-num" data-gc-stat="week">&nbsp;</div><div class="stat-label">last 7 days</div></div></div>
+	<div class="col-4"><div class="stat-tile"><div class="stat-num" data-gc-stat="month">&nbsp;</div><div class="stat-label">last 30 days</div></div></div>
+	<div class="col-4"><div class="stat-tile"><div class="stat-num" data-gc-stat="total">&nbsp;</div><div class="stat-label">all time</div></div></div>
+</div>
+<p class="small text-white-50 mt-2 mb-0">Visits counted by <a href="https://albertojaspe.goatcounter.com" class="text-white-50">GoatCounter</a>, without cookies. The <a href="https://albertojaspe.goatcounter.com" class="text-white-50">full statistics</a> are public.</p>
+</div>

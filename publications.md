@@ -11,7 +11,7 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 # Publications
 {: .page-title}
 
-{% assign cit = site.data.citations %}{% if cit and cit.total %}<p class="pub-stats text-white-50 small">{{ site.publications | size }} publications &middot; <b>{{ cit.total }}</b> citations &middot; h-index <b>{{ cit.h_index }}</b> <span class="text-muted">(according to <a href="https://www.semanticscholar.org/" class="text-white-50">{{ cit.source }}</a>, updated {{ cit.updated | date: "%b %Y" }})</span></p>{% endif %}
+{% assign cit = site.data.citations %}{% if cit and cit.total %}<p class="pub-stats text-white-50 small">{{ site.publications | size }} publications &middot; <b>{{ cit.total }}</b> citations &middot; h-index <b>{{ cit.h_index }}</b> <span class="text-white-50">(according to <a href="https://www.semanticscholar.org/" class="text-white-50">{{ cit.source }}</a>, updated {{ cit.updated | date: "%b %Y" }})</span></p>{% endif %}
 
 <div class="container my-0 pub-list">
 {% assign prev_year = "" %}

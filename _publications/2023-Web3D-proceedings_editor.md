@@ -1,5 +1,6 @@
 ---
 layout: publication
+published: false   # hidden; the C&G special section editorial covers this role
 code: 2023-Web3D-proceedings_editor
 title: "Web3D '23: Proceedings of the 28th International ACM Conference on 3D Web Technology"
 authors: "Aitor Moreno, Alberto Jaspe-Villanueva, Imanol Muñoz-Pandiella, Jorge Posada"

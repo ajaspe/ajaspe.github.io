@@ -208,7 +208,7 @@
         </main>
 
         <footer class="mt-auto text-white-50 text-center">
-            <p class="lead text-warning mb-1">&copy; Alberto Jaspe</p>
+            <p class="lead text-warning mb-1">&copy; AJV</p>
             <p class="small mb-2"><span class="gc-counter" data-gc-path="TOTAL" data-gc-label="visits"></span><a href="https://albertojaspe.goatcounter.com" class="gc-stats-link">Site statistics</a></p>
         </footer>
     </div>
@@ -221,13 +221,33 @@
         if (!els.length || !window.fetch) return;
         els.forEach(function (el) {
             var path = el.getAttribute('data-gc-path');
-            var url = 'https://albertojaspe.goatcounter.com/counter/' + (path === 'TOTAL' ? 'TOTAL' : encodeURIComponent(path)) + '.json';
+            var url = 'https://albertojaspe.goatcounter.com/counter/' + (path === 'TOTAL' ? 'TOTAL' : encodeURIComponent(path)) + '.json' + (path === 'TOTAL' ? '?start=2000-01-01' : '');
             fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
                 if (!j || !j.count || !(parseInt(String(j.count).replace(/[^0-9]/g, ''), 10) > 0)) return;
                 el.textContent = j.count + ' ' + (el.getAttribute('data-gc-label') || 'views');
                 el.classList.add('gc-ready');
                 if (path === 'TOTAL') { document.querySelectorAll('.gc-stats-link').forEach(function (a) { a.classList.add('gc-ready'); }); }
             }).catch(function () {});
+        });
+    })();
+    (function () {
+        var tiles = document.querySelectorAll('[data-gc-stat]');
+        if (!tiles.length || !window.fetch) return;
+        var base = 'https://albertojaspe.goatcounter.com/counter/TOTAL.json';
+        var ranges = { week: '?start=week', month: '?start=month', total: '?start=2000-01-01' };   // dated 'all time' avoids a stale cached 0
+        var got = {}, pending = tiles.length;
+        function num(j) { return j && j.count ? (parseInt(String(j.count).replace(/[^0-9]/g, ''), 10) || 0) : 0; }
+        function done() {
+            if (--pending) return;
+            if ((got.total || 0) < (got.month || 0)) got.total = got.month;   // the all-time counter is cached up to 4 h
+            if (!((got.month || 0) > 0 || (got.total || 0) > 0)) return;
+            tiles.forEach(function (el) { el.textContent = (got[el.getAttribute('data-gc-stat')] || 0).toLocaleString('en-US'); });
+            document.querySelectorAll('.gc-block').forEach(function (b) { b.classList.add('gc-ready'); });
+        }
+        tiles.forEach(function (el) {
+            var k = el.getAttribute('data-gc-stat');
+            fetch(base + (ranges[k] || '')).then(function (r) { return r.ok ? r.json() : null; })
+                .then(function (j) { got[k] = num(j); done(); }).catch(function () { got[k] = 0; done(); });
         });
     })();
     </script>

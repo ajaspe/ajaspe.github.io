@@ -143,7 +143,19 @@ a:hover {
 }
 
 .pub-year {
-  margin-top: 28px;
+  font-size: 1.3em;
+  color: #ddd;
+  margin-top: 0.7rem;
+  margin-bottom: 0;
+  margin-left: -1.5rem;   /* hangs into the left margin, ahead of the thumbnails */
+}
+
+@media (max-width: 767.98px) {
+  .pub-year { margin-left: -0.5rem; }
+}
+
+.pub-year:after {
+  display: none;
 }
 
 .pub-type {
@@ -400,8 +412,15 @@ h1.pub-page-title {
 }
 
 .nav-social .icon-social {
-  width: 28px;
-  margin: 0 3px;
+  margin: 0 1px;
+}
+
+@media (max-width: 767.98px) {
+  /* phones: keep the per-icon widths, scale the whole row down */
+  .nav-social {
+    transform: scale(0.8);
+    transform-origin: center top;
+  }
 }
 
 @media (min-width: 768px) {
@@ -409,10 +428,6 @@ h1.pub-page-title {
     width: auto;
     flex-grow: 1;
     margin-top: 0;
-  }
-  .nav-social .icon-social {
-    width: 34px;
-    margin: 0 1px;
   }
   #myNavbar {
     flex-grow: 0;
@@ -469,4 +484,35 @@ footer .gc-counter.gc-ready::after {
 
 .pub-stats {
   margin-top: -0.5rem;
+}
+
+/*
+ * Home page: visitor statistics (GoatCounter, hidden until counts arrive)
+ */
+
+.gc-block {
+  display: none;
+}
+
+.gc-block.gc-ready {
+  display: block;
+}
+
+.stat-tile {
+  background-color: #111;
+  border: 1px solid #444;
+  border-radius: 0.4rem;
+  padding: 0.8rem 0.5rem;
+}
+
+.stat-num {
+  font-family: 'Jost', sans-serif;
+  font-size: 2em;
+  line-height: 1.1;
+  color: rgb(255, 166, 93);
+}
+
+.stat-label {
+  color: #aaa;
+  font-size: 0.85em;
 }

@@ -93,6 +93,8 @@ def write_output(results):
 papers = []
 for path in sorted(glob.glob(os.path.join(PUB_DIR, "*.md"))):
     fm = front_matter(path)
+    if re.search(r"^published:\s*false", fm, re.M):
+        continue   # hidden entries are not built, so they are not counted either
     papers.append({"code": os.path.basename(path)[:-3], "doi": field(fm, "doi"), "title": field(fm, "title")})
 
 results = {}
