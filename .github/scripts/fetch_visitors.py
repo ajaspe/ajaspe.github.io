@@ -29,8 +29,11 @@ def count(path, query=""):
         raise
 
 
-week = count("TOTAL", "?start=week")
-month = count("TOTAL", "?start=month")
+# explicit dates: the "week"/"month" shorthands are cached for hours and were stale after the import
+def since(days):
+    return "?start=" + (datetime.date.today() - datetime.timedelta(days=days)).isoformat()
+week = count("TOTAL", since(7))
+month = count("TOTAL", since(30))
 total = count("TOTAL", "?start=2000-01-01")
 
 pages = {}
