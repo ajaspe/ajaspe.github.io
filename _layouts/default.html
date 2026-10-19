@@ -235,7 +235,8 @@
         var tiles = document.querySelectorAll('[data-gc-stat]');
         if (!tiles.length || !window.fetch) return;
         var base = 'https://albertojaspe.goatcounter.com/counter/TOTAL.json';
-        var ranges = { week: '?start=week', month: '?start=month', total: '?start=2000-01-01' };   // dated 'all time' avoids a stale cached 0
+        function since(d) { return '?start=' + new Date(Date.now() - d * 864e5).toISOString().slice(0, 10); }   // explicit dates: fresh cache key every day
+        var ranges = { week: since(7), month: since(30), total: '?start=2000-01-01' };
         var got = {}, pending = tiles.length;
         function num(j) { return j && j.count ? (parseInt(String(j.count).replace(/[^0-9]/g, ''), 10) || 0) : 0; }
         function done() {
