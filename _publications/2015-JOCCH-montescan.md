@@ -10,7 +10,7 @@ abstract: "We propose an approach for improving the digitization of shape and co
 projects: 
  - Massive models
  - Point clouds
- - Cultral Heritage
+ - Cultural Heritage
 doi: 10.1145/2644823
 links:
  - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Bettio:2014:MES%27"}

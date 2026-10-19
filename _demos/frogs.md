@@ -7,7 +7,7 @@ last_modification_date: 03/07/2022
 
 # The frogs experiment
 
-This is just a viusual representation of a interesting problem I saw somewhere, minimize the number of steps that a random set of frogs need to do to arrive to the end.
+This is just a visual representation of an interesting problem I saw somewhere: minimize the number of steps that a random set of frogs need to reach the end.
 
 ---
 

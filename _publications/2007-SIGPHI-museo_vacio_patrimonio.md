@@ -6,7 +6,7 @@ authors: Luis Hernández, Javier Taibo, David Blanco, José Iglesias, Antonio Se
 year: 2007
 type: Conference Paper
 conference: Simposium de Informática Gráfica y Patrimonio Histórico, SIGPHI 2007
-abstract: "Last years, Virtual Reality has became a way to Cultural Heritage representation This paper describes the use of a VR installation to explore the St Jacob’s Way, focusing in the history and legends of the more emblematic places of the route. It allows the user to do a virtual pilgrimage visiting this places as its own pace, being transported through  pace and time to several historical scenarios, combining the use of realistic panoramas and cartoon-like 3D sspaces."
+abstract: "In recent years, Virtual Reality has become a way of representing Cultural Heritage. This paper describes the use of a VR installation to explore St. James’s Way, focusing on the history and legends of the most emblematic places of the route. It allows the user to make a virtual pilgrimage, visiting these places at their own pace and being transported through space and time to several historical scenarios, combining realistic panoramas and cartoon-like 3D spaces."
 no_teaser: true
 projects: 
  - Virtual Reality

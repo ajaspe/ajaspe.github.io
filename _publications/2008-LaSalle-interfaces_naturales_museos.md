@@ -6,7 +6,7 @@ authors: Luis Hernández, Javier Taibo, Antonio Seoane, Alberto Jaspe-Villanueva
 year: 2008
 type: Journal Paper
 journal: "Revista del Centro de Investigación, Universidad La Salle"
-abstract: "This paper describes the authors’ experience in the design and implementation of three interactive installations for museums based in the natural interfaces concept; that is, those that make use of the ways of communication used by humans in their natural relation with their environment by means of common abilities such as talking, gesturing, walking or touching. These installations are part of the Galicia Dixital permanent exhibition in Santiago de Compostela, which is devoted to illustrate on the culture of this Spanish region while introducing the visitor in the applications of new technologies."
+abstract: "This paper describes the authors’ experience in the design and implementation of three interactive installations for museums based in the natural interfaces concept; that is, those that make use of the ways of communication used by humans in their natural relation with their environment by means of common abilities such as talking, gesturing, walking or touching. These installations are part of the Galicia Dixital permanent exhibition in Santiago de Compostela, which is devoted to illustrating the culture of this Spanish region while introducing the visitor to the applications of new technologies."
 no_teaser: true
 projects: 
  - 

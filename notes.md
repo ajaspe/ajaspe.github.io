@@ -2,10 +2,13 @@
 title: Notes
 description: "Index of random notes"
 menu_title: Notes
-order: 2
+order: 3
 layout: default
 thumb_img: "assets/img/ajaspe.jpg"
 ---
+
+# Notes
+{: .page-title}
 
 ## Contents
 <div class="row px-3">

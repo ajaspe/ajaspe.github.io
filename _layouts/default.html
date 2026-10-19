@@ -1,48 +1,156 @@
 <!doctype html>
 <html lang="en" class="h-100">
-
-{% if page.description %} {% assign description = page.description %} 
-{% elsif page.abstract %} {% assign description = page.abstract %}
-{% else %} {% assign description = "Alberto Jaspe website" %}
-{% endif %}
-
-{% assign thumb_img=page.thumb_img %}
-{% if page.code %} {% assign thumb_img="publications/" | append: page.code | append:"-thumb.jpg" %} {% endif %}
-
-{% if page.code %} {% assign this_title=page.title %} {% else %} {% assign this_title="A.Jaspe" | append: " :: " |
-append: page.title %} {% endif %}
+{%- comment -%} ---------- Page metadata: title, description, share image, canonical URL ---------- {%- endcomment -%}
+{%- assign site_name = "Alberto Jaspe-Villanueva" -%}
+{%- assign is_home = false -%}
+{%- if page.url == "/" -%}{%- assign is_home = true -%}{%- endif -%}
+{%- if is_home -%}
+  {%- assign this_title = "Alberto Jaspe-Villanueva | Computer Graphics & Visualization" -%}
+{%- else -%}
+  {%- assign this_title = page.title | append: " | " | append: site_name -%}
+{%- endif -%}
+{%- if page.description -%}
+  {%- assign description = page.description -%}
+{%- elsif page.abstract and page.abstract != "" -%}
+  {%- assign description = page.abstract | strip_html | strip_newlines | truncate: 300 -%}
+{%- else -%}
+  {%- assign description = "Alberto Jaspe-Villanueva, research scientist in computer graphics and scientific visualization at KAUST." -%}
+{%- endif -%}
+{%- assign canonical = page.url | absolute_url -%}
+{%- assign share_img = "/assets/img/thumb_home_ajaspe.jpg" -%}
+{%- if page.thumb_img -%}{%- assign share_img = page.thumb_img | prepend: "/" -%}{%- endif -%}
+{%- if page.code -%}
+  {%- assign thumb_path = "/publications/" | append: page.code | append: "-thumb.jpg" -%}
+  {%- assign teaser_path = "/publications/" | append: page.code | append: "-teaser.jpg" -%}
+  {%- assign teaser_file = site.static_files | where: "path", teaser_path | first -%}
+  {%- if teaser_file and page.no_teaser != true -%}{%- assign share_img = teaser_path -%}{%- else -%}{%- assign share_img = thumb_path -%}{%- endif -%}
+  {%- assign pdf_path = "/publications/" | append: page.code | append: ".pdf" -%}
+  {%- assign author_list = page.authors | replace: ", and ", ", " | replace: " and ", ", " | split: ", " -%}
+{%- endif -%}
+{%- assign share_img_abs = share_img | absolute_url -%}
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ description }}">
-    <meta name="author" content="Alberto Jaspe">
-    <meta name="keywords" content="alberto jaspe, jaspe-villanueva, research, visualization, computer graphics, rendering, GPU, OpenGL, WebGL" />
-    <meta name="robots" content="follow" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ this_title }}" />
-    <meta name="twitter:site" content="https://albertojaspe.net" />
-    <meta name="twitter:creator" content="@albertojaspe" />
-    <meta name="twitter:description" content="{{ description }}" \>
-    <meta name="twitter:domain" content="https://albertojaspe.net">
-    <meta name="twitter:image" content="https://albertojaspe.net/{{ thumb_img }}">
-    <meta property="og:url" content="https://albertojaspe.net{{ page.url }} " />
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ this_title }}" />
-    <meta property="og:description" content="{{description}}" />
-    <meta property="og:image" content="https://albertojaspe.net/{{ thumb_img }}" />
-
-    <title>{{ this_title }}</title>
-
-    <script src="https://kit.fontawesome.com/1047faaef0.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>{{ this_title | escape }}</title>
+    <meta name="description" content="{{ description | escape }}">
+    <meta name="author" content="Alberto Jaspe-Villanueva">
+    <meta name="keywords" content="alberto jaspe, jaspe-villanueva, research, visualization, computer graphics, rendering, GPU, OpenGL, WebGL">
+    <link rel="canonical" href="{{ canonical }}">
     <link rel="icon" href="/assets/img/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+
+    <!-- Social previews (Open Graph / Twitter cards) -->
+    <meta property="og:site_name" content="{{ site_name }}">
+    <meta property="og:type" content="{% if page.code %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ canonical }}">
+    <meta property="og:title" content="{{ this_title | escape }}">
+    <meta property="og:description" content="{{ description | escape }}">
+    <meta property="og:image" content="{{ share_img_abs }}">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@albertojaspe">
+    <meta name="twitter:creator" content="@albertojaspe">
+    <meta name="twitter:title" content="{{ this_title | escape }}">
+    <meta name="twitter:description" content="{{ description | escape }}">
+    <meta name="twitter:image" content="{{ share_img_abs }}">
+{%- if page.code %}
+
+    <!-- Google Scholar citation tags -->
+    <meta name="citation_title" content="{{ page.title | escape }}">
+{%- for a in author_list %}{% assign a_s = a | strip %}{% if a_s != "" %}
+    <meta name="citation_author" content="{{ a_s | escape }}">{% endif %}{% endfor %}
+    <meta name="citation_publication_date" content="{{ page.year }}">
+{%- if page.journal %}
+    <meta name="citation_journal_title" content="{{ page.journal | escape }}">{% endif %}
+{%- if page.conference %}
+    <meta name="citation_conference_title" content="{{ page.conference | escape }}">{% endif %}
+{%- if page.book %}
+    <meta name="citation_inbook_title" content="{{ page.book | escape }}">{% endif %}
+{%- if page.doi %}
+    <meta name="citation_doi" content="{{ page.doi }}">{% endif %}
+{%- unless page.no_pdf %}
+    <meta name="citation_pdf_url" content="{{ pdf_path | absolute_url }}">{% endunless %}
+    <meta name="citation_abstract_html_url" content="{{ canonical }}">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": {{ page.title | jsonify }},
+      "name": {{ page.title | jsonify }},
+      "author": [{% assign sep = "" %}{% for a in author_list %}{% assign a_s = a | strip %}{% if a_s != "" %}{{ sep }}{"@type": "Person", "name": {{ a_s | jsonify }}}{% assign sep = ", " %}{% endif %}{% endfor %}],
+      "datePublished": {{ page.year | append: "" | jsonify }},
+      "description": {{ description | jsonify }},
+      {%- if page.abstract and page.abstract != "" %}
+      "abstract": {{ page.abstract | strip_html | jsonify }},
+      {%- endif %}
+      {%- if page.doi %}
+      "identifier": {{ page.doi | prepend: "https://doi.org/" | jsonify }},
+      "sameAs": {{ page.doi | prepend: "https://doi.org/" | jsonify }},
+      {%- endif %}
+      {%- if page.journal %}
+      "isPartOf": {"@type": "Periodical", "name": {{ page.journal | jsonify }}},
+      {%- elsif page.conference %}
+      "isPartOf": {"@type": "CreativeWorkSeries", "name": {{ page.conference | jsonify }}},
+      {%- elsif page.book %}
+      "isPartOf": {"@type": "Book", "name": {{ page.book | jsonify }}},
+      {%- endif %}
+      {%- unless page.no_pdf %}
+      "encoding": {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": {{ pdf_path | absolute_url | jsonify }}},
+      {%- endunless %}
+      {%- if page.projects %}
+      "keywords": {{ page.projects | compact | join: ", " | jsonify }},
+      {%- endif %}
+      "image": {{ share_img_abs | jsonify }},
+      "url": {{ canonical | jsonify }},
+      "mainEntityOfPage": {{ canonical | jsonify }}
+    }
+    </script>
+{%- elsif is_home %}
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alberto Jaspe-Villanueva",
+      "alternateName": ["Alberto Jaspe", "Alberto Jaspe Villanueva"],
+      "givenName": "Alberto",
+      "familyName": "Jaspe-Villanueva",
+      "jobTitle": "Research Scientist",
+      "description": {{ description | jsonify }},
+      "url": "https://albertojaspe.net/",
+      "image": "https://albertojaspe.net/assets/img/ajaspe.jpg",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "King Abdullah University of Science and Technology (KAUST)",
+        "url": "https://kaust.edu.sa",
+        "department": {"@type": "Organization", "name": "Visual Computing Center", "url": "https://vcc.kaust.edu.sa"}
+      },
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of A Coruña", "url": "https://udc.es"},
+      "knowsAbout": ["Computer Graphics", "Scientific Visualization", "Real-time Rendering", "Massive Model Rendering", "Cultural Heritage Digitization", "Virtual Reality", "Web-based 3D Graphics"],
+      "sameAs": [
+        "https://orcid.org/0000-0003-3899-308X",
+        "https://scholar.google.es/citations?user=qv99TYgAAAAJ",
+        "https://www.linkedin.com/in/albertojaspe",
+        "https://github.com/ajaspe",
+        "https://bsky.app/profile/ajaspe.bsky.social",
+        "https://twitter.com/albertojaspe",
+        "https://vccvisualization.org/people/jaspe"
+      ]
+    }
+    </script>
+{%- endif %}
+
+    <script src="https://kit.fontawesome.com/1047faaef0.js" crossorigin="anonymous" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
-    <meta name="theme-color" content="#7952b3">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4H2HMGXYB"></script>
@@ -54,10 +162,9 @@ append: page.title %} {% endif %}
         gtag('config', 'G-D4H2HMGXYB');
     </script>
 
-
     <!-- Custom styles for this template -->
-    <link href={{ "/assets/css/style.css" | relative_url }} rel="stylesheet">
-	
+    <link href="{{ "/assets/css/style.css" | relative_url }}" rel="stylesheet">
+
 </head>
 
 
@@ -71,17 +178,17 @@ append: page.title %} {% endif %}
                         aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-mybrand" href="/index.html">{% unless page.menu_title == "Home" %}Alberto Jaspe{%
+                    <a class="navbar-mybrand" href="/">{% unless page.menu_title == "Home" %}Alberto Jaspe{%
                         endunless %}</a>
                         <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                             <div class="float-end mx-auto">
-                                <a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com'><img class="icon-social" src="/assets/img/email.svg" width="33px" /></a>
-                                <a href="https://twitter.com/albertojaspe"><img class="icon-social" src="/assets/img/twitter.svg" width="36px" /></a>
-                                <a href="https://bsky.app/profile/ajaspe.bsky.social"><img class="icon-social" src="/assets/img/bluesky.svg" width="36px"/></a>
-                                <a href="https://github.com/ajaspe"><img class="icon-social" src="/assets/img/github.svg" width="36px" /></a>
-                                <a href="https://scholar.google.es/citations?user=qv99TYgAAAAJ"><img class="icon-social" src="/assets/img/gscholar.svg" width="38px" /></a>
-                                <a href="https://orcid.org/0000-0003-3899-308X"><img class="icon-social" src="/assets/img/orcid.svg" width="33px" /></a>
-                                <a href="https://www.linkedin.com/in/albertojaspe"><img class="icon-social" src="/assets/img/linkedin.svg" width="40px" /></a>
+                                <a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com'><img class="icon-social" src="/assets/img/email.svg" width="33px" alt="Email" /></a>
+                                <a href="https://twitter.com/albertojaspe"><img class="icon-social" src="/assets/img/twitter.svg" width="36px" alt="Twitter" /></a>
+                                <a href="https://bsky.app/profile/ajaspe.bsky.social"><img class="icon-social" src="/assets/img/bluesky.svg" width="36px" alt="Bluesky" /></a>
+                                <a href="https://github.com/ajaspe"><img class="icon-social" src="/assets/img/github.svg" width="36px" alt="GitHub" /></a>
+                                <a href="https://scholar.google.es/citations?user=qv99TYgAAAAJ"><img class="icon-social" src="/assets/img/gscholar.svg" width="38px" alt="Google Scholar" /></a>
+                                <a href="https://orcid.org/0000-0003-3899-308X"><img class="icon-social" src="/assets/img/orcid.svg" width="33px" alt="ORCID" /></a>
+                                <a href="https://www.linkedin.com/in/albertojaspe"><img class="icon-social" src="/assets/img/linkedin.svg" width="40px" alt="LinkedIn" /></a>
                             </div>
                             <div class="navbar-nav nav-masthead">
 							{% assign pages = site.pages | sort:"order" %}

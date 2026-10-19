@@ -96,12 +96,7 @@ a:hover {
   -o-transition: all 1s ease; */
   }
 
- .pub_title {
-    color: rgb(255, 166, 93);
-    font-size: 1em;
-  } 
-
-  .brand_color {
+.brand_color {
 	color: rgb(255, 115, 0);
   }
 
@@ -113,18 +108,53 @@ a:hover {
 	text-decoration: none;
 }
 
-.publicationrow div:hover{
+/*
+ * Publication list rows
+ */
+
+.pub-row:hover {
   background-color: #111;
-  -webkit-transition: background-color 600ms linear;
-  -ms-transition: background-color 600ms linear;
-  transition: background-color 600ms linear;
+  transition: background-color 300ms linear;
 }
 
-#contarinerrow:hover #paperthumb {
+.pub-thumb-box {
+  width: 190px;
+  text-align: center;
+}
+
+.pub-thumb {
+  max-width: 190px;
+  max-height: 128px;
+  width: auto;
+  height: auto;
+}
+
+.pub-row:hover .pub-thumb {
   filter: brightness(140%);
-  -webkit-transition: filter 300ms linear;
-  -ms-transition: filter 300ms linear;
   transition: filter 300ms linear;
+}
+
+.pub-title {
+  font-size: 1.15em;
+  line-height: 1.3;
+}
+
+.pub-title a {
+  color: rgb(255, 166, 93);
+}
+
+.pub-authors,
+.pub-venue {
+  line-height: 1.4;
+}
+
+@media (max-width: 575.98px) {
+  /* phones: thumbnail above the text, using the full row width */
+  .pub-row > .col-auto { width: 100%; }
+  .pub-thumb-box { width: 100%; text-align: left; }
+  .pub-thumb { max-width: 220px; max-height: 150px; }
+  .abstract { text-align: left; }
+  .pub-award-img { width: 100%; }
 }
 
 .imglight:hover {
@@ -170,4 +200,73 @@ h3 {
 	color: white;
 	font-weight: lighter;
 	text-decoration: underline;
+}
+
+/*
+ * Research activity cards
+ */
+
+.activity-cards .card {
+  background-color: #111;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+.activity-cards .card-header {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.25em;
+  color: rgb(255, 166, 93);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #444;
+}
+
+.activity-cards .card-body ul {
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+.activity-cards .card-body li {
+  margin-bottom: 0.4rem;
+}
+
+/*
+ * H1 variants: real page headings for SEO that keep the site look
+ */
+
+h1.brand_title {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding-top: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 2em;
+}
+
+h1.page-title {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  text-align: left;
+  font-size: 1.8em;
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+
+h1.page-title:after {
+  content: ' ';
+  margin-top: -5px;
+  display: block;
+  border-bottom: 2px solid #aaa;
+  box-shadow: 1px 1px 2px rgba(255, 115, 0, 0.5);
+}
+
+h1.pub-page-title {
+  font-family: inherit;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding-top: 0;
+  margin-bottom: 1rem;
 }

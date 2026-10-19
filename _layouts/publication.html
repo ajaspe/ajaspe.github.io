@@ -2,11 +2,11 @@
 layout: default
 ---
 <div class="container pub_row my-5">
-    <div class="row text-center">  
-        <p><span class="display-6">{{ page.title }}</span></p>
+    <div class="row text-center">
+        <h1 class="display-6 pub-page-title">{{ page.title }}</h1>
     </div>
     <div class="row text-center">
-        {% assign authors2 = page.authors | replace: "Alberto Jaspe-Villanueva", "<span class='brand_color'>Alberto Jaspe-Villanueva</span>" %} 
+        {% assign authors2 = page.authors | replace: "Alberto Jaspe-Villanueva", "<span class='brand_color'>Alberto Jaspe-Villanueva</span>" %}
         <p><span class="lead">{{ authors2 }}</span></p>
     </div>
     <div class="row text-center">
@@ -29,7 +29,7 @@ layout: default
 	{% unless page.no_teaser %}
     <div class="row text-center my-3">
         {% assign imgpath = "/publications/" | append: page.code | append: "-teaser.jpg" %}
-        <img class="w-100 rounded" src="{{ imgpath | relative_url}}">
+        <img class="w-100 rounded" src="{{ imgpath | relative_url}}" alt="{{ page.title | escape }} teaser">
     </div>
 	{% endunless %}
     <div class="row m-3">
@@ -76,9 +76,21 @@ layout: default
     <div class="row">
 		<div class="container text-center ratio ratio-16x9">
 			{% assign youtubeurl = "https://www.youtube.com/embed/" | append: page.youtube %}
-			<iframe src="{{ youtubeurl }}" title="YouTube video" allowfullscreen></iframe>
+			<iframe src="{{ youtubeurl }}" title="YouTube video" allowfullscreen loading="lazy"></iframe>
 		</div>
     </div>
     {% endif %}
 	{{page.content}}
+	{% comment %} Awards section: rendered automatically when publications/<code>-award.jpg exists {% endcomment %}
+	{% assign award_path = "/publications/" | append: page.code | append: "-award.jpg" %}
+	{% assign award_file = site.static_files | where: "path", award_path | first %}
+	{% if award_file %}
+	<h2>Awards</h2>
+	<div class="row text-center my-3">
+		<p>
+			<img class="rounded img-fluid pub-award-img" width="50%" src="{{ award_path | relative_url }}" alt="{{ page.awards | default: 'Award' }} diploma" loading="lazy">
+			{% if page.awards %}<br/><small class="text-white-50 fst-italic">{{ page.awards }}</small>{% endif %}
+		</p>
+	</div>
+	{% endif %}
 </div>

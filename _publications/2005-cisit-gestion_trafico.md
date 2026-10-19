@@ -2,7 +2,7 @@
 layout: publication
 code: 2005-cisit-gestion_trafico
 title: "Gestión de tráfico mediante la integración de un GIS con un sistema de navegación realista en 3D sobre el territorio"
-authors: Alberto Varela, Luis Hernández, Javier Taibo, Antonio Seoane, Ruben López, and Alberto Jaspe-Villanueva
+authors: Alberto Varela, Luis Hernández, Javier Taibo, Antonio Seoane, Rubén López, and Alberto Jaspe-Villanueva
 year: 2005
 type: Conference Paper
 conference: Congreso Iberoamericano de Sistemas Inteligentes de Transporte 2005
