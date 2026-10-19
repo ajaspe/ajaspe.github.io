@@ -24,7 +24,7 @@ layout: default
             <p class="lead fst-italic">{{ pubdata }} <small class="text-white-50 fst-italic">{{ pubdatapost }}</small>
         {% if page.awards %}
         <span class="badge bg-danger">{{ page.awards }}</span>
-        {% endif %}</p>
+        {% endif %}{% assign c = site.data.citations.papers[page.code] %}{% if c and c.count > 0 %} <a href="{{ c.url }}" class="pub-cites" title="Citations according to {{ site.data.citations.source }}"><i class="fas fa-quote-right"></i> {{ c.count }} citations</a>{% endif %}</p>
     </div>
 	{% unless page.no_teaser %}
     <div class="row text-center my-3">
@@ -56,6 +56,7 @@ layout: default
             <a href="{{link.url}}" class="btn btn-outline-warning">
                 <i class="bi bi-link-45deg"></i>{{link.name}}</a>
             {% endfor %}
+            <span class="gc-counter text-white-50 small ms-2" data-gc-path="{{ page.url }}" data-gc-label="page views"></span>
         </p>
         <div class="collapse" id="bibtex">
             <div class="card card-body bg-dark">

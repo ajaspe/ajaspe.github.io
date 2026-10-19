@@ -345,52 +345,6 @@ h1.pub-page-title {
 }
 
 /*
- * Home page: highlight cards
- */
-
-.hl-card {
-  background-color: #111;
-  border: 1px solid #444;
-  color: #fff;
-  overflow: hidden;
-  text-decoration: none;
-}
-
-.hl-card:hover {
-  border-color: rgb(255, 166, 93);
-  background-color: #161616;
-  color: #fff;
-}
-
-.hl-img {
-  aspect-ratio: 3 / 2;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.hl-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 300ms ease;
-}
-
-.hl-card:hover .hl-img img {
-  transform: scale(1.04);
-}
-
-.hl-title {
-  color: rgb(255, 166, 93);
-  font-size: 1.05em;
-  line-height: 1.3;
-}
-
-.hl-meta {
-  color: #aaa;
-  margin-top: 0.3rem;
-}
-
-/*
  * News timeline (home page and /news/)
  */
 
@@ -465,6 +419,54 @@ h1.pub-page-title {
   }
 }
 
-.hl-title {
-  font-size: 1em;
+
+/*
+ * GoatCounter visitor counters: hidden until a count is available
+ */
+
+.gc-counter {
+  display: none;
+}
+
+.gc-counter.gc-ready {
+  display: inline;
+}
+
+footer .gc-counter.gc-ready::after {
+  content: " \00b7 ";
+}
+
+.gc-stats-link {
+  display: none;
+  color: #888;
+}
+
+.gc-stats-link.gc-ready {
+  display: inline;
+}
+
+/*
+ * Citation counts (from _data/citations.yml, updated weekly by a GitHub Action)
+ */
+
+.pub-cites {
+  display: inline-block;
+  font-size: 0.78em;
+  font-style: normal;
+  padding: 0.05em 0.55em;
+  margin-left: 0.2em;
+  border: 1px solid #777;
+  border-radius: 999px;
+  color: #ccc;
+  text-decoration: none;
+  vertical-align: 0.1em;
+}
+
+.pub-cites:hover {
+  border-color: rgb(255, 166, 93);
+  color: rgb(255, 166, 93);
+}
+
+.pub-stats {
+  margin-top: -0.5rem;
 }

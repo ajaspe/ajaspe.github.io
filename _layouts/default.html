@@ -208,9 +208,29 @@
         </main>
 
         <footer class="mt-auto text-white-50 text-center">
-            <p class="lead text-warning">&copy; Alberto Jaspe</p>
+            <p class="lead text-warning mb-1">&copy; Alberto Jaspe</p>
+            <p class="small mb-2"><span class="gc-counter" data-gc-path="TOTAL" data-gc-label="visits"></span><a href="https://albertojaspe.goatcounter.com" class="gc-stats-link">Site statistics</a></p>
         </footer>
     </div>
+
+    <!-- GoatCounter: privacy-friendly analytics, no cookies; count.js does not count local addresses -->
+    <script data-goatcounter="https://albertojaspe.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script>
+    (function () {
+        var els = document.querySelectorAll('[data-gc-path]');
+        if (!els.length || !window.fetch) return;
+        els.forEach(function (el) {
+            var path = el.getAttribute('data-gc-path');
+            var url = 'https://albertojaspe.goatcounter.com/counter/' + (path === 'TOTAL' ? 'TOTAL' : encodeURIComponent(path)) + '.json';
+            fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+                if (!j || !j.count || !(parseInt(String(j.count).replace(/[^0-9]/g, ''), 10) > 0)) return;
+                el.textContent = j.count + ' ' + (el.getAttribute('data-gc-label') || 'views');
+                el.classList.add('gc-ready');
+                if (path === 'TOTAL') { document.querySelectorAll('.gc-stats-link').forEach(function (a) { a.classList.add('gc-ready'); }); }
+            }).catch(function () {});
+        });
+    })();
+    </script>
 
 </body>
 </html>

@@ -31,27 +31,6 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 	</div>
 </div>
 
-## Highlights
-
-{% assign featured = site.publications | where: "featured", true | reverse %}
-{% if featured.size > 0 %}{% assign hl_items = featured %}{% else %}{% assign hl_items = site.publications | reverse %}{% endif %}
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 highlights">
-{% for pub in hl_items limit: 4 %}
-{% assign puburl = "/publications/" | append: pub.code | append: ".html" %}
-{% assign hl_img = "/publications/" | append: pub.code | append: "-thumb.jpg" %}
-{% if pub.journal %}{% assign hl_venue = pub.journal %}{% elsif pub.conference %}{% assign hl_venue = pub.conference | split: " - " | first %}{% if hl_venue contains "," %}{% assign hl_venue = hl_venue | split: "," | last | strip %}{% endif %}{% elsif pub.book %}{% assign hl_venue = pub.book %}{% else %}{% assign hl_venue = "" %}{% endif %}
-<div class="col">
-	<a href="{{ puburl | relative_url }}" class="hl-card card h-100">
-		<div class="hl-img"><img src="{{ hl_img | relative_url }}" alt="{{ pub.title | escape }} thumbnail" loading="lazy"></div>
-		<div class="card-body">
-			<div class="hl-title">{{ pub.title }}</div>
-			<div class="hl-meta small"><span class="text-warning">{{ pub.year }}</span> &middot; {{ hl_venue | truncate: 40 }}</div>
-			{% if pub.awards %}<span class="badge bg-danger mt-2">{{ pub.awards }}</span>{% endif %}
-		</div>
-	</a>
-</div>
-{% endfor %}
-</div>
 
 ## Latest news
 

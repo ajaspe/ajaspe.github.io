@@ -11,6 +11,8 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 # Publications
 {: .page-title}
 
+{% assign cit = site.data.citations %}{% if cit and cit.total %}<p class="pub-stats text-white-50 small">{{ site.publications | size }} publications &middot; <b>{{ cit.total }}</b> citations &middot; h-index <b>{{ cit.h_index }}</b> <span class="text-muted">(according to <a href="https://www.semanticscholar.org/" class="text-white-50">{{ cit.source }}</a>, updated {{ cit.updated | date: "%b %Y" }})</span></p>{% endif %}
+
 <div class="container my-0 pub-list">
 {% assign prev_year = "" %}
 {% for pub in site.publications reversed %}
@@ -42,7 +44,7 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
     <div class="col">
         <div class="pub-title"><a href="{{ puburl | relative_url }}">{{ pub.title }}</a>{% if pub.awards %} <span class="badge bg-danger">{{ pub.awards }}</span>{% endif %}</div>
         <div class="pub-authors">{{ pub.authors }}</div>
-        <div class="pub-venue small"><span class="pub-type {{ type_class }}">{{ pub.type }}</span> <em>{{ pubdata }}</em> <span class="text-white-50">{{ pubdatapost }}</span></div>
+        <div class="pub-venue small"><span class="pub-type {{ type_class }}">{{ pub.type }}</span>{% assign c = site.data.citations.papers[pub.code] %}{% if c and c.count > 0 %} <a href="{{ c.url }}" class="pub-cites" title="Citations according to {{ site.data.citations.source }}"><i class="fas fa-quote-right"></i> {{ c.count }}</a>{% endif %} <em>{{ pubdata }}</em> <span class="text-white-50">{{ pubdatapost }}</span></div>
     </div>
 </div>
 {% endfor %}
