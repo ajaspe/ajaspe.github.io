@@ -2,7 +2,7 @@
 title: Calendar of Visual Computing deadlines
 description: "Paper submission deadlines of the main computer graphics, visualization, vision and VR conferences: the next dates, the typical month of each deadline, and links to every conference."
 layout: default
-thumb_img: "assets/img/thumb_home_ajaspe.jpg"
+thumb_img: "assets/img/thumb_calendar.jpg"
 updated: 2026-10-20
 ---
 

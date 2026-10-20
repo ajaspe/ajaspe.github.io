@@ -2,7 +2,7 @@
 title: Practical Survival Guide for new Visual Computing Researchers
 description: "A quick-start guide for new PhD students in computer graphics and visualization: venues, literature, writing, reviewing, talks, impact metrics and well-being."
 layout: default
-thumb_img: "assets/img/ajaspe.jpg"
+thumb_img: "assets/img/thumb_guide.jpg"
 updated: 2026-10-20
 ---
 
