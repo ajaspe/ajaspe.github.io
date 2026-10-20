@@ -51,19 +51,12 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {% endif %}
 
 {% assign vis = site.data.visitors %}<div class="visitor-stats gc-block{% if vis and vis.total > 0 %} gc-ready{% endif %}" id="visitors">
-<h2>Visitors</h2>
-<p class="small text-white-50 mt-0 mb-3">Visits counted by <a href="https://albertojaspe.goatcounter.com" class="text-white-50">GoatCounter</a>, without cookies. The <a href="https://albertojaspe.goatcounter.com" class="text-white-50">full statistics</a> are public{% if vis and vis.total > 0 %}; numbers refreshed daily, last on {{ vis.updated | date: "%b %-d, %Y" }}{% endif %}.</p>
-<div class="row g-3 text-center">
-	<div class="col-4"><div class="stat-tile"><div class="stat-num" data-gc-stat="week">{% if vis and vis.total > 0 %}{{ vis.week }}{% else %}&nbsp;{% endif %}</div><div class="stat-label">last 7 days</div></div></div>
-	<div class="col-4"><div class="stat-tile"><div class="stat-num" data-gc-stat="month">{% if vis and vis.total > 0 %}{{ vis.month }}{% else %}&nbsp;{% endif %}</div><div class="stat-label">last 30 days</div></div></div>
-	<div class="col-4"><div class="stat-tile"><div class="stat-num" data-gc-stat="total">{% if vis and vis.total > 0 %}{{ vis.total }}{% else %}&nbsp;{% endif %}</div><div class="stat-label">since 2022</div></div></div>
-</div>
+<div class="visitor-line"><i class="fas fa-chart-bar"></i> <b data-gc-stat="week">{% if vis and vis.total > 0 %}{{ vis.week }}{% endif %}</b> visits in the last 7 days &middot; <b data-gc-stat="month">{% if vis and vis.total > 0 %}{{ vis.month }}{% endif %}</b> in the last 30 &middot; <b data-gc-stat="total">{% if vis and vis.total > 0 %}{{ vis.total }}{% endif %}</b> since 2022</div>
 {% if vis.daily and vis.daily.size > 6 %}{% assign vmax = 1 %}{% for d in vis.daily %}{% if d.count > vmax %}{% assign vmax = d.count %}{% endif %}{% endfor %}{% assign n = vis.daily.size %}{% assign w = 600.0 | divided_by: n %}{% assign bw = w | times: 0.72 %}{% assign first = vis.daily | first %}{% assign last = vis.daily | last %}
-<div class="stat-tile visits-chart mt-3">
 <svg viewBox="0 0 600 100" preserveAspectRatio="none" class="visits-svg" role="img" aria-label="Daily visits over the last {{ n }} days">
 {% for d in vis.daily %}{% assign h = d.count | times: 100.0 | divided_by: vmax %}{% assign x = forloop.index0 | times: w %}{% assign y = 100 | minus: h %}<rect x="{{ x }}" y="{{ y }}" width="{{ bw }}" height="{{ h }}" class="visits-bar"><title>{{ d.date | date: "%b %-d" }}: {{ d.count }} visits</title></rect>{% endfor %}
 </svg>
 <div class="d-flex justify-content-between visits-axis"><span>{{ first.date | date: "%b %-d" }}</span><span>visits per day, peak {{ vmax }}</span><span>{{ last.date | date: "%b %-d" }}</span></div>
-</div>
 {% endif %}
+<p class="visitor-note">Counted by <a href="https://albertojaspe.goatcounter.com">GoatCounter</a> without cookies; the <a href="https://albertojaspe.goatcounter.com">full statistics</a> are public{% if vis and vis.total > 0 %}. Refreshed daily, last on {{ vis.updated | date: "%b %-d, %Y" }}{% endif %}.</p>
 </div>
