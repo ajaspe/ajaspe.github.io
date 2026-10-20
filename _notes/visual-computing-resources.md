@@ -3,12 +3,13 @@ title: Visual Computing Resources
 description: Visual Computing Resources
 layout: default
 thumb_img: "assets/img/ajaspe.jpg"
-last_modification_date: 16/03/2023
+updated: 2023-03-16
 ---
 
 # {{page.title}}
+{: .page-title}
 
-<span class="badge bg-danger">Under construction! Last modification: {{ page.last_modification_date }} </span>
+<p class="small text-white-50">Living document, last updated {{ page.updated | date: "%B %-d, %Y" }}.</p>
 
 
 

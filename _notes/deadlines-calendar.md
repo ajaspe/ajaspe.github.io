@@ -1,136 +1,74 @@
 ---
 title: Calendar of Visual Computing conference deadlines
-description: Calendar of Visual Computing conference deadlines
+description: "Paper submission deadlines of the main computer graphics, visualization, vision and VR conferences: the next dates, the typical month of each deadline, and links to every conference."
 layout: default
 thumb_img: "assets/img/thumb_home_ajaspe.jpg"
-last_modification_date: 01/06/2023
+updated: 2026-10-20
 ---
 
 # {{page.title}}
+{: .page-title}
 
-<span class="badge bg-danger">Last modification: {{ page.last_modification_date }} </span>
+<p class="small text-white-50">Living page, last updated {{ page.updated | date: "%B %-d, %Y" }}. This is not an exhaustive list of Visual Computing venues, just the main ones and the ones I follow. The dates come from each conference's call for papers when it is out, and are estimated from the previous edition otherwise: always confirm them on the conference website, and tell me if you find mistakes.</p>
 
-This is just a visual guide to see all deadlines at a glance and plan your submissions, divided into half-months.
+{% assign today = site.time | date: "%s" | plus: 0 %}
+{% assign sorted = site.data.deadlines | sort: "next_date" %}
 
-<span class="badge bg-info">Disclaimer!</span> This is not intended to be an exhaustive list of Visual Computing deadlines, just a set of the main ones and the ones I am interested in. The dates are only indicative, based on last year’s edition: confirm them on each conference’s website! Please let me know if you find mistakes.
+## Next deadlines
 
-<div class="grid rounded m-5">
-<div class="row">
-	<div class="col-md-3 border p-0">
-	<table class="table table-dark">
-		<thead class="thead-light"><tr><td class="text-warning text-center">[ January ]</td></tr></thead>
-		<tr><td style="height: 40px;"></td></tr>
-		<tr><td style="height: 40px;"><b>SIGG</b></td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ February ]</td></tr>
-		<tr><td style="height: 40px;"></td></tr>
-		<tr><td style="height: 40px;">CGI</td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ March ]</td></tr>
-		<tr><td style="height: 40px;">WSCG, <b>ICCV</b></td></tr>
-		<tr><td style="height: 40px;"><b>VIS</b>, ISMAR</td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ April ]</td></tr>
-		<tr><td style="height: 40px;">EGSR, SGP</td></tr>
-		<tr><td style="height: 40px;">HPG</td></tr>
-	</table>
-	</div>
+<div class="table-responsive">
+<table class="table table-dark table-hover deadline-table align-middle">
+<thead><tr><th>Deadline</th><th>Conference</th><th class="d-none d-md-table-cell">Papers appear in</th><th class="text-end">Days left</th></tr></thead>
+<tbody>
+{% for c in sorted %}{% assign dd = c.next_date | date: "%s" | plus: 0 %}
+<tr class="deadline-row{% if dd < today %} deadline-past{% endif %}" data-date="{{ c.next_date }}">
+<td class="text-nowrap"><span class="deadline-date">{{ c.next_date | date: "%b %-d, %Y" }}</span>{% if c.status == "estimated" %}<br><span class="badge bg-secondary">estimated</span>{% endif %}</td>
+<td><a href="{{ c.next_url }}"><strong>{{ c.next_edition }}</strong></a><br><span class="small text-white-50">{{ c.name }}{% if c.note and c.note != "" %}. {{ c.note }}{% endif %}</span></td>
+<td class="small text-white-50 d-none d-md-table-cell">{{ c.published_in }}</td>
+<td class="text-end deadline-left"></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
 </div>
 
-<div class="row">
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ May ]</td></tr>
-		<tr><td style="height: 40px;">EGPGV, GCH</td></tr>
-		<tr><td style="height: 40px;"><b>SIGGAsia</b></td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ June ]</td></tr>
-		<tr><td style="height: 40px;">PG</td></tr>
-		<tr><td style="height: 40px;">Web3D, LDAV</td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ July ]</td></tr>
-		<tr><td style="height: 40px;">VMV</td></tr>
-		<tr><td style="height: 40px;"></td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ August ]</td></tr>
-		<tr><td style="height: 40px;"></td></tr>
-		<tr><td style="height: 40px;"></td></tr>
-	</table>
-	</div>
-</div>
+<script>
+(function () {
+  var now = new Date(); now.setHours(0, 0, 0, 0);
+  document.querySelectorAll('.deadline-row').forEach(function (r) {
+    var d = new Date(r.getAttribute('data-date') + 'T00:00:00');
+    var days = Math.round((d - now) / 86400000);
+    var cell = r.querySelector('.deadline-left');
+    if (days < 0) { r.classList.add('deadline-past'); cell.textContent = 'passed'; }
+    else if (days === 0) { cell.textContent = 'today'; }
+    else { r.classList.remove('deadline-past'); cell.textContent = days + ' days'; }
+  });
+})();
+</script>
 
-<div class="row">
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ September ]</td></tr>
-		<tr><td style="height: 40px;"></td></tr>
-		<tr><td style="height: 40px;">EG, STAG</td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ October ]</td></tr>
-		<tr><td style="height: 40px;">VR</td></tr>
-		<tr><td style="height: 40px;">PVis</td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ November ]</td></tr>
-		<tr><td style="height: 40px;"><b>CVPR</b></td></tr>
-		<tr><td style="height: 40px;"><b>EuroVis</b></td></tr>
-	</table>
-	</div>
-	<div class="col-md-3 border">
-	<table class="table table-dark">
-		<tr><td class="text-warning text-center">[ December ]</td></tr>
-		<tr><td style="height: 40px;"></td></tr>
-		<tr><td style="height: 40px;">i3D, GRAPP</td></tr>
-	</table>
-	</div>
-</div>
-</div>
+## The year at a glance
 
+Typical slot of each paper deadline, by half-month. The main venues are highlighted; click a name to go to the conference.
 
-* __CGI__: Computer Graphics International
-* __CVPR__: Conference on Computer Vision and Pattern Recognition
-* __EG__: Eurographics
-* __EGSR__: Eurographics Symposium on Rendering
-* __EGPGV__: Eurographics Symposium on Parallel Graphics and Visualization
-* __EuroVis__: EuroVis (EG Conference on Visualization)
-* __GCH__: Eurographics Workshop on Graphics and Cultural Heritage
-* __GRAPP__: International Conference on Computer Graphics Theory and Applications
-* __HPG__: High-Performance Graphics
-* __i3D__: Interactive 3D Graphics and Games
-* __ICCV__: International Conference on Computer Vision
-* __ISMAR__: International Symposium on Mixed and Augmented Reality
-* __LDAV__: IEEE Large Scale Data Analysis and Visualization
-* __PG__: Pacific Conference on Computer Graphics and Applications
-* __PVis__: IEEE Pacific Visualization Symposium
-* __SIGG__: ACM SIGGRAPH
-* __SIGGAsia__: ACM SIGGRAPH Asia
-* __SGP__: Symposium on Geometry Processing
-* __STAG__: Smart Tools And Applications in Graphics
-* __VIS__: IEEE Visualization
-* __VMV__: Symposium on Vision, Modeling, and Visualization
-* __VR__: IEEE Conference on Virtual Reality and 3D User Interfaces
-* __Web3D__: ACM International Conference on 3D Web Technology
-* __WSCG__:  International Conference in Central Europe on Computer Graphics, Visualization and Computer Vision
+{% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
+<div class="row g-2 mb-2">
+{% for m in months %}{% assign mi = forloop.index %}
+<div class="col-6 col-md-3"><div class="deadline-month">
+<div class="deadline-month-name">{{ m }}</div>
+{% for h in (1..2) %}{% assign items = site.data.deadlines | where: "month", mi | where: "half", h | sort_natural: "acronym" %}
+<div class="deadline-slot">{% for c in items %}<a href="{{ c.url }}" class="deadline-chip{% if c.tier == 1 %} deadline-chip-main{% endif %}" title="{{ c.name }}">{{ c.acronym }}</a>{% endfor %}</div>
+{% endfor %}
+</div></div>
+{% endfor %}
+</div>
+<p class="deadline-legend">Upper row: first half of the month. Lower row: second half.</p>
+
+## The venues
+
+{% assign families = "graphics:Computer graphics,visualization:Visualization,vision:Computer vision,vr:Virtual and augmented reality,web:Web 3D,heritage:Cultural heritage" | split: "," %}
+{% for f in families %}{% assign parts = f | split: ":" %}{% assign items = site.data.deadlines | where: "family", parts[0] | sort_natural: "acronym" %}{% if items.size > 0 %}
+### {{ parts[1] }}
+{% for c in items %}* [**{{ c.acronym }}**]({{ c.url }}): {{ c.name }}. <span class="text-white-50">{{ c.published_in }}.</span>
+{% endfor %}{% endif %}{% endfor %}
+
+The data behind this page is a single file, [`_data/deadlines.yml`](https://github.com/ajaspe/ajaspe.github.io/blob/master/_data/deadlines.yml). Pull requests with corrections are welcome.

@@ -16,7 +16,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 		<tbody>
 			  {% for note in site.notes %}
 				<tr>
-					<td class="text-warning col-1"><span class="text-end">[<em>{{ note.last_modification_date }}</em>]</span></td>
+					<td class="text-warning col-1 text-nowrap"><span class="text-end">[<em>{{ note.updated | date: "%b %Y" }}</em>]</span></td>
 					<td><a href="{{ note.url }}">{{ note.title }}</a></td>
 				</tr>
 				{% endfor %}
@@ -30,7 +30,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 		<tbody>
 			  {% for demo in site.demos %}
 				<tr>
-					<td class="text-warning col-1"><span class="text-end">[<em>{{ demo.last_modification_date }}</em>]</span></td>
+					<td class="text-warning col-1 text-nowrap"><span class="text-end">[<em>{{ demo.updated | date: "%b %Y" }}</em>]</span></td>
 					<td><a href="{{ demo.url }}">{{ demo.title }}</a></td>
 				</tr>
 				{% endfor %}

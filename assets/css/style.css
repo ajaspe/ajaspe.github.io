@@ -516,3 +516,52 @@ footer .gc-counter.gc-ready::after {
   color: #aaa;
   font-size: 0.85em;
 }
+
+/*
+ * Notes: deadlines calendar
+ */
+.deadline-table td { vertical-align: middle; }
+.deadline-table .deadline-date { font-weight: 600; color: #ffd27a; }
+.deadline-table tr.deadline-past { opacity: 0.45; }
+.deadline-table tr.deadline-past .deadline-date { color: #aaa; font-weight: 400; }
+.deadline-left { color: #bbb; white-space: nowrap; }
+.deadline-month {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  height: 100%;
+  padding: 0.4rem 0.5rem 0.5rem;
+}
+.deadline-month-name {
+  color: #ffc107;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.25rem;
+}
+.deadline-slot {
+  min-height: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-content: flex-start;
+  padding: 0.15rem 0;
+}
+.deadline-slot + .deadline-slot { border-top: 1px dashed #2c2c2c; }
+.deadline-chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #555;
+  color: #ddd;
+  text-decoration: none;
+  background: #242424;
+}
+.deadline-chip:hover { border-color: #ff7300; color: #fff; }
+.deadline-chip-main { border-color: #ff7300; color: #ffb066; font-weight: 600; }
+.deadline-legend { color: #aaa; font-size: 0.85rem; }

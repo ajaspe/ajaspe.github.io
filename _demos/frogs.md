@@ -2,7 +2,7 @@
 title: Frogs experiment
 description: "The frogs experiment"
 layout: default
-last_modification_date: 03/07/2022
+updated: 2022-07-03
 ---
 
 # The frogs experiment

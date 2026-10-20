@@ -2,7 +2,7 @@
 title: Msheireb Doha Design District Demo
 description: "Msheireb Doha Design District Demo"
 layout: default
-last_modification_date: 03/10/2023
+updated: 2023-10-03
 ---
 
 # Immersive omnidirectional imaging for the development of Doha Design District at Msheireb Downtown in Doha

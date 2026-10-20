@@ -1,0 +1,462 @@
+# Conference deadlines shown on /notes/deadlines-calendar.html (researched 2026-10-20).
+#   month / half : typical slot of the full-paper deadline in a normal year (half 1 = days 1-15, 2 = days 16-31)
+#   next_date    : next known deadline, quoted as a string. status: confirmed (from the published call for papers)
+#                  or estimated (previous edition's date moved one year)
+#   family       : graphics | visualization | vision | vr | web | heritage.   tier 1 = highlighted in the grid
+#   note         : one short sentence shown under the conference name
+
+# ---------------------------------------------------------------- computer graphics
+- id: siggraph
+  acronym: SIGGRAPH
+  name: ACM SIGGRAPH Technical Papers
+  family: graphics
+  tier: 1
+  url: https://www.siggraph.org
+  month: 1
+  half: 2
+  next_date: "2027-01-22"
+  next_edition: SIGGRAPH 2027
+  next_url: https://s2027.siggraph.org
+  status: estimated
+  published_in: ACM TOG (journal track) or SIGGRAPH Conference Papers
+  note: "Estimated from SIGGRAPH 2026 (abstract Jan 15, paper Jan 22). SIGGRAPH 2027 is Anaheim, Aug 8-12; call not out yet."
+
+- id: siggraph-asia
+  acronym: SIGGRAPH Asia
+  name: ACM SIGGRAPH Asia Technical Papers
+  family: graphics
+  tier: 1
+  url: https://asia.siggraph.org
+  month: 5
+  half: 1
+  next_date: "2027-05-12"
+  next_edition: SIGGRAPH Asia 2027
+  next_url: https://asia.siggraph.org/2026/about-the-event/siggraph-asia-2027/
+  status: estimated
+  published_in: ACM TOG (journal track) or SIGGRAPH Asia Conference Papers
+  note: "Estimated from SIGGRAPH Asia 2026 (abstract May 5, paper May 12). 2027 edition is Tokyo, Nov 30 - Dec 3."
+
+- id: eurographics
+  acronym: EG
+  name: Eurographics annual conference, full papers
+  family: graphics
+  tier: 1
+  url: https://www.eg.org/wp/eurographics-annual-conference/
+  month: 10
+  half: 1
+  next_date: "2027-10-01"
+  next_edition: Eurographics 2028
+  next_url: https://conferences.eg.org/eg2028/
+  status: estimated
+  published_in: Computer Graphics Forum
+  note: "EG 2027 (Lucca, May 10-14) closed on Oct 1, 2026. Estimated for EG 2028 in Zaragoza: abstract late September, paper early October."
+
+- id: pg
+  acronym: PG
+  name: Pacific Graphics
+  family: graphics
+  tier: 2
+  url: https://asiagraphics.org
+  month: 6
+  half: 1
+  next_date: "2027-06-08"
+  next_edition: Pacific Graphics 2027
+  next_url: https://pacificgraphics2026.github.io/
+  status: estimated
+  published_in: Computer Graphics Forum (journal track) or EG proceedings
+  note: "Estimated from PG 2026 (abstract Jun 1, paper Jun 8). PG 2027 venue not announced; link goes to the 2026 edition."
+
+- id: egsr
+  acronym: EGSR
+  name: Eurographics Symposium on Rendering
+  family: graphics
+  tier: 2
+  url: https://www.eg.org/wp/eg-events/rendering/
+  month: 4
+  half: 1
+  next_date: "2027-04-15"
+  next_edition: EGSR 2027
+  next_url: https://egsr2027.usi.ch/
+  status: estimated
+  published_in: Computer Graphics Forum (journal track) or EG proceedings
+  note: "Estimated from EGSR 2026 (abstract Apr 8, paper Apr 15). EGSR 2027 is Lugano, Jul 5-7, with HPG; call announced soon."
+
+- id: sgp
+  acronym: SGP
+  name: Symposium on Geometry Processing
+  family: graphics
+  tier: 2
+  url: https://www.eg.org/wp/eg-events/geometry-processing/
+  month: 4
+  half: 1
+  next_date: "2027-04-15"
+  next_edition: SGP 2027
+  next_url: https://igs2027singapore.github.io/
+  status: estimated
+  published_in: Computer Graphics Forum
+  note: "Estimated from SGP 2026 second round (abstract Apr 13, paper Apr 15); there is also an early round in February. SGP 2027 is Singapore, Jun 21-25."
+
+- id: hpg
+  acronym: HPG
+  name: High-Performance Graphics
+  family: graphics
+  tier: 2
+  url: https://highperformancegraphics.org
+  month: 4
+  half: 1
+  next_date: "2027-04-10"
+  next_edition: HPG 2027
+  next_url: https://highperformancegraphics.org/
+  status: estimated
+  published_in: Proceedings of the ACM on Computer Graphics and Interactive Techniques
+  note: "Estimated from HPG 2026 (abstract Apr 1, paper Apr 10). HPG 2027 is Lugano, Jul 7-9, co-hosted with EGSR."
+
+- id: i3d
+  acronym: i3D
+  name: ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games
+  family: graphics
+  tier: 2
+  url: https://i3dsymposium.org
+  month: 1
+  half: 1
+  next_date: "2027-01-09"
+  next_edition: i3D 2027
+  next_url: https://i3dsymposium.org/2026/
+  status: estimated
+  published_in: Proceedings of the ACM on Computer Graphics and Interactive Techniques
+  note: "Estimated from i3D 2026 (single paper deadline Jan 9). No 2027 page yet; link goes to the 2026 edition."
+
+- id: sca
+  acronym: SCA
+  name: ACM SIGGRAPH / Eurographics Symposium on Computer Animation
+  family: graphics
+  tier: 2
+  url: https://computeranimation.org
+  month: 4
+  half: 2
+  next_date: "2027-04-17"
+  next_edition: SCA 2027
+  next_url: https://computeranimation.org/
+  status: estimated
+  published_in: Computer Graphics Forum
+  note: "Estimated from SCA 2026 (abstract Apr 10, paper Apr 17). SCA 2027 venue not announced."
+
+- id: egpgv
+  acronym: EGPGV
+  name: Eurographics Symposium on Parallel Graphics and Visualization
+  family: graphics
+  tier: 2
+  url: https://egpgv.org
+  month: 2
+  half: 1
+  next_date: "2027-02-06"
+  next_edition: EGPGV 2027
+  next_url: https://egpgv-symposium.github.io/2026/
+  status: estimated
+  published_in: EG proceedings
+  note: "Estimated from EGPGV 2026 (abstract Jan 30, paper Feb 6). Held with EuroVis, so 2027 should be Stuttgart; link goes to the 2026 edition."
+
+- id: cgi
+  acronym: CGI
+  name: Computer Graphics International
+  family: graphics
+  tier: 2
+  url: https://www.cgs-network.org
+  month: 2
+  half: 2
+  next_date: "2027-02-28"
+  next_edition: CGI-AI 2027
+  next_url: https://www.cgs-network.org/cgi27/
+  status: confirmed
+  published_in: The Visual Computer (journal track) or Springer LNCS
+  note: "Cairns, Australia, Jul 5-9. The Visual Computer track closes Feb 28; the LNCS proceedings track on Apr 20."
+
+- id: grapp
+  acronym: GRAPP
+  name: GRIVAPP, formerly GRAPP, Computer Graphics, Information Visualization and HCI Theory and Applications (VISIGRAPP)
+  family: graphics
+  tier: 2
+  url: https://grivapp.scitevents.org
+  month: 10
+  half: 1
+  next_date: "2026-10-22"
+  next_edition: GRIVAPP 2027
+  next_url: https://grivapp.scitevents.org/
+  status: confirmed
+  published_in: SciTePress proceedings
+  note: "Valletta, Malta, Feb 26-28. Second-stage regular and position papers close Oct 22; the first stage closed Sep 29."
+
+- id: wscg
+  acronym: WSCG
+  name: International Conference in Central Europe on Computer Graphics, Visualization and Computer Vision
+  family: graphics
+  tier: 2
+  url: https://www.wscg.cz
+  month: 2
+  half: 1
+  next_date: "2027-02-15"
+  next_edition: WSCG 2027
+  next_url: https://www.wscg.cz/
+  status: confirmed
+  published_in: Computer Science Research Notes; best papers in the Journal of WSCG
+  note: "Plzen, Czech Republic, May 24-27. Full papers and posters by Feb 15 (abstract recommended by Jan 31)."
+
+- id: vmv
+  acronym: VMV
+  name: International Symposium on Vision, Modeling, and Visualization
+  family: graphics
+  tier: 2
+  url: https://www.gcpr-vmv.de
+  month: 6
+  half: 2
+  next_date: "2027-06-19"
+  next_edition: VMV 2027
+  next_url: https://www.gcpr-vmv.de/year/2026/vmv
+  status: estimated
+  published_in: EG proceedings; selected papers invited to Computer Graphics Forum
+  note: "Estimated from VMV 2026 (registration Jun 16, paper Jun 19, held with GCPR in Siegen). No 2027 announcement yet."
+
+- id: stag
+  acronym: STAG
+  name: Smart Tools and Applications in Graphics (Eurographics Italian Chapter)
+  family: graphics
+  tier: 2
+  url: https://www.stag-conference.org
+  month: 9
+  half: 2
+  next_date: "2026-10-27"
+  next_edition: STAG 2026
+  next_url: https://www.stag-conference.org/2026/index.html
+  status: confirmed
+  published_in: EG proceedings
+  note: "Catania, Italy, Nov 19-20. Full papers and posters by Oct 27 (abstracts closed Oct 6); the usual slot is late September."
+
+# ---------------------------------------------------------------- visualization
+- id: vis
+  acronym: VIS
+  name: IEEE VIS
+  family: visualization
+  tier: 1
+  url: https://ieeevis.org
+  month: 3
+  half: 2
+  next_date: "2027-03-31"
+  next_edition: IEEE VIS 2027
+  next_url: https://ieeevis.org/year/2026/welcome
+  status: estimated
+  published_in: IEEE TVCG
+  note: "Estimated from VIS 2026 (abstract Mar 21, paper Mar 31). VIS 2027 is planned for Chicago in November; link goes to the 2026 edition."
+
+- id: eurovis
+  acronym: EuroVis
+  name: EuroVis, the Eurographics Conference on Visualization
+  family: visualization
+  tier: 1
+  url: https://www.eurovis.org
+  month: 12
+  half: 1
+  next_date: "2026-12-03"
+  next_edition: EuroVis 2027
+  next_url: https://eurovis27.github.io/web/
+  status: estimated
+  published_in: Computer Graphics Forum
+  note: "Estimated from EuroVis 2026 (abstract Nov 26, paper Dec 3). EuroVis 2027 is Stuttgart, May 31 - Jun 4; full-paper dates not yet published."
+
+- id: pacificvis
+  acronym: PacificVis
+  name: IEEE Pacific Visualization Conference
+  family: visualization
+  tier: 2
+  url: https://pacificvis.org
+  month: 11
+  half: 1
+  next_date: "2026-11-09"
+  next_edition: IEEE PacificVis 2027
+  next_url: https://pacificvis2027.github.io/
+  status: confirmed
+  published_in: IEEE proceedings (conference track) or IEEE TVCG (journal track)
+  note: "Busan, Apr 19-22. Conference-paper track: abstract Nov 2, paper Nov 9. The TVCG track closes in early September."
+
+- id: ldav
+  acronym: LDAV
+  name: IEEE Symposium on Large Data Analysis and Visualization
+  family: visualization
+  tier: 2
+  url: https://ldav.io
+  month: 6
+  half: 2
+  next_date: "2027-06-20"
+  next_edition: IEEE LDAV 2027
+  next_url: https://ldav.io/2025/
+  status: estimated
+  published_in: IEEE proceedings, with IEEE VIS
+  note: "Estimated from LDAV 2025 (abstract Jun 16, paper Jun 20). No 2026 edition could be found; link goes to the 2025 edition."
+
+# ---------------------------------------------------------------- computer vision
+- id: cvpr
+  acronym: CVPR
+  name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  family: vision
+  tier: 1
+  url: https://cvpr.thecvf.com
+  month: 11
+  half: 2
+  next_date: "2026-11-16"
+  next_edition: CVPR 2027
+  next_url: https://cvpr.thecvf.com/Conferences/2027
+  status: confirmed
+  published_in: CVF / IEEE proceedings
+  note: "Seattle, Jun 20-25. Paper registration Nov 10, submission Nov 16, supplementary Nov 23 (AoE)."
+
+- id: iccv
+  acronym: ICCV
+  name: IEEE/CVF International Conference on Computer Vision (odd years)
+  family: vision
+  tier: 1
+  url: https://iccv.thecvf.com
+  month: 3
+  half: 1
+  next_date: "2027-03-07"
+  next_edition: ICCV 2027
+  next_url: https://iccv.thecvf.com/Conferences/2027
+  status: estimated
+  published_in: CVF / IEEE proceedings
+  note: "Estimated from ICCV 2025 (registration Mar 3, paper Mar 7). ICCV 2027 is Hong Kong, Oct 3-7; dates not published yet."
+
+- id: eccv
+  acronym: ECCV
+  name: European Conference on Computer Vision (even years)
+  family: vision
+  tier: 1
+  url: https://eccv.ecva.net
+  month: 3
+  half: 1
+  next_date: "2028-03-05"
+  next_edition: ECCV 2028
+  next_url: https://eccv.ecva.net/
+  status: estimated
+  published_in: Springer LNCS, open access through ECVA
+  note: "Estimated from ECCV 2026 (registration Feb 26, paper Mar 5). ECCV 2028 venue not announced."
+
+- id: 3dv
+  acronym: 3DV
+  name: International Conference on 3D Vision
+  family: vision
+  tier: 2
+  url: https://3dvconf.github.io
+  month: 8
+  half: 2
+  next_date: "2027-08-28"
+  next_edition: 3DV 2028
+  next_url: https://3dvconf.github.io/2027/
+  status: estimated
+  published_in: IEEE proceedings
+  note: "3DV 2027 (Thessaloniki, Apr 6-9) closed on Aug 28, 2026. Estimated for 3DV 2028; link goes to the 2027 edition."
+
+# ---------------------------------------------------------------- virtual and augmented reality
+- id: ieeevr
+  acronym: IEEE VR
+  name: IEEE Conference on Virtual Reality and 3D User Interfaces
+  family: vr
+  tier: 2
+  url: https://ieeevr.org
+  month: 9
+  half: 1
+  next_date: "2027-08-31"
+  next_edition: IEEE VR 2028
+  next_url: https://ieeevr.org/2027/
+  status: estimated
+  published_in: IEEE TVCG (journal papers) or IEEE proceedings
+  note: "VR 2027 (Melbourne, Feb 27 - Mar 3) closed on Aug 31, 2026. Estimated for VR 2028; one deadline for journal and conference papers."
+
+- id: ismar
+  acronym: ISMAR
+  name: IEEE International Symposium on Mixed and Augmented Reality
+  family: vr
+  tier: 2
+  url: https://ismar.net
+  month: 3
+  half: 2
+  next_date: "2027-03-16"
+  next_edition: IEEE ISMAR 2027
+  next_url: https://www.ieeeismar.net/2027/
+  status: estimated
+  published_in: IEEE TVCG (journal papers) or IEEE proceedings
+  note: "Estimated from ISMAR 2026 (abstract Mar 9, paper Mar 16). ISMAR 2027 is Kobe; dates to be announced."
+
+- id: vrst
+  acronym: VRST
+  name: ACM Symposium on Virtual Reality Software and Technology
+  family: vr
+  tier: 2
+  url: https://vrst.acm.org
+  month: 6
+  half: 2
+  next_date: "2027-06-24"
+  next_edition: ACM VRST 2027
+  next_url: https://vrst.acm.org/vrst2026/
+  status: estimated
+  published_in: ACM proceedings
+  note: "Estimated from VRST 2026 (abstract Jun 17, paper Jun 24). No 2027 call yet; link goes to the 2026 edition."
+
+- id: icat-egve
+  acronym: ICAT-EGVE
+  name: International Conference on Artificial Reality and Telexistence and Eurographics Symposium on Virtual Environments
+  family: vr
+  tier: 2
+  url: https://icat.vrsj.org/
+  month: 8
+  half: 2
+  next_date: "2027-05-31"
+  next_edition: ICAT-EGVE 2027
+  next_url: https://icat-egve2026.inf.ufg.br/
+  status: estimated
+  published_in: EG proceedings, open access
+  note: "Estimated from ICAT-EGVE 2026 (paper May 31, for a September conference); the usual slot is late August for December editions."
+
+# ---------------------------------------------------------------- web 3D
+- id: web3d
+  acronym: Web3D
+  name: ACM SIGGRAPH International Conference on 3D Web Technology
+  family: web
+  tier: 2
+  url: https://web3d.siggraph.org
+  month: 6
+  half: 1
+  next_date: "2027-06-01"
+  next_edition: Web3D 2027
+  next_url: https://web3d.siggraph.org/2026/
+  status: estimated
+  published_in: ACM proceedings; extended papers in a Computers & Graphics special section
+  note: "Estimated from Web3D 2026 (paper Jun 1, extended to Jun 25). No 2027 announcement yet; link goes to the 2026 edition."
+
+# ---------------------------------------------------------------- cultural heritage
+- id: gch
+  acronym: GCH
+  name: Eurographics Workshop on Graphics and Cultural Heritage
+  family: heritage
+  tier: 2
+  url: https://www.eg.org/wp/graphics-and-cultural-heritage/
+  month: 6
+  half: 1
+  next_date: "2027-06-01"
+  next_edition: EG GCH 2027
+  next_url: https://gch2026.virvig.eu/
+  status: estimated
+  published_in: EG proceedings
+  note: "Estimated from GCH 2026 (full papers Jun 1, short papers and posters Jul 22). No 2027 host yet; link goes to the 2026 edition."
+
+- id: digital-heritage
+  acronym: Digital Heritage
+  name: Digital Heritage International Congress
+  family: heritage
+  tier: 2
+  url: https://digitalheritage2025.unisi.it/
+  month: 4
+  half: 1
+  next_date: "2028-04-15"
+  next_edition: Digital Heritage 2028
+  next_url: https://digitalheritage2025.unisi.it/
+  status: estimated
+  published_in: EG proceedings (2025 edition)
+  note: "Held irregularly (2013, 2015, 2018, 2025). A host for 2027 or 2028 is being sought; estimated from the 2025 edition (abstract Mar 15, paper Apr 15)."
