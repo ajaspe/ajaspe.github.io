@@ -17,7 +17,7 @@ A personal, opinionated list, organized by what you want to do with it rather th
 
 Free and complete. If you are new to the field, these are the ones to open first.
 
-* [Scratchapixel](https://www.scratchapixel.com/): the gentlest full introduction to how images are made, from the math up.
+* [Scratchapixel](https://scratchapixel.com/): the gentlest full introduction to how images are made, from the math up.
 * [Ray Tracing in One Weekend](https://raytracing.github.io/): a working path tracer in a few hundred lines, then two more books that make it real.
 * [Physically Based Rendering, 4th edition](https://pbr-book.org/): the reference on rendering, free online, with the code of a production-quality renderer.
 * [Learn OpenGL](https://learnopengl.com/): the standard tutorial for real-time graphics with a modern API; still the best way to understand the pipeline.
