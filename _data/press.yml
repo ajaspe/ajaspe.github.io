@@ -1,0 +1,11 @@
+# Press and media mentions, shown on /press/ once the page is published
+# (remove `published: false` from _notes/press.md). Newest first is not required: the page sorts by date.
+#
+# items:
+#   - date: 2025-02-01
+#     outlet: KAUST News
+#     title: "Title of the article"
+#     url: https://...
+#     lang: en            # optional, shown as a small label when it is not English
+#     note: "one line of context"   # optional
+items: []

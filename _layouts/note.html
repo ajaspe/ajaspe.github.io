@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{%- comment -%}
+  Desk page (living page or standalone page). Front matter:
+    title, summary, updated (ISO date), kind: living | page, icon (Font Awesome class, optional),
+    redirect_from (old URLs, optional). The body starts directly with the content: the title and the
+    "Last updated" line are rendered here.
+{%- endcomment -%}
+<h1>{{ page.title }}</h1>
+{% if page.updated %}<p class="text-center note-updated"><i class="fas fa-calendar-check"></i> Last updated {{ page.updated | date: "%B %-d, %Y" }}</p>{% endif %}
+
+{{ content }}
+
+<p class="mt-5"><a href="/desk/" class="btn btn-outline-warning btn-sm"><i class="fas fa-angle-left"></i> Desk</a></p>

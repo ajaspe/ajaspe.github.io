@@ -19,6 +19,7 @@
 {%- assign canonical = page.url | absolute_url -%}
 {%- assign share_img = "/assets/img/thumb_home_ajaspe.jpg" -%}
 {%- if page.thumb_img -%}{%- assign share_img = page.thumb_img | prepend: "/" -%}{%- endif -%}
+{%- if page.cover -%}{%- assign share_img = page.cover -%}{%- endif -%}
 {%- if page.code -%}
   {%- assign thumb_path = "/publications/" | append: page.code | append: "-thumb.jpg" -%}
   {%- assign teaser_path = "/publications/" | append: page.code | append: "-teaser.jpg" -%}
@@ -37,12 +38,13 @@
     <meta name="author" content="Alberto Jaspe-Villanueva">
     <meta name="keywords" content="alberto jaspe, jaspe-villanueva, research, visualization, computer graphics, rendering, GPU, OpenGL, WebGL">
     <link rel="canonical" href="{{ canonical }}">
+    <link rel="alternate" type="application/atom+xml" title="Alberto Jaspe-Villanueva: blog" href="/feed.xml">
     <link rel="icon" href="/assets/img/favicon.ico">
     <meta name="theme-color" content="#7952b3">
 
     <!-- Social previews (Open Graph / Twitter cards) -->
     <meta property="og:site_name" content="{{ site_name }}">
-    <meta property="og:type" content="{% if page.code %}article{% else %}website{% endif %}">
+    <meta property="og:type" content="{% if page.code or page.layout == "post" %}article{% else %}website{% endif %}">
     <meta property="og:url" content="{{ canonical }}">
     <meta property="og:title" content="{{ this_title | escape }}">
     <meta property="og:description" content="{{ description | escape }}">

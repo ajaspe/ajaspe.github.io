@@ -1,10 +1,10 @@
-# Conference deadlines shown on /notes/deadlines-calendar.html (researched 2026-10-20).
+# Conference deadlines shown on /visual-computing-calendar/ (researched 2026-10-20).
 #   month / half : typical slot of the full-paper deadline in a normal year (half 1 = days 1-15, 2 = days 16-31)
 #   next_date    : next known deadline, quoted as a string. status: confirmed (from the published call for papers)
 #                  or estimated (previous edition's date moved one year)
 #   family       : graphics | visualization | vision | vr | applications (web 3D and cultural heritage).   tier 1 = highlighted in the grid
 #   note         : one short sentence shown under the conference name
-# When you change dates here, also bump updated: in _notes/deadlines-calendar.md (the date shown on the page).
+# When you change dates here, also bump updated: in _notes/visual-computing-calendar.md (the date shown on the page).
 
 # ---------------------------------------------------------------- computer graphics
 - id: siggraph

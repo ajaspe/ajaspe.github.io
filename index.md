@@ -38,6 +38,18 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 
 <p class="text-end mt-2"><a href="/news/" class="btn btn-outline-warning btn-sm">All news <i class="fas fa-angle-right"></i></a></p>
 
+{% assign cal = site.notes | where: "url", "/visual-computing-calendar/" | first %}{% assign guide = site.notes | where: "url", "/visual-computing-survival-guide/" | first %}{% assign post = site.posts | first %}
+{% if cal and guide %}
+## From the desk
+
+<div class="row row-cols-1 row-cols-md-3 g-3 note-cards desk-row">
+<div class="col"><a class="card h-100 note-card" href="{{ cal.url }}"><div class="card-body"><div class="note-card-icon"><i class="fas {{ cal.icon | default: 'fa-file-alt' }}"></i></div><div><div class="note-card-title">{{ cal.title }}</div><div class="note-card-summary">Next deadlines of the main graphics, visualization, vision and VR venues, by field.</div></div></div></a></div>
+<div class="col"><a class="card h-100 note-card" href="{{ guide.url }}"><div class="card-body"><div class="note-card-icon"><i class="fas {{ guide.icon | default: 'fa-file-alt' }}"></i></div><div><div class="note-card-title">{{ guide.title }}</div><div class="note-card-summary">Venues, literature, writing, reviewing, talks, impact metrics and well-being for new PhD students.</div></div></div></a></div>
+{% if post %}<div class="col"><a class="card h-100 note-card" href="{{ post.url }}"><div class="card-body"><div class="note-card-icon"><i class="fas fa-pen-nib"></i></div><div><div class="note-card-meta">Latest post, {{ post.date | date: "%b %-d, %Y" }}</div><div class="note-card-title">{{ post.title }}</div>{% if post.summary %}<div class="note-card-summary">{{ post.summary | truncate: 110 }}</div>{% endif %}</div></div></a></div>{% else %}<div class="col"><a class="card h-100 note-card" href="/desk/"><div class="card-body"><div class="note-card-icon"><i class="fas fa-book-open"></i></div><div><div class="note-card-title">More on my desk</div><div class="note-card-summary">Resources, live demos and experiments, and the occasional opinion piece.</div></div></div></a></div>{% endif %}
+</div>
+<p class="text-end mt-2"><a href="/desk/" class="btn btn-outline-warning btn-sm">The desk <i class="fas fa-angle-right"></i></a></p>
+{% endif %}
+
 {% assign vis = site.data.visitors %}<div class="visitor-stats gc-block{% if vis and vis.total > 0 %} gc-ready{% endif %}" id="visitors">
 <h2>Visitors</h2>
 <p class="small text-white-50 mt-0 mb-3">Visits counted by <a href="https://albertojaspe.goatcounter.com" class="text-white-50">GoatCounter</a>, without cookies. The <a href="https://albertojaspe.goatcounter.com" class="text-white-50">full statistics</a> are public{% if vis and vis.total > 0 %}; numbers refreshed daily, last on {{ vis.updated | date: "%b %-d, %Y" }}{% endif %}.</p>

@@ -66,7 +66,7 @@ for path in sorted(glob.glob(os.path.join(ROOT, "_publications", "*.md"))):
     if n > 0:
         pages[url] = n
     time.sleep(0.3)
-for url in ("/", "/research.html", "/publications/", "/news/", "/notes.html"):
+for url in ("/", "/research.html", "/publications/", "/news/", "/desk/", "/blog/", "/visual-computing-calendar/", "/visual-computing-survival-guide/", "/visual-computing-resources/"):
     n = count(url)
     if n > 0:
         pages[url] = n

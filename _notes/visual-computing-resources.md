@@ -1,22 +1,40 @@
 ---
 title: Visual Computing Resources
-description: Visual Computing Resources
-layout: default
+description: "Where to start and where to go deeper in computer graphics and visualization: free textbooks and courses, reference books, paper lists, blogs, tools and datasets, collected by Alberto Jaspe-Villanueva."
+layout: note
+kind: living
+icon: fa-book
+summary: "Free textbooks and courses, reference books, paper lists, blogs, tools and datasets for computer graphics and visualization, with a line on why each one is there."
+redirect_from:
+  - /notes/visual-computing-resources.html
 thumb_img: "assets/img/ajaspe.jpg"
-updated: 2023-03-16
+updated: 2026-10-20
 ---
 
-# {{page.title}}
+A personal, opinionated list, organized by what you want to do with it rather than by format. Every link has one line saying why it is here. All links were checked on the date above; blogs that have not posted in a while are marked as <span class="post-tag">archive</span>, their back catalogue is still worth reading.
 
-<p class="small text-white-50">Living document, last updated {{ page.updated | date: "%B %-d, %Y" }}.</p>
+## Start here
 
+Free and complete. If you are new to the field, these are the ones to open first.
 
+* [Scratchapixel](https://scratchapixel.com/): the gentlest full introduction to how images are made, from the math up.
+* [Ray Tracing in One Weekend](https://raytracing.github.io/): a working path tracer in a few hundred lines, then two more books that make it real.
+* [Physically Based Rendering, 4th edition](https://pbr-book.org/): the reference on rendering, free online, with the code of a production-quality renderer.
+* [Learn OpenGL](https://learnopengl.com/): the standard tutorial for real-time graphics with a modern API; still the best way to understand the pipeline.
+* [WebGPU Fundamentals](https://webgpufundamentals.org/): the same journey for the web's new GPU API, which is where much of my recent work lives.
+* [The Book of Shaders](https://thebookofshaders.com/): fragment shaders explained with live editors; the fastest route to thinking in GPU terms.
+* [Computer Graphics from Scratch](https://gabrielgambetta.com/computer-graphics-from-scratch/): rasterization and ray tracing with no libraries, for the fundamentals.
+* [Immersive Linear Algebra](https://immersivemath.com/ila/): the linear algebra you need, with interactive figures.
+* [Cem Yuksel's courses](https://www.cemyuksel.com/courses/): recorded university lectures on graphics, from the basics to interactive rendering.
+* [Keenan Crane: Discrete Differential Geometry](https://www.cs.cmu.edu/~kmcrane/Projects/DDG/): the notes and lectures for geometry processing.
 
-## My reference books
+## Reference books
+
+The ones on my shelf. Click a cover for the book's site.
 
 <div class="row row-cols-5">
 	<div class="col">
-		<a href="https://www.realtimerendering.com/"><img class="img-fluid imglight" src="/assets/img/book_covers/realtime-rendering.jpg" alt="Realtime Rendering"></a>
+		<a href="https://www.realtimerendering.com/"><img class="img-fluid imglight" src="/assets/img/book_covers/realtime-rendering.jpg" alt="Real-Time Rendering"></a>
 	</div>
 	<div class="col">
 		<a href="https://cgpp.net"><img class="img-fluid imglight" src="/assets/img/book_covers/computer_graphics_priciples_and_practice.jpg" alt="Computer Graphics: Principles and Practice"></a>
@@ -32,36 +50,79 @@ updated: 2023-03-16
 	</div>
 </div>
 
+* **Real-Time Rendering** (Akenine-Möller et al.): the encyclopedia of interactive graphics; its [website](https://www.realtimerendering.com/) keeps the reading lists current.
+* **Computer Graphics: Principles and Practice** (Hughes et al.): the broad, classic foundation.
+* **Physically Based Rendering** (Pharr, Jakob, Humphreys): see above; the printed edition is worth having too.
+* **Fundamentals of Computer Graphics** (Marschner, Shirley): the undergraduate textbook I would teach from.
+* **Game Engine Architecture** (Gregory): how all of it fits together in a real system.
+* [GPU Gems](https://developer.nvidia.com/gpugems/gpugems/contributors): the three volumes, free online; dated in places, timeless in others.
+* [Visualization Analysis and Design](https://www.cs.ubc.ca/~tmm/vadbook/) (Munzner): the textbook of visualization, the one to read before designing a view of anything.
 
+## Going deeper
 
-## Reference websites
-* [The Graphics Codex](https://graphicscodex.com)
-* [Shervine Amidi lectures](https://stanford.edu/~shervine/teaching/)
+* [The Graphics Codex](https://graphicscodex.com): Morgan McGuire's compact reference of the equations and concepts, always open in a tab.
+* [Casual Effects](https://casual-effects.com/): McGuire's site: papers, tools and the Computer Graphics Archive of test models.
+* [Journal of Computer Graphics Techniques](https://jcgt.org/): free, peer-reviewed, practical techniques with code.
+* [Physically Based Shading courses](https://blog.selfshadow.com/publications/): the SIGGRAPH course notes that defined modern material models, collected by Stephen Hill.
+* [Eurographics Digital Library](https://diglib.eg.org): open access to most Eurographics papers.
+* [A Primer on Bézier Curves](https://pomax.github.io/bezierinfo/): everything about the curves, interactive.
+* [Shervine Amidi's cheatsheets](https://stanford.edu/~shervine/teaching/): the machine learning you need next to graphics, on a few pages.
+* Introductions to [Spherical Harmonics](https://puye.blog/posts/SH-Introduction-EN/) and [Spherical Gaussians](https://puye.blog/posts/SG-Intro-EN/): the two representations behind most lighting approximations.
+* [Color: From Hexcodes to Eyeballs](https://jamie-wong.com/post/color/) (Jamie Wong): the best single explanation of color for programmers.
 
-## Websites:
-* [Realtime Rendering website](https://www.realtimerendering.com/#ibr)
-* [Casual Effects by Morgan McGuire](https://casual-effects.com/)
-* [Geeks3D](https://www.geeks3d.com/)
+## Keeping up
 
-## Blogs:
-* [Realtime Rendering Blog](https://www.realtimerendering.com/blog/)
-* [The Graphics Programming Weekly news, by Jendrik Illner](https://www.jendrikillner.com/)
-* [Aras Pranckevičius](https://aras-p.info/blog/)
-* [C0DE517E, by Angelo Pesce](http://c0de517e.blogspot.com/)
-* [The blog at the bottom of the sea, by Alan Wolfe](https://blog.demofox.org/)
-* [Nathan Reed](https://www.reedbeta.com/)
-* [Ingo Wald](https://ingowald.blog/)
-* [A Graphics Guy's Note, by Jiayin Cao](https://agraphicsguynotes.com/)
-* [Bart Wronski](https://bartwronski.com)
-* [Íñigo Quilez](https://iquilezles.org)
-* [Pete Shirley](http://psgraphics.blogspot.com)
-* [Anteru, by Matthäus G. Chajdas](https://anteru.net/)
-* [Humus](http://www.humus.name)
-* [Juan Diego Montoya](https://juandiegomontoya.github.io)
-* [Max Liani](https://maxliani.wordpress.com/)
+* [Ke-Sen Huang's paper lists](https://kesen.realtimerendering.com): every paper of every graphics conference, the day the program is out.
+* [Graphics Programming Weekly](https://www.jendrikillner.com/) (Jendrik Illner): the newsletter of the field, every Sunday.
+* [Real-Time Rendering blog](https://www.realtimerendering.com/blog/): news and link roundups from the book's authors.
+* [Geeks3D](https://www.geeks3d.com/): GPU and demoscene news, tools and tests.
+* [Two Minute Papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg): the papers of the week in video form.
+* [Shadertoy](https://www.shadertoy.com/): thousands of shaders to read and tweak; the living textbook of procedural graphics.
 
-## Specific articles, tutorials about CG-related topics:
-* Introduction to [Spherical Harmonics](https://puye.blog/posts/SH-Introduction-EN/) and to [Spherical Gaussians](https://puye.blog/posts/SG-Intro-EN/)
-* [Color: from Hexcodes to Eyeballs](https://jamie-wong.com/post/color/) by Jamie Wong
-* [Modern Assembly Language for X86-64](http://www.egr.unlv.edu/~ed/assembly64.pdf) by Ed Jorgensen
+### Blogs
 
+* [Íñigo Quilez](https://iquilezles.org): distance fields, procedural everything, and the articles behind Shadertoy.
+* [Aras Pranckevičius](https://aras-p.info/blog/): engine internals, Gaussian splatting, and honest performance work.
+* [Bart Wronski](https://bartwronski.com): signal processing and image quality for rendering.
+* [The blog at the bottom of the sea](https://blog.demofox.org/) (Alan Wolfe): sampling, noise and exotic computation, with code.
+* [C0DE517E](https://www.c0de517e.com/) (Angelo Pesce): rendering architecture and industry perspective, now at a new address.
+* [Ingo Wald](https://ingowald.blog/): ray tracing and large data, from the author of much of it.
+* [Max Liani](https://maxliani.wordpress.com/): production rendering and software craft.
+* [Anteru](https://anteru.net/) (Matthäus G. Chajdas): GPUs, APIs and the industry from the inside.
+* [A Graphics Guy's Note](https://agraphicsguynotes.com/) (Jiayin Cao): deep dives into renderers and papers.
+* [Juan Diego Montoya](https://juandiegomontoya.github.io): modern OpenGL and engine experiments.
+* [Nathan Reed](https://www.reedbeta.com/): clear explanations of rendering math. <span class="post-tag">archive</span>
+* [Pete Shirley](http://psgraphics.blogspot.com): short notes from the author of the ray tracing books. <span class="post-tag">archive</span>
+* [Humus](http://www.humus.name) (Emil Persson): demos and techniques from the 2000s and 2010s. <span class="post-tag">archive</span>
+
+## Visualization
+
+* [IEEE VIS](https://ieeevis.org) and [EuroVis](https://www.eurovis.org): the two conferences, with their paper lists and recorded talks.
+* [Data Visualization Society](https://www.datavisualizationsociety.org/): the community side, with challenges and a newsletter.
+* [D3](https://d3js.org/) and [Observable](https://observablehq.com/): the web toolkit for data graphics, and the notebooks to prototype with it.
+* [Vega-Lite](https://vega.github.io/vega-lite/): charts described as data; the fastest way to a correct plot.
+* [ParaView](https://www.paraview.org/) and [VTK](https://vtk.org/): the workhorses of scientific visualization.
+* [Inviwo](https://inviwo.org/): a research framework for interactive visualization, good for prototyping new techniques.
+
+## Tools
+
+* [RenderDoc](https://renderdoc.org/): the frame debugger; learn it before anything else goes wrong.
+* [NVIDIA Nsight Graphics](https://developer.nvidia.com/nsight-graphics): profiling and debugging on NVIDIA GPUs.
+* [Blender](https://www.blender.org/): modeling, rendering and a Python API for generating test scenes.
+* [MeshLab](https://www.meshlab.net/) and [CloudCompare](https://www.cloudcompare.org/): inspecting, cleaning and comparing meshes and point clouds.
+* [Polyscope](https://polyscope.run/): a viewer for research prototypes in C++ and Python, with almost no code.
+* [Open3D](https://www.open3d.org/): point clouds, meshes and reconstruction from Python.
+* [three.js](https://threejs.org/), [Babylon.js](https://www.babylonjs.com/) and [X_ITE](https://create3000.github.io/x_ite/): 3D on the web, from scene graphs to standards-based X3D.
+* [Compiler Explorer](https://godbolt.org/): see what your code compiles to.
+
+## Data
+
+* [Stanford 3D Scanning Repository](https://graphics.stanford.edu/data/3Dscanrep/): the bunny, the dragon and friends.
+* [Computer Graphics Archive](https://casual-effects.com/data/): McGuire's cleaned-up test scenes (Sponza, San Miguel, Bistro and more).
+* [Poly Haven](https://polyhaven.com/): free HDRIs, textures and models under CC0.
+* [Gaia Archive](https://gea.esac.esa.int/archive/): the star catalog behind our Lactea work; a billion rows to visualize.
+
+## Systems and performance
+
+* [Agner Fog's optimization manuals](https://www.agner.org/optimize/): how CPUs really execute your code.
+* [x86-64 Assembly Language Programming](http://www.egr.unlv.edu/~ed/assembly64.pdf) (Ed Jorgensen): a free textbook, for when you need to read what the compiler did.

@@ -1,0 +1,10 @@
+# Live demos and experiments that are not Jekyll pages (static apps hosted on the site, or external).
+# They are listed on /desk/ together with the _demos collection. Keys: title, url, description, updated.
+- title: X3D Copilot
+  url: /x3d-copilot/
+  description: "Browser-based X3D 4.0 editor with an AI co-author, live X_ITE rendering and schema validation. Web3D/Metaverse Tool of the Year and first prize of the AI & Web3D Innovation Competition at Web3D 2026."
+  updated: 2026-10-13
+- title: MARLIE, multi-layered relightable image explorer
+  url: /demos/marlie/
+  description: "Web viewer for annotated, multi-layer, relightable image models of artworks, from phones to museum walls. Best paper at GCH 2019, extended in JOCCH 2021."
+  updated: 2021-05-01
