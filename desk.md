@@ -33,17 +33,15 @@ thumb_img: "assets/img/ajaspe.jpg"
 </div>
 {% endif %}
 
-## Blog
 {% assign posts = site.posts %}
 {% if posts.size > 0 %}
+## Blog
 <ul class="post-list list-unstyled">
 {% for p in posts limit: 3 %}
 <li class="post-item"><span class="post-date">{{ p.date | date: "%b %-d, %Y" }}</span><div><a class="post-title" href="{{ p.url }}">{{ p.title }}</a>{% if p.summary %}<div class="post-summary">{{ p.summary }}</div>{% endif %}</div></li>
 {% endfor %}
 </ul>
 <p class="text-end mt-2"><a href="/blog/" class="btn btn-outline-warning btn-sm">All posts <i class="fas fa-angle-right"></i></a> <a href="/feed.xml" class="btn btn-outline-light btn-sm" title="Atom feed"><i class="fas fa-rss"></i> Feed</a></p>
-{% else %}
-<p class="text-white-50">Opinion pieces, written now and then. The first one is on its way.</p>
 {% endif %}
 
 ## Live demos and experiments
