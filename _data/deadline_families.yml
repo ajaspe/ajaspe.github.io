@@ -1,0 +1,25 @@
+# Fields used to colour and filter the deadlines calendar. `id` matches the `family` key in deadlines.yml.
+- id: graphics
+  short: CG
+  name: Computer graphics
+  color: "#ffb04f"
+- id: visualization
+  short: Vis
+  name: Visualization
+  color: "#5ec8f2"
+- id: vision
+  short: CV
+  name: Computer vision
+  color: "#8ee08e"
+- id: vr
+  short: VR
+  name: Virtual and augmented reality
+  color: "#c48be0"
+- id: web
+  short: Web3D
+  name: Web 3D
+  color: "#ffe66d"
+- id: heritage
+  short: CH
+  name: Cultural heritage
+  color: "#f08a8a"
