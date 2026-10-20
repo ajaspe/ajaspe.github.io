@@ -7,7 +7,7 @@ icon: fa-calendar-alt
 summary: "Paper deadlines of the main graphics, visualization, vision and VR conferences: the next dates, the usual month of each, and links to every venue."
 redirect_from:
   - /notes/deadlines-calendar.html
-thumb_img: "assets/img/thumb_home_ajaspe.jpg"
+thumb_img: "assets/img/thumb_calendar.jpg"
 updated: 2026-10-20
 ---
 

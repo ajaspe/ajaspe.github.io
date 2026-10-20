@@ -7,7 +7,7 @@ icon: fa-graduation-cap
 summary: "A quick-start for new PhD students in graphics and visualization: venues, literature, writing, reviewing, talks, impact metrics and looking after yourself."
 redirect_from:
   - /notes/visual-computing-research-survival-guide.html
-thumb_img: "assets/img/ajaspe.jpg"
+thumb_img: "assets/img/thumb_guide.jpg"
 updated: 2026-10-20
 ---
 
