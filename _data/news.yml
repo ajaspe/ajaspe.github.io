@@ -4,9 +4,6 @@
 #   type: paper | award | service | talk | travel | site | misc   (chooses the icon)
 #   text: one or two sentences, markdown allowed
 
-# ---------------------------------------------------------------------------
-# DRAFT entries written from the site's own data. Please check dates and wording.
-# ---------------------------------------------------------------------------
 - date: 2026-10-16
   type: award
   text: "Our paper [HGCalVis](/publications/2026-Web3D-HGCalVis.html) received the Scientific Excellence award at [Web3D 2026](https://web3d.siggraph.org/2026/) in Doha, Qatar. Congratulations to Waad and all the co-authors!"
@@ -21,10 +18,7 @@
 
 - date: 2026-03-01
   type: service
-  text: "Serving as tutorials chair of [Web3D 2026](https://web3d.siggraph.org/2026/) and program chair of [STAG 2026](https://www.stag-conference.org)."
-# ---------------------------------------------------------------------------
-# End of draft entries
-# ---------------------------------------------------------------------------
+  text: "Serving as Tutorials Chair of [Web3D 2026](https://web3d.siggraph.org/2026/) and Program Chair of [STAG 2026](https://www.stag-conference.org)."
 
 - date: 2025-06-15
   type: award
