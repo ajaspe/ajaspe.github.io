@@ -1,14 +1,16 @@
 ---
 title: Visual Computing Resources
-description: Visual Computing Resources
-layout: default
+description: "Reference books, websites, blogs and articles on computer graphics and visualization, collected by Alberto Jaspe-Villanueva."
+layout: note
+kind: living
+icon: fa-book
+summary: "My reference books, websites and blogs on computer graphics, plus a few articles worth reading."
+redirect_from:
+  - /notes/visual-computing-resources.html
 thumb_img: "assets/img/ajaspe.jpg"
 updated: 2023-03-16
 ---
 
-# {{page.title}}
-
-<p class="small text-white-50">Living document, last updated {{ page.updated | date: "%B %-d, %Y" }}.</p>
 
 
 

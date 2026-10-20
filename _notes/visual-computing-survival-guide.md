@@ -1,14 +1,15 @@
 ---
 title: Practical Survival Guide for new Visual Computing Researchers
 description: "A quick-start guide for new PhD students in computer graphics and visualization: venues, literature, writing, reviewing, talks, impact metrics and well-being."
-layout: default
+layout: note
+kind: living
+icon: fa-graduation-cap
+summary: "A quick-start for new PhD students in graphics and visualization: venues, literature, writing, reviewing, talks, impact metrics and looking after yourself."
+redirect_from:
+  - /notes/visual-computing-research-survival-guide.html
 thumb_img: "assets/img/ajaspe.jpg"
 updated: 2026-10-20
 ---
-
-# {{page.title}}
-
-<p class="small text-white-50">Living document, last updated {{ page.updated | date: "%B %-d, %Y" }}. Corrections and suggestions are welcome.</p>
 
 This small guide aims to be a quick-start introduction to common terms and procedures for a computer science researcher. Some aspects are generic, and others are more oriented to the field of Visual Computing, specifically Computer Graphics and Visualization.
 
@@ -34,7 +35,7 @@ In computer graphics and visualization the top venues are **conferences**, and m
 * **Journals that take direct submissions.** TOG, TVCG, CGF, *Computers & Graphics*, *Computer-Aided Design*, *The Visual Computer*, *IEEE Computer Graphics and Applications*, *Graphical Models*, and the open-access *Journal of Computer Graphics Techniques* (JCGT) for practical techniques with code.
 * **Preprints.** [arXiv cs.GR](https://arxiv.org/list/cs.GR/recent) and [cs.CV](https://arxiv.org/list/cs.CV/recent). Check the venue's double-blind policy before posting a preprint of a paper under review.
 
-The [calendar of deadlines](/notes/deadlines-calendar.html) has the typical submission dates of all these venues, the next confirmed deadlines and the links to each conference.
+The [calendar of deadlines](/visual-computing-calendar/) has the typical submission dates of all these venues, the next confirmed deadlines and the links to each conference.
 
 ## Surfing the literature
  * [Ke-Sen Huang's paper lists](https://kesen.realtimerendering.com): the papers of every graphics conference, updated the day the program is out. The daily driver of the field.

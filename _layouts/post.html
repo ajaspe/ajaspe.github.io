@@ -1,0 +1,64 @@
+---
+layout: default
+---
+{%- comment -%}
+  Blog post. Front matter: title, date, summary, tags (list), cover (image path, optional),
+  cover_alt (optional), linkedin (URL of the LinkedIn post, optional: adds a "Discuss on LinkedIn" button).
+{%- endcomment -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 | at_least: 1 -%}
+{%- assign share_url = page.url | absolute_url -%}
+{%- assign share_url_enc = share_url | url_encode -%}
+{%- assign share_text_enc = page.title | url_encode -%}
+<article class="post">
+<h1>{{ page.title }}</h1>
+<p class="text-center post-meta"><span>{{ page.date | date: "%B %-d, %Y" }}</span> &middot; <span>{{ minutes }} min read</span>{% if page.tags.size > 0 %} &middot; {% for t in page.tags %}<span class="post-tag">{{ t }}</span> {% endfor %}{% endif %}</p>
+
+{% if page.cover %}<img class="w-100 rounded post-cover" src="{{ page.cover }}" alt="{{ page.cover_alt | default: page.title }}">{% endif %}
+
+<div class="post-body">
+{{ content }}
+</div>
+
+<div class="post-share">
+  <span class="text-white-50 small">Share</span>
+  <a class="btn btn-outline-light btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url_enc }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  <a class="btn btn-outline-light btn-sm" href="https://bsky.app/intent/compose?text={{ share_text_enc }}%20{{ share_url_enc }}" target="_blank" rel="noopener"><i class="fas fa-cloud"></i> Bluesky</a>
+  <a class="btn btn-outline-light btn-sm" href="https://twitter.com/intent/tweet?text={{ share_text_enc }}&amp;url={{ share_url_enc }}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> X</a>
+  <button type="button" class="btn btn-outline-light btn-sm post-copy" data-copy="{{ share_url }}"><i class="fas fa-link"></i> Copy link</button>
+  {% if page.linkedin %}<a class="btn btn-outline-warning btn-sm" href="{{ page.linkedin }}" target="_blank" rel="noopener"><i class="fas fa-comments"></i> Discuss on LinkedIn</a>{% endif %}
+</div>
+
+<nav class="post-nav">
+  <span>{% if page.previous %}<a href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>{% endif %}</span>
+  <span>{% if page.next %}<a href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>{% endif %}</span>
+</nav>
+
+<p class="mt-4"><a href="/blog/" class="btn btn-outline-warning btn-sm"><i class="fas fa-angle-left"></i> All posts</a> <a href="/notebook/" class="btn btn-outline-warning btn-sm"><i class="fas fa-book-open"></i> Notebook</a></p>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+  "author": { "@type": "Person", "name": "Alberto Jaspe-Villanueva", "url": "https://albertojaspe.net/" },
+  "mainEntityOfPage": {{ share_url | jsonify }}{% if page.summary %},
+  "description": {{ page.summary | jsonify }}{% endif %}{% if page.cover %},
+  "image": {{ page.cover | absolute_url | jsonify }}{% endif %}
+}
+</script>
+<script>
+(function () {
+  var b = document.querySelector('.post-copy');
+  if (!b || !navigator.clipboard) return;
+  b.addEventListener('click', function () {
+    navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function () {
+      var old = b.innerHTML; b.innerHTML = '<i class="fas fa-check"></i> Copied';
+      setTimeout(function () { b.innerHTML = old; }, 1500);
+    });
+  });
+})();
+</script>

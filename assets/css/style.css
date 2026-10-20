@@ -584,4 +584,35 @@ footer .gc-counter.gc-ready::after {
 .deadline-chip:hover { border-color: #ff7300; color: #fff; }
 .deadline-chip-main { border-color: #ff7300; color: #ffb066; font-weight: 600; }
 .deadline-legend { color: #aaa; font-size: 0.85rem; }
-.deadline-updated { color: #ffc107; font-size: 1rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }
+.note-updated { color: #ffc107; font-size: 1rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }
+/*
+ * Notebook: index cards, post lists, blog posts
+ */
+.note-cards .note-card {
+  background-color: #111;
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  color: #ddd;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.note-cards .note-card:hover { border-color: #ff7300; color: #fff; }
+.note-cards .card-body { display: flex; gap: 0.9rem; align-items: flex-start; }
+.note-card-icon { color: rgb(255, 166, 93); font-size: 1.5rem; width: 2rem; text-align: center; flex: none; margin-top: 0.15rem; }
+.note-card-title { font-family: 'Jost', sans-serif; font-size: 1.15rem; color: #fff; }
+.note-card-summary { color: #bbb; font-size: 0.9rem; margin-top: 0.2rem; }
+.note-card-meta { color: #888; font-size: 0.78rem; margin-top: 0.4rem; }
+
+.post-list .post-item { display: flex; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid #333; }
+.post-list .post-item:last-child { border-bottom: none; }
+.post-date { color: #ffc107; font-style: italic; font-size: 0.85rem; min-width: 5.5rem; text-align: right; padding-top: 0.2rem; white-space: nowrap; }
+.post-title { font-family: 'Jost', sans-serif; font-size: 1.1rem; }
+.post-summary { color: #bbb; font-size: 0.9rem; }
+
+.post-meta { color: #aaa; font-size: 0.95rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }
+.post-tag { display: inline-block; border: 1px solid #555; border-radius: 999px; padding: 0 0.5rem; font-size: 0.8rem; color: #ccc; }
+.post-cover { margin-bottom: 1.5rem; }
+.post-body { font-size: 1.05rem; line-height: 1.65; max-width: 46rem; margin: 0 auto; }
+.post-body img { max-width: 100%; height: auto; }
+.post-share { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333; }
+.post-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; }
