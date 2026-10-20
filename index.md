@@ -49,7 +49,7 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {% if vis.daily and vis.daily.size > 6 %}{% assign vmax = 1 %}{% for d in vis.daily %}{% if d.count > vmax %}{% assign vmax = d.count %}{% endif %}{% endfor %}{% assign n = vis.daily.size %}{% assign w = 600.0 | divided_by: n %}{% assign bw = w | times: 0.72 %}{% assign first = vis.daily | first %}{% assign last = vis.daily | last %}
 <div class="stat-tile visits-chart mt-3">
 <svg viewBox="0 0 600 100" preserveAspectRatio="none" class="visits-svg" role="img" aria-label="Daily visits over the last {{ n }} days">
-{% for d in vis.daily %}{% assign h = d.count | times: 100.0 | divided_by: vmax %}{% assign x = forloop.index0 | times: w %}{% assign y = 100 | minus: h %}{% assign from_end = n | minus: forloop.index %}<rect x="{{ x }}" y="{{ y }}" width="{{ bw }}" height="{{ h }}" class="visits-bar{% if from_end < 7 %} visits-bar-week{% endif %}"><title>{{ d.date | date: "%b %-d" }}: {{ d.count }} visits</title></rect>{% endfor %}
+{% for d in vis.daily %}{% assign h = d.count | times: 100.0 | divided_by: vmax %}{% assign x = forloop.index0 | times: w %}{% assign y = 100 | minus: h %}<rect x="{{ x }}" y="{{ y }}" width="{{ bw }}" height="{{ h }}" class="visits-bar"><title>{{ d.date | date: "%b %-d" }}: {{ d.count }} visits</title></rect>{% endfor %}
 </svg>
 <div class="d-flex justify-content-between visits-axis"><span>{{ first.date | date: "%b %-d" }}</span><span>visits per day, peak {{ vmax }}</span><span>{{ last.date | date: "%b %-d" }}</span></div>
 </div>

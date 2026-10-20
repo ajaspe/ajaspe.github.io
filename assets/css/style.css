@@ -527,10 +527,8 @@ footer .gc-counter.gc-ready::after {
   height: 72px;
 }
 
-.visits-bar { fill: #555; }
-.visits-bar:hover { fill: #888; }
-.visits-bar-week { fill: rgb(255, 166, 93); }
-.visits-bar-week:hover { fill: #ffc78f; }
+.visits-bar { fill: #666; }
+.visits-bar:hover { fill: rgb(255, 166, 93); }
 
 .visits-axis {
   color: #aaa;
