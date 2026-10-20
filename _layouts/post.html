@@ -23,7 +23,6 @@ layout: default
 <div class="post-share">
   <span class="text-white-50 small">Share</span>
   <a class="btn btn-outline-light btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url_enc }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-  <a class="btn btn-outline-light btn-sm" href="https://bsky.app/intent/compose?text={{ share_text_enc }}%20{{ share_url_enc }}" target="_blank" rel="noopener"><i class="fas fa-cloud"></i> Bluesky</a>
   <a class="btn btn-outline-light btn-sm" href="https://twitter.com/intent/tweet?text={{ share_text_enc }}&amp;url={{ share_url_enc }}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> X</a>
   <button type="button" class="btn btn-outline-light btn-sm post-copy" data-copy="{{ share_url }}"><i class="fas fa-link"></i> Copy link</button>
   {% if page.linkedin %}<a class="btn btn-outline-warning btn-sm" href="{{ page.linkedin }}" target="_blank" rel="noopener"><i class="fas fa-comments"></i> Discuss on LinkedIn</a>{% endif %}
