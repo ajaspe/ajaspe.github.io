@@ -604,4 +604,10 @@ footer .gc-counter.gc-ready::after {
 .fam-filter:hover { background: #2a2a2a; }
 .fam-filter.active { background: var(--fam, #888); color: #111; font-weight: 600; }
 .deadline-hidden { display: none !important; }
+.deadline-table th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+.deadline-table th.sortable:hover { color: #ffc107; }
+.deadline-table th.sort-asc::after { content: ' \25B4'; color: #ffc107; }
+.deadline-table th.sort-desc::after { content: ' \25BE'; color: #ffc107; }
+.fam-pick { cursor: pointer; }
+.fam-pick:hover { background: var(--fam, #888); color: #111; }
 .note-updated { color: #ffc107; font-size: 1rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }
