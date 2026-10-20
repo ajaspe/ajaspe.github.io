@@ -582,6 +582,28 @@ footer .gc-counter.gc-ready::after {
 .fam-filter:hover { background: #2a2a2a; }
 .fam-filter.active { background: var(--fam, #888); color: #111; font-weight: 600; }
 .deadline-hidden { display: none !important; }
+
+/* Phones: each deadline row becomes a small card (desktop table untouched) */
+@media (max-width: 767.98px) {
+  .deadline-table thead { display: none; }
+  .deadline-table, .deadline-table > tbody { display: block; width: 100%; }
+  .deadline-table > tbody > tr.deadline-row {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas: "date field left" "conf conf conf";
+    column-gap: 0.6rem;
+    align-items: center;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid #333;
+  }
+  .deadline-table > tbody > tr > td { display: block; padding: 0; border: 0; background: transparent; }
+  .deadline-table > tbody > tr > td:nth-child(1) { grid-area: date; }
+  .deadline-table > tbody > tr > td:nth-child(1) br { display: none; }
+  .deadline-table > tbody > tr > td:nth-child(1) .badge { margin-left: 0.4rem; vertical-align: middle; }
+  .deadline-table > tbody > tr > td:nth-child(2) { grid-area: conf; margin-top: 0.3rem; }
+  .deadline-table > tbody > tr > td:nth-child(3) { grid-area: field; }
+  .deadline-table > tbody > tr > td.deadline-left { grid-area: left; text-align: right; }
+}
 .deadline-table th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
 .deadline-table th.sortable:hover { color: #ffc107; }
 .deadline-table th.sort-asc::after { content: ' \25B4'; color: #ffc107; }
