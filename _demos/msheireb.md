@@ -1,6 +1,6 @@
 ---
-title: Msheireb Doha Design District Demo
-description: "Msheireb Doha Design District Demo"
+title: "Msheireb Downtown Doha in stereoscopic 360°"
+description: "Stereoscopic 360-degree captures of the Doha Design District at Msheireb Downtown, explorable in WebXR. A demo by Shaikha Al Sulaiti, Jens Schneider and Marco Agus."
 layout: default
 updated: 2023-10-03
 ---

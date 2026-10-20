@@ -1,11 +1,11 @@
 ---
-title: Frogs experiment
-description: "The frogs experiment"
+title: The frogs problem
+description: "A quick implementation of a classic technical-interview algorithm problem: how many steps a random set of frogs needs to reach the end, with three strategies to compare."
 layout: default
 updated: 2022-07-03
 ---
 
-# The frogs experiment
+# The frogs problem
 
 This is just a visual representation of an interesting problem I saw somewhere: minimize the number of steps that a random set of frogs need to reach the end.
 

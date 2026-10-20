@@ -1,6 +1,6 @@
 ---
 title: GLSL Playground
-description: "Playground experiment for playing with GLSL shaders using WebGL2"
+description: "A small WebGL2 playground for GLSL fragment shaders in the spirit of Shadertoy: edit the code and recompile on the fly."
 layout: default
 thumb_img: "assets/img/thumb_glsl.jpg"
 updated: 2022-09-10
