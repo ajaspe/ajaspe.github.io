@@ -419,7 +419,7 @@
 - id: web3d
   acronym: Web3D
   name: ACM SIGGRAPH International Conference on 3D Web Technology
-  family: web
+  family: applications
   tier: 2
   url: https://web3d.siggraph.org
   month: 6
@@ -435,7 +435,7 @@
 - id: gch
   acronym: GCH
   name: Eurographics Workshop on Graphics and Cultural Heritage
-  family: heritage
+  family: applications
   tier: 2
   url: https://www.eg.org/wp/graphics-and-cultural-heritage/
   month: 6
@@ -450,7 +450,7 @@
 - id: digital-heritage
   acronym: Digital Heritage
   name: Digital Heritage International Congress
-  family: heritage
+  family: applications
   tier: 2
   url: https://digitalheritage2025.unisi.it/
   month: 4
