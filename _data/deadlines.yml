@@ -2,7 +2,7 @@
 #   month / half : typical slot of the full-paper deadline in a normal year (half 1 = days 1-15, 2 = days 16-31)
 #   next_date    : next known deadline, quoted as a string. status: confirmed (from the published call for papers)
 #                  or estimated (previous edition's date moved one year)
-#   family       : graphics | visualization | vision | vr | web | heritage.   tier 1 = highlighted in the grid
+#   family       : graphics | visualization | vision | vr | applications (web 3D and cultural heritage).   tier 1 = highlighted in the grid
 #   note         : one short sentence shown under the conference name
 # When you change dates here, also bump updated: in _notes/visual-computing-calendar.md (the date shown on the page).
 
@@ -415,7 +415,7 @@
   published_in: EG proceedings, open access
   note: "Estimated from ICAT-EGVE 2026 (paper May 31, for a September conference); the usual slot is late August for December editions."
 
-# ---------------------------------------------------------------- web 3D
+# ---------------------------------------------------------------- applications: web 3D
 - id: web3d
   acronym: Web3D
   name: ACM SIGGRAPH International Conference on 3D Web Technology
@@ -431,7 +431,7 @@
   published_in: ACM proceedings; extended papers in a Computers & Graphics special section
   note: "Estimated from Web3D 2026 (paper Jun 1, extended to Jun 25). No 2027 announcement yet; link goes to the 2026 edition."
 
-# ---------------------------------------------------------------- cultural heritage
+# ---------------------------------------------------------------- applications: cultural heritage
 - id: gch
   acronym: GCH
   name: Eurographics Workshop on Graphics and Cultural Heritage

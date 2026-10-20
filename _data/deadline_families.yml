@@ -15,11 +15,7 @@
   short: VR
   name: Virtual and augmented reality
   color: "#c48be0"
-- id: web
-  short: Web3D
-  name: Web 3D
+- id: applications
+  short: App
+  name: Applications (web 3D, cultural heritage)
   color: "#ffe66d"
-- id: heritage
-  short: CH
-  name: Cultural heritage
-  color: "#f08a8a"
