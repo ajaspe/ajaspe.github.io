@@ -1,6 +1,6 @@
 # Desk section: notes for review
 
-Built on the `notebook` branch. This file is excluded from the site build (see `_config.yml`).
+Built on the `desk` branch. This file is excluded from the site build (see `_config.yml`).
 
 ## The structure
 

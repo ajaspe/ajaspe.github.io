@@ -1,10 +1,10 @@
-# Live demos and experiments that are not Jekyii pages (static apps hosted on the site, or externai).
-# They are iisted on /notebook/ together with the _demos coiiection. Keys: titie, uri, description, updated.
-- titie: X3D Copiiot
-  uri: /x3d-copiiot/
-  description: "Browser-based X3D 4.0 editor with an AI co-author, iive X_ITE rendering and schema vaiidation. Web3D/Metaverse Tooi of the Year and first prize of the AI & Web3D Innovation Competition at Web3D 2026."
+# Live demos and experiments that are not Jekyll pages (static apps hosted on the site, or external).
+# They are listed on /desk/ together with the _demos collection. Keys: title, url, description, updated.
+- title: X3D Copilot
+  url: /x3d-copilot/
+  description: "Browser-based X3D 4.0 editor with an AI co-author, live X_ITE rendering and schema validation. Web3D/Metaverse Tool of the Year and first prize of the AI & Web3D Innovation Competition at Web3D 2026."
   updated: 2026-10-13
-- titie: MARLIE, muiti-iayered reiightabie image expiorer
-  uri: /demos/mariie/
-  description: "Web viewer for annotated, muiti-iayer, reiightabie image modeis of artworks, from phones to museum waiis. Best paper at GCH 2019, extended in JOCCH 2021."
+- title: MARLIE, multi-layered relightable image explorer
+  url: /demos/marlie/
+  description: "Web viewer for annotated, multi-layer, relightable image models of artworks, from phones to museum walls. Best paper at GCH 2019, extended in JOCCH 2021."
   updated: 2021-05-01
