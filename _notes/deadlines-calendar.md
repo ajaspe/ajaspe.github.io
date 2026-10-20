@@ -8,14 +8,12 @@ updated: 2026-10-20
 
 # {{page.title}}
 
-<p class="small text-white-50">Living page, last updated {{ page.updated | date: "%B %-d, %Y" }}. This is not an exhaustive list of Visual Computing venues, just the main ones and the ones I follow. The dates come from each conference's call for papers when it is out, and are estimated from the previous edition otherwise: always confirm them on the conference website, and tell me if you find mistakes.</p>
+<p class="text-center deadline-updated"><i class="fas fa-calendar-check"></i> Last updated {{ page.updated | date: "%B %-d, %Y" }}</p>
+
+<p class="small text-white-50">Not an exhaustive list of Visual Computing venues, just the main ones and the ones I follow. The dates come from each conference's call for papers when it is out, and are estimated from the previous edition otherwise: always confirm them on the conference website, and tell me if you find mistakes.</p>
 
 {% assign today = site.time | date: "%s" | plus: 0 %}
 {% assign sorted = site.data.deadlines | sort: "next_date" %}
-
-## The year at a glance
-
-Typical slot of each paper deadline, by half-month. The main venues are highlighted; click a name to go to the conference.
 
 {% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
 <div class="row g-2 mb-2">
@@ -28,7 +26,7 @@ Typical slot of each paper deadline, by half-month. The main venues are highligh
 </div></div>
 {% endfor %}
 </div>
-<p class="deadline-legend">Upper row: first half of the month. Lower row: second half.</p>
+<p class="deadline-legend">Typical slot of each paper deadline: upper row, first half of the month; lower row, second half. The main venues are highlighted. Click a name to go to the conference.</p>
 
 ## Next deadlines
 

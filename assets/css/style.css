@@ -584,3 +584,4 @@ footer .gc-counter.gc-ready::after {
 .deadline-chip:hover { border-color: #ff7300; color: #fff; }
 .deadline-chip-main { border-color: #ff7300; color: #ffb066; font-weight: 600; }
 .deadline-legend { color: #aaa; font-size: 0.85rem; }
+.deadline-updated { color: #ffc107; font-size: 1rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }

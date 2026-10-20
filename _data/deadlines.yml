@@ -4,6 +4,7 @@
 #                  or estimated (previous edition's date moved one year)
 #   family       : graphics | visualization | vision | vr | web | heritage.   tier 1 = highlighted in the grid
 #   note         : one short sentence shown under the conference name
+# When you change dates here, also bump updated: in _notes/deadlines-calendar.md (the date shown on the page).
 
 # ---------------------------------------------------------------- computer graphics
 - id: siggraph
