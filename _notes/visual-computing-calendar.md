@@ -35,16 +35,15 @@ updated: 2026-10-20
 </div>
 <p class="deadline-legend">Typical slot of each paper deadline: upper row, first half of the month; lower row, second half. Colours follow the field and the main venues are in bold; the tags above filter the grid and the table. Click a name to go to the conference.</p>
 
-## Next deadlines
-
 <div class="table-responsive">
 <table class="table table-dark table-hover deadline-table align-middle">
-<thead><tr><th>Deadline</th><th>Conference</th><th class="d-none d-md-table-cell">Papers appear in</th><th class="text-end">Days left</th></tr></thead>
+<thead><tr><th class="sortable sort-asc" data-key="date" title="Sort">Deadline</th><th class="sortable" data-key="name" title="Sort">Conference</th><th class="sortable" data-key="field" title="Sort">Field</th><th class="sortable d-none d-md-table-cell" data-key="venue" title="Sort">Papers appear in</th><th class="sortable text-end" data-key="date" title="Sort">Days left</th></tr></thead>
 <tbody>
 {% for c in sorted %}{% assign dd = c.next_date | date: "%s" | plus: 0 %}{% assign fam = families | where: "id", c.family | first %}
-<tr class="deadline-row{% if dd < today %} deadline-past{% endif %}" data-date="{{ c.next_date }}" data-family="{{ c.family }}">
+<tr class="deadline-row{% if dd < today %} deadline-past{% endif %}" data-date="{{ c.next_date }}" data-family="{{ c.family }}" data-name="{{ c.acronym | escape }}" data-field="{{ fam.short }}" data-venue="{{ c.published_in | escape }}">
 <td class="text-nowrap"><span class="deadline-date">{{ c.next_date | date: "%b %-d, %Y" }}</span>{% if c.status == "estimated" %}<br><span class="badge bg-secondary">estimated</span>{% endif %}</td>
-<td><a href="{{ c.next_url }}"><strong{% if c.tier == 1 %} class="deadline-main"{% endif %}>{{ c.next_edition }}</strong></a> <span class="fam-tag" style="--fam: {{ fam.color }}" title="{{ fam.name }}">{{ fam.short }}</span><br><span class="small text-white-50"><a href="{{ c.url }}" class="deadline-series" title="Conference series website">{{ c.name }}</a>{% if c.note and c.note != "" %}. {{ c.note }}{% endif %}</span></td>
+<td><a href="{{ c.next_url }}"><strong{% if c.tier == 1 %} class="deadline-main"{% endif %}>{{ c.next_edition }}</strong></a><br><span class="small text-white-50"><a href="{{ c.url }}" class="deadline-series" title="Conference series website">{{ c.name }}</a>{% if c.note and c.note != "" %}. {{ c.note }}{% endif %}</span></td>
+<td><button type="button" class="fam-tag fam-pick" data-family="{{ c.family }}" style="--fam: {{ fam.color }}" title="Show only {{ fam.name }}">{{ fam.short }}</button></td>
 <td class="small text-white-50 d-none d-md-table-cell">{{ c.published_in }}</td>
 <td class="text-end deadline-left"></td>
 </tr>
@@ -64,6 +63,8 @@ updated: 2026-10-20
     else if (days === 0) { cell.textContent = 'today'; }
     else { r.classList.remove('deadline-past'); cell.textContent = days + ' days'; }
   });
+
+  // field filter: legend buttons and the tags in the table
   var buttons = document.querySelectorAll('.fam-filter');
   function apply(f) {
     document.querySelectorAll('.deadline-row[data-family], .deadline-chip[data-family]').forEach(function (el) {
@@ -77,7 +78,36 @@ updated: 2026-10-20
       apply(b.classList.contains('active') && f !== 'all' ? 'all' : f);
     });
   });
+  document.querySelectorAll('.fam-pick').forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-family')); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  });
+
+  // column sorting: click a header, click again to reverse
+  var table = document.querySelector('.deadline-table');
+  var tbody = table.querySelector('tbody');
+  var heads = table.querySelectorAll('th.sortable');
+  var current = { key: 'date', dir: 1 };
+  function sortBy(key, dir) {
+    var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+    rows.sort(function (a, b) {
+      var x = a.getAttribute('data-' + key) || '', y = b.getAttribute('data-' + key) || '';
+      var r = x.localeCompare(y, undefined, { numeric: true, sensitivity: 'base' }) * dir;
+      return r || (a.getAttribute('data-date') || '').localeCompare(b.getAttribute('data-date') || '');
+    });
+    rows.forEach(function (r) { tbody.appendChild(r); });
+    heads.forEach(function (h) {
+      h.classList.remove('sort-asc', 'sort-desc');
+      if (h.getAttribute('data-key') === key) { h.classList.add(dir > 0 ? 'sort-asc' : 'sort-desc'); }
+    });
+  }
+  heads.forEach(function (h) {
+    h.addEventListener('click', function () {
+      var key = h.getAttribute('data-key');
+      var dir = (current.key === key) ? -current.dir : 1;
+      current = { key: key, dir: dir };
+      sortBy(key, dir);
+    });
+  });
 })();
 </script>
-
 The data behind this page is a single file, [`_data/deadlines.yml`](https://github.com/ajaspe/ajaspe.github.io/blob/master/_data/deadlines.yml). Pull requests with corrections are welcome.
