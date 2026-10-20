@@ -13,6 +13,23 @@ updated: 2026-10-20
 {% assign today = site.time | date: "%s" | plus: 0 %}
 {% assign sorted = site.data.deadlines | sort: "next_date" %}
 
+## The year at a glance
+
+Typical slot of each paper deadline, by half-month. The main venues are highlighted; click a name to go to the conference.
+
+{% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
+<div class="row g-2 mb-2">
+{% for m in months %}{% assign mi = forloop.index %}
+<div class="col-6 col-md-3"><div class="deadline-month">
+<div class="deadline-month-name">{{ m }}</div>
+{% for h in (1..2) %}{% assign items = site.data.deadlines | where: "month", mi | where: "half", h | sort_natural: "acronym" %}
+<div class="deadline-slot">{% for c in items %}<a href="{{ c.url }}" class="deadline-chip{% if c.tier == 1 %} deadline-chip-main{% endif %}" title="{{ c.name }}">{{ c.acronym }}</a>{% endfor %}</div>
+{% endfor %}
+</div></div>
+{% endfor %}
+</div>
+<p class="deadline-legend">Upper row: first half of the month. Lower row: second half.</p>
+
 ## Next deadlines
 
 <div class="table-responsive">
@@ -44,23 +61,6 @@ updated: 2026-10-20
   });
 })();
 </script>
-
-## The year at a glance
-
-Typical slot of each paper deadline, by half-month. The main venues are highlighted; click a name to go to the conference.
-
-{% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
-<div class="row g-2 mb-2">
-{% for m in months %}{% assign mi = forloop.index %}
-<div class="col-6 col-md-3"><div class="deadline-month">
-<div class="deadline-month-name">{{ m }}</div>
-{% for h in (1..2) %}{% assign items = site.data.deadlines | where: "month", mi | where: "half", h | sort_natural: "acronym" %}
-<div class="deadline-slot">{% for c in items %}<a href="{{ c.url }}" class="deadline-chip{% if c.tier == 1 %} deadline-chip-main{% endif %}" title="{{ c.name }}">{{ c.acronym }}</a>{% endfor %}</div>
-{% endfor %}
-</div></div>
-{% endfor %}
-</div>
-<p class="deadline-legend">Upper row: first half of the month. Lower row: second half.</p>
 
 ## The venues
 
