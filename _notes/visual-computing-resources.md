@@ -7,7 +7,6 @@ updated: 2023-03-16
 ---
 
 # {{page.title}}
-{: .page-title}
 
 <p class="small text-white-50">Living document, last updated {{ page.updated | date: "%B %-d, %Y" }}.</p>
 

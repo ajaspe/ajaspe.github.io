@@ -7,7 +7,6 @@ updated: 2026-10-20
 ---
 
 # {{page.title}}
-{: .page-title}
 
 <p class="small text-white-50">Living page, last updated {{ page.updated | date: "%B %-d, %Y" }}. This is not an exhaustive list of Visual Computing venues, just the main ones and the ones I follow. The dates come from each conference's call for papers when it is out, and are estimated from the previous edition otherwise: always confirm them on the conference website, and tell me if you find mistakes.</p>
 
