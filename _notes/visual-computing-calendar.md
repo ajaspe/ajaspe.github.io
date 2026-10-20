@@ -1,5 +1,5 @@
 ---
-title: Calendar of Visual Computing conference deadlines
+title: Calendar of Visual Computing deadlines
 description: "Paper submission deadlines of the main computer graphics, visualization, vision and VR conferences: the next dates, the typical month of each deadline, and links to every conference."
 layout: note
 kind: living
