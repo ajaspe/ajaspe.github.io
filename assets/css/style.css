@@ -14,11 +14,11 @@
   transition-duration: 0.1s;
 }
 
-/*
+/ 
 body {
 	text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
-*/
+ /
 
 a {
     color: rgb(255, 166, 93);
@@ -38,9 +38,9 @@ a:hover {
   text-align: justify;
 } 
 
-/*
- * Header
- */
+/ 
+   Header
+  /
 
 .nav-masthead .nav-link {
   padding: .8rem;
@@ -91,9 +91,9 @@ a:hover {
   -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
   -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
   box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-  /* -webkit-transition: all 1s ease-out;
+  /  -webkit-transition: all 1s ease-out;
   -moz-transition: all 1s ease;
-  -o-transition: all 1s ease; */
+  -o-transition: all 1s ease;  /
   }
 
 .brand_color {
@@ -108,9 +108,9 @@ a:hover {
 	text-decoration: none;
 }
 
-/*
- * Publication list rows
- */
+/ 
+   Publication list rows
+  /
 
 .pub-row:hover {
   background-color: #111;
@@ -147,7 +147,7 @@ a:hover {
   color: #ddd;
   margin-top: 0.7rem;
   margin-bottom: 0;
-  margin-left: -1.5rem;   /* hangs into the left margin, ahead of the thumbnails */
+  margin-left: -1.5rem;   /  hangs into the left margin, ahead of the thumbnails  /
 }
 
 @media (max-width: 767.98px) {
@@ -191,7 +191,7 @@ a:hover {
 }
 
 @media (max-width: 575.98px) {
-  /* phones: thumbnail above the text */
+  /  phones: thumbnail above the text  /
   .pub-row > .col-auto { width: 100%; }
   .pub-thumb-box { width: 220px; }
   .pub-row > .col { margin-top: 0.5rem; }
@@ -244,9 +244,9 @@ h3 {
 	text-decoration: underline;
 }
 
-/*
- * Research activity cards
- */
+/ 
+   Research activity cards
+  /
 
 .activity-cards .card {
   background-color: #111;
@@ -271,9 +271,9 @@ h3 {
   margin-bottom: 0.4rem;
 }
 
-/*
- * H1 variants: real page headings for SEO that keep the site look
- */
+/ 
+   H1 variants: real page headings for SEO that keep the site look
+  /
 
 h1.brand_title {
   border: none;
@@ -313,9 +313,9 @@ h1.pub-page-title {
   margin-bottom: 1rem;
 }
 
-/*
- * Home page: hero
- */
+/ 
+   Home page: hero
+  /
 
 .hero-photo {
   width: 100%;
@@ -356,9 +356,9 @@ h1.pub-page-title {
   vertical-align: middle;
 }
 
-/*
- * News timeline (home page and /news/)
- */
+/ 
+   News timeline (home page and /news/)
+  /
 
 .news-item {
   display: flex;
@@ -401,9 +401,9 @@ h1.pub-page-title {
   .hero-photo { max-width: 140px; margin-bottom: 0.5rem; }
 }
 
-/*
- * Navbar profile icons: always visible, also on phones (outside the collapsible menu)
- */
+/ 
+   Navbar profile icons: always visible, also on phones (outside the collapsible menu)
+  /
 
 .nav-social {
   width: 100%;
@@ -416,7 +416,7 @@ h1.pub-page-title {
 }
 
 @media (max-width: 767.98px) {
-  /* phones: keep the per-icon widths, scale the whole row down */
+  /  phones: keep the per-icon widths, scale the whole row down  /
   .nav-social {
     transform: scale(0.8);
     transform-origin: center top;
@@ -435,9 +435,9 @@ h1.pub-page-title {
 }
 
 
-/*
- * GoatCounter visitor counters: hidden until a count is available
- */
+/ 
+   GoatCounter visitor counters: hidden until a count is available
+  /
 
 .gc-counter {
   display: none;
@@ -460,9 +460,9 @@ footer .gc-counter.gc-ready::after {
   display: inline;
 }
 
-/*
- * Citation counts (from _data/citations.yml, updated weekly by a GitHub Action)
- */
+/ 
+   Citation counts (from _data/citations.yml, updated weekly by a GitHub Action)
+  /
 
 .pub-cites {
   display: inline-block;
@@ -486,9 +486,9 @@ footer .gc-counter.gc-ready::after {
   margin-top: -0.5rem;
 }
 
-/*
- * Home page: visitor statistics (GoatCounter, hidden until counts arrive)
- */
+/ 
+   Home page: visitor statistics (GoatCounter, hidden until counts arrive)
+  /
 
 .gc-block {
   display: none;
@@ -536,9 +536,9 @@ footer .gc-counter.gc-ready::after {
   margin-top: 0.3rem;
 }
 
-/*
- * Notes: deadlines calendar
- */
+/ 
+   Notes: deadlines calendar
+  /
 .deadline-table td { vertical-align: middle; }
 .deadline-table .deadline-date { font-weight: 600; color: #ffd27a; }
 .deadline-table tr.deadline-past { opacity: 0.45; }
@@ -612,9 +612,9 @@ footer .gc-counter.gc-ready::after {
 .fam-pick:hover { background: var(--fam, #888); color: #111; }
 .note-updated { color: #ffc107; font-size: 1rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }
 
-/*
- * Notebook: index cards, post lists, blog posts
- */
+/ 
+   Notebook: index cards, post lists, blog posts
+  /
 .note-cards .note-card {
   background-color: #111;
   border: 1px solid #444;

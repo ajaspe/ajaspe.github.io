@@ -1,8 +1,8 @@
 name: Alberto Jaspe's website
-title: Alberto Jaspe-Villanueva
+title: Alberto Jaspe Villanueva
 description: Research scientist in computer graphics and scientific visualization at KAUST. Living pages, guides and occasional opinion posts.
 author:
-  name: Alberto Jaspe-Villanueva
+  name: Alberto Jaspe Villanueva
 
 collections:
   publications:
@@ -15,7 +15,7 @@ collections:
 
 # Blog posts live in _posts/ and are published at /blog/<slug>/
 defaults:
-  - scope:
+    scope:
       path: ""
       type: posts
     values:
@@ -24,14 +24,14 @@ defaults:
 
 url: "https://albertojaspe.net"
 plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-redirect-from
+    jekyll sitemap
+    jekyll feed
+    jekyll redirect from
 
 feed:
   path: feed.xml
   posts_limit: 20
 
 exclude:
-  - tmp
-  - NOTEBOOK-NOTES.md
+    tmp
+    NOTEBOOK NOTES.md

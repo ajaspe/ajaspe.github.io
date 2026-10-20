@@ -1,16 +1,17 @@
 ---
-title: Notebook
+title: Desk
 description: "Guides and resources, occasional opinion posts and live demos by Alberto Jaspe-Villanueva: conference deadlines, a survival guide for new visual computing researchers, X3D Copilot, MARLIE and more."
-menu_title: Notebook
+menu_title: Desk
 order: 3
-permalink: /notebook/
+permalink: /desk/
 redirect_from:
   - /notes.html
+  - /notebook/
 layout: default
 thumb_img: "assets/img/ajaspe.jpg"
 ---
 
-# Notebook
+# Desk
 
 <p class="small text-white-50">Things that are not papers: pages I keep updating, the occasional opinion piece, and live demos and experiments.</p>
 

@@ -1,10 +1,10 @@
-# Notebook section: notes for review
+# Desk section: notes for review
 
 Built on the `notebook` branch. This file is excluded from the site build (see `_config.yml`).
 
 ## The structure
 
-One menu entry, **Notebook** (`/notebook/`), with four kinds of content:
+One menu entry, **Desk** (`/desk/`), with four kinds of content:
 
 | Kind | Where | URL | Layout |
 |---|---|---|---|
@@ -13,7 +13,7 @@ One menu entry, **Notebook** (`/notebook/`), with four kinds of content:
 | Blog posts (dated opinion pieces) | `_posts/YYYY-MM-DD-slug.md` | `/blog/slug/` | `post` |
 | Experiments | `_demos/` (unchanged) | `/demos/<name>.html` | default |
 
-The index at `/notebook/` shows the three latest posts, the living pages as cards, the standalone pages
+The index at `/desk/` shows the three latest posts, the living pages as cards, the standalone pages
 as cards (section hidden until one exists) and the experiments. `/blog/` lists all posts by year and
 `/feed.xml` is the Atom feed (full text, 20 posts), produced by `jekyll-feed`.
 
@@ -25,7 +25,7 @@ The old addresses keep working through `jekyll-redirect-from` (on the GitHub Pag
 URL becomes a small page with a meta refresh and a canonical link to the new one, which is what search
 engines expect, and they stay out of the sitemap. Mapping:
 
-- `/notes.html` -> `/notebook/`
+- `/notes.html` -> `/desk/`
 - `/notes/deadlines-calendar.html` -> `/visual-computing-calendar/`
 - `/notes/visual-computing-research-survival-guide.html` -> `/visual-computing-survival-guide/`
 - `/notes/visual-computing-resources.html` -> `/visual-computing-resources/`
@@ -56,10 +56,10 @@ Press page: fill `_data/press.yml` and remove `published: false` from `_notes/pr
 
 ## Things to decide
 
-- The name. "Notebook" is my pick: generic enough for guides, pages and posts, and it keeps the spirit of
+- The name. "Desk" is the name you chose: generic enough for guides, pages and posts, and it keeps the spirit of
   "Notes". Alternatives that fit the same slot: "Writing", "Desk", "Miscellany". Renaming is two lines in
-  `notebook.md` (`title`, `menu_title`); keep the URL or add the old one to `redirect_from`.
-- Section order in the menu: Home, Research, Publications, Notebook (and Projects, once that branch lands).
+  `desk.md` (`title`, `menu_title`); keep the URL or add the old one to `redirect_from`.
+- Section order in the menu: Home, Research, Publications, Desk (and Projects, once that branch lands).
 - The first post. The blog page says "No posts yet" until `_posts/` has a file.
 
 ## Not done

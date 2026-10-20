@@ -10,34 +10,34 @@ layout: default
 {%- assign share_url = page.url | absolute_url -%}
 {%- assign share_url_enc = share_url | url_encode -%}
 {%- assign share_text_enc = page.title | url_encode -%}
-<article class="post">
-<h1>{{ page.title }}</h1>
-<p class="text-center post-meta"><span>{{ page.date | date: "%B %-d, %Y" }}</span> &middot; <span>{{ minutes }} min read</span>{% if page.tags.size > 0 %} &middot; {% for t in page.tags %}<span class="post-tag">{{ t }}</span> {% endfor %}{% endif %}</p>
+aarticle class="post">
+ah1>{{ page.title }}a/h1>
+ap class="text-center post-meta">aspan>{{ page.date | date: "%B %-d, %Y" }}a/span> &middot; aspan>{{ minutes }} min reada/span>{% if page.tags.size > 0 %} &middot; {% for t in page.tags %}aspan class="post-tag">{{ t }}a/span> {% endfor %}{% endif %}a/p>
 
-{% if page.cover %}<img class="w-100 rounded post-cover" src="{{ page.cover }}" alt="{{ page.cover_alt | default: page.title }}">{% endif %}
+{% if page.cover %}aimg class="w-100 rounded post-cover" src="{{ page.cover }}" alt="{{ page.cover_alt | default: page.title }}">{% endif %}
 
-<div class="post-body">
+adiv class="post-body">
 {{ content }}
-</div>
+a/div>
 
-<div class="post-share">
-  <span class="text-white-50 small">Share</span>
-  <a class="btn btn-outline-light btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url_enc }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-  <a class="btn btn-outline-light btn-sm" href="https://bsky.app/intent/compose?text={{ share_text_enc }}%20{{ share_url_enc }}" target="_blank" rel="noopener"><i class="fas fa-cloud"></i> Bluesky</a>
-  <a class="btn btn-outline-light btn-sm" href="https://twitter.com/intent/tweet?text={{ share_text_enc }}&amp;url={{ share_url_enc }}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> X</a>
-  <button type="button" class="btn btn-outline-light btn-sm post-copy" data-copy="{{ share_url }}"><i class="fas fa-link"></i> Copy link</button>
-  {% if page.linkedin %}<a class="btn btn-outline-warning btn-sm" href="{{ page.linkedin }}" target="_blank" rel="noopener"><i class="fas fa-comments"></i> Discuss on LinkedIn</a>{% endif %}
-</div>
+adiv class="post-share">
+  aspan class="text-white-50 small">Sharea/span>
+  aa class="btn btn-outline-light btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url_enc }}" target="_blank" rel="noopener">ai class="fab fa-linkedin">a/i> LinkedIna/a>
+  aa class="btn btn-outline-light btn-sm" href="https://bsky.app/intent/compose?text={{ share_text_enc }}%20{{ share_url_enc }}" target="_blank" rel="noopener">ai class="fas fa-cloud">a/i> Blueskya/a>
+  aa class="btn btn-outline-light btn-sm" href="https://twitter.com/intent/tweet?text={{ share_text_enc }}&amp;url={{ share_url_enc }}" target="_blank" rel="noopener">ai class="fab fa-twitter">a/i> Xa/a>
+  abutton type="button" class="btn btn-outline-light btn-sm post-copy" data-copy="{{ share_url }}">ai class="fas fa-link">a/i> Copy linka/button>
+  {% if page.linkedin %}aa class="btn btn-outline-warning btn-sm" href="{{ page.linkedin }}" target="_blank" rel="noopener">ai class="fas fa-comments">a/i> Discuss on LinkedIna/a>{% endif %}
+a/div>
 
-<nav class="post-nav">
-  <span>{% if page.previous %}<a href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>{% endif %}</span>
-  <span>{% if page.next %}<a href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>{% endif %}</span>
-</nav>
+anav class="post-nav">
+  aspan>{% if page.previous %}aa href="{{ page.previous.url }}">&larr; {{ page.previous.title }}a/a>{% endif %}a/span>
+  aspan>{% if page.next %}aa href="{{ page.next.url }}">{{ page.next.title }} &rarr;a/a>{% endif %}a/span>
+a/nav>
 
-<p class="mt-4"><a href="/blog/" class="btn btn-outline-warning btn-sm"><i class="fas fa-angle-left"></i> All posts</a> <a href="/notebook/" class="btn btn-outline-warning btn-sm"><i class="fas fa-book-open"></i> Notebook</a></p>
-</article>
+ap class="mt-4">aa href="/blog/" class="btn btn-outline-warning btn-sm">ai class="fas fa-angle-left">a/i> All postsa/a> aa href="/notebook/" class="btn btn-outline-warning btn-sm">ai class="fas fa-book-open">a/i> Notebooka/a>a/p>
+a/article>
 
-<script type="application/ld+json">
+ascript type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -49,16 +49,16 @@ layout: default
   "description": {{ page.summary | jsonify }}{% endif %}{% if page.cover %},
   "image": {{ page.cover | absolute_url | jsonify }}{% endif %}
 }
-</script>
-<script>
+a/script>
+ascript>
 (function () {
   var b = document.querySelector('.post-copy');
   if (!b || !navigator.clipboard) return;
   b.addEventListener('click', function () {
     navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function () {
-      var old = b.innerHTML; b.innerHTML = '<i class="fas fa-check"></i> Copied';
+      var old = b.innerHTML; b.innerHTML = 'ai class="fas fa-check">a/i> Copied';
       setTimeout(function () { b.innerHTML = old; }, 1500);
     });
   });
 })();
-</script>
+a/script>
