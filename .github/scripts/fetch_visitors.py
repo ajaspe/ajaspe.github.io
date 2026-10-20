@@ -36,6 +36,26 @@ week = count("TOTAL", since(7))
 month = count("TOTAL", since(30))
 total = count("TOTAL", "?start=2000-01-01")
 
+# Daily counts for the chart on the home page: the last DAYS complete days, one request per day.
+# The counter endpoint takes "end" as exclusive, so start=D&end=D+1 is the count of day D.
+# Days already in the file are kept (only the last two are refetched), so a normal run adds two requests.
+DAYS = 30
+today = datetime.date.today()
+old_daily = {}
+if os.path.exists(OUT):
+    for m in re.finditer(r'^  - \{ date: "(\d{4}-\d{2}-\d{2})", count: (\d+) \}$', open(OUT, encoding="utf-8").read(), re.M):
+        old_daily[m.group(1)] = int(m.group(2))
+daily = []
+for i in range(DAYS, 0, -1):
+    day = today - datetime.timedelta(days=i)
+    key = day.isoformat()
+    if key in old_daily and i > 2:
+        n = old_daily[key]
+    else:
+        n = count("TOTAL", "?start=%s&end=%s" % (key, (day + datetime.timedelta(days=1)).isoformat()))
+        time.sleep(0.3)
+    daily.append((key, n))
+
 pages = {}
 for path in sorted(glob.glob(os.path.join(ROOT, "_publications", "*.md"))):
     fm = open(path, encoding="utf-8").read()
@@ -58,8 +78,11 @@ lines = [
     "week: %d" % week,
     "month: %d" % month,
     "total: %d" % total,
-    "pages:",
+    "daily:",
 ]
+for key, n in daily:
+    lines.append('  - { date: "%s", count: %d }' % (key, n))
+lines.append("pages:")
 for url in sorted(pages):
     lines.append('  "%s": %d' % (url, pages[url]))
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
