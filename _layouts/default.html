@@ -169,7 +169,7 @@
     </script>
 
     <!-- Custom styles for this template -->
-    <link href="{{ "/assets/css/style.css" | relative_url }}" rel="stylesheet">
+    <link href="{{ "/assets/css/style.css" | relative_url }}?v={{ site.time | date: "%Y%m%d%H%M" }}" rel="stylesheet">
 
 </head>
 
@@ -190,7 +190,7 @@
                         aria-controls="siteMenu" aria-label="Open the menu">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="offcanvas offcanvas-end site-menu" tabindex="-1" id="siteMenu" aria-labelledby="siteMenuLabel">
+                    <div class="offcanvas offcanvas-end site-menu" data-bs-theme="dark" tabindex="-1" id="siteMenu" aria-labelledby="siteMenuLabel">
                         <div class="offcanvas-header">
                             <span class="offcanvas-title navbar-mybrand" id="siteMenuLabel">Alberto Jaspe</span>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
