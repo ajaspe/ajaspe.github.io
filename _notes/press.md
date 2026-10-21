@@ -3,7 +3,7 @@ title: In the press
 description: "Press and media coverage of the work of Alberto Jaspe-Villanueva and his teams."
 summary: "Articles, interviews and videos about my work and my teams' projects."
 layout: note
-kind: living
+kind: page
 icon: fa-newspaper
 updated: 2026-10-20
 ---
