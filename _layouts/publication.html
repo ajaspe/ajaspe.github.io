@@ -20,6 +20,9 @@ layout: default
                 {% assign pubdata = page.conference %}
             {% elsif page.book %}
                 {% assign pubdata = page.book | append: "<br/>" | append: page.pub-data %}
+            {% elsif page.degree %}
+                {% assign pubdata = page.degree | append: ", " | append: page.institution %}
+                {% if page.role == "supervisor" %}{% assign pubdatapost = "<br/>Supervised by " | append: page.supervisors %}{% endif %}
             {% endif %}
             <p class="lead fst-italic">{{ pubdata }} <small class="text-white-50 fst-italic">{{ pubdatapost }}</small>
         {% if page.awards %}
@@ -65,6 +68,21 @@ layout: default
         </div>
 
     </div>
+    {% if page.degree %}
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+        <dl class="thesis-details">
+            <dt>Degree</dt><dd>{{ page.degree }}{% if page.program %}, {{ page.program }}{% endif %}</dd>
+            <dt>Institution</dt><dd>{{ page.institution }}</dd>
+            <dt>{% if page.role == "supervisor" %}Student{% else %}Author{% endif %}</dt><dd>{{ authors2 }}</dd>
+            {% if page.supervisors %}<dt>Supervisors</dt><dd>{{ page.supervisors | replace: "Alberto Jaspe-Villanueva", "<span class='brand_color'>Alberto Jaspe-Villanueva</span>" }}</dd>{% endif %}
+            {% if page.committee %}<dt>Committee</dt><dd>{{ page.committee }}</dd>{% endif %}
+            {% if page.defense %}<dt>Defended</dt><dd>{{ page.defense }}</dd>{% endif %}
+            {% if page.distinction %}<dt>Distinction</dt><dd>{{ page.distinction }}</dd>{% endif %}
+        </dl>
+        </div>
+    </div>
+    {% endif %}
     {% if page.abstract and page.abstract != "" %}
     <div class="row abstract">
             <h4>Abstract</h4>

@@ -175,6 +175,8 @@ a:hover {
 .pub-type-journal { border-color: rgb(255, 166, 93); color: rgb(255, 166, 93); }
 .pub-type-conference { border-color: #6cb4ff; color: #6cb4ff; }
 .pub-type-book { border-color: #8fd18f; color: #8fd18f; }
+.pub-type-thesis { border-color: #c48be0; color: #c48be0; }
+.pub-type-role { border-color: #888; color: #bbb; }
 
 .pub-title {
   font-size: 1.15em;
@@ -643,3 +645,11 @@ footer .gc-counter.gc-ready::after {
 .post-body img { max-width: 100%; height: auto; }
 .post-share { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333; }
 .post-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; }
+
+/*
+ * Theses: academic details on the publication page
+ */
+.thesis-details { display: grid; grid-template-columns: max-content 1fr; column-gap: 1.25rem; row-gap: 0.35rem; margin: 0.5rem 0 1.5rem; font-size: 0.95rem; }
+.thesis-details dt { color: #ffc107; font-weight: 500; }
+.thesis-details dd { margin: 0; color: #ddd; }
+@media (max-width: 575.98px) { .thesis-details { grid-template-columns: 1fr; row-gap: 0.1rem; } .thesis-details dd { margin-bottom: 0.5rem; } }

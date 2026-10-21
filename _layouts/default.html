@@ -69,6 +69,9 @@
     <meta name="citation_conference_title" content="{{ page.conference | escape }}">{% endif %}
 {%- if page.book %}
     <meta name="citation_inbook_title" content="{{ page.book | escape }}">{% endif %}
+{%- if page.degree %}
+    <meta name="citation_dissertation_name" content="{{ page.degree | escape }}">
+    <meta name="citation_dissertation_institution" content="{{ page.institution | escape }}">{% endif %}
 {%- if page.doi %}
     <meta name="citation_doi" content="{{ page.doi }}">{% endif %}
 {%- unless page.no_pdf %}
@@ -102,8 +105,9 @@
       {%- unless page.no_pdf %}
       "encoding": {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": {{ pdf_path | absolute_url | jsonify }}},
       {%- endunless %}
-      {%- if page.projects %}
-      "keywords": {{ page.projects | compact | join: ", " | jsonify }},
+      {%- assign kw = page.topics | default: page.projects %}
+      {%- if kw %}
+      "keywords": {{ kw | compact | join: ", " | jsonify }},
       {%- endif %}
       "image": {{ share_img_abs | jsonify }},
       "url": {{ canonical | jsonify }},

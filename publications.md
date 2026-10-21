@@ -31,9 +31,13 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
     {% assign pubdata = pub.conference %}
 {% elsif pub.book %}
     {% assign pubdata = pub.book %}
+{% elsif pub.degree %}
+    {% assign pubdata = pub.institution %}
+    {% if pub.role == "supervisor" %}{% assign pubdatapost = "(supervised with " | append: pub.supervisors | replace: "Alberto Jaspe-Villanueva and ", "" | replace: " and Alberto Jaspe-Villanueva", "" | replace: "Alberto Jaspe-Villanueva", "" | append: ")" | replace: "(supervised with )", "" %}{% endif %}
 {% endif %}
 {% assign type_l = pub.type | downcase %}
-{% if type_l contains "journal" %}{% assign type_class = "pub-type-journal" %}
+{% if type_l contains "thesis" or type_l contains "project" %}{% assign type_class = "pub-type-thesis" %}
+{% elsif type_l contains "journal" %}{% assign type_class = "pub-type-journal" %}
 {% elsif type_l contains "conference" or type_l contains "tutorial" %}{% assign type_class = "pub-type-conference" %}
 {% elsif type_l contains "book" %}{% assign type_class = "pub-type-book" %}
 {% else %}{% assign type_class = "pub-type-other" %}{% endif %}
@@ -44,7 +48,7 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
     <div class="col">
         <div class="pub-title"><a href="{{ puburl | relative_url }}">{{ pub.title }}</a>{% if pub.awards %} <span class="badge bg-danger">{{ pub.awards }}</span>{% endif %}</div>
         <div class="pub-authors">{{ pub.authors }}</div>
-        <div class="pub-venue small"><span class="pub-type {{ type_class }}">{{ pub.type }}</span>{% assign c = site.data.citations.papers[pub.code] %}{% if c and c.count > 0 %} <a href="{{ c.url }}" class="pub-cites" title="Citations according to {{ site.data.citations.source }}"><i class="fas fa-quote-right"></i> {{ c.count }}</a>{% endif %} <em>{{ pubdata }}</em> <span class="text-white-50">{{ pubdatapost }}</span></div>
+        <div class="pub-venue small"><span class="pub-type {{ type_class }}">{{ pub.type }}</span>{% if pub.role == "supervisor" %} <span class="pub-type pub-type-role">Supervisor</span>{% endif %}{% assign c = site.data.citations.papers[pub.code] %}{% if c and c.count > 0 %} <a href="{{ c.url }}" class="pub-cites" title="Citations according to {{ site.data.citations.source }}"><i class="fas fa-quote-right"></i> {{ c.count }}</a>{% endif %} <em>{{ pubdata }}</em> <span class="text-white-50">{{ pubdatapost }}</span></div>
     </div>
 </div>
 {% endfor %}
