@@ -38,29 +38,4 @@ Newspaper articles, interviews, podcasts and videos about my work or the teams I
 {% endfor %}
 </div>
 
-<script>
-document.querySelectorAll('.press-play').forEach(function (a) {
-  a.addEventListener('click', function (ev) {
-    ev.preventDefault();
-    var box = a.closest('.pub-row').querySelector('.press-player');
-    if (!box.hidden) { box.hidden = true; box.innerHTML = ''; return; }
-    var ifr = document.createElement('iframe');
-    ifr.src = a.dataset.embed;
-    ifr.title = a.dataset.title || 'Player';
-    ifr.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen; clipboard-write');
-    ifr.setAttribute('allowfullscreen', '');
-    ifr.setAttribute('loading', 'lazy');
-    if (a.dataset.height) {
-      ifr.height = a.dataset.height;
-      ifr.style.width = '100%';
-      box.appendChild(ifr);
-    } else {
-      var r = document.createElement('div');
-      r.className = 'ratio ratio-16x9';
-      r.appendChild(ifr);
-      box.appendChild(r);
-    }
-    box.hidden = false;
-  });
-});
-</script>
+{% include play-in-place.html %}

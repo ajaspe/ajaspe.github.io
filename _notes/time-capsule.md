@@ -8,7 +8,7 @@ icon: fa-hourglass-half
 updated: 2026-10-21
 ---
 
-Things found in old folders. They were written when I was a student at the University of A Coruña, before any of the research on this site, and they are here because people still ask for them now and then, and because they are fun to look at. Spanish throughout. The five-part Blender course I taught in 2004 is on video, on the [press page](/press/).
+Things found in old folders. They were written when I was a student at the University of A Coruña, before any of the research on this site, and they are here because people still ask for them now and then, and because they are fun to look at. Spanish throughout.
 
 <div class="container my-0 pub-list">
 
@@ -39,4 +39,16 @@ Things found in old folders. They were written when I was a student at the Unive
   </div>
 </div>
 
+<div class="row pub-row gx-3 gy-0 py-2 rounded align-items-center">
+  <div class="col-auto"><a href="https://www.youtube.com/watch?v=c9leR_6NLzE" class="pub-thumb-box press-play" data-embed="https://www.youtube-nocookie.com/embed/c9leR_6NLzE?autoplay=1&rel=0&playlist=46Hz10d7opE,tVdjr0oKwiw,upEHWogAIJI,pCUX9JXNyWw" data-title="Modelado 3D con Blender" title="Play here"><img src="/assets/time-capsule/2004-blender-course-thumb.jpg" class="pub-thumb" loading="lazy" alt="Blender course, video thumbnail"><span class="press-play-icon"><i class="fas fa-play"></i></span></a></div>
+  <div class="col">
+    <div class="pub-title"><a href="https://www.youtube.com/watch?v=c9leR_6NLzE">Modelado 3D con Blender</a></div>
+    <div class="pub-authors">Alberto Jaspe-Villanueva and Rubén López</div>
+    <div class="pub-venue small"><span class="pub-type pub-type-other">Video course</span> <em>2004, five parts of about 45 minutes</em> <span class="text-white-50">A Blender modelling course at the first GPUL Graphic Design and Free Software days (I Jornadas de Diseño Gráfico y Software Libre) at the Faculty of Computer Science of the University of A Coruña, taped in 2004 and put on YouTube in 2020 by Francisco Javier Tsao Santín. Click the thumbnail to watch it here; the player goes through the five parts in order.</span></div>
+  </div>
+  <div class="col-12 press-player" hidden></div>
 </div>
+
+</div>
+
+{% include play-in-place.html %}

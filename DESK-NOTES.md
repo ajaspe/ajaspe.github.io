@@ -58,7 +58,9 @@ thumbnails live in `assets/press/`: the full scan as `<date>-<outlet>.jpg` or `.
 thumbnail with a play button and open their player under the row when clicked, so nothing is loaded from
 YouTube, Spotify or LinkedIn until then. YouTube thumbnails are local copies, `assets/press/yt-<id>.jpg`
 (download `https://i.ytimg.com/vi/<id>/hqdefault.jpg`). Newspaper sites cannot be embedded: the row links to
-the article and to the scan.
+the article and to the scan. The player script is `_includes/play-in-place.html`; any page can use it by giving a
+`pub-row` a `.press-play` link with `data-embed` and an empty `<div class="col-12 press-player" hidden>` (the time
+capsule does this for the 2004 Blender course).
 
 ## Things to decide
 

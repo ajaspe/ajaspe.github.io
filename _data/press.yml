@@ -138,14 +138,3 @@ items:
     thumb: /assets/press/2004-la-voz-de-galicia-catedrales-thumb.jpg
     lang: es
     note: "Sidebar of a feature on the Empty Museum at Galicia Dixital: VideaLAB's work for the cathedrals of Santiago and Tui, with a photo by César Quian of the touch-screen tour of the cathedral. Undated clipping; the year is a guess."
-
-  - date: 2004-01-01
-    date_label: "2004"
-    kind: video
-    outlet: GPUL, I Jornadas de Diseño Gráfico y Software Libre, Facultade de Informática, University of A Coruña
-    title: "Modelado 3D con Blender"
-    url: https://www.youtube.com/watch?v=c9leR_6NLzE
-    youtube: c9leR_6NLzE
-    youtube_list: [46Hz10d7opE, tVdjr0oKwiw, upEHWogAIJI, pCUX9JXNyWw]
-    lang: es
-    note: "A Blender modelling course given with Rubén López, in five parts of about 45 minutes, taped in 2004 and published on YouTube in 2020 by Francisco Javier Tsao Santín. The player goes through the five parts in order."
