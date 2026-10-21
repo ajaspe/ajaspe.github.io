@@ -108,6 +108,19 @@ items:
     lang: es
     note: "A talk on social networks for professionals, given as head of R&D at CEGA Audiovisuales and summarised on page 14 of the annual report of the association of labour-relations graduates."
 
+  - date: 2011-07-06
+    kind: newspaper
+    outlet: La Voz de Galicia, Cultura
+    title: "Un proyecto gallego que permite recorrer la catedral de Santiago, ganador en los 3D Awards"
+    url: https://www.lavozdegalicia.es/noticia/cultura/2011/07/06/proyecto-gallego-permite-recorrer-catedral-santiago-ganador-3d-awards/00031309978269319143437.htm
+    scan: /assets/press/2011-07-06-3d-awards-team.jpg
+    thumb: /assets/press/2011-07-06-3d-awards-team-thumb.jpg
+    lang: es
+    note: "The interactive cathedral application by VideaLAB (UDC) and Ilux Visual Technologies won the Real-Time category of the CGarchitect 3D Awards, handed over at the Mundos Digitales festival in A Coruña. The photo is the team with the trophy that evening."
+    more:
+      - { name: "The paper", url: "/publications/2012-VAR-inspeccion_catedral.html" }
+      - { name: "Entry at the 3D Awards", url: "https://3dawards.chaos.com/contests/1-3d-awards-2011/gallery/653/info" }
+
   - date: 2009-09-01
     date_label: "2009"
     kind: magazine

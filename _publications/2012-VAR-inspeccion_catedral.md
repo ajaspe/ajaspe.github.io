@@ -11,8 +11,10 @@ abstract: "This paper describes the design, production and implementation of an 
 projects: 
  - Architectural Visualization
 doi: 10.4995/var.2012.4448
+awards: "CGarchitect 3D Awards 2011, Real-Time category"
 links:
  - {name: VideaLAB Website, url: "https://videalab.udc.es/CatedralSantiago" }
+ - {name: "3D Awards entry", url: "https://3dawards.chaos.com/contests/1-3d-awards-2011/gallery/653/info" }
 youtube: zO2vYpmJHiE
 bibtex: "@Article{Barneche:2012:AIE,\n
   title={Aplicaci{\\'o}n para la inspecci{\\'o}n espacial, volumétrica y seccional interactiva de la Catedral de Santiago de Compostela},\n
