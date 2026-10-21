@@ -8,7 +8,7 @@ type: Bachelor's Thesis
 role: supervisor
 degree: "Bachelor's Final Project"
 institution: "University of A Coruña, Spain"
-supervisors: "Alberto Jaspe-Villanueva (University of A Coruña)"
+supervisors: "Alberto Jaspe-Villanueva"
 defense: "2012"
 abstract: ""
 topics:
