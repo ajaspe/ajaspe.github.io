@@ -9,7 +9,7 @@ role: author
 degree: "Bachelor's Final Project"
 program: "Bachelor's Degree in Computer Science"
 institution: "University of A Coruña, Spain"
-supervisors: "Emilio J. PadrÃ³n, UDC"
+supervisors: "Emilio J. Padrón, UDC"
 defense: "2012"
 distinction: "Best Graduate Thesis Award 2013, Professional Association of Computer Science Engineering of Galicia"
 awards: "Best Graduate Thesis Award"

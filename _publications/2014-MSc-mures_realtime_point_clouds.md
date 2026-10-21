@@ -8,7 +8,7 @@ type: Master's Thesis
 role: supervisor
 degree: "Master's Thesis"
 institution: "University of A Coruña, Spain"
-supervisors: "Alberto Jaspe-Villanueva and Emilio J. PadrÃ³n, UDC"
+supervisors: "Alberto Jaspe-Villanueva and Emilio J. Padrón, UDC"
 defense: "2014"
 abstract: ""
 topics:
