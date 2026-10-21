@@ -9,7 +9,6 @@ conference: International Symposium on Information and Communication Technologie
 abstract: "Recently, historical museums and other exhibitions are becoming more aware of the effectiveness of virtual reality spaces used along with other technologies to meet the challenge to offer new and complex experiences to the general public. Immersion and interaction together define the axis of such experiences, provided with new kinds of contents and singular applications designed for each specific case. This paper describes the use of a set of computer graphic techniques which range from computer animation to simulation and virtual reality applied to display cultural contents in a permanent exhibition called Galicia Dixital located in Santiago de Compostela (Spain). This exhibition is devoted to showing Galician culture, history, traditions and art through the medium of new technologies. This way, visitors have the opportunity to acquire knowledge of cultural and technological topics at the same time."
 projects: 
  - Virtual Reality
-doi: 10.4995/var.2010.4765
 links:
  - { name: Proceedings, url: "https://books.google.it/books?id=e_UWDeEca0IC&lpg=PA113&hl=es&pg=PA107" }
 bibtex: "@InProceedings{Hernandez:2008:IIV,\n
