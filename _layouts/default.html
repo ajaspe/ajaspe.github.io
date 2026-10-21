@@ -178,31 +178,37 @@
     <div class="main-container d-flex w-100 h-100 mx-auto flex-column">
 
         <header class="header">
+            {% comment %} Wide screens: name, profile icons and the menu in one row. Phones: name and a button; the menu is a
+                 Bootstrap offcanvas panel that slides in from the right, with the profile icons at its foot. {% endcomment %}
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
-                        aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-mybrand" href="/">{% unless page.menu_title == "Home" %}Alberto Jaspe{% endunless %}</a>
+                    <div class="nav-social d-none d-md-block">
+                        {% include social-icons.html %}
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#siteMenu"
+                        aria-controls="siteMenu" aria-label="Open the menu">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-mybrand" href="/">{% unless page.menu_title == "Home" %}Alberto Jaspe{%
-                        endunless %}</a>
-                        <div class="nav-social">
-                                <a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com'><img class="icon-social" src="/assets/img/email.svg" width="33px" alt="Email" /></a>
-                                <a href="https://twitter.com/albertojaspe"><img class="icon-social" src="/assets/img/twitter.svg" width="36px" alt="Twitter" /></a>
-                                <a href="https://github.com/ajaspe"><img class="icon-social" src="/assets/img/github.svg" width="36px" alt="GitHub" /></a>
-                                <a href="https://scholar.google.es/citations?user=qv99TYgAAAAJ"><img class="icon-social" src="/assets/img/gscholar.svg" width="38px" alt="Google Scholar" /></a>
-                                <a href="https://orcid.org/0000-0003-3899-308X"><img class="icon-social" src="/assets/img/orcid.svg" width="33px" alt="ORCID" /></a>
-                                <a href="https://www.linkedin.com/in/albertojaspe"><img class="icon-social" src="/assets/img/linkedin.svg" width="40px" alt="LinkedIn" /></a>
+                    <div class="offcanvas offcanvas-end site-menu" tabindex="-1" id="siteMenu" aria-labelledby="siteMenuLabel">
+                        <div class="offcanvas-header">
+                            <span class="offcanvas-title navbar-mybrand" id="siteMenuLabel">Alberto Jaspe</span>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="nav-social nav-social-menu d-md-none">
+                                {% include social-icons.html %}
                             </div>
-                        <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                             <div class="navbar-nav nav-masthead">
-							{% assign pages = site.pages | sort:"order" %}
+                            {% assign pages = site.pages | sort:"order" %}
                             {% for item in pages %}
                             {% if item.menu_title %} <a class="nav-link {% if item.url == page.url %}active{% endif %}"
                                 href="{{ item.url }}">{{ item.menu_title }}</a>{% endif %}
                             {% endfor %}
+                            </div>
                         </div>
                     </div>
+                </div>
             </nav>
         </header>
 
