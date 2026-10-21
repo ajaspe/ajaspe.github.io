@@ -13,7 +13,7 @@ projects:
  - Point clouds
  - Cultural Heritage
 no_teaser: true 
-doi: 10.4018/978-1-5225-0029-2
+doi: 10.4018/978-1-5225-0029-2.ch004
 links:
  - {name: CRS4 Website, url: "http://vic.crs4.it/vic/cgi-bin/bib-page.cgi?id=%27Mures:2016:VRP%27"}
  - {name: Book, url: "https://www.igi-global.com/book/handbook-research-visual-computing-emerging/141947"}
