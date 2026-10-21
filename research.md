@@ -13,39 +13,45 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {: .page-title}
 
 <p class="lead research-lead">
-I build systems that let people <b>create and explore very large or complex datasets interactively</b>, so they can understand them better.
+My main research question is <b>how to create and explore very large and complex 3D datasets interactively</b>, so that they can be better understood.
 </p>
-<p class="research-sub">In short: advanced computer science techniques, combined with specific hardware, applied to the fields where the data is too big or too intricate to grasp otherwise.</p>
+<p class="research-sub">Within that question, my work has covered the different stages of the problem, from acquisition and data structures to rendering and interaction, with the focus shifting over the years, and has been applied in several fields. The lists below are examples rather than an inventory; the <a href="/publications/">publications</a> have the details.</p>
 
 <div class="research-formula">
   <div class="card rf-card">
-    <div class="card-header"><i class="fas fa-code me-2"></i>Techniques</div>
+    <div class="card-header"><i class="fas fa-code me-2"></i>Methods</div>
     <ul>
-      <li><i class="fas fa-bolt"></i>High-performance programming</li>
-      <li><i class="fas fa-cubes"></i>Spatial data structures</li>
-      <li><i class="fas fa-brain"></i>Machine learning</li>
+      <li><i class="fas fa-cubes"></i>Multiresolution and out-of-core data structures</li>
+      <li><i class="fas fa-bolt"></i>High-performance and GPU programming</li>
+      <li><i class="fas fa-vector-square"></i>Ray tracing, compression and web-based rendering</li>
+      <li><i class="fas fa-camera-retro"></i>Image-based acquisition and relighting</li>
+      <li><i class="fas fa-brain"></i>Machine learning for 3D reconstruction</li>
+      <li class="rf-more">&hellip;</li>
     </ul>
   </div>
   <div class="rf-op" aria-hidden="true"><i class="fas fa-plus"></i></div>
   <div class="card rf-card">
     <div class="card-header"><i class="fas fa-microchip me-2"></i>Hardware</div>
     <ul>
-      <li><i class="fas fa-server"></i>CPUs and GPUs</li>
-      <li><i class="fas fa-camera"></i>Cameras and 3D scanners</li>
-      <li><i class="fas fa-vr-cardboard"></i>VR headsets and large displays</li>
+      <li><i class="fas fa-server"></i>CPUs, GPUs and compute clusters</li>
+      <li><i class="fas fa-camera"></i>Cameras, light domes and 3D scanners</li>
+      <li><i class="fas fa-hand-pointer"></i>Multi-touch tables and natural interfaces</li>
+      <li><i class="fas fa-vr-cardboard"></i>VR headsets, large displays and immersive rooms</li>
+      <li class="rf-more">&hellip;</li>
     </ul>
   </div>
   <div class="rf-op" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
   <div class="card rf-card">
-    <div class="card-header"><i class="fas fa-globe me-2"></i>Fields</div>
+    <div class="card-header"><i class="fas fa-globe me-2"></i>Fields of application</div>
     <ul>
-      <li><i class="fas fa-landmark"></i>Cultural heritage</li>
-      <li><i class="fas fa-atom"></i>Physics and astronomy</li>
-      <li><i class="fas fa-drafting-compass"></i>Architecture and engineering</li>
+      <li><i class="fas fa-landmark"></i>Cultural heritage and archaeology</li>
+      <li><i class="fas fa-atom"></i>Particle physics and astronomy</li>
+      <li><i class="fas fa-drafting-compass"></i>Architecture, civil engineering and urbanism</li>
+      <li><i class="fas fa-map"></i>Terrain and geospatial data</li>
+      <li class="rf-more">&hellip;</li>
     </ul>
   </div>
 </div>
-<div class="research-result"><span class="rf-label">Result</span> massive, intricate data turned into something you can explore interactively and understand.</div>
 
 ## Research Activities
 
