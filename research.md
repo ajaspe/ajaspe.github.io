@@ -12,10 +12,40 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 # Research
 {: .page-title}
 
-<!-- TODO: draft statement assembled from the home page and the CV. Rewrite it in your own words. -->
-<p class="lead">
-My research focuses on the <b>real-time exploration of massive models and complex data</b>, from acquisition and processing to rendering and interaction. I work on multiresolution data structures, GPU and ray-tracing algorithms, and web-based visualization, applied to scientific data such as particle physics simulations and astronomical catalogs, and to cultural heritage, where I deal with image-based acquisition and relighting of artworks, indoor modeling from panoramic images, and immersive virtual reality.
+<p class="lead research-lead">
+I build systems that let people <b>create and explore very large or complex datasets interactively</b>, so they can understand them better.
 </p>
+<p class="research-sub">In short: advanced computer science techniques, combined with specific hardware, applied to the fields where the data is too big or too intricate to grasp otherwise.</p>
+
+<div class="research-formula">
+  <div class="card rf-card">
+    <div class="card-header"><i class="fas fa-code me-2"></i>Techniques</div>
+    <ul>
+      <li><i class="fas fa-bolt"></i>High-performance programming</li>
+      <li><i class="fas fa-cubes"></i>Spatial data structures</li>
+      <li><i class="fas fa-brain"></i>Machine learning</li>
+    </ul>
+  </div>
+  <div class="rf-op" aria-hidden="true"><i class="fas fa-plus"></i></div>
+  <div class="card rf-card">
+    <div class="card-header"><i class="fas fa-microchip me-2"></i>Hardware</div>
+    <ul>
+      <li><i class="fas fa-server"></i>CPUs and GPUs</li>
+      <li><i class="fas fa-camera"></i>Cameras and 3D scanners</li>
+      <li><i class="fas fa-vr-cardboard"></i>VR headsets and large displays</li>
+    </ul>
+  </div>
+  <div class="rf-op" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+  <div class="card rf-card">
+    <div class="card-header"><i class="fas fa-globe me-2"></i>Fields</div>
+    <ul>
+      <li><i class="fas fa-landmark"></i>Cultural heritage</li>
+      <li><i class="fas fa-atom"></i>Physics and astronomy</li>
+      <li><i class="fas fa-drafting-compass"></i>Architecture and engineering</li>
+    </ul>
+  </div>
+</div>
+<div class="research-result"><span class="rf-label">Result</span> massive, intricate data turned into something you can explore interactively and understand.</div>
 
 ## Research Activities
 
