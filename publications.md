@@ -20,6 +20,16 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {% if cite_hist and cite_hist.size > 0 %}{% assign cite_cutoff = site.time | date: "%s" | plus: 0 | minus: 2592000 %}{% for snap in cite_hist %}{% assign snap_s = snap.date | date: "%s" | plus: 0 %}{% if snap_s <= cite_cutoff %}{% assign cite_base = snap %}{% endif %}{% endfor %}{% if cite_base %}{% assign cite_base_label = "in the last 30 days" %}{% elsif cite_hist.size > 1 %}{% assign cite_base = cite_hist | first %}{% assign cite_base_label = cite_base.date | date: "since %b %-d" %}{% endif %}{% endif %}
 {% assign cit = site.data.citations %}{% if cit and cit.total %}<p class="pub-stats text-white-50 small">{% assign patents = papers | where: "type", "Patent application" %}{{ papers | size | minus: patents.size }} publications{% if patents.size > 0 %} &middot; {{ patents.size }} patent{% if patents.size > 1 %}s{% endif %}{% endif %} &middot; <b>{{ cit.total }}</b> citations{% if cite_base %}{% assign cite_dtot = 0 %}{% for pair in cit.papers %}{% assign cite_code = pair[0] %}{% assign cite_entry = pair[1] %}{% assign cite_b = cite_base.papers[cite_code] %}{% if cite_b %}{% assign cite_d = cite_entry.count | minus: cite_b %}{% if cite_d > 0 %}{% assign cite_dtot = cite_dtot | plus: cite_d %}{% endif %}{% endif %}{% endfor %}{% if cite_dtot > 0 %} <span class="pub-cites-delta">+{{ cite_dtot }} {{ cite_base_label }}</span>{% endif %}{% endif %} &middot; h-index <b>{{ cit.h_index }}</b> <span class="text-white-50">(according to <a href="https://www.semanticscholar.org/" class="text-white-50">{{ cit.source }}</a>, updated {{ cit.updated | date: "%b %Y" }})</span> &middot; <a href="#supervised-theses" class="text-white-50">{{ theses | size }} supervised theses</a></p>{% endif %}
 
+<div class="fam-legend pub-filter" role="group" aria-label="Filter by type">
+<button type="button" class="fam-tag pub-filter-btn active" data-group="all" style="--fam: #bbb">All</button>
+<button type="button" class="fam-tag pub-filter-btn" data-group="journal" style="--fam: rgb(255, 166, 93)">Journal</button>
+<button type="button" class="fam-tag pub-filter-btn" data-group="conference" style="--fam: #6cb4ff">Conference</button>
+<button type="button" class="fam-tag pub-filter-btn" data-group="book" style="--fam: #8fd18f">Book chapter</button>
+<button type="button" class="fam-tag pub-filter-btn" data-group="editorial" style="--fam: #ccc">Editorial</button>
+<button type="button" class="fam-tag pub-filter-btn" data-group="thesis" style="--fam: #c48be0">Academic works</button>
+<button type="button" class="fam-tag pub-filter-btn" data-group="patent" style="--fam: #5fd3c8">Patent</button>
+</div>
+
 <div class="container my-0 pub-list">
 {% assign prev_year = "" %}
 {% for pub in papers reversed %}
@@ -47,3 +57,40 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {% endfor %}
 </div>
 {% endif %}
+
+<script>
+(function () {
+  // type filter: the tags above the list; the choice is kept in the URL hash (#type=journal) so it can be linked
+  var buttons = document.querySelectorAll('.pub-filter-btn');
+  function visibleRowsAfter(h) {
+    var el = h.nextElementSibling;
+    while (el && !el.classList.contains('pub-year')) {
+      if (el.classList.contains('pub-row') && !el.classList.contains('pub-hidden')) { return true; }
+      el = el.nextElementSibling;
+    }
+    return false;
+  }
+  function apply(g) {
+    document.querySelectorAll('.pub-list .pub-row[data-group]').forEach(function (r) {
+      r.classList.toggle('pub-hidden', g !== 'all' && r.getAttribute('data-group') !== g);
+    });
+    document.querySelectorAll('.pub-list .pub-year').forEach(function (h) { h.classList.toggle('pub-hidden', !visibleRowsAfter(h)); });
+    var sup = document.getElementById('supervised-theses');
+    if (sup) {
+      var any = document.querySelectorAll('#supervised-theses ~ .pub-list .pub-row:not(.pub-hidden)').length > 0;
+      sup.classList.toggle('pub-hidden', !any);
+      if (sup.nextElementSibling && sup.nextElementSibling.tagName === 'P') { sup.nextElementSibling.classList.toggle('pub-hidden', !any); }
+    }
+    buttons.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-group') === g); });
+    if (history.replaceState) { history.replaceState(null, '', location.pathname + (g === 'all' ? '' : '#type=' + g)); }
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var g = b.getAttribute('data-group');
+      apply(b.classList.contains('active') && g !== 'all' ? 'all' : g);
+    });
+  });
+  var m = location.hash.match(/^#type=([a-z]+)$/);
+  if (m) { apply(m[1]); }
+})();
+</script>

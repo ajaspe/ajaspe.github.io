@@ -28,8 +28,16 @@
 {%- elsif type_l contains "journal" -%}{%- assign type_class = "pub-type-journal" -%}
 {%- elsif type_l contains "conference" or type_l contains "tutorial" -%}{%- assign type_class = "pub-type-conference" -%}
 {%- elsif type_l contains "book" -%}{%- assign type_class = "pub-type-book" -%}
-{%- else -%}{%- assign type_class = "pub-type-other" -%}{%- endif %}
-<div class="row pub-row gx-3 gy-0 py-2 rounded align-items-center">
+{%- else -%}{%- assign type_class = "pub-type-other" -%}{%- endif -%}
+{%- comment -%} Filter group used by the type tags on the publications page. {%- endcomment -%}
+{%- if type_l contains "patent" -%}{%- assign group = "patent" -%}
+{%- elsif type_l contains "thesis" or type_l contains "project" -%}{%- assign group = "thesis" -%}
+{%- elsif type_l contains "editor" -%}{%- assign group = "editorial" -%}
+{%- elsif type_l contains "journal" -%}{%- assign group = "journal" -%}
+{%- elsif type_l contains "conference" or type_l contains "tutorial" -%}{%- assign group = "conference" -%}
+{%- elsif type_l contains "book" -%}{%- assign group = "book" -%}
+{%- else -%}{%- assign group = "other" -%}{%- endif %}
+<div class="row pub-row gx-3 gy-0 py-2 rounded align-items-center" data-group="{{ group }}">
     <div class="col-auto">
         <a href="{{ puburl | relative_url }}" class="pub-thumb-box"><img src="{{ imgpath | relative_url }}" class="pub-thumb{% if pub.degree %} pub-thumb-contain{% endif %}" loading="lazy" alt="{{ pub.title | escape }} thumbnail"></a>
     </div>
