@@ -11,8 +11,8 @@ program: "Master on High Performance Computing"
 institution: "University of A Coruña, Spain"
 supervisors: "Emilio J. Padrón and Javier Taibo, UDC"
 defense: "2012"
-distinction: "AMD Best Master Thesis Award 2012"
-awards: "AMD Best Master Thesis Award"
+distinction: "AMD Best Master Thesis Award 2012; Best Graduate Thesis Award 2013 of the Professional Association of Computer Science Engineering of Galicia (CPEIG)"
+awards: "AMD Best Master Thesis Award and Best Graduate Thesis Award"
 abstract: ""
 topics:
  - point-clouds
@@ -29,4 +29,4 @@ bibtex: "@MastersThesis{Jaspe:2012:PCM,\n
 }"
 ---
 
-The thesis designed and implemented the first version of the Point Cloud Manager (PCM) library: an out-of-core, multiresolution structure for laser-scanned point clouds of arbitrary size, later extended in two [book](/publications/2016-book_EBDMOI-pcm.html) [chapters](/publications/2016-book_VCEGDT-pbr_architecture_heritage.html) and the master's theses it supervised.
+Presented in Spanish as *Sistema multirresolución de visualización 3D en tiempo real para grandes bases de datos LIDAR*. The thesis designed and implemented the first version of the Point Cloud Manager (PCM) library: an out-of-core, multiresolution structure for laser-scanned point clouds of arbitrary size, later extended in two [book](/publications/2016-book_EBDMOI-pcm.html) [chapters](/publications/2016-book_VCEGDT-pbr_architecture_heritage.html) and the master's theses it supervised.
