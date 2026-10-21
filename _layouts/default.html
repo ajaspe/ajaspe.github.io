@@ -210,7 +210,7 @@
 
         <footer class="mt-auto text-white-50 text-center">
             <p class="lead text-warning mb-1">&copy; AJV</p>
-            <p class="small mb-2">{% assign vis = site.data.visitors %}<span class="gc-counter{% if vis and vis.total > 0 %} gc-ready{% endif %}" data-gc-path="TOTAL" data-gc-label="visits">{% if vis and vis.total > 0 %}{{ vis.total }} visits{% endif %}</span><a href="https://albertojaspe.goatcounter.com" class="gc-stats-link{% if vis and vis.total > 0 %} gc-ready{% endif %}">Site statistics</a></p>
+            <p class="small mb-2">{% assign vis = site.data.visitors %}<span class="gc-counter{% if vis and vis.total > 0 %} gc-ready{% endif %}" data-gc-path="TOTAL" data-gc-label="unique visits">{% if vis and vis.total > 0 %}{{ vis.total }} unique visits{% endif %}</span><a href="https://albertojaspe.goatcounter.com" class="gc-stats-link{% if vis and vis.total > 0 %} gc-ready{% endif %}">Site statistics</a></p>
         </footer>
     </div>
 

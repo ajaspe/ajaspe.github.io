@@ -21,7 +21,7 @@ def count(path, query=""):
         req = urllib.request.Request(url, headers=HEADERS)
         with urllib.request.urlopen(req, timeout=30) as r:
             data = json.loads(r.read().decode("utf-8"))
-        digits = re.sub(r"[^0-9]", "", str(data.get("count", "0")))
+        digits = re.sub(r"[^0-9]", "", str(data.get("count_unique", data.get("count", "0"))))   # unique visits
         return int(digits) if digits else 0
     except urllib.error.HTTPError as e:
         if e.code == 404:        # path never visited
@@ -36,10 +36,10 @@ week = count("TOTAL", since(7))
 month = count("TOTAL", since(30))
 total = count("TOTAL", "?start=2000-01-01")
 
-# Daily counts for the chart on the home page: the last DAYS complete days, one request per day.
+# Daily unique visits for the chart on the home page: the last DAYS complete days, one request per day.
 # The counter endpoint takes "end" as exclusive, so start=D&end=D+1 is the count of day D.
 # Days already in the file are kept (only the last two are refetched), so a normal run adds two requests.
-DAYS = 30
+DAYS = 90
 today = datetime.date.today()
 old_daily = {}
 if os.path.exists(OUT):
