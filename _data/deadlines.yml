@@ -1,7 +1,7 @@
-# Conference deadlines shown on /visual-computing-calendar/ (researched 2026-10-20).
-#   month / half : typical slot of the full-paper deadline in a normal year (half 1 = days 1-15, 2 = days 16-31)
-#   next_date    : next known deadline, quoted as a string. status: confirmed (from the published call for papers)
-#                  or estimated (previous edition's date moved one year)
+# Conference deadlines shown on /visual-computing-calendar/ (researched 2026-10-20, checked again 2026-10-21).
+#   next_date    : next known deadline, quoted as a string; it places the venue in the grid (days 1-15: upper slot,
+#                  16-31: lower slot). status: confirmed (from the published call for papers) or estimated (previous
+#                  edition's date moved one year)
 #   family       : graphics | visualization | vision | vr | applications (web 3D and cultural heritage).   tier 1 = highlighted in the grid
 #   note         : one short sentence shown under the conference name
 # When you change dates here, also bump updated: in _notes/visual-computing-calendar.md (the date shown on the page).
@@ -13,8 +13,6 @@
   family: graphics
   tier: 1
   url: https://www.siggraph.org
-  month: 1
-  half: 2
   next_date: "2027-01-22"
   next_edition: SIGGRAPH 2027
   next_url: https://s2027.siggraph.org
@@ -28,8 +26,6 @@
   family: graphics
   tier: 1
   url: https://asia.siggraph.org
-  month: 5
-  half: 1
   next_date: "2027-05-12"
   next_edition: SIGGRAPH Asia 2027
   next_url: https://asia.siggraph.org/2026/about-the-event/siggraph-asia-2027/
@@ -43,8 +39,6 @@
   family: graphics
   tier: 1
   url: https://www.eg.org/wp/eurographics-annual-conference/
-  month: 10
-  half: 1
   next_date: "2027-10-01"
   next_edition: Eurographics 2028
   next_url: https://conferences.eg.org/eg2028/
@@ -58,8 +52,6 @@
   family: graphics
   tier: 2
   url: https://asiagraphics.org
-  month: 6
-  half: 1
   next_date: "2027-06-08"
   next_edition: Pacific Graphics 2027
   next_url: https://pacificgraphics2026.github.io/
@@ -73,8 +65,6 @@
   family: graphics
   tier: 2
   url: https://www.eg.org/wp/eg-events/rendering/
-  month: 4
-  half: 1
   next_date: "2027-04-15"
   next_edition: EGSR 2027
   next_url: https://egsr2027.usi.ch/
@@ -88,8 +78,6 @@
   family: graphics
   tier: 2
   url: https://www.eg.org/wp/eg-events/geometry-processing/
-  month: 4
-  half: 1
   next_date: "2027-04-15"
   next_edition: SGP 2027
   next_url: https://igs2027singapore.github.io/
@@ -103,8 +91,6 @@
   family: graphics
   tier: 2
   url: https://highperformancegraphics.org
-  month: 4
-  half: 1
   next_date: "2027-04-10"
   next_edition: HPG 2027
   next_url: https://highperformancegraphics.org/
@@ -118,8 +104,6 @@
   family: graphics
   tier: 2
   url: https://i3dsymposium.org
-  month: 1
-  half: 1
   next_date: "2027-01-09"
   next_edition: i3D 2027
   next_url: https://i3dsymposium.org/2026/
@@ -133,8 +117,6 @@
   family: graphics
   tier: 2
   url: https://computeranimation.org
-  month: 4
-  half: 2
   next_date: "2027-04-17"
   next_edition: SCA 2027
   next_url: https://computeranimation.org/
@@ -148,14 +130,12 @@
   family: graphics
   tier: 2
   url: https://egpgv.org
-  month: 2
-  half: 1
   next_date: "2027-02-06"
   next_edition: EGPGV 2027
   next_url: https://egpgv-symposium.github.io/2026/
   status: estimated
   published_in: EG proceedings
-  note: "Estimated from EGPGV 2026 (abstract Jan 30, paper Feb 6). Held with EuroVis, so 2027 should be Stuttgart; link goes to the 2026 edition."
+  note: "Estimated from EGPGV 2026 (abstract Jan 30, paper Feb 6, both later extended by a week). Held with EuroVis, so 2027 should be Stuttgart; link goes to the 2026 edition."
 
 - id: cgi
   acronym: CGI
@@ -163,8 +143,6 @@
   family: graphics
   tier: 2
   url: https://www.cgs-network.org
-  month: 2
-  half: 2
   next_date: "2027-02-28"
   next_edition: CGI-AI 2027
   next_url: https://www.cgs-network.org/cgi27/
@@ -178,14 +156,12 @@
   family: graphics
   tier: 2
   url: https://grivapp.scitevents.org
-  month: 10
-  half: 1
-  next_date: "2026-10-22"
+  next_date: "2026-10-29"
   next_edition: GRIVAPP 2027
   next_url: https://grivapp.scitevents.org/
   status: confirmed
   published_in: SciTePress proceedings
-  note: "Valletta, Malta, Feb 26-28. Second-stage regular and position papers close Oct 22; the first stage closed Sep 29."
+  note: "Valletta, Malta, Feb 26-28. Second-stage regular and position papers extended to Oct 29; the first stage closed Sep 29. The abstracts track closes Dec 3."
 
 - id: wscg
   acronym: WSCG
@@ -193,8 +169,6 @@
   family: graphics
   tier: 2
   url: https://www.wscg.cz
-  month: 2
-  half: 1
   next_date: "2027-02-15"
   next_edition: WSCG 2027
   next_url: https://www.wscg.cz/
@@ -208,14 +182,12 @@
   family: graphics
   tier: 2
   url: https://www.gcpr-vmv.de
-  month: 6
-  half: 2
   next_date: "2027-06-19"
   next_edition: VMV 2027
   next_url: https://www.gcpr-vmv.de/year/2026/vmv
   status: estimated
   published_in: EG proceedings; selected papers invited to Computer Graphics Forum
-  note: "Estimated from VMV 2026 (registration Jun 16, paper Jun 19, held with GCPR in Siegen). No 2027 announcement yet."
+  note: "Estimated from VMV 2026 (registration Jun 16, paper Jun 19, later extended to Jun 23; held with GCPR in Siegen). No 2027 announcement yet."
 
 - id: stag
   acronym: STAG
@@ -223,14 +195,12 @@
   family: graphics
   tier: 2
   url: https://www.stag-conference.org
-  month: 9
-  half: 2
   next_date: "2026-10-27"
   next_edition: STAG 2026
   next_url: https://www.stag-conference.org/2026/index.html
   status: confirmed
   published_in: EG proceedings
-  note: "Catania, Italy, Nov 19-20. Full papers and posters by Oct 27 (abstracts closed Oct 6); the usual slot is late September."
+  note: "Catania, Italy, Nov 19-20. Full papers and posters by Oct 27, extended from Oct 20 (abstracts closed Oct 6); the usual slot is late September."
 
 # ---------------------------------------------------------------- visualization
 - id: vis
@@ -239,8 +209,6 @@
   family: visualization
   tier: 1
   url: https://ieeevis.org
-  month: 3
-  half: 2
   next_date: "2027-03-31"
   next_edition: IEEE VIS 2027
   next_url: https://ieeevis.org/year/2026/welcome
@@ -254,8 +222,6 @@
   family: visualization
   tier: 1
   url: https://www.eurovis.org
-  month: 12
-  half: 1
   next_date: "2026-12-03"
   next_edition: EuroVis 2027
   next_url: https://eurovis27.github.io/web/
@@ -269,8 +235,6 @@
   family: visualization
   tier: 2
   url: https://pacificvis.org
-  month: 11
-  half: 1
   next_date: "2026-11-09"
   next_edition: IEEE PacificVis 2027
   next_url: https://pacificvis2027.github.io/
@@ -284,14 +248,12 @@
   family: visualization
   tier: 2
   url: https://ldav.io
-  month: 6
-  half: 2
   next_date: "2027-06-20"
   next_edition: IEEE LDAV 2027
   next_url: https://ldav.io/2025/
   status: estimated
   published_in: IEEE proceedings, with IEEE VIS
-  note: "Estimated from LDAV 2025 (abstract Jun 16, paper Jun 20). No 2026 edition could be found; link goes to the 2025 edition."
+  note: "Estimated from LDAV 2025 (abstract Jun 16, paper Jun 20, later extended to Jun 27). No 2026 edition could be found; link goes to the 2025 edition."
 
 # ---------------------------------------------------------------- computer vision
 - id: cvpr
@@ -300,8 +262,6 @@
   family: vision
   tier: 1
   url: https://cvpr.thecvf.com
-  month: 11
-  half: 2
   next_date: "2026-11-16"
   next_edition: CVPR 2027
   next_url: https://cvpr.thecvf.com/Conferences/2027
@@ -315,8 +275,6 @@
   family: vision
   tier: 1
   url: https://iccv.thecvf.com
-  month: 3
-  half: 1
   next_date: "2027-03-07"
   next_edition: ICCV 2027
   next_url: https://iccv.thecvf.com/Conferences/2027
@@ -330,8 +288,6 @@
   family: vision
   tier: 1
   url: https://eccv.ecva.net
-  month: 3
-  half: 1
   next_date: "2028-03-05"
   next_edition: ECCV 2028
   next_url: https://eccv.ecva.net/
@@ -345,8 +301,6 @@
   family: vision
   tier: 2
   url: https://3dvconf.github.io
-  month: 8
-  half: 2
   next_date: "2027-08-28"
   next_edition: 3DV 2028
   next_url: https://3dvconf.github.io/2027/
@@ -361,8 +315,6 @@
   family: vr
   tier: 2
   url: https://ieeevr.org
-  month: 9
-  half: 1
   next_date: "2027-08-31"
   next_edition: IEEE VR 2028
   next_url: https://ieeevr.org/2027/
@@ -376,8 +328,6 @@
   family: vr
   tier: 2
   url: https://ismar.net
-  month: 3
-  half: 2
   next_date: "2027-03-16"
   next_edition: IEEE ISMAR 2027
   next_url: https://www.ieeeismar.net/2027/
@@ -391,8 +341,6 @@
   family: vr
   tier: 2
   url: https://vrst.acm.org
-  month: 6
-  half: 2
   next_date: "2027-06-24"
   next_edition: ACM VRST 2027
   next_url: https://vrst.acm.org/vrst2026/
@@ -406,14 +354,12 @@
   family: vr
   tier: 2
   url: https://icat.vrsj.org/
-  month: 8
-  half: 2
   next_date: "2027-05-31"
   next_edition: ICAT-EGVE 2027
   next_url: https://icat-egve2026.inf.ufg.br/
   status: estimated
   published_in: EG proceedings, open access
-  note: "Estimated from ICAT-EGVE 2026 (paper May 31, for a September conference); the usual slot is late August for December editions."
+  note: "Estimated from ICAT-EGVE 2026 (paper May 31, later extended to Jun 15, for a conference at the end of September); the usual slot is late August for December editions."
 
 # ---------------------------------------------------------------- applications: web 3D
 - id: web3d
@@ -422,8 +368,6 @@
   family: applications
   tier: 2
   url: https://web3d.siggraph.org
-  month: 6
-  half: 1
   next_date: "2027-06-01"
   next_edition: Web3D 2027
   next_url: https://web3d.siggraph.org/2026/
@@ -438,8 +382,6 @@
   family: applications
   tier: 2
   url: https://www.eg.org/wp/graphics-and-cultural-heritage/
-  month: 6
-  half: 1
   next_date: "2027-06-01"
   next_edition: EG GCH 2027
   next_url: https://gch2026.virvig.eu/
@@ -453,8 +395,6 @@
   family: applications
   tier: 2
   url: https://digitalheritage2025.unisi.it/
-  month: 4
-  half: 1
   next_date: "2028-04-15"
   next_edition: Digital Heritage 2028
   next_url: https://digitalheritage2025.unisi.it/

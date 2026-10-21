@@ -8,7 +8,7 @@ summary: "Paper deadlines of the main graphics, visualization, vision and VR con
 redirect_from:
   - /notes/deadlines-calendar.html
 thumb_img: "assets/img/thumb_calendar.jpg"
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 <p class="small text-white-50">Not an exhaustive list of Visual Computing venues, just the main ones and the ones I follow. The dates come from each conference's call for papers when it is out, and are estimated from the previous edition otherwise: always confirm them on the conference website, and tell me if you find mistakes.</p>
@@ -23,17 +23,18 @@ updated: 2026-10-20
 </div>
 
 {% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
+{% assign by_acronym = site.data.deadlines | sort_natural: "acronym" %}
 <div class="row g-2 mb-2">
 {% for m in months %}{% assign mi = forloop.index %}
 <div class="col-6 col-md-3"><div class="deadline-month">
 <div class="deadline-month-name">{{ m }}</div>
-{% for h in (1..2) %}{% assign items = site.data.deadlines | where: "month", mi | where: "half", h | sort_natural: "acronym" %}
-<div class="deadline-slot">{% for c in items %}{% assign fam = families | where: "id", c.family | first %}<a href="{{ c.url }}" class="deadline-chip{% if c.tier == 1 %} deadline-chip-main{% endif %}" style="--fam: {{ fam.color }}" data-family="{{ c.family }}" title="{{ c.name }}">{{ c.acronym }}</a>{% endfor %}</div>
+{% for h in (1..2) %}
+<div class="deadline-slot">{% for c in by_acronym %}{% assign cm = c.next_date | date: "%-m" | plus: 0 %}{% assign cd = c.next_date | date: "%-d" | plus: 0 %}{% if cd <= 15 %}{% assign ch = 1 %}{% else %}{% assign ch = 2 %}{% endif %}{% if cm == mi and ch == h %}{% assign fam = families | where: "id", c.family | first %}<a href="{{ c.url }}" class="deadline-chip{% if c.tier == 1 %} deadline-chip-main{% endif %}" style="--fam: {{ fam.color }}" data-family="{{ c.family }}" title="{{ c.name }}: {{ c.next_date | date: "%b %-d, %Y" }}">{{ c.acronym }}</a>{% endif %}{% endfor %}</div>
 {% endfor %}
 </div></div>
 {% endfor %}
 </div>
-<p class="deadline-legend">Typical slot of each paper deadline: upper row, first half of the month; lower row, second half. The tinted slot is the current half-month. Colours follow the field and the main venues are in bold; the tags above filter the grid and the table. Click a name to go to the conference.</p>
+<p class="deadline-legend">Each paper deadline in its slot: upper row, first half of the month; lower row, second half. The current month is highlighted. Colours follow the field and the main venues are in bold; the tags above filter the grid and the table. Click a name to go to the conference.</p>
 
 <div class="table-responsive">
 <table class="table table-dark table-hover deadline-table align-middle">
@@ -64,15 +65,9 @@ updated: 2026-10-20
     else { r.classList.remove('deadline-past'); cell.textContent = days + ' days'; }
   });
 
-  // mark the current half-month in the grid
-  var months = document.querySelectorAll('.deadline-month');
-  var box = months[now.getMonth()];
-  if (box) {
-    box.classList.add('deadline-month-now');
-    var slots = box.querySelectorAll('.deadline-slot');
-    var slot = slots[now.getDate() <= 15 ? 0 : 1];
-    if (slot) { slot.classList.add('deadline-slot-now'); slot.title = 'Current half of the month'; }
-  }
+  // mark the current month in the grid
+  var box = document.querySelectorAll('.deadline-month')[now.getMonth()];
+  if (box) { box.classList.add('deadline-month-now'); box.title = 'Current month'; }
 
   // field filter: legend buttons and the tags in the table
   var buttons = document.querySelectorAll('.fam-filter');
