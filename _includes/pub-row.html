@@ -19,7 +19,6 @@
   {%- assign pubdata = pub.book -%}
 {%- elsif pub.degree -%}
   {%- assign pubdata = pub.institution -%}
-  {%- if pub.role == "supervisor" -%}{%- assign pubdatapost = "(supervised with " | append: pub.supervisors | replace: "Alberto Jaspe-Villanueva and ", "" | replace: " and Alberto Jaspe-Villanueva", "" | replace: "Alberto Jaspe-Villanueva", "" | append: ")" | replace: "(supervised with )", "" -%}{%- endif -%}
 {%- endif -%}
 {%- assign type_l = pub.type | downcase -%}
 {%- if type_l contains "thesis" or type_l contains "project" -%}{%- assign type_class = "pub-type-thesis" -%}
@@ -33,7 +32,7 @@
     </div>
     <div class="col">
         <div class="pub-title"><a href="{{ puburl | relative_url }}">{{ pub.title }}</a>{% if pub.awards %} <span class="badge bg-danger">{{ pub.awards }}</span>{% endif %}</div>
-        <div class="pub-authors">{{ pub.authors }}</div>
-        <div class="pub-venue small"><span class="pub-type {{ type_class }}">{{ pub.type }}</span>{% if pub.role == "supervisor" %} <span class="pub-type pub-type-role">Supervisor</span>{% endif %}{% assign c = site.data.citations.papers[pub.code] %}{% if c and c.count > 0 %} <a href="{{ c.url }}" class="pub-cites" title="Citations according to {{ site.data.citations.source }}"><i class="fas fa-quote-right"></i> {{ c.count }}{% if cite_base and cite_base.papers[pub.code] %}{% assign cite_dp = c.count | minus: cite_base.papers[pub.code] %}{% if cite_dp > 0 %}<span class="pub-cites-delta" title="+{{ cite_dp }} {{ cite_base_label }}">+{{ cite_dp }}</span>{% endif %}{% endif %}</a>{% endif %}{% if include.show_year %} <span class="text-warning">{{ pub.year }}</span> &middot;{% endif %} <em>{{ pubdata }}</em> <span class="text-white-50">{{ pubdatapost }}</span></div>
+        <div class="pub-authors">{{ pub.authors }}{% if pub.degree and pub.supervisors %} <span class="text-white-50">(supervised by {{ pub.supervisors }})</span>{% endif %}</div>
+        <div class="pub-venue small"><span class="pub-type {{ type_class }}">{{ pub.type }}</span>{% assign c = site.data.citations.papers[pub.code] %}{% if c and c.count > 0 %} <a href="{{ c.url }}" class="pub-cites" title="Citations according to {{ site.data.citations.source }}"><i class="fas fa-quote-right"></i> {{ c.count }}{% if cite_base and cite_base.papers[pub.code] %}{% assign cite_dp = c.count | minus: cite_base.papers[pub.code] %}{% if cite_dp > 0 %}<span class="pub-cites-delta" title="+{{ cite_dp }} {{ cite_base_label }}">+{{ cite_dp }}</span>{% endif %}{% endif %}</a>{% endif %}{% if include.show_year %} <span class="text-warning">{{ pub.year }}</span> &middot;{% endif %} <em>{{ pubdata }}</em> <span class="text-white-50">{{ pubdatapost }}</span></div>
     </div>
 </div>

@@ -9,7 +9,7 @@ role: author
 degree: "Doctor of Philosophy (PhD)"
 program: "PhD Programme in Information and Communications Technology"
 institution: "University of A Coruña, Spain (research carried out at CRS4, Italy)"
-supervisors: "Enrico Gobbetti (CRS4) and Julián Dorado de la Calle (University of A Coruña, also tutor)"
+supervisors: "Enrico Gobbetti, CRS4 and JuliÃ¡n Dorado, UDC"
 committee: "Reviewers: Oliver Staadt (University of Rostock) and Rafael Ballester-Ripoll (University of Zürich)"
 defense: "2018"
 distinction: "Cum laude by unanimous decision of an international committee; selected for the Thesis Fast Forward session at SIGGRAPH 2019 (Los Angeles)"

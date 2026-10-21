@@ -9,7 +9,7 @@ role: author
 degree: "Master's Thesis"
 program: "Master on High Performance Computing"
 institution: "University of A Coruña, Spain"
-supervisors: "Emilio J. Padrón and Javier Taibo (University of A Coruña)"
+supervisors: "Emilio J. PadrÃ³n and Javier Taibo, UDC"
 defense: "2012"
 distinction: "AMD Best Master Thesis Award 2012"
 awards: "AMD Best Master Thesis Award"
