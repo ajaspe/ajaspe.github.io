@@ -37,6 +37,7 @@ My main research question is <b>how to create and explore very large and complex
       <li><i class="fas fa-camera"></i>Cameras, light domes and 3D scanners</li>
       <li><i class="fas fa-hand-pointer"></i>Multi-touch tables and natural interfaces</li>
       <li><i class="fas fa-vr-cardboard"></i>VR headsets, large displays and immersive rooms</li>
+      <li><i class="fas fa-mobile-alt"></i>Web browsers and mobile devices</li>
       <li class="rf-more">&hellip;</li>
     </ul>
   </div>
@@ -48,6 +49,7 @@ My main research question is <b>how to create and explore very large and complex
       <li><i class="fas fa-atom"></i>Particle physics and astronomy</li>
       <li><i class="fas fa-drafting-compass"></i>Architecture, civil engineering and urbanism</li>
       <li><i class="fas fa-map"></i>Terrain and geospatial data</li>
+      <li><i class="fas fa-university"></i>Museums, exhibitions and public installations</li>
       <li class="rf-more">&hellip;</li>
     </ul>
   </div>
