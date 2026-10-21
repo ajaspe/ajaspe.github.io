@@ -1,5 +1,5 @@
 ---
-title: In the press
+title: Press and media
 description: "Press and media coverage of the work of Alberto Jaspe-Villanueva and his teams: newspaper articles, interviews, podcasts and videos."
 summary: "Articles, interviews, podcasts and videos about my work and my teams' projects, with scans of the printed pages."
 layout: note
