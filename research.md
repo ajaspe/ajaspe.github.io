@@ -65,6 +65,7 @@ My research focuses on the <b>real-time exploration of massive models and comple
 <div class="card-body" markdown="1">
 
 * Assistant in the [Scientific Visualization course](https://vccvisualization.org/CS247_Scientific_Visualization) at [KAUST](https://cemse.kaust.edu.sa).
+* Invited speaker at the Master's in Computer Engineering (Máster en Ingeniería Informática) of the [University of A Coruña](https://www.fic.udc.es).
 * PhD and Master's thesis advisor, and regular PhD committee member at [UDC](https://udc.es).
 * Lecturer in the __Virtual and Augmented Reality__ course (2017) at the [European Institute of Design](https://www.ied.edu/).
 

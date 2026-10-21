@@ -40,7 +40,7 @@ layout: default
 			{% unless page.no_pdf %}
             {% assign pdfpath = "/publications/" | append: page.code | append: ".pdf" %}
             <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning">
-                <i class="fas fa-file-pdf"></i> Paper PDF</a>
+                <i class="fas fa-file-pdf"></i> PDF</a>
 			{% endunless %}
 			{% if page.appendix %}
             {% assign pdfappendixpath = "/publications/" | append: page.code | append: "-appendix.pdf" %}
@@ -100,16 +100,16 @@ layout: default
     </div>
     {% endif %}
 	{{page.content}}
-	{% comment %} Awards section: rendered automatically when publications/<code>-award.jpg exists {% endcomment %}
-	{% assign award_path = "/publications/" | append: page.code | append: "-award.jpg" %}
-	{% assign award_file = site.static_files | where: "path", award_path | first %}
-	{% if award_file %}
+	{% comment %} Awards section: rendered automatically for every publications/<code>-award*.jpg (one diploma per file) {% endcomment %}
+	{% assign award_prefix = "/publications/" | append: page.code | append: "-award" %}
+	{% assign award_files = site.static_files | where_exp: "f", "f.path contains award_prefix and f.extname == '.jpg'" | sort: "path" %}
+	{% if award_files.size > 0 %}
 	<h2>Awards</h2>
-	<div class="row text-center my-3">
-		<p>
-			<img class="rounded img-fluid pub-award-img" width="50%" src="{{ award_path | relative_url }}" alt="{{ page.awards | default: 'Award' }} diploma" loading="lazy">
-			{% if page.awards %}<br/><small class="text-white-50 fst-italic">{{ page.awards }}</small>{% endif %}
-		</p>
+	<div class="row text-center my-3 justify-content-center g-3">
+		{% for f in award_files %}
+		<div class="{% if award_files.size > 1 %}col-md-6{% else %}col-md-8{% endif %}"><img class="rounded img-fluid pub-award-img w-100" src="{{ f.path | relative_url }}" alt="{{ page.awards | default: 'Award' }} diploma" loading="lazy"></div>
+		{% endfor %}
+		{% if page.awards %}<div class="col-12"><small class="text-white-50 fst-italic">{{ page.awards }}</small></div>{% endif %}
 	</div>
 	{% endif %}
 </div>
