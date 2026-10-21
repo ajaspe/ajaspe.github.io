@@ -20,9 +20,8 @@ topics:
  - virtual-reality
 projects:
  - panoverse
-no_pdf: true
 links:
- - { name: "PDF and record at the UDC repository", url: "http://hdl.handle.net/2183/40244" }
+ - { name: "Record at the UDC repository", url: "http://hdl.handle.net/2183/40244" }
 bibtex: "@PhdThesis{Pintore:2024:AMI,\n
     author = {Giovanni Pintore},\n
     title = {Automatic {3D} Modeling and Editing of Immersive Indoor Environments from a Single Omnidirectional Image},\n

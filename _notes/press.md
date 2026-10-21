@@ -6,7 +6,6 @@ layout: note
 kind: living
 icon: fa-newspaper
 updated: 2026-10-20
-published: false
 ---
 
 {% assign items = site.data.press.items | sort: "date" | reverse %}

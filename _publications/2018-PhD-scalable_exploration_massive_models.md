@@ -21,9 +21,8 @@ topics:
  - point-clouds
 projects:
  - diva
-no_pdf: true
 links:
- - { name: "PDF and record at the UDC repository", url: "http://hdl.handle.net/2183/21430" }
+ - { name: "Record at the UDC repository", url: "http://hdl.handle.net/2183/21430" }
  - { name: "SIGGRAPH 2019 Thesis Fast Forward", url: "https://s2019.siggraph.org/" }
 bibtex: "@PhdThesis{Jaspe:2018:SEM,\n
     author = {Alberto Jaspe-Villanueva},\n

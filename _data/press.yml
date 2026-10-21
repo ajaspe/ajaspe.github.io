@@ -1,11 +1,14 @@
-# Press and media mentions, shown on /press/ once the page is published
-# (remove `published: false` from _notes/press.md). Newest first is not required: the page sorts by date.
-#
-# items:
-#   - date: 2025-02-01
-#     outlet: KAUST News
-#     title: "Title of the article"
-#     url: https://...
-#     lang: en            # optional, shown as a small label when it is not English
+# Press and media mentions, shown on /press/. Newest first is not required: the page sorts by date.
+#   - date: YYYY-MM-DD (use day 01 when only the month is known)
+#     outlet: name of the magazine, newspaper or site
+#     title: "title of the piece"
+#     url: link to the piece, or to a scan under /assets/press/
+#     lang: es            # optional, shown as a small label when it is not English
 #     note: "one line of context"   # optional
-items: []
+items:
+  - date: 2009-09-01
+    outlet: CLÍO Historia (magazine, issue 95)
+    title: "La realidad virtual inmersiva: ¿viajar en el tiempo?"
+    url: /assets/press/clio-museo-vacio.pdf
+    lang: es
+    note: "A page on VideaLAB's Empty Museum inside the feature 'Arqueología virtual: España marca tendencias'. Scan of the printed page; the issue month is approximate."

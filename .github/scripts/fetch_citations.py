@@ -147,6 +147,30 @@ for path in sorted(glob.glob(os.path.join(PUB_DIR, "*.md"))):
 results = {}
 previous = load_previous()
 
+# 0. The Semantic Scholar author profile (one request): papers claimed there are matched by DOI, then by title.
+#    This is the primary source; the DOI batch and the title search below only cover what the profile lacks.
+AUTHOR_ID = "12040242"
+try:
+    prof = request(API + "/author/%s/papers?fields=paperId,title,citationCount,externalIds,url&limit=500" % AUTHOR_ID)
+    prof_papers = (prof or {}).get("data") or []
+    by_doi = {((p.get("externalIds") or {}).get("DOI") or "").lower(): p for p in prof_papers if (p.get("externalIds") or {}).get("DOI")}
+    by_title = {norm(p.get("title")): p for p in prof_papers if p.get("title")}
+    for p in papers:
+        hit = by_doi.get((p["doi"] or "").lower()) if p["doi"] else None
+        if not hit and p["title"]:
+            cand = by_title.get(norm(p["title"]))
+            if not cand:
+                best = max(prof_papers, key=lambda q: difflib.SequenceMatcher(None, norm(q.get("title")), norm(p["title"])).ratio(), default=None)
+                if best and difflib.SequenceMatcher(None, norm(best.get("title")), norm(p["title"])).ratio() >= 0.92:
+                    cand = best
+            hit = cand
+        if hit and hit.get("citationCount") is not None:
+            results[p["code"]] = {"count": int(hit["citationCount"]), "url": hit.get("url", ""), "match": "profile"}
+    log("author profile: %d papers listed, %d of %d site entries matched" % (len(prof_papers), len(results), len(papers)))
+    time.sleep(PAUSE)
+except RateLimited:
+    log("author profile request rate limited, falling back to DOI and title lookups")
+
 # 1. DOI batch (one request), written right away
 with_doi = [p for p in papers if p["doi"]]
 if with_doi:

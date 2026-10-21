@@ -4,7 +4,7 @@ code: 2011-PFC-multitouch_surfaces
 title: "Superficies multitáctiles interactivas: desarrollo de prototipo, software de control y paradigmas de aplicación a la visualización 3D"
 authors: Alberto Jaspe-Villanueva
 year: 2011
-type: Bachelor's Thesis
+type: Final Degree Project
 role: author
 degree: "Final Degree Project (Proyecto Fin de Carrera)"
 program: "Technical Engineering in Computer Science"
