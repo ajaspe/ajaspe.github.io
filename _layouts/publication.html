@@ -23,6 +23,9 @@ layout: default
             {% elsif page.degree %}
                 {% assign pubdata = page.degree | append: ", " | append: page.institution %}
                 {% if page.role == "supervisor" %}{% assign pubdatapost = "<br/>Supervised by " | append: page.supervisors %}{% endif %}
+            {% elsif page.patent %}
+                {% assign pubdata = "Patent application " | append: page.patent %}
+                {% assign pubdatapost = "<br/>Assignee: " | append: page.assignee %}
             {% endif %}
             <p class="lead fst-italic">{{ pubdata }} <small class="text-white-50 fst-italic">{{ pubdatapost }}</small>
         {% if page.awards %}
@@ -79,6 +82,22 @@ layout: default
             {% if page.committee %}<dt>Committee</dt><dd>{{ page.committee }}</dd>{% endif %}
             {% if page.defense %}<dt>Defended</dt><dd>{{ page.defense }}</dd>{% endif %}
             {% if page.distinction %}<dt>Distinction</dt><dd>{{ page.distinction }}</dd>{% endif %}
+        </dl>
+        </div>
+    </div>
+    {% endif %}
+    {% if page.patent %}
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+        <dl class="thesis-details">
+            <dt>Publication number</dt><dd>{{ page.patent }}</dd>
+            {% if page.patent_application %}<dt>Application</dt><dd>{{ page.patent_application }}</dd>{% endif %}
+            <dt>Assignee</dt><dd>{{ page.assignee }}</dd>
+            <dt>Inventors</dt><dd>{{ authors2 }}</dd>
+            {% if page.priority %}<dt>Priority date</dt><dd>{{ page.priority }}</dd>{% endif %}
+            {% if page.filed %}<dt>Filed</dt><dd>{{ page.filed }}</dd>{% endif %}
+            {% if page.published %}<dt>Published</dt><dd>{{ page.published }}</dd>{% endif %}
+            {% if page.status %}<dt>Status</dt><dd>{{ page.status }}</dd>{% endif %}
         </dl>
         </div>
     </div>

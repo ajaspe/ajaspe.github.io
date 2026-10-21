@@ -82,7 +82,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ScholarlyArticle",
+      "@type": {% if page.patent %}"CreativeWork"{% else %}"ScholarlyArticle"{% endif %},
       "headline": {{ page.title | jsonify }},
       "name": {{ page.title | jsonify }},
       "author": [{% assign sep = "" %}{% for a in author_list %}{% assign a_s = a | strip %}{% if a_s != "" %}{{ sep }}{"@type": "Person", "name": {{ a_s | jsonify }}}{% assign sep = ", " %}{% endif %}{% endfor %}],

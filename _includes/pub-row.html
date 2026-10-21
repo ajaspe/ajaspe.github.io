@@ -19,9 +19,12 @@
   {%- assign pubdata = pub.book -%}
 {%- elsif pub.degree -%}
   {%- assign pubdata = pub.institution -%}
+{%- elsif pub.patent -%}
+  {%- assign pubdata = pub.patent | append: ", " | append: pub.assignee -%}
 {%- endif -%}
 {%- assign type_l = pub.type | downcase -%}
-{%- if type_l contains "thesis" or type_l contains "project" -%}{%- assign type_class = "pub-type-thesis" -%}
+{%- if type_l contains "patent" -%}{%- assign type_class = "pub-type-patent" -%}
+{%- elsif type_l contains "thesis" or type_l contains "project" -%}{%- assign type_class = "pub-type-thesis" -%}
 {%- elsif type_l contains "journal" -%}{%- assign type_class = "pub-type-journal" -%}
 {%- elsif type_l contains "conference" or type_l contains "tutorial" -%}{%- assign type_class = "pub-type-conference" -%}
 {%- elsif type_l contains "book" -%}{%- assign type_class = "pub-type-book" -%}
