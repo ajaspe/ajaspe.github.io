@@ -43,7 +43,7 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 {% else %}{% assign type_class = "pub-type-other" %}{% endif %}
 <div class="row pub-row gx-3 gy-0 py-2 rounded align-items-center">
     <div class="col-auto">
-        <a href="{{ puburl | relative_url }}" class="pub-thumb-box"><img src="{{ imgpath | relative_url }}" class="pub-thumb" loading="lazy" alt="{{ pub.title | escape }} thumbnail"></a>
+        <a href="{{ puburl | relative_url }}" class="pub-thumb-box"><img src="{{ imgpath | relative_url }}" class="pub-thumb{% if pub.degree %} pub-thumb-contain{% endif %}" loading="lazy" alt="{{ pub.title | escape }} thumbnail"></a>
     </div>
     <div class="col">
         <div class="pub-title"><a href="{{ puburl | relative_url }}">{{ pub.title }}</a>{% if pub.awards %} <span class="badge bg-danger">{{ pub.awards }}</span>{% endif %}</div>

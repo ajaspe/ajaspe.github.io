@@ -134,6 +134,8 @@ a:hover {
   transition: transform 300ms ease;
 }
 
+.pub-thumb-contain { object-fit: contain; background-color: #0d0d0d; }
+
 .pub-row:hover .pub-thumb {
   transform: scale(1.06);
 }
