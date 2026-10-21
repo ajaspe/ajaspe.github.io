@@ -1,14 +1,151 @@
-# Press and media mentions, shown on /press/. Newest first is not required: the page sorts by date.
-#   - date: YYYY-MM-DD (use day 01 when only the month is known)
-#     outlet: name of the magazine, newspaper or site
+# Press and media mentions, shown on /press/. Order does not matter: the page sorts by date, newest first.
+#   - date: YYYY-MM-DD      sorting date (use 01 for an unknown day or month)
+#     date_label: "2004"    optional text shown instead of the full date when only the year or month is known
+#     kind: newspaper | web | magazine | report | video | podcast | photo   (coloured pill)
+#     outlet: name of the newspaper, site, channel or event
 #     title: "title of the piece"
-#     url: link to the piece, or to a scan under /assets/press/
-#     lang: es            # optional, shown as a small label when it is not English
-#     note: "one line of context"   # optional
+#     url: link to the piece online, or to a scan under /assets/press/ when it is not online
+#     scan: /assets/press/<file>   optional scan or photo of the printed page (jpg or pdf)
+#     thumb: /assets/press/<file>-thumb.jpg   optional 570x380 thumbnail, usually a crop of the scan
+#     youtube: <video id>            embeds the video in place when the thumbnail is clicked
+#     youtube_list: [id, id, ...]    optional further videos played after the first one
+#     spotify: <episode id>          embeds a Spotify podcast player
+#     linkedin: <activity id>        embeds a public LinkedIn post (the number in urn:li:activity:<id>)
+#     lang: es | gl | it             shown as a small label when the piece is not in English
+#     note: "one or two lines of context"
+#     more: [{ name: "...", url: "..." }]   optional extra links
 items:
+  - date: 2025-02-10
+    kind: video
+    outlet: Research, Development and Innovation Authority (RDI), Saudi Arabia, on LinkedIn
+    title: "A 3D interactive tool for particle collision analysis, at the Economies of the Future event"
+    url: https://www.linkedin.com/feed/update/urn:li:activity:7294711322741473280/
+    linkedin: "7294711322741473280"
+    note: "Short video interview recorded by the RDI Authority at its Economies of the Future event, about the interactive 3D exploration of particle collisions built within the research partnership with CERN."
+
+  - date: 2021-04-15
+    kind: podcast
+    outlet: La Vieja Guardia, episode 2x08
+    title: "J.A.S.P.(e)"
+    url: https://laviejaguardia.vg/j-a-s-p-e/
+    spotify: 5cW62udeEoyoVA5EmNSaTp
+    lang: es
+    note: "A long conversation with the hosts of this veteran Spanish computing podcast: a childhood marked by a computer-scientist father, the demoscene years, RNASA and VideaLAB at the University of A Coruña, CRS4 in Sardinia and the move to KAUST."
+
+  - date: 2014-06-26
+    kind: video
+    outlet: Mondo Vetrino, CRS4, on YouTube
+    title: "Un computer pieno di pietre"
+    url: https://www.youtube.com/watch?v=jNvCq1nSyXw
+    youtube: jNvCq1nSyXw
+    lang: it
+    note: "Fabio Bettio and Alberto Jaspe, researchers at CRS4, on visual computing applied to cultural heritage: techniques that reproduce archaeological finds virtually down to the smallest detail. Three and a half minutes, in Italian."
+
+  - date: 2013-12-02
+    kind: newspaper
+    outlet: El Correo Gallego, Tendencias, page 43
+    title: "«Inversión pequeña y talento pueden crear todo un imperio TIC»"
+    url: https://www.elcorreogallego.es/galicia/2013/12/01/alberto-jaspe-inversion-pequena-talento-110607108.html
+    scan: /assets/press/2013-12-02-el-correo-gallego.pdf
+    thumb: /assets/press/2013-12-02-el-correo-gallego-thumb.jpg
+    lang: es
+    note: "Interview by Xabier Sanmartín after the CPEIG award: the Marie Curie fellowship at CRS4, the DIVA network on massive 3D data, and what the Galician ICT sector would need to keep its engineers. Online on 1 December, printed the day after."
+
+  - date: 2013-10-04
+    kind: photo
+    outlet: Noite da Enxeñaría en Informática de Galicia, Hotel-Monumento San Francisco, Santiago de Compostela
+    title: "Award speech at the CPEIG gala night"
+    url: /assets/press/2013-10-04-cpeig-award-night.jpg
+    scan: /assets/press/2013-10-04-cpeig-award-night.jpg
+    thumb: /assets/press/2013-10-04-cpeig-award-night-thumb.jpg
+    note: "The Final Degree Project award of the Colexio Profesional de Enxeñaría en Informática de Galicia for Point Cloud Manager, handed over at the fifth gala of the association, chaired by the president of the Xunta de Galicia."
+    more:
+      - { name: "Photos of the night on the CPEIG site (printout)", url: "/assets/press/2013-10-11-cpeig-web.jpg" }
+
+  - date: 2013-10-03
+    kind: newspaper
+    outlet: La Voz de Galicia, La Voz de A Coruña
+    title: "Los informáticos premian a un investigador coruñés"
+    url: https://www.lavozdegalicia.es/noticia/firmas/2013/10/03/informaticos-premian-investigador-corunes/0003_201310H3C12991.htm
+    scan: /assets/press/2013-10-03-la-voz-de-galicia.jpg
+    thumb: /assets/press/2013-10-03-la-voz-de-galicia-thumb.jpg
+    lang: es
+    note: "Pablo Portabales' column El pulso de la ciudad, the day before the gala: the award, the Marie Curie fellowship in Sardinia, and a father who worked with the first computer of the A Coruña city council."
+
+  - date: 2013-10-01
+    kind: newspaper
+    outlet: El Correo Gallego
+    title: "Alberto Jaspe Villanueva, galardoado polo CPEIG"
+    url: https://www.elcorreogallego.es/galicia/2013/10/01/alberto-jaspe-villanueva-galardoado-polo-110626581.html
+    lang: gl
+    note: "News piece on the Final Degree Project award for Point Cloud Manager."
+
+  - date: 2013-09-30
+    kind: web
+    outlet: Código Cero
+    title: "Alberto Jaspe, galardoado polo CPEIG"
+    url: https://codigocero.com/2013/09/30/alberto-jaspe-galardoado-polo/
+    lang: gl
+    note: "The Galician technology news site on the CPEIG award."
+
+  - date: 2013-09-30
+    kind: newspaper
+    outlet: La Voz de Galicia, Vida Digital
+    title: "O coruñés Alberto Jaspe gaña o premio proxecto fin de carreira do CPEIG"
+    url: https://www.lavozdegalicia.es/noticia/reto-digital/ocio/2013/09/30/span-langgl-corunes-alberto-jaspe-gana-premio-proxecto-fin-carreira-do-cpeigspan/00031380539360182909764.htm
+    scan: /assets/press/2013-09-30-la-voz-de-galicia-web.jpg
+    thumb: /assets/press/2013-09-30-la-voz-de-galicia-web-thumb.jpg
+    lang: gl
+    note: "The award for Point Cloud Manager, a multiresolution system for large 3D point cloud datasets, announced ahead of the Noite da Enxeñaría en Informática de Galicia. The scan is a printout of the online article."
+
+  - date: 2012-12-01
+    date_label: "2012"
+    kind: report
+    outlet: Colexio Oficial de Graduados Sociais da Coruña e Ourense, Memoria 2012
+    title: "Las redes profesionales en el ámbito profesional"
+    url: /assets/press/2012-graduados-sociales-memoria.pdf
+    thumb: /assets/press/2012-graduados-sociales-memoria-thumb.jpg
+    lang: es
+    note: "A talk on social networks for professionals, given as head of R&D at CEGA Audiovisuales and summarised on page 14 of the annual report of the association of labour-relations graduates."
+
   - date: 2009-09-01
-    outlet: CLÍO Historia (magazine, issue 95)
+    date_label: "2009"
+    kind: magazine
+    outlet: CLÍO Historia, issue 95
     title: "La realidad virtual inmersiva: ¿viajar en el tiempo?"
     url: /assets/press/clio-museo-vacio.pdf
+    thumb: /assets/press/clio-museo-vacio-thumb.jpg
     lang: es
-    note: "A page on VideaLAB's Empty Museum inside the feature 'Arqueología virtual: España marca tendencias'. Scan of the printed page; the issue month is approximate."
+    note: "A page on VideaLAB's Empty Museum inside the feature Arqueología virtual: España marca tendencias. Scan of the cover and the printed page; the issue month is approximate."
+
+  - date: 2004-02-22
+    kind: newspaper
+    outlet: La Opinión A Coruña, Investigación en la Universidad, page 10
+    title: "El rincón virtual de Caminos"
+    url: /assets/press/2004-02-22-la-opinion.jpg
+    scan: /assets/press/2004-02-22-la-opinion.jpg
+    thumb: /assets/press/2004-02-22-la-opinion-thumb.jpg
+    lang: es
+    note: "A full page by L. Rouco on VideaLAB, the virtual reality laboratory in the basement of the School of Civil Engineering of the University of A Coruña, with a team photo by Roberto Aguete."
+
+  - date: 2004-01-02
+    date_label: "around 2004"
+    kind: newspaper
+    outlet: La Voz de Galicia
+    title: "Proyectos de apoyo a la restauración de las catedrales de Santiago y Tui"
+    url: /assets/press/2004-la-voz-de-galicia-catedrales.jpg
+    scan: /assets/press/2004-la-voz-de-galicia-catedrales.jpg
+    thumb: /assets/press/2004-la-voz-de-galicia-catedrales-thumb.jpg
+    lang: es
+    note: "Sidebar of a feature on the Empty Museum at Galicia Dixital: VideaLAB's work for the cathedrals of Santiago and Tui, with a photo by César Quian of the touch-screen tour of the cathedral. Undated clipping; the year is a guess."
+
+  - date: 2004-01-01
+    date_label: "2004"
+    kind: video
+    outlet: GPUL, I Jornadas de Diseño Gráfico y Software Libre, Facultade de Informática, University of A Coruña
+    title: "Modelado 3D con Blender"
+    url: https://www.youtube.com/watch?v=c9leR_6NLzE
+    youtube: c9leR_6NLzE
+    youtube_list: [46Hz10d7opE, tVdjr0oKwiw, upEHWogAIJI, pCUX9JXNyWw]
+    lang: es
+    note: "A Blender modelling course given with Rubén López, in five parts of about 45 minutes, taped in 2004 and published on YouTube in 2020 by Francisco Javier Tsao Santín. The player goes through the five parts in order."

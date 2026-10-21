@@ -11,9 +11,11 @@ program: "Master on High Performance Computing"
 institution: "University of A Coruña, Spain"
 supervisors: "Emilio J. Padrón and Javier Taibo, UDC"
 defense: "2012"
+links:
+ - { name: "UDC library record (Spanish version)", url: "https://crunia.udc.gal/nde/fulldisplay?docid=alma991002602779707714&context=L&vid=34CISUG_UDC:CRUNIA_NDE&lang=gl" }
 distinction: "AMD Best Master Thesis Award 2012; Best Graduate Thesis Award 2013 of the Professional Association of Computer Science Engineering of Galicia (CPEIG)"
 awards: "AMD Best Master Thesis Award and Best Graduate Thesis Award"
-abstract: ""
+abstract: "La tecnología LIDAR (Laser Imaging Detection and Ranging) consiste en el escaneado con láseres de alta precisión para obtener un modelo digital 3D georreferenciado del mundo real. Su uso se está estandarizando rápidamente en múltiples disciplinas de la ingeniería, ya bien sea en su versión aérea (escaneando la superficie terrestre desde un avión), terrestre (estacionado) o móvil (ubicado en un vehículo). Estos dispositivos generan un inmenso conjunto de samples con coordenadas e información asociada (como el color o el índice de reflectividad) que denominamos nubes de puntos o point clouds. La magnitud habitual de estos datasets es del orden de cientos o miles de millones de puntos, que se traducen en varios cientos de gigabytes de datos. Conseguir una visualización 3D de estas nubes de puntos en PCs de escritorio requiere el uso de técnicas especiales denominadas multirresolución, basadas en estructuras de datos espaciales y jerarquías caché por software, así como complejos algoritmos de render programados a bajo nivel sobre las unidades de procesamiento gráfico o GPUs. El objetivo será visualizar de forma interactiva cualquier dataset LiDAR, independientemente de su tamaño y de las capacidades del ordenador. Este proyecto pretende abordar este problema, realizando un estudio del estado de la cuestión y una implementación eficiente."
 topics:
  - point-clouds
  - massive-models

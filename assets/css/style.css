@@ -656,3 +656,22 @@ footer .gc-counter.gc-ready::after {
 .thesis-details dt { color: #ffc107; font-weight: 500; }
 .thesis-details dd { margin: 0; color: #ddd; }
 @media (max-width: 575.98px) { .thesis-details { grid-template-columns: 1fr; row-gap: 0.1rem; } .thesis-details dd { margin-bottom: 0.5rem; } }
+
+/*
+ * Press page: rows with scans, and players that open in place
+ */
+.press-icon-box { display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #777; text-decoration: none; }
+.press-icon-box.press-play { font-size: 5.5rem; color: #3a3a3a; }
+.pub-row:hover .press-icon-box { color: #aaa; }
+.pub-row:hover .press-icon-box.press-play { color: #4a4a4a; }
+.press-play { position: relative; }
+.press-play-icon { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(0, 0, 0, 0.65); border: 2px solid rgba(255, 255, 255, 0.85); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1rem; padding-left: 3px; transition: background-color 200ms, border-color 200ms; }
+.press-play:hover .press-play-icon { background: rgb(255, 166, 93); border-color: rgb(255, 166, 93); color: #000; }
+.press-player { margin-top: 0.75rem; }
+.press-player iframe { border: 0; border-radius: 0.3rem; }
+.press-kind-newspaper { border-color: #6cb4ff; color: #6cb4ff; }
+.press-kind-web { border-color: #8fd18f; color: #8fd18f; }
+.press-kind-magazine { border-color: rgb(255, 166, 93); color: rgb(255, 166, 93); }
+.press-kind-video { border-color: #ff7b7b; color: #ff7b7b; }
+.press-kind-podcast { border-color: #c48be0; color: #c48be0; }
+.press-kind-report, .press-kind-photo { border-color: #888; color: #bbb; }

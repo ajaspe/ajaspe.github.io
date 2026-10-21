@@ -8,8 +8,8 @@ One menu entry, **Desk** (`/desk/`), with four kinds of content:
 
 | Kind | Where | URL | Layout |
 |---|---|---|---|
-| Living pages (calendar, survival guide, resources, press) | `_notes/<slug>.md` with `kind: living` | `/<slug>/` | `note` |
-| Standalone pages (for example a page about a person) | `_notes/<slug>.md` with `kind: page` | `/<slug>/` | `note` |
+| Living pages (calendar, survival guide, resources) | `_notes/<slug>.md` with `kind: living` | `/<slug>/` | `note` |
+| Standalone pages (press, time capsule, a page about a person) | `_notes/<slug>.md` with `kind: page` | `/<slug>/` | `note` |
 | Blog posts (dated opinion pieces) | `_posts/YYYY-MM-DD-slug.md` | `/blog/slug/` | `post` |
 | Experiments | `_demos/` (unchanged) | `/demos/<name>.html` | default |
 
@@ -52,7 +52,13 @@ Body in Markdown. Do not repeat the title: the layout renders it.
 Blog post: copy `_drafts/how-to-write-a-post.md` to `_posts/YYYY-MM-DD-slug.md`. Preview drafts with
 `jekyll serve --drafts`. The draft explains the LinkedIn workflow and the `linkedin:` field.
 
-Press page: fill `_data/press.yml` and remove `published: false` from `_notes/press.md`.
+Press page: one entry per item in `_data/press.yml` (the comment at the top of the file lists the keys). Scans and
+thumbnails live in `assets/press/`: the full scan as `<date>-<outlet>.jpg` or `.pdf`, the thumbnail as
+`<same name>-thumb.jpg`, 570x380. Videos (`youtube:`), podcasts (`spotify:`) and LinkedIn posts (`linkedin:`) show a
+thumbnail with a play button and open their player under the row when clicked, so nothing is loaded from
+YouTube, Spotify or LinkedIn until then. YouTube thumbnails are local copies, `assets/press/yt-<id>.jpg`
+(download `https://i.ytimg.com/vi/<id>/hqdefault.jpg`). Newspaper sites cannot be embedded: the row links to
+the article and to the scan.
 
 ## Things to decide
 
@@ -64,6 +70,5 @@ Press page: fill `_data/press.yml` and remove `published: false` from `_notes/pr
 
 ## Not done
 
-- No press entries: I found no press coverage online to seed the list, so the page stays hidden.
 - The page about your father: the `kind: page` mechanism is ready; the content is yours to write.
 - Comments on posts: by design none; the "Discuss on LinkedIn" button replaces them.
