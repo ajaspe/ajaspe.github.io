@@ -55,6 +55,7 @@ My research focuses on the <b>real-time exploration of massive models and comple
 
 * __Journals__: [CGF](https://onlinelibrary.wiley.com/journal/14678659), [IEEE TVCG](https://www.computer.org/csdl/journal/tg), [ACM JOCCH](https://dl.acm.org/journal/jocch), [C&G](https://www.sciencedirect.com/journal/computers-and-graphics), [JGT](https://www.tandfonline.com/toc/ujgt21/current), [MDPI Heritage](https://www.mdpi.com/journal/heritage), [MDPI Sensors](https://www.mdpi.com/journal/sensors), [MDPI Electronics](https://www.mdpi.com/journal/electronics), [Graphical Models](https://www.sciencedirect.com/journal/graphical-models), Etc.
 * __Conferences__: [IEEE VIS](https://ieeevis.org), [EuroVis](http://www.eurovis.org/), [Eurographics](http://www.euro.graphics/), [ACM CHI](https://dl.acm.org/conference/chi), [Pacific Graphics](https://pg2023.org/), Etc.
+* __Research projects__: regular expert evaluator of Horizon Europe proposals for the [European Research Executive Agency (REA)](https://rea.ec.europa.eu/) of the European Commission.
 
 </div>
 </div>
