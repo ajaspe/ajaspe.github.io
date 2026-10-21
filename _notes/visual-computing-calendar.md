@@ -33,7 +33,7 @@ updated: 2026-10-20
 </div></div>
 {% endfor %}
 </div>
-<p class="deadline-legend">Typical slot of each paper deadline: upper row, first half of the month; lower row, second half. Colours follow the field and the main venues are in bold; the tags above filter the grid and the table. Click a name to go to the conference.</p>
+<p class="deadline-legend">Typical slot of each paper deadline: upper row, first half of the month; lower row, second half. The tinted slot is the current half-month. Colours follow the field and the main venues are in bold; the tags above filter the grid and the table. Click a name to go to the conference.</p>
 
 <div class="table-responsive">
 <table class="table table-dark table-hover deadline-table align-middle">
@@ -63,6 +63,16 @@ updated: 2026-10-20
     else if (days === 0) { cell.textContent = 'today'; }
     else { r.classList.remove('deadline-past'); cell.textContent = days + ' days'; }
   });
+
+  // mark the current half-month in the grid
+  var months = document.querySelectorAll('.deadline-month');
+  var box = months[now.getMonth()];
+  if (box) {
+    box.classList.add('deadline-month-now');
+    var slots = box.querySelectorAll('.deadline-slot');
+    var slot = slots[now.getDate() <= 15 ? 0 : 1];
+    if (slot) { slot.classList.add('deadline-slot-now'); slot.title = 'Current half of the month'; }
+  }
 
   // field filter: legend buttons and the tags in the table
   var buttons = document.querySelectorAll('.fam-filter');
