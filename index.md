@@ -28,7 +28,7 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 			<a href="/publications/" class="btn btn-outline-warning"><i class="fas fa-book me-1"></i> Publications</a>
 			<a href="/research.html" class="btn btn-outline-warning"><i class="fas fa-flask me-1"></i> Research</a>
 			<a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com' class="btn btn-outline-light"><i class="fas fa-envelope me-1"></i> Email</a>
-			<a href="https://cemse.kaust.edu.sa/profiles/alberto-jaspe-villanueva" class="btn btn-outline-light"><i class="fas fa-building me-1"></i> KAUST profile</a>
+			<a href="https://cemse.kaust.edu.sa/profiles/alberto-jaspe-villanueva" class="btn btn-outline-light" title="My profile at KAUST"><img src="{{ "/assets/img/kaust.svg" | relative_url }}" class="btn-logo me-1" alt=""> @KAUST</a>
 		</p>
 	</div>
 </div>

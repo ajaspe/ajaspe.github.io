@@ -399,6 +399,8 @@ h1.pub-page-title {
   margin: 0 0.25rem 0.4rem 0;
 }
 
+.btn-logo { height: 1.15em; width: auto; vertical-align: -0.2em; }
+
 .hero-social {
   margin-bottom: 0;
 }
