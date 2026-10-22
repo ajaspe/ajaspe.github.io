@@ -48,6 +48,14 @@
     <meta property="og:title" content="{{ this_title | escape }}">
     <meta property="og:description" content="{{ description | escape }}">
     <meta property="og:image" content="{{ share_img_abs }}">
+{%- comment -%} Declared sizes help WhatsApp show the large preview; only for images whose size is known. {%- endcomment -%}
+{%- if page.code %}
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="600">
+{%- elsif share_img == "/assets/img/thumb_site.jpg" or share_img == "/assets/img/thumb_calendar.jpg" or share_img == "/assets/img/thumb_guide.jpg" %}
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+{%- endif %}
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@albertojaspe">
