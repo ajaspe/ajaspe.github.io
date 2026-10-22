@@ -388,6 +388,10 @@ h1.pub-page-title {
 }
 
 .hero-bio {
+  margin-bottom: 0.6rem;
+}
+
+.hero-bio:last-of-type {
   margin-bottom: 1rem;
 }
 
