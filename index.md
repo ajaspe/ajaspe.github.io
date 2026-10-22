@@ -17,12 +17,12 @@ thumb_img: "assets/img/thumb_site.jpg"
 		<h1 class="brand_title">Alberto Jaspe-Villanueva</h1>
 		<p class="hero-tagline">Research Scientist in Computer Graphics and Visualization</p>
 		<p class="hero-bio">
-			Hola! I'm a <b>computer science researcher and engineer</b> at the
+			Hola! I'm a <b>computer science researcher and engineer</b>, specialized in <i>visual computing</i>, currently working at the
 			<a href="https://vccvisualization.org">High-Performance Visualization Group</a> of the
 			<a href="https://cemse.kaust.edu.sa">CEMSE Division</a> at <a href="https://kaust.edu.sa">KAUST</a> (Saudi Arabia).
-			Before that I was a research scientist at <a href="https://www.crs4.it">CRS4</a> (Italy), where I developed my
-			<a href="https://diglib.eg.org/handle/10.2312/2632715">PhD</a>, defended at the
+			Before that I worked as a scientist at <a href="https://www.crs4.it">CRS4</a> (Italy) and at the
 			<a href="https://udc.es/en">University of A Coruña</a> (Spain).
+			Welcome to my website! Feel free to <a href='&#109;&#97;il&#116;o&#58;&#37;6&#49;j%&#54;&#49;sp&#101;&#64;g&#37;&#54;D&#97;il&#46;com'>contact me</a> if you're interested in any of these contents :)
 		</p>
 		<p class="hero-actions">
 			<a href="/publications/" class="btn btn-outline-warning"><i class="fas fa-book me-1"></i> Publications</a>
