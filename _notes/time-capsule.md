@@ -1,7 +1,7 @@
 ---
 title: Time capsule
-description: "A time capsule from the early 2000s: a Linux manual, an OpenGL tutorial, a prize for a business idea, and other things found in old folders."
-summary: "Things from the early 2000s found in old folders: manuals I wrote as a student, a prize for a business idea, and other finds."
+description: "A time capsule from the early 2000s: a Linux manual, an OpenGL tutorial, a Blender course on video, and other things found in old folders."
+summary: "Things from the early 2000s found in old folders: manuals I wrote as a student, a Blender course on video, and other finds."
 layout: note
 kind: page
 icon: fa-hourglass-half
@@ -27,15 +27,6 @@ Things found in old folders. They were written when I was a student at the Unive
     <div class="pub-title"><a href="/assets/time-capsule/2003-opengl-tutorial.pdf">Una aproximación a OpenGL</a></div>
     <div class="pub-authors">Alberto Jaspe-Villanueva and Julián Dorado</div>
     <div class="pub-venue small"><span class="pub-type pub-type-other">Tutorial</span> <em>2003, 57 pages</em> <span class="text-white-50">Course notes on OpenGL 1.x for the computer graphics course: the state machine, the pipeline, transformations, lighting, textures and display lists. Still cited now and then, which says something about how long fixed-function OpenGL lasted.</span></div>
-  </div>
-</div>
-
-<div class="row pub-row gx-3 gy-0 py-2 rounded align-items-center">
-  <div class="col-auto"><a href="/assets/time-capsule/2003-mediabox-award.jpg" class="pub-thumb-box"><img src="/assets/time-capsule/2003-mediabox-award-thumb.jpg" class="pub-thumb" loading="lazy" alt="Award letter, first prize of the business ideas contest"></a></div>
-  <div class="col">
-    <div class="pub-title"><a href="/assets/time-capsule/2003-mediabox-award.jpg">MediaBOX: integración de servicios multimedia para el hogar</a> <span class="badge bg-danger">First prize</span></div>
-    <div class="pub-authors">Alberto Jaspe-Villanueva, Javier Taibo, Antonio Seoane, and Rubén López</div>
-    <div class="pub-venue small"><span class="pub-type pub-type-other">Business idea</span> <em>July 2003</em> <span class="text-white-50">First prize in the students category of the first Business Ideas Contest (1NEBT) of the University of A Coruña, for a home multimedia services box. Twenty years later every living room has one, so the idea was fine; the timing was not.</span></div>
   </div>
 </div>
 

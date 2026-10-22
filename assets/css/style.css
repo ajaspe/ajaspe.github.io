@@ -467,7 +467,22 @@ h1.pub-page-title {
 }
 
 @media (max-width: 767.98px) {
-  /* phones: one-line header, the menu is an offcanvas panel from the right with the icons at its foot */
+  /* below the desktop breakpoint the content uses the full width (Bootstrap would hold a 540 px column on tablets) */
+  .container { max-width: none; }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* tablets in portrait and phones in landscape: the one-row header, tighter so that it fits from 576 px */
+  .navbar-mybrand { font-size: 1.4em; white-space: nowrap; flex-shrink: 0; }
+  .nav-social { flex-shrink: 0; }
+  .nav-social .icon-social { width: 26px; }
+  .nav-masthead .nav-link { padding: 0.8rem 0.45rem; }
+  .navbar > .container-fluid { flex-wrap: wrap; }   /* the expanded navbar forbids wrapping; here the links may drop to a second line */
+  #siteMenu { margin-left: auto; flex-shrink: 0; }
+}
+
+@media (max-width: 575.98px) {
+  /* phones: one-line header, the menu is an offcanvas panel from the right with the icons under the name */
   .header { padding-bottom: 0.75rem; }
   .site-menu { background-color: #161616; width: 280px; height: auto; bottom: auto; max-height: calc(100vh - 1rem); border: 1px solid #333; border-top: 0; border-right: 0; border-radius: 0 0 0 14px; box-shadow: -6px 6px 18px rgba(0, 0, 0, 0.55); }
   .site-menu .offcanvas-header { padding: 0.75rem 1.25rem 0.25rem; }
@@ -483,12 +498,17 @@ h1.pub-page-title {
   .pub_row.my-5 { margin-top: 1rem !important; }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .nav-social {
     width: auto;
     flex-grow: 1;
+    min-width: 0;
     margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
   }
+  .nav-social .icon-social { margin: 0; }
   #siteMenu {
     flex-grow: 0;
   }

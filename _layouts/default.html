@@ -178,12 +178,12 @@
     <div class="main-container d-flex w-100 h-100 mx-auto flex-column">
 
         <header class="header">
-            {% comment %} Wide screens: name, profile icons and the menu in one row. Phones: name and a button; the menu is a
-                 Bootstrap offcanvas panel that slides in from the right, with the profile icons at its foot. {% endcomment %}
-            <nav class="navbar navbar-expand-md navbar-dark">
+            {% comment %} From 576 px up (tablets in portrait included): name, profile icons and the menu in one row. Phones: name
+                 and a button; the menu is a Bootstrap offcanvas panel from the right, with the profile icons under the name. {% endcomment %}
+            <nav class="navbar navbar-expand-sm navbar-dark">
                 <div class="container-fluid">
                     <a class="navbar-mybrand" href="/">{% unless page.menu_title == "Home" %}Alberto Jaspe{% endunless %}</a>
-                    <div class="nav-social d-none d-md-block">
+                    <div class="nav-social d-none d-sm-flex">
                         {% include social-icons.html %}
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#siteMenu"
@@ -196,7 +196,7 @@
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <div class="nav-social nav-social-menu d-md-none">
+                            <div class="nav-social nav-social-menu d-sm-none">
                                 {% include social-icons.html %}
                             </div>
                             <div class="navbar-nav nav-masthead">

@@ -8,10 +8,12 @@ thumb_img: "assets/img/thumb_home_ajaspe.jpg"
 ---
 
 <div class="row align-items-center hero g-4">
-	<div class="col-md-3 col-lg-2 text-center">
-		<img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="hero-photo rounded-circle" alt="Alberto Jaspe-Villanueva">
+	<div class="col-sm-4 col-md-3 col-lg-2 text-center">
+		{% comment %} Phones: the wide photo across the screen, as before the 2026 home redesign. From 576 px up: the round one beside the text. {% endcomment %}
+		<img src="{{ "/assets/img/ajaspe-rect.jpg" | relative_url }}" class="d-sm-none img-fluid w-100 rounded" alt="Alberto Jaspe-Villanueva">
+		<img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="d-none d-sm-block mx-auto hero-photo rounded-circle" alt="Alberto Jaspe-Villanueva">
 	</div>
-	<div class="col-md-9 col-lg-10">
+	<div class="col-sm-8 col-md-9 col-lg-10">
 		<h1 class="brand_title">Alberto Jaspe-Villanueva</h1>
 		<p class="hero-tagline">Research Scientist in Computer Graphics and Visualization</p>
 		<p class="hero-bio">
