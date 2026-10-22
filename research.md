@@ -57,7 +57,7 @@ My main research question is <b>how to create and explore very large and complex
 
 ## Research Activities
 
-<div class="row row-cols-1 row-cols-md-2 g-3 activity-cards">
+<div class="row row-cols-1 row-cols-sm-2 g-3 activity-cards">
 <div class="col">
 <div class="card h-100">
 <div class="card-header"><i class="fas fa-users me-2"></i>Committees &amp; Editorial</div>

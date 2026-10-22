@@ -26,7 +26,7 @@ updated: 2026-10-21
 {% assign by_acronym = site.data.deadlines | sort_natural: "acronym" %}
 <div class="row g-2 mb-2">
 {% for m in months %}{% assign mi = forloop.index %}
-<div class="col-6 col-md-3"><div class="deadline-month">
+<div class="col-6 col-sm-4 col-md-3"><div class="deadline-month">
 <div class="deadline-month-name">{{ m }}</div>
 {% for h in (1..2) %}
 <div class="deadline-slot">{% for c in by_acronym %}{% assign cm = c.next_date | date: "%-m" | plus: 0 %}{% assign cd = c.next_date | date: "%-d" | plus: 0 %}{% if cd <= 15 %}{% assign ch = 1 %}{% else %}{% assign ch = 2 %}{% endif %}{% if cm == mi and ch == h %}{% assign fam = families | where: "id", c.family | first %}<a href="{{ c.url }}" class="deadline-chip{% if c.tier == 1 %} deadline-chip-main{% endif %}" style="--fam: {{ fam.color }}" data-family="{{ c.family }}" title="{{ c.name }}: {{ c.next_date | date: "%b %-d, %Y" }}">{{ c.acronym }}</a>{% endif %}{% endfor %}</div>

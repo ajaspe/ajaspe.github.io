@@ -315,7 +315,14 @@ h3 {
 .rf-op { flex: none; display: flex; align-items: center; justify-content: center; width: 2rem; color: #ffc107; font-size: 1.4rem; }
 .research-formula { margin-bottom: 2.25rem; }
 .research-formula li.rf-more { color: #888; padding-top: 0; letter-spacing: 0.15em; justify-content: center; }
-@media (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* tablets in portrait: three boxes side by side, a little denser */
+  .research-formula { gap: 0.4rem; }
+  .research-formula ul { padding: 0.6rem 0.7rem 0.7rem; }
+  .research-formula li { font-size: 0.92rem; gap: 0.5rem; }
+  .rf-op { width: 1.4rem; font-size: 1.2rem; }
+}
+@media (max-width: 575.98px) {
   .research-formula { flex-direction: column; gap: 0.3rem; }
   .rf-op { width: auto; height: 1.9rem; }
   .rf-op .fa-arrow-right { transform: rotate(90deg); }
@@ -672,7 +679,7 @@ footer .gc-counter.gc-ready::after {
 .deadline-hidden { display: none !important; }
 
 /* Phones: each deadline row becomes a small card (desktop table untouched) */
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   .deadline-table thead { display: none; }
   .deadline-table, .deadline-table > tbody { display: block; width: 100%; }
   .deadline-table > tbody > tr.deadline-row {

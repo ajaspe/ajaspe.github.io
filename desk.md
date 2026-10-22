@@ -17,7 +17,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 
 ## Guides and resources
 {% assign living = site.notes | where: "kind", "living" | sort: "title" %}
-<div class="row row-cols-1 row-cols-md-2 g-3 note-cards">
+<div class="row row-cols-1 row-cols-sm-2 g-3 note-cards">
 {% for n in living %}
 <div class="col"><a class="card h-100 note-card" href="{{ n.url }}"><div class="card-body"><div class="note-card-icon"><i class="fas {{ n.icon | default: 'fa-file-alt' }}"></i></div><div><div class="note-card-title">{{ n.title }}</div>{% if n.summary %}<div class="note-card-summary">{{ n.summary }}</div>{% endif %}{% if n.updated %}<div class="note-card-meta">Updated {{ n.updated | date: "%b %Y" }}</div>{% endif %}</div></div></a></div>
 {% endfor %}
@@ -26,7 +26,7 @@ thumb_img: "assets/img/ajaspe.jpg"
 {% assign pages = site.notes | where: "kind", "page" | sort: "title" %}
 {% if pages.size > 0 %}
 ## Pages
-<div class="row row-cols-1 row-cols-md-2 g-3 note-cards">
+<div class="row row-cols-1 row-cols-sm-2 g-3 note-cards">
 {% for n in pages %}
 <div class="col"><a class="card h-100 note-card" href="{{ n.url }}"><div class="card-body"><div class="note-card-icon"><i class="fas {{ n.icon | default: 'fa-bookmark' }}"></i></div><div><div class="note-card-title">{{ n.title }}</div>{% if n.summary %}<div class="note-card-summary">{{ n.summary }}</div>{% endif %}</div></div></a></div>
 {% endfor %}
