@@ -17,7 +17,7 @@ thumb_img: "assets/img/thumb_site.jpg"
 		<h1 class="brand_title">Alberto Jaspe-Villanueva</h1>
 		<p class="hero-tagline">Research Scientist in Visual Computing</p>
 		<p class="hero-bio">
-			Hola! I'm a <b>computer science researcher and engineer</b>, specialized in computer graphics, visualization, and other ways of lighting up pixels.
+			Hola! I'm a computer science researcher and engineer, specialized in <b>computer graphics</b>, scientific visualization, and other ways of lighting up pixels so that 3D digital worlds run fast and make sense.
 		</p>
 		<p class="hero-bio">
 			Currently I work at the <a href="https://vccvisualization.org">High-Performance Visualization Group</a> of the
