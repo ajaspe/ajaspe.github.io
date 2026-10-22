@@ -3,7 +3,7 @@ title: Blog
 description: "Occasional opinion pieces by Alberto Jaspe-Villanueva on computer graphics, visualization, research life and technology."
 permalink: /blog/
 layout: default
-thumb_img: "assets/img/ajaspe.jpg"
+thumb_img: "assets/img/thumb_site.jpg"
 ---
 
 # Blog

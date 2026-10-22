@@ -7,7 +7,7 @@ icon: fa-book
 summary: "Free textbooks and courses, reference books, paper lists, blogs, tools and datasets for computer graphics and visualization, with a line on why each one is there."
 redirect_from:
   - /notes/visual-computing-resources.html
-thumb_img: "assets/img/ajaspe.jpg"
+thumb_img: "assets/img/thumb_site.jpg"
 updated: 2026-10-20
 ---
 

@@ -8,7 +8,7 @@ redirect_from:
   - /notes.html
   - /notebook/
 layout: default
-thumb_img: "assets/img/ajaspe.jpg"
+thumb_img: "assets/img/thumb_site.jpg"
 ---
 
 # The Desk

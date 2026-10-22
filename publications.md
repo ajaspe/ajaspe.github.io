@@ -5,7 +5,7 @@ menu_title: Publications
 order: 2
 layout: default
 permalink: /publications/
-thumb_img: "assets/img/thumb_home_ajaspe.jpg"
+thumb_img: "assets/img/thumb_site.jpg"
 ---
 
 # Publications

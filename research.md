@@ -4,7 +4,7 @@ description: "Alberto Jaspe: research statement and activities"
 menu_title: Research
 order: 1
 layout: default
-thumb_img: "assets/img/thumb_home_ajaspe.jpg"
+thumb_img: "assets/img/thumb_site.jpg"
 ---
 
 <script>if (location.hash === '#publications') { location.replace('/publications/'); }</script>

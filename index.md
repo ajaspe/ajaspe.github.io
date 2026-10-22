@@ -4,7 +4,7 @@ description: "Alberto Jaspe-Villanueva, research scientist in computer graphics 
 menu_title: Home
 order: 0
 layout: default
-thumb_img: "assets/img/thumb_home_ajaspe.jpg"
+thumb_img: "assets/img/thumb_site.jpg"
 ---
 
 <div class="row align-items-center hero g-4">

@@ -3,7 +3,7 @@ title: News
 description: "News archive of Alberto Jaspe-Villanueva: papers, awards, committees, talks and travel, grouped by year"
 layout: default
 permalink: /news/
-thumb_img: "assets/img/thumb_home_ajaspe.jpg"
+thumb_img: "assets/img/thumb_site.jpg"
 ---
 
 # News

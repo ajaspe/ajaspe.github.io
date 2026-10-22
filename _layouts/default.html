@@ -17,14 +17,13 @@
   {%- assign description = "Alberto Jaspe-Villanueva, research scientist in computer graphics and scientific visualization at KAUST." -%}
 {%- endif -%}
 {%- assign canonical = page.url | absolute_url -%}
-{%- assign share_img = "/assets/img/thumb_home_ajaspe.jpg" -%}
+{%- comment -%} Link-preview image: the site card by default, a page's own thumb_img or cover when set, the 3:2 thumbnail for publications. {%- endcomment -%}
+{%- assign share_img = "/assets/img/thumb_site.jpg" -%}
 {%- if page.thumb_img -%}{%- assign share_img = page.thumb_img | prepend: "/" -%}{%- endif -%}
 {%- if page.cover -%}{%- assign share_img = page.cover -%}{%- endif -%}
 {%- if page.code -%}
   {%- assign thumb_path = "/publications/" | append: page.code | append: "-thumb.jpg" -%}
-  {%- assign teaser_path = "/publications/" | append: page.code | append: "-teaser.jpg" -%}
-  {%- assign teaser_file = site.static_files | where: "path", teaser_path | first -%}
-  {%- if teaser_file and page.no_teaser != true -%}{%- assign share_img = teaser_path -%}{%- else -%}{%- assign share_img = thumb_path -%}{%- endif -%}
+  {%- assign share_img = thumb_path -%}
   {%- assign pdf_path = "/publications/" | append: page.code | append: ".pdf" -%}
   {%- assign author_list = page.authors | replace: ", and ", ", " | replace: " and ", ", " | split: ", " -%}
 {%- endif -%}
