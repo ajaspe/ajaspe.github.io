@@ -255,6 +255,46 @@
   published_in: IEEE proceedings, with IEEE VIS
   note: "Estimated from LDAV 2025 (abstract Jun 16, paper Jun 20, later extended to Jun 27). No 2026 edition could be found; link goes to the 2025 edition."
 
+- id: eurova
+  acronym: EuroVA
+  name: EuroVis Workshop on Visual Analytics
+  family: visualization
+  tier: 2
+  url: https://www.eurova.org/
+  next_date: "2027-02-26"
+  next_edition: EuroVA 2027
+  next_url: https://www.eurova.org/
+  status: estimated
+  published_in: EG proceedings
+  note: "One-day workshop held with EuroVis, with its own deadline and about a hundred attendees. Estimated from EuroVA 2026 (Feb 27, later extended to Mar 5); the 2027 edition should be in Stuttgart with EuroVis."
+
+# ---------------------------------------------------------------- human-computer interaction
+- id: chi
+  acronym: CHI
+  name: ACM CHI Conference on Human Factors in Computing Systems
+  family: hci
+  tier: 1
+  url: https://chi.acm.org/
+  next_date: "2027-09-09"
+  next_edition: CHI 2028
+  next_url: https://chi2028.acm.org/
+  status: estimated
+  published_in: ACM proceedings
+  note: "CHI 2027 (Pittsburgh, May 10-14) closed on Sep 10, 2026, with no abstract deadline. Estimated for CHI 2028. More visualization and VR papers every year."
+
+- id: uist
+  acronym: UIST
+  name: ACM Symposium on User Interface Software and Technology
+  family: hci
+  tier: 2
+  url: https://uist.acm.org/
+  next_date: "2027-03-30"
+  next_edition: UIST 2027
+  next_url: https://uist.acm.org/2027/
+  status: estimated
+  published_in: ACM proceedings
+  note: "Estimated from UIST 2026 (abstract Mar 24, paper Mar 31). The 2027 site is up; dates to be announced."
+
 # ---------------------------------------------------------------- computer vision
 - id: cvpr
   acronym: CVPR

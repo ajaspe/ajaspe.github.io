@@ -15,6 +15,10 @@
   short: VR
   name: Virtual and augmented reality
   color: "#c48be0"
+- id: hci
+  short: HCI
+  name: Human-computer interaction
+  color: "#ff8fb1"
 - id: applications
   short: App
   name: Application-oriented

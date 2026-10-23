@@ -8,7 +8,7 @@ summary: "Paper deadlines of the main graphics, visualization, vision and VR con
 redirect_from:
   - /notes/deadlines-calendar.html
 thumb_img: "assets/img/thumb_calendar.jpg"
-updated: 2026-10-21
+updated: 2026-10-23
 ---
 
 <p class="small text-white-50">Not an exhaustive list of Visual Computing venues, just the main ones and the ones I follow. The dates come from each conference's call for papers when it is out, and are estimated from the previous edition otherwise: always confirm them on the conference website, and tell me if you find mistakes.</p>

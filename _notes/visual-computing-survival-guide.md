@@ -8,7 +8,7 @@ summary: "A quick-start for new PhD students in graphics and visualization: venu
 redirect_from:
   - /notes/visual-computing-research-survival-guide.html
 thumb_img: "assets/img/thumb_guide.jpg"
-updated: 2026-10-20
+updated: 2026-10-23
 ---
 
 This small guide aims to be a quick-start introduction to common terms and procedures for a computer science researcher. Some aspects are generic, and others are more oriented to the field of Visual Computing, specifically Computer Graphics and Visualization.
@@ -41,6 +41,7 @@ The [calendar of deadlines](/visual-computing-calendar/) has the typical submiss
  * [Ke-Sen Huang's paper lists](https://kesen.realtimerendering.com): the papers of every graphics conference, updated the day the program is out. The daily driver of the field.
  * [Google Scholar](https://scholar.google.com): search, plus alerts for keywords and for new citations of specific papers.
  * [Semantic Scholar](https://www.semanticscholar.org), [Connected Papers](https://www.connectedpapers.com) and [dblp](https://dblp.org): citation graphs, and the authoritative bibliography of computer science.
+ * [Asta](https://asta.allen.ai/) and [Research Rabbit](https://www.researchrabbit.ai/): AI-assisted literature search. Asta, from the Allen Institute, answers questions with cited papers; Research Rabbit maps a collection of papers and watches for new related ones.
  * [arXiv cs.GR](https://arxiv.org/list/cs.GR/recent) and [cs.CV](https://arxiv.org/list/cs.CV/recent): most vision and neural rendering work appears here first.
  * The digital libraries: [Eurographics DL](https://diglib.eg.org), [ACM DL](https://dl.acm.org) and [IEEE Xplore](https://ieeexplore.ieee.org). Your university library gives you access to the paywalled ones.
  * [Two Minute Papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg) and the [Graphics Programming Weekly](https://www.jendrikillner.com/) for keeping up without reading everything.
@@ -63,11 +64,13 @@ The [calendar of deadlines](/visual-computing-calendar/) has the typical submiss
 * [IEEE VIS reviewer instructions](https://ieeevis.org/year/2022/info/call-participation/review-instructions)
 * [ACM SIGGRAPH Asia reviewer instructions](https://sa2021.siggraph.org/en/submissions/technical-papers/reviewer-instructions.html)
 * [J. Stasko: Tips for being a good Visualization reviewer](https://jts3blog.wordpress.com/2016/12/23/tips-for-being-a-good-visualization-paper-reviewer/)
+* [M. Chen and D. Ebert: How to Reject a VIS Paper, or Not?](https://doi.org/10.1109/MCG.2025.3594817) (IEEE CG&A, 2025): why the review criteria should fit each subarea of visualization, and the wrong reasons for rejecting a paper. Useful on both sides of the review.
 
 ## Presenting a paper at a conference
 * [M. McGuire: Presentation advice](http://dept.cs.williams.edu/~morgan/presentation-advice.pdf)
 * [K. Fatahalian: Tips for giving clear talks](https://graphics.stanford.edu/~kayvonf/misc/cleartalktips.pdf)
 * [D. Fleet and A. Hertzmann: How to give a good talk](http://www.dgp.toronto.edu/~hertzman/courses/gradSkills/2010/GivingGoodTalks.pdf)
+* [J.-L. Doumont: Creating effective slides](https://www.youtube.com/watch?v=meBXuTIPJQk): a one-hour lecture at Stanford, the best thing I know on slide design. His book [Trees, maps, and theorems](https://www.principiae.be/book/) applies the same clarity to writing and talks.
 
 ## Taking care of yourself
 A PhD is a marathon with a few sprints, and most of the problems people have with it are not technical. Some readings that help to put it in perspective:
@@ -113,3 +116,5 @@ Two warnings. The numbers depend on the source: Google Scholar counts everything
 
 References:
 * [Cornell Library: Measuring your research impact](https://guides.library.cornell.edu/c.php?g=32272&p=203394)
+
+<p class="small text-white-50 mt-5">With thanks to Pere-Pau Vázquez for his suggestions to this guide.</p>
