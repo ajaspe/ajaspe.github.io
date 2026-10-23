@@ -1,6 +1,6 @@
 ---
 title: The Desk
-description: "Guides and resources, occasional opinion posts and live demos by Alberto Jaspe-Villanueva: conference deadlines, a survival guide for new visual computing researchers, X3D Copilot, MARLIE and more."
+description: "Guides and resources, occasional opinion posts and live demos by Alberto Jaspe-Villanueva: conference deadlines, a survival guide for visual computing PhD students, X3D Copilot, MARLIE and more."
 menu_title: Desk
 order: 3
 permalink: /desk/

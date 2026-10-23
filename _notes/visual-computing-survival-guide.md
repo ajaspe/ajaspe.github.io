@@ -1,5 +1,5 @@
 ---
-title: Practical Survival Guide for new Visual Computing Researchers
+title: A Survival Guide for Visual Computing PhD Students
 description: "A quick-start guide for new PhD students in computer graphics and visualization: venues, literature, writing, reviewing, talks, impact metrics and well-being."
 layout: note
 kind: living
@@ -11,7 +11,7 @@ thumb_img: "assets/img/thumb_guide.jpg"
 updated: 2026-10-23
 ---
 
-This small guide aims to be a quick-start introduction to common terms and procedures for a computer science researcher. Some aspects are generic, and others are more oriented to the field of Visual Computing, specifically Computer Graphics and Visualization.
+This small guide aims to be a quick-start introduction to common terms and procedures for a PhD student in computer science. Some aspects are generic, and others are more oriented to the field of Visual Computing, specifically Computer Graphics and Visualization.
 
 ## Finding a research topic
 That is your advisor's responsibility :) Apart from that, there are some places to look for inspiration:
