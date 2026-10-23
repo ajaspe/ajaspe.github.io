@@ -68,12 +68,12 @@ Also free and complete, for the next layer once the basics are in place.
 
 ## Keeping up
 
+* [Two Minute Papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg): the papers of the week in video form.
+* [Graphics Programming Weekly](https://www.jendrikillner.com/) (Jendrik Illner): the newsletter of the field, every Sunday.
 * [Ke-Sen Huang's paper lists](https://kesen.realtimerendering.com): every paper of every graphics conference, the day the program is out; especially for computer graphics.
 * [IEEE VIS on YouTube](https://www.youtube.com/@IEEEVisualizationConference): the recorded paper presentations of the visualization conference, year by year.
-* [Graphics Programming Weekly](https://www.jendrikillner.com/) (Jendrik Illner): the newsletter of the field, every Sunday.
 * [Real-Time Rendering blog](https://www.realtimerendering.com/blog/): news and link roundups from the book's authors.
 * [Geeks3D](https://www.geeks3d.com/): GPU and demoscene news, tools and tests.
-* [Two Minute Papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg): the papers of the week in video form.
 * [Shadertoy](https://www.shadertoy.com/): thousands of shaders to read and tweak; the living textbook of procedural graphics.
 
 ### Blogs
