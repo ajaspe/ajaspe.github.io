@@ -10,8 +10,8 @@ thumb_img: "assets/img/thumb_site.jpg"
 <div class="row align-items-center hero g-4">
 	<div class="col-sm-4 col-md-3 col-lg-2 text-center">
 		{% comment %} Phones: the wide photo across the screen, as before the 2026 home redesign. From 576 px up: the round one beside the text. {% endcomment %}
-		<img src="{{ "/assets/img/ajaspe-rect.jpg" | relative_url }}" class="d-sm-none img-fluid w-100 rounded" alt="Alberto Jaspe-Villanueva">
-		<img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="d-none d-sm-block mx-auto hero-photo rounded-circle" alt="Alberto Jaspe-Villanueva">
+		<span class="hero-photo-wrap hero-photo-wrap-rect d-sm-none"><img src="{{ "/assets/img/ajaspe-rect.jpg" | relative_url }}" class="img-fluid w-100 rounded" alt="Alberto Jaspe-Villanueva">{% include deal-with-it.html %}</span>
+		<span class="hero-photo-wrap hero-photo-wrap-round d-none d-sm-block mx-auto"><img src="{{ "/assets/img/ajaspe.jpg" | relative_url }}" class="hero-photo rounded-circle" alt="Alberto Jaspe-Villanueva">{% include deal-with-it.html %}</span>
 	</div>
 	<div class="col-sm-8 col-md-9 col-lg-10">
 		<h1 class="brand_title">Alberto Jaspe-Villanueva</h1>
@@ -55,14 +55,3 @@ thumb_img: "assets/img/thumb_site.jpg"
 </div>
 <p class="text-end mt-2"><a href="/desk/" class="btn btn-outline-warning btn-sm">The desk <i class="fas fa-angle-right"></i></a></p>
 {% endif %}
-
-{% assign vis = site.data.visitors %}<div class="visitor-stats gc-block{% if vis and vis.total > 0 %} gc-ready{% endif %}" id="visitors">
-<div class="visitor-line"><i class="fas fa-chart-bar"></i> <b data-gc-stat="week">{% if vis and vis.total > 0 %}{{ vis.week }}{% endif %}</b> unique visits in the last 7 days &middot; <b data-gc-stat="month">{% if vis and vis.total > 0 %}{{ vis.month }}{% endif %}</b> in the last 30 &middot; <b data-gc-stat="total">{% if vis and vis.total > 0 %}{{ vis.total }}{% endif %}</b> since 2022</div>
-{% if vis.daily and vis.daily.size > 6 %}{% assign vmax = 1 %}{% for d in vis.daily %}{% if d.count > vmax %}{% assign vmax = d.count %}{% endif %}{% endfor %}{% assign n = vis.daily.size %}{% assign w = 600.0 | divided_by: n %}{% assign bw = w | times: 0.72 %}{% assign first = vis.daily | first %}{% assign last = vis.daily | last %}
-<svg viewBox="0 0 600 100" preserveAspectRatio="none" class="visits-svg" role="img" aria-label="Daily unique visits over the last {{ n }} days">
-{% for d in vis.daily %}{% assign h = d.count | times: 100.0 | divided_by: vmax %}{% assign x = forloop.index0 | times: w %}{% assign y = 100 | minus: h %}<rect x="{{ x }}" y="{{ y }}" width="{{ bw }}" height="{{ h }}" class="visits-bar"><title>{{ d.date | date: "%b %-d" }}: {{ d.count }} unique visits</title></rect>{% endfor %}
-</svg>
-<div class="d-flex justify-content-between visits-axis"><span>{{ first.date | date: "%b %-d" }}</span><span>unique visits per day, last {{ n }} days, peak {{ vmax }}</span><span>{{ last.date | date: "%b %-d" }}</span></div>
-{% endif %}
-<p class="visitor-note">Counted by <a href="https://albertojaspe.goatcounter.com">GoatCounter</a> without cookies; the <a href="https://albertojaspe.goatcounter.com">full statistics</a> are public{% if vis and vis.total > 0 %}. Refreshed daily, last on {{ vis.updated | date: "%b %-d, %Y" }}{% endif %}.</p>
-</div>
