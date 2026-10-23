@@ -11,8 +11,8 @@ layout: default
 {%- assign share_url_enc = share_url | url_encode -%}
 {%- assign share_text_enc = page.title | url_encode -%}
 <article class="post">
-<h1>{{ page.title }}</h1>
-<p class="text-center post-meta"><span>{{ page.date | date: "%B %-d, %Y" }}</span> &middot; <span>{{ minutes }} min read</span>{% if page.tags.size > 0 %} &middot; {% for t in page.tags %}<span class="post-tag">{{ t }}</span> {% endfor %}{% endif %}</p>
+<h1 class="page-title">{{ page.title }}</h1>
+<p class="post-meta"><span>{{ page.date | date: "%B %-d, %Y" }}</span> &middot; <span>{{ minutes }} min read</span>{% if page.tags.size > 0 %} &middot; {% for t in page.tags %}<span class="post-tag">{{ t }}</span> {% endfor %}{% endif %}</p>
 
 {% if page.cover %}<img class="w-100 rounded post-cover" src="{{ page.cover }}" alt="{{ page.cover_alt | default: page.title }}">{% endif %}
 
