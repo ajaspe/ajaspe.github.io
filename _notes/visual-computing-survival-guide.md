@@ -117,4 +117,4 @@ Two warnings. The numbers depend on the source: Google Scholar counts everything
 References:
 * [Cornell Library: Measuring your research impact](https://guides.library.cornell.edu/c.php?g=32272&p=203394)
 
-<p class="small text-white-50 mt-5">With thanks to Pere-Pau Vázquez for his suggestions to this guide.</p>
+<p class="small text-white-50 mt-5">With thanks to <a href="https://www.cs.upc.edu/~ppau/" class="text-white-50">Pere-Pau Vázquez</a> for his suggestions to this guide.</p>

@@ -17,7 +17,7 @@ A personal, opinionated list, organized by what you want to do with it rather th
 
 Three free, tutorial-style places to begin. Everything else on this page can wait until these make sense.
 
-* [Cem Yuksel's courses](https://www.cemyuksel.com/courses/): recorded university lectures on graphics, from the basics to interactive rendering; the closest thing to sitting in a good class.
+* [Cem Yuksel's courses](https://www.cemyuksel.com/courses/): recorded university lectures, from the basics to interactive rendering.
 * [Ray Tracing in One Weekend](https://raytracing.github.io/): a working path tracer in a few hundred lines, then two more books that make it real.
 * [Immersive Linear Algebra](https://immersivemath.com/ila/): the linear algebra you need, with interactive figures.
 
@@ -35,13 +35,13 @@ The ones on my shelf. Click a cover for the book's site.
 	<a href="https://www.cs.ubc.ca/~tmm/vadbook/"><img class="imglight" src="/assets/img/book_covers/visualization_analysis_and_design.jpg" alt="Visualization Analysis and Design"></a>
 </div>
 
-* **Real-Time Rendering** (Akenine-Möller et al.): the encyclopedia of interactive graphics; its [website](https://www.realtimerendering.com/) keeps the reading lists current.
-* **Computer Graphics: Principles and Practice** (Hughes et al.): the broad, classic foundation.
-* **Physically Based Rendering** (Pharr, Jakob, Humphreys): the reference on rendering, free online as the [4th edition](https://pbr-book.org/) with the code of a production-quality renderer; the printed edition is worth having too.
-* **Fundamentals of Computer Graphics** (Marschner, Shirley): the undergraduate textbook I would teach from.
-* **Game Engine Architecture** (Gregory): how all of it fits together in a real system.
-* [GPU Gems](https://developer.nvidia.com/gpugems/gpugems/contributors): the three volumes, free online; dated in places, timeless in others.
-* [Visualization Analysis and Design](https://www.cs.ubc.ca/~tmm/vadbook/) (Munzner): the textbook of visualization, the one to read before designing a view of anything.
+* [**Real-Time Rendering**](https://www.realtimerendering.com/) (Akenine-Möller et al.): the encyclopedia of interactive graphics; its website keeps the reading lists current.
+* [**Computer Graphics: Principles and Practice**](https://cgpp.net) (Hughes et al.): the broad, classic foundation.
+* [**Physically Based Rendering**](https://pbrt.org) (Pharr, Jakob, Humphreys): the reference on rendering, free online as the [4th edition](https://pbr-book.org/) with the code of a production-quality renderer; the printed edition is worth having too.
+* [**Fundamentals of Computer Graphics**](https://www.routledge.com/Fundamentals-of-Computer-Graphics/Marschner-Shirley/p/book/9780367505035) (Marschner, Shirley): the undergraduate textbook I would teach from.
+* [**Game Engine Architecture**](https://www.gameenginebook.com) (Gregory): how all of it fits together in a real system.
+* [**GPU Gems**](https://developer.nvidia.com/gpugems/gpugems/contributors): the three volumes, free online; dated in places, timeless in others.
+* [**Visualization Analysis and Design**](https://www.cs.ubc.ca/~tmm/vadbook/) (Munzner): the textbook of visualization, the one to read before designing a view of anything.
 
 ## Free textbooks and tutorials
 
@@ -119,11 +119,10 @@ Also free and complete, for the next layer once the basics are in place.
 * [Stanford 3D Scanning Repository](https://graphics.stanford.edu/data/3Dscanrep/): the bunny, the dragon and friends.
 * [Computer Graphics Archive](https://casual-effects.com/data/): McGuire's cleaned-up test scenes (Sponza, San Miguel, Bistro and more).
 * [Poly Haven](https://polyhaven.com/): free HDRIs, textures and models under CC0.
-* [Gaia Archive](https://gea.esac.esa.int/archive/): the star catalog behind our Lactea work; a billion rows to visualize.
 
 ## Systems and performance
 
 * [Agner Fog's optimization manuals](https://www.agner.org/optimize/): how CPUs really execute your code.
 * [x86-64 Assembly Language Programming](http://www.egr.unlv.edu/~ed/assembly64.pdf) (Ed Jorgensen): a free textbook, for when you need to read what the compiler did.
 
-<p class="small text-white-50 mt-5">With thanks to Pere-Pau Vázquez for his suggestions to this page.</p>
+<p class="small text-white-50 mt-5">With thanks to <a href="https://www.cs.upc.edu/~ppau/" class="text-white-50">Pere-Pau Vázquez</a> for his suggestions to this page.</p>
