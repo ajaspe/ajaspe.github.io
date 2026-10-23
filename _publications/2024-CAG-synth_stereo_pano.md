@@ -5,6 +5,10 @@ title: "Deep synthesis and exploration of omnidirectional stereoscopic environme
 authors: "Giovanni Pintore, Alberto Jaspe-Villanueva, Markus Hadwiger, Jens Schneider, Marco Agus, Fabio Marton, Fabio Bettio, Enrico Gobbetti"
 year: 2024
 type: Journal Paper
+tags:
+ - indoor-modeling
+ - machine-learning
+ - virtual-reality
 journal: "Computers & Graphics"
 pub-data: "Vol. 119, 2024"
 doi: 10.1016/j.cag.2024.103907

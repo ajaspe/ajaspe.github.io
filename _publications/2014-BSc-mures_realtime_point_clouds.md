@@ -5,6 +5,9 @@ title: "Realtime Management Tool for Massive 3D Point Clouds"
 authors: Luis Omar Álvarez Mures
 year: 2014
 type: Bachelor's Thesis
+tags:
+ - point-clouds
+ - massive-models
 role: supervisor
 degree: "Final Year Project (Trabajo Fin de Grado)"
 program: "Degree in Computer Engineering, mention in Software Engineering"

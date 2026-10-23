@@ -5,6 +5,10 @@ title: "Sistema cliente-servidor para la visualización de nubes de puntos con W
 authors: Javier Rey Neira
 year: 2013
 type: Final Degree Project
+tags:
+ - point-clouds
+ - web3d
+ - massive-models
 role: supervisor
 degree: "Final Degree Project (Proyecto Fin de Carrera)"
 program: "Ingeniería Informática, five-year engineering degree"

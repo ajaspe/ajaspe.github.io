@@ -5,6 +5,10 @@ title: "Scalable Exploration of 3D Massive Models"
 authors: Alberto Jaspe-Villanueva
 year: 2018
 type: PhD Thesis
+tags:
+ - massive-models
+ - rendering
+ - point-clouds
 role: author
 degree: "Doctor of Philosophy (PhD)"
 program: "PhD Programme in Information and Communications Technology"

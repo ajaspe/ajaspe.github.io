@@ -5,6 +5,9 @@ title: "CHC+RT: Coherent Hierarchical Culling for Ray Tracing"
 authors: Oliver Mattausch, Jiri Bittner, Alberto Jaspe-Villanueva, Enrico Gobbetti, Michael Wimmer, and Renato Pajarola
 year: 2015
 type: Journal Paper
+tags:
+ - rendering
+ - massive-models
 conference: EuroGraphics 2015
 journal: "Computer Graphics Forum"
 pub-data: "34(2): 537-548, 2015"

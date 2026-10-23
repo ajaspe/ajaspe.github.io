@@ -5,6 +5,9 @@ title: "HGCalVis: Web-Based Importance-Ordered Visualization of CERN's HGCal Par
 authors: Waad F. Alshehri, Matevž Tadel, Alja M. Tadel, Marco Rovere, Markus Hadwiger, Alberto Jaspe-Villanueva
 year: 2026
 type: Conference Paper
+tags:
+ - scientific-visualization
+ - web3d
 conference: Web3D 2026 - 31st International ACM Conference on 3D Web Technology
 awards: Scientific Excellence award
 pub-data: "To appear"

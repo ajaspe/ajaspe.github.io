@@ -5,6 +5,9 @@ title: "Gestión de tráfico mediante la integración de un GIS con un sistema d
 authors: Alberto Varela, Luis Hernández, Javier Taibo, Antonio Seoane, Rubén López, and Alberto Jaspe-Villanueva
 year: 2005
 type: Conference Paper
+tags:
+ - gis-terrain
+ - rendering
 conference: Congreso Iberoamericano de Sistemas Inteligentes de Transporte 2005
 abstract: "Tras la experiencia de los últimos años en el desarrollo del Sistema Avanzado de Navegación en Terrenos Interactivos (SANTI), es decir, un sistema interactivo de visualización tridimensional de terreno en tiempo real basado en datos altimétricos e imágenes de satélite y aéreas, se abre una nueva línea de investigación que integra esta visualización con sistemas de información geográfica (SIG o Geographic Information System GIS en inglés). Esta nueva línea de desarrollo ofrece grandes posibilidades para la planificación y la gestión de infraestructuras en grandes áreas territoriales."
 projects: 

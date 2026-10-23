@@ -5,6 +5,10 @@ title: "A Practical Inverse Rendering Strategy for Enhanced Albedo Estimation fo
 authors: Ruggero Pintus, Antonio Zorcolo, Alberto Jaspe-Villanueva, Enrico Gobbetti
 year: 2025
 type: Conference Paper
+tags:
+ - relighting
+ - cultural-heritage
+ - rendering
 conference: Digital Heritage 2025
 abstract: "We present a practical single-image framework to address uncontrolled global and local illumination effects in flash photography for improved albedo estimation and color projection onto 3D cultural heritage models. Our approach leverages an inverse rendering pipeline to process a single registered flash photograph and models ambient illumination due to environmental reflections and local interreflections. By compensating for direct and indirect light contributions, we recover a more reliable albedo signal for color projection onto the 3D model. We validate our method through extensive evaluations on two synthetic datasets and real-world acquisitions in conservation and museum settings, demonstrating its effectiveness in improving photometric accuracy and support for relighting, and proper integration of optimized color data into existing 3D models."
 projects: 

@@ -5,6 +5,9 @@ title: "Interactive installations and virtual reality in the museum. The Galicia
 authors: Luis Hernández, Javier Taibo, Antonio Seoane, Rocío Mihura-Lopez, and Alberto Jaspe-Villanueva
 year: 2008
 type: Conference Paper
+tags:
+ - virtual-reality
+ - cultural-heritage
 conference: International Symposium on Information and Communication Technologies in Cultural Heritage 2008
 abstract: "Recently, historical museums and other exhibitions are becoming more aware of the effectiveness of virtual reality spaces used along with other technologies to meet the challenge to offer new and complex experiences to the general public. Immersion and interaction together define the axis of such experiences, provided with new kinds of contents and singular applications designed for each specific case. This paper describes the use of a set of computer graphic techniques which range from computer animation to simulation and virtual reality applied to display cultural contents in a permanent exhibition called Galicia Dixital located in Santiago de Compostela (Spain). This exhibition is devoted to showing Galician culture, history, traditions and art through the medium of new technologies. This way, visitors have the opportunity to acquire knowledge of cultural and technological topics at the same time."
 projects: 

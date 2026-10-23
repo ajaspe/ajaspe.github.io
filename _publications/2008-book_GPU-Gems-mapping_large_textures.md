@@ -5,6 +5,10 @@ title: "Mapping Large Textures for Outdoor Terrain Rendering"
 authors: Antonio Seoane, Javier Taibo, Luis Hernández, and Alberto Jaspe-Villanueva
 year: 2008
 type: Book Chapter
+tags:
+ - rendering
+ - gis-terrain
+ - massive-models
 book: Game Programming Gems 7
 pub-data: Ed. Scott Jacobs, Charles River Media
 abstract: ""

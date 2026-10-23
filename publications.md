@@ -29,6 +29,10 @@ thumb_img: "assets/img/thumb_site.jpg"
 <button type="button" class="fam-tag pub-filter-btn" data-group="thesis" style="--fam: #c48be0">Academic works</button>
 <button type="button" class="fam-tag pub-filter-btn" data-group="patent" style="--fam: #5fd3c8">Patent</button>
 </div>
+<div class="fam-legend pub-filter pub-filter-tags" role="group" aria-label="Filter by topic">
+<button type="button" class="fam-tag pub-tag-btn active" data-tag="all" style="--fam: #bbb">All topics</button>
+{% for t in site.data.tags %}<button type="button" class="fam-tag pub-tag-btn" data-tag="{{ t[0] }}" style="--fam: #d8d8d8" title="{{ t[1].about }}">{{ t[1].name }}</button>
+{% endfor %}</div>
 
 <div class="container my-0 pub-list">
 {% assign prev_year = "" %}
@@ -60,8 +64,10 @@ thumb_img: "assets/img/thumb_site.jpg"
 
 <script>
 (function () {
-  // type filter: the tags above the list; the choice is kept in the URL hash (#type=journal) so it can be linked
-  var buttons = document.querySelectorAll('.pub-filter-btn');
+  // two filters, type and topic, combined with AND; the choice is kept in the URL hash (#type=journal&tag=point-clouds)
+  var typeButtons = document.querySelectorAll('.pub-filter-btn');
+  var tagButtons = document.querySelectorAll('.pub-tag-btn');
+  var state = { type: 'all', tag: 'all' };
   function visibleRowsAfter(h) {
     var el = h.nextElementSibling;
     while (el && !el.classList.contains('pub-year')) {
@@ -70,9 +76,11 @@ thumb_img: "assets/img/thumb_site.jpg"
     }
     return false;
   }
-  function apply(g) {
+  function apply() {
     document.querySelectorAll('.pub-list .pub-row[data-group]').forEach(function (r) {
-      r.classList.toggle('pub-hidden', g !== 'all' && r.getAttribute('data-group') !== g);
+      var okType = state.type === 'all' || r.getAttribute('data-group') === state.type;
+      var okTag = state.tag === 'all' || (' ' + (r.getAttribute('data-tags') || '') + ' ').indexOf(' ' + state.tag + ' ') >= 0;
+      r.classList.toggle('pub-hidden', !(okType && okTag));
     });
     document.querySelectorAll('.pub-list .pub-year').forEach(function (h) { h.classList.toggle('pub-hidden', !visibleRowsAfter(h)); });
     var sup = document.getElementById('supervised-theses');
@@ -81,16 +89,33 @@ thumb_img: "assets/img/thumb_site.jpg"
       sup.classList.toggle('pub-hidden', !any);
       if (sup.nextElementSibling && sup.nextElementSibling.tagName === 'P') { sup.nextElementSibling.classList.toggle('pub-hidden', !any); }
     }
-    buttons.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-group') === g); });
-    if (history.replaceState) { history.replaceState(null, '', location.pathname + (g === 'all' ? '' : '#type=' + g)); }
+    typeButtons.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-group') === state.type); });
+    tagButtons.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-tag') === state.tag); });
+    var parts = [];
+    if (state.type !== 'all') { parts.push('type=' + state.type); }
+    if (state.tag !== 'all') { parts.push('tag=' + state.tag); }
+    if (history.replaceState) { history.replaceState(null, '', location.pathname + (parts.length ? '#' + parts.join('&') : '')); }
   }
-  buttons.forEach(function (b) {
+  typeButtons.forEach(function (b) {
     b.addEventListener('click', function () {
       var g = b.getAttribute('data-group');
-      apply(b.classList.contains('active') && g !== 'all' ? 'all' : g);
+      state.type = (b.classList.contains('active') && g !== 'all') ? 'all' : g;
+      apply();
     });
   });
-  var m = location.hash.match(/^#type=([a-z]+)$/);
-  if (m) { apply(m[1]); }
+  tagButtons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-tag');
+      state.tag = (b.classList.contains('active') && t !== 'all') ? 'all' : t;
+      apply();
+    });
+  });
+  var h = location.hash.replace(/^#/, '');
+  h.split('&').forEach(function (kv) {
+    var p = kv.split('=');
+    if (p[0] === 'type' && /^[a-z]+$/.test(p[1] || '')) { state.type = p[1]; }
+    if (p[0] === 'tag' && /^[a-z-]+$/.test(p[1] || '')) { state.tag = p[1]; }
+  });
+  if (state.type !== 'all' || state.tag !== 'all') { apply(); }
 })();
 </script>

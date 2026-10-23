@@ -5,6 +5,8 @@ title: "Acceleration of AI algorithms using GPUs"
 authors: Antonio Seoane and Alberto Jaspe-Villanueva
 year: 2009
 type: Book Chapter
+tags:
+ - machine-learning
 book: Encyclopedia of Artificial Intelligence
 pub-data: "Eds. J.Rabuñal, J.Dorado and A.Pazos. IGI Global"
 abstract: "Graphics Processing Units (GPUs) have been evolving very fast, turning into high performance programmable processors. Though GPUs have been designed to compute graphics algorithms, their power and flexibility makes them a very attractive platform for general-purpose computing. In the last years they have been used to accelerate calculations in physics, computer vision, artificial intelligence, database operations, etc. (Owens, 2007). In this paper an approach to general purpose computing with GPUs is made, followed by a description of artificial intelligence algorithms based on Artificial Neural Networks (ANN) and Evolutionary Computation (EC) accelerated using GPU."

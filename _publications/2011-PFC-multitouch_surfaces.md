@@ -5,6 +5,8 @@ title: "Superficies multitáctiles interactivas: desarrollo de prototipo, softwa
 authors: Alberto Jaspe-Villanueva
 year: 2011
 type: Final Degree Project
+tags:
+ - virtual-reality
 role: author
 degree: "Final Degree Project (Proyecto Fin de Carrera)"
 program: "Technical Engineering in Computer Science (Ingeniería Técnica en Informática de Gestión)"

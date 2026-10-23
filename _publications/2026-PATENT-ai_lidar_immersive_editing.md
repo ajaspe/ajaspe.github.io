@@ -5,6 +5,11 @@ title: "AI-based and LIDAR-based Image Processing Pipeline for Immersive Editing
 authors: Muhammad Muhammad Tukur, Marco Agus, Uzair Shah, Jens Schneider, Sara Jashari, Mahmood Al-Zubaidi, Noora Fetais, Yehia Boraey, and Alberto Jaspe-Villanueva
 year: 2026
 type: Patent application
+tags:
+ - indoor-modeling
+ - machine-learning
+ - point-clouds
+ - virtual-reality
 patent: "US 2026/0154782 A1"
 patent_application: "US 19/393,065"
 assignee: "Hamad Bin Khalifa University, Qatar"

@@ -1,25 +1,32 @@
 # Fields used to colour and filter the deadlines calendar. `id` matches the `family` key in deadlines.yml.
+# `short` is the pill in the table, `label` the text of the filter button (falls back to `short`), `name` the full name (tooltips).
 - id: graphics
   short: CG
+  label: "CG · Graphics"
   name: Computer graphics
   color: "#ffb04f"
 - id: visualization
   short: Vis
+  label: "Vis · Visualization"
   name: Visualization
   color: "#5ec8f2"
 - id: vision
   short: CV
+  label: "CV · Vision"
   name: Computer vision
   color: "#8ee08e"
 - id: vr
   short: VR
+  label: "VR/AR"
   name: Virtual and augmented reality
   color: "#c48be0"
 - id: hci
   short: HCI
+  label: "HCI"
   name: Human-computer interaction
   color: "#ff8fb1"
 - id: applications
   short: App
+  label: "App · Applications"
   name: Application-oriented
   color: "#ffe66d"

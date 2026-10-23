@@ -179,10 +179,16 @@ a:hover {
 .pub-type-book { border-color: #8fd18f; color: #8fd18f; }
 .pub-type-thesis { border-color: #c48be0; color: #c48be0; }
 .pub-type-patent { border-color: #5fd3c8; color: #5fd3c8; }
-.pub-filter { margin: 0.25rem 0 0.75rem; }
-.pub-filter-btn { cursor: pointer; font-size: 0.8rem; padding: 0.2rem 0.6rem; }
-.pub-filter-btn:hover { background: #2a2a2a; }
-.pub-filter-btn.active { background: var(--fam, #888); color: #111; font-weight: 600; }
+.pub-filter { margin: 0.25rem 0 0.5rem; }
+.pub-filter-tags { margin-bottom: 0.9rem; }
+.pub-filter-btn, .pub-tag-btn { cursor: pointer; font-size: 0.8rem; padding: 0.2rem 0.6rem; }
+.pub-tag-btn { font-size: 0.75rem; color: #bbb; border-color: #555; }
+.pub-filter-btn:hover, .pub-tag-btn:hover { background: #2a2a2a; }
+.pub-filter-btn.active, .pub-tag-btn.active { background: var(--fam, #888); color: #111; font-weight: 600; }
+/* topic tags on a publication page */
+.pub-tags { display: inline-flex; flex-wrap: wrap; gap: 0.3rem; margin: 0 0.4rem; vertical-align: middle; }
+.pub-tag { font-size: 0.72rem; font-style: normal; padding: 0.05rem 0.5rem; border: 1px solid #555; border-radius: 999px; color: #bbb; text-decoration: none; }
+.pub-tag:hover { background: #2a2a2a; color: #fff; border-color: #888; }
 .pub-hidden { display: none !important; }
 .pub-cites-delta { color: #8fd18f; font-size: 0.85em; margin-left: 0.2rem; }
 .pub-type-role { border-color: #888; color: #bbb; }

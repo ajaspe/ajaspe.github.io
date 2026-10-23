@@ -5,6 +5,9 @@ title: "Global Illumination for Point-Based Rendering"
 authors: Luis Omar Álvarez Mures
 year: 2012
 type: Final Degree Project
+tags:
+ - point-clouds
+ - rendering
 role: supervisor
 degree: "Final Degree Project (Proyecto Fin de Carrera)"
 program: "Technical Engineering in Computer Systems"

@@ -5,6 +5,10 @@ title: "Aplicación para la inspección espacial, volumétrica y seccional inter
 authors: Viviana Barneche, Luis A. Hernández, Alberto Jaspe-Villanueva, and Gustavo Fariña
 year: 2011
 type: Conference Paper
+tags:
+ - cultural-heritage
+ - rendering
+ - virtual-reality
 conference: "Arqueológica 2.0, III Congreso Internacional de Arqueología, Informática Gráfica, Patrimonio e Innovación (Seville, June 2011)"
 abstract: "This paper describes the design, production and implementation of an application for the formal analysis of the Cathedral of Santiago de Compostela. The geometrical complexity of the model of this building for the level of detail required, derived from the profusion of stylistic elements present, which constitutes one of its signs of identity, led to the use of the progressive refinement radiosity method to generate a model that could be handled in real time, adding the visual quality of global illumination, implemented in an application that allows the user to interactively inspect and cross-section the model."
 topics:

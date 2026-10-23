@@ -112,9 +112,14 @@
       {%- unless page.no_pdf %}
       "encoding": {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": {{ pdf_path | absolute_url | jsonify }}},
       {%- endunless %}
+      {%- if page.tags %}
+      {%- assign kwnames = "" %}{%- for t in page.tags %}{%- assign tagdef = site.data.tags[t] %}{%- assign kwnames = kwnames | append: tagdef.name | default: t | append: ", " %}{%- endfor %}
+      "keywords": {{ kwnames | split: ", " | join: ", " | jsonify }},
+      {%- else %}
       {%- assign kw = page.topics | default: page.projects %}
       {%- if kw %}
       "keywords": {{ kw | compact | join: ", " | jsonify }},
+      {%- endif %}
       {%- endif %}
       "image": {{ share_img_abs | jsonify }},
       "url": {{ canonical | jsonify }},

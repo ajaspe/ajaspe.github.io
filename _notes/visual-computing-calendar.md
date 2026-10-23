@@ -19,7 +19,7 @@ updated: 2026-10-23
 
 <div class="fam-legend">
 <button type="button" class="fam-tag fam-filter active" data-family="all" style="--fam: #bbb">All</button>
-{% for f in families %}<button type="button" class="fam-tag fam-filter" data-family="{{ f.id }}" style="--fam: {{ f.color }}" title="{{ f.name }}">{{ f.short }} &middot; {{ f.name }}</button>{% endfor %}
+{% for f in families %}<button type="button" class="fam-tag fam-filter" data-family="{{ f.id }}" style="--fam: {{ f.color }}" title="{{ f.name }}">{{ f.label | default: f.short }}</button>{% endfor %}
 </div>
 
 {% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}

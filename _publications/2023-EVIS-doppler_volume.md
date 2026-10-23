@@ -5,6 +5,9 @@ title: "Doppler Volume Rendering: A Dynamic, Piecewise Linear Spectral Represent
 authors: Reem Alghamdi, Thomas Müller, Alberto Jaspe-Villanueva, Markus Hadwiger, and Filip Sadlo
 year: 2023
 type: Journal Paper
+tags:
+ - scientific-visualization
+ - rendering
 conference: EuroVIS 2023
 journal: "Computer Graphics Forum"
 pub-data: "Volume 42 (2023), Number 3"

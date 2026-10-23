@@ -5,6 +5,9 @@ title: "Physically Walking in Digital Spaces-A Virtual Reality Installation for 
 authors: Luis Hernández, Javier Taibo, David Blanco, José Iglesias, Antonio Seoane, Alberto Jaspe-Villanueva, and Rocío Mihura-Lopez
 year: 2007
 type: Journal Paper
+tags:
+ - virtual-reality
+ - cultural-heritage
 journal: "International Journal of Architectural Computing"
 abstract: "Immersive Virtual Reality Systems have been extensively used during recent years for the exploration of architectonic spaces. This paper describes how the use of transitable immersive virtual reality systems, that is, those that allow the user to physically walk while exploring the virtual world, can greatly empower the experience of perception of space in architecture. The text describes a particular example of one installation of this kind that was developed by the authors and how it was implemented for the interactive experience of the virtual reconstruction of a housing unit on a pre-roman settlement. This installation is open to the public as part of a permanent exhibition and constitutes the final output of the research at this time."
 doi: 10.1260/147807707782581783

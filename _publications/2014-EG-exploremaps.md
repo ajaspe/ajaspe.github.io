@@ -5,6 +5,10 @@ title: "ExploreMaps: Efficient Construction and Ubiquitous Exploration of Panora
 authors: Marco Di Benedetto, Fabio Ganovelli, Marcos Balsa Rodriguez, Alberto Jaspe-Villanueva, Roberto Scopigno, and Enrico Gobbetti
 year: 2014
 type: Journal Paper
+tags:
+ - massive-models
+ - web3d
+ - rendering
 conference: Eurographics 2014
 journal: "Computer Graphics Forum"
 pub-data: "33(2): 459-468, 2014"

@@ -5,6 +5,9 @@ title: "SSVDAGs: Symmetry-aware Sparse Voxel DAGs"
 authors: Alberto Jaspe-Villanueva, Fabio Marton, and Enrico Gobbetti
 year: 2016
 type: Conference Paper
+tags:
+ - rendering
+ - massive-models
 conference: ACM i3D 2016
 awards: Best Papers Selection
 doi: 10.1145/2856400.2856420

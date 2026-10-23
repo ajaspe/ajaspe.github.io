@@ -5,6 +5,10 @@ title: "Lactea: Web-Based Spectrum-Preserving Multi-Resolution Visualization of 
 authors: Reem Alghamdi, Markus Hadwiger, Guido Reina, Alberto Jaspe-Villanueva
 year: 2025
 type: Journal Paper
+tags:
+ - scientific-visualization
+ - massive-models
+ - web3d
 conference: EuroVIS 2025
 journal: "Computer Graphics Forum"
 pub-data: "Volume 44 (2025), Number 3"

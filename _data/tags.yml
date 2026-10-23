@@ -1,0 +1,38 @@
+# Topic tags for publications (`tags:` in _publications/*.md), used by the filter on /publications/ and shown on each
+# publication page. Twelve coarse tags; the finer topics of the projects section map onto them. Order = display order.
+rendering:
+  name: Rendering
+  about: "Real-time rendering, ray tracing, GPU techniques, radiosity and volume rendering."
+massive-models:
+  name: Massive models
+  about: "Multiresolution and out-of-core techniques for models and datasets that do not fit in memory."
+point-clouds:
+  name: Point clouds
+  about: "Acquisition, management, registration and rendering of point clouds."
+capture-reconstruction:
+  name: Capture and reconstruction
+  about: "3D scanning, registration, reconstruction from images, panoramas and novel view synthesis."
+indoor-modeling:
+  name: Indoor modeling
+  about: "Structured 3D models of interiors from scans and panoramic images."
+relighting:
+  name: Relighting
+  about: "Multi-light imaging, reflectance transformation imaging, calibration and web-based relighting."
+cultural-heritage:
+  name: Cultural heritage
+  about: "Museums, monuments, artworks and the installations built for them."
+virtual-reality:
+  name: Virtual reality
+  about: "Immersive installations, natural interfaces and stereoscopic environments."
+scientific-visualization:
+  name: Scientific visualization
+  about: "Astrophysics, particle physics and multivariate data."
+gis-terrain:
+  name: GIS and terrain
+  about: "Terrain rendering, large textures and geographic information systems."
+web3d:
+  name: Web-based 3D
+  about: "3D and visualization running in the browser."
+machine-learning:
+  name: Machine learning
+  about: "Neural networks and AI applied to images and 3D."

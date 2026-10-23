@@ -6,6 +6,8 @@ title: "Space perception in Architectural Visualization through Immersive Virtua
 authors: Luis Hernández, Javier Taibo, Antonio Seoane, and Alberto Jaspe-Villanueva
 year: 2011
 type: Journal Paper
+tags:
+ - virtual-reality
 journal: "Journal of Architectural Graphic Expression (EGA: Revista de expresión gráfica arquitectónica)"
 abstract: "Immersive virtual reality constitutes a powerful tool for the vivid exploration of virtual spaces. The feeling of presence produced in the user by the action of seeing the digital space just pointing the view in any direction is greatly enhanced when adding the capability of walking physically during the experience. This paper describes aspects related with the experimentation of this hybrid space, real and virtual at the same time, that was implemented by the authors in an immersive virtual reality museum installation called 'The Empty Museum'."
 projects: 

@@ -5,6 +5,9 @@ title: "Point Cloud Manager: a Multiresolution System for Managing Massive Point
 authors: Alberto Jaspe-Villanueva
 year: 2012
 type: Master's Thesis
+tags:
+ - point-clouds
+ - massive-models
 role: author
 degree: "Master's Thesis"
 program: "Master on High Performance Computing (Máster en Computación de Altas Prestaciones)"

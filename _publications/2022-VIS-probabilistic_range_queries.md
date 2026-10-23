@@ -5,6 +5,9 @@ title: "Multivariate Probabilistic Range Queries for Scalable Interactive 3D Vis
 authors: Amani Ageeli, Alberto Jaspe-Villanueva, Ronell Sicat, Florian Mannuss, Peter Rautek, and Markus Hadwiger
 year: 2022
 type: Journal Paper
+tags:
+ - scientific-visualization
+ - massive-models
 conference: IEEE VIS 2022
 journal: "IEEE Transactions on Visualization and Computer Graphics"
 pub-data: "Volume 29, Issue 1"

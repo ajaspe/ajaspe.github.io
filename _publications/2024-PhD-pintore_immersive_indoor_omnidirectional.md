@@ -5,6 +5,11 @@ title: "Automatic 3D Modeling and Editing of Immersive Indoor Environments from 
 authors: Giovanni Pintore
 year: 2024
 type: PhD Thesis
+tags:
+ - indoor-modeling
+ - capture-reconstruction
+ - machine-learning
+ - virtual-reality
 role: supervisor
 degree: "Doctor of Philosophy (PhD)"
 program: "PhD Programme in Information and Communications Technology"

@@ -5,6 +5,9 @@ title: "A practical and efficient model for intensity calibration of multi-light
 authors: Ruggero Pintus, Alberto Jaspe-Villanueva, Antonio Zorcolo, Markus Hadwiger, and Enrico Gobbetti
 year: 2021
 type: Journal Paper
+tags:
+ - relighting
+ - capture-reconstruction
 conference: Computer Graphics International, CGI'21
 journal: "The Visual Computer"
 pub-data: "37(9): 2755-2767, September 2021"

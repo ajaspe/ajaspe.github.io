@@ -5,6 +5,9 @@ title: "El Museo Vacío y el Camino de Santiago. Una instalación de Realidad Vi
 authors: Luis Hernández, Javier Taibo, David Blanco, José Iglesias, Antonio Seoane, Alberto Jaspe-Villanueva, and Rocío Mihura-Lopez
 year: 2007
 type: Conference Paper
+tags:
+ - virtual-reality
+ - cultural-heritage
 conference: Simposium de Informática Gráfica y Patrimonio Histórico, SIGPHI 2007
 abstract: "In recent years, Virtual Reality has become a way of representing Cultural Heritage. This paper describes the use of a VR installation to explore St. James’s Way, focusing on the history and legends of the most emblematic places of the route. It allows the user to make a virtual pilgrimage, visiting these places at their own pace and being transported through space and time to several historical scenarios, combining realistic panoramas and cartoon-like 3D spaces."
 no_teaser: true
