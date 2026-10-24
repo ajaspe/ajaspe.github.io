@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Get Goal Done ⚽</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <canvas id="field"></canvas>
+    <button id="pauseButton" class="hud-button" aria-label="Menu">⏸</button>
+
+    <!-- Menu: shown when paused. Its pages are filled in by ui.js -->
+    <div id="menu" class="overlay" hidden>
+      <div class="panel">
+        <svg class="logo" viewBox="0 0 600 130" role="img" aria-label="Get Goal Done">
+          <defs>
+            <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff59d" />
+              <stop offset="1" stop-color="#ffb300" />
+            </linearGradient>
+            <polygon id="pentagon" points="0,-14 13.3,-4.3 8.2,11.3 -8.2,11.3 -13.3,-4.3" />
+            <clipPath id="insideBall"><circle r="35" /></clipPath>
+          </defs>
+          <text class="logo-letters" x="14" y="44" transform="rotate(-10 14 44)" font-size="36" fill="white">GET</text>
+          <text class="logo-letters" x="12" y="120" font-size="96" fill="url(#gold)">G</text>
+          <g transform="translate(142 86)">
+            <g class="spinning-ball">
+              <circle r="37" fill="white" stroke="#1b2a30" stroke-width="6" />
+              <g clip-path="url(#insideBall)" fill="#1b2a30">
+                <use href="#pentagon" />
+                <g transform="rotate(0)"><line y1="-14" y2="-28" stroke="#1b2a30" stroke-width="3" /><use href="#pentagon" transform="translate(0 -40) rotate(180)" /></g>
+                <g transform="rotate(72)"><line y1="-14" y2="-28" stroke="#1b2a30" stroke-width="3" /><use href="#pentagon" transform="translate(0 -40) rotate(180)" /></g>
+                <g transform="rotate(144)"><line y1="-14" y2="-28" stroke="#1b2a30" stroke-width="3" /><use href="#pentagon" transform="translate(0 -40) rotate(180)" /></g>
+                <g transform="rotate(216)"><line y1="-14" y2="-28" stroke="#1b2a30" stroke-width="3" /><use href="#pentagon" transform="translate(0 -40) rotate(180)" /></g>
+                <g transform="rotate(288)"><line y1="-14" y2="-28" stroke="#1b2a30" stroke-width="3" /><use href="#pentagon" transform="translate(0 -40) rotate(180)" /></g>
+              </g>
+            </g>
+            <ellipse cx="-14" cy="-18" rx="10" ry="6" fill="white" opacity="0.6" transform="rotate(-35 -14 -18)" />
+          </g>
+          <text class="logo-letters" x="186" y="120" font-size="96" fill="url(#gold)">AL</text>
+          <g transform="translate(470 78) rotate(-8)">
+            <rect x="-118" y="-36" width="236" height="72" rx="16" fill="#43a047" stroke="#1b2a30" stroke-width="6" />
+            <rect x="-108" y="-26" width="216" height="52" rx="10" fill="none" stroke="white" stroke-width="2" stroke-dasharray="7 5" opacity="0.7" />
+            <text class="logo-letters" x="-30" y="17" font-size="44" fill="white" text-anchor="middle">DONE</text>
+            <path d="M 70 -2 L 84 14 L 104 -16" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+        <div id="menuPage"></div>
+      </div>
+    </div>
+
+    <!-- Results: shown at full time -->
+    <div id="results" class="overlay" hidden>
+      <div id="confetti"></div>
+      <h2 id="resultTitle"></h2>
+      <div class="final-score">
+        <div class="score-box" id="scoreBox1"><div class="crown">👑</div><div class="score-goals"></div><div class="score-name"></div></div>
+        <div class="score-dash">-</div>
+        <div class="score-box" id="scoreBox2"><div class="crown">👑</div><div class="score-goals"></div><div class="score-name"></div></div>
+      </div>
+      <div id="resultExtra"></div>
+      <div class="result-buttons">
+        <button id="resultPrimary" class="big-button"></button>
+        <button id="resultMenu" class="secondary-button"></button>
+      </div>
+    </div>
+
+    <div id="rotateHint" class="overlay"></div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/platform.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/gamepads.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/freeze.js"></script>
+  <script src="js/big-goal.js"></script>
+  <script src="js/crazy-martini.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/net.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
