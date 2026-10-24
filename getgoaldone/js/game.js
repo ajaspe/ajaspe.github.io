@@ -308,6 +308,9 @@ function endMatch() {
   persist();
   game.overAt = performance.now();
   showResults(result);
+  if (game.mode === "online") {
+    Ranking.report(null);
+  }
 }
 
 function pauseGame() {

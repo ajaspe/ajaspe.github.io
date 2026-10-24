@@ -28,7 +28,8 @@ function escapeHtml(text) {
 }
 
 function renderMenuPage() {
-  const pages = { main: mainPageHtml, settings: settingsPageHtml, locker: lockerPageHtml, help: helpPageHtml, online: onlinePageHtml };
+  const pages = { main: mainPageHtml, settings: settingsPageHtml, locker: lockerPageHtml, help: helpPageHtml,
+                  online: onlinePageHtml, ranking: rankingPageHtml };
   menuPage.innerHTML = pages[currentPage]();
   menuOverlay.classList.toggle("compact", currentPage !== "main");   // the logo only on the main page
   if (currentPage === "locker") {
@@ -71,6 +72,7 @@ function mainPageHtml() {
       <button class="secondary-button" data-action="page" data-page="locker">🎨 ${t("menu.locker")}</button>
       <button class="secondary-button" data-action="page" data-page="settings">⚙️ ${t("menu.settings")}</button>
       <button class="secondary-button" data-action="page" data-page="help">❓ ${t("menu.howToPlay")}</button>
+      <button class="secondary-button" data-action="page" data-page="ranking">🏆 ${t("ranking.title")}</button>
     </div>
     <div class="menu-row">
       ${toggleHtml("sound", save.settings.sound ? "🔊" : "🔇", t("settings.sound"))}
@@ -238,6 +240,7 @@ function onlinePageHtml() {
   const busy = Net.status === "hosting" || Net.status === "joining" || Net.status === "connected" || Net.status === "loading";
   return `
     <h2>🌐 ${t("online.title")}</h2>
+    ${profileHtml()}
     <p>${t("online.intro")}</p>
     ${busy ? "" : `
       <div class="online-choices">
@@ -252,6 +255,112 @@ function onlinePageHtml() {
     ${status}
     <button class="secondary-button" data-action="page" data-page="main">← ${t("menu.back")}</button>
   `;
+}
+
+// --- Ranking: profile box, leaderboard page, rating after online matches ---
+
+let editingNickname = false;
+let nicknameError = null;
+let leaderboardData = null;      // null = loading, false = failed
+
+function refreshIfShowing(page) {
+  if (!menuOverlay.hidden && currentPage === page) renderMenuPage();
+}
+
+function profileHtml() {
+  if (!Ranking.profileLoaded) {
+    Ranking.loadProfile().then(() => refreshIfShowing(currentPage));
+    return `<div class="profile">⏳ ${t("ranking.loading")}</div>`;
+  }
+  if (!Ranking.available) {
+    return `<div class="profile muted">${t("ranking.unavailable")}</div>`;
+  }
+  const profile = Ranking.profile;
+  if (!profile || editingNickname) {
+    return `
+      <div class="profile">
+        <div>${profile ? "" : t("ranking.setNickname")}</div>
+        <div class="menu-row">
+          <input class="nickname-input" maxlength="16" placeholder="${t("ranking.nicknamePlaceholder")}"
+                 value="${escapeHtml(profile ? profile.nickname : "")}">
+          <button class="secondary-button" data-action="saveNickname">💾 ${t("ranking.save")}</button>
+        </div>
+        ${nicknameError ? `<div class="online-status error">⚠️ ${t(nicknameError)}</div>` : ""}
+      </div>`;
+  }
+  return `
+    <div class="profile">
+      👤 <b>${escapeHtml(profile.nickname)}</b> · ⭐ ${profile.rating} · ${t("ranking.games", { n: profile.games })}
+      <button class="link-button" data-action="editNickname">✏️</button>
+      <button class="link-button" data-action="page" data-page="ranking">🏆 ${t("ranking.title")}</button>
+    </div>`;
+}
+
+function rankingPageHtml() {
+  if (leaderboardData === null) {
+    Ranking.leaderboard()
+      .then(data => { leaderboardData = data; Ranking.available = true; })
+      .catch(() => { leaderboardData = false; })
+      .then(() => refreshIfShowing("ranking"));
+  }
+  let body = `<p>⏳ ${t("ranking.loading")}</p>`;
+  if (leaderboardData === false) {
+    body = `<p class="muted">${t("ranking.unavailable")}</p>`;
+  } else if (leaderboardData) {
+    const me = leaderboardData.me;
+    const rows = leaderboardData.top.map((player, i) => `
+      <tr class="${me && player.nickname === me.nickname ? "me" : ""}">
+        <td>${i + 1}</td><td class="name">${escapeHtml(player.nickname)}</td>
+        <td>⭐ ${player.rating}</td><td>${player.games}</td><td>${player.wins}</td>
+      </tr>`).join("");
+    body = leaderboardData.top.length
+      ? `<div class="table-wrap"><table class="leaderboard">
+           <tr><th>#</th><th class="name">${t("ranking.player")}</th><th>${t("ranking.rating")}</th>
+               <th>${t("ranking.gamesColumn")}</th><th>${t("ranking.wins")}</th></tr>${rows}
+         </table></div>`
+      : `<p>${t("ranking.empty")}</p>`;
+    if (me && me.games > 0) {
+      body += `<p class="online-status">${t("ranking.yourRank", { rank: me.rank, rating: me.rating })}</p>`;
+    }
+  }
+  return `
+    <h2>🏆 ${t("ranking.title")}</h2>
+    <p class="muted">${t("ranking.rule")}</p>
+    ${body}
+    <div class="menu-row">
+      <button class="secondary-button" data-action="page" data-page="online">🌐 ${t("menu.online")}</button>
+      <button class="secondary-button" data-action="page" data-page="main">← ${t("menu.back")}</button>
+    </div>`;
+}
+
+// The rating line on the results screen of an online match
+function showRatingOutcome() {
+  const line = document.getElementById("ratingLine");
+  if (!line) return;
+  const match = Ranking.match;
+  let text = "";
+  if (!match) {
+    text = Ranking.available ? t("ranking.notRated") : "";
+  } else if (!match.outcome) {
+    text = t("ranking.saving");
+  } else {
+    const outcome = match.outcome;
+    const host = match.role === "host";
+    if (outcome.status === "playing") {
+      text = t("ranking.waiting");
+    } else if (outcome.status === "done" && outcome.rated) {
+      const delta = host ? outcome.host_delta : outcome.guest_delta;
+      const rating = host ? outcome.host_rating : outcome.guest_rating;
+      text = t(delta >= 0 ? "ranking.up" : "ranking.down", { delta: (delta >= 0 ? "+" : "") + delta, rating: rating });
+    } else if (outcome.status === "done") {
+      text = t("ranking.limit");
+    } else if (outcome.status === "void") {
+      text = t("ranking.void");
+    } else {
+      text = t("ranking.error");
+    }
+  }
+  line.textContent = text;
 }
 
 function onNetStatusChanged() {
@@ -297,12 +406,20 @@ menuPage.addEventListener("click", function (event) {
       return;
     }
     case "copyLink": copyInviteLink(button); return;
+    case "editNickname": editingNickname = true; nicknameError = null; break;
+    case "saveNickname": saveNickname(); return;
     case "leave":
+      if (game.mode === "online" && isMatchInProgress()) {
+        Ranking.report(Net.role);   // leaving mid-match counts as a forfeit
+      }
       Net.leave();
       if (game.mode === "online") endOnlineMatchLocally();
       currentPage = "online";
       break;
-    case "page": currentPage = button.dataset.page; break;
+    case "page":
+      currentPage = button.dataset.page;
+      if (currentPage === "ranking") leaderboardData = null;   // always fresh
+      break;
     case "toggle": save.settings[button.dataset.setting] = !save.settings[button.dataset.setting]; break;
     case "language": save.settings.language = value; setLanguage(value); applyStaticTexts(); break;
     case "level": save.settings.level = value; break;
@@ -327,9 +444,23 @@ function copyInviteLink(button) {
   }
 }
 
+async function saveNickname() {
+  const input = menuPage.querySelector(".nickname-input");
+  const button = menuPage.querySelector('[data-action="saveNickname"]');
+  button.disabled = true;
+  nicknameError = await Ranking.setNickname(input.value);
+  if (!nicknameError) {
+    editingNickname = false;
+  }
+  renderMenuPage();
+}
+
 menuPage.addEventListener("keydown", function (event) {
   if (event.target.classList.contains("room-input") && event.key === "Enter") {
     menuPage.querySelector('[data-action="joinRoom"]').click();
+  }
+  if (event.target.classList.contains("nickname-input") && event.key === "Enter") {
+    saveNickname();
   }
 });
 
@@ -403,7 +534,7 @@ document.addEventListener("webkitfullscreenchange", updateFullscreenButton);
 
 // Keyboard and controller shortcuts for menus: P / Start pause, A / Enter confirm, F fullscreen
 function handleMenuInput() {
-  if (keysPressed.has("KeyF") && !fullscreenButton.hidden && !(document.activeElement && document.activeElement.tagName === "INPUT")) {
+  if (keysPressed.has("KeyF") && !fullscreenButton.hidden) {
     toggleFullscreen();
   }
   const pausePressed = keysPressed.has("KeyP") || anyPadJustPressed(PAD_START);
@@ -467,7 +598,9 @@ function showResults(result) {
     const next = CUP_OPPONENTS[save.progress.cupStage];
     extra.push(t("results.nextOpponent", { team: t("cup." + next.id) }));
   }
-  document.getElementById("resultExtra").innerHTML = extra.map(line => `<div>${escapeHtml(line)}</div>`).join("");
+  document.getElementById("resultExtra").innerHTML = extra.map(line => `<div>${escapeHtml(line)}</div>`).join("") +
+    (result.mode === "online" ? `<div id="ratingLine"></div>` : "");
+  showRatingOutcome();
 
   let primary = t("results.playAgain");
   if (result.mode === "cup" && !result.cupWon) {

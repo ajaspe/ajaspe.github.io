@@ -402,6 +402,71 @@ button:disabled {
   cursor: default;
 }
 
+/* --- Ranking --- */
+.profile {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0.8em;
+  padding: 0.5em 0.8em;
+  margin-bottom: 0.6em;
+}
+
+.muted {
+  opacity: 0.75;
+}
+
+.link-button {
+  background: none;
+  color: #ffeb3b;
+  padding: 0.1em 0.4em;
+}
+
+.nickname-input {
+  width: 12em;
+  font: inherit;
+  padding: 0.3em 0.6em;
+  border-radius: 0.5em;
+  border: none;
+}
+
+.table-wrap {
+  max-height: 45vh;
+  overflow-y: auto;
+}
+
+.leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard th,
+.leaderboard td {
+  padding: 0.25em 0.5em;
+}
+
+.leaderboard th {
+  position: sticky;
+  top: 0;
+  background: #37474f;
+}
+
+.leaderboard tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.leaderboard .name {
+  text-align: left;
+}
+
+.leaderboard tr.me td {
+  background: rgba(255, 235, 59, 0.25);
+  font-weight: 700;
+}
+
+#ratingLine {
+  font-size: 1.15em;
+  margin-top: 0.3em;
+}
+
 /* --- Help --- */
 .help {
   text-align: left;

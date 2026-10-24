@@ -51,6 +51,7 @@ const Net = {
     }
     this.role = "host";
     this.localTeam = 0;
+    if (!Ranking.profileLoaded) Ranking.loadProfile();   // needed to open rated matches
     this.openHostPeer(0);
   },
 
@@ -132,6 +133,9 @@ const Net = {
   onDisconnected() {
     if (!this.role) return;
     const wasPlaying = game.mode === "online";
+    if (wasPlaying && isMatchInProgress()) {
+      Ranking.report(this.role === "host" ? "guest" : "host");   // the other player abandoned
+    }
     this.cleanup();
     if (wasPlaying) {
       endOnlineMatchLocally();
@@ -210,6 +214,7 @@ const Net = {
       })),
     });
     this.sendSnapshot();
+    Ranking.hostMatch();   // sends {t: "rated", id} once the server has created the match
   },
 
   sendSnapshot() {
@@ -238,6 +243,9 @@ const Net = {
     switch (message.t) {
       case "setup":
         setUpGuestMatch(message);
+        break;
+      case "rated":
+        Ranking.joinMatch(message.id);
         break;
       case "s":
         if (game.mode === "online") applySnapshot(message);
@@ -389,6 +397,7 @@ function setUpGuestMatch(setup) {
   shots[0] = null;
   shots[1] = null;
   Net.previous = null;
+  Ranking.match = null;   // the host sends the new rated match id separately
   hideOverlays();
   playStartWhistle(0.9);
   Platform.gameplayStart();
@@ -503,6 +512,7 @@ function finishGuestMatch() {
   persist();
   game.overAt = performance.now();
   showResults({ mode: "online", winner: winner, unlocked: [], cupWon: false });
+  Ranking.report(null);
 }
 
 // Between snapshots the guest keeps things moving smoothly on its own

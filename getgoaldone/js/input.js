@@ -162,6 +162,10 @@ const keyAim = [
 ];
 
 window.addEventListener("keydown", function (event) {
+  const target = event.target;
+  if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA")) {
+    return;   // typing a name or a room code: not a game key
+  }
   if (event.code.startsWith("Arrow") || event.code === "Space") {
     event.preventDefault();
   }
