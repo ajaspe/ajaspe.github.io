@@ -294,7 +294,7 @@ function celebrateFullTime(winner) {
   speak(winner ? t("speech.finalWin", { team: teamName(winner) }) : t("speech.finalDraw"));
 }
 
-// --- Crazy Martini sounds ---
+// --- Ball Frenzy sounds ---
 
 function playCrazyStartSound(ultimate) {
   speak(t(ultimate ? "speech.crazyUltimate" : "speech.crazy"));

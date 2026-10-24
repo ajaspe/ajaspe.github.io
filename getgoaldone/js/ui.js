@@ -263,7 +263,7 @@ function onNetStatusChanged() {
 // --- Help page ---
 
 function helpPageHtml() {
-  const lines = ["help.goal", "help.mouse", "help.keys1", "help.keys2", "help.pad", "help.ai",
+  const lines = ["help.goal", "help.mouse", "help.keys1", "help.keys2", "help.pad", "help.fullscreen", "help.ai",
                  "help.kickoff", "help.freeze", "help.bigGoal", "help.crazy", "help.ultimate"];
   return `
     <h2>❓ ${t("help.title")}</h2>
@@ -365,8 +365,47 @@ pauseButton.addEventListener("click", function () {
   }
 });
 
-// Keyboard and controller shortcuts for menus: P / Start pause, A / Enter confirm
+// --- Fullscreen ---
+
+const fullscreenButton = document.getElementById("fullscreenButton");
+
+function fullscreenElement() {
+  return document.fullscreenElement || document.webkitFullscreenElement || null;
+}
+
+function toggleFullscreen() {
+  unlockAudio();
+  try {
+    if (fullscreenElement()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    } else {
+      const root = document.documentElement;
+      const request = root.requestFullscreen || root.webkitRequestFullscreen;
+      const result = request.call(root);
+      if (result && result.catch) result.catch(() => {});
+    }
+  } catch (error) {
+    // fullscreen refused (e.g. inside an iframe without permission)
+  }
+}
+
+// Hidden where fullscreen isn't available (iPhone Safari) and on CrazyGames, which has its own button
+function updateFullscreenButton() {
+  const supported = document.fullscreenEnabled || document.webkitFullscreenEnabled;
+  fullscreenButton.hidden = !supported || Platform.sdk !== null;
+  fullscreenButton.classList.toggle("active", Boolean(fullscreenElement()));
+  fullscreenButton.setAttribute("aria-label", fullscreenElement() ? "Exit fullscreen" : "Fullscreen");
+}
+
+fullscreenButton.addEventListener("click", toggleFullscreen);
+document.addEventListener("fullscreenchange", updateFullscreenButton);
+document.addEventListener("webkitfullscreenchange", updateFullscreenButton);
+
+// Keyboard and controller shortcuts for menus: P / Start pause, A / Enter confirm, F fullscreen
 function handleMenuInput() {
+  if (keysPressed.has("KeyF") && !fullscreenButton.hidden && !(document.activeElement && document.activeElement.tagName === "INPUT")) {
+    toggleFullscreen();
+  }
   const pausePressed = keysPressed.has("KeyP") || anyPadJustPressed(PAD_START);
   const confirmPressed = keysPressed.has("Enter") || anyPadJustPressed(PAD_A);
 

@@ -5,6 +5,7 @@ async function boot() {
   Platform.loadingStart();
   loadSave();
   applyStaticTexts();
+  updateFullscreenButton();
 
   // Wait (briefly) for the bundled font so the first frames use it
   if (document.fonts && document.fonts.load) {

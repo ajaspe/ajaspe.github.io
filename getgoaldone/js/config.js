@@ -58,7 +58,7 @@ const BIG_GOAL_SECONDS = 20;
 const BIG_GOAL_HEIGHT = 320;
 const BIG_GOAL_ICON_RADIUS = 20;
 
-// --- Crazy Martini 🤪 ---
+// --- Ball Frenzy 🤪 ---
 const CRAZY_INTRO_SECONDS = 3;
 const CRAZY_SECONDS = 20;
 const CRAZY_RESULT_SECONDS = 4;

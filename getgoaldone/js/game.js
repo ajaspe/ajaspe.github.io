@@ -179,7 +179,7 @@ function update() {
     return;
   }
 
-  // Full time. A draw goes to Crazy Martini Ultimate.
+  // Full time. A draw goes to Ball Frenzy Ultimate.
   if (game.timeLeft <= 0 && !game.crazy) {
     if (game.teams[0].goals === game.teams[1].goals) {
       startCrazy(true);
@@ -348,7 +348,7 @@ function updateClock() {
   if (game.state !== "playing" || game.paused || isOnlineGuest()) {
     return;   // the guest gets the clock from the host
   }
-  // The match clock stops during the Crazy Martini (it's extra time)
+  // The match clock stops during the Ball Frenzy (it's extra time)
   if (!game.crazy) {
     game.timeLeft = Math.max(0, game.timeLeft - seconds);
     updateFreeze(seconds);

@@ -68,6 +68,16 @@
     </div>
 
     <div id="rotateHint" class="overlay"></div>
+
+    <!-- After the overlays so it stays clickable in menus too -->
+    <button id="fullscreenButton" class="hud-button" aria-label="Fullscreen" hidden>
+      <svg class="icon-enter" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6" />
+      </svg>
+      <svg class="icon-exit" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 3v6H3M21 9h-6V3M15 21v-6h6M3 15h6v6" />
+      </svg>
+    </button>
   </div>
 
   <script src="js/config.js"></script>
@@ -82,7 +92,7 @@
   <script src="js/ai.js"></script>
   <script src="js/freeze.js"></script>
   <script src="js/big-goal.js"></script>
-  <script src="js/crazy-martini.js"></script>
+  <script src="js/ball-frenzy.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/net.js"></script>
   <script src="js/game.js"></script>

@@ -76,6 +76,30 @@ button:focus-visible {
   border: 0.12em solid rgba(255, 255, 255, 0.6);
 }
 
+#fullscreenButton {
+  right: 4.2em;
+  z-index: 5;
+}
+
+#fullscreenButton svg {
+  width: 55%;
+  height: 55%;
+  fill: none;
+  stroke: white;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#fullscreenButton .icon-exit,
+#fullscreenButton.active .icon-enter {
+  display: none;
+}
+
+#fullscreenButton.active .icon-exit {
+  display: inline;
+}
+
 /* --- Overlays --- */
 .overlay {
   position: absolute;
