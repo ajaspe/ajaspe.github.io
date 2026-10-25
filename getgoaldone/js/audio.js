@@ -36,14 +36,25 @@ function unlockAudio() {
 // Ads must play in silence
 function pauseAudioForAd() {
   adPlaying = true;
-  if (window.speechSynthesis) speechSynthesis.cancel();
+  stopCommentator();
   if (audioCtx) audioCtx.suspend();
 }
 
 function resumeAudioAfterAd() {
   adPlaying = false;
-  if (audioCtx) audioCtx.resume();
+  if (audioCtx && !document.hidden) audioCtx.resume();
 }
+
+// Silence in a background tab (the crowd is a loop that would keep going)
+document.addEventListener("visibilitychange", function () {
+  if (!audioCtx) return;
+  if (document.hidden) {
+    stopCommentator();
+    audioCtx.suspend();
+  } else if (!adPlaying) {
+    audioCtx.resume();
+  }
+});
 
 function createNoise() {
   const buffer = audioCtx.createBuffer(1, audioCtx.sampleRate * 2, audioCtx.sampleRate);
@@ -162,7 +173,54 @@ function crowdRoar() {
   source.stop(now + 3.6);
 }
 
-// --- Commentator (speech synthesis) ---
+// --- Commentator ---
+// Recorded clips (assets/voice/<language>/<line>.mp3, listed in js/voice-clips.js) when we
+// have them; otherwise the browser's speech synthesis reads the "speech.<line>" text.
+
+const voiceClips = {};       // "en/goal" -> Audio element
+let currentClip = null;
+
+function voiceClip(line) {
+  if (!(VOICE_CLIPS[language] || []).includes(line)) return null;
+  const key = language + "/" + line;
+  if (!voiceClips[key]) {
+    voiceClips[key] = new Audio("assets/voice/" + key + ".mp3");
+    voiceClips[key].preload = "auto";
+  }
+  return voiceClips[key];
+}
+
+function preloadVoiceClips() {
+  for (const line of VOICE_CLIPS[language] || []) voiceClip(line);
+}
+
+// Say one of the commentator's lines. Lines without a "speech.*" text (like the countdown) are clip-only.
+function commentate(line, params) {
+  if (!soundEnabled()) return;
+  const clip = voiceClip(line);
+  if (clip) {
+    stopCommentator();
+    clip.currentTime = 0;
+    clip.volume = MASTER_VOLUME;
+    currentClip = clip;
+    clip.play().catch(() => {});
+    return;
+  }
+  if (STRINGS.en["speech." + line]) {
+    speak(t("speech." + line, params));
+  }
+}
+
+function commentatorSpeaking() {
+  return Boolean((currentClip && !currentClip.paused && !currentClip.ended) ||
+                 (window.speechSynthesis && speechSynthesis.speaking));
+}
+
+function stopCommentator() {
+  if (currentClip) currentClip.pause();
+  currentClip = null;
+  if (window.speechSynthesis) speechSynthesis.cancel();
+}
 
 function speak(text) {
   if (!soundEnabled() || !window.speechSynthesis) return;
@@ -170,18 +228,25 @@ function speak(text) {
   utterance.lang = voiceLanguage();
   const voice = bestVoice();
   if (voice) utterance.voice = voice;
-  speechSynthesis.cancel();
+  utterance.rate = 1.1;     // a bit livelier than the default reading voice
+  utterance.pitch = 1.1;
+  stopCommentator();
   speechSynthesis.speak(utterance);
 }
 
-// Prefer natural/online voices, then Google voices, for the current language
+// The most natural-sounding voice for the current language. The old built-in desktop voices
+// (Microsoft David, Zira...) sound robotic, so they come last.
+const VOICE_PREFERENCES = [/Natural|Neural/i, /Online/i, /Google/i, /Premium|Enhanced|Siri/i];
+
 function bestVoice() {
   const voices = speechSynthesis.getVoices();
-  const exact = voices.filter(v => v.lang === voiceLanguage());
-  const sameLanguage = voices.filter(v => v.lang.startsWith(language));
-  return exact.find(v => /Natural|Online/.test(v.name)) ||
-         exact.find(v => /Google/.test(v.name)) ||
-         exact[0] || sameLanguage[0] || null;
+  const exact = voices.filter(v => v.lang.replace("_", "-") === voiceLanguage());
+  const sameLanguage = voices.filter(v => v.lang.toLowerCase().startsWith(language));
+  for (const pattern of VOICE_PREFERENCES) {
+    const voice = exact.find(v => pattern.test(v.name)) || sameLanguage.find(v => pattern.test(v.name));
+    if (voice) return voice;
+  }
+  return exact.find(v => !v.localService) || exact[0] || sameLanguage[0] || null;
 }
 
 if (window.speechSynthesis) {
@@ -240,7 +305,7 @@ function playMagicSound() {
 }
 
 function playBigGoalSound() {
-  speak(t("speech.bigGoal"));
+  commentate("bigGoal");
   if (!audioCtx) return;
   const now = audioCtx.currentTime;
   const osc = playTone(150, now, 0.9, 0.2, "square");
@@ -281,23 +346,38 @@ function playFanfare() {
 function celebrateGoal(team, ownGoal) {
   if (ownGoal) {
     playSadTrombone();
-    speak(t("speech.ownGoal"));
+    commentate("ownGoal");
     return;
   }
   crowdRoar();
-  speak(t("speech.goal", { team: teamName(team) }));
+  commentate("goal", { team: teamName(team) });
 }
 
 function celebrateFullTime(winner) {
   playFinalWhistle();
   crowdRoar();
-  speak(winner ? t("speech.finalWin", { team: teamName(winner) }) : t("speech.finalDraw"));
+  if (winner) {
+    commentate("finalWin", { team: teamName(winner) });
+  } else {
+    commentate("finalDraw");
+  }
+}
+
+// Start screen: a beep on 3, 2, 1 and the whistle on 0
+function playCountdownStep(n) {
+  const lines = ["go", "one", "two", "three"];
+  commentate(lines[n]);
+  if (n === 0) {
+    playStartWhistle(0.6);
+  } else {
+    playCountdownBeep();
+  }
 }
 
 // --- Ball Frenzy sounds ---
 
 function playCrazyStartSound(ultimate) {
-  speak(t(ultimate ? "speech.crazyUltimate" : "speech.crazy"));
+  commentate(ultimate ? "crazyUltimate" : "crazy");
   if (!audioCtx) return;
   const now = audioCtx.currentTime;
   const siren = playTone(200, now, 1.0, 0.2, "sawtooth");
@@ -319,11 +399,11 @@ function playCrazyPointSound() {
 function announceCrazyResult(crazy) {
   playFinalWhistle();
   if (!crazy.winner) {
-    speak(t(crazy.ultimate ? "speech.crazyTieUltimate" : "speech.crazyTie"));
+    commentate(crazy.ultimate ? "crazyTieUltimate" : "crazyTie");
     return;
   }
   crowdRoar();
-  speak(t(crazy.ultimate ? "speech.crazyWinsMatch" : "speech.crazyWinsGoal", { team: teamName(crazy.winner) }));
+  commentate(crazy.ultimate ? "crazyWinsMatch" : "crazyWinsGoal", { team: teamName(crazy.winner) });
 }
 
 const CRAZY_NOTES = [60, 62, 64, 67, 69, 72, 74, 76, 79, 81];   // pentatonic: always sounds fine
@@ -396,11 +476,11 @@ let tick = true;
 function updateAudio() {
   if (!audioCtx || adPlaying) return;
   const now = audioCtx.currentTime;
-  const inMatch = (game.state === "playing" || game.state === "goal") && !game.paused;
+  const inMatch = isMatchInProgress() && !game.paused;
 
   // Duck everything while the commentator speaks
-  const speaking = window.speechSynthesis && speechSynthesis.speaking;
-  const master = soundEnabled() ? (speaking ? MASTER_VOLUME * 0.35 : MASTER_VOLUME) : 0;
+  if (!soundEnabled() && currentClip) stopCommentator();
+  const master = soundEnabled() ? (commentatorSpeaking() ? MASTER_VOLUME * 0.35 : MASTER_VOLUME) : 0;
   masterGain.gain.setTargetAtTime(master, now, 0.1);
 
   const calmMusic = save.settings.music && inMatch && !game.crazy;

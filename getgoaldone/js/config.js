@@ -75,6 +75,16 @@ const CELEBRATION_FRAMES = 120;
 const MATCH_MINUTES = [1, 2, 3];
 const DEFAULT_MINUTES = 2;
 const TUTORIAL_HINT_SECONDS = 15;
+const COUNTDOWN_SECONDS = 3;     // "you are this team" screen before every match
+const KICKOFF_AUTO_SECONDS = 5;  // the clock waits for the kick-off; after this the chip kicks off by itself
+const KICKOFF_AUTO_POWER = 8;
+
+// --- Main loop ---
+const STEP_SECONDS = 1 / 60;     // the simulation runs at 60 steps per second on any screen
+const MAX_CANVAS_PIXEL_WIDTH = 2880;   // sharp on big and high-DPI screens, but not too slow
+
+// --- Touch ---
+const TOUCH_GRAB_PIXELS = 30;    // a finger this close (screen pixels) to the edge of a chip still grabs it
 
 // --- Audio ---
 const MASTER_VOLUME = 0.8;
@@ -85,6 +95,12 @@ const MUSIC_STEP_END = 0.15;     // ...and at the final whistle
 
 // --- Platform ---
 const MIDGAME_AD_INTERVAL_MS = 3 * 60 * 1000;
+
+// --- Online ---
+const ONLINE_CONNECT_TIMEOUT_MS = 15000;
+// null = PeerJS defaults (Google STUN + the free PeerJS TURN relay). To use your own relay:
+// [{ urls: "stun:stun.l.google.com:19302" }, { urls: "turn:host:3478", username: "...", credential: "..." }]
+const ONLINE_ICE_SERVERS = null;
 
 // --- Team colors ---
 const TEAM_COLORS = [

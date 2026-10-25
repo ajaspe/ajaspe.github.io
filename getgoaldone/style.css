@@ -74,6 +74,21 @@ button:focus-visible {
   background: rgba(0, 0, 0, 0.45);
   color: white;
   border: 0.12em solid rgba(255, 255, 255, 0.6);
+  /* Icons dead centre in the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hud-button svg {
+  display: block;
+  width: 55%;
+  height: 55%;
+  flex: none;
+}
+
+#pauseButton svg {
+  fill: white;
 }
 
 #fullscreenButton {
@@ -82,8 +97,6 @@ button:focus-visible {
 }
 
 #fullscreenButton svg {
-  width: 55%;
-  height: 55%;
   fill: none;
   stroke: white;
   stroke-width: 2.5;
@@ -97,7 +110,7 @@ button:focus-visible {
 }
 
 #fullscreenButton.active .icon-exit {
-  display: inline;
+  display: block;
 }
 
 /* --- Overlays --- */
@@ -158,10 +171,55 @@ button:focus-visible {
 }
 
 /* --- Main menu --- */
+.byline {
+  display: block;
+  margin: -0.6em auto 0.5em;
+  padding: 0.1em 0.6em;
+  background: none;
+  color: #fff59d;
+  font-weight: 400;
+}
+
+.byline:hover {
+  text-decoration: underline;
+}
+
 .big-button {
   font-size: 1.5em;
   padding: 0.45em 1.6em;
   margin-bottom: 0.5em;
+}
+
+/* The main "play" button: Quick match */
+.play-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+  min-width: 11em;
+  margin: 0 auto 0.3em;
+  padding: 0.4em 1.6em 0.5em;
+  box-shadow: 0 0.2em 0 #c79100, 0 0 1.2em rgba(255, 202, 40, 0.45);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.play-button .mode-title {
+  font-size: 1.3em;
+}
+
+.play-button .mode-hint {
+  font-size: 0.55em;
+}
+
+.beta {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.1em 0.4em;
+  border-radius: 0.4em;
+  background: #ff7043;
+  color: white;
+  font-size: 0.55em;
+  letter-spacing: 0.05em;
 }
 
 .mode-buttons {
@@ -170,6 +228,12 @@ button:focus-visible {
   justify-content: center;
   flex-wrap: wrap;
   margin: 0.4em 0 0.8em;
+}
+
+/* During a match all four modes sit below Resume */
+.mode-buttons.two-by-two {
+  display: grid;
+  grid-template-columns: repeat(2, 12.5em);
 }
 
 .mode-button {
@@ -467,6 +531,33 @@ button:disabled {
   margin-top: 0.3em;
 }
 
+/* --- About --- */
+.about {
+  display: flex;
+  gap: 1.2em;
+  align-items: center;
+  margin-bottom: 0.8em;
+  text-align: left;
+}
+
+.about-photo {
+  height: min(55vh, 24em);
+  aspect-ratio: 575 / 1024;
+  object-fit: cover;
+  border-radius: 1em;
+  border: 0.2em solid white;
+  box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
+}
+
+.about-text {
+  line-height: 1.45;
+}
+
+.about-text p {
+  margin: 0 0 0.7em;
+}
+
 /* --- Help --- */
 .help {
   text-align: left;
@@ -604,5 +695,9 @@ button:disabled {
 @media (max-width: 700px) {
   .settings-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about {
+    flex-direction: column;
   }
 }

@@ -69,69 +69,81 @@ function selectNextChip(teamIndex, direction) {
 
 // --- Mouse and touch (several fingers at once on tablets) ---
 
-const pointerTeams = new Map();   // pointerId -> team index
+// pointerId -> { team, dx, dy }: the team it aims for, and where the chip was grabbed (offset from its centre)
+const pointers = new Map();
 
-// Canvas coordinates of a pointer. The canvas is letterboxed (object-fit: contain).
+// Field coordinates of a pointer, and the screen pixels per field unit.
+// The canvas is letterboxed (object-fit: contain).
 function canvasPoint(event) {
   const box = canvas.getBoundingClientRect();
-  const scale = Math.min(box.width / canvas.width, box.height / canvas.height);
-  const offsetX = (box.width - canvas.width * scale) / 2;
-  const offsetY = (box.height - canvas.height * scale) / 2;
+  const scale = Math.min(box.width / CANVAS_WIDTH, box.height / CANVAS_HEIGHT);
+  const offsetX = (box.width - CANVAS_WIDTH * scale) / 2;
+  const offsetY = (box.height - CANVAS_HEIGHT * scale) / 2;
   return {
     x: (event.clientX - box.left - offsetX) / scale,
     y: (event.clientY - box.top - offsetY) / scale,
+    scale: scale,
   };
 }
 
+// Grabs the closest chip that can shoot. Fingers get extra reach, since chips are small on phones.
 canvas.addEventListener("pointerdown", function (event) {
   unlockAudio();
   if (game.state !== "playing" || game.paused) {
     return;
   }
   const point = canvasPoint(event);
+  const reach = event.pointerType === "mouse" ? 0 : TOUCH_GRAB_PIXELS / point.scale;
+  let best = null;
   for (const index of localTeams()) {
-    if (!canTeamPlay(index) || pointerTeamsHas(index)) {
+    if (!canTeamPlay(index) || pointerAimsFor(index)) {
       continue;
     }
-    const team = game.teams[index];
-    for (const chip of team.chips) {
-      if (distance(point, chip) < chip.radius * 1.4 && canShoot(chip)) {
-        shots[index] = { chip: chip, pullX: point.x, pullY: point.y, source: "pointer" };
-        team.selected = team.chips.indexOf(chip);
-        pointerTeams.set(event.pointerId, index);
-        try {
-          canvas.setPointerCapture(event.pointerId);   // keep receiving moves outside the canvas
-        } catch (error) {
-          // the pointer may already be gone; aiming still works
-        }
-        return;
+    for (const chip of game.teams[index].chips) {
+      const dist = distance(point, chip);
+      if (canShoot(chip) && dist < Math.max(chip.radius * 1.4, chip.radius + reach) && (!best || dist < best.dist)) {
+        best = { index: index, chip: chip, dist: dist };
       }
     }
   }
+  if (!best) {
+    return;
+  }
+  const team = game.teams[best.index];
+  shots[best.index] = { chip: best.chip, pullX: best.chip.x, pullY: best.chip.y, source: "pointer" };
+  team.selected = team.chips.indexOf(best.chip);
+  pointers.set(event.pointerId, { team: best.index, dx: point.x - best.chip.x, dy: point.y - best.chip.y });
+  try {
+    canvas.setPointerCapture(event.pointerId);   // keep receiving moves outside the canvas
+  } catch (error) {
+    // the pointer may already be gone; aiming still works
+  }
 });
 
-function pointerTeamsHas(teamIndex) {
-  for (const index of pointerTeams.values()) {
-    if (index === teamIndex) return true;
+function pointerAimsFor(teamIndex) {
+  for (const pointer of pointers.values()) {
+    if (pointer.team === teamIndex) return true;
   }
   return false;
 }
 
+// The pull is measured from where the chip was grabbed, so grabbing it off-centre doesn't shoot
 canvas.addEventListener("pointermove", function (event) {
-  const index = pointerTeams.get(event.pointerId);
-  if (index !== undefined && shots[index]) {
+  const pointer = pointers.get(event.pointerId);
+  if (pointer && shots[pointer.team]) {
     const point = canvasPoint(event);
-    shots[index].pullX = point.x;
-    shots[index].pullY = point.y;
+    shots[pointer.team].pullX = point.x - pointer.dx;
+    shots[pointer.team].pullY = point.y - pointer.dy;
   }
 });
 
 function releasePointer(event, shoot) {
-  const index = pointerTeams.get(event.pointerId);
-  if (index === undefined) {
+  const pointer = pointers.get(event.pointerId);
+  if (pointer === undefined) {
     return;
   }
-  pointerTeams.delete(event.pointerId);
+  pointers.delete(event.pointerId);
+  const index = pointer.team;
   if (shots[index] && shots[index].source === "pointer") {
     if (shoot) {
       fire(index);

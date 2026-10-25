@@ -1,9 +1,9 @@
 // Game state, rules, match flow and the main loop.
 
 const game = {
-  state: "idle",         // "idle" | "playing" | "goal" | "over"
+  state: "idle",         // "idle" | "countdown" | "playing" | "goal" | "over"
   paused: false,
-  mode: "quick",         // "quick" (vs CPU) | "cup" (vs CPU, progression) | "versus" (2 players)
+  mode: "quick",         // "quick" (vs CPU) | "cup" (vs CPU, progression) | "versus" (2 players) | "online"
   cupStage: 0,
   teams: [],
   ball: null,
@@ -14,6 +14,9 @@ const game = {
   ownGoal: false,
   celebrationFrames: 0,
   kickoff: null,         // team index that must kick off (only it may shoot), or null
+  kickoffWait: 0,        // seconds left before the kick-off happens by itself
+  countdown: 0,          // seconds left on the start screen
+  startedAt: 0,          // performance.now() at the end of the countdown, for the "GO!"
   lastTouch: null,       // last team to touch the ball, to detect own goals
   tutorial: false,
 
@@ -121,13 +124,31 @@ function startMatch(mode) {
 
   // First-time players kick off, so they can try the controls right away
   kickOff(game.tutorial ? 0 : (Math.random() < 0.5 ? 0 : 1));
-  game.state = "playing";
+  startCountdown();
   game.paused = false;
   hideOverlays();
-  playStartWhistle(0.9);
   Platform.gameplayStart();
   if (mode === "online") {
     Net.sendSetup(minutes);
+  }
+}
+
+// The start screen: who you are, then 3, 2, 1...
+function startCountdown() {
+  game.state = "countdown";
+  game.countdown = COUNTDOWN_SECONDS;
+  playCountdownStep(COUNTDOWN_SECONDS);
+}
+
+function updateCountdown(seconds) {
+  const before = Math.ceil(game.countdown);
+  game.countdown -= seconds;
+  if (game.countdown <= 0) {
+    game.state = "playing";
+    game.startedAt = performance.now();
+    playCountdownStep(0);
+  } else if (Math.ceil(game.countdown) < before) {
+    playCountdownStep(Math.ceil(game.countdown));
   }
 }
 
@@ -135,9 +156,27 @@ function otherColor(colorId) {
   return pickRandom(TEAM_COLORS.filter(color => color.id !== colorId)).id;
 }
 
+// The field behind the main menu, before the first match
+function showTitleField() {
+  const homeColor = save.settings.team1.colorId;
+  const home = createTeam({ colorId: homeColor, side: "left", style: save.progress.chipStyle, chipNames: randomChipNames(3, []) });
+  const away = createTeam({ colorId: otherColor(homeColor), side: "right", chipNames: randomChipNames(3, home.chips.map(c => c.name)) });
+  game.teams = [home, away];
+  game.ball = createBall("white", save.progress.ballSkin);
+  game.totalTime = save.settings.minutes * 60;
+  game.timeLeft = game.totalTime;
+  resetFreeze();
+  resetBigGoal();
+  resetCrazy(save.settings.minutes);
+  kickOff(0);
+  game.kickoff = null;
+  game.state = "idle";
+}
+
 // Everybody back to their spots, ball in the centre; only the kicking team may shoot
 function kickOff(teamIndex) {
   game.kickoff = teamIndex;
+  game.kickoffWait = KICKOFF_AUTO_SECONDS;
   game.lastTouch = null;
   game.ball.x = CENTER_X;
   game.ball.y = CENTER_Y;
@@ -149,6 +188,19 @@ function kickOff(teamIndex) {
   }
   shots[0] = null;
   shots[1] = null;
+}
+
+// Nobody kicked off in time: the chip closest to the ball taps it on its own
+// (the closest one, because the attacker may have walked in between the striker and the ball)
+function autoKickOff() {
+  const index = game.kickoff;
+  const team = game.teams[index];
+  const ready = team.chips.filter(canShoot);
+  const chip = closestChipToBall(ready.length ? ready : team.chips);
+  team.selected = team.chips.indexOf(chip);
+  const angle = Math.atan2(game.ball.y - chip.y, game.ball.x - chip.x);
+  shots[index] = null;
+  applyShot(chip, Math.cos(angle) * KICKOFF_AUTO_POWER, Math.sin(angle) * KICKOFF_AUTO_POWER, index);
 }
 
 function onHumanShot() {
@@ -314,7 +366,7 @@ function endMatch() {
 }
 
 function pauseGame() {
-  if ((game.state !== "playing" && game.state !== "goal") || game.paused) return;
+  if (!isMatchInProgress() || game.paused) return;
   if (game.mode === "online") {
     showMenu();   // online matches can't be paused: the menu just opens on top
     return;
@@ -337,22 +389,38 @@ function resumeGame() {
 }
 
 function isMatchInProgress() {
-  return game.state === "playing" || game.state === "goal";
+  return game.state === "countdown" || game.state === "playing" || game.state === "goal";
 }
+
+// Switching tabs or apps pauses a local match (online matches can't pause)
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden && game.mode !== "online") {
+    pauseGame();
+  }
+});
 
 // --- Clock ---
 
-let lastClockTime = performance.now();
-
-function updateClock() {
-  const now = performance.now();
-  const seconds = Math.min((now - lastClockTime) / 1000, 0.1);
-  lastClockTime = now;
-  if (game.state !== "playing" || game.paused || isOnlineGuest()) {
+function updateClock(seconds) {
+  if (game.paused || isOnlineGuest()) {
     return;   // the guest gets the clock from the host
   }
-  // The match clock stops during the Ball Frenzy (it's extra time)
+  if (game.state === "countdown") {
+    updateCountdown(seconds);
+    return;
+  }
+  if (game.state !== "playing") {
+    return;
+  }
+  // The match clock stops during the Ball Frenzy (it's extra time) and while waiting for the kick-off
   if (!game.crazy) {
+    if (game.kickoff !== null) {
+      game.kickoffWait -= seconds;
+      if (game.kickoffWait <= 0) {
+        autoKickOff();
+      }
+      return;
+    }
     game.timeLeft = Math.max(0, game.timeLeft - seconds);
     updateFreeze(seconds);
     updateBigGoal(seconds);
@@ -361,17 +429,34 @@ function updateClock() {
 }
 
 // --- Main loop ---
+// The simulation (input, AI, physics, timers) runs in fixed steps of 1/60 s, so the game plays
+// the same on 60, 120 or 144 Hz screens. Drawing and audio happen once per animation frame.
 
-function frame() {
-  updateClock();
+let lastFrameTime = null;
+let pendingSeconds = 0;
+
+function step() {
+  updateClock(STEP_SECONDS);
   if (!game.paused) {
     update();
   }
   Net.tick();
   handleMenuInput();
-  renderFrame();
-  updateAudio();
   rememberPadButtons();
   clearPressedKeys();
+}
+
+function frame(now) {
+  if (lastFrameTime !== null) {
+    pendingSeconds += Math.min(now - lastFrameTime, 250) / 1000;   // after a long hiccup, just carry on
+  }
+  lastFrameTime = now;
+  // The small tolerance absorbs timer jitter on 60 Hz screens (otherwise some frames get 0 or 2 steps)
+  while (pendingSeconds > STEP_SECONDS * 0.9) {
+    step();
+    pendingSeconds -= STEP_SECONDS;
+  }
+  renderFrame();
+  updateAudio();
   requestAnimationFrame(frame);
 }

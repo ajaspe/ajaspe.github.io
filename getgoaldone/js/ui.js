@@ -29,7 +29,7 @@ function escapeHtml(text) {
 
 function renderMenuPage() {
   const pages = { main: mainPageHtml, settings: settingsPageHtml, locker: lockerPageHtml, help: helpPageHtml,
-                  online: onlinePageHtml, ranking: rankingPageHtml };
+                  online: onlinePageHtml, ranking: rankingPageHtml, about: aboutPageHtml };
   menuPage.innerHTML = pages[currentPage]();
   menuOverlay.classList.toggle("compact", currentPage !== "main");   // the logo only on the main page
   if (currentPage === "locker") {
@@ -46,15 +46,24 @@ function mainPageHtml() {
     ? t("menu.cupChampion", { n: progress.cupsWon })
     : t("menu.cupStage", { n: progress.cupStage + 1, total: CUP_OPPONENTS.length }) + " · " + t("cup." + opponent.id);
 
-  const inOnlineMatch = isMatchInProgress() && game.mode === "online";
+  const inMatch = isMatchInProgress();
+  const inOnlineMatch = inMatch && game.mode === "online";
+  const quickHint = t("menu.quickMatchHint") + " · " + t("level." + save.settings.level);
+  // Between matches Quick match is the big "play" button; during a match that's Resume
   return `
-    ${isMatchInProgress() ? `<button class="big-button" data-action="resume">▶ ${t("menu.resume")}</button>` : ""}
-    ${inOnlineMatch ? `<div class="menu-row"><button class="secondary-button" data-action="leave">🚪 ${t("online.leave")}</button></div>` : ""}
-    <div class="mode-buttons">
-      <button class="mode-button" data-action="quick">
+    <button class="byline" data-action="page" data-page="about">${t("menu.by")} <b>AlMart</b></button>
+    ${inMatch ? `<button class="big-button" data-action="resume">▶ ${t("menu.resume")}</button>` : `
+      <button class="big-button play-button" data-action="quick">
         <span class="mode-title">⚽ ${t("menu.quickMatch")}</span>
-        <span class="mode-hint">${t("menu.quickMatchHint")} · ${t("level." + save.settings.level)}</span>
-      </button>
+        <span class="mode-hint">${quickHint}</span>
+      </button>`}
+    ${inOnlineMatch ? `<div class="menu-row"><button class="secondary-button" data-action="leave">🚪 ${t("online.leave")}</button></div>` : ""}
+    <div class="mode-buttons ${inMatch ? "two-by-two" : ""}">
+      ${inMatch ? `
+        <button class="mode-button" data-action="quick">
+          <span class="mode-title">⚽ ${t("menu.quickMatch")}</span>
+          <span class="mode-hint">${quickHint}</span>
+        </button>` : ""}
       <button class="mode-button" data-action="cup">
         <span class="mode-title">🏆 ${t("menu.cup")}</span>
         <span class="mode-hint">${escapeHtml(cupHint)}</span>
@@ -64,7 +73,7 @@ function mainPageHtml() {
         <span class="mode-hint">${t("menu.versusHint")}</span>
       </button>
       <button class="mode-button" data-action="page" data-page="online">
-        <span class="mode-title">🌐 ${t("menu.online")}</span>
+        <span class="mode-title">🌐 ${t("menu.online")} <span class="beta">BETA</span></span>
         <span class="mode-hint">${t("menu.onlineHint")}</span>
       </button>
     </div>
@@ -239,9 +248,10 @@ function onlinePageHtml() {
 
   const busy = Net.status === "hosting" || Net.status === "joining" || Net.status === "connected" || Net.status === "loading";
   return `
-    <h2>🌐 ${t("online.title")}</h2>
+    <h2>🌐 ${t("online.title")} <span class="beta">BETA</span></h2>
     ${profileHtml()}
     <p>${t("online.intro")}</p>
+    <p class="online-hint">${t("online.betaHint")}</p>
     ${busy ? "" : `
       <div class="online-choices">
         <div class="setting">
@@ -381,7 +391,37 @@ function helpPageHtml() {
   `;
 }
 
+// --- About page: who made the game ---
+
+function aboutPageHtml() {
+  return `
+    <h2>${t("about.title")}</h2>
+    <div class="about">
+      <img class="about-photo" src="assets/almart.jpg" alt="${t("about.photoAlt")}">
+      <div class="about-text">
+        <p>${t("about.p1")}</p>
+        <p>${t("about.p2")}</p>
+        <p>${t("about.p3")}</p>
+      </div>
+    </div>
+    <button class="secondary-button" data-action="page" data-page="main">← ${t("menu.back")}</button>
+  `;
+}
+
 // --- Menu actions ---
+
+let startingMatch = false;
+
+// A natural break between matches: maybe a midgame ad first (see Platform.showBreakAd)
+function startFromMenu(mode) {
+  if (startingMatch) return;
+  startingMatch = true;
+  if (Net.active) Net.leave();   // starting a local match leaves any online room
+  Platform.showBreakAd().then(() => {
+    startingMatch = false;
+    startMatch(mode);
+  });
+}
 
 menuPage.addEventListener("click", function (event) {
   const button = event.target.closest("[data-action]");
@@ -396,8 +436,7 @@ menuPage.addEventListener("click", function (event) {
     case "quick":
     case "cup":
     case "versus":
-      if (Net.active) Net.leave();   // starting a local match leaves any online room
-      startMatch(action);
+      startFromMenu(action);
       return;
     case "hostRoom": Net.host(); return;
     case "joinRoom": {
@@ -421,10 +460,13 @@ menuPage.addEventListener("click", function (event) {
       if (currentPage === "ranking") leaderboardData = null;   // always fresh
       break;
     case "toggle": save.settings[button.dataset.setting] = !save.settings[button.dataset.setting]; break;
-    case "language": save.settings.language = value; setLanguage(value); applyStaticTexts(); break;
+    case "language": save.settings.language = value; setLanguage(value); applyStaticTexts(); preloadVoiceClips(); break;
     case "level": save.settings.level = value; break;
     case "minutes": save.settings.minutes = Number(value); break;
-    case "color": save.settings[button.dataset.slot].colorId = value; break;
+    case "color":
+      save.settings[button.dataset.slot].colorId = value;
+      if (game.state === "idle") showTitleField();   // the field behind the menu shows your colour
+      break;
     case "resetPads": resetPads(); break;
     case "equip": equip(button.dataset.kind, value); break;
   }
@@ -551,8 +593,14 @@ function handleMenuInput() {
     if (menuOpen) resumeGame(); else pauseGame();
     return;
   }
-  if (game.paused && !menuOverlay.hidden && currentPage === "main" && confirmPressed) {
-    resumeGame();
+  // Enter / A on the main menu: resume, or start a quick match (unless a focused button gets the Enter)
+  const focusedButton = document.activeElement && document.activeElement.tagName === "BUTTON";
+  if (!menuOverlay.hidden && currentPage === "main" && confirmPressed && !focusedButton) {
+    if (game.paused) {
+      resumeGame();
+    } else if (!isMatchInProgress()) {
+      startFromMenu("quick");
+    }
   }
 }
 
@@ -618,7 +666,7 @@ function showResults(result) {
   }
   if (result.cupWon) {
     playFanfare();
-    speak(t("speech.cupWon"));
+    commentate("cupWon");
   }
   menuOverlay.hidden = true;
   pauseButton.hidden = true;

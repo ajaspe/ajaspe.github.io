@@ -7,9 +7,32 @@ canvas.height = CANVAS_HEIGHT;
 
 const FONT = "Fredoka, 'Comic Sans MS', 'Trebuchet MS', sans-serif";
 
+// Everything is drawn in field units (CANVAS_WIDTH x CANVAS_HEIGHT); the canvas itself has as many
+// pixels as it covers on screen, so it stays sharp in fullscreen and on high-DPI screens.
+function fitCanvas() {
+  const box = canvas.getBoundingClientRect();
+  const fit = Math.min(box.width / CANVAS_WIDTH, box.height / CANVAS_HEIGHT);
+  if (!(fit > 0)) {
+    return;
+  }
+  const scale = Math.min(fit * (window.devicePixelRatio || 1), MAX_CANVAS_PIXEL_WIDTH / CANVAS_WIDTH);
+  const width = Math.round(CANVAS_WIDTH * scale);
+  const height = Math.round(CANVAS_HEIGHT * scale);
+  if (canvas.width !== width || canvas.height !== height) {
+    canvas.width = width;
+    canvas.height = height;
+  }
+}
+
+if (window.ResizeObserver) {
+  new ResizeObserver(fitCanvas).observe(canvas);
+}
+window.addEventListener("resize", fitCanvas);
+
 function renderFrame() {
+  ctx.setTransform(canvas.width / CANVAS_WIDTH, 0, 0, canvas.height / CANVAS_HEIGHT, 0, 0);
   ctx.fillStyle = "#1b5e20";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   if (!game.teams.length) {
     return;
   }
@@ -53,6 +76,7 @@ function renderFrame() {
   if (game.state === "goal") {
     drawGoalCelebration();
   }
+  drawStartScreen();
   ctx.restore();
 }
 
@@ -95,7 +119,7 @@ function drawEmoji(emoji, x, y, size) {
 
 function darken(alpha) {
   ctx.fillStyle = "rgba(0, 0, 0, " + alpha + ")";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
 // --- Field ---
@@ -426,7 +450,46 @@ function drawKickoffBanner() {
     return;
   }
   const team = game.teams[game.kickoff];
-  drawText(t("hud.kickoff", { team: teamName(team) }), CENTER_X, TOP + 25, 24, team.color);
+  const seconds = Math.max(1, Math.ceil(game.kickoffWait));
+  drawText(t("hud.kickoff", { team: teamName(team), s: seconds }), CENTER_X, TOP + 25, 24, team.color);
+}
+
+// Before each match: which team you are and where you attack, then 3, 2, 1, GO!
+function drawStartScreen() {
+  if (game.state === "countdown") {
+    darken(0.55);
+    const mine = localTeams();
+    const pulse = Math.sin(performance.now() / 120);
+    game.teams.forEach((team, index) => {
+      const x = LEFT + FIELD_WIDTH * (team.side === "left" ? 0.25 : 0.75);
+      const y = CENTER_Y + 115;
+      let label = null;
+      if (mine.length === 1 && mine[0] === index) label = t("countdown.you");
+      if (mine.length === 2) label = t("countdown.player", { n: index + 1 });
+
+      if (!label) {
+        drawText(teamName(team), x, y + 20, 30, team.color);
+        return;
+      }
+      for (const chip of team.chips) {
+        strokeCircle(chip.x, chip.y, chip.radius + 9 + pulse * 2, team.color, 4);
+        drawChip(chip, null);
+      }
+      drawText(label, x, y, 58 + pulse * 3, team.color);
+      drawText(teamName(team), x, y + 48, 26, "white");
+      const direction = team.side === "left" ? 1 : -1;
+      drawArrow(x - direction * 70, y + 92, x + direction * 70, y + 92, team.color, 8);
+      drawText(t("countdown.attack"), x, y + 126, 18, "white");
+    });
+    drawText(String(Math.ceil(game.countdown)), CENTER_X, CENTER_Y - 10, 150, "#ffeb3b");
+    return;
+  }
+  const sinceStart = performance.now() - game.startedAt;
+  if (game.state === "playing" && sinceStart < 700) {
+    ctx.globalAlpha = 1 - sinceStart / 700;
+    drawText(t("countdown.go"), CENTER_X, CENTER_Y - 10, 150 + sinceStart / 10, "#76ff03");
+    ctx.globalAlpha = 1;
+  }
 }
 
 // Below the field: the tutorial hint, or the cup progress

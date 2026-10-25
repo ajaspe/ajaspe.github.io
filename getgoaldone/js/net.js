@@ -18,6 +18,7 @@ const Net = {
   peer: null,
   conn: null,
   peerSettings: null,     // the guest's team settings (host side)
+  connectTimer: null,
   frame: 0,
   lastSentAim: null,
   lastSentSelected: null,
@@ -57,7 +58,7 @@ const Net = {
 
   openHostPeer(attempt) {
     this.roomCode = randomRoomCode();
-    const peer = new Peer(PEER_PREFIX + this.roomCode, { debug: 0 });
+    const peer = new Peer(PEER_PREFIX + this.roomCode, peerOptions());
     this.peer = peer;
     peer.on("open", () => this.setStatus("hosting"));
     peer.on("connection", conn => {
@@ -92,8 +93,12 @@ const Net = {
     this.role = "guest";
     this.localTeam = 1;
     this.setStatus("joining");
-    const peer = new Peer({ debug: 0 });
+    const peer = new Peer(peerOptions());
     this.peer = peer;
+    // Some networks block peer-to-peer connections: don't leave the player waiting forever
+    this.connectTimer = setTimeout(() => {
+      if (this.peer === peer && this.status === "joining") this.fail("online.errorTimeout");
+    }, ONLINE_CONNECT_TIMEOUT_MS);
     peer.on("open", () => {
       this.attach(peer.connect(PEER_PREFIX + this.roomCode, { reliable: true, serialization: "json" }));
     });
@@ -107,7 +112,17 @@ const Net = {
 
   attach(conn) {
     this.conn = conn;
+    if (this.role === "host") {
+      // A guest whose connection never opens mustn't keep the room "full"
+      setTimeout(() => {
+        if (this.conn === conn && !conn.open) {
+          this.conn = null;
+          conn.close();
+        }
+      }, ONLINE_CONNECT_TIMEOUT_MS);
+    }
     conn.on("open", () => {
+      clearTimeout(this.connectTimer);
       this.setStatus("connected");
       if (this.role === "guest") {
         const team = save.settings.team1;
@@ -115,8 +130,8 @@ const Net = {
       }
     });
     conn.on("data", message => this.receive(message));
-    conn.on("close", () => this.onDisconnected());
-    conn.on("error", () => this.onDisconnected());
+    conn.on("close", () => this.conn === conn && this.onDisconnected());
+    conn.on("error", () => this.conn === conn && this.onDisconnected());
   },
 
   send(message) {
@@ -153,6 +168,7 @@ const Net = {
 
   cleanup() {
     const peer = this.peer;
+    clearTimeout(this.connectTimer);
     this.role = null;
     this.conn = null;
     this.peer = null;
@@ -285,6 +301,10 @@ function isOnlineGuest() {
   return Net.role === "guest" && game.mode === "online";
 }
 
+function peerOptions() {
+  return ONLINE_ICE_SERVERS ? { debug: 0, config: { iceServers: ONLINE_ICE_SERVERS } } : { debug: 0 };
+}
+
 function randomRoomCode() {
   let code = "";
   for (let i = 0; i < 5; i++) {
@@ -347,7 +367,9 @@ function takeSnapshot() {
     t: "s",
     st: game.state,
     tl: round1(game.timeLeft),
+    cd: round1(game.countdown),
     ko: game.kickoff,
+    kw: round1(game.kickoffWait),
     g: [game.teams[0].goals, game.teams[1].goals],
     sel: game.teams[0].selected,
     b: bodyState(game.ball),
@@ -385,7 +407,6 @@ function setUpGuestMatch(setup) {
   game.timeLeft = game.totalTime;
   game.tutorial = false;
   game.paused = false;
-  game.state = "playing";
   game.lastScorer = null;
   game.crazyBalls = [];
   resetFreeze();
@@ -399,7 +420,7 @@ function setUpGuestMatch(setup) {
   Net.previous = null;
   Ranking.match = null;   // the host sends the new rated match id separately
   hideOverlays();
-  playStartWhistle(0.9);
+  startCountdown();       // the host's snapshots keep it in sync
   Platform.gameplayStart();
 }
 
@@ -409,7 +430,9 @@ function applySnapshot(s) {
 
   game.state = s.st;
   game.timeLeft = s.tl;
+  game.countdown = s.cd;
   game.kickoff = s.ko;
+  game.kickoffWait = s.kw;
   game.teams[0].goals = s.g[0];
   game.teams[1].goals = s.g[1];
   game.teams[0].selected = s.sel;   // our own selection (team 1) stays local
@@ -472,6 +495,13 @@ function playGuestEvents(before, s) {
   }
   if (before.st === "goal" && s.st === "playing") {
     playStartWhistle(0.9);
+  }
+  if (s.st === "countdown" && before.st === "countdown" && Math.ceil(s.cd) < Math.ceil(before.cd)) {
+    playCountdownStep(Math.ceil(s.cd));
+  }
+  if (before.st === "countdown" && s.st === "playing") {
+    game.startedAt = performance.now();
+    playCountdownStep(0);
   }
   if (s.fz && !before.fz) {
     playMagicSound();
