@@ -38,15 +38,18 @@ function updateFreeze(seconds) {
   }
 }
 
-// A random spot on the field that isn't on top of anything
+// A random spot on the field that isn't on top of anything (chips, balls or other power-ups)
 function findFreeSpot() {
+  const taken = [...allBodies(), game.freezeIcon, game.bigGoalIcon, game.megaIcon, game.cannonIcon, game.wallIcon,
+                 game.crazyIcon]
+    .filter(Boolean);
   let spot = null;
   for (let attempt = 0; attempt < 20; attempt++) {
     spot = {
       x: randomBetween(LEFT + 80, RIGHT - 80),
       y: randomBetween(TOP + 60, BOTTOM - 60),
     };
-    if (allBodies().every(body => distance(body, spot) > 70)) {
+    if (taken.every(thing => distance(thing, spot) > 70)) {
       break;
     }
   }

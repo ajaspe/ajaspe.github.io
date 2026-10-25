@@ -312,6 +312,41 @@ function playBigGoalSound() {
   osc.frequency.exponentialRampToValueAtTime(900, now + 0.8);
 }
 
+// Mega chip: a quick jingle going up when the chips grow, down when they shrink back
+function playMegaSound(growing) {
+  if (growing) commentate("mega");
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+  const notes = growing ? [55, 60, 64, 67, 72, 76, 79] : [72, 67, 64, 60];
+  notes.forEach((note, i) => playTone(midiToFrequency(note), now + i * 0.06, 0.18, 0.15, "square"));
+}
+
+// Defence wall: heavy bricks dropping into place
+function playWallSound() {
+  commentate("wall");
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+  for (let i = 0; i < 3; i++) {
+    noiseHit(now + i * 0.13, "lowpass", 350, 0.18, 0.6);
+    kickDrum(now + i * 0.13, 0.35);
+  }
+}
+
+// Cannon picked up: a burning fuse
+function playCannonPickupSound() {
+  commentate("cannon");
+  if (!audioCtx) return;
+  noiseHit(audioCtx.currentTime, "highpass", 4000, 0.7, 0.25);
+}
+
+// Cannon shot: BOOM
+function playCannonSound() {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+  kickDrum(now, 1.0);
+  noiseHit(now, "lowpass", 900, 0.6, 0.7);
+}
+
 // "Wah wah wah waaah": four falling notes, the last one wobbling
 function playSadTrombone() {
   if (!audioCtx) return;

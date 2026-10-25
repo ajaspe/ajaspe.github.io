@@ -38,7 +38,8 @@ function fire(teamIndex) {
     Net.sendShot(game.teams[teamIndex].chips.indexOf(shot.chip), force);   // the host applies it
     return;
   }
-  applyShot(shot.chip, force.x, force.y, teamIndex);
+  const power = useCannon(shot.chip, teamIndex);
+  applyShot(shot.chip, force.x * power, force.y * power, teamIndex);
   if (isLocalTeam(teamIndex)) {
     onHumanShot();
   }

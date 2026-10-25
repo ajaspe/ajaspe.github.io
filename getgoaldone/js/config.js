@@ -24,6 +24,10 @@ const MAX_SHOT_POWER = 18;
 const MAX_PULL_DISTANCE = MAX_SHOT_POWER / SHOT_POWER_PER_PIXEL;
 const WALK_SPEED = 0.8;          // AI-controlled chips walk this fast
 const MAX_SPEED_TO_SHOOT = 1.5;  // a chip can only be flicked when (almost) stopped
+// Pace of the action: 1 = original. Chips, balls, teammates and the CPU all go this much faster;
+// the match clock and power-up timers stay in real seconds.
+const GAME_SPEED = 1.25;
+const MAX_MOVE_PER_SUBSTEP = 12; // fast bodies move in smaller substeps so they can't jump through each other
 
 // --- Teammate AI ---
 const DEFENDER_POSITION = 0.35;  // 0 = on the goal line, 1 = on the ball
@@ -58,7 +62,33 @@ const BIG_GOAL_SECONDS = 20;
 const BIG_GOAL_HEIGHT = 320;
 const BIG_GOAL_ICON_RADIUS = 20;
 
-// --- Ball Frenzy 🤪 ---
+// --- Mega chip power-up 🍄 ---
+const MEGA_SPAWN_SECONDS = [25, 40];
+const MEGA_ICON_SECONDS = 10;
+const MEGA_SECONDS = 15;
+const MEGA_SCALE = 1.7;          // your chips grow this much...
+const MEGA_MASS = 2.5;           // ...and get this much heavier
+const MEGA_ICON_RADIUS = 20;
+
+// --- Cannon power-up 💥 ---
+const CANNON_SPAWN_SECONDS = [25, 40];
+const CANNON_ICON_SECONDS = 10;
+const CANNON_SECONDS = 20;       // cannon shots not used by then are lost
+const CANNON_SHOTS = 3;
+const CANNON_POWER = 1.8;        // shot power multiplier
+const CANNON_FIRE_SECONDS = 1.5; // the ball burns this long after a cannon hit
+const CANNON_ICON_RADIUS = 20;
+
+// --- Defence wall power-up 🧱 ---
+const WALL_SPAWN_SECONDS = [25, 40];
+const WALL_ICON_SECONDS = 10;
+const WALL_SECONDS = 15;
+const WALL_LENGTH = 90;          // covers about half of a normal goal
+const WALL_THICKNESS = 16;
+const WALL_PERIOD_SECONDS = 3;   // time to slide down and back up again
+const WALL_ICON_RADIUS = 20;
+
+// --- Ball Frenzy 🤪 (and the Armageball tie-break ☄️ when it's a draw at full time) ---
 const CRAZY_INTRO_SECONDS = 3;
 const CRAZY_SECONDS = 20;
 const CRAZY_RESULT_SECONDS = 4;

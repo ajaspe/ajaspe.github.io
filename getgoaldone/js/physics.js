@@ -1,10 +1,13 @@
 // Movement, walls and collisions.
 
-function move(body) {
-  body.x += body.vx;
-  body.y += body.vy;
-  body.vx *= body.friction;
-  body.vy *= body.friction;
+// Speeds are in pixels per step at GAME_SPEED 1. dt is how much of such a step to move:
+// GAME_SPEED for a whole step, less for a substep.
+function move(body, dt) {
+  body.x += body.vx * dt;
+  body.y += body.vy * dt;
+  const friction = Math.pow(body.friction, dt);
+  body.vx *= friction;
+  body.vy *= friction;
   if (Math.abs(body.vx) + Math.abs(body.vy) < 0.05) {
     body.vx = 0;
     body.vy = 0;

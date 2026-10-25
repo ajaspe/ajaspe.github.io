@@ -73,7 +73,7 @@ function walkTowards(chip, spot) {
   if (dist < 2) {
     return;
   }
-  const step = Math.min(WALK_SPEED, dist);
+  const step = Math.min(WALK_SPEED * GAME_SPEED, dist);
   const stepX = (spot.x - chip.x) / dist * step;
   const stepY = (spot.y - chip.y) / dist * step;
   const options = [
@@ -115,7 +115,7 @@ function playCpu(cpu) {
 
   // Aiming: keep the arrow visible for a moment, then shoot
   if (shots[index]) {
-    cpu.aimWait -= 1;
+    cpu.aimWait -= GAME_SPEED;
     if (cpu.aimWait <= 0) {
       fire(index);
       cpu.thinkWait = randomBetween(cpu.level.thinkFrames[0], cpu.level.thinkFrames[1]);
@@ -123,7 +123,7 @@ function playCpu(cpu) {
     return;
   }
 
-  cpu.thinkWait -= 1;
+  cpu.thinkWait -= GAME_SPEED;
   if (cpu.thinkWait > 0) {
     return;
   }

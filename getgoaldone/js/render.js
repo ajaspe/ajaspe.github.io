@@ -44,13 +44,18 @@ function renderFrame() {
 
   drawField();
   drawGoals();
+  drawDefenceWall();
   drawDiscoLights();
-  drawShotArrow(shots[0]);
-  drawShotArrow(shots[1]);
+  drawShotArrow(shots[0], 0);
+  drawShotArrow(shots[1], 1);
   drawKeyAimGuides();
   drawFreezeIcon();
   drawBigGoalIcon();
+  drawMegaIcon();
+  drawCannonIcon();
+  drawWallIcon();
   drawCrazyIcon();
+  drawCannonAura();
 
   game.teams.forEach((team, index) => {
     for (const chip of team.chips) {
@@ -70,6 +75,7 @@ function renderFrame() {
   drawFrozenBanner();
   drawKickoffBanner();
   drawBigGoalBanner();
+  drawPowerUpStatus();
   drawCrazyOverlay();
   drawBottomLine();
 
@@ -267,7 +273,10 @@ function drawStar(x, y, points, outer, inner, color) {
 function drawBall(ball) {
   const { x, y, radius } = ball;
 
-  if (ball.skin === "fire" && speed(ball) > 2) {
+  if (ball.onFire > 0) {
+    fillCircle(x, y, radius + 6 + Math.random() * 4, "rgba(255, 109, 0, 0.5)");   // flickering flames
+  }
+  if ((ball.skin === "fire" || ball.onFire > 0) && speed(ball) > 2) {
     // Flame trail behind a moving fire ball
     for (let i = 1; i <= 5; i++) {
       fillCircle(x - ball.vx * i * 1.4, y - ball.vy * i * 1.4, radius * (1 - i * 0.15),
@@ -319,12 +328,13 @@ function drawBall(ball) {
 
 // --- Aiming ---
 
-function drawShotArrow(shot) {
+function drawShotArrow(shot, teamIndex) {
   if (!shot) {
     return;
   }
   const chip = shot.chip;
   const force = shotForce(shot);
+  const cannon = cannonShotsOf(teamIndex) > 0;
 
   if (shot.source === "pointer") {
     // The rubber band, from the chip to the finger
@@ -341,6 +351,13 @@ function drawShotArrow(shot) {
   let color = "#76ff03";
   if (force.size > MAX_SHOT_POWER * 0.4) color = "#ffeb3b";
   if (force.size > MAX_SHOT_POWER * 0.8) color = "#ff1744";
+  if (cannon) {
+    // A cannon shot: a longer, thicker, fiery arrow
+    const length = 8 * CANNON_POWER;
+    drawArrow(chip.x, chip.y, chip.x + force.x * length, chip.y + force.y * length, "#ff3d00", 10);
+    drawEmoji("💥", chip.x + force.x * length, chip.y + force.y * length, 26);
+    return;
+  }
   drawArrow(chip.x, chip.y, chip.x + force.x * 8, chip.y + force.y * 8, color, 6);
 }
 
@@ -490,6 +507,28 @@ function drawStartScreen() {
     drawText(t("countdown.go"), CENTER_X, CENTER_Y - 10, 150 + sinceStart / 10, "#76ff03");
     ctx.globalAlpha = 1;
   }
+}
+
+// At the bottom of the field: who is mega, who has cannon shots, whose wall is up
+function drawPowerUpStatus() {
+  if (game.state !== "playing" || game.crazy) {
+    return;
+  }
+  const lines = [];
+  if (game.mega) {
+    lines.push({ text: t("hud.mega", { team: teamName(game.mega.team), s: Math.ceil(game.mega.seconds) }), color: game.mega.team.color });
+  }
+  if (game.cannon) {
+    lines.push({ text: t("hud.cannon", { team: teamName(game.cannon.team), n: game.cannon.shots, s: Math.ceil(game.cannon.seconds) }),
+                 color: game.cannon.team.color });
+  }
+  if (game.wall) {
+    lines.push({ text: t("hud.wall", { team: teamName(game.wall.team), s: Math.ceil(game.wall.seconds) }), color: game.wall.team.color });
+  }
+  lines.forEach((line, i) => {
+    const x = LEFT + FIELD_WIDTH * (i + 1) / (lines.length + 1);   // spread out evenly
+    drawText(line.text, x, BOTTOM - 22, lines.length > 2 ? 17 : 20, line.color);
+  });
 }
 
 // Below the field: the tutorial hint, or the cup progress

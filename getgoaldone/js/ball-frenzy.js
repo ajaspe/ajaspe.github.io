@@ -2,7 +2,8 @@
 // frenzy with lots of bouncy balls; every goal is a "crazy point" and the team with
 // more frenzy points gets one real goal.
 // Phases: "intro" (3-2-1 countdown) → "frenzy" → "result" (big crazy scoreboard).
-// 💥 Ultimate: if the match ends in a draw, an Ultimate Ball Frenzy decides the winner.
+// ☄️ Armageball tie-break ("ultimate" in the code): if the match ends in a draw, a bigger
+// Ball Frenzy decides the winner.
 
 function resetCrazy(minutes) {
   game.crazyIcon = null;
@@ -62,6 +63,12 @@ function startCrazy(ultimate) {
   game.bigGoalIcon = null;
   game.bigGoal = null;
   game.freezeIcon = null;
+  game.megaIcon = null;
+  game.mega = null;
+  game.cannonIcon = null;
+  game.cannon = null;
+  game.wallIcon = null;
+  game.wall = null;
   shots[0] = null;
   shots[1] = null;
 

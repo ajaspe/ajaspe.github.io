@@ -383,7 +383,7 @@ function onNetStatusChanged() {
 
 function helpPageHtml() {
   const lines = ["help.goal", "help.mouse", "help.keys1", "help.keys2", "help.pad", "help.fullscreen", "help.ai",
-                 "help.kickoff", "help.freeze", "help.bigGoal", "help.crazy", "help.ultimate"];
+                 "help.kickoff", "help.freeze", "help.bigGoal", "help.mega", "help.cannon", "help.wall", "help.crazy", "help.ultimate"];
   return `
     <h2>❓ ${t("help.title")}</h2>
     <ul class="help">${lines.map(key => `<li>${t(key)}</li>`).join("")}</ul>

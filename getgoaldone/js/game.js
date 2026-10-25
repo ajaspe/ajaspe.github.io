@@ -22,6 +22,9 @@ const game = {
 
   freezeIcon: null, frozen: null, nextFreezeIconIn: 0,
   bigGoalIcon: null, bigGoal: null, goalHeights: null, nextBigGoalIconIn: 0,
+  megaIcon: null, mega: null, nextMegaIconIn: 0,
+  cannonIcon: null, cannon: null, nextCannonIconIn: 0,
+  wallIcon: null, wall: null, nextWallIconIn: 0,
   crazyIcon: null, crazy: null, crazyBalls: [], crazyShown: false, crazyAt: 0,
 };
 
@@ -113,9 +116,7 @@ function startMatch(mode) {
   game.timeLeft = game.totalTime;
   game.tutorial = progress.tutorialShots < 3 && mode !== "online";
 
-  resetFreeze();
-  resetBigGoal();
-  resetCrazy(minutes);
+  resetPowerUps(minutes);
   for (const aim of keyAim) {
     aim.angle = null;
     aim.charging = false;
@@ -152,6 +153,15 @@ function updateCountdown(seconds) {
   }
 }
 
+function resetPowerUps(minutes) {
+  resetFreeze();
+  resetBigGoal();
+  resetMega();
+  resetCannon();
+  resetWall();
+  resetCrazy(minutes);
+}
+
 function otherColor(colorId) {
   return pickRandom(TEAM_COLORS.filter(color => color.id !== colorId)).id;
 }
@@ -165,9 +175,7 @@ function showTitleField() {
   game.ball = createBall("white", save.progress.ballSkin);
   game.totalTime = save.settings.minutes * 60;
   game.timeLeft = game.totalTime;
-  resetFreeze();
-  resetBigGoal();
-  resetCrazy(save.settings.minutes);
+  resetPowerUps(save.settings.minutes);
   kickOff(0);
   game.kickoff = null;
   game.state = "idle";
@@ -221,7 +229,7 @@ function update() {
     return;
   }
   if (game.state === "goal") {
-    game.celebrationFrames -= 1;
+    game.celebrationFrames -= GAME_SPEED;
     if (game.celebrationFrames <= 0) {
       afterGoal();
     }
@@ -231,7 +239,7 @@ function update() {
     return;
   }
 
-  // Full time. A draw goes to Ball Frenzy Ultimate.
+  // Full time. A draw goes to the Armageball tie-break.
   if (game.timeLeft <= 0 && !game.crazy) {
     if (game.teams[0].goals === game.teams[1].goals) {
       startCrazy(true);
@@ -258,26 +266,42 @@ function update() {
   }
 
   animateGoalHeights();
+  animateMegaChips();
+  updateCannonChips();
+  slideWall();
   const bodies = allBodies();
-  for (const body of bodies) {
-    move(body);
-    bounceOffWalls(body, body.isBall);
-  }
-  for (let i = 0; i < bodies.length; i++) {
-    for (let j = i + 1; j < bodies.length; j++) {
-      const impact = collide(bodies[i], bodies[j]);
-      if (bodies[i].isBall && impact > 0.5) {
-        playHitSound(impact);
+  // Fast bodies (a cannon shot!) move in small substeps, so they can't jump through the ball or a chip
+  const fastest = Math.max(...bodies.map(speed));
+  const substeps = Math.max(1, Math.ceil(fastest * GAME_SPEED / MAX_MOVE_PER_SUBSTEP));
+  for (let s = 0; s < substeps; s++) {
+    for (const body of bodies) {
+      move(body, GAME_SPEED / substeps);
+      bounceOffWalls(body, body.isBall);
+      const wallImpact = bounceOffDefenceWall(body);
+      if (body.isBall && wallImpact > 0.5) {
+        playHitSound(wallImpact);
       }
-      if (bodies[i] === game.ball && impact > 0) {
-        const toucher = teamOfChip(bodies[j]);
-        if (toucher) game.lastTouch = toucher;
+    }
+    for (let i = 0; i < bodies.length; i++) {
+      for (let j = i + 1; j < bodies.length; j++) {
+        const impact = collide(bodies[i], bodies[j]);
+        if (bodies[i].isBall && impact > 0.5) {
+          playHitSound(impact);
+        }
+        if (bodies[i] === game.ball && impact > 0) {
+          const toucher = teamOfChip(bodies[j]);
+          if (toucher) game.lastTouch = toucher;
+          if (bodies[j].cannon) setBallOnFire();
+        }
       }
     }
   }
 
   checkFreezePickup();
   checkBigGoalPickup();
+  checkMegaPickup();
+  checkCannonPickup();
+  checkWallPickup();
   checkCrazyPickup();
   if (game.crazy) {
     checkCrazyGoals();
@@ -424,6 +448,9 @@ function updateClock(seconds) {
     game.timeLeft = Math.max(0, game.timeLeft - seconds);
     updateFreeze(seconds);
     updateBigGoal(seconds);
+    updateMega(seconds);
+    updateCannon(seconds);
+    updateWall(seconds);
   }
   updateCrazy(seconds);
 }

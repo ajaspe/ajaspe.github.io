@@ -338,7 +338,8 @@ function applyRemoteShot(message) {
   }
   team.selected = message.c;
   shots[1] = null;
-  applyShot(chip, vx, vy, 1);
+  const power = useCannon(chip, 1);
+  applyShot(chip, vx * power, vy * power, 1);
 }
 
 function applyRemoteAim(message) {
@@ -373,13 +374,20 @@ function takeSnapshot() {
     g: [game.teams[0].goals, game.teams[1].goals],
     sel: game.teams[0].selected,
     b: bodyState(game.ball),
-    c: game.teams.flatMap(team => team.chips.map(chip => [...bodyState(chip), ROLES.indexOf(chip.role)])),
+    c: game.teams.flatMap(team => team.chips.map(chip => [...bodyState(chip), ROLES.indexOf(chip.role), round1(chip.radius)])),
+    bf: round1(game.ball.onFire),
     cb: game.crazyBalls.map(bodyState),
     fi: game.freezeIcon ? [round1(game.freezeIcon.x), round1(game.freezeIcon.y), round1(game.freezeIcon.seconds)] : null,
     fz: game.frozen ? [teamIndex(game.frozen.team), round1(game.frozen.seconds)] : null,
     bi: game.bigGoalIcon ? [round1(game.bigGoalIcon.x), round1(game.bigGoalIcon.y), round1(game.bigGoalIcon.seconds)] : null,
     bg: game.bigGoal ? [game.bigGoal.side, round1(game.bigGoal.seconds)] : null,
     gh: [round1(game.goalHeights.left), round1(game.goalHeights.right)],
+    mi: game.megaIcon ? [round1(game.megaIcon.x), round1(game.megaIcon.y), round1(game.megaIcon.seconds)] : null,
+    mg: game.mega ? [teamIndex(game.mega.team), round1(game.mega.seconds)] : null,
+    ni: game.cannonIcon ? [round1(game.cannonIcon.x), round1(game.cannonIcon.y), round1(game.cannonIcon.seconds)] : null,
+    cn: game.cannon ? [teamIndex(game.cannon.team), game.cannon.shots, round1(game.cannon.seconds)] : null,
+    wi: game.wallIcon ? [round1(game.wallIcon.x), round1(game.wallIcon.y), round1(game.wallIcon.seconds)] : null,
+    wl: game.wall ? [teamIndex(game.wall.team), round1(game.wall.seconds), round1(game.wall.y)] : null,
     ci: game.crazyIcon ? [round1(game.crazyIcon.x), round1(game.crazyIcon.y)] : null,
     cz: crazy ? [PHASES.indexOf(crazy.phase), round1(crazy.seconds), crazy.points[0], crazy.points[1],
                  crazy.ultimate ? 1 : 0, teamIndex(crazy.winner)] : null,
@@ -409,9 +417,7 @@ function setUpGuestMatch(setup) {
   game.paused = false;
   game.lastScorer = null;
   game.crazyBalls = [];
-  resetFreeze();
-  resetBigGoal();
-  resetCrazy(setup.minutes);
+  resetPowerUps(setup.minutes);
   for (const team of game.teams) {
     placeTeam(team);
   }
@@ -442,7 +448,9 @@ function applySnapshot(s) {
   chips.forEach((chip, i) => {
     setBody(chip, s.c[i]);
     chip.role = ROLES[s.c[i][4]] || null;
+    chip.radius = s.c[i][5];
   });
+  game.ball.onFire = s.bf;
 
   // Crazy balls: (re)create them when their number changes
   if (game.crazyBalls.length !== s.cb.length) {
@@ -458,6 +466,12 @@ function applySnapshot(s) {
         victim: game.teams.find(t => t.side === s.bg[0]), by: game.teams.find(t => t.side !== s.bg[0]) }
     : null;
   game.goalHeights = { left: s.gh[0], right: s.gh[1] };
+  game.megaIcon = s.mi ? { x: s.mi[0], y: s.mi[1], seconds: s.mi[2] } : null;
+  game.mega = s.mg ? { team: team(s.mg[0]), seconds: s.mg[1] } : null;
+  game.cannonIcon = s.ni ? { x: s.ni[0], y: s.ni[1], seconds: s.ni[2] } : null;
+  game.cannon = s.cn ? { team: team(s.cn[0]), shots: s.cn[1], seconds: s.cn[2] } : null;
+  game.wallIcon = s.wi ? { x: s.wi[0], y: s.wi[1], seconds: s.wi[2] } : null;
+  game.wall = s.wl ? { team: team(s.wl[0]), side: team(s.wl[0]).side, seconds: s.wl[1], y: s.wl[2] } : null;
   game.crazyIcon = s.ci ? { x: s.ci[0], y: s.ci[1] } : null;
   game.crazy = s.cz
     ? { phase: PHASES[s.cz[0]], seconds: s.cz[1], points: [s.cz[2], s.cz[3]], ultimate: s.cz[4] === 1, winner: team(s.cz[5]) }
@@ -509,6 +523,19 @@ function playGuestEvents(before, s) {
   if (s.bg && !before.bg) {
     playBigGoalSound();
   }
+  if (Boolean(s.mg) !== Boolean(before.mg)) {
+    playMegaSound(Boolean(s.mg));
+  }
+  if (s.cn && !before.cn) {
+    playCannonPickupSound();
+  }
+  if (s.wl && !before.wl) {
+    playWallSound();
+  }
+  // A cannon shot was used (not the timer running out, nor a Ball Frenzy clearing it)
+  if (before.cn && (s.cn ? s.cn[1] < before.cn[1] : before.cn[2] > 0.2 && !s.cz)) {
+    playCannonSound();
+  }
 
   const phase = s.cz ? s.cz[0] : -1;
   const previousPhase = before.cz ? before.cz[0] : -1;
@@ -557,7 +584,7 @@ function guestUpdate() {
     return;
   }
   for (const body of allBodies()) {
-    move(body);
+    move(body, GAME_SPEED);
     bounceOffWalls(body, body.isBall);
   }
 }

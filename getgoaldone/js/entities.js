@@ -26,6 +26,7 @@ function createBall(color, skin) {
     mass: BALL_MASS,
     bounce: BOUNCE,
     friction: FRICTION,
+    onFire: 0,             // seconds left burning after a cannon hit
   };
 }
 
