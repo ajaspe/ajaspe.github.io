@@ -4,6 +4,16 @@
 // latest one's.
 const CHANGELOG = [
   {
+    version: "2.0.5",
+    date: "2026-10-26 17:36",
+    changes: {
+      en: ["Triumphant fanfare when you win… and sad trombones when you lose"],
+      es: ["Fanfarria triunfal cuando ganas… y trombones tristes cuando pierdes"],
+      it: ["Fanfara trionfale quando vinci… e tromboni tristi quando perdi"],
+      de: ["Siegesfanfare, wenn du gewinnst … und traurige Posaunen, wenn du verlierst"],
+    },
+  },
+  {
     version: "2.0.4",
     date: "2026-10-26 16:27",
     changes: {

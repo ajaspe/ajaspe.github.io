@@ -381,11 +381,96 @@ function playSadTrombone() {
   });
 }
 
-function playFanfare() {
+// A brass note: two slightly detuned saws through a filter that opens up at the start ("blat")
+// (brightness: how far the filter opens; low = muted, sad brass). Returns its oscillators.
+function brass(note, when, duration, volume, brightness) {
+  const open = brightness || 3200;
+  const filter = audioCtx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.Q.value = 2;
+  filter.frequency.setValueAtTime(600, when);
+  filter.frequency.exponentialRampToValueAtTime(open, when + 0.06);
+  filter.frequency.exponentialRampToValueAtTime(open / 2, when + duration);
+  const gain = audioCtx.createGain();
+  gain.gain.setValueAtTime(0, when);
+  gain.gain.linearRampToValueAtTime(volume, when + 0.025);
+  gain.gain.setValueAtTime(volume * 0.8, when + duration - 0.06);
+  gain.gain.linearRampToValueAtTime(0, when + duration);
+  filter.connect(gain);
+  gain.connect(masterGain);
+  return [-7, 7].map(detune => {
+    const osc = audioCtx.createOscillator();
+    osc.type = "sawtooth";
+    osc.frequency.value = midiToFrequency(note);
+    osc.detune.value = detune;
+    osc.connect(filter);
+    osc.start(when);
+    osc.stop(when + duration + 0.05);
+    return osc;
+  });
+}
+
+// Victory! "Ta-ta-ta-taaa, ta-ta-ta-taaa, ta-ra-ra-raaa... TAAAAA" with timpani, a snare roll and a crash.
+// About 3.5 seconds; it waits for the final whistle to finish.
+const FANFARE_DELAY = 2.1;
+const FANFARE_MELODY = [   // [start, midi note, length] in seconds
+  [0, 67, 0.1], [0.12, 67, 0.1], [0.24, 67, 0.1], [0.36, 72, 0.42],
+  [0.84, 69, 0.1], [0.96, 69, 0.1], [1.08, 69, 0.1], [1.2, 74, 0.42],
+  [1.68, 71, 0.14], [1.84, 72, 0.14], [2.0, 74, 0.14], [2.16, 76, 0.36],
+];
+const FANFARE_CHORD = [60, 67, 72, 76, 79, 84];   // the big final C major
+const FANFARE_BASS = [[0.36, 48, 0.42], [1.2, 43, 0.42], [2.16, 47, 0.36]];
+
+function playVictoryFanfare() {
   if (!audioCtx) return;
-  const now = audioCtx.currentTime;
-  [60, 64, 67, 72, 67, 72].forEach((note, i) => {
-    playTone(midiToFrequency(note), now + i * 0.14, i === 5 ? 0.8 : 0.2, 0.18, "square");
+  const start = audioCtx.currentTime + FANFARE_DELAY;
+  for (const [at, note, length] of FANFARE_MELODY) {
+    brass(note, start + at, length, 0.16);
+    brass(note - 12, start + at, length, 0.07);   // an octave below makes it fuller
+  }
+  for (const [at, note, length] of FANFARE_BASS) {
+    brass(note, start + at, length, 0.12);
+    kickDrum(start + at, 0.7);                     // timpani
+  }
+  // Snare roll getting louder into the last chord
+  for (let at = 2.0; at < 2.6; at += 0.04) {
+    noiseHit(start + at, "bandpass", 2500, 0.05, 0.08 + (at - 2.0) * 0.4);
+  }
+  const end = start + 2.6;
+  for (const note of FANFARE_CHORD) {
+    brass(note, end, 1.1, 0.045);
+  }
+  brass(36, end, 1.1, 0.09);
+  kickDrum(end, 0.6);
+  noiseHit(end, "highpass", 5000, 1.4, 0.22);      // crash cymbal
+}
+
+// Lost: a slow, muted "wah... wah... wah... waaaah", the last one wobbling down. About 2.5 seconds,
+// also after the final whistle.
+function playDefeatTune() {
+  if (!audioCtx) return;
+  const start = audioCtx.currentTime + FANFARE_DELAY;
+  const notes = [62, 61, 60, 59];
+  notes.forEach((note, i) => {
+    const last = i === notes.length - 1;
+    const when = start + i * 0.42;
+    const length = last ? 1.25 : 0.38;
+    const oscillators = brass(note, when, length, 0.21, 1100).concat(brass(note - 12, when, length, 0.1, 900));
+    kickDrum(when, last ? 0.5 : 0.25);
+    if (last) {
+      const wobble = audioCtx.createOscillator();
+      wobble.frequency.value = 5;
+      const depth = audioCtx.createGain();
+      depth.gain.value = 25;   // cents
+      wobble.connect(depth);
+      for (const osc of oscillators) {
+        depth.connect(osc.detune);
+        osc.frequency.setValueAtTime(osc.frequency.value, when + 0.5);   // then it sags about a semitone
+        osc.frequency.exponentialRampToValueAtTime(osc.frequency.value * 0.94, when + length);
+      }
+      wobble.start(when);
+      wobble.stop(when + length);
+    }
   });
 }
 

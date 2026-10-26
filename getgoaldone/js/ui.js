@@ -789,8 +789,12 @@ function showResults(result) {
   if (!mine || result.winner === mine) {
     throwConfetti(partyColor);
   }
+  if (result.winner && (!mine || result.winner === mine)) {
+    playVictoryFanfare();
+  } else if (result.winner) {
+    playDefeatTune();   // you lost (against the CPU or online)
+  }
   if (result.cupWon) {
-    playFanfare();
     commentate("cupWon");
   }
   menuOverlay.hidden = true;
