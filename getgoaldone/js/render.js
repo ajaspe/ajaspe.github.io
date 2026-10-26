@@ -72,9 +72,7 @@ function renderFrame() {
 
   drawScoreboard();
   drawClock();
-  drawFrozenBanner();
   drawKickoffBanner();
-  drawBigGoalBanner();
   drawPowerUpStatus();
   drawCrazyOverlay();
   drawBottomLine();
@@ -509,26 +507,33 @@ function drawStartScreen() {
   }
 }
 
-// At the bottom of the field: who is mega, who has cannon shots, whose wall is up
+// Below each team's half: the power-ups it has, just what and how long ("🍄 Mega 12s")
 function drawPowerUpStatus() {
   if (game.state !== "playing" || game.crazy) {
     return;
   }
-  const lines = [];
-  if (game.mega) {
-    lines.push({ text: t("hud.mega", { team: teamName(game.mega.team), s: Math.ceil(game.mega.seconds) }), color: game.mega.team.color });
+  const items = [];
+  const add = (team, key, seconds, params) => items.push({ team, seconds, text: t(key, { s: Math.ceil(seconds), ...params }) });
+  if (game.frozen) add(game.frozen.by, "power.freeze", game.frozen.seconds);
+  if (game.bigGoal) add(game.bigGoal.by, "power.bigGoal", game.bigGoal.seconds);
+  if (game.mega) add(game.mega.team, "power.mega", game.mega.seconds);
+  if (game.cannon) add(game.cannon.team, "power.cannon", game.cannon.seconds, { n: game.cannon.shots });
+  if (game.wall) add(game.wall.team, "power.wall", game.wall.seconds);
+
+  // The tutorial hint takes the line below the field, so then they go just inside it
+  const y = game.tutorial ? BOTTOM - 22 : BOTTOM + MARGIN / 2;
+  const inset = game.tutorial ? 12 : 0;
+  const blink = Math.floor(performance.now() / 250) % 2 === 0;
+  for (const team of game.teams) {
+    const left = team.side === "left";
+    let x = left ? LEFT + inset : RIGHT - inset;
+    for (const item of items.filter(item => item.team === team)) {
+      ctx.globalAlpha = item.seconds < 3 && blink ? 0.35 : 1;   // about to run out
+      drawText(item.text, x, y, 22, team.color, left ? "left" : "right");
+      ctx.globalAlpha = 1;
+      x += (left ? 1 : -1) * (ctx.measureText(item.text).width + 28);
+    }
   }
-  if (game.cannon) {
-    lines.push({ text: t("hud.cannon", { team: teamName(game.cannon.team), n: game.cannon.shots, s: Math.ceil(game.cannon.seconds) }),
-                 color: game.cannon.team.color });
-  }
-  if (game.wall) {
-    lines.push({ text: t("hud.wall", { team: teamName(game.wall.team), s: Math.ceil(game.wall.seconds) }), color: game.wall.team.color });
-  }
-  lines.forEach((line, i) => {
-    const x = LEFT + FIELD_WIDTH * (i + 1) / (lines.length + 1);   // spread out evenly
-    drawText(line.text, x, BOTTOM - 22, lines.length > 2 ? 17 : 20, line.color);
-  });
 }
 
 // Below the field: the tutorial hint, or the cup progress

@@ -72,6 +72,11 @@ function closestChipToBall(chips) {
 
 // --- Match setup ---
 
+// The name shown for the player everywhere: what they typed, else their ranking name
+function playerName() {
+  return save.settings.team1.name || (Ranking.profile ? Ranking.profile.nickname : "");
+}
+
 function startMatch(mode) {
   const settings = save.settings;
   const progress = save.progress;
@@ -80,7 +85,7 @@ function startMatch(mode) {
   const homeColor = settings.team1.colorId;
   const home = createTeam({
     colorId: homeColor,
-    customName: settings.team1.name,
+    customName: playerName(),
     side: "left",
     style: progress.chipStyle,
     chipNames: randomChipNames(3, []),
@@ -92,7 +97,7 @@ function startMatch(mode) {
     // Host only: the guest's team comes from its "hello" message
     const guest = Net.peerSettings;
     const colorId = guest.colorId !== homeColor ? guest.colorId : otherColor(homeColor);
-    away = createTeam({ colorId: colorId, customName: guest.name, side: "right", style: guest.style,
+    away = createTeam({ colorId: colorId, customName: String(guest.name || "").slice(0, NAME_MAX_LENGTH), side: "right", style: guest.style,
                         chipNames: randomChipNames(3, home.chips.map(c => c.name)) });
   } else if (mode === "versus") {
     const colorId = settings.team2.colorId !== homeColor ? settings.team2.colorId : otherColor(homeColor);
@@ -169,7 +174,8 @@ function otherColor(colorId) {
 // The field behind the main menu, before the first match
 function showTitleField() {
   const homeColor = save.settings.team1.colorId;
-  const home = createTeam({ colorId: homeColor, side: "left", style: save.progress.chipStyle, chipNames: randomChipNames(3, []) });
+  const home = createTeam({ colorId: homeColor, customName: playerName(), side: "left", style: save.progress.chipStyle,
+                            chipNames: randomChipNames(3, []) });
   const away = createTeam({ colorId: otherColor(homeColor), side: "right", chipNames: randomChipNames(3, home.chips.map(c => c.name)) });
   game.teams = [home, away];
   game.ball = createBall("white", save.progress.ballSkin);

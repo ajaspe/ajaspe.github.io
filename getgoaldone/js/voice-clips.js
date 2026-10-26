@@ -3,4 +3,6 @@
 const VOICE_CLIPS = {
   en: [],
   es: [],
+  it: [],
+  de: [],
 };

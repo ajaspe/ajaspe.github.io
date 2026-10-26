@@ -80,16 +80,3 @@ function drawBigGoalIcon() {
   strokeCircle(icon.x, icon.y, radius, "#00c853", 3);
   drawEmoji("🥅", icon.x, icon.y, 22);
 }
-
-function drawBigGoalBanner() {
-  const big = game.bigGoal;
-  if (!big || game.state !== "playing") {
-    return;
-  }
-  const text = t("hud.bigGoal", {
-    team: teamName(big.victim),
-    s: Math.ceil(big.seconds),
-    other: teamName(big.by),
-  });
-  drawText(text, CENTER_X, TOP + 55, 20, "#b9f6ca");
-}

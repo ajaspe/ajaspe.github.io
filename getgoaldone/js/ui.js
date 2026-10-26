@@ -49,10 +49,12 @@ function mainPageHtml() {
   const inMatch = isMatchInProgress();
   const inOnlineMatch = inMatch && game.mode === "online";
   const quickHint = t("menu.quickMatchHint") + " · " + t("level." + save.settings.level);
-  // Between matches Quick match is the big "play" button; during a match that's Resume
+  // Between matches: your name, then Quick match as the big "play" button; during a match that's Resume
   return `
     <button class="byline" data-action="page" data-page="about">${t("menu.by")} <b>AlMart</b></button>
     ${inMatch ? `<button class="big-button" data-action="resume">▶ ${t("menu.resume")}</button>` : `
+      <input class="team-name player-name" data-slot="team1" maxlength="${NAME_MAX_LENGTH}" aria-label="${t("settings.team1")}"
+             placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(save.settings.team1.name)}">
       <button class="big-button play-button" data-action="quick">
         <span class="mode-title">⚽ ${t("menu.quickMatch")}</span>
         <span class="mode-hint">${quickHint}</span>
@@ -114,7 +116,7 @@ function teamSettingsHtml(slot, label) {
     <div class="setting">
       <div class="setting-label">${label}</div>
       <div class="swatches">${swatches}</div>
-      <input class="team-name" data-slot="${slot}" maxlength="18"
+      <input class="team-name" data-slot="${slot}" maxlength="${NAME_MAX_LENGTH}"
              placeholder="${escapeHtml(t("team." + team.colorId))}" value="${escapeHtml(team.name)}">
     </div>`;
 }
@@ -128,6 +130,8 @@ function settingsPageHtml() {
   return `
     <h2>⚙️ ${t("menu.settings")}</h2>
     <div class="settings-grid">
+      ${teamSettingsHtml("team1", t("settings.team1"))}
+      ${teamSettingsHtml("team2", t("settings.team2"))}
       <div class="setting">
         <div class="setting-label">${t("settings.language")}</div>
         ${optionButtons("language", LANGUAGES.map(l => ({ value: l.id, label: l.label })), language)}
@@ -145,8 +149,6 @@ function settingsPageHtml() {
         ${toggleHtml("sound", save.settings.sound ? "🔊" : "🔇", t("settings.sound"))}
         ${toggleHtml("music", save.settings.music ? "🎵" : "🎵🚫", t("settings.music"))}
       </div>
-      ${teamSettingsHtml("team1", t("settings.team1"))}
-      ${teamSettingsHtml("team2", t("settings.team2"))}
       <div class="setting wide">
         <div class="setting-label">🎮 ${t("settings.controllers")}</div>
         <div class="pads">${pads}</div>
@@ -249,6 +251,9 @@ function onlinePageHtml() {
   const busy = Net.status === "hosting" || Net.status === "joining" || Net.status === "connected" || Net.status === "loading";
   return `
     <h2>🌐 ${t("online.title")} <span class="beta">BETA</span></h2>
+    ${busy ? "" : `
+      <input class="team-name player-name" data-slot="team1" maxlength="${NAME_MAX_LENGTH}" aria-label="${t("settings.team1")}"
+             placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(save.settings.team1.name)}">`}
     ${profileHtml()}
     <p>${t("online.intro")}</p>
     <p class="online-hint">${t("online.betaHint")}</p>
@@ -292,7 +297,7 @@ function profileHtml() {
         <div>${profile ? "" : t("ranking.setNickname")}</div>
         <div class="menu-row">
           <input class="nickname-input" maxlength="16" placeholder="${t("ranking.nicknamePlaceholder")}"
-                 value="${escapeHtml(profile ? profile.nickname : "")}">
+                 value="${escapeHtml(profile ? profile.nickname : save.settings.team1.name.slice(0, 16))}">
           <button class="secondary-button" data-action="saveNickname">💾 ${t("ranking.save")}</button>
         </div>
         ${nicknameError ? `<div class="online-status error">⚠️ ${t(nicknameError)}</div>` : ""}
@@ -515,6 +520,9 @@ menuPage.addEventListener("input", function (event) {
   if (event.target.classList.contains("team-name")) {
     save.settings[event.target.dataset.slot].name = event.target.value.trim();
     persist();
+    if (game.state === "idle" && event.target.dataset.slot === "team1") {
+      game.teams[0].customName = playerName();   // the field behind the menu shows it straight away
+    }
   }
 });
 

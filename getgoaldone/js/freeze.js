@@ -102,15 +102,3 @@ function drawIce() {
     drawEmoji("❄️", chip.x, chip.y, 18);
   }
 }
-
-function drawFrozenBanner() {
-  if (!game.frozen) {
-    return;
-  }
-  const text = t("hud.frozen", {
-    team: teamName(game.frozen.team),
-    s: Math.ceil(game.frozen.seconds),
-    other: teamName(game.frozen.by),
-  });
-  drawText(text, CENTER_X, TOP + 25, 22, "#b3e5fc");
-}

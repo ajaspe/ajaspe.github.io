@@ -126,9 +126,12 @@ const MUSIC_STEP_END = 0.15;     // ...and at the final whistle
 // --- Platform ---
 const MIDGAME_AD_INTERVAL_MS = 3 * 60 * 1000;
 
+// --- Players ---
+const NAME_MAX_LENGTH = 18;      // a player's (or team's) name
+
 // --- Online ---
 const ONLINE_CONNECT_TIMEOUT_MS = 15000;
-// null = PeerJS defaults (Google STUN + the free PeerJS TURN relay). To use your own relay:
+// null = PeerJS defaults (Google STUN; its free TURN relay no longer exists). To add a relay:
 // [{ urls: "stun:stun.l.google.com:19302" }, { urls: "turn:host:3478", username: "...", credential: "..." }]
 const ONLINE_ICE_SERVERS = null;
 

@@ -126,7 +126,7 @@ const Net = {
       this.setStatus("connected");
       if (this.role === "guest") {
         const team = save.settings.team1;
-        this.send({ t: "hello", colorId: team.colorId, name: team.name, style: save.progress.chipStyle });
+        this.send({ t: "hello", colorId: team.colorId, name: playerName(), style: save.progress.chipStyle });
       }
     });
     conn.on("data", message => this.receive(message));
