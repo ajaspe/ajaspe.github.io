@@ -14,6 +14,7 @@ const STRINGS = {
     "menu.online": "Online",
     "menu.onlineHint": "Play a friend over the internet",
     "menu.by": "by",
+    "changelog.title": "📜 What's new",
 
     "about.title": "👨‍👦 Made by AlMart",
     "about.photoAlt": "Alberto and Martín",
@@ -219,6 +220,7 @@ const STRINGS = {
     "menu.online": "Online",
     "menu.onlineHint": "Juega con un amigo por internet",
     "menu.by": "por",
+    "changelog.title": "📜 Novedades",
 
     "about.title": "👨‍👦 Hecho por AlMart",
     "about.photoAlt": "Alberto y Martín",
@@ -424,6 +426,7 @@ const STRINGS = {
     "menu.online": "Online",
     "menu.onlineHint": "Gioca con un amico via internet",
     "menu.by": "di",
+    "changelog.title": "📜 Novità",
 
     "about.title": "👨‍👦 Fatto da AlMart",
     "about.photoAlt": "Alberto e Martín",
@@ -629,6 +632,7 @@ const STRINGS = {
     "menu.online": "Online",
     "menu.onlineHint": "Spiel mit einem Freund übers Internet",
     "menu.by": "von",
+    "changelog.title": "📜 Neuigkeiten",
 
     "about.title": "👨‍👦 Gemacht von AlMart",
     "about.photoAlt": "Alberto und Martín",

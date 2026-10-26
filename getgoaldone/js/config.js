@@ -1,9 +1,5 @@
 // Game configuration: every tunable number lives here.
 
-// Shown small in the menu. Bump it with every release and add the changes to CHANGELOG.md:
-// 2.0.1 for small fixes and tweaks, 2.1.0 for new features, 3.0.0 for big changes.
-const GAME_VERSION = "2.0.0";
-
 // --- Field geometry (canvas pixels) ---
 const FIELD_WIDTH = 1000;
 const FIELD_HEIGHT = 560;

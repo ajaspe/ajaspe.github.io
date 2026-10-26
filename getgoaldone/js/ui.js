@@ -29,7 +29,7 @@ function escapeHtml(text) {
 
 function renderMenuPage() {
   const pages = { main: mainPageHtml, settings: settingsPageHtml, locker: lockerPageHtml, help: helpPageHtml,
-                  online: onlinePageHtml, ranking: rankingPageHtml, about: aboutPageHtml };
+                  online: onlinePageHtml, ranking: rankingPageHtml, about: aboutPageHtml, changelog: changelogPageHtml };
   menuPage.innerHTML = pages[currentPage]();
   menuOverlay.classList.toggle("compact", currentPage !== "main");   // the logo only on the main page
   if (currentPage === "locker") {
@@ -51,7 +51,10 @@ function mainPageHtml() {
   const quickHint = t("menu.quickMatchHint") + " · " + t("level." + save.settings.level);
   // Between matches: your name, then Quick match as the big "play" button; during a match that's Resume
   return `
-    <button class="byline" data-action="page" data-page="about">${t("menu.by")} <b>AlMart</b> <span class="version">v${GAME_VERSION}</span></button>
+    <div class="byline-row">
+      <button class="byline" data-action="page" data-page="about">${t("menu.by")} <b>AlMart</b></button>
+      <button class="version" data-action="page" data-page="changelog" title="${t("changelog.title")}">v${GAME_VERSION}</button>
+    </div>
     ${inMatch ? `<button class="big-button" data-action="resume">▶ ${t("menu.resume")}</button>` : `
       <input class="team-name player-name" data-slot="team1" maxlength="${NAME_MAX_LENGTH}" aria-label="${t("settings.team1")}"
              placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(save.settings.team1.name)}">
@@ -413,6 +416,31 @@ function aboutPageHtml() {
         <p>${t("about.p3")}</p>
       </div>
     </div>
+    <button class="secondary-button" data-action="page" data-page="main">← ${t("menu.back")}</button>
+  `;
+}
+
+// --- What's new (click the version number) ---
+
+// Only the latest version shows its date and time
+function changelogPageHtml() {
+  const releases = CHANGELOG.map((release, index) => {
+    let date = "";
+    if (index === 0) {
+      const when = new Date(release.date.replace(" ", "T"));
+      date = when.toLocaleDateString(language, { day: "numeric", month: "short", year: "numeric" }) +
+             " · " + when.toLocaleTimeString(language, { hour: "2-digit", minute: "2-digit" });
+    }
+    const changes = release.changes[language] || release.changes.en;
+    return `
+      <div class="release">
+        <div class="release-head"><b>v${release.version}</b> <span class="release-date">${date}</span></div>
+        <ul>${changes.map(change => `<li>${escapeHtml(change)}</li>`).join("")}</ul>
+      </div>`;
+  }).join("");
+  return `
+    <h2>${t("changelog.title")}</h2>
+    <div class="changelog">${releases}</div>
     <button class="secondary-button" data-action="page" data-page="main">← ${t("menu.back")}</button>
   `;
 }

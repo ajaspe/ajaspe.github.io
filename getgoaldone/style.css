@@ -171,23 +171,65 @@ button:focus-visible {
 }
 
 /* --- Main menu --- */
-.byline {
-  display: block;
+.byline-row {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   margin: -0.6em auto 0.5em;
-  padding: 0.1em 0.6em;
+}
+
+.byline,
+.version {
+  padding: 0.1em 0.3em;
   background: none;
   color: #fff59d;
   font-weight: 400;
 }
 
-.byline:hover {
+.version {
+  font-size: 0.7em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.byline:hover,
+.version:hover {
   text-decoration: underline;
 }
 
-.version {
+/* --- What's new --- */
+.changelog {
+  max-height: 55vh;
+  overflow-y: auto;
+  margin-bottom: 0.8em;
+  text-align: left;
+}
+
+.release {
+  margin: 0 0 0.6em;
+  padding: 0.5em 0.9em;
+  border-radius: 0.6em;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.release:first-child {
+  background: rgba(255, 235, 59, 0.14);
+}
+
+.release-head b {
+  color: #ffeb3b;
+  font-size: 1.15em;
+}
+
+.release-date {
   margin-left: 0.4em;
-  font-size: 0.7em;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+.release ul {
+  margin: 0.3em 0 0;
+  padding-left: 1.3em;
+  line-height: 1.4;
 }
 
 .big-button {
