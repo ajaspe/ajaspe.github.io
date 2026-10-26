@@ -5,6 +5,7 @@ menu_title: Publications
 order: 2
 layout: default
 permalink: /publications/
+sitemap: true   # explicit: the local Jekyll 4 would otherwise match the "publications" sitemap exclusion in _config.yml by prefix
 thumb_img: "assets/img/thumb_site.jpg"
 ---
 

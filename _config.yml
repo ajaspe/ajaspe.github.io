@@ -21,7 +21,20 @@ defaults:
     values:
       layout: post
       permalink: /blog/:title/
-
+  # Kept out of the sitemap: the PDFs in publications/ and assets/ (each paper already has its own page) and the unlisted game.
+  # Plain folder scopes on purpose: a glob such as **/*.pdf makes the Jekyll 3.10 build of GitHub Pages crawl the tree for every file.
+  - scope:
+      path: "publications"
+    values:
+      sitemap: false
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
+  - scope:
+      path: "getgoaldone"
+    values:
+      sitemap: false
 url: "https://albertojaspe.net"
 plugins:
   - jekyll-sitemap
