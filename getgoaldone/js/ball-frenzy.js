@@ -222,16 +222,112 @@ function drawCrazyOverlay() {
   }
 
   if (crazy.phase === "frenzy") {
-    drawText(crazyTitle(), CENTER_X, TOP + 35, 30 + pulse * 4, rainbow(0, 1));
-    const [team1, team2] = game.teams;
-    const score = teamName(team1) + "  " + crazy.points[0] + " - " + crazy.points[1] +
-                  "  " + teamName(team2) + "      ⏱️ " + Math.ceil(crazy.seconds);
-    drawText(score, CENTER_X, TOP + 75, 24, "white");
+    drawText(crazyTitle(), CENTER_X, TOP + 30, 30 + pulse * 4, rainbow(0, 1));
+    drawCrazyGauge(crazy);
   }
 
   if (crazy.phase === "result") {
     drawCrazyScoreboard(crazy, pulse);
   }
+}
+
+// --- Frenzy gauge: a needle that leans towards whoever is winning, like a balance ---
+
+const gauge = { angle: 0, speed: 0, lastDrawn: 0, points: [0, 0], popAt: [0, 0] };
+
+// A spring pulls the needle towards its target, so it swings and wobbles a little when it moves
+function swingNeedle(target) {
+  const now = performance.now();
+  const dt = Math.min((now - gauge.lastDrawn) / 1000, 0.05);
+  gauge.lastDrawn = now;
+  gauge.speed += (target - gauge.angle) * GAUGE_SPRING * dt;
+  gauge.speed *= Math.exp(-GAUGE_DAMPING * dt);
+  gauge.angle += gauge.speed * dt;
+}
+
+function drawCrazyGauge(crazy) {
+  const now = performance.now();
+  const leftIndex = game.teams[0].side === "left" ? 0 : 1;
+  const sides = [leftIndex, 1 - leftIndex].map(index => ({ team: game.teams[index], index: index }));
+  for (const { index } of sides) {
+    if (crazy.points[index] > gauge.points[index]) gauge.popAt[index] = now;   // a point: pop the number
+    gauge.points[index] = crazy.points[index];
+  }
+
+  // 0 = tied (straight up); up to GAUGE_MAX_TILT towards the leader, more the bigger the lead
+  const lead = crazy.points[sides[1].index] - crazy.points[sides[0].index];
+  swingNeedle(Math.tanh(lead / GAUGE_LEAD_FOR_FULL_TILT) * GAUGE_MAX_TILT);
+
+  const x = CENTER_X;
+  const y = TOP + 150;           // the needle's pivot
+  const radius = 78;
+
+  // Dial: dark half disc, then one arc per team, the leader's glowing
+  ctx.save();
+  ctx.globalAlpha = 0.55;
+  ctx.fillStyle = "#101820";
+  ctx.beginPath();
+  ctx.arc(x, y, radius + 20, Math.PI, 0);
+  ctx.closePath();
+  ctx.fill();
+  ctx.globalAlpha = 1;
+  ctx.lineWidth = 14;
+  ctx.lineCap = "round";
+  sides.forEach(({ team }, i) => {
+    const winning = (i === 0 ? -lead : lead) > 0;
+    ctx.shadowColor = team.color;
+    ctx.shadowBlur = winning ? 18 + Math.sin(now / 120) * 6 : 0;
+    ctx.strokeStyle = team.color;
+    ctx.beginPath();
+    ctx.arc(x, y, radius, i === 0 ? Math.PI + 0.12 : -Math.PI / 2 + 0.06, i === 0 ? -Math.PI / 2 - 0.06 : -0.12);
+    ctx.stroke();
+  });
+  ctx.shadowBlur = 0;
+
+  // Ticks
+  ctx.strokeStyle = "rgba(255, 255, 255, 0.6)";
+  ctx.lineWidth = 2;
+  for (let degrees = -75; degrees <= 75; degrees += 15) {
+    const angle = -Math.PI / 2 + degrees * Math.PI / 180;
+    const inner = degrees === 0 ? radius - 26 : radius - 18;
+    ctx.beginPath();
+    ctx.moveTo(x + Math.cos(angle) * inner, y + Math.sin(angle) * inner);
+    ctx.lineTo(x + Math.cos(angle) * (radius - 10), y + Math.sin(angle) * (radius - 10));
+    ctx.stroke();
+  }
+
+  // Needle: a glowing arrow in the leader's colour (yellow when tied)
+  const leader = lead === 0 ? null : sides[lead < 0 ? 0 : 1].team;
+  const angle = -Math.PI / 2 + gauge.angle;
+  const tipX = x + Math.cos(angle) * (radius - 4);
+  const tipY = y + Math.sin(angle) * (radius - 4);
+  const sideX = Math.cos(angle + Math.PI / 2) * 7;
+  const sideY = Math.sin(angle + Math.PI / 2) * 7;
+  ctx.shadowColor = "white";
+  ctx.shadowBlur = 12;
+  ctx.fillStyle = leader ? leader.color : "#ffeb3b";
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(tipX, tipY);
+  ctx.lineTo(x + sideX, y + sideY);
+  ctx.lineTo(x - sideX, y - sideY);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+  fillCircle(x, y, 11, "white");
+  fillCircle(x, y, 6, leader ? leader.color : "#ffeb3b");
+  ctx.restore();
+
+  // Points on each side (they pop when they go up), names below, time in the middle
+  sides.forEach(({ team, index }, i) => {
+    const pop = Math.max(0, 1 - (now - gauge.popAt[index]) / 300);
+    const px = x + (i === 0 ? -1 : 1) * (radius + 70);
+    drawText(String(crazy.points[index]), px, y - 40, 54 + pop * 26, team.color);
+    drawText(playerOrTeamName(team), px, y + 2, 18, "white");
+  });
+  drawText("⏱️ " + Math.ceil(crazy.seconds), x, y + 30, 22, Math.ceil(crazy.seconds) <= 5 ? "#ff5252" : "white");
 }
 
 function drawCrazyScoreboard(crazy, pulse) {
@@ -251,9 +347,9 @@ function drawCrazyScoreboard(crazy, pulse) {
   if (crazy.ultimate && !crazy.winner) {
     message = t("crazy.tieUltimate");
   } else if (crazy.ultimate) {
-    message = t("crazy.winsMatch", { team: teamName(crazy.winner) });
+    message = t("crazy.winsMatch", { team: playerOrTeamName(crazy.winner) });
   } else if (crazy.winner) {
-    message = t("crazy.winsGoal", { team: teamName(crazy.winner) });
+    message = t("crazy.winsGoal", { team: playerOrTeamName(crazy.winner) });
   }
   drawText(message, CENTER_X, CENTER_Y + 140, 38, "#ffeb3b");
 }

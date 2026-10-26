@@ -223,7 +223,7 @@ const Net = {
       teams: game.teams.map(team => ({
         colorId: team.colorId,
         nameKey: team.nameKey,
-        customName: team.customName,
+        player: team.player,
         side: team.side,
         style: team.chips[0].style,
         names: team.chips.map(chip => chip.name),
@@ -405,7 +405,7 @@ function setUpGuestMatch(setup) {
   game.teams = setup.teams.map(team => createTeam({
     colorId: team.colorId,
     nameKey: team.nameKey,
-    customName: team.customName,
+    player: team.player,
     side: team.side,
     style: team.style,
     chipNames: team.names,

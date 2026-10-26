@@ -114,11 +114,23 @@ function drawText(text, x, y, size, color, align) {
   ctx.fillText(text, x, y);
 }
 
+// Centres the emoji's actual drawing on (x, y): each emoji font puts each glyph a bit off-centre
+// (up to a tenth of its size), so measure it once and shift it back.
+const emojiOffsets = new Map();   // emoji -> { x, y } offset for a 1px font
+
 function drawEmoji(emoji, x, y, size) {
   ctx.font = size + "px sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText(emoji, x, y);
+  if (!emojiOffsets.has(emoji)) {
+    const box = ctx.measureText(emoji);
+    emojiOffsets.set(emoji, {
+      x: (box.actualBoundingBoxLeft - box.actualBoundingBoxRight) / 2 / size,
+      y: (box.actualBoundingBoxAscent - box.actualBoundingBoxDescent) / 2 / size,
+    });
+  }
+  const offset = emojiOffsets.get(emoji);
+  ctx.fillText(emoji, x + offset.x * size, y + offset.y * size);
 }
 
 function darken(alpha) {
@@ -466,7 +478,7 @@ function drawKickoffBanner() {
   }
   const team = game.teams[game.kickoff];
   const seconds = Math.max(1, Math.ceil(game.kickoffWait));
-  drawText(t("hud.kickoff", { team: teamName(team), s: seconds }), CENTER_X, TOP + 25, 24, team.color);
+  drawText(t("hud.kickoff", { team: playerOrTeamName(team), s: seconds }), CENTER_X, TOP + 25, 24, team.color);
 }
 
 // Before each match: which team you are and where you attack, then 3, 2, 1, GO!
@@ -480,7 +492,7 @@ function drawStartScreen() {
       const y = CENTER_Y + 115;
       let label = null;
       if (mine.length === 1 && mine[0] === index) label = t("countdown.you");
-      if (mine.length === 2) label = t("countdown.player", { n: index + 1 });
+      if (mine.length === 2) label = team.player || t("countdown.player", { n: index + 1 });
 
       if (!label) {
         drawText(teamName(team), x, y + 20, 30, team.color);
@@ -553,8 +565,8 @@ function drawGoalCelebration() {
   if (game.ownGoal) {
     const unlucky = game.lastScorer === game.teams[0] ? game.teams[1] : game.teams[0];
     drawText(t("hud.ownGoal"), CENTER_X, CENTER_Y + 45, 44, "#ff8a80");
-    drawText(t("hud.ownGoalBy", { team: teamName(unlucky) }), CENTER_X, CENTER_Y + 100, 26, unlucky.color);
+    drawText(t("hud.ownGoalBy", { team: playerOrTeamName(unlucky) }), CENTER_X, CENTER_Y + 100, 26, unlucky.color);
   } else {
-    drawText(t("hud.goalBy", { team: teamName(game.lastScorer) }), CENTER_X, CENTER_Y + 50, 40, game.lastScorer.color);
+    drawText(t("hud.goalBy", { team: playerOrTeamName(game.lastScorer) }), CENTER_X, CENTER_Y + 50, 40, game.lastScorer.color);
   }
 }

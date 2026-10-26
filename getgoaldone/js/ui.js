@@ -51,7 +51,7 @@ function mainPageHtml() {
   const quickHint = t("menu.quickMatchHint") + " · " + t("level." + save.settings.level);
   // Between matches: your name, then Quick match as the big "play" button; during a match that's Resume
   return `
-    <button class="byline" data-action="page" data-page="about">${t("menu.by")} <b>AlMart</b></button>
+    <button class="byline" data-action="page" data-page="about">${t("menu.by")} <b>AlMart</b> <span class="version">v${GAME_VERSION}</span></button>
     ${inMatch ? `<button class="big-button" data-action="resume">▶ ${t("menu.resume")}</button>` : `
       <input class="team-name player-name" data-slot="team1" maxlength="${NAME_MAX_LENGTH}" aria-label="${t("settings.team1")}"
              placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(save.settings.team1.name)}">
@@ -117,7 +117,7 @@ function teamSettingsHtml(slot, label) {
       <div class="setting-label">${label}</div>
       <div class="swatches">${swatches}</div>
       <input class="team-name" data-slot="${slot}" maxlength="${NAME_MAX_LENGTH}"
-             placeholder="${escapeHtml(t("team." + team.colorId))}" value="${escapeHtml(team.name)}">
+             placeholder="${escapeHtml(t("settings.namePlaceholder"))}" value="${escapeHtml(team.name)}">
     </div>`;
 }
 
@@ -148,6 +148,10 @@ function settingsPageHtml() {
         <div class="setting-label">${t("settings.sound")} · ${t("settings.music")}</div>
         ${toggleHtml("sound", save.settings.sound ? "🔊" : "🔇", t("settings.sound"))}
         ${toggleHtml("music", save.settings.music ? "🎵" : "🎵🚫", t("settings.music"))}
+      </div>
+      <div class="setting">
+        <div class="setting-label">${t("settings.voice")}</div>
+        ${optionButtons("voice", COMMENTATOR_VOICES.map(id => ({ value: id, label: t("voice." + id) })), save.settings.voice)}
       </div>
       <div class="setting wide">
         <div class="setting-label">🎮 ${t("settings.controllers")}</div>
@@ -466,6 +470,7 @@ menuPage.addEventListener("click", function (event) {
       break;
     case "toggle": save.settings[button.dataset.setting] = !save.settings[button.dataset.setting]; break;
     case "language": save.settings.language = value; setLanguage(value); applyStaticTexts(); preloadVoiceClips(); break;
+    case "voice": save.settings.voice = value; commentate("goal", { team: playerName() || t("team." + save.settings.team1.colorId) }); break;
     case "level": save.settings.level = value; break;
     case "minutes": save.settings.minutes = Number(value); break;
     case "color":
@@ -521,7 +526,7 @@ menuPage.addEventListener("input", function (event) {
     save.settings[event.target.dataset.slot].name = event.target.value.trim();
     persist();
     if (game.state === "idle" && event.target.dataset.slot === "team1") {
-      game.teams[0].customName = playerName();   // the field behind the menu shows it straight away
+      game.teams[0].player = playerName();   // the field behind the menu shows it straight away
     }
   }
 });
@@ -625,9 +630,9 @@ function showResults(result) {
   if (result.cupWon) {
     title = t("results.cupWon");
   } else if (result.winner && mine) {
-    title = result.winner === mine ? t("results.youWin") : t("results.youLose", { team: teamName(theirs) });
+    title = result.winner === mine ? t("results.youWin") : t("results.youLose", { team: playerOrTeamName(theirs) });
   } else if (result.winner) {
-    title = t("results.win", { team: teamName(result.winner) });
+    title = t("results.win", { team: playerOrTeamName(result.winner) });
   }
   document.getElementById("resultTitle").textContent = title;
 

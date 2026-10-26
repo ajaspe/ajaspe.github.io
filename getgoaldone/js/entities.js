@@ -30,14 +30,14 @@ function createBall(color, skin) {
   };
 }
 
-// options: { colorId, nameKey | customName, side, style, chipNames }
+// options: { colorId, nameKey, player, side, style, chipNames }
 function createTeam(options) {
   const color = colorById(options.colorId).value;
   return {
     colorId: options.colorId,
     color: color,
     nameKey: options.nameKey || "team." + options.colorId,
-    customName: options.customName || "",
+    player: options.player || "",   // the person playing it, if they typed a name
     side: options.side,              // the goal this team defends: "left" | "right"
     goals: 0,
     selected: 0,                     // index of the chip the player controls
@@ -45,8 +45,15 @@ function createTeam(options) {
   };
 }
 
+// The colour's team name ("Red Rockets"), with the player's name if we know it ("Martín's Red Rockets")
 function teamName(team) {
-  return team.customName || t(team.nameKey);
+  const name = t(team.nameKey);
+  return team.player ? t("team.of", { name: team.player, team: name }) : name;
+}
+
+// Who scores and who wins: the person if we know their name, else the team
+function playerOrTeamName(team) {
+  return team.player || teamName(team);
 }
 
 function randomChipNames(count, taken) {

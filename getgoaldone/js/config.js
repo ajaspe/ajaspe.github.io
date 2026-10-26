@@ -1,5 +1,9 @@
 // Game configuration: every tunable number lives here.
 
+// Shown small in the menu. Bump it with every release and add the changes to CHANGELOG.md:
+// 2.0.1 for small fixes and tweaks, 2.1.0 for new features, 3.0.0 for big changes.
+const GAME_VERSION = "2.0.0";
+
 // --- Field geometry (canvas pixels) ---
 const FIELD_WIDTH = 1000;
 const FIELD_HEIGHT = 560;
@@ -36,13 +40,22 @@ const ATTACKER_DISTANCE = 50;    // how far behind the ball the attacker waits
 // --- CPU opponent ---
 // thinkFrames: delay before each shot (min, max, at 60 fps)
 // aimError: random aim error in radians
+// smart: picks the best chip and shot (wall bounces, clearances, a rolling ball) instead of
+// pushing the ball from the closest chip
 const CPU_LEVELS = {
-  easy:   { thinkFrames: [90, 180], aimError: 0.35 },
-  normal: { thinkFrames: [50, 110], aimError: 0.18 },
-  hard:   { thinkFrames: [25, 60],  aimError: 0.08 },
-  expert: { thinkFrames: [15, 40],  aimError: 0.04 },
+  easy:   { thinkFrames: [90, 180], aimError: 0.35, smart: false },
+  normal: { thinkFrames: [45, 95],  aimError: 0.12, smart: true },
+  hard:   { thinkFrames: [25, 55],  aimError: 0.06, smart: true },
+  expert: { thinkFrames: [12, 35],  aimError: 0.03, smart: true },
 };
 const CPU_AIM_FRAMES = 35;       // how long the CPU's aim arrow is shown before it shoots
+const CPU_MIN_CUT = 0.4;         // steepest cut the CPU tries (cosine: 1 = only right behind the ball)
+const CPU_LAST_RESORT_CUT = 0.1; // ...and when it has waited long enough for a better one
+const CPU_BANK_VALUE = 0.7;      // how much it likes a shot off the wall compared to a straight one
+const CPU_CLEAR_VALUE = 0.35;    // ...and just clearing the ball forward
+const CPU_MAX_BALL_SPEED = 3;    // the smart CPU doesn't shoot at a ball going faster than this
+const CPU_WAIT_FRAMES = 20;     // with no good shot, look again this much later...
+const CPU_MAX_WAITS = 4;         // ...but not more times than this; then it just hits the ball
 
 // --- Keyboard aiming ---
 const KEY_AIM_SPEED = 0.05;      // radians per frame
@@ -98,6 +111,10 @@ const CRAZY_BOUNCE = 0.93;
 const CRAZY_FRICTION = 0.993;
 const CRAZY_LAUNCH_SPEED = [7, 13];
 const CRAZY_ICON_RADIUS = 22;
+const GAUGE_MAX_TILT = 1.25;     // radians the needle leans at most towards the leader (~70°)
+const GAUGE_LEAD_FOR_FULL_TILT = 4;   // a lead of this many points leans it most of the way
+const GAUGE_SPRING = 90;         // how hard the needle is pulled to where it should point...
+const GAUGE_DAMPING = 7;         // ...and how fast its swinging dies down
 
 // --- Match ---
 const GOALS_TO_WIN = 10;
@@ -122,6 +139,19 @@ const MUSIC_VOLUME = 0.25;
 const CROWD_VOLUME = 0.15;
 const MUSIC_STEP_START = 0.28;   // seconds per music step at kick-off...
 const MUSIC_STEP_END = 0.15;     // ...and at the final whistle
+
+// --- Commentator ---
+const COMMENTATOR_VOICES = ["human", "robot", "off"];
+// Speech synthesis can only change speed and pitch, so that's how the lines get their feeling.
+// A little randomness on top keeps the same line from sounding identical every time.
+const VOICE_MOODS = {
+  excited: { rate: 1.1,  pitch: 1.2 },
+  happy:   { rate: 1.05, pitch: 1.1 },
+  sad:     { rate: 0.85, pitch: 0.7 },
+  robot:   { rate: 0.9,  pitch: 0.1 },
+};
+const VOICE_MOOD_JITTER = 0.06;
+const LINE_MOODS = { ownGoal: "sad", crazyTie: "sad", finalDraw: "happy", crazyTieUltimate: "happy" };   // the rest: excited
 
 // --- Platform ---
 const MIDGAME_AD_INTERVAL_MS = 3 * 60 * 1000;

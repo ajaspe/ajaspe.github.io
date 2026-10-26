@@ -8,6 +8,7 @@ function defaultSave() {
       language: null,            // null = follow the browser
       sound: true,
       music: true,
+      voice: "human",            // commentator: "human", "robot" or "off"
       level: "normal",
       minutes: DEFAULT_MINUTES,
       team1: { colorId: "red", name: "" },
