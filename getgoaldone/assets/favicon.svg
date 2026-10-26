@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Get Goal Done icon: the logo's ball on the green DONE badge, with its check mark in gold -->
+  <defs>
+    <polygon id="pentagon" points="0,-6 5.7,-1.9 3.5,4.9 -3.5,4.9 -5.7,-1.9" />
+    <clipPath id="insideBall"><circle r="17.5" /></clipPath>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff59d" />
+      <stop offset="1" stop-color="#ffb300" />
+    </linearGradient>
+  </defs>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="14" fill="#43a047" stroke="#1b2a30" stroke-width="5" />
+  <rect x="8" y="8" width="48" height="48" rx="9" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.55" />
+  <g transform="translate(27 28) rotate(-12)">
+    <circle r="19" fill="white" stroke="#1b2a30" stroke-width="3.5" />
+    <g clip-path="url(#insideBall)" fill="#1b2a30">
+      <use href="#pentagon" />
+      <line y1="-6" y2="-13" stroke="#1b2a30" stroke-width="1.8" transform="rotate(0)" />
+      <line y1="-6" y2="-13" stroke="#1b2a30" stroke-width="1.8" transform="rotate(72)" />
+      <line y1="-6" y2="-13" stroke="#1b2a30" stroke-width="1.8" transform="rotate(144)" />
+      <line y1="-6" y2="-13" stroke="#1b2a30" stroke-width="1.8" transform="rotate(216)" />
+      <line y1="-6" y2="-13" stroke="#1b2a30" stroke-width="1.8" transform="rotate(288)" />
+      <use href="#pentagon" transform="rotate(0) translate(0 -19) rotate(180)" />
+      <use href="#pentagon" transform="rotate(72) translate(0 -19) rotate(180)" />
+      <use href="#pentagon" transform="rotate(144) translate(0 -19) rotate(180)" />
+      <use href="#pentagon" transform="rotate(216) translate(0 -19) rotate(180)" />
+      <use href="#pentagon" transform="rotate(288) translate(0 -19) rotate(180)" />
+    </g>
+    <ellipse cx="-7" cy="-9" rx="5" ry="3" fill="white" opacity="0.6" transform="rotate(-35 -7 -9)" />
+  </g>
+  <path d="M 33 45 L 42 54 L 58 31" fill="none" stroke="#1b2a30" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 33 45 L 42 54 L 58 31" fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

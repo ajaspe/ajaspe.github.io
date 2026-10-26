@@ -4,6 +4,16 @@
 // latest one's.
 const CHANGELOG = [
   {
+    version: "2.0.4",
+    date: "2026-10-26 16:27",
+    changes: {
+      en: ["Our own icon in the browser tab and on the phone's home screen"],
+      es: ["Nuestro propio icono en la pestaña del navegador y en la pantalla de inicio del móvil"],
+      it: ["La nostra icona nella scheda del browser e nella schermata home del telefono"],
+      de: ["Unser eigenes Symbol im Browser-Tab und auf dem Startbildschirm des Handys"],
+    },
+  },
+  {
     version: "2.0.3",
     date: "2026-10-26 15:41",
     changes: {
