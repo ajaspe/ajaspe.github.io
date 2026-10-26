@@ -137,14 +137,12 @@ const MUSIC_STEP_START = 0.28;   // seconds per music step at kick-off...
 const MUSIC_STEP_END = 0.15;     // ...and at the final whistle
 
 // --- Commentator ---
-const COMMENTATOR_VOICES = ["human", "robot", "off"];
 // Speech synthesis can only change speed and pitch, so that's how the lines get their feeling.
 // A little randomness on top keeps the same line from sounding identical every time.
 const VOICE_MOODS = {
   excited: { rate: 1.1,  pitch: 1.2 },
   happy:   { rate: 1.05, pitch: 1.1 },
   sad:     { rate: 0.85, pitch: 0.7 },
-  robot:   { rate: 0.9,  pitch: 0.1 },
 };
 const VOICE_MOOD_JITTER = 0.06;
 const LINE_MOODS = { ownGoal: "sad", crazyTie: "sad", finalDraw: "happy", crazyTieUltimate: "happy" };   // the rest: excited

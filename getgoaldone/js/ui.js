@@ -56,8 +56,8 @@ function mainPageHtml() {
       <button class="version" data-action="page" data-page="changelog" title="${t("changelog.title")}">v${GAME_VERSION}</button>
     </div>
     ${inMatch ? `<button class="big-button" data-action="resume">▶ ${t("menu.resume")}</button>` : `
-      <input class="team-name player-name" data-slot="team1" maxlength="${NAME_MAX_LENGTH}" aria-label="${t("settings.team1")}"
-             placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(save.settings.team1.name)}">
+      <input class="team-name player-name" data-slot="team1" data-field="player" maxlength="${NAME_MAX_LENGTH}"
+             aria-label="${t("settings.namePlaceholder")}" placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(save.settings.team1.player)}">
       <button class="big-button play-button" data-action="quick">
         <span class="mode-title">⚽ ${t("menu.quickMatch")}</span>
         <span class="mode-hint">${quickHint}</span>
@@ -115,12 +115,21 @@ function teamSettingsHtml(slot, label) {
     `<button class="swatch ${color.id === team.colorId ? "chosen" : ""}" style="background:${color.value}"
              data-action="color" data-slot="${slot}" data-value="${color.id}" aria-label="${color.id}"></button>`
   ).join("");
+  // The team's name (empty = its colour's name, shown as the hint). Player 1 types their own name on the
+  // main page; player 2 has nowhere else, so it goes here.
   return `
     <div class="setting">
       <div class="setting-label">${label}</div>
       <div class="swatches">${swatches}</div>
-      <input class="team-name" data-slot="${slot}" maxlength="${NAME_MAX_LENGTH}"
-             placeholder="${escapeHtml(t("settings.namePlaceholder"))}" value="${escapeHtml(team.name)}">
+      <label class="name-label">${t("settings.teamName")}
+        <input class="team-name" data-slot="${slot}" data-field="name" maxlength="${NAME_MAX_LENGTH}"
+               placeholder="✏️ ${escapeHtml(t("team." + team.colorId))}" value="${escapeHtml(team.name)}">
+      </label>
+      ${slot === "team2" ? `
+        <label class="name-label">${t("settings.player2Name")}
+          <input class="team-name" data-slot="team2" data-field="player" maxlength="${NAME_MAX_LENGTH}"
+                 placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(team.player)}">
+        </label>` : ""}
     </div>`;
 }
 
@@ -151,10 +160,6 @@ function settingsPageHtml() {
         <div class="setting-label">${t("settings.sound")} · ${t("settings.music")}</div>
         ${toggleHtml("sound", save.settings.sound ? "🔊" : "🔇", t("settings.sound"))}
         ${toggleHtml("music", save.settings.music ? "🎵" : "🎵🚫", t("settings.music"))}
-      </div>
-      <div class="setting">
-        <div class="setting-label">${t("settings.voice")}</div>
-        ${optionButtons("voice", COMMENTATOR_VOICES.map(id => ({ value: id, label: t("voice." + id) })), save.settings.voice)}
       </div>
       <div class="setting wide">
         <div class="setting-label">🎮 ${t("settings.controllers")}</div>
@@ -259,8 +264,8 @@ function onlinePageHtml() {
   return `
     <h2>🌐 ${t("online.title")} <span class="beta">BETA</span></h2>
     ${busy ? "" : `
-      <input class="team-name player-name" data-slot="team1" maxlength="${NAME_MAX_LENGTH}" aria-label="${t("settings.team1")}"
-             placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(save.settings.team1.name)}">`}
+      <input class="team-name player-name" data-slot="team1" data-field="player" maxlength="${NAME_MAX_LENGTH}"
+             aria-label="${t("settings.namePlaceholder")}" placeholder="${t("settings.namePlaceholder")}" value="${escapeHtml(save.settings.team1.player)}">`}
     ${profileHtml()}
     <p>${t("online.intro")}</p>
     <p class="online-hint">${t("online.betaHint")}</p>
@@ -304,7 +309,7 @@ function profileHtml() {
         <div>${profile ? "" : t("ranking.setNickname")}</div>
         <div class="menu-row">
           <input class="nickname-input" maxlength="16" placeholder="${t("ranking.nicknamePlaceholder")}"
-                 value="${escapeHtml(profile ? profile.nickname : save.settings.team1.name.slice(0, 16))}">
+                 value="${escapeHtml(profile ? profile.nickname : save.settings.team1.player.slice(0, 16))}">
           <button class="secondary-button" data-action="saveNickname">💾 ${t("ranking.save")}</button>
         </div>
         ${nicknameError ? `<div class="online-status error">⚠️ ${t(nicknameError)}</div>` : ""}
@@ -498,7 +503,6 @@ menuPage.addEventListener("click", function (event) {
       break;
     case "toggle": save.settings[button.dataset.setting] = !save.settings[button.dataset.setting]; break;
     case "language": save.settings.language = value; setLanguage(value); applyStaticTexts(); preloadVoiceClips(); break;
-    case "voice": save.settings.voice = value; commentate("goal", { team: playerName() || t("team." + save.settings.team1.colorId) }); break;
     case "level": save.settings.level = value; break;
     case "minutes": save.settings.minutes = Number(value); break;
     case "color":
@@ -551,10 +555,11 @@ menuPage.addEventListener("input", function (event) {
     return;
   }
   if (event.target.classList.contains("team-name")) {
-    save.settings[event.target.dataset.slot].name = event.target.value.trim();
+    save.settings[event.target.dataset.slot][event.target.dataset.field] = event.target.value.trim();
     persist();
     if (game.state === "idle" && event.target.dataset.slot === "team1") {
-      game.teams[0].player = playerName();   // the field behind the menu shows it straight away
+      game.teams[0].name = save.settings.team1.name;   // the field behind the menu shows it straight away
+      game.teams[0].player = playerName();
     }
   }
 });
@@ -658,9 +663,9 @@ function showResults(result) {
   if (result.cupWon) {
     title = t("results.cupWon");
   } else if (result.winner && mine) {
-    title = result.winner === mine ? t("results.youWin") : t("results.youLose", { team: playerOrTeamName(theirs) });
+    title = result.winner === mine ? t("results.youWin") : t("results.youLose", { team: teamName(theirs) });
   } else if (result.winner) {
-    title = t("results.win", { team: playerOrTeamName(result.winner) });
+    title = t("results.win", { team: teamName(result.winner) });
   }
   document.getElementById("resultTitle").textContent = title;
 

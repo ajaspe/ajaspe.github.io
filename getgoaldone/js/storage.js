@@ -8,11 +8,11 @@ function defaultSave() {
       language: null,            // null = follow the browser
       sound: true,
       music: true,
-      voice: "human",            // commentator: "human", "robot" or "off"
       level: "normal",
       minutes: DEFAULT_MINUTES,
-      team1: { colorId: "red", name: "" },
-      team2: { colorId: "blue", name: "" },
+      // name: the team's own name (Settings; empty = its colour's name). player: who plays it (start screen).
+      team1: { colorId: "red", name: "", player: "" },
+      team2: { colorId: "blue", name: "", player: "" },
       pads: [null, null],
     },
     progress: {
@@ -41,6 +41,13 @@ function loadSave() {
         settings: Object.assign(fresh.settings, stored.settings),
         progress: Object.assign(fresh.progress, stored.progress),
       };
+      delete save.settings.voice;   // the old commentator setting
+      for (const team of [save.settings.team1, save.settings.team2]) {
+        if (team.player === undefined) {   // older saves kept the player's name as the team's name
+          team.player = team.name || "";
+          team.name = "";
+        }
+      }
     }
   } catch (error) {
     save = defaultSave();

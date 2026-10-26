@@ -74,7 +74,7 @@ function closestChipToBall(chips) {
 
 // The name shown for the player everywhere: what they typed, else their ranking name
 function playerName() {
-  return save.settings.team1.name || (Ranking.profile ? Ranking.profile.nickname : "");
+  return save.settings.team1.player || (Ranking.profile ? Ranking.profile.nickname : "");
 }
 
 function startMatch(mode) {
@@ -85,6 +85,7 @@ function startMatch(mode) {
   const homeColor = settings.team1.colorId;
   const home = createTeam({
     colorId: homeColor,
+    name: settings.team1.name,
     player: playerName(),
     side: "left",
     style: progress.chipStyle,
@@ -97,11 +98,12 @@ function startMatch(mode) {
     // Host only: the guest's team comes from its "hello" message
     const guest = Net.peerSettings;
     const colorId = guest.colorId !== homeColor ? guest.colorId : otherColor(homeColor);
-    away = createTeam({ colorId: colorId, player: String(guest.name || "").slice(0, NAME_MAX_LENGTH), side: "right", style: guest.style,
+    away = createTeam({ colorId: colorId, name: String(guest.team || "").slice(0, NAME_MAX_LENGTH),
+                        player: String(guest.name || "").slice(0, NAME_MAX_LENGTH), side: "right", style: guest.style,
                         chipNames: randomChipNames(3, home.chips.map(c => c.name)) });
   } else if (mode === "versus") {
     const colorId = settings.team2.colorId !== homeColor ? settings.team2.colorId : otherColor(homeColor);
-    away = createTeam({ colorId: colorId, player: settings.team2.name, side: "right", chipNames: randomChipNames(3, home.chips.map(c => c.name)) });
+    away = createTeam({ colorId: colorId, name: settings.team2.name, player: settings.team2.player, side: "right", chipNames: randomChipNames(3, home.chips.map(c => c.name)) });
   } else if (mode === "cup") {
     game.cupStage = progress.cupStage;
     const opponent = CUP_OPPONENTS[game.cupStage];
@@ -174,7 +176,7 @@ function otherColor(colorId) {
 // The field behind the main menu, before the first match
 function showTitleField() {
   const homeColor = save.settings.team1.colorId;
-  const home = createTeam({ colorId: homeColor, player: playerName(), side: "left", style: save.progress.chipStyle,
+  const home = createTeam({ colorId: homeColor, name: save.settings.team1.name, player: playerName(), side: "left", style: save.progress.chipStyle,
                             chipNames: randomChipNames(3, []) });
   const away = createTeam({ colorId: otherColor(homeColor), side: "right", chipNames: randomChipNames(3, home.chips.map(c => c.name)) });
   game.teams = [home, away];

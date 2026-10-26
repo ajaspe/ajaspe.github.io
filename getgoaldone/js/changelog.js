@@ -4,6 +4,28 @@
 // latest one's.
 const CHANGELOG = [
   {
+    version: "2.0.2",
+    date: "2026-10-26 14:58",
+    changes: {
+      en: [
+        "Your name on the start screen, your team's name in Settings: «Martín's Red Rockets»",
+        "Simpler settings: no commentator choice (the sound switch still mutes it)",
+      ],
+      es: [
+        "Tu nombre en la pantalla de inicio y el de tu equipo en Ajustes: «Cohetes Rojos de Martín»",
+        "Ajustes más sencillos: sin elegir comentarista (el sonido lo sigue silenciando)",
+      ],
+      it: [
+        "Il tuo nome nella schermata iniziale, quello della squadra nelle Impostazioni: «Razzi Rossi di Martín»",
+        "Impostazioni più semplici: niente scelta del telecronista (l'audio lo silenzia ancora)",
+      ],
+      de: [
+        "Dein Name auf dem Startbildschirm, der Name deines Teams in den Einstellungen: «Rote Raketen von Martín»",
+        "Einfachere Einstellungen: keine Kommentator-Auswahl (der Ton schaltet ihn weiter stumm)",
+      ],
+    },
+  },
+  {
     version: "2.0.1",
     date: "2026-10-26 11:41",
     changes: {
@@ -22,7 +44,7 @@ const CHANGELOG = [
         "Type your name: your team carries it",
         "New power-ups: Mega chips, Cannon and Defence wall",
         "Ball Frenzy gauge and the Armageball tie-break",
-        "A commentator with feelings… or a robot!",
+        "A commentator with feelings",
         "Online matches with a ranking (beta)",
         "Italian and German",
       ],
@@ -31,7 +53,7 @@ const CHANGELOG = [
         "Escribe tu nombre: tu equipo lo lleva",
         "Nuevos power-ups: Mega chapas, Cañonazo y Muro de defensa",
         "Balanza en el Ball Frenzy y desempate Armageball",
-        "Comentarista con emoción… ¡o un robot!",
+        "Comentarista con emoción",
         "Partidos online con ranking (beta)",
         "Italiano y alemán",
       ],
@@ -40,7 +62,7 @@ const CHANGELOG = [
         "Scrivi il tuo nome: la tua squadra lo porta",
         "Nuovi power-up: Mega pedine, Cannonata e Muro di difesa",
         "Bilancia nel Ball Frenzy e spareggio Armageball",
-        "Telecronista con emozione… o un robot!",
+        "Telecronista con emozione",
         "Partite online con classifica (beta)",
         "Italiano e tedesco",
       ],
@@ -49,7 +71,7 @@ const CHANGELOG = [
         "Schreib deinen Namen: dein Team trägt ihn",
         "Neue Power-ups: Mega-Steine, Kanonenschuss und Abwehrmauer",
         "Waage beim Ball Frenzy und Armageball-Tiebreak",
-        "Kommentator mit Gefühl … oder ein Roboter!",
+        "Kommentator mit Gefühl",
         "Online-Spiele mit Rangliste (Beta)",
         "Italienisch und Deutsch",
       ],

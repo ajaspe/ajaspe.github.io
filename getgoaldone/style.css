@@ -408,6 +408,19 @@ button:focus-visible {
   border: none;
 }
 
+/* Team and player 2 names in Settings */
+.name-label {
+  display: block;
+  margin-top: 0.4em;
+  font-size: 0.8em;
+  opacity: 0.85;
+}
+
+.name-label .team-name {
+  margin-top: 0.15em;
+  font-size: 1.25em;
+}
+
 /* Your name, on the main and online pages */
 .player-name {
   display: block;

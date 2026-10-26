@@ -478,7 +478,7 @@ function drawKickoffBanner() {
   }
   const team = game.teams[game.kickoff];
   const seconds = Math.max(1, Math.ceil(game.kickoffWait));
-  drawText(t("hud.kickoff", { team: playerOrTeamName(team), s: seconds }), CENTER_X, TOP + 25, 24, team.color);
+  drawText(t("hud.kickoff", { team: teamName(team), s: seconds }), CENTER_X, TOP + 25, 24, team.color);
 }
 
 // Before each match: which team you are and where you attack, then 3, 2, 1, GO!
@@ -565,8 +565,8 @@ function drawGoalCelebration() {
   if (game.ownGoal) {
     const unlucky = game.lastScorer === game.teams[0] ? game.teams[1] : game.teams[0];
     drawText(t("hud.ownGoal"), CENTER_X, CENTER_Y + 45, 44, "#ff8a80");
-    drawText(t("hud.ownGoalBy", { team: playerOrTeamName(unlucky) }), CENTER_X, CENTER_Y + 100, 26, unlucky.color);
+    drawText(t("hud.ownGoalBy", { team: teamName(unlucky) }), CENTER_X, CENTER_Y + 100, 26, unlucky.color);
   } else {
-    drawText(t("hud.goalBy", { team: playerOrTeamName(game.lastScorer) }), CENTER_X, CENTER_Y + 50, 40, game.lastScorer.color);
+    drawText(t("hud.goalBy", { team: teamName(game.lastScorer) }), CENTER_X, CENTER_Y + 50, 40, game.lastScorer.color);
   }
 }

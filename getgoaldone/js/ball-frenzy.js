@@ -320,12 +320,13 @@ function drawCrazyGauge(crazy) {
   fillCircle(x, y, 6, leader ? leader.color : "#ffeb3b");
   ctx.restore();
 
-  // Points on each side (they pop when they go up), names below, time in the middle
+  // Points on each side (they pop when they go up), names below growing outwards (they can be long:
+  // "Los Supercampeones de Martín"), time in the middle
   sides.forEach(({ team, index }, i) => {
     const pop = Math.max(0, 1 - (now - gauge.popAt[index]) / 300);
-    const px = x + (i === 0 ? -1 : 1) * (radius + 70);
-    drawText(String(crazy.points[index]), px, y - 40, 54 + pop * 26, team.color);
-    drawText(playerOrTeamName(team), px, y + 2, 18, "white");
+    const direction = i === 0 ? -1 : 1;
+    drawText(String(crazy.points[index]), x + direction * (radius + 70), y - 40, 54 + pop * 26, team.color);
+    drawText(teamName(team), x + direction * (radius + 16), y + 2, 18, "white", i === 0 ? "right" : "left");
   });
   drawText("⏱️ " + Math.ceil(crazy.seconds), x, y + 30, 22, Math.ceil(crazy.seconds) <= 5 ? "#ff5252" : "white");
 }
@@ -347,9 +348,9 @@ function drawCrazyScoreboard(crazy, pulse) {
   if (crazy.ultimate && !crazy.winner) {
     message = t("crazy.tieUltimate");
   } else if (crazy.ultimate) {
-    message = t("crazy.winsMatch", { team: playerOrTeamName(crazy.winner) });
+    message = t("crazy.winsMatch", { team: teamName(crazy.winner) });
   } else if (crazy.winner) {
-    message = t("crazy.winsGoal", { team: playerOrTeamName(crazy.winner) });
+    message = t("crazy.winsGoal", { team: teamName(crazy.winner) });
   }
   drawText(message, CENTER_X, CENTER_Y + 140, 38, "#ffeb3b");
 }

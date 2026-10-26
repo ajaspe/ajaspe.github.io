@@ -195,11 +195,9 @@ function preloadVoiceClips() {
 }
 
 // Say one of the commentator's lines. Lines without a "speech.*" text (like the countdown) are clip-only.
-// The robot never uses the recorded clips.
 function commentate(line, params) {
-  const voice = save.settings.voice;
-  if (!soundEnabled() || voice === "off") return;
-  const clip = voice === "human" && voiceClip(line);
+  if (!soundEnabled()) return;
+  const clip = voiceClip(line);
   if (clip) {
     stopCommentator();
     clip.currentTime = 0;
@@ -209,8 +207,7 @@ function commentate(line, params) {
     return;
   }
   if (STRINGS.en["speech." + line]) {
-    if (voice === "robot") playRobotChirp();
-    speak(pickVariant(line, t("speech." + line, params)), voice === "robot" ? "robot" : LINE_MOODS[line] || "excited");
+    speak(pickVariant(line, t("speech." + line, params)), LINE_MOODS[line] || "excited");
   }
 }
 
@@ -222,14 +219,6 @@ function pickVariant(line, text) {
   const fresh = variants.filter(variant => variant !== lastVariants[line]);
   lastVariants[line] = pickRandom(fresh.length ? fresh : variants);
   return lastVariants[line];
-}
-
-// "Bee-boop" before the robot talks
-function playRobotChirp() {
-  if (!audioCtx) return;
-  const now = audioCtx.currentTime;
-  playTone(1320, now, 0.07, 0.12, "square");
-  playTone(880, now + 0.09, 0.09, 0.12, "square");
 }
 
 function commentatorSpeaking() {
@@ -247,29 +236,23 @@ function speak(text, moodId) {
   if (!soundEnabled() || !window.speechSynthesis) return;
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = voiceLanguage();
-  const voice = bestVoice(moodId === "robot");
+  const voice = bestVoice();
   if (voice) utterance.voice = voice;
   const mood = VOICE_MOODS[moodId];
-  const jitter = moodId === "robot" ? 0 : VOICE_MOOD_JITTER;   // robots always sound the same
-  utterance.rate = mood.rate + randomBetween(-jitter, jitter);
-  utterance.pitch = Math.max(0, mood.pitch + randomBetween(-jitter, jitter));
+  utterance.rate = mood.rate + randomBetween(-VOICE_MOOD_JITTER, VOICE_MOOD_JITTER);
+  utterance.pitch = mood.pitch + randomBetween(-VOICE_MOOD_JITTER, VOICE_MOOD_JITTER);
   stopCommentator();
   speechSynthesis.speak(utterance);
 }
 
 // The most natural-sounding voice for the current language. The old built-in desktop voices
-// (Microsoft David, Zira...) sound robotic, so they come last, except for the robot, who wants them first.
+// (Microsoft David, Zira...) sound robotic, so they come last.
 const VOICE_PREFERENCES = [/Natural|Neural/i, /Online/i, /Google/i, /Premium|Enhanced|Siri/i];
 
-function bestVoice(robotic) {
+function bestVoice() {
   const voices = speechSynthesis.getVoices();
   const exact = voices.filter(v => v.lang.replace("_", "-") === voiceLanguage());
   const sameLanguage = voices.filter(v => v.lang.toLowerCase().startsWith(language));
-  if (robotic) {
-    const oldVoice = v => v.localService && !VOICE_PREFERENCES.some(pattern => pattern.test(v.name));
-    const voice = exact.find(oldVoice) || sameLanguage.find(oldVoice);
-    if (voice) return voice;
-  }
   for (const pattern of VOICE_PREFERENCES) {
     const voice = exact.find(v => pattern.test(v.name)) || sameLanguage.find(v => pattern.test(v.name));
     if (voice) return voice;
@@ -413,14 +396,14 @@ function celebrateGoal(team, ownGoal) {
     return;
   }
   crowdRoar();
-  commentate("goal", { team: playerOrTeamName(team) });
+  commentate("goal", { team: teamName(team) });
 }
 
 function celebrateFullTime(winner) {
   playFinalWhistle();
   crowdRoar();
   if (winner) {
-    commentate("finalWin", { team: playerOrTeamName(winner) });
+    commentate("finalWin", { team: teamName(winner) });
   } else {
     commentate("finalDraw");
   }
@@ -466,7 +449,7 @@ function announceCrazyResult(crazy) {
     return;
   }
   crowdRoar();
-  commentate(crazy.ultimate ? "crazyWinsMatch" : "crazyWinsGoal", { team: playerOrTeamName(crazy.winner) });
+  commentate(crazy.ultimate ? "crazyWinsMatch" : "crazyWinsGoal", { team: teamName(crazy.winner) });
 }
 
 const CRAZY_NOTES = [60, 62, 64, 67, 69, 72, 74, 76, 79, 81];   // pentatonic: always sounds fine

@@ -126,7 +126,7 @@ const Net = {
       this.setStatus("connected");
       if (this.role === "guest") {
         const team = save.settings.team1;
-        this.send({ t: "hello", colorId: team.colorId, name: playerName(), style: save.progress.chipStyle });
+        this.send({ t: "hello", colorId: team.colorId, team: team.name, name: playerName(), style: save.progress.chipStyle });
       }
     });
     conn.on("data", message => this.receive(message));
@@ -194,7 +194,7 @@ const Net = {
   receiveAsHost(message) {
     switch (message.t) {
       case "hello":
-        this.peerSettings = { colorId: message.colorId, name: message.name, style: message.style };
+        this.peerSettings = { colorId: message.colorId, team: message.team, name: message.name, style: message.style };
         startMatch("online");
         break;
       case "shot":
@@ -223,6 +223,7 @@ const Net = {
       teams: game.teams.map(team => ({
         colorId: team.colorId,
         nameKey: team.nameKey,
+        name: team.name,
         player: team.player,
         side: team.side,
         style: team.chips[0].style,
@@ -405,6 +406,7 @@ function setUpGuestMatch(setup) {
   game.teams = setup.teams.map(team => createTeam({
     colorId: team.colorId,
     nameKey: team.nameKey,
+    name: team.name,
     player: team.player,
     side: team.side,
     style: team.style,
