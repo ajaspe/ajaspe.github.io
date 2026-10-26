@@ -35,6 +35,15 @@ defaults:
       path: "getgoaldone"
     values:
       sitemap: false
+  # Bundled third-party libraries of the demos and of X3D Copilot
+  - scope:
+      path: "demos/libs"
+    values:
+      sitemap: false
+  - scope:
+      path: "x3d-copilot/vendor"
+    values:
+      sitemap: false
 url: "https://albertojaspe.net"
 plugins:
   - jekyll-sitemap

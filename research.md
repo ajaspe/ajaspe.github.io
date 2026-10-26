@@ -5,6 +5,8 @@ menu_title: Research
 order: 1
 layout: default
 thumb_img: "assets/img/thumb_site.jpg"
+redirect_from:
+  - /research/
 ---
 
 <script>if (location.hash === '#publications') { location.replace('/publications/'); }</script>
