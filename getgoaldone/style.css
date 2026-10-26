@@ -432,11 +432,20 @@ button:focus-visible {
   text-align: center;
 }
 
+/* Controllers: one small line under the settings, they're rarely needed */
 .pads {
-  font-size: 0.85em;
-  margin-bottom: 0.5em;
-  opacity: 0.85;
+  font-size: 0.8em;
+  margin: -0.2em 0 0.8em;
+  opacity: 0.75;
   overflow-wrap: anywhere;
+}
+
+.link-button {
+  background: none;
+  color: inherit;
+  padding: 0 0.3em;
+  font-size: 1em;
+  text-decoration: underline;
 }
 
 /* --- Locker --- */
@@ -638,9 +647,173 @@ button:disabled {
 
 /* --- Help --- */
 .help {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-bottom: 0.8em;
+}
+
+.help-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.help-column > .secondary-button {
+  align-self: center;
+}
+
+.help-caption {
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+/* Shooting demo: 3.2 s loop. Pull back (0-30%), shoot (38-46%), ball goes in (46-70%), fade out (85-100%) */
+.shoot-demo {
+  width: 100%;
+  max-height: 9em;
+}
+
+.shoot-demo .demo-chip { animation: demo-chip 3.2s ease-in-out infinite; }
+.shoot-demo .demo-hand { animation: demo-hand 3.2s ease-in-out infinite; }
+.shoot-demo .demo-aim { animation: demo-aim 3.2s linear infinite; }
+.shoot-demo .demo-ball { animation: demo-ball 3.2s ease-out infinite; }
+.shoot-demo .demo-cheer { animation: demo-cheer 3.2s ease-out infinite; }
+
+@keyframes demo-chip {
+  0% { transform: translateX(0); opacity: 1; }
+  30%, 38% { transform: translateX(-30px); animation-timing-function: ease-in; }
+  46%, 85% { transform: translateX(60px); opacity: 1; }
+  95%, 100% { transform: translateX(60px); opacity: 0; }
+}
+
+@keyframes demo-hand {
+  0% { transform: translateX(0); opacity: 0; }
+  6% { transform: translateX(0); opacity: 1; }
+  30%, 38% { transform: translateX(-30px); opacity: 1; }
+  44%, 100% { transform: translateX(-30px); opacity: 0; }
+}
+
+@keyframes demo-aim {
+  0%, 6% { opacity: 0; }
+  30%, 38% { opacity: 1; }
+  42%, 100% { opacity: 0; }
+}
+
+@keyframes demo-ball {
+  0%, 46% { transform: translateX(0); opacity: 1; }
+  68%, 85% { transform: translateX(114px); opacity: 1; }
+  95%, 100% { transform: translateX(114px); opacity: 0; }
+}
+
+@keyframes demo-cheer {
+  0%, 66% { opacity: 0; }
+  72%, 88% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+
+/* Keyboard and controllers page: one row per action */
+.controls {
+  margin: 0 auto 0.6em;
+  border-collapse: separate;
+  border-spacing: 0 0.35em;
+}
+
+.controls th {
+  padding: 0 0.9em;
+}
+
+.controls td {
+  padding: 0.4em 0.9em;
+  background: rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+.controls td:first-child {
+  border-radius: 0.6em 0 0 0.6em;
+}
+
+.controls td:last-child {
+  border-radius: 0 0.6em 0.6em 0;
+}
+
+.controls .action {
   text-align: left;
-  line-height: 1.5;
-  padding-left: 1.2em;
+  font-weight: 600;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  margin: 0 0.1em;
+  padding: 0.05em 0.35em;
+  border-radius: 0.35em;
+  background: #eceff1;
+  color: #263238;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9em;
+  box-shadow: 0 0.18em 0 #90a4ae;
+}
+
+.key-legend {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+.power-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+}
+
+.power-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15em;
+  padding: 0.5em 0.3em;
+  border-radius: 0.8em;
+  background: rgba(255, 255, 255, 0.06);
+  line-height: 1.2;
+}
+
+.power-tile span:last-child {
+  font-size: 0.8em;
+  opacity: 0.85;
+}
+
+.power-icon {
+  display: grid;
+  place-items: center;
+  width: 2.2em;
+  height: 2.2em;
+  margin: 0.3em 0 0.2em;
+  border: 0.15em solid;
+  border-radius: 50%;
+  font-size: 1.15em;
+  line-height: 1;
+  animation: power-bob 1.6s ease-in-out infinite;
+}
+
+.power-tile:nth-child(2n) .power-icon { animation-delay: -0.8s; }
+
+@keyframes power-bob {
+  50% { transform: scale(1.1); }
+}
+
+.help-rules {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4em;
+  font-size: 0.85em;
+}
+
+.help-rules span {
+  padding: 0.25em 0.7em;
+  border-radius: 1em;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* --- Results --- */
@@ -771,7 +944,8 @@ button:disabled {
 }
 
 @media (max-width: 700px) {
-  .settings-grid {
+  .settings-grid,
+  .help {
     grid-template-columns: 1fr;
   }
 

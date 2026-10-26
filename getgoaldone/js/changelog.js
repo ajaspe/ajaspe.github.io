@@ -4,6 +4,16 @@
 // latest one's.
 const CHANGELOG = [
   {
+    version: "2.0.3",
+    date: "2026-10-26 15:41",
+    changes: {
+      en: ["New How to play: a shooting animation and the power-ups at a glance", "Smaller Settings, no scrolling, and an About button in the menu"],
+      es: ["Nuevo Cómo jugar: animación del tiro y power-ups de un vistazo", "Ajustes más compactos, sin scroll, y un botón Quiénes somos en el menú"],
+      it: ["Nuovo Come si gioca: animazione del tiro e power-up a colpo d'occhio", "Impostazioni più compatte, senza scroll, e un pulsante Chi siamo nel menu"],
+      de: ["Neue Spielanleitung: Schuss-Animation und Power-ups auf einen Blick", "Kompaktere Einstellungen ohne Scrollen und ein Über-uns-Knopf im Menü"],
+    },
+  },
+  {
     version: "2.0.2",
     date: "2026-10-26 14:58",
     changes: {

@@ -29,7 +29,7 @@ function escapeHtml(text) {
 
 function renderMenuPage() {
   const pages = { main: mainPageHtml, settings: settingsPageHtml, locker: lockerPageHtml, help: helpPageHtml,
-                  online: onlinePageHtml, ranking: rankingPageHtml, about: aboutPageHtml, changelog: changelogPageHtml };
+                  controls: controlsPageHtml, online: onlinePageHtml, ranking: rankingPageHtml, about: aboutPageHtml, changelog: changelogPageHtml };
   menuPage.innerHTML = pages[currentPage]();
   menuOverlay.classList.toggle("compact", currentPage !== "main");   // the logo only on the main page
   if (currentPage === "locker") {
@@ -87,10 +87,7 @@ function mainPageHtml() {
       <button class="secondary-button" data-action="page" data-page="settings">⚙️ ${t("menu.settings")}</button>
       <button class="secondary-button" data-action="page" data-page="help">❓ ${t("menu.howToPlay")}</button>
       <button class="secondary-button" data-action="page" data-page="ranking">🏆 ${t("ranking.title")}</button>
-    </div>
-    <div class="menu-row">
-      ${toggleHtml("sound", save.settings.sound ? "🔊" : "🔇", t("settings.sound"))}
-      ${toggleHtml("music", save.settings.music ? "🎵" : "🎵🚫", t("settings.music"))}
+      <button class="secondary-button" data-action="page" data-page="about">${t("menu.about")}</button>
     </div>
     <p class="stats">${t("menu.stats", { wins: progress.wins, goals: progress.goals, cups: progress.cupsWon })}</p>
   `;
@@ -105,7 +102,8 @@ function toggleHtml(setting, icon, label) {
 
 function optionButtons(action, options, current) {
   return options.map(option =>
-    `<button class="option ${option.value === current ? "chosen" : ""}" data-action="${action}" data-value="${option.value}">${option.label}</button>`
+    `<button class="option ${option.value === current ? "chosen" : ""}" data-action="${action}" data-value="${option.value}"
+             ${option.title ? `title="${option.title}"` : ""}>${option.label}</button>`
   ).join("");
 }
 
@@ -136,7 +134,7 @@ function teamSettingsHtml(slot, label) {
 function settingsPageHtml() {
   const names = controllerNames();
   const pads = names.some(Boolean)
-    ? names.map((name, i) => name ? t("settings.controllerOf", { n: i + 1, name: escapeHtml(name.slice(0, 32)) }) : "").filter(Boolean).join("<br>")
+    ? names.map((name, i) => name ? t("settings.controllerOf", { n: i + 1, name: escapeHtml(name.slice(0, 32)) }) : "").filter(Boolean).join(" · ")
     : t("settings.noControllers");
 
   return `
@@ -146,7 +144,8 @@ function settingsPageHtml() {
       ${teamSettingsHtml("team2", t("settings.team2"))}
       <div class="setting">
         <div class="setting-label">${t("settings.language")}</div>
-        ${optionButtons("language", LANGUAGES.map(l => ({ value: l.id, label: l.label })), language)}
+        ${optionButtons("language", [{ value: "auto", label: "Auto" }].concat(LANGUAGES.map(l => ({ value: l.id, label: l.id.toUpperCase(), title: l.label }))),
+                        save.settings.language || "auto")}
       </div>
       <div class="setting">
         <div class="setting-label">${t("settings.difficulty")}</div>
@@ -161,11 +160,10 @@ function settingsPageHtml() {
         ${toggleHtml("sound", save.settings.sound ? "🔊" : "🔇", t("settings.sound"))}
         ${toggleHtml("music", save.settings.music ? "🎵" : "🎵🚫", t("settings.music"))}
       </div>
-      <div class="setting wide">
-        <div class="setting-label">🎮 ${t("settings.controllers")}</div>
-        <div class="pads">${pads}</div>
-        <button class="secondary-button" data-action="resetPads">🔄 ${t("settings.resetControllers")}</button>
-      </div>
+    </div>
+    <div class="pads">
+      🎮 ${t("settings.controllers")}: ${pads}
+      <button class="link-button" data-action="resetPads">🔄 ${t("settings.resetControllers")}</button>
     </div>
     <button class="secondary-button" data-action="page" data-page="main">← ${t("menu.back")}</button>
   `;
@@ -398,13 +396,89 @@ function onNetStatusChanged() {
 
 // --- Help page ---
 
+// The power-ups as they look on the field: icon, aura (fill, ring, glow)
+const HELP_POWER_UPS = [
+  { id: "freeze", emoji: "⏰", fill: "#fff59d", ring: "#ff9800", glow: "rgba(255, 235, 59, 0.45)" },
+  { id: "bigGoal", emoji: "🥅", fill: "#b9f6ca", ring: "#00c853", glow: "rgba(105, 240, 174, 0.45)" },
+  { id: "mega", emoji: "🍄", fill: "#ffebee", ring: "#e53935", glow: "rgba(255, 82, 82, 0.45)" },
+  { id: "cannon", emoji: "💥", fill: "#fff3e0", ring: "#ff6d00", glow: "rgba(255, 145, 0, 0.5)" },
+  { id: "wall", emoji: "🧱", fill: "#efebe9", ring: "#6d4c41", glow: "rgba(141, 110, 99, 0.55)" },
+  { id: "crazy", emoji: "🤪", fill: "#ea80fc", ring: "white", glow: "rgba(64, 196, 255, 0.5)" },
+];
+
+function keys(...labels) {
+  return labels.map(label => `<kbd>${label}</kbd>`).join("");
+}
+
+// Little looping animation: a chip is pulled back, flies into the ball, and the ball goes in
+function shootDemoSvg() {
+  const color = colorById(save.settings.team1.colorId).value;
+  return `
+    <svg class="shoot-demo" viewBox="0 0 300 100" aria-hidden="true">
+      <rect x="2" y="2" width="296" height="96" rx="10" fill="#2e7d32" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+      <line x1="150" y1="2" x2="150" y2="98" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <rect x="276" y="28" width="20" height="44" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2"/>
+      <text class="demo-cheer" x="250" y="30" font-size="22" text-anchor="middle">🎉</text>
+      <g class="demo-aim">
+        <line x1="104" y1="50" x2="140" y2="50" stroke="#ffeb3b" stroke-width="3" stroke-dasharray="6 4"/>
+        <path d="M140 43 L150 50 L140 57 Z" fill="#ffeb3b"/>
+      </g>
+      <g class="demo-ball"><circle cx="172" cy="50" r="8" fill="white" stroke="#263238" stroke-width="2"/></g>
+      <g class="demo-chip">
+        <circle cx="90" cy="50" r="14" fill="${color}" stroke="white" stroke-width="2.5"/>
+        <circle cx="90" cy="50" r="8" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="2"/>
+      </g>
+      <text class="demo-hand" x="88" y="84" font-size="22">👆</text>
+    </svg>`;
+}
+
 function helpPageHtml() {
-  const lines = ["help.goal", "help.mouse", "help.keys1", "help.keys2", "help.pad", "help.fullscreen", "help.ai",
-                 "help.kickoff", "help.freeze", "help.bigGoal", "help.mega", "help.cannon", "help.wall", "help.crazy", "help.ultimate"];
+  const powerUps = HELP_POWER_UPS.map(power => `
+    <div class="power-tile">
+      <span class="power-icon" style="background:${power.fill}; border-color:${power.ring}; box-shadow:0 0 0 0.3em ${power.glow}">${power.emoji}</span>
+      <b>${t("help." + power.id)}</b>
+      <span>${t("help." + power.id + "Text")}</span>
+    </div>`).join("");
   return `
     <h2>❓ ${t("help.title")}</h2>
-    <ul class="help">${lines.map(key => `<li>${t(key)}</li>`).join("")}</ul>
+    <div class="help">
+      <div class="help-column">
+        ${shootDemoSvg()}
+        <div class="help-caption">🖱️ 👆 ${t("help.shoot")}</div>
+        <button class="secondary-button" data-action="page" data-page="controls">⌨️ 🎮 ${t("help.controls")}</button>
+        <div class="help-rules">
+          <span>🛡️⚔️ ${t("help.ai")}</span>
+          <span>⚽ ${t("help.kickoff")}</span>
+          <span>☄️ ${t("help.ultimate")}</span>
+        </div>
+      </div>
+      <div class="help-column">
+        <div class="help-caption">${t("help.powerUps")}</div>
+        <div class="power-grid">${powerUps}</div>
+      </div>
+    </div>
     <button class="secondary-button" data-action="page" data-page="main">← ${t("menu.back")}</button>
+  `;
+}
+
+// Keyboard and controller keys, one row per action
+function controlsPageHtml() {
+  const rows = [
+    ["🎯", t("help.aim"), keys("A", "D"), keys("←", "→"), keys("🕹️")],
+    ["💥", t("help.charge"), keys("W"), keys("↑"), keys("A") + " / " + keys("RT")],
+    ["🔄", t("help.switch"), keys("S"), keys("↓"), keys("LB", "RB")],
+    ["⏸️", t("help.pause"), keys("P"), keys("P"), keys("Start")],
+    ["⛶", t("help.fullscreen"), keys("F"), keys("F"), ""],
+  ];
+  return `
+    <h2>⌨️ 🎮 ${t("help.controls")}</h2>
+    <table class="controls">
+      <tr><th></th><th>⌨️ ${t("help.p1")}</th><th>⌨️ ${t("help.p2")}</th><th>🎮</th></tr>
+      ${rows.map(([icon, action, ...cells]) => `
+        <tr><td class="action">${icon} ${action}</td>${cells.map(cell => `<td>${cell}</td>`).join("")}</tr>`).join("")}
+    </table>
+    <p class="key-legend">${t("help.padsNote")}</p>
+    <button class="secondary-button" data-action="page" data-page="help">← ${t("menu.back")}</button>
   `;
 }
 
@@ -502,7 +576,12 @@ menuPage.addEventListener("click", function (event) {
       if (currentPage === "ranking") leaderboardData = null;   // always fresh
       break;
     case "toggle": save.settings[button.dataset.setting] = !save.settings[button.dataset.setting]; break;
-    case "language": save.settings.language = value; setLanguage(value); applyStaticTexts(); preloadVoiceClips(); break;
+    case "language":
+      save.settings.language = value === "auto" ? null : value;   // null = follow the browser
+      setLanguage(save.settings.language || detectLanguage());
+      applyStaticTexts();
+      preloadVoiceClips();
+      break;
     case "level": save.settings.level = value; break;
     case "minutes": save.settings.minutes = Number(value); break;
     case "color":
