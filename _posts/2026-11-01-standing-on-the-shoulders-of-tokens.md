@@ -24,6 +24,8 @@ There is a feeling, very common these days, that getting a paper into a big conf
 
 ICML doubled in one single year, from 12,107 to 23,918. ICLR grew 69 % in 2026 ([their retrospective](https://blog.iclr.cc/2026/03/31/a-retrospective-on-the-iclr-2026-review-process/)), CVPR 24 % ([CVPR](https://cvpr.thecvf.com/Conferences/2026/News/Technical_Program)) and NeurIPS 38 % in 2025 ([the chairs](https://blog.neurips.cc/2025/09/30/reflections-on-the-2025-review-process-from-the-program-committee-chairs/)). Meanwhile the acceptance rate did not move, it has been around 25 % for at least ten years. So the conferences did not raise the bar, they simply take one quarter of whatever arrives. The question is how good the review is at choosing that quarter.
 
+A small disclaimer before going on: I have nothing against these conferences, and the people organizing them are doing a huge job to keep all this working. I talk about them only because they are at the head of the trend. They are the AI community, so they are the ones with the skills today to use AI at full speed, for writing papers and for reviewing them. But soon it will be like this in any conference, of any field.
+
 <!-- TODO: NeurIPS 2026 main track. Trackers (openaccept.org) list 30,709 submissions and 7,900 accepted, but I did not find an official number from the chairs. Add it if they publish one. -->
 
 ## Reviewing is now really hard
