@@ -56,11 +56,24 @@ So a paper in the top 10 % is rejected one of every three times, and a median pa
 
 And this is the optimistic version, with the noise of 2021. If today the noise were double, which I don't find crazy at all, a top-10 % paper would be almost a coin flip (54 %), and merit would explain only one fifth of the decision.
 
-## The vicious circle
+## Two good papers or ten so-so ones?
 
-If you lead a group and you know these numbers, what do you do? A rejection says very little about the paper, so you send it again to the next conference. And you send more papers. A student with one paper at 35 % of chances is rejected 65 % of the times. A lab with twenty papers like that gets around seven accepted, and at least four with 96 % probability. So big groups are not only better at research, they are also protected against the noise.
+If you lead a group and you know these numbers, what do you do? A rejection says very little about the paper, so you send it again to the next deadline. And now that AI helps you to write, you send more papers, even if the work is still in an early stage.
 
-Add that writing a paper is now cheaper than ever, and the circle closes: more papers, more reviews, the same few experts, more noise, a rejection means less, more papers. Nobody needs to cheat for this, everybody is just doing what makes sense for them.
+I made a small experiment with the same model. Two labs of the same size. Lab A works on one big idea per year, and produces one very good paper (top 5 % of the submissions) and one good paper (top 20 %). Lab B uses AI a lot and sends ten papers per year, all of them early-stage work, below the median (40th percentile). Both resubmit what gets rejected, up to three deadlines per year, more or less what CVPR, ICCV/ECCV and NeurIPS give you.
+
+| | Lab A: 1 very good + 1 good paper per year | Lab B: 10 below-median papers per year |
+|---|--:|--:|
+| Accepted papers per year | 1.8 | 3.0 |
+| Accepted papers after 5 years | 9 | 15 |
+| Same, if the noise is double | 9 | 20 |
+| Reviews it costs per year (~4 per submission) | ~12 | ~107 |
+
+After five years, lab B has a longer list of top-venue papers than lab A in 94 % of the simulations (100 % if the noise is double). If its ten papers are just median instead of below it, it ends with 21 papers against 9. And it costs nine times more reviews, from the same few experts.
+
+So the incentives are very clear, and the circle closes: more papers, more reviews, the same few experts, more noise, a rejection means less, more papers. Nobody needs to cheat for this, everybody is just doing what makes sense for them.
+
+And here is the real problem. Labs and PIs are evaluated by number of papers and by citations, for positions, for grants, for promotions. With these numbers lab B looks almost twice as productive as lab A, while lab A is the one pushing the state of the art. And citations don't fix it, because more and more they are also generated: a related work written by an LLM cites whatever is easy to find, and ten papers per year cite each other. So the way we have to see who is doing relevant research is broken. The only way left is to read the papers, which is exactly what nobody has time to do.
 
 ## So...
 
@@ -101,4 +114,9 @@ for _ in range(50):
 print(f"r = {r:.3f}, corr(score, merit) = {sqrt(r):.3f}")
 for pct in [0.30, 0.50, 0.70, 0.75, 0.90, 0.95, 0.99]:
     print(f"merit percentile {pct:.0%}: P(accept) = {p_accept(pct, r, a):.0%}")
+
+# Two labs, rejected papers resubmitted up to 3 times per year, 25 % acceptance
+def accepted_per_year(papers, tries=3):
+    return sum(1 - (1 - p_accept(q, r, 0.25)) ** tries for q in papers)
+print(f"lab A: {accepted_per_year([0.95, 0.80]):.1f}, lab B: {accepted_per_year([0.40] * 10):.1f}")
 ```
