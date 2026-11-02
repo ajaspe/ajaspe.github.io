@@ -3,6 +3,9 @@ title: "From phone video to Gaussian splats: what worked for us (and what didn't
 date: 2026-10-28
 summary: "A practical guide to building 3D Gaussian Splatting models from ordinary phone videos: the pipeline we ended with after ~30 captures, the methods that helped, the ones that didn't, and real timings."
 tags: [3dgs, graphics, guide]
+ai:
+  model: Claude Opus 5.5
+  used_for: [rephrasing, experiment automation]
 draft: true
 sitemap: false
 cover: /assets/img/posts/2026-10-28-phone-video-to-gaussian-splats/cover.jpg

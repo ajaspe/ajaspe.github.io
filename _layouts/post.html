@@ -10,6 +10,7 @@ layout: default
     ai:
       model: Claude Opus 5.5
       used_for: [references, rephrasing]
+  or a plain text, e.g. ai: not used
 {%- endcomment -%}
 {%- assign listed = site.posts | where_exp: "p", "p.draft != true" -%}
 {%- assign newer = nil -%}{%- assign older = nil -%}
@@ -27,7 +28,7 @@ layout: default
 {%- assign share_text_enc = page.title | url_encode -%}
 <article class="post">
 <h1 class="page-title">{{ page.title }}</h1>
-<p class="post-meta"><span><span>{{ page.date | date: "%B %-d, %Y" }}</span> &middot; <span>{{ minutes }} min read</span>{% if page.tags.size > 0 %} &middot; {% for t in page.tags %}<span class="post-tag">{{ t }}</span> {% endfor %}{% endif %}</span>{% if page.ai %}<span class="post-ai" title="AI used to make this post"><i class="fas fa-robot"></i> Use of AI: {{ page.ai.model }}{% if page.ai.used_for %}, for {{ page.ai.used_for | join: ", " }}{% endif %}</span>{% endif %}</p>
+<p class="post-meta"><span><span>{{ page.date | date: "%B %-d, %Y" }}</span> &middot; <span>{{ minutes }} min read</span>{% if page.tags.size > 0 %} &middot; {% for t in page.tags %}<span class="post-tag">{{ t }}</span> {% endfor %}{% endif %}</span>{% if page.ai %}<span class="post-ai" title="How AI was used in this post"><i class="fas fa-robot"></i> Use of AI: {% if page.ai.model %}{{ page.ai.model }}{% if page.ai.used_for %}, for {{ page.ai.used_for | join: ", " }}{% endif %}{% else %}{{ page.ai }}{% endif %}</span>{% endif %}</p>
 
 {% if page.cover %}<img class="w-100 rounded post-cover" src="{{ page.cover }}" alt="{{ page.cover_alt | default: page.title }}">{% endif %}
 

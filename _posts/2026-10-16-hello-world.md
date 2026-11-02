@@ -3,6 +3,7 @@ title: "Hello, world (again)"
 date: 2026-10-16
 summary: "What this blog is for: small opinions and notes, written by hand, with the wonderful smell of the 2000's internet."
 tags: [site]
+ai: not used
 ---
 
 This is the blog part of the Desk. It will be a space for small opinions and notes that do not fit anywhere else on the site: things about research, about building visualizations, about tools, sometimes about nothing in particular.
