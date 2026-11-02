@@ -44,7 +44,7 @@ thumb_img: "assets/img/thumb_site.jpg"
 
 <p class="text-end mt-2"><a href="/news/" class="btn btn-outline-warning btn-sm">All news <i class="fas fa-angle-right"></i></a></p>
 
-{% assign cal = site.notes | where: "url", "/visual-computing-calendar/" | first %}{% assign guide = site.notes | where: "url", "/visual-computing-survival-guide/" | first %}{% assign post = site.posts | first %}
+{% assign cal = site.notes | where: "url", "/visual-computing-calendar/" | first %}{% assign guide = site.notes | where: "url", "/visual-computing-survival-guide/" | first %}{% assign listed_posts = site.posts | where_exp: "p", "p.draft != true" %}{% assign post = listed_posts | first %}
 {% if cal and guide %}
 ## From the desk
 

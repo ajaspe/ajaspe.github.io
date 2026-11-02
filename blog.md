@@ -12,7 +12,7 @@ thumb_img: "assets/img/thumb_site.jpg"
 
 <p class="small text-white-50">Opinion pieces, written now and then. Some of them also appear on <a href="https://www.linkedin.com/in/albertojaspe" class="text-white-50">LinkedIn</a>.</p>
 
-{% assign posts = site.posts %}
+{% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
 {% if posts.size == 0 %}
 <p>No posts yet. The first one is on its way.</p>
 {% else %}

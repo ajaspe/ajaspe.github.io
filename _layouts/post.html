@@ -4,7 +4,18 @@ layout: default
 {%- comment -%}
   Blog post. Front matter: title, date, summary, tags (list), cover (image path, optional),
   cover_alt (optional), linkedin (URL of the LinkedIn post, optional: adds a "Discuss on LinkedIn" button).
+  draft: true (optional) publishes the post only by its URL: it is left out of the blog list, the desk, the home page,
+  the feed and the previous/next links, and gets a noindex tag. Add sitemap: false too, to keep it out of the sitemap.
 {%- endcomment -%}
+{%- assign listed = site.posts | where_exp: "p", "p.draft != true" -%}
+{%- assign newer = nil -%}{%- assign older = nil -%}
+{%- for p in listed -%}
+  {%- if p.url == page.url -%}
+    {%- assign i_newer = forloop.index0 | minus: 1 -%}{%- assign i_older = forloop.index0 | plus: 1 -%}
+    {%- if i_newer >= 0 -%}{%- assign newer = listed[i_newer] -%}{%- endif -%}
+    {%- assign older = listed[i_older] -%}
+  {%- endif -%}
+{%- endfor -%}
 {%- assign words = content | strip_html | number_of_words -%}
 {%- assign minutes = words | divided_by: 200 | at_least: 1 -%}
 {%- assign share_url = page.url | absolute_url -%}
@@ -29,8 +40,8 @@ layout: default
 </div>
 
 <nav class="post-nav">
-  <span>{% if page.previous %}<a href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>{% endif %}</span>
-  <span>{% if page.next %}<a href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>{% endif %}</span>
+  <span>{% if older %}<a href="{{ older.url }}">&larr; {{ older.title }}</a>{% endif %}</span>
+  <span>{% if newer %}<a href="{{ newer.url }}">{{ newer.title }} &rarr;</a>{% endif %}</span>
 </nav>
 
 <p class="mt-4"><a href="/blog/" class="btn btn-outline-warning btn-sm"><i class="fas fa-angle-left"></i> All posts</a> <a href="/desk/" class="btn btn-outline-warning btn-sm"><i class="fas fa-book-open"></i> Desk</a></p>

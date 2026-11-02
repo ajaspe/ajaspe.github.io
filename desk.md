@@ -33,7 +33,7 @@ thumb_img: "assets/img/thumb_site.jpg"
 </div>
 {% endif %}
 
-{% assign posts = site.posts %}
+{% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
 {% if posts.size > 0 %}
 ## Blog
 <ul class="post-list list-unstyled">
