@@ -3,6 +3,9 @@ title: "The two surnames' nightmare on research"
 date: 2026-10-23
 summary: "Hispanic double surnames and publication databases don't get along. What happened with mine, and what I would do differently today."
 tags: [academia, writing]
+ai:
+  model: Claude Opus 5.5
+  used_for: [references, rephrasing]
 ---
 
 In Spain and most of Hispanic America we have two surnames, one from each parent. Mine are Jaspe and Villanueva, and in daily life only the first one gets used.

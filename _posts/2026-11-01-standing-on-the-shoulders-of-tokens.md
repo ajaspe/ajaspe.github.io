@@ -3,6 +3,9 @@ title: "Standing on the shoulders of tokens: research in the AI era"
 date: 2026-11-01
 summary: "AI conferences receive three, five, even ten times more papers than a few years ago, every paper looks perfect, and there are not enough experts to review them. Some numbers, a small model that says acceptance is today quite a lottery, and where I think this is going."
 tags: [academia, research]
+ai:
+  model: Claude Opus 5.5
+  used_for: [references, rephrasing, statistics script]
 draft: true
 sitemap: false
 ---
@@ -13,18 +16,22 @@ There is a feeling, very common these days, that getting a paper into a big conf
 
 ## The numbers
 
-![Paper submissions per year to NeurIPS, CVPR, ICLR and ICML, 2018 to 2026](/assets/img/posts/2026-11-01-standing-on-the-shoulders-of-tokens/submissions.svg){: .img-narrow}
+I take the four big AI conferences as an example, because their growth in the last years is almost exponential. A small disclaimer before going on: I have nothing against these conferences, and the people organizing them are doing a huge job to keep all this working. I talk about them only because they are at the head of the trend. They are the AI community, so they are the ones with the skills today to use AI at full speed, for writing papers and for reviewing them. But soon it will be like this in any conference, of any field.
 
-| Venue | 2019 | Latest | Growth | Acceptance rate (latest) |
+<div class="post-side" markdown="1">
+
+![Paper submissions per year to NeurIPS, CVPR, ICLR and ICML, 2018 to 2026](/assets/img/posts/2026-11-01-standing-on-the-shoulders-of-tokens/submissions.svg)
+
+| Venue | 2019 | Latest | Growth | Accept. rate |
 |---|--:|--:|--:|--:|
 | CVPR | 5,165 | 16,092 (2026) | ×3.1 | 25.3 % |
 | NeurIPS | 6,743 | 21,575 (2025) | ×3.2 | 24.5 % |
 | ICML | 3,424 | 23,918 (2026) | ×7.0 | 26.6 % |
 | ICLR | 1,591 | 19,525 (2026) | ×12.3 | 27.4 % |
 
-ICML doubled in one single year, from 12,107 to 23,918. ICLR grew 69 % in 2026 ([their retrospective](https://blog.iclr.cc/2026/03/31/a-retrospective-on-the-iclr-2026-review-process/)), CVPR 24 % ([CVPR](https://cvpr.thecvf.com/Conferences/2026/News/Technical_Program)) and NeurIPS 38 % in 2025 ([the chairs](https://blog.neurips.cc/2025/09/30/reflections-on-the-2025-review-process-from-the-program-committee-chairs/)). Meanwhile the acceptance rate did not move, it has been around 25 % for at least ten years. So the conferences did not raise the bar, they simply take one quarter of whatever arrives. The question is how good the review is at choosing that quarter.
+</div>
 
-A small disclaimer before going on: I have nothing against these conferences, and the people organizing them are doing a huge job to keep all this working. I talk about them only because they are at the head of the trend. They are the AI community, so they are the ones with the skills today to use AI at full speed, for writing papers and for reviewing them. But soon it will be like this in any conference, of any field.
+ICML doubled in one single year, from 12,107 to 23,918. ICLR grew 69 % in 2026 ([their retrospective](https://blog.iclr.cc/2026/03/31/a-retrospective-on-the-iclr-2026-review-process/)), CVPR 24 % ([CVPR](https://cvpr.thecvf.com/Conferences/2026/News/Technical_Program)) and NeurIPS 38 % in 2025 ([the chairs](https://blog.neurips.cc/2025/09/30/reflections-on-the-2025-review-process-from-the-program-committee-chairs/)). Meanwhile the acceptance rate did not move, it has been around 25 % for at least ten years. So the conferences did not raise the bar, they simply take one quarter of whatever arrives. The question is how good the review is at choosing that quarter.
 
 <!-- TODO: NeurIPS 2026 main track. Trackers (openaccept.org) list 30,709 submissions and 7,900 accepted, but I did not find an official number from the chairs. Add it if they publish one. -->
 
@@ -62,7 +69,7 @@ If you lead a group and you know these numbers, what do you do? A rejection says
 
 I made a small experiment with the same model. Two labs of the same size. Lab A works on one big idea per year, and produces one very good paper (top 5 % of the submissions) and one good paper (top 20 %). Lab B uses AI a lot and sends ten papers per year, all of them early-stage work, below the median (40th percentile). Both resubmit what gets rejected, up to three deadlines per year, more or less what CVPR, ICCV/ECCV and NeurIPS give you.
 
-| | Lab A: 1 very good + 1 good paper per year | Lab B: 10 below-median papers per year |
+| | **Lab A**<br><small>1 very good + 1 good paper per year</small> | **Lab B**<br><small>10 below-median papers per year</small> |
 |---|--:|--:|
 | Accepted papers per year | 1.8 | 3.0 |
 | Accepted papers after 5 years | 9 | 15 |
@@ -75,7 +82,7 @@ So the incentives are very clear, and the circle closes: more papers, more revie
 
 And here is the real problem. Labs and PIs are evaluated by number of papers and by citations, for positions, for grants, for promotions. With these numbers lab B looks almost twice as productive as lab A, while lab A is the one pushing the state of the art. And citations don't fix it, because more and more they are also generated: a related work written by an LLM cites whatever is easy to find, and ten papers per year cite each other. So the way we have to see who is doing relevant research is broken. The only way left is to read the papers, which is exactly what nobody has time to do.
 
-## So...
+## What now?
 
 Quality still matters, in the model it decides the odds. The problem is that we read every decision as a verdict, when it is more like one throw of loaded dice. If you are a student, a rejection is not a verdict about you, and don't take an acceptance too seriously either :) If you evaluate people, better to read three papers carefully than to count thirty. And conferences should at least measure and publish their own noise every year, and maybe say openly that the middle zone is a lottery, like the Swiss National Science Foundation does since 2021, when it [draws lots among the proposals that the panel cannot separate](https://en.wikipedia.org/wiki/Funding_by_lottery).
 

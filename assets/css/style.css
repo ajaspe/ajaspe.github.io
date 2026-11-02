@@ -752,6 +752,9 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .post-summary { color: #bbb; font-size: 0.9rem; }
 
 .post-meta { color: #aaa; font-size: 0.95rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }
+.post-meta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.25rem 1rem; }
+.post-ai { margin-left: auto; text-align: right; font-size: 0.8rem; color: #888; }
+.post-ai .fa-robot { margin-right: 0.15rem; }
 .post-tag { display: inline-block; border: 1px solid #555; border-radius: 999px; padding: 0 0.5rem; font-size: 0.8rem; color: #ccc; }
 .post-cover { margin-bottom: 1.5rem; }
 .post-body { font-size: 1.05rem; line-height: 1.65; }
@@ -765,10 +768,16 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .post-body img { max-width: 100%; height: auto; }
 /* In Markdown: ![alt](image){: .img-narrow} for charts and diagrams that should not take the full width */
 .post-body img.img-narrow { display: block; width: 100%; max-width: 640px; margin: 0 auto; }
+/* In Markdown: <div class="post-side" markdown="1"> image + table </div> puts them side by side, stacked on narrow screens */
+.post-side { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin: 1.25rem 0 1.75rem; }
+.post-side > p { flex: 1 1 420px; max-width: 680px; margin: 0; }
+.post-side > p img { display: block; width: 100%; }
+.post-side > table { flex: 0 1 auto; margin: 0; }
 .post-body table { width: auto; max-width: 100%; margin: 1.25rem 0 1.75rem; border-collapse: collapse; font-size: 0.95rem; line-height: 1.45; }
 .post-body th, .post-body td { padding: 0.5rem 0.75rem; border: 1px solid rgba(255, 255, 255, 0.16); vertical-align: top; }
 .post-body thead th { background: rgba(255, 255, 255, 0.07); color: #eee; font-weight: 600; border-bottom: 2px solid rgba(255, 255, 255, 0.3); }
 .post-body tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+.post-body th small { font-weight: 400; color: #bbb; }
 @media (max-width: 575.98px) {
   .post-body table { display: block; overflow-x: auto; font-size: 0.85rem; }
   .post-body th, .post-body td { padding: 0.4rem 0.5rem; }
