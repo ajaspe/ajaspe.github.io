@@ -1,5 +1,5 @@
 ---
-title: "The new research: standing on the shoulders of tokens"
+title: "Standing on the shoulders of tokens: research in the AI era"
 date: 2026-11-01
 summary: "AI conferences receive three, five, even ten times more papers than a few years ago, every paper looks perfect, and there are not enough experts to review them. Some numbers, a small model that says acceptance is today quite a lottery, and where I think this is going."
 tags: [academia, research]
@@ -7,13 +7,13 @@ draft: true
 sitemap: false
 ---
 
-Newton wrote that if he saw further, it was by standing on the shoulders of giants. I have the feeling that today we stand more and more on the shoulders of tokens. Papers drafted with an LLM, code written by an agent, related work summarized by a chatbot... and at the end of the chain, reviews written by the same chatbots. Writing a paper was never so cheap. Reading one with care costs the same as always, a few hours of somebody who knows the topic.
+Newton wrote that if he saw further, it was by standing on the shoulders of giants. I have the feeling that today we stand more and more on the shoulders of tokens. Papers drafted with an LLM, code written by an agent, related work summarized by a chatbot... and at the end of the chain, reviews written by the same chatbots. Writing a paper was never so cheap. Reading one with care costs the same as always, a few hours of somebody who knows the topic. And reviewing one takes more and more, because now everything looks shiny, at least on the surface: well written, nice figures, not a single typo.
 
 There is a feeling, very common these days, that getting a paper into a big conference is just a lottery. I wanted to check if there is something behind it, so I went to look at the numbers. The short answer is yes, for a big part of the papers it is quite a lottery.
 
 ## The numbers
 
-![Paper submissions per year to NeurIPS, CVPR, ICLR and ICML, 2018 to 2026](/assets/img/posts/2026-11-01-standing-on-the-shoulders-of-tokens/submissions.svg)
+![Paper submissions per year to NeurIPS, CVPR, ICLR and ICML, 2018 to 2026](/assets/img/posts/2026-11-01-standing-on-the-shoulders-of-tokens/submissions.svg){: .img-narrow}
 
 | Venue | 2019 | Latest | Growth | Acceptance rate (latest) |
 |---|--:|--:|--:|--:|
