@@ -754,8 +754,23 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .post-meta { color: #aaa; font-size: 0.95rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }
 .post-tag { display: inline-block; border: 1px solid #555; border-radius: 999px; padding: 0 0.5rem; font-size: 0.8rem; color: #ccc; }
 .post-cover { margin-bottom: 1.5rem; }
-.post-body { font-size: 1.05rem; line-height: 1.65; max-width: 46rem; margin: 0 auto; }
+.post-body { font-size: 1.05rem; line-height: 1.65; }
+/* Post headings: a clear step from the title (h1) to sections (h2) and subsections (h3) */
+.post h1.page-title { font-size: 2.3em; line-height: 1.2; }
+/* Sections look like the h3 of the other pages: lighter, underline only under the text */
+.post-body h2 { font-size: 1.5em; font-weight: lighter; text-decoration: underline; margin-top: 2.25rem; margin-bottom: 0.9rem; }
+.post-body h2:after { content: none; }
+.post-body h3 { font-size: 1.2em; font-weight: 600; text-decoration: none; color: #ffc107; margin-top: 1.75rem; margin-bottom: 0.6rem; }
+@media (max-width: 575.98px) { .post h1.page-title { font-size: 1.9em; } }
 .post-body img { max-width: 100%; height: auto; }
+.post-body table { width: auto; max-width: 100%; margin: 1.25rem 0 1.75rem; border-collapse: collapse; font-size: 0.95rem; line-height: 1.45; }
+.post-body th, .post-body td { padding: 0.5rem 0.75rem; border: 1px solid rgba(255, 255, 255, 0.16); vertical-align: top; }
+.post-body thead th { background: rgba(255, 255, 255, 0.07); color: #eee; font-weight: 600; border-bottom: 2px solid rgba(255, 255, 255, 0.3); }
+.post-body tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+@media (max-width: 575.98px) {
+  .post-body table { display: block; overflow-x: auto; font-size: 0.85rem; }
+  .post-body th, .post-body td { padding: 0.4rem 0.5rem; }
+}
 .post-share { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333; }
 .post-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; }
 

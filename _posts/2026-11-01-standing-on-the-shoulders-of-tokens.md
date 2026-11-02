@@ -1,7 +1,7 @@
 ---
 title: "The new research: standing on the shoulders of tokens"
 date: 2026-11-01
-summary: "AI conferences receive three, five, even ten times more papers than a few years ago, and the review process did not grow with them. Some numbers, and a small model that says getting a paper accepted is today quite a lottery."
+summary: "AI conferences receive three, five, even ten times more papers than a few years ago, every paper looks perfect, and there are not enough experts to review them. Some numbers, a small model that says acceptance is today quite a lottery, and where I think this is going."
 tags: [academia, research]
 draft: true
 sitemap: false
@@ -9,113 +9,68 @@ sitemap: false
 
 Newton wrote that if he saw further, it was by standing on the shoulders of giants. I have the feeling that today we stand more and more on the shoulders of tokens. Papers drafted with an LLM, code written by an agent, related work summarized by a chatbot... and at the end of the chain, reviews written by the same chatbots. Writing a paper was never so cheap. Reading one with care costs the same as always, a few hours of somebody who knows the topic.
 
-There is a feeling, very common these days, that getting a paper into a big conference is just a lottery. I wanted to check if there is something behind it, or if it is only the frustration after a rejection. So I went to look at the numbers. The short answer is that for a big part of the papers, yes, it is quite a lottery.
+There is a feeling, very common these days, that getting a paper into a big conference is just a lottery. I wanted to check if there is something behind it, so I went to look at the numbers. The short answer is yes, for a big part of the papers it is quite a lottery.
 
 ## The numbers
 
 ![Paper submissions per year to NeurIPS, CVPR, ICLR and ICML, 2018 to 2026](/assets/img/posts/2026-11-01-standing-on-the-shoulders-of-tokens/submissions.svg)
 
-The four big ones, 2019 against the last edition:
-
 | Venue | 2019 | Latest | Growth | Acceptance rate (latest) |
-|---|---|---|---|---|
+|---|--:|--:|--:|--:|
 | CVPR | 5,165 | 16,092 (2026) | ×3.1 | 25.3 % |
 | NeurIPS | 6,743 | 21,575 (2025) | ×3.2 | 24.5 % |
 | ICML | 3,424 | 23,918 (2026) | ×7.0 | 26.6 % |
 | ICLR | 1,591 | 19,525 (2026) | ×12.3 | 27.4 % |
 
-ICML doubled in one single year, from 12,107 submissions in 2025 to 23,918 in 2026. ICLR got 19,525 in 2026, 69 % more than the year before ([their retrospective](https://blog.iclr.cc/2026/03/31/a-retrospective-on-the-iclr-2026-review-process/)). CVPR had its record with 16,092, +24 % ([CVPR](https://cvpr.thecvf.com/Conferences/2026/News/Technical_Program)). NeurIPS went from 9,467 in 2020 to 21,575 in 2025 ([the chairs](https://blog.neurips.cc/2025/09/30/reflections-on-the-2025-review-process-from-the-program-committee-chairs/)). And AAAI 2026 talks about more than 30,000 initial submissions, almost 23,000 of them reaching the full review, with 17.6 % accepted.
+ICML doubled in one single year, from 12,107 to 23,918. ICLR grew 69 % in 2026 ([their retrospective](https://blog.iclr.cc/2026/03/31/a-retrospective-on-the-iclr-2026-review-process/)), CVPR 24 % ([CVPR](https://cvpr.thecvf.com/Conferences/2026/News/Technical_Program)) and NeurIPS 38 % in 2025 ([the chairs](https://blog.neurips.cc/2025/09/30/reflections-on-the-2025-review-process-from-the-program-committee-chairs/)). Meanwhile the acceptance rate did not move, it has been around 25 % for at least ten years. So the conferences did not raise the bar, they simply take one quarter of whatever arrives. The question is how good the review is at choosing that quarter.
 
 <!-- TODO: NeurIPS 2026 main track. Trackers (openaccept.org) list 30,709 submissions and 7,900 accepted, but I did not find an official number from the chairs. Add it if they publish one. -->
 
-Meanwhile the acceptance rate did not move, it has been around 25 % for at least ten years. So the conferences did not raise the bar, they simply take one quarter of whatever arrives. The interesting question then is how good the review is at choosing that quarter.
+## Reviewing is now really hard
 
-## Who is reviewing all this
+Somebody has to read 20,000 papers, three to five times each. At ICLR 2026, 18,054 reviewers wrote 76,139 reviews, and at NeurIPS 2025 there were 20,518 reviewers for 21,575 papers. Almost one reviewer per paper, and not by chance: there are not enough senior people, so now the authors must review. CVPR made it mandatory in 2025, and even [desk-rejected 19 papers that were already accepted](https://cvpr.thecvf.com/Conferences/2025/CVPRChanges) because their authors had been "highly irresponsible" reviewers. So the people reviewing are the same people submitting, and in a field growing like this most of them are young, PhD students reviewing papers on topics that did not exist when they started.
 
-Somebody has to read 20,000 papers, and each one three, four or five times. At ICLR 2026, 18,054 reviewers wrote 76,139 reviews. At NeurIPS 2025 there were 20,518 reviewers for 21,575 papers. Almost the same number of reviewers as papers, and this is not by chance. There are not enough senior people, so now the conferences make the authors review. CVPR made it mandatory in 2025, and even [desk-rejected 19 papers that were already accepted](https://cvpr.thecvf.com/Conferences/2025/CVPRChanges) because their authors had been "highly irresponsible" reviewers.
+And here comes the part that worries me most. Today it is extremely difficult to review a paper, because all of them look incredibly good. The writing is polished, the figures are beautiful, the tables are full of bold numbers, the related work cites everything. Either you are a real expert on that exact topic, or it is very easy to trick you. A weak baseline, an ablation that does not really prove anything, a claim that does not follow from the experiments... everything looks fine when you have two hours and five papers to finish. So the number of reviews needed grows exponentially, and the number of reviewers with enough expertise to do them does not.
 
-In other words, the people reviewing are the same people submitting. And in a field that grows between 25 and 100 % every year, most of them are young: PhD students, a lot of them in their first year, reviewing papers on topics that did not exist when they started.
+Then, of course, people also use AI to review. Pangram Labs estimated that [around 21 % of the ICLR 2026 reviews were completely generated by AI](https://www.plagiarismtoday.com/2025/12/04/ai-conference-overrun-with-ai-peer-review/), and more than half had some AI in them (detectors fail, but the order of magnitude is what it is). AAAI 2026 even made it official, and every paper got [one AI review](https://arxiv.org/abs/2604.13940) next to the human ones. And I have to say something a bit uncomfortable here. These AI reviews are still not that good at judging what really matters in a paper, but they catch a lot of factual mistakes that a human with limited time would miss: an equation that is wrong, a number in the text that does not match the table, a reference that does not exist. And they improve every few months. I would not be surprised if very soon they review better than the experts.
 
-Then the tokens arrive from this side too. Pangram Labs ran its detector over the ~76,000 public reviews of ICLR 2026 and estimated that [around 21 % were completely generated by AI](https://www.plagiarismtoday.com/2025/12/04/ai-conference-overrun-with-ai-peer-review/), and more than half had some AI in them. Detectors fail, so I would not take the exact number too seriously, but the order of magnitude is what it is. The ICLR chairs passed two detectors of their own over all the reviews, and announced that reviewers flagged several times will be out of the pool. In the same edition there was also a leak of reviewer identities from OpenReview, in the middle of the discussion, and they had to reset all the scores to the values before the rebuttal. What a year. AAAI 2026 went in the other direction and made it official: every paper in the full review got [one AI review](https://arxiv.org/abs/2604.13940) next to the human ones.
+## How much is luck
 
-I don't want to say that reviews written by students, or with the help of an LLM, are bad. Many are careful and useful. But on average each review carries less signal, and we need more of them than ever.
+Funny enough, NeurIPS measured this, twice. In [2014](https://arxiv.org/abs/2109.09774) and again in [2021](https://arxiv.org/abs/2306.03262), around 10 % of the papers were reviewed by two independent committees. Of the papers accepted by one committee, around half were rejected by the other one: 49.5 % in 2014, 50.6 % in 2021. Deciding with dice it would be 75 %, and with a perfect committee 0 %. So the review is better than the dice, but closer to the dice than to perfect. And that was 2021, with 9,122 submissions, no LLM reviews and no mandatory reviewing. Nobody repeated the experiment after that.
 
-## How much is luck (what we know)
+With a very simple model we can turn this into the question that matters when you submit: given how good my paper is, what are my chances? Every paper has a "merit", the score that an infinite committee of careful reviewers would give it. A real committee sees merit plus some noise (which reviewers you got, if they were tired, if they know the topic, if a model wrote the review) and accepts the top 25 % of what it sees. The amount of noise is the only thing to choose, and the 2021 experiment fixes it. The script is [at the end](#appendix-the-script), if you want to play with it.
 
-Funny enough, NeurIPS measured this, twice. In [2014](https://arxiv.org/abs/2109.09774) and again in [2021](https://arxiv.org/abs/2306.03262), around 10 % of the papers were reviewed by two independent committees, to compare their decisions.
-
-Of the papers accepted by one committee, around half were rejected by the other one: 49.5 % in 2014 and 50.6 % in 2021. To have a reference, a committee deciding with dice would give 75 % (it rejects three of every four papers, no matter what), and a perfect committee would give 0 %. So the review is better than the dice, but it is closer to the dice than to perfect.
-
-The 2021 paper also says that the more selective a conference is, the more arbitrary it gets, and that the disagreement was bigger at the top: more than half of the spotlights proposed by one committee were rejected by the other. And Cortes and Lawrence followed the 2014 papers during years, and for the accepted ones the review scores had nothing to do with the citations they got later. It seems the review is much better at catching bad papers than at recognizing good ones.
-
-Keep in mind that 2021 is before the explosion: 9,122 submissions, no LLM reviews, no mandatory reviewing for authors. And nobody repeated the experiment after that. With how things are today, I really doubt the consistency got better.
-
-## How much is luck (a small model)
-
-The experiment says how much two committees disagree. With a very simple model we can turn that into the question that matters when you submit: given how good my paper is, what are my chances?
-
-The model goes like this. Every paper has a "merit", which would be the score given by an infinite committee of careful reviewers, and merits follow a bell curve. A real committee does not see the merit, it sees merit plus some noise (which reviewers you got, if they were tired, if they know the topic, if a model wrote the review), and accepts the 25 % on top of what it sees.
-
-There is only one thing to choose, how big the noise is compared with the merit, and the experiment fixes it: it is the value that makes two committees disagree on 50.6 % of their accepted papers. With that, the correlation between two committees is 0.51, and between the score of one committee and the merit it is around 0.72. The script is [at the end](#appendix-the-script), 30 lines of Python.
-
-This is what comes out for a conference accepting 25 %:
+This is what comes out:
 
 | Where the paper really is (percentile of merit) | Chance of acceptance |
-|---|---|
+|---|--:|
 | 30th, clearly weak | 7 % |
 | 50th, the median | 17 % |
-| 70th | 35 % |
 | 75th, just at the line | 40 % |
 | 90th, clearly in the top quarter | 65 % |
-| 95th | 77 % |
 | 99th | 93 % |
 
-A few things that surprised me:
+So a paper in the top 10 % is rejected one of every three times, and a median paper, which should be rejected, gets in one of every six. Almost 4 of every 10 accepted papers (38 %) are not in the real top 25 %. And 42 % of the submissions sit in a coin-flip zone, between 20 % and 80 % of chances, which at NeurIPS size means around 9,000 papers. All together, merit explains around one third of the decision. The other two thirds is the committee you got.
 
-* A paper in the top 10 % is rejected one of every three times. Even one in the top 1 % is rejected one of every fourteen.
-* A median paper, which should be rejected, gets in one of every six times. Enough to make it worth trying, by the way.
-* Almost 4 of every 10 accepted papers (38 %) are not in the real top 25 %, and the same number of top-25 % papers stay out.
-* 42 % of the submissions are in what I would call the coin-flip zone, with between 20 % and 80 % of chances. With the size of NeurIPS 2025, that is around 9,000 papers.
-* If you ask how much of the final decision is explained by the merit, the model says around one third. The other two thirds is the committee you got.
-
-And this is the optimistic version. The calibration is from 2021. And the "merit" of the model is only what an infinite committee would agree on, so anything that all reviewers share (fashionable topics, famous names visible on arXiv, nice writing, having the right baselines) counts as merit here. The real contribution of a paper must be even less related to the decision.
-
-### And if the noise grows?
-
-Here there is no data, so this is only a "what if". Let's say the mix of overloaded seniors, first-time reviewers and LLM reviews makes the noise 1.5 or 2 times bigger (in variance) than in 2021:
-
-| | 2021 (measured) | noise ×1.5 | noise ×2 |
-|---|---|---|---|
-| Two committees disagree on accepted papers | 51 % | 57 % | 60 % |
-| Chance of a top-10 % paper | 65 % | 58 % | 54 % |
-| Chance of a median paper | 17 % | 19 % | 20 % |
-| Decision explained by merit | 32 % | 25 % | 20 % |
-
-With double noise, a top-10 % paper is almost a coin flip, and merit explains one fifth of the decision. More selective conferences are worse: with the 2021 noise and 18 % of acceptance (like AAAI), a top-10 % paper is already at 50 %.
+And this is the optimistic version, with the noise of 2021. If today the noise were double, which I don't find crazy at all, a top-10 % paper would be almost a coin flip (54 %), and merit would explain only one fifth of the decision.
 
 ## The vicious circle
 
-If you lead a group and you know these numbers, what do you do? A rejection says very little about the paper, so you send it again to the next conference, as it is or almost. A paper on the 75th percentile needs 2.5 tries on average, and has a 21 % chance of being rejected three times in a row. Each try means 4 or 5 more reviews that somebody has to write.
+If you lead a group and you know these numbers, what do you do? A rejection says very little about the paper, so you send it again to the next conference. And you send more papers. A student with one paper at 35 % of chances is rejected 65 % of the times. A lab with twenty papers like that gets around seven accepted, and at least four with 96 % probability. So big groups are not only better at research, they are also protected against the noise.
 
-The other thing you do is to send more papers. Take papers on the 70th percentile, with 35 % of chances each. A student with one of them is rejected 65 % of the times. A lab with twenty of them gets around seven accepted, and at least four with 96 % probability. So big groups are not only better at research, they are also protected against the noise, like a diversified portfolio. Their CV is predictable, and the student's is not.
-
-Add to this that writing a paper is now cheaper than ever, thanks to the tokens, and the circle closes. More papers, more reviews needed, more junior and LLM reviewers, more noise, a rejection means less, more resubmissions and even more papers. And nobody needs to cheat for this to happen, everybody is just doing what makes sense for them.
+Add that writing a paper is now cheaper than ever, and the circle closes: more papers, more reviews, the same few experts, more noise, a rejection means less, more papers. Nobody needs to cheat for this, everybody is just doing what makes sense for them.
 
 ## So...
 
-I don't think quality stopped mattering. In the model it still decides the odds, and a good paper has three or four times more chances than a mediocre one. The problem is that we read every decision as a verdict, when it is more like one throw of loaded dice.
+Quality still matters, in the model it decides the odds. The problem is that we read every decision as a verdict, when it is more like one throw of loaded dice. If you are a student, a rejection is not a verdict about you, and don't take an acceptance too seriously either :) If you evaluate people, better to read three papers carefully than to count thirty. And conferences should at least measure and publish their own noise every year, and maybe say openly that the middle zone is a lottery, like the Swiss National Science Foundation does since 2021, when it [draws lots among the proposals that the panel cannot separate](https://en.wikipedia.org/wiki/Funding_by_lottery).
 
-What I take from all this:
+But honestly, I think all this is only the beginning. The research model is changing paradigm at a speed that we cannot even react to. Machines already write a good part of the papers, soon they will review them better than us, and probably they will do a good part of the research too. And then we humans start to be just the bottleneck. Limited brains where the whole process has to stop by, so somebody can explain to us what was done, as if we were 7 years old.
 
-1. If you are a student: a rejection at a big conference is not a verdict about you, and not even about the paper. If you believe in the work, the numbers say to send it again, fixing what the reviewers pointed out. The same goes for acceptances, don't take them too seriously either :)
-2. If you evaluate people (hiring, tenure, grants): counting papers in top venues measures merit, but multiplied by luck and by volume, and volume depends a lot on the size of the group. Better to read three papers carefully than to count thirty.
-3. For the conferences: publish the noise. Repeating the consistency experiment every year is cheap compared with the whole process, and then you can say how reliable your decisions are, like with any measurement. And if the middle zone is a lottery anyway, maybe say it openly. Some funders already do it: since 2021 the Swiss National Science Foundation [draws lots among the proposals that the panel cannot separate](https://en.wikipedia.org/wiki/Funding_by_lottery), and they write it in the decision letter. Honest, and cheap. I also think venues like [TMLR](https://jmlr.org/tmlr/), which check if the claims are correct instead of whether the paper is "significant enough" for a quota, deserve more credit than they get.
-
-We now have a machine that produces papers at the speed of tokens, and a review that still works at human speed. I don't know how this will end, but for now the word "accepted" means much less than it used to.
+Standing on the shoulders of tokens, then. I still don't know what to think about it, but it is coming, and fast.
 
 ## Appendix: the script
 
-For whoever wants to play with it. It only needs Python, no libraries. All the other numbers in the post (the coin-flip zone, the part explained by merit, the "what if") come from the same model.
+It only needs Python, no libraries. The other numbers in the post come from the same model.
 
 ```python
 # Merit + noise model of peer review, calibrated on the NeurIPS 2021 consistency experiment.
