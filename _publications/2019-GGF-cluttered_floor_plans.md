@@ -4,6 +4,7 @@ code: 2019-GGF-cluttered_floor_plans
 title: "Automatic modeling of cluttered multi-room floor plans from panoramic images"
 authors: Giovanni Pintore, Fabio Ganovelli, Alberto Jaspe-Villanueva, and Enrico Gobbetti
 year: 2019
+month: 10   # Pacific Graphics 2019, Seoul, October
 type: Journal Paper
 tags:
  - indoor-modeling

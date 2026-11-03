@@ -4,6 +4,7 @@ code: 2007-WSCG-hardware_independet-clipmapping
 title: "Hardware-independent clipmapping"
 authors: Antonio Seoane, Javier Taibo, Luis Hernández, Rubén López, and Alberto Jaspe-Villanueva
 year: 2007
+month: 1   # WSCG 2007, Plzen, Jan 29 - Feb 1
 type: Conference Paper
 tags:
  - rendering

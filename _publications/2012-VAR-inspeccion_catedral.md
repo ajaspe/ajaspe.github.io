@@ -4,6 +4,7 @@ code: 2012-VAR-inspeccion_catedral
 title: "Aplicación para la inspección espacial, volumétrica y seccional interactiva de la Catedral de Santiago de Compostela"
 authors: Viana Barneche, Luis Hernández, Alberto Jaspe-Villanueva, and Gustavo Fariña
 year: 2012
+month: 11   # VAR 3(6), November 2012
 type: Journal Paper
 tags:
  - cultural-heritage

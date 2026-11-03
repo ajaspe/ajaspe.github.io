@@ -4,6 +4,7 @@ code: 2025-EVIS-lactea
 title: "Lactea: Web-Based Spectrum-Preserving Multi-Resolution Visualization of the GAIA Star Catalog"
 authors: Reem Alghamdi, Markus Hadwiger, Guido Reina, Alberto Jaspe-Villanueva
 year: 2025
+month: 6   # EuroVis 2025, Luxembourg, June
 type: Journal Paper
 tags:
  - scientific-visualization

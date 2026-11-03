@@ -4,6 +4,7 @@ code: 2005-CAD-creativity_space
 title: "The Creativity Space: An Immersive VR Framework for 3D Creation"
 authors: Luis Hernández, Javier Taibo, Alberto Jaspe-Villanueva, Rocío Mihura-Lopez, David Blanco, Rubén López, and Antonio Seoane
 year: 2005
+month: 2   # DEWS 2005 / 5th Japan-Korea CAD/CAM Workshop, Tokyo, Feb 24-25
 type: Conference Paper
 tags:
  - virtual-reality

@@ -4,6 +4,7 @@ code: 2022-VIS-probabilistic_range_queries
 title: "Multivariate Probabilistic Range Queries for Scalable Interactive 3D Visualization"
 authors: Amani Ageeli, Alberto Jaspe-Villanueva, Ronell Sicat, Florian Mannuss, Peter Rautek, and Markus Hadwiger
 year: 2022
+month: 10   # IEEE VIS 2022, Oklahoma City, October
 type: Journal Paper
 tags:
  - scientific-visualization

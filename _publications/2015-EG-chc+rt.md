@@ -4,6 +4,7 @@ code: 2015-EG-chc+rt
 title: "CHC+RT: Coherent Hierarchical Culling for Ray Tracing"
 authors: Oliver Mattausch, Jiri Bittner, Alberto Jaspe-Villanueva, Enrico Gobbetti, Michael Wimmer, and Renato Pajarola
 year: 2015
+month: 5   # Eurographics 2015, Zurich, May
 type: Journal Paper
 tags:
  - rendering

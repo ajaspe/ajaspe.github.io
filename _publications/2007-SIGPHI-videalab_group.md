@@ -4,6 +4,7 @@ code: 2007-SIGPHI-videalab_group
 title: "VideaLAB. Grupo de Visualización Avanzada en Arquitectura, Ingeniería Civil y Urbanismo"
 authors: Luis A. Hernández, Manuel Meijide, Javier Taibo, Antonio Seoane, Rocío López, David Blanco, Alberto Jaspe-Villanueva, Juan Nieto, and Natalia Carregal
 year: 2007
+month: 7   # SIGPHI 2007, A Coruna, July 4
 type: Conference Paper
 tags:
  - cultural-heritage

@@ -4,6 +4,7 @@ code: 2011-ARQ-inspeccion_catedral
 title: "Aplicación para la inspección espacial, volumétrica y seccional interactiva de la Catedral de Santiago de Compostela"
 authors: Viviana Barneche, Luis A. Hernández, Alberto Jaspe-Villanueva, and Gustavo Fariña
 year: 2011
+month: 6   # Arqueologica 2.0, Seville, June 2011
 type: Conference Paper
 tags:
  - cultural-heritage

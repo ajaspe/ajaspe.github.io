@@ -4,6 +4,7 @@ code: 2018-MSE-artworks_spotlight
 title: "Artworks in the Spotlight: Characterization with a Multispectral Dome"
 authors: Irina Ciortan, Tinsae Dulecha, Andrea Giachetti, Ruggero Pintus, Alberto Jaspe-Villanueva, and Enrico Gobbetti
 year: 2018
+month: 6   # IOP MSE 364, June 2018 (Crossref)
 type: Journal Paper
 tags:
  - relighting

@@ -4,6 +4,7 @@ code: 2005-ICC-gid_integration
 title: "Real-time visualization of geospatial features through integration of GID with a realistic 3D terrain dynamic visualization system"
 authors: Luis Hernández, Alberto Varela, Javier Taibo, Antonio Seoane, Rubén López, and Alberto Jaspe-Villanueva
 year: 2005
+month: 7   # ICC 2005, A Coruna, July 9-16
 type: Conference Paper
 tags:
  - gis-terrain

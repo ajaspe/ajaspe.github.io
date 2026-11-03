@@ -177,7 +177,10 @@ a:hover {
   vertical-align: 0.1em;
 }
 
-.pub-type-journal { border-color: rgb(255, 166, 93); color: rgb(255, 166, 93); }
+.pub-type-journal { border-color: #f48fb1; color: #f48fb1; }
+/* award: a small solid white pill with a gold trophy, it stands out without using the site's orange */
+.pub-award { display: inline-block; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 0.72rem; font-weight: 600; font-style: normal; line-height: 1.55; letter-spacing: 0.02em; color: #1b1b1b; background: #f2f2f2; border-radius: 999px; padding: 0 0.6rem; vertical-align: 0.2em; white-space: nowrap; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25); }
+.pub-award .fa-trophy { font-size: 0.9em; margin-right: 0.2rem; color: #b8860b; }
 .pub-type-conference { border-color: #6cb4ff; color: #6cb4ff; }
 .pub-type-book { border-color: #8fd18f; color: #8fd18f; }
 .pub-type-thesis { border-color: #c48be0; color: #c48be0; }
@@ -612,6 +615,10 @@ footer .gc-counter.gc-ready::after {
 .pub-stats {
   margin-top: -0.5rem;
 }
+/* counts on the left, citations and h-index aligned to the right; on a narrow screen they go to their own line */
+.pub-stats { display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: 2rem; }
+.pub-stats-cites { margin-left: auto; text-align: right; }
+@media (max-width: 575.98px) { .pub-stats-cites { margin-left: 0; text-align: left; } }
 
 /*
  * Footer: visitor statistics (GoatCounter, hidden until counts arrive)

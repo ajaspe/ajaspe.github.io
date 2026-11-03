@@ -4,6 +4,7 @@ code: 2024-iMETA-virtual_staging_metaverse
 title: "Virtual Staging Technologies for the Metaverse"
 authors: Muhammad Tukur, Yehia Boraey, Sara Jashari, Alberto Jaspe-Villanueva, Uzair Shah, Mahmood Alzubaidi, Giovanni Pintore, Enrico Gobbetti, Jens Schneider, and Marco Agus
 year: 2024
+month: 11   # iMETA 2024, November (Crossref)
 type: Conference Paper
 tags:
  - indoor-modeling

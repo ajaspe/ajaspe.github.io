@@ -4,6 +4,7 @@ code: 2015-JOCCH-montescan
 title: "Mont'e Scan: Effective Shape and Color Digitization of Cluttered 3D Artworks"
 authors: Fabio Bettio, Alberto Jaspe-Villanueva, Emilio Merella, Fabio Marton, Enrico Gobbetti, and Ruggero Pintus
 year: 2015
+month: 2   # JOCCH, February 2015 (Crossref)
 type: Journal Paper
 tags:
  - capture-reconstruction

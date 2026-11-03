@@ -4,6 +4,7 @@ code: 2023-EVIS-doppler_volume
 title: "Doppler Volume Rendering: A Dynamic, Piecewise Linear Spectral Representation for Visualizing Astrophysics Simulations"
 authors: Reem Alghamdi, Thomas Müller, Alberto Jaspe-Villanueva, Markus Hadwiger, and Filip Sadlo
 year: 2023
+month: 6   # EuroVis 2023, Leipzig, June
 type: Journal Paper
 tags:
  - scientific-visualization

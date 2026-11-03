@@ -4,6 +4,7 @@ code: 2007-SIGPHI-museo_vacio_patrimonio
 title: "El Museo Vacío y el Camino de Santiago. Una instalación de Realidad Virtual para la exploración del Patrimonio Cultural"
 authors: Luis Hernández, Javier Taibo, David Blanco, José Iglesias, Antonio Seoane, Alberto Jaspe-Villanueva, and Rocío Mihura-Lopez
 year: 2007
+month: 7   # SIGPHI 2007, A Coruna, July 4
 type: Conference Paper
 tags:
  - virtual-reality

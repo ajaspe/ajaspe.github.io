@@ -4,6 +4,7 @@ code: 2007-IJAC-walking_digital_spaces
 title: "Physically Walking in Digital Spaces-A Virtual Reality Installation for Exploration of Historical Heritage"
 authors: Luis Hernández, Javier Taibo, David Blanco, José Iglesias, Antonio Seoane, Alberto Jaspe-Villanueva, and Rocío Mihura-Lopez
 year: 2007
+month: 9   # IJAC issue, September 2007 (Crossref)
 type: Journal Paper
 tags:
  - virtual-reality

@@ -4,6 +4,7 @@ code: 2008-book_GPU-Gems-mapping_large_textures
 title: "Mapping Large Textures for Outdoor Terrain Rendering"
 authors: Antonio Seoane, Javier Taibo, Luis Hernández, and Alberto Jaspe-Villanueva
 year: 2008
+month: 1   # Game Programming Gems 7, January 2008
 type: Book Chapter
 tags:
  - rendering

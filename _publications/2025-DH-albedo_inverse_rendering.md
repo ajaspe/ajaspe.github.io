@@ -4,6 +4,7 @@ code: 2025-DH-albedo_inverse_rendering
 title: "A Practical Inverse Rendering Strategy for Enhanced Albedo Estimation for Cultural Heritage Model Reconstruction"
 authors: Ruggero Pintus, Antonio Zorcolo, Alberto Jaspe-Villanueva, Enrico Gobbetti
 year: 2025
+month: 9   # Digital Heritage 2025, Siena, September
 type: Conference Paper
 tags:
  - relighting

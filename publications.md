@@ -19,11 +19,11 @@ thumb_img: "assets/img/thumb_site.jpg"
 {% comment %} Citation trend: compare with the newest history snapshot that is at least 30 days old, or with the oldest one while the history is younger than that. {% endcomment %}
 {% assign cite_hist = site.data.citations_history %}{% assign cite_base = nil %}{% assign cite_base_label = "" %}
 {% if cite_hist and cite_hist.size > 0 %}{% assign cite_cutoff = site.time | date: "%s" | plus: 0 | minus: 2592000 %}{% for snap in cite_hist %}{% assign snap_s = snap.date | date: "%s" | plus: 0 %}{% if snap_s <= cite_cutoff %}{% assign cite_base = snap %}{% endif %}{% endfor %}{% if cite_base %}{% assign cite_base_label = "in the last 30 days" %}{% elsif cite_hist.size > 1 %}{% assign cite_base = cite_hist | first %}{% assign cite_base_label = cite_base.date | date: "since %b %-d" %}{% endif %}{% endif %}
-{% assign cit = site.data.citations %}{% if cit and cit.total %}<p class="pub-stats text-white-50 small">{% assign patents = papers | where: "type", "Patent application" %}{{ papers | size | minus: patents.size }} publications{% if patents.size > 0 %} &middot; {{ patents.size }} patent{% if patents.size > 1 %}s{% endif %}{% endif %} &middot; <b>{{ cit.total }}</b> citations{% if cite_base %}{% assign cite_dtot = 0 %}{% for pair in cit.papers %}{% assign cite_code = pair[0] %}{% assign cite_entry = pair[1] %}{% assign cite_b = cite_base.papers[cite_code] %}{% if cite_b %}{% assign cite_d = cite_entry.count | minus: cite_b %}{% if cite_d > 0 %}{% assign cite_dtot = cite_dtot | plus: cite_d %}{% endif %}{% endif %}{% endfor %}{% if cite_dtot > 0 %} <span class="pub-cites-delta">+{{ cite_dtot }} {{ cite_base_label }}</span>{% endif %}{% endif %} &middot; h-index <b>{{ cit.h_index }}</b> <span class="text-white-50">(according to <a href="https://www.semanticscholar.org/" class="text-white-50">{{ cit.source }}</a>, updated {{ cit.updated | date: "%b %Y" }})</span> &middot; <a href="#supervised-theses" class="text-white-50">{{ theses | size }} supervised theses</a></p>{% endif %}
+{% assign cit = site.data.citations %}{% if cit and cit.total %}<p class="pub-stats text-white-50 small">{% assign patents = papers | where: "type", "Patent application" %}<span class="pub-stats-counts">{{ papers | size | minus: patents.size }} publications{% if patents.size > 0 %} &middot; {{ patents.size }} patent{% if patents.size > 1 %}s{% endif %}{% endif %} &middot; <a href="#supervised-theses" class="text-white-50">{{ theses | size }} supervised theses</a></span><span class="pub-stats-cites"><b>{{ cit.total }}</b> citations{% if cite_base %}{% assign cite_dtot = 0 %}{% for pair in cit.papers %}{% assign cite_code = pair[0] %}{% assign cite_entry = pair[1] %}{% assign cite_b = cite_base.papers[cite_code] %}{% if cite_b %}{% assign cite_d = cite_entry.count | minus: cite_b %}{% if cite_d > 0 %}{% assign cite_dtot = cite_dtot | plus: cite_d %}{% endif %}{% endif %}{% endfor %}{% if cite_dtot > 0 %} <span class="pub-cites-delta">+{{ cite_dtot }} {{ cite_base_label }}</span>{% endif %}{% endif %} &middot; h-index <b>{{ cit.h_index }}</b> <span class="text-white-50">(<a href="https://www.semanticscholar.org/" class="text-white-50">{{ cit.source }}</a>, updated {{ cit.updated | date: "%b %Y" }})</span></span></p>{% endif %}
 
 <div class="fam-legend pub-filter" role="group" aria-label="Filter by type">
 <button type="button" class="fam-tag pub-filter-btn active" data-group="all" style="--fam: #bbb">All</button>
-<button type="button" class="fam-tag pub-filter-btn" data-group="journal" style="--fam: rgb(255, 166, 93)">Journal</button>
+<button type="button" class="fam-tag pub-filter-btn" data-group="journal" style="--fam: #f48fb1">Journal</button>
 <button type="button" class="fam-tag pub-filter-btn" data-group="conference" style="--fam: #6cb4ff">Conference</button>
 <button type="button" class="fam-tag pub-filter-btn" data-group="book" style="--fam: #8fd18f">Book chapter</button>
 <button type="button" class="fam-tag pub-filter-btn" data-group="editorial" style="--fam: #ccc">Editorial</button>
@@ -35,9 +35,37 @@ thumb_img: "assets/img/thumb_site.jpg"
 {% for t in site.data.tags %}<button type="button" class="fam-tag pub-tag-btn" data-tag="{{ t[0] }}" style="--fam: #d8d8d8" title="{{ t[1].about }}">{{ t[1].name }}</button>
 {% endfor %}</div>
 
+{%- comment -%}
+  Newest first: by year, then by month inside the year. The month comes from a "month: 11" in the front matter if there
+  is one, else from "month = ..." in the BibTeX, else from a month name in pub-data ("September 2026"). Papers without
+  a known month go last in their year. Same month: by file name, as before.
+{%- endcomment -%}
+{%- assign mon3 = "jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec" | split: "," -%}
+{%- assign monfull = "january,february,march,april,may,june,july,august,september,october,november,december" | split: "," -%}
+{%- assign sort_keys = "" -%}
+{%- for p in papers -%}
+  {%- assign m = 0 -%}
+  {%- if p.month -%}{%- assign m = p.month | plus: 0 -%}{%- endif -%}
+  {%- if m == 0 and p.bibtex -%}
+    {%- assign bib = p.bibtex | downcase -%}
+    {%- if bib contains "month" -%}
+      {%- assign bm = bib | split: "month" | slice: 1, 1 | first | remove: " " | remove: "=" | remove: "{" | remove: '"' | slice: 0, 3 -%}
+      {%- for n in mon3 -%}{%- if n == bm -%}{%- assign m = forloop.index -%}{%- endif -%}{%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if m == 0 and p.pub-data -%}
+    {%- assign pd = p.pub-data | downcase -%}
+    {%- for n in monfull -%}{%- if pd contains n -%}{%- assign m = forloop.index -%}{%- endif -%}{%- endfor -%}
+  {%- endif -%}
+  {%- assign k = p.year | times: 100 | plus: m -%}
+  {%- assign sort_keys = sort_keys | append: k | append: "~" | append: p.code | append: "|" -%}
+{%- endfor -%}
+{%- assign sort_keys = sort_keys | split: "|" | sort | reverse -%}
 <div class="container my-0 pub-list">
 {% assign prev_year = "" %}
-{% for pub in papers reversed %}
+{% for sk in sort_keys %}
+{% assign sk_code = sk | split: "~" | last %}
+{% assign pub = papers | where: "code", sk_code | first %}
 {% if pub.year != prev_year %}
 {% assign prev_year = pub.year %}
 <h2 class="pub-year" id="y{{ pub.year }}">{{ pub.year }}</h2>

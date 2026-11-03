@@ -4,6 +4,7 @@ code: 2008-SIGRADI-cuencas_visuales
 title: "Aplicación de técnicas de iluminación para obtención de cuencas visuales en estudios de impacto ambiental"
 authors: Luis Hernández, Antonio Seoane, Alberto Jaspe-Villanueva, and Javier Taibo
 year: 2008
+month: 12   # SIGraDi 2008, La Habana, Dec 1-5
 type: Conference Paper
 tags:
  - rendering

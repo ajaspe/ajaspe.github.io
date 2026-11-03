@@ -4,6 +4,7 @@ code: 2014-EG-exploremaps
 title: "ExploreMaps: Efficient Construction and Ubiquitous Exploration of Panoramic View Graphs of Complex 3D Environments"
 authors: Marco Di Benedetto, Fabio Ganovelli, Marcos Balsa Rodriguez, Alberto Jaspe-Villanueva, Roberto Scopigno, and Enrico Gobbetti
 year: 2014
+month: 4   # Eurographics 2014, Strasbourg, April
 type: Journal Paper
 tags:
  - massive-models
