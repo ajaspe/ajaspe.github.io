@@ -811,3 +811,126 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .press-kind-video { border-color: #ff7b7b; color: #ff7b7b; }
 .press-kind-podcast { border-color: #c48be0; color: #c48be0; }
 .press-kind-report, .press-kind-photo { border-color: #888; color: #bbb; }
+
+/*
+ * Gaussian splatting capture guide (_notes/gaussian-splatting-capture-guide.html): illustrated cards.
+ * The drawings are inline SVGs in _includes/splat-guide/, coloured by the classes below.
+ */
+.sg { --sg-card: #17191c; --sg-line: #33373d; --sg-ink: #9aa1a9; --sg-acc: #ffb340; --sg-ok: #3dbb78; --sg-bad: #ef5b3a; --sg-white: #e9ecef; }
+.sg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.sg-intro { font-size: 1.05rem; line-height: 1.65; }
+.sg-lead { color: #aaa; margin-top: -0.6rem; }
+.sg h2 { margin-top: 2.75rem; }
+.sg h3.sg-group { font-family: 'Jost', sans-serif; font-size: 0.95rem; font-weight: normal; text-decoration: none; text-transform: uppercase; letter-spacing: 0.12em; color: #ffc107; margin: 1.5rem 0 0.7rem; }
+
+/* the four scene buttons: each one opens its section (script in the page) */
+.sg-pick { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.9rem; margin: 1.25rem 0 0.5rem; }
+.sg-pick a { position: relative; display: block; background: var(--sg-card); border: 1px solid var(--sg-line); border-radius: 12px; padding: 1rem 0.75rem 0.9rem; text-align: center; color: #ddd; transition: border-color 0.15s, transform 0.15s, opacity 0.15s; }
+.sg-pick a:hover { border-color: #ff7300; color: #fff; text-shadow: none; transform: translateY(-2px); }
+.sg-pick a[aria-expanded="true"] { border-color: var(--sg-acc); background: #1f2125; box-shadow: inset 0 0 0 1px var(--sg-acc); transform: none; }
+.sg-pick a[aria-expanded="true"]::after { content: ""; position: absolute; left: 50%; bottom: -11px; transform: translateX(-50%); border: 10px solid transparent; border-bottom: 0; border-top-color: var(--sg-acc); }
+.sg-pick.has-open a:not([aria-expanded="true"]) { opacity: 0.6; }
+.sg-pick.has-open a:not([aria-expanded="true"]):hover { opacity: 1; }
+.sg-type:not([hidden]) { animation: sg-open 0.25s ease-out; }
+@keyframes sg-open { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .sg-type:not([hidden]) { animation: none; } .sg-pick a { transition: none; } }
+.sg-pick svg { display: block; width: 100%; max-width: 116px; height: auto; margin: 0 auto 0.5rem; }
+.sg-pick b { display: block; font-family: 'Jost', sans-serif; font-weight: normal; font-size: 1.12rem; color: #fff; line-height: 1.25; }
+.sg-pick small { display: block; color: #9aa1a9; font-size: 0.82rem; margin-top: 0.2rem; }
+
+/* cards */
+.sg-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.9rem; }
+.sg-card { position: relative; background: var(--sg-card); border: 1px solid var(--sg-line); border-radius: 12px; padding: 1.15rem 0.85rem 1rem; text-align: center; }
+.sg-ico svg { display: block; width: 100%; max-width: 150px; height: auto; margin: 0 auto 0.65rem; }
+.sg-card h4 { font-family: 'Jost', sans-serif; font-size: 1.12rem; font-weight: normal; color: #fff; line-height: 1.25; margin: 0 0 0.3rem; }
+.sg-card p { color: #b3b9c0; font-size: 0.9rem; line-height: 1.4; margin: 0; }
+.sg-card.sg-ok::after, .sg-card.sg-bad::after { content: ""; position: absolute; top: 10px; right: 10px; width: 26px; height: 26px; border-radius: 50%; background-position: center; background-repeat: no-repeat; background-size: 14px; }
+.sg-card.sg-ok::after { background-color: var(--sg-ok); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.2 8.4l3 3 6.6-6.8' fill='none' stroke='%2315181b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.sg-card.sg-bad::after { background-color: var(--sg-bad); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.3 4.3l7.4 7.4m0-7.4l-7.4 7.4' fill='none' stroke='%2315181b' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E"); }
+
+/* one section per kind of capture: path diagram, facts and cards */
+.sg-type { margin-top: 1.4rem; scroll-margin-top: 1rem; }
+.sg-type-head { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 1.25rem 2rem; align-items: center; background: linear-gradient(180deg, #1c1f23, #16181b); border: 1px solid var(--sg-line); border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 0.9rem; }
+.sg-type-plan svg { display: block; width: 100%; max-width: 440px; height: auto; margin: 0 auto; }
+.sg-type h3 { font-family: 'Jost', sans-serif; font-size: 1.65rem; font-weight: normal; text-decoration: none; color: #fff; margin: 0 0 0.15rem; }
+.sg-type-ex { color: #9aa1a9; font-style: italic; margin-bottom: 0.75rem; }
+.sg-facts { list-style: none; padding: 0; margin: 0 0 0.9rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sg-facts li { border: 1px solid #4a4f56; border-radius: 999px; padding: 0.15rem 0.7rem; font-size: 0.85rem; color: #ddd; }
+.sg-facts i { color: var(--sg-acc); margin-right: 0.2rem; }
+.sg-how { color: #ddd; line-height: 1.6; margin: 0; }
+
+/* checklists */
+.sg-check { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+.sg-check > div { background: var(--sg-card); border: 1px solid var(--sg-line); border-radius: 12px; padding: 1.1rem 1.35rem 0.8rem; }
+.sg-check h3 { font-family: 'Jost', sans-serif; font-size: 1.3rem; font-weight: normal; text-decoration: none; color: #fff; margin: 0 0 0.6rem; }
+.sg-check h3 i { color: var(--sg-acc); margin-right: 0.35rem; }
+.sg-check ul { list-style: none; padding: 0; margin: 0; }
+.sg-check li { position: relative; padding-left: 1.75rem; margin: 0 0 0.6rem; color: #ddd; line-height: 1.5; }
+.sg-check li::before { content: ""; position: absolute; left: 0; top: 0.22em; width: 1.05rem; height: 1.05rem; border: 2px solid var(--sg-acc); border-radius: 4px; }
+.sg-more { margin-top: 1.75rem; color: #bbb; }
+
+@media (max-width: 767.98px) {
+  .sg-pick, .sg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
+  .sg-type-head { grid-template-columns: 1fr; padding: 1rem; }
+  .sg-check { grid-template-columns: 1fr; }
+  .sg-pick a[aria-expanded="true"]::after { display: none; }
+}
+@media (max-width: 575.98px) {
+  .sg-card { padding: 1rem 0.6rem 0.85rem; }
+  .sg-ico svg { max-width: 112px; margin-top: 0.4rem; }
+  .sg-card h4 { font-size: 1.02rem; }
+  .sg-card p { font-size: 0.84rem; }
+  .sg-card.sg-ok::after, .sg-card.sg-bad::after { top: 7px; right: 7px; width: 22px; height: 22px; background-size: 12px; }
+  .sg-pick b { font-size: 1rem; }
+}
+
+/* the drawings */
+.sg svg .ln, .sg svg .ln2, .sg svg .ln4, .sg svg .ln5, .sg svg .ln7, .sg svg .sep, .sg svg .wall, .sg svg .wall3 { fill: none; stroke: var(--sg-ink); stroke-linecap: round; stroke-linejoin: round; }
+.sg svg .ln { stroke-width: 3; }
+.sg svg .ln2 { stroke-width: 2.2; }
+.sg svg .ln4 { stroke-width: 4.5; }
+.sg svg .ln5 { stroke-width: 5; }
+.sg svg .ln7 { stroke-width: 7; }
+.sg svg .sep { stroke-width: 1.5; opacity: 0.3; }
+.sg svg .wall { stroke-width: 5; stroke-linecap: square; }
+.sg svg .wall3 { stroke-width: 3.5; }
+.sg svg .dl, .sg svg .dl1, .sg svg .dla { fill: none; stroke-linecap: round; }
+.sg svg .dl { stroke: var(--sg-ink); stroke-width: 2.5; stroke-dasharray: 5 6; }
+.sg svg .dl1 { stroke: var(--sg-ink); stroke-width: 1.5; stroke-dasharray: 3 4; }
+.sg svg .dla { stroke: var(--sg-acc); stroke-width: 2.2; stroke-dasharray: 4 5; }
+.sg svg .back, .sg svg .faint { opacity: 0.45; }
+.sg svg .al, .sg svg .al1, .sg svg .al2, .sg svg .al4, .sg svg .al5 { fill: none; stroke: var(--sg-acc); stroke-linecap: round; stroke-linejoin: round; }
+.sg svg .al { stroke-width: 3; }
+.sg svg .al1 { stroke-width: 1.5; }
+.sg svg .al2 { stroke-width: 2.2; }
+.sg svg .al4 { stroke-width: 4; }
+.sg svg .al5 { stroke-width: 5; }
+.sg svg .okl, .sg svg .okl5 { fill: none; stroke: var(--sg-ok); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.sg svg .okl5 { stroke-width: 5; }
+.sg svg .wl, .sg svg .wl2, .sg svg .wl4 { fill: none; stroke: var(--sg-white); stroke-width: 3; stroke-linecap: round; }
+.sg svg .wl2 { stroke-width: 2; }
+.sg svg .wl4 { stroke-width: 4; }
+.sg svg .af { fill: var(--sg-acc); }
+.sg svg .af2 { fill: #c98a2e; }
+.sg svg .wf { fill: var(--sg-white); }
+.sg svg .gf { fill: var(--sg-ink); }
+.sg svg .mf { fill: #4b5159; }
+.sg svg .recf { fill: var(--sg-bad); }
+.sg svg .glass { fill: #1f2c38; stroke: #9cc3ea; stroke-width: 3; stroke-linejoin: round; }
+.sg svg .win { fill: #1f2c38; stroke: #9cc3ea; stroke-width: 2; }
+.sg svg .winl { fill: none; stroke: #9cc3ea; stroke-width: 1.5; }
+.sg svg .scr { fill: #1f2c38; stroke: var(--sg-ink); stroke-width: 3; }
+.sg svg .sky { fill: #2c3a4a; }
+.sg svg .leaf { fill: #4f6b45; }
+.sg svg .trunk { fill: none; stroke: #8a6d4f; stroke-width: 5; stroke-linecap: round; }
+.sg svg .shadow { fill: #000; opacity: 0.5; }
+.sg svg .glow { fill: var(--sg-acc); opacity: 0.16; }
+.sg svg .holef { fill: var(--sg-card); }
+.sg svg .mapf { fill: #22262b; stroke: var(--sg-ink); stroke-width: 2.5; stroke-linejoin: round; }
+.sg svg .mapdot { fill: #22262b; }
+.sg svg text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-weight: 800; text-anchor: middle; }
+.sg svg .tx { fill: var(--sg-acc); }
+.sg svg .txw { fill: var(--sg-white); font-weight: 600; }
+.sg svg .txd { fill: #1a1a1a; }
+.sg svg .num circle { fill: #111; stroke: var(--sg-acc); stroke-width: 2; }
+.sg svg .num text { fill: var(--sg-acc); font-size: 11px; }

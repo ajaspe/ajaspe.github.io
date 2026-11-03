@@ -1,0 +1,23 @@
+<svg viewBox="0 10 320 172" role="img" aria-label="Top view of a street: walk along it looking at the buildings on one side, turn around and come back looking at the other side, ending where you started">
+  <rect class="af" x="34" y="22" width="60" height="40" rx="3"/>
+  <rect class="af2" x="112" y="18" width="54" height="46" rx="3"/>
+  <rect class="af" x="186" y="26" width="46" height="38" rx="3"/>
+  <rect class="af2" x="250" y="20" width="46" height="44" rx="3"/>
+  <rect class="af2" x="40" y="124" width="50" height="44" rx="3"/>
+  <rect class="af" x="106" y="130" width="64" height="38" rx="3"/>
+  <rect class="af2" x="190" y="122" width="40" height="46" rx="3"/>
+  <rect class="af" x="246" y="128" width="50" height="40" rx="3"/>
+  <path class="dl" d="M24 86 H284 A8 8 0 0 1 284 102 H30"/>
+  <path class="al" d="M146 81 L151 86 L146 91 M180 97 L175 102 L180 107 M36 97 L30 102 L36 107"/>
+  <use href="#sg-eye" transform="translate(60 86) rotate(-60)"/>
+  <use href="#sg-eye" transform="translate(116 86) rotate(-60)"/>
+  <use href="#sg-eye" transform="translate(196 86) rotate(-60)"/>
+  <use href="#sg-eye" transform="translate(250 86) rotate(-60)"/>
+  <use href="#sg-eye" transform="translate(266 102) rotate(120)"/>
+  <use href="#sg-eye" transform="translate(222 102) rotate(120)"/>
+  <use href="#sg-eye" transform="translate(140 102) rotate(120)"/>
+  <use href="#sg-eye" transform="translate(84 102) rotate(120)"/>
+  <path class="ln2" d="M24 86 V66"/>
+  <path class="wf" d="M24 66 L36 70.5 L24 75 Z"/>
+  <circle class="wf" cx="24" cy="86" r="4.5"/>
+</svg>

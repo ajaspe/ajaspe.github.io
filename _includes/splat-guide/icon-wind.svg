@@ -1,0 +1,6 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <path class="trunk" d="M68 84 V58"/>
+  <path class="leaf" d="M46 58 C38 48 44 30 60 28 C70 20 90 24 94 38 C104 44 100 60 88 62 C78 68 56 68 46 58 Z"/>
+  <path class="ln2" d="M8 30 H30 C36 30 36 22 30 22 M12 44 H36 M6 58 H28 C34 58 34 66 28 66"/>
+  <path class="ln2 faint" d="M40 84 H104"/>
+</svg>

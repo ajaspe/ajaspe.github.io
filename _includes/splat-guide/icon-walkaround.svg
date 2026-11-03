@@ -1,0 +1,11 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <path class="ln5" d="M12 14 V76"/>
+  <rect class="af" x="17" y="38" width="14" height="14" rx="3"/>
+  <path class="dl" d="M24 23 A22 22 0 0 1 24 67"/>
+  <use href="#sg-bad" x="50" y="16"/>
+  <path class="sep" d="M60 24 V76"/>
+  <rect class="af" x="83" y="38" width="14" height="14" rx="3"/>
+  <circle class="dl" cx="90" cy="45" r="22"/>
+  <path class="al" d="M94 62.5 L89 67 L94 71.5"/>
+  <use href="#sg-ok" x="112" y="16"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <rect class="af2" x="12" y="14" width="24" height="24" rx="2"/>
+  <rect class="af2" x="12" y="48" width="24" height="26" rx="2"/>
+  <rect class="af" x="84" y="14" width="24" height="24" rx="2"/>
+  <rect class="af2" x="84" y="48" width="24" height="26" rx="2"/>
+  <path class="dl" d="M60 86 V16"/>
+  <path class="al" d="M55 17 L60 11 L65 17"/>
+  <use href="#sg-eye" transform="translate(60 64) rotate(-50)"/>
+</svg>

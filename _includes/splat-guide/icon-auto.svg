@@ -1,0 +1,8 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <rect class="af" x="38" y="10" width="44" height="14" rx="7"/>
+  <text class="txd" x="60" y="20.6" font-size="9">AUTO</text>
+  <circle class="af" cx="28" cy="56" r="9"/>
+  <path class="al2" d="M41 56 H46 M37.19 65.19 L40.73 68.73 M28 69 V74 M18.81 65.19 L15.27 68.73 M15 56 H10 M18.81 46.81 L15.27 43.27 M28 43 V38 M37.19 46.81 L40.73 43.27"/>
+  <path class="ln2" d="M50 56 H70 M65 51 L71 56 L65 61"/>
+  <path class="mf" d="M78 70 H104 A7 7 0 0 0 104 56 A9 9 0 0 0 87 52 A7.5 7.5 0 0 0 78 60 A5 5 0 0 0 78 70 Z"/>
+</svg>

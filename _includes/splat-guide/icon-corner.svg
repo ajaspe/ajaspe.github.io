@@ -1,0 +1,7 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <path class="ln4" d="M18 86 V12 H112 M56 86 V50 H112"/>
+  <path class="dl" d="M37 86 V44 Q37 31 50 31 H112"/>
+  <use href="#sg-eye-s" transform="translate(37 70) rotate(-90)"/>
+  <use href="#sg-eye-s" transform="translate(41 38) rotate(-40)"/>
+  <use href="#sg-eye-s" transform="translate(74 31)"/>
+</svg>

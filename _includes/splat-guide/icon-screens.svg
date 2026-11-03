@@ -1,0 +1,9 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <rect class="scr" x="12" y="20" width="50" height="34" rx="3"/>
+  <path class="wl2" d="M20 48 L34 27 M29 50 L41 32"/>
+  <path class="ln" d="M37 54 V62 M27 62 H47"/>
+  <ellipse class="scr" cx="90" cy="44" rx="15" ry="25"/>
+  <circle class="gf faint" cx="90" cy="38" r="4"/>
+  <path class="ln2 faint" d="M90 43 V58"/>
+  <path class="wl2" d="M80 33 L86 24"/>
+</svg>

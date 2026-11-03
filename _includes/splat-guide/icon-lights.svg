@@ -1,0 +1,7 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <path class="glow" d="M47 32 L26 82 H94 L73 32 Z"/>
+  <path class="ln2" d="M60 6 V20"/>
+  <path class="gf" d="M46 34 L52 20 H68 L74 34 Z"/>
+  <circle class="af" cx="60" cy="36" r="5"/>
+  <path class="ln2 faint" d="M16 82 H104"/>
+</svg>

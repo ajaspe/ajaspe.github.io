@@ -1,0 +1,9 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <rect class="gf" x="55" y="12" width="10" height="6" rx="2"/>
+  <path class="ln" d="M60 18 V23"/>
+  <circle class="ln4" cx="60" cy="50" r="26"/>
+  <path class="al4" d="M60 24 A26 26 0 0 1 82.52 63"/>
+  <path class="al" d="M60 50 V34"/>
+  <path class="wl" d="M60 50 L71 57"/>
+  <circle class="wf" cx="60" cy="50" r="3"/>
+</svg>

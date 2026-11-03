@@ -1,0 +1,214 @@
+---
+title: Gaussian Splatting Capture Guide
+description: "A visual guide to filming phone videos for 3D Gaussian Splatting: the rules for any capture, and what changes for an object on a table, a big thing outdoors, a room or a whole place."
+summary: "How to film a phone video that makes a good 3D Gaussian splat: the basic rules, and what changes for an object, a big thing outdoors, a room or a whole place."
+layout: note
+kind: living
+icon: fa-video
+thumb_img: "assets/img/thumb_splat_guide.jpg"
+updated: 2026-11-03
+---
+{%- comment -%}
+  Illustrated guide. Each card is the include splat-guide/card.html with icon (the drawing _includes/splat-guide/icon-NAME.svg,
+  120x90), badge (ok or bad, optional), title and text. The menu drawings are pick-*.svg and the paths of each kind of
+  capture plan-*.svg. Colours come from the .sg classes in style.css; cameras, view cones, marks and the cloth pattern
+  are shared shapes in defs.svg.
+{%- endcomment -%}
+<div class="sg">
+{% include splat-guide/defs.svg %}
+
+<p class="sg-intro">A Gaussian splat (a 3D model that looks like a photo, made from many images of a scene) is only as good as the video you give it. The software has to see every part of the scene from several angles, sharp, and with nothing changing between frames. A normal phone is enough for that, if you film with it in mind.</p>
+<p class="sg-intro">First the rules that always apply, then what changes depending on what you film. They come from our own captures, around 30 of them, from museum objects to ruins under the desert sun, plus the usual advice for photogrammetry.</p>
+
+<h2 id="basics">The basics for any capture</h2>
+
+<h3 class="sg-group">Moving</h3>
+<div class="sg-grid">
+{% include splat-guide/card.html icon="move" badge="ok" title="Walk all around" text="the 3D comes from your steps; turning on the spot gives nothing" %}
+{% include splat-guide/card.html icon="slow" title="Slow and steady" text="a calm walking pace; fast moves blur the frames" %}
+{% include splat-guide/card.html icon="frame" badge="ok" title="Keep it in frame" text="the whole time; no sudden turns, no looking away" %}
+{% include splat-guide/card.html icon="loop" badge="ok" title="End where you started" text="a full circle if you can; closing the loop joins everything" %}
+</div>
+
+<h3 class="sg-group">The scene</h3>
+<div class="sg-grid">
+{% include splat-guide/card.html icon="light" badge="ok" title="Soft, even light" text="daylight or diffuse light; no strong shadows, no backlight" %}
+{% include splat-guide/card.html icon="still" badge="bad" title="Nothing moving" text="people or cars crossing, pets, leaves in the wind" %}
+{% include splat-guide/card.html icon="glass" badge="bad" title="Avoid glass and shine" text="reflections change with every angle; if you can't avoid them, pick angles with less glare" %}
+{% include splat-guide/card.html icon="texture" title="Texture around it" text="a plain white table or a blank wall leaves nothing to match between frames" %}
+</div>
+
+<h3 class="sg-group">The phone</h3>
+<div class="sg-grid">
+{% include splat-guide/card.html icon="4k" badge="ok" title="4K, 30 or 60 fps" text="60 gives sharper frames, but only with good light" %}
+{% include splat-guide/card.html icon="zoom" badge="bad" title="Don't zoom" text="move closer with your feet; keep one lens, and stabilisation on" %}
+{% include splat-guide/card.html icon="lock" badge="ok" title="Lock focus and exposure" text="long-press on the screen, so the brightness does not jump" %}
+{% include splat-guide/card.html icon="time" title="20 to 90 seconds" text="is plenty; longer only for big places" %}
+</div>
+
+<h2 id="by-kind">Depending on what you film</h2>
+<p class="sg-lead">Pick what you are filming to see the path to walk, and four things to keep in mind.</p>
+
+{%- comment -%}
+  The four buttons open one section at a time (script at the end). Without JavaScript all the sections show, one after the other.
+  A link to /gaussian-splatting-capture-guide/#room opens that section directly.
+{%- endcomment %}
+<nav class="sg-pick" aria-label="Kinds of capture">
+  <a href="#object" aria-controls="object" aria-expanded="false">{% include splat-guide/pick-object.svg %}<b>An object</b><small>small enough to walk around it</small></a>
+  <a href="#outdoors" aria-controls="outdoors" aria-expanded="false">{% include splat-guide/pick-outdoors.svg %}<b>A big thing outdoors</b><small>a statue, a car, a rock</small></a>
+  <a href="#room" aria-controls="room" aria-expanded="false">{% include splat-guide/pick-room.svg %}<b>A room</b><small>a living room, an office, a lab</small></a>
+  <a href="#place" aria-controls="place" aria-expanded="false">{% include splat-guide/pick-place.svg %}<b>A whole place</b><small>a street, a courtyard, ruins</small></a>
+</nav>
+<noscript><style>.sg .sg-type[hidden] { display: block !important; }</style></noscript>
+
+<section class="sg-type" id="object" hidden>
+  <div class="sg-type-head">
+    <div class="sg-type-plan">{% include splat-guide/plan-object.svg %}</div>
+    <div class="sg-type-info">
+      <h3>An object on a table</h3>
+      <p class="sg-type-ex">A vase, a shoe, a toy, a small sculpture...</p>
+      <ul class="sg-facts">
+        <li><i class="fas fa-stopwatch"></i> 20–60 s</li>
+        <li><i class="fas fa-sync-alt"></i> 2 or 3 rounds</li>
+        <li><i class="fas fa-expand"></i> fills half the frame</li>
+      </ul>
+      <p class="sg-how">Walk slowly around it at its height (1), then a second round higher, looking down at it (2). That gets the top and the sides. A third, lower one (3) if you can. Same distance all the way.</p>
+    </div>
+  </div>
+  <div class="sg-grid">
+  {% include splat-guide/card.html icon="walkaround" title="Room to walk around" text="the middle of a table or a stool, not against a wall" %}
+  {% include splat-guide/card.html icon="base" badge="ok" title="A textured base" text="a patterned cloth, a newspaper or wood under it" %}
+  {% include splat-guide/card.html icon="half" badge="ok" title="Fill half the frame" text="close enough for detail, with some background to track" %}
+  {% include splat-guide/card.html icon="shadow" badge="bad" title="Watch your shadow" text="with the light behind you, your shadow walks over it" %}
+  </div>
+</section>
+
+<section class="sg-type" id="outdoors" hidden>
+  <div class="sg-type-head">
+    <div class="sg-type-plan">{% include splat-guide/plan-outdoors.svg %}</div>
+    <div class="sg-type-info">
+      <h3>A big thing outdoors</h3>
+      <p class="sg-type-ex">A statue, a car, a big rock, a fountain, the front of a building...</p>
+      <ul class="sg-facts">
+        <li><i class="fas fa-stopwatch"></i> 40–90 s</li>
+        <li><i class="fas fa-sync-alt"></i> 2 rounds, far and close</li>
+        <li><i class="fas fa-cloud"></i> cloudy, or all in shade</li>
+      </ul>
+      <p class="sg-how">First a round far enough to see all of it (1), then a closer one for the details (2). If it is tall, lift the phone over your head for part of the way.</p>
+    </div>
+  </div>
+  <div class="sg-grid">
+  {% include splat-guide/card.html icon="lesssky" badge="ok" title="Less sky" text="point a bit down; the sky has no depth and confuses the model" %}
+  {% include splat-guide/card.html icon="armsup" badge="ok" title="Arms up for the top" text="part of the round with the phone over your head" %}
+  {% include splat-guide/card.html icon="arc" title="Can't go around it?" text="a facade or a cliff: walk arcs in front of it, near and far" %}
+  {% include splat-guide/card.html icon="wind" badge="bad" title="Mind the wind" text="leaves and grass that move come out blurry" %}
+  </div>
+</section>
+
+<section class="sg-type" id="room" hidden>
+  <div class="sg-type-head">
+    <div class="sg-type-plan">{% include splat-guide/plan-room.svg %}</div>
+    <div class="sg-type-info">
+      <h3>A room</h3>
+      <p class="sg-type-ex">A living room, an office, a lab, a small museum hall...</p>
+      <ul class="sg-facts">
+        <li><i class="fas fa-stopwatch"></i> 1–2 min</li>
+        <li><i class="fas fa-route"></i> along the walls, then closer</li>
+        <li><i class="fas fa-lightbulb"></i> every light on</li>
+      </ul>
+      <p class="sg-how">Walk along the walls looking across the room, slowly at the corners. Then one more pass, closer, for the furniture and anything the first one missed.</p>
+    </div>
+  </div>
+  <div class="sg-grid">
+  {% include splat-guide/card.html icon="across" badge="ok" title="Look across the room" text="from near the walls; never spin in the middle" %}
+  {% include splat-guide/card.html icon="lights" badge="ok" title="Every light on" text="before you start, and don't touch them while filming" %}
+  {% include splat-guide/card.html icon="screens" badge="bad" title="Mirrors and screens" text="they look like windows to another room; cover them" %}
+  {% include splat-guide/card.html icon="ceiling" badge="ok" title="Ceiling and floor too" text="tilt up and down a bit as you walk, or they will be holes" %}
+  </div>
+</section>
+
+<section class="sg-type" id="place" hidden>
+  <div class="sg-type-head">
+    <div class="sg-type-plan">{% include splat-guide/plan-place.svg %}</div>
+    <div class="sg-type-info">
+      <h3>A whole place</h3>
+      <p class="sg-type-ex">A street, a courtyard, a garden, some ruins, a building from outside...</p>
+      <ul class="sg-facts">
+        <li><i class="fas fa-stopwatch"></i> 2–3 min</li>
+        <li><i class="fas fa-route"></i> there and back, a loop</li>
+        <li><i class="fas fa-sun"></i> steady light, not at sunset</li>
+      </ul>
+      <p class="sg-how">Walk the street (or the path) looking at one side, and come back looking at the other side, so you finish where you started. The phone a bit turned, not straight ahead.</p>
+    </div>
+  </div>
+  <div class="sg-grid">
+  {% include splat-guide/card.html icon="sides" badge="ok" title="Look to the sides" text="walking straight and filming ahead gives very little 3D" %}
+  {% include splat-guide/card.html icon="corner" badge="ok" title="Slow at corners and doors" text="turn while you keep walking; this is where the track gets lost" %}
+  {% include splat-guide/card.html icon="norec" title="Don't stop recording" text="the walk between two spots is what joins them" %}
+  {% include splat-guide/card.html icon="auto" badge="ok" title="Exposure on auto here" text="from sun to shade, a locked exposure burns or darkens half the video" %}
+  </div>
+</section>
+
+<h2 id="before-after">Before and after</h2>
+<div class="sg-check">
+  <div>
+    <h3><i class="fas fa-video"></i> Before you press record</h3>
+    <ul>
+      <li>Clean the lens. A fingerprint puts a haze over the whole model.</li>
+      <li>Battery and free space, 4K fills the phone fast.</li>
+      <li>4K at 30 or 60 fps, and HDR video off (in many tools its frames come out washed out).</li>
+      <li>Normal stabilisation on, but no Cinematic, Portrait or Action mode: they blur or crop the image.</li>
+      <li>Decide the route: where you start and where you finish.</li>
+    </ul>
+  </div>
+  <div>
+    <h3><i class="fas fa-eye"></i> Before you leave</h3>
+    <ul>
+      <li>Watch the whole video on the phone. Blurry parts? Somebody crossing? A side you forgot?</li>
+      <li>If in doubt, film it again. One more minute now is much cheaper than coming back.</li>
+      <li>Send the original file. WhatsApp and similar apps compress the video a lot.</li>
+    </ul>
+  </div>
+</div>
+
+{%- comment -%} The link to the pipeline post appears by itself once that post is public (no draft: true). {%- endcomment -%}
+{% assign sg_post = site.posts | where: "slug", "phone-video-to-gaussian-splats" | first %}
+{% if sg_post and sg_post.draft != true %}<p class="sg-more">What happens after the video, from the frames to the 3D model, is in <a href="{{ sg_post.url }}">this post about our pipeline</a>.</p>{% endif %}
+</div>
+
+<script>
+// Scene buttons: one section open at a time, a second click closes it. The URL hash follows the open section.
+(function () {
+  var nav = document.querySelector('.sg-pick');
+  if (!nav) return;
+  var picks = Array.prototype.slice.call(nav.querySelectorAll('a[aria-controls]'));
+  function show(id, scroll) {
+    var open = null;
+    picks.forEach(function (a) {
+      var on = a.getAttribute('aria-controls') === id, p = document.getElementById(a.getAttribute('aria-controls'));
+      a.setAttribute('aria-expanded', on ? 'true' : 'false');
+      if (p) p.hidden = !on;
+      if (on) open = p;
+    });
+    nav.classList.toggle('has-open', !!open);
+    if (window.history && history.replaceState) history.replaceState(null, '', open ? '#' + id : location.pathname + location.search);
+    if (open && scroll && open.getBoundingClientRect().top > window.innerHeight * 0.7) open.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  picks.forEach(function (a) {
+    a.setAttribute('role', 'button');
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      show(a.getAttribute('aria-expanded') === 'true' ? null : a.getAttribute('aria-controls'), true);
+    });
+    a.addEventListener('keydown', function (e) {
+      if (e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); a.click(); }
+    });
+  });
+  function fromHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (picks.some(function (a) { return a.getAttribute('aria-controls') === id; })) { show(id, false); nav.scrollIntoView({ block: 'start' }); }
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+})();
+</script>

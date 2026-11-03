@@ -1,0 +1,6 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <rect class="wf" x="12" y="30" width="42" height="46" rx="3"/>
+  <rect x="66" y="30" width="42" height="46" rx="3" fill="url(#sg-check)"/>
+  <use href="#sg-bad" x="33" y="16"/>
+  <use href="#sg-ok" x="87" y="16"/>
+</svg>

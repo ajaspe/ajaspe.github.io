@@ -1,0 +1,8 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <circle class="af" cx="100" cy="18" r="7"/>
+  <path class="af" d="M20 78 C22 54 32 32 52 28 C68 24 84 32 90 48 C94 58 97 68 98 78 Z"/>
+  <path class="holef" d="M46 78 C46 64 52 56 60 56 C68 56 74 64 74 78 Z"/>
+  <path class="ln" d="M8 78 H112"/>
+  <circle class="gf" cx="106" cy="62" r="2.6"/>
+  <path class="ln2" d="M106 65 V71 M106 71 L103.5 77 M106 71 L108.5 77"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg viewBox="0 8 320 184" role="img" aria-label="Top view of a room: a dashed loop along the walls with the camera looking across the room, and a crossed-out spin on the spot in the middle">
+  <path class="wall" d="M200 180 H30 V20 H290 V180 H240"/>
+  <rect class="win" x="110" y="16.5" width="60" height="7"/>
+  <path class="ln2" d="M240 180 V140"/>
+  <path class="dl1" d="M200 180 A40 40 0 0 1 240 140"/>
+  <rect class="af2" x="34" y="44" width="8" height="48" rx="1.5"/>
+  <rect class="af" x="64" y="116" width="72" height="26" rx="6"/>
+  <rect class="af2" x="64" y="138" width="72" height="9" rx="3"/>
+  <rect class="af" x="186" y="60" width="46" height="36" rx="4"/>
+  <circle class="leaf" cx="278" cy="170" r="8"/>
+  <path class="dl" d="M72 42 H248 A20 20 0 0 1 268 62 V138 A20 20 0 0 1 248 158 H72 A20 20 0 0 1 52 138 V62 A20 20 0 0 1 72 42 Z"/>
+  <path class="al" d="M155 37 L161 42 L155 47"/>
+  <use href="#sg-eye" transform="translate(110 42) rotate(90)"/>
+  <use href="#sg-eye" transform="translate(210 42) rotate(90)"/>
+  <use href="#sg-eye" transform="translate(52 100)"/>
+  <use href="#sg-eye" transform="translate(268 112) rotate(180)"/>
+  <use href="#sg-eye" transform="translate(176 158) rotate(-90)"/>
+  <use href="#sg-eye" transform="translate(57.9 47.9) rotate(27)"/>
+  <use href="#sg-eye" transform="translate(262.1 152.1) rotate(-153)"/>
+  <circle class="wf" cx="158" cy="94" r="4"/>
+  <path class="ln2" d="M167.53 88.5 A11 11 0 1 1 161.76 83.66"/>
+  <path class="gf" d="M165.05 84.86 L161.85 80.5 L159.79 86.14 Z"/>
+  <use href="#sg-bad" x="176" y="78"/>
+</svg>

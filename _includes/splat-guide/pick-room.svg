@@ -1,0 +1,8 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <path class="ln2" d="M36 18 L14 6 M84 18 L106 6 M36 56 L14 84 M84 56 L106 84"/>
+  <rect class="ln2" x="36" y="18" width="48" height="38"/>
+  <rect class="win" x="44" y="25" width="15" height="15"/>
+  <path class="winl" d="M51.5 25 V40 M44 32.5 H59"/>
+  <rect class="af" x="60" y="62" width="30" height="8" rx="2"/>
+  <path class="al2" d="M64 70 V78 M86 70 V78"/>
+</svg>

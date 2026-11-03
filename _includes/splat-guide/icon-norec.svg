@@ -1,0 +1,9 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <circle class="recf" cx="18" cy="28" r="6"/>
+  <path class="al5" d="M30 28 H94"/>
+  <use href="#sg-ok" x="108" y="28"/>
+  <circle class="recf" cx="18" cy="62" r="6"/>
+  <path class="ln5" d="M30 62 H50 M72 62 H94"/>
+  <path class="wl" d="M58 55 V69 M64 55 V69"/>
+  <use href="#sg-bad" x="108" y="62"/>
+</svg>

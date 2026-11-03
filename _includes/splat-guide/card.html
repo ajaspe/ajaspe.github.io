@@ -1,0 +1,5 @@
+<div class="sg-card{% if include.badge %} sg-{{ include.badge }}{% endif %}">
+  <div class="sg-ico">{% include splat-guide/icon-{{ include.icon }}.svg %}</div>
+  <h4>{% if include.badge == "ok" %}<span class="visually-hidden">Do: </span>{% elsif include.badge == "bad" %}<span class="visually-hidden">Avoid: </span>{% endif %}{{ include.title }}</h4>
+  <p>{{ include.text }}</p>
+</div>

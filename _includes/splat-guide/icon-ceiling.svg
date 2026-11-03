@@ -1,0 +1,6 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <path class="ln4" d="M10 12 H110 M10 78 H110"/>
+  <path class="al4" d="M82 12 H108 M82 78 H108"/>
+  <path class="dla" d="M48 40 L94 16 M48 50 L94 74"/>
+  <use href="#sg-cam" transform="translate(36 45) scale(1.3)"/>
+</svg>

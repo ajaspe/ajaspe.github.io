@@ -1,0 +1,7 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <g transform="translate(2 8)">
+    <circle class="af" cx="40" cy="32" r="12"/>
+    <path class="al" d="M23 32 H17 M27.98 19.98 L23.74 15.74 M40 15 V9 M52.02 19.98 L56.26 15.74 M27.98 44.02 L23.74 48.26"/>
+    <path class="mf" d="M40 66 H92 A12 12 0 0 0 92 42 A16 16 0 0 0 62 36 A13 13 0 0 0 40 50 A8 8 0 0 0 40 66 Z"/>
+  </g>
+</svg>

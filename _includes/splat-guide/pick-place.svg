@@ -1,0 +1,8 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <path class="mapf" d="M14 24 L42 14 L78 24 L106 14 V66 L78 76 L42 66 L14 76 Z"/>
+  <path class="ln2" d="M42 14 V66 M78 24 V76"/>
+  <path class="dla" d="M22 64 C32 52 46 60 56 48 C64 38 78 44 90 36"/>
+  <circle class="wf" cx="22" cy="64" r="3"/>
+  <path class="af" d="M94 44 C88 36 84 32 84 27 A10 10 0 0 1 104 27 C104 32 100 36 94 44 Z"/>
+  <circle class="mapdot" cx="94" cy="27" r="3.6"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <rect class="ln" x="40" y="8" width="40" height="74" rx="8"/>
+  <path class="okl" d="M47 30 V24 H53 M67 24 H73 V30 M47 60 V66 H53 M67 66 H73 V60"/>
+  <rect class="af" x="52" y="37" width="16" height="16" rx="3"/>
+</svg>

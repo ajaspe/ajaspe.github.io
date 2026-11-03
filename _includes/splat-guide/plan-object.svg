@@ -1,0 +1,20 @@
+<svg viewBox="0 30 320 140" role="img" aria-label="Side view: dashed circles around the object, one at its height, one higher and one lower, with the camera always pointing at it">
+  <path class="dl back" d="M60 50 A100 13 0 0 1 260 50"/>
+  <path class="dl back" d="M28 114 A132 17 0 0 1 292 114"/>
+  <path class="dl back" d="M36 144 A124 15 0 0 1 284 144"/>
+  <rect x="112" y="150" width="96" height="7" rx="2" fill="url(#sg-check)"/>
+  <path class="af" d="M144 150 C128 136 128 106 148 94 V76 H172 V94 C192 106 192 136 176 150 Z"/>
+  <path class="dl" d="M60 50 A100 13 0 0 0 260 50"/>
+  <path class="dl" d="M28 114 A132 17 0 0 0 292 114"/>
+  <path class="dl" d="M36 144 A124 15 0 0 0 284 144"/>
+  <path class="al" d="M96 55.7 L101 60.4 L96 65.1 M96 124.4 L101 129.1 L96 133.8 M96 152.4 L101 157.1 L96 161.8"/>
+  <use href="#sg-cam" transform="translate(60 50) rotate(33) scale(1.25)"/>
+  <use href="#sg-cam" transform="translate(260 50) rotate(147) scale(1.25)"/>
+  <use href="#sg-cam" transform="translate(28 114) scale(1.25)"/>
+  <use href="#sg-cam" transform="translate(292 114) rotate(180) scale(1.25)"/>
+  <use href="#sg-cam" transform="translate(36 144) rotate(-13.2) scale(1.25)"/>
+  <use href="#sg-cam" transform="translate(284 144) rotate(-166.8) scale(1.25)"/>
+  <g class="num"><circle cx="230" cy="128.4" r="9"/><text x="230" y="132.4">1</text></g>
+  <g class="num"><circle cx="230" cy="59.3" r="9"/><text x="230" y="63.3">2</text></g>
+  <g class="num"><circle cx="230" cy="156.4" r="9"/><text x="230" y="160.4">3</text></g>
+</svg>

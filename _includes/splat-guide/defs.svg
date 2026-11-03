@@ -1,0 +1,10 @@
+<svg class="sg-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="sg-cam"><rect x="-8" y="-5" width="11" height="10" rx="2" fill="#e9ecef"/><path d="M3.5 -1.8 L9 -5 V5 L3.5 1.8 Z" fill="#e9ecef"/></g>
+    <g id="sg-eye"><path d="M8 0 L36 -13 A31 31 0 0 1 36 13 Z" fill="#ffb340" fill-opacity=".16" stroke="#ffb340" stroke-opacity=".55" stroke-width="1"/><rect x="-8" y="-5" width="11" height="10" rx="2" fill="#e9ecef"/><path d="M3.5 -1.8 L9 -5 V5 L3.5 1.8 Z" fill="#e9ecef"/></g>
+    <g id="sg-eye-s"><path d="M7 0 L27 -9 A22 22 0 0 1 27 9 Z" fill="#ffb340" fill-opacity=".16" stroke="#ffb340" stroke-opacity=".55" stroke-width="1"/><rect x="-6.4" y="-4" width="8.8" height="8" rx="1.6" fill="#e9ecef"/><path d="M2.8 -1.4 L7.2 -4 V4 L2.8 1.4 Z" fill="#e9ecef"/></g>
+    <g id="sg-ok"><circle r="8" fill="#3dbb78"/><path d="M-3.6 .2 L-1.1 2.8 L3.8 -2.6" fill="none" stroke="#15181b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g id="sg-bad"><circle r="8" fill="#ef5b3a"/><path d="M-3 -3 L3 3 M3 -3 L-3 3" fill="none" stroke="#15181b" stroke-width="2.2" stroke-linecap="round"/></g>
+    <pattern id="sg-check" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#7a4f22"/><rect width="4" height="4" fill="#a36a2c"/><rect x="4" y="4" width="4" height="4" fill="#a36a2c"/></pattern>
+  </defs>
+</svg>
