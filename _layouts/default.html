@@ -25,6 +25,9 @@
   {%- assign thumb_path = "/publications/" | append: page.code | append: "-thumb.jpg" -%}
   {%- assign share_img = thumb_path -%}
   {%- assign pdf_path = "/publications/" | append: page.code | append: ".pdf" -%}
+  {%- comment -%} The PDF counts only if the file is really there (and no_pdf is not set). {%- endcomment -%}
+  {%- assign has_pdf = false -%}
+  {%- unless page.no_pdf -%}{%- assign pdf_file = site.static_files | where: "path", pdf_path | first -%}{%- if pdf_file -%}{%- assign has_pdf = true -%}{%- endif -%}{%- endunless -%}
   {%- assign author_list = page.authors | replace: ", and ", ", " | replace: " and ", ", " | split: ", " -%}
 {%- endif -%}
 {%- assign share_img_abs = share_img | absolute_url -%}
@@ -84,8 +87,8 @@
     <meta name="citation_dissertation_institution" content="{{ page.institution | escape }}">{% endif %}
 {%- if page.doi %}
     <meta name="citation_doi" content="{{ page.doi }}">{% endif %}
-{%- unless page.no_pdf %}
-    <meta name="citation_pdf_url" content="{{ pdf_path | absolute_url }}">{% endunless %}
+{%- if has_pdf %}
+    <meta name="citation_pdf_url" content="{{ pdf_path | absolute_url }}">{% endif %}
     <meta name="citation_abstract_html_url" content="{{ canonical }}">
 
     <!-- Structured data -->
@@ -112,9 +115,9 @@
       {%- elsif page.book %}
       "isPartOf": {"@type": "Book", "name": {{ page.book | jsonify }}},
       {%- endif %}
-      {%- unless page.no_pdf %}
+      {%- if has_pdf %}
       "encoding": {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": {{ pdf_path | absolute_url | jsonify }}},
-      {%- endunless %}
+      {%- endif %}
       {%- if page.tags %}
       {%- assign kwnames = "" %}{%- for t in page.tags %}{%- assign tagdef = site.data.tags[t] %}{%- assign kwnames = kwnames | append: tagdef.name | default: t | append: ", " %}{%- endfor %}
       "keywords": {{ kwnames | split: ", " | join: ", " | jsonify }},

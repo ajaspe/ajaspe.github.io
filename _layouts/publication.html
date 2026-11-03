@@ -41,11 +41,13 @@ layout: default
 	{% endunless %}
     <div class="row m-3">
         <p>
-			{% unless page.no_pdf %}
-            {% assign pdfpath = "/publications/" | append: page.code | append: ".pdf" %}
+			{% comment %} The PDF button appears only if publications/CODE.pdf exists (and no_pdf is not set). {% endcomment %}
+			{% assign pdfpath = "/publications/" | append: page.code | append: ".pdf" %}
+			{% assign pdffile = site.static_files | where: "path", pdfpath | first %}
+			{% if pdffile and page.no_pdf != true %}
             <a href="{{ pdfpath | relative_url}}" class="btn btn-outline-warning">
                 <i class="fas fa-file-pdf"></i> PDF</a>
-			{% endunless %}
+			{% endif %}
 			{% if page.appendix %}
             {% assign pdfappendixpath = "/publications/" | append: page.code | append: "-appendix.pdf" %}
             <a href="{{ pdfappendixpath | relative_url}}" class="btn btn-outline-warning">
