@@ -875,6 +875,14 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .sg-check li { position: relative; padding-left: 1.75rem; margin: 0 0 0.6rem; color: #ddd; line-height: 1.5; }
 .sg-check li::before { content: ""; position: absolute; left: 0; top: 0.22em; width: 1.05rem; height: 1.05rem; border: 2px solid var(--sg-acc); border-radius: 4px; }
 .sg-more { margin-top: 1.75rem; color: #bbb; }
+/* other guides and references: three columns of links, one on phones */
+.sg-refs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem 2rem; font-size: 0.92rem; }
+.sg-refs h3 { font-family: 'Jost', sans-serif; font-size: 1.1rem; font-weight: normal; text-decoration: none; color: #ffc107; margin: 0.5rem 0 0.5rem; }
+.sg-refs ul { list-style: none; padding: 0; margin: 0 0 1rem; }
+.sg-refs li { margin: 0 0 0.55rem; line-height: 1.4; }
+.sg-refs li span { display: block; color: #8d949b; font-size: 0.8rem; }
+@media (max-width: 991.98px) { .sg-refs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575.98px) { .sg-refs { grid-template-columns: 1fr; } }
 
 @media (max-width: 767.98px) {
   .sg-pick, .sg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
@@ -939,5 +947,7 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .sg svg .tx { fill: var(--sg-acc); }
 .sg svg .txw { fill: var(--sg-white); font-weight: 600; }
 .sg svg .txd { fill: #1a1a1a; }
+.sg svg .txg { fill: var(--sg-ink); font-weight: 600; }
+.sg svg .badl { fill: none; stroke: var(--sg-bad); stroke-width: 1.6; stroke-linecap: round; }
 .sg svg .num circle { fill: #111; stroke: var(--sg-acc); stroke-width: 2; }
 .sg svg .num text { fill: var(--sg-acc); font-size: 11px; }

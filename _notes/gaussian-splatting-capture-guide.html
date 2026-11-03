@@ -40,10 +40,10 @@ updated: 2026-11-03
 
 <h3 class="sg-group">The phone</h3>
 <div class="sg-grid">
-{% include splat-guide/card.html icon="4k" badge="ok" title="4K, 30 or 60 fps" text="60 gives sharper frames, but only with good light" %}
-{% include splat-guide/card.html icon="zoom" badge="bad" title="Don't zoom" text="move closer with your feet; keep one lens, and stabilisation on" %}
+{% include splat-guide/card.html icon="4k" badge="ok" title="4K, 30 or 60 fps" text="30 is enough; 60 gives sharper frames, but only with good light" %}
+{% include splat-guide/card.html icon="zoom" badge="bad" title="Don't zoom" text="move closer with your feet, and keep the same lens all the video" %}
 {% include splat-guide/card.html icon="lock" badge="ok" title="Lock focus and exposure" text="long-press on the screen, so the brightness does not jump" %}
-{% include splat-guide/card.html icon="time" title="20 to 90 seconds" text="is plenty; longer only for big places" %}
+{% include splat-guide/card.html icon="modes" badge="ok" title="Plain video mode" text="normal stabilisation is fine; no Action, Cinematic or Portrait mode: they warp, crop or blur the image" %}
 </div>
 
 <h2 id="by-kind">Depending on what you film</h2>
@@ -120,7 +120,7 @@ updated: 2026-11-03
     </div>
   </div>
   <div class="sg-grid">
-  {% include splat-guide/card.html icon="across" badge="ok" title="Look across the room" text="from near the walls; never spin in the middle" %}
+  {% include splat-guide/card.html icon="across" badge="ok" title="Look across the room" text="from near the walls; never spin on the spot in the middle" %}
   {% include splat-guide/card.html icon="lights" badge="ok" title="Every light on" text="before you start, and don't touch them while filming" %}
   {% include splat-guide/card.html icon="screens" badge="bad" title="Mirrors and screens" text="they look like windows to another room; cover them" %}
   {% include splat-guide/card.html icon="ceiling" badge="ok" title="Ceiling and floor too" text="tilt up and down a bit as you walk, or they will be holes" %}
@@ -142,7 +142,7 @@ updated: 2026-11-03
     </div>
   </div>
   <div class="sg-grid">
-  {% include splat-guide/card.html icon="sides" badge="ok" title="Look to the sides" text="walking straight and filming ahead gives very little 3D" %}
+  {% include splat-guide/card.html icon="sides" badge="ok" title="Look to the sides" text="what is straight ahead barely moves between frames, so it gives little 3D" %}
   {% include splat-guide/card.html icon="corner" badge="ok" title="Slow at corners and doors" text="turn while you keep walking; this is where the track gets lost" %}
   {% include splat-guide/card.html icon="norec" title="Don't stop recording" text="the walk between two spots is what joins them" %}
   {% include splat-guide/card.html icon="auto" badge="ok" title="Exposure on auto here" text="from sun to shade, a locked exposure burns or darkens half the video" %}
@@ -157,7 +157,6 @@ updated: 2026-11-03
       <li>Clean the lens. A fingerprint puts a haze over the whole model.</li>
       <li>Battery and free space, 4K fills the phone fast.</li>
       <li>4K at 30 or 60 fps, and HDR video off (in many tools its frames come out washed out).</li>
-      <li>Normal stabilisation on, but no Cinematic, Portrait or Action mode: they blur or crop the image.</li>
       <li>Decide the route: where you start and where you finish.</li>
     </ul>
   </div>
@@ -166,7 +165,48 @@ updated: 2026-11-03
     <ul>
       <li>Watch the whole video on the phone. Blurry parts? Somebody crossing? A side you forgot?</li>
       <li>If in doubt, film it again. One more minute now is much cheaper than coming back.</li>
-      <li>Send the original file. WhatsApp and similar apps compress the video a lot.</li>
+      <li>Send the original file. WhatsApp and similar apps compress the video a lot, unless you send it as a document.</li>
+    </ul>
+  </div>
+</div>
+
+<h2 id="references">Other guides and references</h2>
+<div class="sg-refs">
+  <div>
+    <h3>Capture guides</h3>
+    <ul>
+      <li><a href="https://developer.playcanvas.com/user-manual/gaussian-splatting/creating/taking-photos/">Taking photos for Gaussian splatting</a> <span>PlayCanvas</span></li>
+      <li><a href="https://www.freegaussian.ai/blog/best-practices-capture">Best practices for capturing scenes for Gaussian splatting</a> <span>FreeGaussian</span></li>
+      <li><a href="https://www.polyvia3d.com/guides/gaussian-splatting-from-video">Gaussian splatting from video, complete workflow</a> <span>Polyvia3D</span></li>
+      <li><a href="https://radiancefields.com/how-to-capture-radiance-fields">How to capture Gaussian splats, camera guide</a> <span>Radiance Fields</span></li>
+      <li><a href="https://www.skyebrowse.com/news/posts/gaussian-splat-from-video">How to create a Gaussian splat from video</a> <span>SkyeBrowse</span></li>
+      <li><a href="https://help.sketchup.com/en/gaussian-splats-best-practices">Best practices for Gaussian splats</a> <span>SketchUp</span></li>
+      <li><a href="https://pixelsham.com/2024/04/02/getting-started-with-luma-ai-gaussian-splatting-guided-capture-mode">Getting started with Luma AI: guided capture mode</a> <span>pIXELsHAM</span></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Rooms and indoor spaces</h3>
+    <ul>
+      <li><a href="https://learn.poly.cam/hc/en-us/articles/48339214285844-How-to-Capture-High-Fidelity-Interior-Scans-in-Object-Mode">How to capture high fidelity interior scans</a> <span>Polycam</span></li>
+      <li><a href="https://area.autodesk.com/blogs/journey-to-vr/journey-to-vr--reality-capture-best-practices">Reality capture best practices</a> <span>Autodesk</span></li>
+      <li><a href="https://medium.com/@ktsukii/photogrammetry-pointers-18d3ff2ea922">Photogrammetry pointers</a> <span>Medium</span></li>
+      <li><a href="https://pix4d.com/indoor-mapping-game-plan/">Indoor mapping game plan</a> <span>Pix4D</span></li>
+      <li><a href="https://aholo.featurebase.app/help/articles/7830674-indoor-space-capture-guide">Indoor space capture guide</a> <span>Aholo</span></li>
+    </ul>
+    <h3>Phone settings</h3>
+    <ul>
+      <li><a href="https://community.adobe.com/questions-729/hdr-iphone-14-footage-washed-out-exhausted-all-solutions-1398737">HDR iPhone footage washed out</a> <span>Adobe Community</span></li>
+      <li><a href="https://www.t3.com/news/the-iphone-14-pro-action-mode-is-incredible-heres-why">iPhone Action mode: 2.8K and a cropped image</a> <span>T3</span></li>
+      <li><a href="https://www.macrumors.com/how-to/send-original-quality-photos-videos-whatsapp/">Sending original quality videos in WhatsApp</a> <span>MacRumors</span></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Background</h3>
+    <ul>
+      <li><a href="https://www.cs.princeton.edu/courses/archive/fall09/cos429/notes/cos429_f09_lecture18_sfm.pdf">Structure from motion, lecture notes</a> <span>Princeton COS 429</span></li>
+      <li><a href="https://cseweb.ucsd.edu/classes/fa23/cse252A-a/lec12.pdf">Motion and the focus of expansion, lecture notes</a> <span>UCSD CSE 252A</span></li>
+      <li><a href="https://arxiv.org/abs/2505.15294">R3GS: Gaussian splatting for robust reconstruction in unconstrained image collections</a> <span>arXiv 2025, with a sky sphere</span></li>
+      <li><a href="https://arxiv.org/abs/2510.09489">Two-stage Gaussian splatting optimization for outdoor scene reconstruction</a> <span>arXiv 2025, on sky artefacts</span></li>
     </ul>
   </div>
 </div>

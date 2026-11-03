@@ -1,0 +1,10 @@
+<svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+  <rect class="ln" x="6" y="12" width="108" height="64" rx="9"/>
+  <circle class="wl" cx="60" cy="35" r="12"/>
+  <circle class="recf" cx="60" cy="35" r="7.5"/>
+  <circle class="af" cx="60" cy="56" r="1.6"/>
+  <text class="txg" x="28" y="66" font-size="5.6">CINEMATIC</text>
+  <text class="tx" x="60" y="66" font-size="6.6">VIDEO</text>
+  <text class="txg" x="92" y="66" font-size="5.6">PORTRAIT</text>
+  <path class="badl" d="M12 64 H44 M78 64 H106"/>
+</svg>
