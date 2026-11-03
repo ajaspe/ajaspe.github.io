@@ -733,6 +733,9 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .fam-pick { cursor: pointer; }
 .fam-pick:hover { background: var(--fam, #888); color: #111; }
 .note-updated { color: #ffc107; font-size: 1rem; margin-top: -0.75rem; margin-bottom: 1.25rem; }
+.note-updated:has(+ .note-ai) { margin-bottom: 0.2rem; }
+.note-ai { font-size: 0.8rem; color: #888; margin-bottom: 1.25rem; }
+.note-ai .fa-robot { margin-right: 0.15rem; }
 
 /*
  * Desk: index cards, post lists, blog posts

@@ -6,9 +6,14 @@ layout: default
     title, summary, updated (ISO date), kind: living | page, icon (Font Awesome class, optional),
     redirect_from (old URLs, optional). The body starts directly with the content: the title and the
     "Last updated" line are rendered here.
+    ai (optional), the same as in blog posts: a small note on how AI was used, under the date.
+      ai:
+        model: Claude Opus 5.5
+        used_for: [references, icons]
 {%- endcomment -%}
 <h1>{{ page.title }}</h1>
 {% if page.updated %}<p class="text-center note-updated"><i class="fas fa-calendar-check"></i> Last updated {{ page.updated | date: "%B %-d, %Y" }}</p>{% endif %}
+{% if page.ai %}<p class="text-center note-ai" title="How AI was used in this page"><i class="fas fa-robot"></i> Use of AI: {% if page.ai.model %}{{ page.ai.model }}{% if page.ai.used_for %}, for {{ page.ai.used_for | join: ", " }}{% endif %}{% else %}{{ page.ai }}{% endif %}</p>{% endif %}
 
 {{ content }}
 
