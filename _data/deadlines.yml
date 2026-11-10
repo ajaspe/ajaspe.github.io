@@ -1,9 +1,11 @@
-# Conference deadlines shown on /visual-computing-calendar/ (researched 2026-10-20, checked again 2026-10-21).
+# Conference deadlines shown on /visual-computing-calendar/ (researched 2026-10-20, checked again 2026-10-21 and 2026-11-10).
 #   next_date    : next known deadline, quoted as a string; it places the venue in the grid (days 1-15: upper slot,
 #                  16-31: lower slot). status: confirmed (from the published call for papers) or estimated (previous
 #                  edition's date moved one year)
 #   family       : graphics | visualization | vision | vr | applications (web 3D and cultural heritage).   tier 1 = highlighted in the grid
 #   note         : one short sentence shown under the conference name
+#   cycle        : years between editions (default 1; 0 = irregular). Two weeks after next_date passes, the page shows
+#                  the date moved by cycle years, as estimated, until this file is updated (0: it stays as passed)
 # When you change dates here, also bump updated: in _notes/visual-computing-calendar.md (the date shown on the page).
 
 # ---------------------------------------------------------------- computer graphics
@@ -13,12 +15,12 @@
   family: graphics
   tier: 1
   url: https://www.siggraph.org
-  next_date: "2027-01-22"
+  next_date: "2027-01-28"
   next_edition: SIGGRAPH 2027
-  next_url: https://s2027.siggraph.org
-  status: estimated
+  next_url: https://s2027.siggraph.org/program/technical-papers/
+  status: confirmed
   published_in: ACM TOG (journal track) or SIGGRAPH Conference Papers
-  note: "Estimated from SIGGRAPH 2026 (abstract Jan 15, paper Jan 22). SIGGRAPH 2027 is Anaheim, Aug 8-12; call not out yet."
+  note: "Anaheim, Aug 8-12. Submission form and conflicts by Jan 21, paper by Jan 28, upload by Jan 29 (22:00 GMT)."
 
 - id: siggraph-asia
   acronym: SIGGRAPH Asia
@@ -106,10 +108,10 @@
   url: https://i3dsymposium.org
   next_date: "2027-01-09"
   next_edition: i3D 2027
-  next_url: https://i3dsymposium.org/2026/
+  next_url: https://i3dsymposium.org/2027/
   status: estimated
   published_in: Proceedings of the ACM on Computer Graphics and Interactive Techniques
-  note: "Estimated from i3D 2026 (single paper deadline Jan 9). No 2027 page yet; link goes to the 2026 edition."
+  note: "Estimated from i3D 2026 (single paper deadline Jan 9). The 2027 page is up, but dates and venue are still to be announced."
 
 - id: sca
   acronym: SCA
@@ -156,12 +158,12 @@
   family: graphics
   tier: 2
   url: https://grivapp.scitevents.org
-  next_date: "2026-10-29"
+  next_date: "2026-11-29"
   next_edition: GRIVAPP 2027
-  next_url: https://grivapp.scitevents.org/
+  next_url: https://grivapp.scitevents.org/ImportantDates.aspx
   status: confirmed
   published_in: SciTePress proceedings
-  note: "Valletta, Malta, Feb 26-28. Second-stage regular and position papers extended to Oct 29; the first stage closed Sep 29. The abstracts track closes Dec 3."
+  note: "Valletta, Malta, Feb 26-28. Last round, late-breaking papers, by Nov 29 (the regular rounds closed Sep 29 and Oct 29). The abstracts track closes Dec 3."
 
 - id: wscg
   acronym: WSCG
@@ -195,12 +197,12 @@
   family: graphics
   tier: 2
   url: https://www.stag-conference.org
-  next_date: "2026-10-27"
-  next_edition: STAG 2026
-  next_url: https://www.stag-conference.org/2026/index.html
-  status: confirmed
+  next_date: "2027-10-20"
+  next_edition: STAG 2027
+  next_url: https://www.stag-conference.org/
+  status: estimated
   published_in: EG proceedings
-  note: "Catania, Italy, Nov 19-20. Full papers and posters by Oct 27, extended from Oct 20 (abstracts closed Oct 6); the usual slot is late September."
+  note: "Estimated from STAG 2026 (paper Oct 20, extended to Oct 27); in 2025 it was late September. STAG 2027 venue not announced."
 
 # ---------------------------------------------------------------- visualization
 - id: vis
@@ -222,12 +224,12 @@
   family: visualization
   tier: 1
   url: https://www.eurovis.org
-  next_date: "2026-12-03"
+  next_date: "2026-12-02"
   next_edition: EuroVis 2027
-  next_url: https://eurovis27.github.io/web/
-  status: estimated
+  next_url: https://eurovis27.github.io/web/submissions/full-papers/
+  status: confirmed
   published_in: Computer Graphics Forum
-  note: "Estimated from EuroVis 2026 (abstract Nov 26, paper Dec 3). EuroVis 2027 is Stuttgart, May 31 - Jun 4; full-paper dates not yet published."
+  note: "Stuttgart, May 31 - Jun 4. Full papers: abstract Nov 23 (required), paper Dec 2, both AoE; STARs close Dec 7."
 
 - id: pacificvis
   acronym: PacificVis
@@ -235,12 +237,12 @@
   family: visualization
   tier: 2
   url: https://pacificvis.org
-  next_date: "2026-11-09"
-  next_edition: IEEE PacificVis 2027
-  next_url: https://pacificvis2027.github.io/
-  status: confirmed
-  published_in: IEEE proceedings (conference track) or IEEE TVCG (journal track)
-  note: "Busan, Apr 19-22. Conference-paper track: abstract Nov 2, paper Nov 9. The TVCG track closes in early September."
+  next_date: "2027-09-08"
+  next_edition: IEEE PacificVis 2028
+  next_url: https://pacificvis.org
+  status: estimated
+  published_in: IEEE TVCG (journal track) or IEEE proceedings (conference track)
+  note: "PacificVis 2027 (Busan) closed on Nov 9, 2026. Estimated for 2028 from the 2027 TVCG journal track (abstract Sep 1, paper Sep 8); the conference-paper track follows in early November."
 
 - id: ldav
   acronym: LDAV
@@ -253,7 +255,7 @@
   next_url: https://ldav.io/2025/
   status: estimated
   published_in: IEEE proceedings, with IEEE VIS
-  note: "Estimated from LDAV 2025 (abstract Jun 16, paper Jun 20, later extended to Jun 27). No 2026 edition could be found; link goes to the 2025 edition."
+  note: "Estimated from LDAV 2025 (abstract Jun 16, paper Jun 20, later extended to Jun 27). There was no 2026 edition (it was not part of VIS 2026) and no 2027 one is announced; link goes to the 2025 edition."
 
 - id: eurova
   acronym: EuroVA
@@ -280,7 +282,7 @@
   next_url: https://chi2028.acm.org/
   status: estimated
   published_in: ACM proceedings
-  note: "CHI 2027 (Pittsburgh, May 10-14) closed on Sep 10, 2026, with no abstract deadline. Estimated for CHI 2028. More visualization and VR papers every year."
+  note: "CHI 2027 (Pittsburgh, May 10-14) closed on Sep 10, 2026, with no abstract deadline. Estimated for CHI 2028 (Cape Town, May 8-12, 2028). More visualization and VR papers every year."
 
 - id: uist
   acronym: UIST
@@ -288,12 +290,12 @@
   family: hci
   tier: 2
   url: https://uist.acm.org/
-  next_date: "2027-03-30"
+  next_date: "2027-04-07"
   next_edition: UIST 2027
   next_url: https://uist.acm.org/2027/
-  status: estimated
+  status: confirmed
   published_in: ACM proceedings
-  note: "Estimated from UIST 2026 (abstract Mar 24, paper Mar 31). The 2027 site is up; dates to be announced."
+  note: "Vienna, Oct 27-29. Abstract Mar 31, full paper Apr 7, supplementary material Apr 9 (from the 2027 home page; the full call is not out yet)."
 
 # ---------------------------------------------------------------- computer vision
 - id: cvpr
@@ -315,6 +317,7 @@
   family: vision
   tier: 1
   url: https://iccv.thecvf.com
+  cycle: 2
   next_date: "2027-03-07"
   next_edition: ICCV 2027
   next_url: https://iccv.thecvf.com/Conferences/2027
@@ -328,6 +331,7 @@
   family: vision
   tier: 1
   url: https://eccv.ecva.net
+  cycle: 2
   next_date: "2028-03-05"
   next_edition: ECCV 2028
   next_url: https://eccv.ecva.net/
@@ -373,7 +377,7 @@
   next_url: https://www.ieeeismar.net/2027/
   status: estimated
   published_in: IEEE TVCG (journal papers) or IEEE proceedings
-  note: "Estimated from ISMAR 2026 (abstract Mar 9, paper Mar 16). ISMAR 2027 is Kobe; dates to be announced."
+  note: "Estimated from ISMAR 2026 (abstract Mar 9, paper Mar 16). ISMAR 2027 is in Kobe, planned for Oct 11-15; paper dates to be announced."
 
 - id: vrst
   acronym: VRST
@@ -435,6 +439,7 @@
   family: applications
   tier: 2
   url: https://digitalheritage2025.unisi.it/
+  cycle: 0
   next_date: "2028-04-15"
   next_edition: Digital Heritage 2028
   next_url: https://digitalheritage2025.unisi.it/
