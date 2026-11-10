@@ -50,6 +50,10 @@ plugins:
   - jekyll-feed
   - jekyll-redirect-from
 
+# Footnotes ([^name] in posts): the back arrow as text, not as the blue emoji that Windows draws for a bare ↩
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+
 feed:
   path: feed.xml
   posts_limit: 20

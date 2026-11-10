@@ -783,6 +783,17 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .post-side > p { flex: 1 1 420px; max-width: 680px; margin: 0; }
 .post-side > p img { display: block; width: 100%; }
 .post-side > table { flex: 0 1 auto; margin: 0; }
+/* In Markdown: <div class="post-tldr" markdown="1"> **TL;DR** + a short list </div>, a compact summary box at the top of a post */
+.post-tldr { margin: 0.5rem 0 2rem; padding: 0.9rem 1.2rem 0.6rem; border-left: 3px solid rgb(255, 115, 0); background: rgba(255, 255, 255, 0.045); border-radius: 0 6px 6px 0; font-size: 0.92rem; line-height: 1.5; color: rgba(255, 255, 255, 0.85); }
+.post-tldr > p:first-child { margin: 0 0 0.4rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.8rem; letter-spacing: 0.08em; color: rgb(255, 115, 0); }
+.post-tldr ul { margin: 0 0 0.3rem; padding-left: 1.1rem; }
+.post-tldr li { margin-bottom: 0.3rem; }
+/* kramdown footnotes ([^name] in the markdown): small superscript, notes at the end in small grey text */
+.post-body sup a.footnote { font-size: 0.75em; text-decoration: none; margin-left: 0.1em; }
+.post-body .footnotes { margin-top: 2.5rem; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.16); font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); }
+.post-body .footnotes ol { padding-left: 1.25rem; margin: 0; }
+.post-body .footnotes p { margin: 0 0 0.4rem; }
+.post-body .footnotes a.reversefootnote { text-decoration: none; margin-left: 0.25em; }
 .post-body table { width: auto; max-width: 100%; margin: 1.25rem 0 1.75rem; border-collapse: collapse; font-size: 0.95rem; line-height: 1.45; }
 .post-body th, .post-body td { padding: 0.5rem 0.75rem; border: 1px solid rgba(255, 255, 255, 0.16); vertical-align: top; }
 .post-body thead th { background: rgba(255, 255, 255, 0.07); color: #eee; font-weight: 600; border-bottom: 2px solid rgba(255, 255, 255, 0.3); }
