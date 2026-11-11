@@ -28,9 +28,10 @@ layout: default
                 {% assign pubdatapost = "<br/>Assignee: " | append: page.assignee %}
             {% endif %}
             <p class="lead fst-italic">{{ pubdata }} <small class="text-white-50 fst-italic">{{ pubdatapost }}</small>
-        {% if page.awards %}
-        <span class="pub-award"><i class="fas fa-trophy"></i> {{ page.awards }}</span>
-        {% endif %}{% if page.tags %}<span class="pub-tags">{% for t in page.tags %}{% assign tagdef = site.data.tags[t] %}<a class="pub-tag" href="/publications/#tag={{ t }}" title="All publications on {{ tagdef.name | default: t }}">{{ tagdef.name | default: t }}</a>{% endfor %}</span>{% endif %}{% assign c = site.data.citations.papers[page.code] %}{% if c and c.count > 0 %} <a href="{{ c.url }}" class="pub-cites" title="Citations according to {{ site.data.citations.source }}"><i class="fas fa-quote-right"></i> {{ c.count }} citations</a>{% assign cite_hist = site.data.citations_history %}{% assign cite_base = nil %}{% assign cite_base_label = "" %}{% if cite_hist and cite_hist.size > 0 %}{% assign cite_cutoff = site.time | date: "%s" | plus: 0 | minus: 2592000 %}{% for snap in cite_hist %}{% assign snap_s = snap.date | date: "%s" | plus: 0 %}{% if snap_s <= cite_cutoff %}{% assign cite_base = snap %}{% endif %}{% endfor %}{% if cite_base %}{% assign cite_base_label = "in the last 30 days" %}{% elsif cite_hist.size > 1 %}{% assign cite_base = cite_hist | first %}{% assign cite_base_label = cite_base.date | date: "since %b %-d" %}{% endif %}{% endif %}{% if cite_base and cite_base.papers[page.code] %}{% assign cite_dp = c.count | minus: cite_base.papers[page.code] %}{% if cite_dp > 0 %} <span class="pub-cites-delta">+{{ cite_dp }} {{ cite_base_label }}</span>{% endif %}{% endif %}{% endif %}</p>
+        {% comment %} awards: one text, or a list for several awards (one pill each) {% endcomment %}
+        {% for award in page.awards %}
+        <span class="pub-award"><i class="fas fa-trophy"></i> {{ award }}</span>
+        {% endfor %}{% if page.tags %}<span class="pub-tags">{% for t in page.tags %}{% assign tagdef = site.data.tags[t] %}<a class="pub-tag" href="/publications/#tag={{ t }}" title="All publications on {{ tagdef.name | default: t }}">{{ tagdef.name | default: t }}</a>{% endfor %}</span>{% endif %}{% assign c = site.data.citations.papers[page.code] %}{% if c and c.count > 0 %} <a href="{{ c.url }}" class="pub-cites" title="Citations according to {{ site.data.citations.source }}"><i class="fas fa-quote-right"></i> {{ c.count }} citations</a>{% assign cite_hist = site.data.citations_history %}{% assign cite_base = nil %}{% assign cite_base_label = "" %}{% if cite_hist and cite_hist.size > 0 %}{% assign cite_cutoff = site.time | date: "%s" | plus: 0 | minus: 2592000 %}{% for snap in cite_hist %}{% assign snap_s = snap.date | date: "%s" | plus: 0 %}{% if snap_s <= cite_cutoff %}{% assign cite_base = snap %}{% endif %}{% endfor %}{% if cite_base %}{% assign cite_base_label = "in the last 30 days" %}{% elsif cite_hist.size > 1 %}{% assign cite_base = cite_hist | first %}{% assign cite_base_label = cite_base.date | date: "since %b %-d" %}{% endif %}{% endif %}{% if cite_base and cite_base.papers[page.code] %}{% assign cite_dp = c.count | minus: cite_base.papers[page.code] %}{% if cite_dp > 0 %} <span class="pub-cites-delta">+{{ cite_dp }} {{ cite_base_label }}</span>{% endif %}{% endif %}{% endif %}</p>
     </div>
 	{% unless page.no_teaser %}
     {% comment %} Wide screens: the strip at full width. Phones: fixed height, swipe sideways (see .pub-teaser in style.css). {% endcomment %}
@@ -129,9 +130,9 @@ layout: default
 	<h2>Awards</h2>
 	<div class="row text-center my-3 justify-content-center g-3">
 		{% for f in award_files %}
-		<div class="{% if award_files.size > 1 %}col-md-6{% else %}col-md-8{% endif %}"><img class="rounded img-fluid pub-award-img w-100" src="{{ f.path | relative_url }}" alt="{{ page.awards | default: 'Award' }} diploma" loading="lazy"></div>
+		<div class="{% if award_files.size > 1 %}col-md-6{% else %}col-md-8{% endif %}"><img class="rounded img-fluid pub-award-img w-100" src="{{ f.path | relative_url }}" alt="{{ page.awards | join: ', ' | default: 'Award' }} diploma" loading="lazy"></div>
 		{% endfor %}
-		{% if page.awards %}<div class="col-12"><small class="text-white-50 fst-italic">{{ page.awards }}</small></div>{% endif %}
+		{% if page.awards %}<div class="col-12"><small class="text-white-50 fst-italic">{{ page.awards | join: ' &middot; ' }}</small></div>{% endif %}
 	</div>
 	{% endif %}
 </div>

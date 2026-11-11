@@ -17,7 +17,9 @@ defense: "September 3, 2012"
 links:
  - { name: "UDC library record (2013 degree-project version)", url: "https://crunia.udc.gal/nde/fulldisplay?docid=alma991002602779707714&context=L&vid=34CISUG_UDC:CRUNIA_NDE&lang=gl" }
 distinction: "AMD Best Master Thesis Award 2012; Best Graduate Thesis Award 2013 of the Professional Association of Computer Science Engineering of Galicia (CPEIG)"
-awards: "AMD Best Master Thesis Award and Best Graduate Thesis Award"
+awards:
+ - AMD Best Master Thesis Award
+ - CPEIG Best Graduate Thesis Award
 abstract: "Con la reciente evolución de los equipos láser LIDAR y los escáneres 3D, las nubes de puntos (conjuntos de muestras espaciales, normalmente de superficies de objetos, con diversa información asociada) cada vez son más utilizadas en múltiples disciplinas, como la ingeniería civil, arquitectura, topografía o efectos especiales y animación 3D. Pero a medida que los requisitos de precisión aumentan, crece también el tamaño de las BBDD generadas, haciendo difícil su tratamiento. Además, con la generalización de uso de GPUs en equipos de escritorio comunes, y su evidente orientación hacia los cálculos tridimensionales, sería deseable poder aprovechar su enorme potencia de computación para procesar este tipo de datasets. Se presenta en esta memoria el sistema Point Cloud Manager, para la gestión, procesado y visualización de grandes datasets de nubes de puntos en equipos convencionales, cualesquiera sean sus capacidades. Para ello, se ha diseñado una estructura de datos espacial multirresolución y un sistema de caché software de dos niveles, capaz de procesar este tipo de datos, independientemente de su tamaño, así como una colección de herramientas para su gestión y visualización."
 topics:
  - point-clouds
