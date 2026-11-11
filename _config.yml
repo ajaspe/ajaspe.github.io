@@ -61,3 +61,19 @@ feed:
 exclude:
   - tmp
   - DESK-NOTES.md
+  # MARLIE demo: original maps the viewer never loads (the dataset config.json files only use the .jpg versions below
+  # them). Kept in the repo, left out of the site to stay under the 1 GB GitHub Pages limit (about 570 MB less).
+  # In Jekyll 3.10 a * here also matches "/", so the first line covers every PNG map under data/ (the annotation PNGs,
+  # loaded by name from the code, have no "Map" in their name and stay).
+  - demos/marlie/data/*Map*.png
+  - demos/marlie/data/*/alphaMap.jpg
+  - demos/marlie/data/*/ksMap.jpg
+  - demos/marlie/data/demetrios/4096
+  - demos/marlie/data/ghiberti/4096
+  - demos/marlie/data/demetrios/false_color/fc_fluorescence_old.jpg
+  - demos/marlie/data/demetrios/normalMap.jpg
+  - demos/marlie/data/demetrios/uv/kdMap.jpg
+  - demos/marlie/data/demetrios/vis/kdMap.jpg
+  - demos/marlie/data/fattori/kdMap.jpg
+  - demos/marlie/data/fattori/ksMap_x0_48.jpg
+  - demos/marlie/data/ghiberti/ksMap_x0_32.jpg
