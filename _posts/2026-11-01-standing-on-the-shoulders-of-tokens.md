@@ -123,7 +123,8 @@ But honestly, I think all this is only the beginning. The research model is chan
 
 Standing on the shoulders of tokens, then. I still don't know what to think about it, but it is coming, and fast.
 
-## Appendix: the script
+<details class="post-appendix" id="appendix-the-script" markdown="1">
+<summary>Appendix: the script</summary>
 
 It only needs Python, no libraries. The other numbers in the post come from the same model.
 
@@ -175,6 +176,8 @@ icc = (msb - msw) / (msb + (n0 - 1) * msw)                                  # on
 r = 3 * icc / (1 + 2 * icc)                                                 # mean of three, ~0.36
 print(f"icc = {icc:.3f}, r = {r:.3f}, top 10 %: {p_accept(0.90, r, 0.25):.0%}, flip: {flip(r, 0.25):.0%}")
 ```
+
+</details>
 
 <!-- TODO: ICLR 2027 acceptance rate after the decisions (December 9). Change the table and maybe the "a" of the second script. -->
 

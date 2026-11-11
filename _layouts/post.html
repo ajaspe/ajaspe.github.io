@@ -66,6 +66,23 @@ layout: default
 }
 </script>
 <script>
+/* a link to something inside a closed <details> (e.g. #appendix-the-script) opens it first */
+(function () {
+  function reveal(hash) {
+    var id = decodeURIComponent((hash || '').replace(/^#/, ''));
+    var el = id && document.getElementById(id);
+    var d = el && el.closest('details');
+    if (!d || d.open) return;
+    d.open = true;
+    el.scrollIntoView();
+  }
+  reveal(location.hash);
+  window.addEventListener('hashchange', function () { reveal(location.hash); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (a) { reveal(a.getAttribute('href')); }
+  });
+})();
 (function () {
   var b = document.querySelector('.post-copy');
   if (!b || !navigator.clipboard) return;

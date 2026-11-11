@@ -44,7 +44,7 @@ thumb_img: "assets/img/thumb_site.jpg"
 <p class="text-end mt-2"><a href="/blog/" class="btn btn-outline-warning btn-sm">All posts <i class="fas fa-angle-right"></i></a> <a href="/feed.xml" class="btn btn-outline-light btn-sm" title="Atom feed"><i class="fas fa-rss"></i> Feed</a></p>
 {% endif %}
 
-## Live demos and experiments
+## The Lab: demos and experiments
 {% assign experiments = site.demos | concat: site.data.experiments | sort: "updated" | reverse %}
 <ul class="post-list list-unstyled">
 {% for d in experiments %}

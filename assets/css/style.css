@@ -185,6 +185,21 @@ a:hover {
 .pub-type-book { border-color: #8fd18f; color: #8fd18f; }
 .pub-type-thesis { border-color: #c48be0; color: #c48be0; }
 .pub-type-patent { border-color: #5fd3c8; color: #5fd3c8; }
+/* publications page: the filters in a closed box; the summary line shows the active ones */
+.pub-filters { margin: 0.25rem 0 1rem; border: 1px solid #3a3a3a; border-radius: 0.4rem; background: rgba(255, 255, 255, 0.025); }
+.pub-filters > summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.5rem; padding: 0.45rem 0.8rem; font-size: 0.9rem; color: #ddd; }
+.pub-filters > summary::-webkit-details-marker { display: none; }
+.pub-filters > summary::after { content: "\25BE"; margin-left: auto; color: #888; transition: transform 150ms; }
+.pub-filters[open] > summary::after { transform: rotate(180deg); }
+.pub-filters > summary:hover { color: #fff; }
+.pub-filters > summary .fa-filter { color: #ffc107; font-size: 0.8rem; }
+.pub-filters-state { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; color: #888; font-size: 0.8rem; }
+.pub-filters-chip { padding: 0.05rem 0.5rem; border-radius: 999px; background: #ddd; color: #111; font-weight: 600; font-size: 0.75rem; }
+.pub-filters-reset { font-size: 0.75rem; color: #ffc107; text-decoration: underline; cursor: pointer; }
+.pub-filters-reset[hidden] { display: none; }
+.pub-filters-body { padding: 0.25rem 0.8rem 0.5rem; border-top: 1px solid #333; }
+.pub-filters-label { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #888; margin-top: 0.4rem; }
+.pub-filters .pub-filter-tags { margin-bottom: 0.25rem; }
 .pub-filter { margin: 0.25rem 0 0.5rem; }
 .pub-filter-tags { margin-bottom: 0.9rem; }
 .pub-filter-btn, .pub-tag-btn { cursor: pointer; font-size: 0.8rem; padding: 0.2rem 0.6rem; }
@@ -788,6 +803,16 @@ footer .gc-block b { color: #bbb; font-weight: 600; }
 .post-tldr > p:first-child { margin: 0 0 0.4rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.8rem; letter-spacing: 0.08em; color: rgb(255, 115, 0); }
 .post-tldr ul { margin: 0 0 0.3rem; padding-left: 1.1rem; }
 .post-tldr li { margin-bottom: 0.3rem; }
+/* In Markdown: <details class="post-appendix" id="..." markdown="1"> <summary>Appendix: ...</summary> ... </details>,
+   a closed section at the end (an appendix, a long script). Links to its id open it (see the post layout). */
+.post-appendix { margin-top: 2.25rem; border-top: 1px solid rgba(255, 255, 255, 0.16); }
+.post-appendix > summary { cursor: pointer; list-style: none; padding: 0.75rem 0 0.25rem; font-size: 1.5em; font-weight: lighter; }
+.post-appendix > summary::-webkit-details-marker { display: none; }
+.post-appendix > summary::before { content: "\25B8"; display: inline-block; width: 1.1em; color: #ffc107; transition: transform 150ms; }
+.post-appendix[open] > summary::before { transform: rotate(90deg); }
+.post-appendix > summary:hover { color: #ffc107; }
+.post-appendix > summary::after { content: "show"; margin-left: 0.6rem; font-size: 0.55em; color: #888; vertical-align: middle; }
+.post-appendix[open] > summary::after { content: "hide"; }
 /* kramdown footnotes ([^name] in the markdown): small superscript, notes at the end in small grey text */
 .post-body sup a.footnote { font-size: 0.75em; text-decoration: none; margin-left: 0.1em; }
 .post-body .footnotes { margin-top: 2.5rem; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.16); font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); }
