@@ -16,6 +16,7 @@ projects:
  - Cultural Heritage
 doi: 10.2312/gch.20261061
 links:
+ - { name: EG Digital Library, url: "https://diglib.eg.org/items/d2a54abf-7b4c-4b4b-bb3e-6f77fa2ae9c1" }
  - { name: Journal version (JOCCH), url: /publications/2026-JOCCH-m2lic.html }
 bibtex: "@InProceedings{Pintus:2026:M2LICShort,\n
   title = {{M$^2$LIC}: An Automated Target-Free Mobile Pipeline for Creating Relightable Models},\n
